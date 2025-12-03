@@ -1,0 +1,623 @@
+/* Custom Whatsapp Bottom Button */
+#kokfy-whats-button{
+  z-index: 10;
+  bottom: 3rem;
+  padding: 1.8rem;
+}
+
+/* Custom Color Hover Tabs Carousel */
+.border-animation.active {
+  background-image: linear-gradient(
+    to right,
+    #135ed1 0%,
+    #135ed1 98%
+  );
+  color: #135ed1;
+}
+
+/* Custom Detail Product */
+input.option-disabled+.product__item-option, .option-disabled .product__item-option{
+  opacity: .4;
+}
+
+/*Custom App Grid Variants Style*/
+#MultiVariantsImagePopUpH{
+    background: rgba(0, 0, 0, 0.9)!important;
+    backdrop-filter: blur(5px)!important;
+}
+#MultiVariantsImagePopUpH .MultiVariantsImagePopUpCross{
+    font-size: 5rem!important;
+    color: #FFFFFF!important;
+}
+#MultiVariantsImagePopUpH img.MultiVariantsImagePopUpImg{
+    max-width:92%!important;
+    max-height:92%!important;
+}
+
+/*Custom Price Styles | Carousel Products*/
+section[id*="products_carousel"] .product-item__information a {
+  text-align: center;
+  margin-inline: auto;
+  display: block;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+section[id*="products_carousel"] .product-item__price {
+  justify-content: center;
+}
+section[id*="products_carousel"] .product-item__price .price {
+  font-size: 1.6em;
+  font-weight: 900;
+  color: #135ed1;
+}
+section[id*="products_carousel"] .card-product-price {
+  justify-content: center;
+  flex-direction: column;
+}
+section[id*="products_carousel"] .card-product-price .installment-payment p,
+section[id*="products_carousel"] .card-product-price .installment-payment p strong {
+  margin: 0.3em;
+  color: #102d51;
+  text-align: center;
+}
+section[id*="products_carousel"] .card-product-price .at-price{
+  order:1
+}
+section[id*="products_carousel"] .card-product-price .current-price{
+  order: 0
+}
+section[id*="products_carousel"] .card-product-price .installment-payment{
+  order: 3;
+  margin-top: 0.4rem;
+}
+section[id*="products_carousel"] .card-product-price .current-price .price-item{
+  color: #135ed1a8;
+  font-size: 1em;
+}
+section[id*=products_carousel] .product-item__price .price small {
+    font-size: 0.675em;
+    font-weight: 500;
+}
+
+/*Custom Price Style | Collections Pages Products*/
+div[class*=wishlist-page-section] .product-item__information a {
+  text-align: center;
+  margin-inline: auto;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+div[class*=wishlist-page-section] .product-item__price {
+  justify-content: center;
+}
+div[class*=wishlist-page-section] .product-item__price .price {
+  font-size: 1.6em;
+  font-weight: 900;
+  color: #135ed1;
+}
+div[class*=wishlist-page-section] .card-product-price {
+  justify-content: center;
+  flex-direction: column;
+}
+div[class*=wishlist-page-section] .card-product-price .installment-payment p,
+div[class*=wishlist-page-section] .card-product-price .installment-payment p strong {
+  margin: 0.3em;
+  color: #102d51;
+  text-align: center;
+}
+div[class*=wishlist-page-section] .card-product-price .at-price{
+  order:1
+}
+div[class*=wishlist-page-section] .card-product-price .current-price{
+  order: 0
+}
+div[class*=wishlist-page-section] .card-product-price .installment-payment{
+  order: 3;
+  margin-top: 0.4rem;
+}
+div[class*=wishlist-page-section] .card-product-price .current-price .price-item{
+  color: #135ed1a8;
+  font-size: 1em;
+}
+div[class*=wishlist-page-section] .product-item__price .price small {
+  font-size: 0.675em;
+  font-weight: 500;
+}
+div[class*=wishlist-page-section] variant-king-combined-listing .swatches {
+  width: 100%!important;
+}
+
+div[class*=wishlist-page-section] variant-radios {
+  justify-content: center;
+}
+
+
+/*Custom Price Style | Collections Pages Products*/
+section[class*=collection] .product-item__information a {
+  text-align: center;
+  margin-inline: auto;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+section[class*=collection] .product-item__price {
+  justify-content: center;
+}
+section[class*=collection] .product-item__price .price {
+  font-size: 1.6em;
+  font-weight: 900;
+  color: #135ed1;
+}
+section[class*=collection] .card-product-price {
+  justify-content: center;
+  flex-direction: column;
+}
+section[class*=collection] .card-product-price .installment-payment p,
+section[class*=collection] .card-product-price .installment-payment p strong {
+  margin: 0.3em;
+  color: #102d51;
+  text-align: center;
+}
+section[class*=collection] .card-product-price .at-price{
+  order:1
+}
+section[class*=collection] .card-product-price .current-price{
+  order: 0
+}
+section[class*=collection] .card-product-price .installment-payment{
+  order: 3;
+  margin-top: 0.4rem;
+}
+section[class*=collection] .card-product-price .current-price .price-item{
+  color: #135ed1a8;
+  font-size: 1em;
+}
+section[class*=collection] .product-item__price .price small {
+  font-size: 0.675em;
+  font-weight: 500;
+}
+section[class*=collection] variant-king-combined-listing .swatches {
+  width: 100%!important;
+}
+
+/*Custom Price Style | Main Product Section*/
+section[class*=main-product-section] .product-item__price {}
+section[class*=main-product-section] .product-item__price .price {
+  font-size: 1.6em;
+  font-weight: 900;
+  color: #135ed1;
+}
+section[class*=main-product-section] .card-product-price {
+  flex-direction: column;
+  align-items:flex-start;
+  line-height: 1.8em;
+}
+section[class*=main-product-section] .card-product-price .installment-payment p,
+section[class*=main-product-section] .card-product-price .installment-payment p strong {
+  margin-top: 0.3em;
+  color: #102d51;
+}
+section[class*=main-product-section] .card-product-price .at-price{
+  order:1;
+}
+section[class*=main-product-section] .card-product-price .current-price{
+  order: 0;
+  font-size: 1.5em;
+}
+section[class*=main-product-section] .card-product-price .installment-payment{
+  order: 3;
+  margin-top: 0.4rem;
+  line-height: 0.4em;
+}
+section[class*=main-product-section] .card-product-price .current-price .price-item{
+  color: #135ed1a8;
+  font-size: 1em;
+}
+section[class*=main-product-section] .card-product-price .price small {
+  font-size: 0.675em;
+  font-weight: 500;
+}
+
+/*Custom Price Style | Collection Tabs Products*/
+section[id*=collection_tab] .collection-tab__tab-item {
+  font-size: clamp(1.275em, 2vw, 2.5rem);
+}
+section[id*=collection_tab] .product-item__information a {
+  text-align: center;
+  margin-inline: auto;
+  display: block;
+  display: -webkit-box;
+
+  -webkit-box-orient: vetical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+section[id*=collection_tab] .product-item__price {
+  justify-content: center;
+}
+section[id*=collection_tab] .product-item__price .price {
+  font-size: 1.6em;
+  font-weight: 900;
+  color: #135ed1;
+}
+section[id*=collection_tab] .card-product-price {
+  justify-content: center;
+  flex-direction: column;
+}
+section[id*=collection_tab] .card-product-price .installment-payment p,
+section[id*=collection_tab] .card-product-price .installment-payment p strong {
+  margin: 0.3em;
+  color: #102d51;
+  text-align: center;
+}
+section[id*=collection_tab] .card-product-price .at-price{
+  order:1
+}
+section[id*=collection_tab] .card-product-price .current-price{
+  order: 0
+}
+section[id*=collection_tab] .card-product-price .installment-payment{
+  order: 3;
+  margin-top: 0.4rem;
+}
+section[id*=collection_tab] .card-product-price .current-price .price-item{
+  color: #135ed1a8;
+  font-size: 1em;
+}
+section[id*=collection_tab] .product-item__price .price small {
+    font-size: 0.675em;
+    font-weight: 500;
+}
+section[id*=collection_tab] variant-radios {
+  justify-content: center;
+}
+section[class*=collection] grid-list .grid__item variant-radios {
+  justify-content: center;
+}
+
+/*Custom Grid Card Products | Card Products Grid*/
+.grid__item {
+  border-radius: 12px;
+  border: 0.1em solid transparent;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  background: 
+  linear-gradient(white, white) padding-box,
+  linear-gradient(180deg,  #135ed152 10%,#102d513b 30%, #135ed117 91%) border-box;
+  padding-bottom: 2.5rem;
+  overflow: hidden;
+  transition: all ease-in-out .4s;
+}
+.grid__item:hover {
+  border-radius: 16px;
+  box-shadow: 8px 8px 18px rgba(191, 191, 191, 0.2);
+}
+.grid__item a{
+  /* border-radius:0; */
+}
+.grid__item .product-item__information{
+  padding-inline: 1.2rem;
+}
+
+/*Custom Price Style | Related Products*/
+section[id*=related_products] .product-item__information a {
+  text-align: center;
+  margin-inline: auto;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+section[id*=related_products] .product-item__price {
+  justify-content: center;
+}
+section[id*=related_products] .product-item__price .price {
+  font-size: 1.6em;
+  font-weight: 900;
+  color: #135ed1;
+}
+section[id*=related_products] .card-product-price {
+  justify-content: center;
+  flex-direction: column;
+}
+section[id*=related_products] .card-product-price .installment-payment p,
+section[id*=related_products] .card-product-price .installment-payment p strong {
+  margin: 0.3em;
+  color: #102d51;
+  text-align: center;
+}
+section[id*=related_products] .card-product-price .at-price{
+  order:1
+}
+section[id*=related_products] .card-product-price .current-price{
+  order: 0
+}
+section[id*=related_products] .card-product-price .installment-payment{
+  order: 3;
+  margin-top: 0.4rem;
+}
+section[id*=related_products] .card-product-price .current-price .price-item{
+  color: #135ed1a8;
+  font-size: 1em;
+}
+section[id*=related_products] .product-item__price .price small {
+  font-size: 0.675em;
+  font-weight: 500;
+}
+section[id*=related_products] variant-king-combined-listing .swatches {
+  width: 100%!important;
+}
+
+section[id*=related_products] variant-radios {
+  justify-content: center;
+}
+
+/*Custom Price Style | Related Products*/
+section[id*=products_recently_viewed] .product-item__information a {
+  text-align: center;
+  margin-inline: auto;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+section[id*=products_recently_viewed] .product-item__price {
+  justify-content: center;
+}
+section[id*=products_recently_viewed] .product-item__price .price {
+  font-size: 1.6em;
+  font-weight: 900;
+  color: #135ed1;
+}
+section[id*=products_recently_viewed] .card-product-price {
+  justify-content: center;
+  flex-direction: column;
+}
+section[id*=products_recently_viewed] .card-product-price .installment-payment p,
+section[id*=products_recently_viewed] .card-product-price .installment-payment p strong {
+  margin: 0.3em;
+  color: #102d51;
+  text-align: center;
+}
+section[id*=products_recently_viewed] .card-product-price .at-price{
+  order:1
+}
+section[id*=products_recently_viewed] .card-product-price .current-price{
+  order: 0
+}
+section[id*=products_recently_viewed] .card-product-price .installment-payment{
+  order: 3;
+  margin-top: 0.4rem;
+}
+section[id*=products_recently_viewed] .card-product-price .current-price .price-item{
+  color: #135ed1a8;
+  font-size: 1em;
+}
+section[id*=products_recently_viewed] .product-item__price .price small {
+  font-size: 0.675em;
+  font-weight: 500;
+}
+section[id*=products_recently_viewed] variant-king-combined-listing .swatches {
+  width: 100%!important;
+}
+
+section[id*=products_recently_viewed] variant-radios {
+  justify-content: center;
+}
+
+/* Custom Show Stick Fixed Title | Detail Product */
+section[class*=main-product-section] sticky-add-cart variant-king-combined-listing{
+  display: none
+}
+
+/*Custom Price Style | Remonded Carroussel in Cart Page*/
+div[id=main-cart-items] .cart-recommend slide-section .product-item__information a {
+  text-align: center;
+  margin-inline: auto;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+div[id=main-cart-items] .cart-recommend slide-section .product-item__price {
+  justify-content: start;
+  align-items:start!important;
+}
+div[id=main-cart-items] .cart-recommend slide-section .product-item__price .price {
+  font-size: 1.3em;
+  font-weight: 900;
+  color: #135ed1;
+}
+div[id=main-cart-items] .cart-recommend slide-section .card-product-price {
+  align-items:start!important;
+  justify-content: start;
+  flex-direction: column;
+}
+div[id=main-cart-items] .cart-recommend slide-section .card-product-price .installment-payment p,
+div[id=main-cart-items] .cart-recommend slide-section .card-product-price .installment-payment p strong {
+  margin: 0.3em;
+  color: #102d51;
+  text-align: center;
+}
+div[id=main-cart-items] .cart-recommend slide-section .card-product-price .at-price{
+  order:1
+}
+div[id=main-cart-items] .cart-recommend slide-section .card-product-price .current-price{
+  order: 0
+}
+div[id=main-cart-items] .cart-recommend slide-section .card-product-price .installment-payment{
+  order: 3;
+  margin-top: 0.4rem;
+  font-size: 0.875em;
+}
+div[id=main-cart-items] .cart-recommend slide-section .card-product-price .current-price .price-item{
+  color: #135ed1a8;
+  font-size: 1em;
+}
+div[id=main-cart-items] .cart-recommend slide-section .product-item__price .price small {
+  font-size: 0.675em;
+  font-weight: 500;
+}
+div[id=main-cart-items] .cart-recommen slide-section variant-king-combined-listing .swatches {
+  width: 100%!important;
+}
+
+div[id=main-cart-items-cart-items] variant-radios {
+  justify-content: center;
+}
+
+/* Custom Prices Style | Recommended Products Inside the Sidebar Cart */
+cart-notification #minicart-form minicart-recommendations slide-section .product-item__information a {
+  text-align: left;
+  margin-inline: auto;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+cart-notification #minicart-form minicart-recommendations slide-section .product-item__price {
+  justify-content: start;
+  align-items:start!important;
+}
+cart-notification #minicart-form minicart-recommendations slide-section .product-item__price .price {
+  font-size: 1.3em;
+  font-weight: 900;
+  color: #135ed1;
+}
+cart-notification #minicart-form minicart-recommendations slide-section .card-product-price {
+  align-items:start!important;
+  justify-content: start;
+  flex-direction: column;
+}
+cart-notification #minicart-form minicart-recommendations slide-section .card-product-price .installment-payment p,
+cart-notification #minicart-form minicart-recommendations slide-section .card-product-price .installment-payment p strong {
+  margin: 0.3em;
+  color: #102d51;
+  text-align: center;
+}
+cart-notification #minicart-form minicart-recommendations slide-section .card-product-price .at-price{
+  order:1
+}
+cart-notification #minicart-form minicart-recommendations slide-section .card-product-price .current-price{
+  order: 0
+}
+cart-notification #minicart-form minicart-recommendations slide-section .card-product-price .installment-payment{
+  order: 3;
+  margin-top: 0.4rem;
+  font-size: 0.875em;
+}
+cart-notification #minicart-form minicart-recommendations slide-section .card-product-price .current-price .price-item{
+  color: #135ed1a8;
+  font-size: 1em;
+}
+cart-notification #minicart-form minicart-recommendations slide-section .product-item__price .price small {
+  font-size: 0.675em;
+  font-weight: 500;
+}
+cart-notification #minicart-form minicart-recommendations slide-section variant-king-combined-listing .swatches {
+  width: 100%!important;
+}
+
+cart-notification #minicart-form minicart-recommendations slide-section variant-radios {
+  justify-content: center;
+}
+
+/* Custom Prices Style | Products Results the Search */
+#shopify-section-top-search #predictive-search #search-results-list .product-item__information a {
+  text-align: start;
+  margin-inline: auto;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+#shopify-section-top-search #predictive-search #search-results-list .product-item__price {
+  justify-content: start;
+  align-items:start!important;
+}
+#shopify-section-top-search #predictive-search #search-results-list .product-item__price .price {
+  font-size: 1.3em;
+  font-weight: 900;
+  color: #135ed1;
+}
+#shopify-section-top-search #predictive-search #search-results-list .card-product-price {
+  align-items:start!important;
+  justify-content: start;
+  flex-direction: column;
+}
+#shopify-section-top-search #predictive-search #search-results-list .card-product-price .installment-payment p,
+#shopify-section-top-search #predictive-search #search-results-list .card-product-price .installment-payment p strong {
+  margin: 0.3em;
+  color: #102d51;
+  text-align: center;
+}
+#shopify-section-top-search #predictive-search #search-results-list .card-product-price .at-price{
+  order:1
+}
+#shopify-section-top-search #predictive-search #search-results-list .card-product-price .current-price{
+  order: 0
+}
+#shopify-section-top-search #predictive-search #search-results-list .card-product-price .installment-payment{
+  order: 3;
+  margin-top: 0.4rem;
+  font-size: 0.875em;
+}
+#shopify-section-top-search #predictive-search #search-results-list .card-product-price .current-price .price-item{
+  color: #135ed1a8;
+  font-size: 1em;
+}
+#shopify-section-top-search #predictive-search #search-results-list .product-item__price .price small {
+  font-size: 0.675em;
+  font-weight: 500;
+}
+#shopify-section-top-search #predictive-search #search-results-list variant-king-combined-listing .swatches {
+  width: 100%!important;
+}
+
+#shopify-section-top-search #predictive-search #search-results-list variant-radios {
+  justify-content: center;
+}
+.btn-envio-imediato, .btn-envio-imediato span{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+}
+.btn-envio-imediato svg{
+  filter:brightness(0);
+}
+
+.btn-envio-imediato:hover svg{
+  filter:inherit;
+}
+
+.btn-personalize{
+  border: 1px solid #000;
+  border-radius: 30rem;
+  padding-inline: 3rem;
+}
+
+.horizontal-list .level0>menu-item>a.btn-personalize:hover:after{
+  display:none
+}
+
+.btn-personalize:hover{
+  background: #000!important;
+  color:#FFF!important;
+}
+
+.product__badges-sale-scrolling.badge-detail-page{
+  background: #000;
+  border-radius: 0
+}
