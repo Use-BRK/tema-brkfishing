@@ -1,1 +1,218 @@
-{"parent":"index.json","context":{"market":"br"},"sections":{"slideshow_8KKtNU":{"settings":{"slide_effect":"fade","content_below_image":false},"blocks":{"slider_item_eBDERN":{"type":"slider_item","disabled":true,"name":"FusionX Times","settings":{"header-d525440292cca52d2c8f33f1ff7df202":null,"image":"shopify:\/\/shop_images\/FULLBANNER-TIMES-FUSION.png","image_mobile":"shopify:\/\/shop_images\/MOBBANNER-TIMES-FUSION.png","local_video":null,"overlay_opacity":0,"link_banner":"shopify:\/\/collections\/times-de-futebol-colecao","header-e3ab00ca354afffbdc5ddfd0101dff6a":null,"slider_effect":"effect_fadeinup","subheading":"","heading":"","description":"","first_button_label":"","first_button_link":"shopify:\/\/collections\/camisa-fusionx-masculino","first_button_style":false,"second_button_label":"","second_button_link":"shopify:\/\/collections\/camisa-fusionx-masculino","second_button_style":false,"header-e30e41421e0be67b0fefd8a0145a821a":null,"content_alignment":"center","content_position":"top-center","content_width":"full_width","content_max_width":100,"content_padding_block":55,"content_padding_inline":55,"header-2ccad45d790ac814b24c85c39710d06c":null,"show_content_background":false,"content_background":"#ffffff","content_box_opacity":100,"header-2510b8a0edb1ca26bad5a5e4af41d04c":null,"content_alignment_mobile":"right"}},"slider_item_jiLA39":{"name":"Amazon","disabled":false,"settings":{"image":"shopify:\/\/shop_images\/Prancheta_1_be1de53c-1aed-4297-89ba-6e68048ec1ac.png","image_mobile":"shopify:\/\/shop_images\/Prancheta_2.png","local_video":null,"overlay_opacity":0,"link_banner":"shopify:\/\/collections\/master-amazon-femininas","first_button_link":"shopify:\/\/collections\/camisa-fusionx-masculino","second_button_link":"shopify:\/\/collections\/camisa-fusionx-masculino","content_alignment":"center","content_position":"top-center","content_padding_block":55,"content_padding_inline":55,"content_alignment_mobile":"right"}},"slider_item_pcE9Pw":{"name":"Maori","settings":{"second_button_label":"","second_button_link":"shopify:\/\/collections\/maori"}},"slider_item_TJiTLz":{"name":"Fusion","settings":{"image":"shopify:\/\/shop_images\/FULLBANNER_NOVO_SITE_CAMISA_FUSIONX_FEM.png","image_mobile":"shopify:\/\/shop_images\/MOBILE_FEM_acb1c9b5-af40-4d51-8005-a4cb5445fc94.png"}}},"block_order":["slider_item_eBDERN","slider_item_jiLA39","slider_item_pcE9Pw","slider_item_TJiTLz"]},"scrolling_text_U3mttg":{"settings":{},"blocks":{"scrolling_text_Bmp7bG":{"settings":{"content":"Frete Fixo R$9,90"}}}},"collection_list_ypj7A8":{"settings":{},"blocks":{"collection_4GqdHP":{"disabled":false,"settings":{}}}},"collection_tab_rUdcr6":{"settings":{"heading":"","header_size":"medium","header_alignment":"center"},"blocks":{"collection_NqMAWp":{"name":"Calçados de Pesca - Envio Full","settings":{"collection_title":"Calçados de Pesca - Envio Full"}}},"name":"Calçados de Pesca - Envio Full"},"collection_tab_CYzLaR":{"settings":{"items_to_show":19,"column_gap":30,"show_arrow":true,"infinite":true,"autorotate_speed":2},"blocks":{}},"shopable_video_Ewz3gp":{"settings":{"items_per_row":5},"blocks":{"video_PEK7xy":{"settings":{"product":"camisa-feminina-de-pesca-brk-rosa-camuflada-com-protecao-uv50","local_video":"shopify:\/\/files\/videos\/01.mp4"}},"video_EyeNX8":{"settings":{"product":"camisa-fusionx-brk-camuflada-verde-preto-capuz-e-protecao-uv50","local_video":"shopify:\/\/files\/videos\/02.mp4"}},"video_EBUtMK":{"settings":{"product":"camisa-de-pesca-brk-fishing-azul-naval-mesclado-com-uv50","local_video":"shopify:\/\/files\/videos\/03.mp4"}},"video_xDJgm7":{"settings":{"product":"camisa-fusionx-brk-feminino-folhas-com-capuz-e-protecao-uv50","local_video":"shopify:\/\/files\/videos\/11.mp4"}},"video_RfYiYA":{"settings":{"product":"camisa-de-pesca-brk-com-capuz-hybrid-off-lure-com-protecao-solar-uv50","local_video":"shopify:\/\/files\/videos\/09.mp4"}},"video_xnyYM6":{"settings":{"product":"camisa-com-capuz-brk-maori-preto-e-branco-com-protecao-solar-uv50","local_video":"shopify:\/\/files\/videos\/27.mp4"}}}},"collection_list_LNdi9y":{"settings":{},"blocks":{"collection_w9KEMn":{"settings":{"collection_title":"Caixas e Estojos"}},"collection_GBUYa3":{"settings":{"collection_title":"Iscas Artificiais"}},"collection_zwPQwE":{"settings":{"collection_title":"Molinetes"}}}}}}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "index.json",
+  "context": {
+    "market": "br"
+  },
+  "sections": {
+    "slideshow_8KKtNU": {
+      "settings": {
+        "slide_effect": "fade",
+        "content_below_image": false
+      },
+      "blocks": {
+        "slider_item_eBDERN": {
+          "type": "slider_item",
+          "disabled": true,
+          "name": "FusionX Times",
+          "settings": {
+            "header-ee229ea786269495cad09bcfd8b57c5d": null,
+            "image": "shopify://shop_images/FULLBANNER-TIMES-FUSION.png",
+            "image_mobile": "shopify://shop_images/MOBBANNER-TIMES-FUSION.png",
+            "local_video": null,
+            "overlay_opacity": 0,
+            "link_banner": "shopify://collections/times-de-futebol-colecao",
+            "header-40161688f143312dd14a57af1c739297": null,
+            "slider_effect": "effect_fadeinup",
+            "subheading": "",
+            "heading": "",
+            "description": "",
+            "first_button_label": "",
+            "first_button_link": "shopify://collections/camisa-fusionx-masculino",
+            "first_button_style": false,
+            "second_button_label": "",
+            "second_button_link": "shopify://collections/camisa-fusionx-masculino",
+            "second_button_style": false,
+            "header-a956ff75bb46298be01100af6d32e16c": null,
+            "content_alignment": "center",
+            "content_position": "top-center",
+            "content_width": "full_width",
+            "content_max_width": 100,
+            "content_padding_block": 55,
+            "content_padding_inline": 55,
+            "header-a1355d5ba004802f3ed20d0d69a802d3": null,
+            "show_content_background": false,
+            "content_background": "#ffffff",
+            "content_box_opacity": 100,
+            "header-04d8b5419cf3e21f9212480f8b8eeeea": null,
+            "content_alignment_mobile": "right"
+          }
+        },
+        "slider_item_jiLA39": {
+          "name": "Amazon",
+          "disabled": false,
+          "settings": {
+            "image": "shopify://shop_images/Prancheta_1_be1de53c-1aed-4297-89ba-6e68048ec1ac.png",
+            "image_mobile": "shopify://shop_images/Prancheta_2.png",
+            "local_video": null,
+            "overlay_opacity": 0,
+            "link_banner": "shopify://collections/master-amazon-femininas",
+            "first_button_link": "shopify://collections/camisa-fusionx-masculino",
+            "second_button_link": "shopify://collections/camisa-fusionx-masculino",
+            "content_alignment": "center",
+            "content_position": "top-center",
+            "content_padding_block": 55,
+            "content_padding_inline": 55,
+            "content_alignment_mobile": "right"
+          }
+        },
+        "slider_item_pcE9Pw": {
+          "name": "Maori",
+          "settings": {
+            "second_button_label": "",
+            "second_button_link": "shopify://collections/maori"
+          }
+        },
+        "slider_item_TJiTLz": {
+          "name": "Fusion",
+          "settings": {
+            "image": "shopify://shop_images/FULLBANNER_NOVO_SITE_CAMISA_FUSIONX_FEM.png",
+            "image_mobile": "shopify://shop_images/MOBILE_FEM_acb1c9b5-af40-4d51-8005-a4cb5445fc94.png"
+          }
+        }
+      },
+      "block_order": [
+        "slider_item_eBDERN",
+        "slider_item_jiLA39",
+        "slider_item_pcE9Pw",
+        "slider_item_TJiTLz"
+      ]
+    },
+    "scrolling_text_U3mttg": {
+      "settings": {},
+      "blocks": {
+        "scrolling_text_Bmp7bG": {
+          "settings": {
+            "content": "Frete Fixo R$9,90"
+          }
+        }
+      }
+    },
+    "collection_list_ypj7A8": {
+      "settings": {},
+      "blocks": {
+        "collection_4GqdHP": {
+          "disabled": false,
+          "settings": {}
+        }
+      }
+    },
+    "collection_tab_rUdcr6": {
+      "settings": {
+        "heading": "",
+        "header_size": "medium",
+        "header_alignment": "center"
+      },
+      "blocks": {
+        "collection_NqMAWp": {
+          "name": "Calçados de Pesca - Envio Full",
+          "settings": {
+            "collection_title": "Calçados de Pesca - Envio Full"
+          }
+        }
+      },
+      "name": "Calçados de Pesca - Envio Full"
+    },
+    "collection_tab_CYzLaR": {
+      "settings": {
+        "items_to_show": 19,
+        "column_gap": 30,
+        "show_arrow": true,
+        "infinite": true,
+        "autorotate_speed": 2
+      },
+      "blocks": {}
+    },
+    "shopable_video_Ewz3gp": {
+      "settings": {
+        "items_per_row": 5
+      },
+      "blocks": {
+        "video_PEK7xy": {
+          "settings": {
+            "product": "camisa-feminina-de-pesca-brk-rosa-camuflada-com-protecao-uv50",
+            "local_video": "shopify://files/videos/01.mp4"
+          }
+        },
+        "video_EyeNX8": {
+          "settings": {
+            "product": "camisa-fusionx-brk-camuflada-verde-preto-capuz-e-protecao-uv50",
+            "local_video": "shopify://files/videos/02.mp4"
+          }
+        },
+        "video_EBUtMK": {
+          "settings": {
+            "product": "camisa-de-pesca-brk-fishing-azul-naval-mesclado-com-uv50",
+            "local_video": "shopify://files/videos/03.mp4"
+          }
+        },
+        "video_xDJgm7": {
+          "settings": {
+            "product": "camisa-fusionx-brk-feminino-folhas-com-capuz-e-protecao-uv50",
+            "local_video": "shopify://files/videos/11.mp4"
+          }
+        },
+        "video_RfYiYA": {
+          "settings": {
+            "product": "camisa-de-pesca-brk-com-capuz-hybrid-off-lure-com-protecao-solar-uv50",
+            "local_video": "shopify://files/videos/09.mp4"
+          }
+        },
+        "video_xnyYM6": {
+          "settings": {
+            "product": "camisa-com-capuz-brk-maori-preto-e-branco-com-protecao-solar-uv50",
+            "local_video": "shopify://files/videos/27.mp4"
+          }
+        }
+      }
+    },
+    "collection_list_LNdi9y": {
+      "settings": {},
+      "blocks": {
+        "collection_w9KEMn": {
+          "settings": {
+            "collection_title": "Caixas e Estojos"
+          }
+        },
+        "collection_GBUYa3": {
+          "settings": {
+            "collection_title": "Iscas Artificiais"
+          }
+        },
+        "collection_zwPQwE": {
+          "settings": {
+            "collection_title": "Molinetes"
+          }
+        }
+      }
+    },
+    "collection_tab_UNybtX": {
+      "settings": {},
+      "blocks": {
+        "collection_DUa6Xx": {
+          "settings": {
+            "collection_title": "Rabanetenses!"
+          }
+        }
+      }
+    }
+  }
+}
