@@ -376,11 +376,6 @@
     },
     "content_for_index": [],
     "blocks": {
-      "pagefly-page-builder": {
-        "type": "shopify://apps/pagefly-page-builder/blocks/app-embed/83e179f7-59a0-4589-8c66-c0dddf959200",
-        "disabled": false,
-        "settings": {}
-      },
       "17730292167556765394": {
         "type": "shopify://apps/pagbrasil-app-companion/blocks/app_embedded_extra_info/356201f0-7b27-4511-ac69-c1627db6da45",
         "disabled": false,
@@ -470,6 +465,11 @@
           "switch_on_hover": true,
           "preselect_variant": false
         }
+      },
+      "pagefly-page-builder": {
+        "type": "shopify://apps/pagefly-page-builder/blocks/app-embed/83e179f7-59a0-4589-8c66-c0dddf959200",
+        "disabled": true,
+        "settings": {}
       }
     },
     "color_schemes": {
