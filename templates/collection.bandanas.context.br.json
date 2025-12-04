@@ -1,1 +1,33 @@
-{"parent":"collection.bandanas.json","context":{"market":"br"},"sections":{}}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "collection.bandanas.json",
+  "context": {
+    "market": "br"
+  },
+  "sections": {
+    "banner": {
+      "settings": {
+        "background_image": "shopify://shop_images/banner-bandas-fishing.webp",
+        "overlay_opacity": 0
+      },
+      "blocks": {
+        "breadcrumb_MJHLQb": {
+          "disabled": true,
+          "settings": {}
+        },
+        "heading_fntt9G": {
+          "disabled": true,
+          "settings": {}
+        }
+      }
+    }
+  }
+}
