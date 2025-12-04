@@ -16,7 +16,9 @@
     "banner": {
       "settings": {
         "background_image": "shopify://shop_images/banner-bandas-fishing.webp",
-        "overlay_opacity": 0
+        "overlay_opacity": 0,
+        "alignment": "center",
+        "height": "adapt"
       },
       "blocks": {
         "breadcrumb_MJHLQb": {
