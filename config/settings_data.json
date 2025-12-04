@@ -1,1 +1,666 @@
-{"current":{"purchase_code":"09e4bafd-a4bc-4423-91bc-db7568d0d674","favicon":"shopify:\/\/shop_images\/flaticon.png","logo":"shopify:\/\/shop_images\/logo-fishing-svg.svg","desktop_logo_width":156,"mobile_logo_width":126,"page_width":1200,"fluid_container_width":1410,"spacing_desktop":90,"space_mobile":50,"body_font_size":15,"heading_text_transform":"unset","heading_letter_spacing":"negative","menu_font":"heading_font","enable_browser_tab_notifications":false,"first_notification":"","secondary_notification":"","sale_badge_type":"percent","sale_badge_addons":"countdown","show_new":false,"new_background":"#3456e6","pre_order_background":"#6a33d8","sold_out_background":"#666666","custom_badge_background":"#135ed1","product_style":"card","show_detail":false,"show_quick_view":false,"show_wishlist":true,"show_compare":false,"show_add_cart":false,"show_variant":true,"show_quantity_input":true,"product_alignment":"start","product_size":13,"product_truncation_title":"2","price_size":12,"show_vendor":false,"show_secondary_image":true,"product_image_ratio":"adapt","enable_catalog_mode":false,"show_action_on_mobile":true,"enable_color_swatches":false,"limit_color":"3","swatch_item_type":"variant_images","color_swatch_trigger":"Color,Colour,Cor,Cores","size_trigger":"Size, Taglia, Tamanho","search_type":"drawer","search_result":"products","enable_search_suggestion":true,"popular_key_word":"Camisa Fusion, Bonés de Pesca, Óculos Polarizados","collection_suggestion":"mais-vendidos-masculino","show_search_price":true,"show_message_when_remove":false,"action_after_add_cart":"open_drawer","show_on_minicart_cart_page":false,"free_shipping_minimum":"299","show_duration_on_minicart_cart_page":false,"enable_cart_note":true,"enable_discount_code":true,"enable_gift_wrap":true,"choose_gift_wrap_product":"digital-gift-card","product_recommendations_heading":"","minicart_type":"show_inside","show_on_cart_page":false,"product_recommendations_type":"select","select_product_recommendations":[],"show_estimate_shipping_rates":false,"show_delivery_day":false,"facebook":"https:\/\/pt-br.facebook.com\/brkfishingbrasil","instagram":"https:\/\/www.instagram.com\/brk_fishing","twitter":"","youtube":"https:\/\/www.youtube.com\/channel\/UCBeBRK-V7qxQky4kNPq0tdw","tiktok":"","pinterest":"","vimeo":"","linkedin":"","whatsapp":"","enable_preload":true,"preload_page":"spin","zoom_image":true,"scroll_animation":"fade_in","store_phone":"(34) 3219-4697","store_email":"contato@usebrk.com.br","store_address":"R. Francisco Vieira de Paiva, 49 - B. Roosevelt, Uberlândia\/MG","store_page":"our-store","heading_cookies":"","content_cookies":"<p>Utilizamos cookies para melhorar sua experiência de navegação, exibir anúncios ou conteúdo personalizado e analisar nosso tráfego. Ao clicar em \"<strong>Permitir cookies<\/strong>\", você concorda com o uso de cookies.<\/p>","label_allow":"Aceitar Cookies","label_refuse":"","show_check_box_in_cart":false,"show_checkbox_in_product_page":false,"show_check_box_in_quick_view":false,"page_terms_conditions":"term-and-conditions","rate_color":"#ea0606","sections":{"custom-colors":{"type":"custom-colors","blocks":{"color_aQceXa":{"type":"color","name":"Laranja","settings":{"heading":"Laranja","color_code":"#ff6700"}},"color_3aWxeh":{"type":"color","name":"Preto","settings":{"heading":"Preto","color_code":"#000000"}},"color_PgGGzQ":{"type":"color","name":"Marrom","settings":{"heading":"Marrom","color_code":"#a95b00"}},"color_NHjKpq":{"type":"color","name":"Vermelho","settings":{"heading":"Vermelho","color_code":"#ed3535"}},"color_YeRgVN":{"type":"color","name":"Verde","settings":{"heading":"Verde","color_code":"#14854e"}},"color_xVtdmD":{"type":"color","name":"Azul-Marinho","settings":{"heading":"Azul-Marinho","color_code":"#0a2594"}},"color_EQHiCK":{"type":"color","name":"Bege","settings":{"heading":"Bege","color_code":"#e2d0aa"}},"color_fyCTq6":{"type":"color","name":"Branco","settings":{"heading":"Branco","color_code":"#ffffff"}},"color_CJBxRL":{"type":"color","name":"Bronze","settings":{"heading":"Bronze","color_code":"#da9300"}},"color_F9WiwF":{"type":"color","name":"Gold","settings":{"heading":"Gold","color_code":"#e6b900"}},"color_9TFcrK":{"type":"color","name":"Grisalho","settings":{"heading":"Grisalho","color_code":"#d1d1d1"}},"color_tP7dUi":{"type":"color","name":"Ouro Rosa","settings":{"heading":"Ouro Rosa","color_code":"#89437b"}},"color_qdXpBd":{"type":"color","name":"Rosa","settings":{"heading":"Rosa","color_code":"#f9d5eb"}},"color_DFThy8":{"type":"color","name":"Roxo","settings":{"heading":"Roxo","color_code":"#6a33d8"}},"color_Qyr4jP":{"type":"color","name":"Silver","settings":{"heading":"Silver","color_code":"#dadada"}},"color_wCKqaY":{"type":"color","name":"Transparente","settings":{"heading":"Transparente","color_code":""}},"color_E9GLrD":{"type":"color","name":"Amarela","settings":{"heading":"Amarela","color_code":"#efec00"}},"color_gTBGU6":{"type":"color","name":"Azul","settings":{"heading":"Azul","color_code":"#3456e6"}},"color_fWjae6":{"type":"color","name":"Branco","settings":{"heading":"Branco","color_code":"#ffffff"}},"color_hibBFB":{"type":"color","name":"Camuflagem","settings":{"heading":"Camuflagem","color_code":"rgba(0,0,0,0)","color_image":"shopify:\/\/shop_images\/camuflagem.jpg"}},"color_JMh63j":{"type":"color","settings":{"heading":"Multicolorido","color_code":"","color_image":"shopify:\/\/shop_images\/camuflagem.jpg"}}},"block_order":["color_aQceXa","color_3aWxeh","color_PgGGzQ","color_NHjKpq","color_YeRgVN","color_xVtdmD","color_EQHiCK","color_fyCTq6","color_CJBxRL","color_F9WiwF","color_9TFcrK","color_tP7dUi","color_qdXpBd","color_DFThy8","color_Qyr4jP","color_wCKqaY","color_E9GLrD","color_gTBGU6","color_fWjae6","color_hibBFB","color_JMh63j"],"settings":{}},"product-quickview":{"type":"product-quickview","blocks":{"badges_NhM4GM":{"type":"badges","settings":{}},"title_txJBrx":{"type":"title","settings":{"show_vendor":false}},"rate_QwRHyp":{"type":"rate","settings":{}},"price_NNg9B8":{"type":"price","settings":{}},"description_pKXRJa":{"type":"description","settings":{}},"variant_picker_MQYkTJ":{"type":"variant_picker","settings":{}},"buy_buttons_pDYNX9":{"type":"buy_buttons","settings":{"show_dynamic_checkout":true}}},"block_order":["badges_NhM4GM","title_txJBrx","rate_QwRHyp","price_NNg9B8","description_pKXRJa","variant_picker_MQYkTJ","buy_buttons_pDYNX9"],"settings":{}},"mobile-navigation-bar":{"type":"mobile-navigation-bar","settings":{}},"fake-order":{"type":"fake-order","settings":{"show_fake_order":false,"disable_mobile":false,"fake_product":["anime-t-shirt-printed-short-sleeve","balloon-sleeve-blouse-square-neck","basic-bright-green-rib-extreme-crop","braid-detailed-sleeveless-flow-top"],"fake_user":"Jonson (California) | Tony (Texas) | Bruno (New York) | Eren (Ohio) | Lauren (Washington) | Flortino (California) | Blue (Ohio)","text_verify":"Verify","delay_time":"5000","display_time":"6000"}},"top-search":{"type":"top-search","settings":{}}},"content_for_index":[],"blocks":{"12334822184266723110":{"type":"shopify:\/\/apps\/sa-variants\/blocks\/variant-king-combined-listing\/ff68b20f-8c8f-491e-92bf-3e5b8f17ef88","disabled":false,"settings":{"alignment":"left","swatch_location":"After image","switch_on_hover":true,"preselect_variant":false}},"pagefly-page-builder":{"type":"shopify:\/\/apps\/pagefly-page-builder\/blocks\/app-embed\/83e179f7-59a0-4589-8c66-c0dddf959200","disabled":false,"settings":{}},"17730292167556765394":{"type":"shopify:\/\/apps\/pagbrasil-app-companion\/blocks\/app_embedded_extra_info\/356201f0-7b27-4511-ac69-c1627db6da45","disabled":false,"settings":{}},"15184704725445319147":{"type":"shopify:\/\/apps\/pagbrasil-app-companion\/blocks\/app_embedded_pagshield\/356201f0-7b27-4511-ac69-c1627db6da45","disabled":false,"settings":{}},"4893908813801555860":{"type":"shopify:\/\/apps\/pagbrasil-app-companion\/blocks\/app_embedded_pagstream\/356201f0-7b27-4511-ac69-c1627db6da45","disabled":false,"settings":{}},"17073967039101724643":{"type":"shopify:\/\/apps\/kokfy-whatsapp-button\/blocks\/kokfy-whatsapp-button\/e75d6be6-5b97-463a-9d4c-1c62f00eefd0","disabled":false,"settings":{"start_text":"Olá, vim da loja Brk Fishing e preciso de ajuda!","country_code":"55","whatsapp":"553432194697","product_url":true,"where":"all","icon":"whats-svg1","animation_duration":"animate__infinite","animation":"no-animation","position":"left","background_icon":"#28C740","color_icon":"#ffffff","image_size":52,"size_icon":32,"bottom_space":72,"side_space":30}},"2567389343055140935":{"type":"shopify:\/\/apps\/microsoft-clarity\/blocks\/clarity_js\/31c3d126-8116-4b4a-8ba1-baeda7c4aeea","disabled":false,"settings":{}},"2200952712151285029":{"type":"shopify:\/\/apps\/microsoft-clarity\/blocks\/brandAgents_js\/31c3d126-8116-4b4a-8ba1-baeda7c4aeea","disabled":false,"settings":{}},"16555213172727936593":{"type":"shopify:\/\/apps\/ns-discount-in-cart\/blocks\/discount_block\/0cbbbcdd-bf54-49df-885c-9ca3fd52a671","disabled":true,"settings":{}},"848591003871763955":{"type":"shopify:\/\/apps\/shortly-affiliate-marketing\/blocks\/app-embed-block\/4c3d9aaa-3566-4200-9c43-34b476f6332a","disabled":false,"settings":{}},"1505163441232620700":{"type":"shopify:\/\/apps\/intelipost\/blocks\/core\/167fd468-2ada-45e2-9d34-34022af59729","disabled":true,"settings":{}},"1530068250781986104":{"type":"shopify:\/\/apps\/fbp-fast-bundle\/blocks\/fast_bundle\/9e87fbe2-9041-4c23-acf5-322413994cef","disabled":false,"settings":{"home":true}},"7924418359578431505":{"type":"shopify:\/\/apps\/seoant-ai-seo\/blocks\/seoant-core\/8e57283b-dcb0-4f7b-a947-fb5c57a0d59d","disabled":false,"settings":{}},"18228966181090706294":{"type":"shopify:\/\/apps\/selleasy\/blocks\/app-embed\/790c1a03-a71f-4bc1-9869-00dad526d3c2","disabled":false,"settings":{"storefrontAccessToken":""}}},"color_schemes":{"default":{"settings":{"background":"#ffffff","background_gradient":"","primary_color":"#135ed1","text_color":"#444444","heading_color":"#111111","border_color":"#ebebeb","btn_primary_color":"#ffffff","btn_primary_background":"#135ed1","btn_primary_gradient":"","btn_primary_hover_color":"#ffffff","btn_primary_hover_background":"#628ac7","btn_primary_hover_background_gradient":"","btn_outline_color":"#111111","btn_outline_border_color":"#111111","button_link_color":"#111111","button_link_hover_color":"#111111"}},"scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9":{"settings":{"background":"#111111","background_gradient":"","primary_color":"#999999","text_color":"#ffffff","heading_color":"#ffffff","border_color":"#ebebeb","btn_primary_color":"#ffffff","btn_primary_background":"#111111","btn_primary_gradient":"","btn_primary_hover_color":"#111111","btn_primary_hover_background":"#ffffff","btn_primary_hover_background_gradient":"","btn_outline_color":"#111111","btn_outline_border_color":"#111111","button_link_color":"#111111","button_link_hover_color":"#111111"}},"scheme-bb1431b0-be4a-4b03-a450-f572c07e3904":{"settings":{"background":"#253230","background_gradient":"","primary_color":"#d0473e","text_color":"#f3fc81","heading_color":"#f3fc81","border_color":"#ebebeb","btn_primary_color":"#ffffff","btn_primary_background":"#111111","btn_primary_gradient":"","btn_primary_hover_color":"#ffffff","btn_primary_hover_background":"#111111","btn_primary_hover_background_gradient":"","btn_outline_color":"#111111","btn_outline_border_color":"#111111","button_link_color":"#111111","button_link_hover_color":"#111111"}},"scheme-3d10de96-a479-49bd-819c-e044746b4f3e":{"settings":{"background":"#ffffff","background_gradient":"","primary_color":"#d0473e","text_color":"#ffffff","heading_color":"#ffffff","border_color":"#ebebeb","btn_primary_color":"#111111","btn_primary_background":"#ffffff","btn_primary_gradient":"","btn_primary_hover_color":"#ffffff","btn_primary_hover_background":"#111111","btn_primary_hover_background_gradient":"","btn_outline_color":"#111111","btn_outline_border_color":"#111111","button_link_color":"#111111","button_link_hover_color":"#111111"}},"scheme-2b5c6c91-201d-4fb1-aba3-e6d562656976":{"settings":{"background":"#f5f5f5","background_gradient":"","primary_color":"#d0473e","text_color":"#444444","heading_color":"#111111","border_color":"#ebebeb","btn_primary_color":"#ffffff","btn_primary_background":"#111111","btn_primary_gradient":"","btn_primary_hover_color":"#ffffff","btn_primary_hover_background":"#111111","btn_primary_hover_background_gradient":"","btn_outline_color":"#111111","btn_outline_border_color":"#111111","button_link_color":"#111111","button_link_hover_color":"#111111"}},"scheme-accf3b11-ba40-4a3e-bafb-243ece6683ec":{"settings":{"background":"#ffffff","background_gradient":"","primary_color":"#d0473e","text_color":"#111111","heading_color":"#111111","border_color":"#ebebeb","btn_primary_color":"#ffffff","btn_primary_background":"#111111","btn_primary_gradient":"","btn_primary_hover_color":"#ffffff","btn_primary_hover_background":"#111111","btn_primary_hover_background_gradient":"","btn_outline_color":"#111111","btn_outline_border_color":"#111111","button_link_color":"#111111","button_link_hover_color":"#111111"}},"scheme-c78bfb21-5aff-497b-be68-98f01962f564":{"settings":{"background":"#ffffff","background_gradient":"","primary_color":"#d0473e","text_color":"#111111","heading_color":"#111111","border_color":"#ebebeb","btn_primary_color":"#ffffff","btn_primary_background":"#111111","btn_primary_gradient":"","btn_primary_hover_color":"#ffffff","btn_primary_hover_background":"#111111","btn_primary_hover_background_gradient":"","btn_outline_color":"#111111","btn_outline_border_color":"#111111","button_link_color":"#111111","button_link_hover_color":"#111111"}},"scheme-502630ec-91d1-4cab-9d06-312eedf6b2da":{"settings":{"background":"#135ed1","background_gradient":"","primary_color":"#ffffff","text_color":"#ffffff","heading_color":"#ffffff","border_color":"#ebebeb","btn_primary_color":"#111111","btn_primary_background":"#ffffff","btn_primary_gradient":"","btn_primary_hover_color":"#ebebeb","btn_primary_hover_background":"#111111","btn_primary_hover_background_gradient":"","btn_outline_color":"#111111","btn_outline_border_color":"#111111","button_link_color":"#111111","button_link_hover_color":"#111111"}},"scheme-3e8af4c8-b99d-456e-90a0-9e470643087b":{"settings":{"background":"#135ed1","background_gradient":"","primary_color":"#ffffff","text_color":"#ffffff","heading_color":"#ffffff","border_color":"#ffffff","btn_primary_color":"#ffffff","btn_primary_background":"#135ed1","btn_primary_gradient":"","btn_primary_hover_color":"#f1f1f1","btn_primary_hover_background":"#111111","btn_primary_hover_background_gradient":"","btn_outline_color":"#ffffff","btn_outline_border_color":"#ffffff","button_link_color":"#ffffff","button_link_hover_color":"#ebebeb"}}}},"presets":{"Default":{}},"platform_customizations":{"custom_css":[".minicart__product-name a {display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;}"]}}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "purchase_code": "09e4bafd-a4bc-4423-91bc-db7568d0d674",
+    "favicon": "shopify://shop_images/flaticon.png",
+    "logo": "shopify://shop_images/logo-fishing-svg.svg",
+    "desktop_logo_width": 156,
+    "mobile_logo_width": 126,
+    "page_width": 1200,
+    "fluid_container_width": 1410,
+    "spacing_desktop": 90,
+    "space_mobile": 50,
+    "body_font_size": 15,
+    "heading_text_transform": "unset",
+    "heading_letter_spacing": "negative",
+    "menu_font": "heading_font",
+    "enable_browser_tab_notifications": false,
+    "first_notification": "",
+    "secondary_notification": "",
+    "sale_badge_type": "percent",
+    "sale_badge_addons": "countdown",
+    "show_new": false,
+    "new_background": "#3456e6",
+    "pre_order_background": "#6a33d8",
+    "sold_out_background": "#666666",
+    "custom_badge_background": "#135ed1",
+    "product_style": "card",
+    "show_detail": false,
+    "show_quick_view": false,
+    "show_wishlist": true,
+    "show_compare": false,
+    "show_add_cart": false,
+    "show_variant": true,
+    "show_quantity_input": true,
+    "product_alignment": "start",
+    "product_size": 13,
+    "product_truncation_title": "2",
+    "price_size": 12,
+    "show_vendor": false,
+    "show_secondary_image": true,
+    "product_image_ratio": "adapt",
+    "enable_catalog_mode": false,
+    "show_action_on_mobile": true,
+    "enable_color_swatches": false,
+    "limit_color": "3",
+    "swatch_item_type": "variant_images",
+    "color_swatch_trigger": "Color,Colour,Cor,Cores",
+    "size_trigger": "Size, Taglia, Tamanho",
+    "search_type": "drawer",
+    "search_result": "products",
+    "enable_search_suggestion": true,
+    "popular_key_word": "Camisa Fusion, Bonés de Pesca, Óculos Polarizados",
+    "collection_suggestion": "mais-vendidos-masculino",
+    "show_search_price": true,
+    "show_message_when_remove": false,
+    "action_after_add_cart": "open_drawer",
+    "show_on_minicart_cart_page": false,
+    "free_shipping_minimum": "299",
+    "show_duration_on_minicart_cart_page": false,
+    "enable_cart_note": true,
+    "enable_discount_code": true,
+    "enable_gift_wrap": true,
+    "choose_gift_wrap_product": "digital-gift-card",
+    "product_recommendations_heading": "",
+    "minicart_type": "show_inside",
+    "show_on_cart_page": false,
+    "product_recommendations_type": "select",
+    "select_product_recommendations": [],
+    "show_estimate_shipping_rates": false,
+    "show_delivery_day": false,
+    "facebook": "https://pt-br.facebook.com/brkfishingbrasil",
+    "instagram": "https://www.instagram.com/brk_fishing",
+    "twitter": "",
+    "youtube": "https://www.youtube.com/channel/UCBeBRK-V7qxQky4kNPq0tdw",
+    "tiktok": "",
+    "pinterest": "",
+    "vimeo": "",
+    "linkedin": "",
+    "whatsapp": "",
+    "enable_preload": true,
+    "preload_page": "spin",
+    "zoom_image": true,
+    "scroll_animation": "fade_in",
+    "store_phone": "(34) 3219-4697",
+    "store_email": "contato@usebrk.com.br",
+    "store_address": "R. Francisco Vieira de Paiva, 49 - B. Roosevelt, Uberlândia/MG",
+    "store_page": "our-store",
+    "heading_cookies": "",
+    "content_cookies": "<p>Utilizamos cookies para melhorar sua experiência de navegação, exibir anúncios ou conteúdo personalizado e analisar nosso tráfego. Ao clicar em \"<strong>Permitir cookies</strong>\", você concorda com o uso de cookies.</p>",
+    "label_allow": "Aceitar Cookies",
+    "label_refuse": "",
+    "show_check_box_in_cart": false,
+    "show_checkbox_in_product_page": false,
+    "show_check_box_in_quick_view": false,
+    "page_terms_conditions": "term-and-conditions",
+    "rate_color": "#ea0606",
+    "sections": {
+      "custom-colors": {
+        "type": "custom-colors",
+        "blocks": {
+          "color_aQceXa": {
+            "type": "color",
+            "name": "Laranja",
+            "settings": {
+              "heading": "Laranja",
+              "color_code": "#ff6700"
+            }
+          },
+          "color_3aWxeh": {
+            "type": "color",
+            "name": "Preto",
+            "settings": {
+              "heading": "Preto",
+              "color_code": "#000000"
+            }
+          },
+          "color_PgGGzQ": {
+            "type": "color",
+            "name": "Marrom",
+            "settings": {
+              "heading": "Marrom",
+              "color_code": "#a95b00"
+            }
+          },
+          "color_NHjKpq": {
+            "type": "color",
+            "name": "Vermelho",
+            "settings": {
+              "heading": "Vermelho",
+              "color_code": "#ed3535"
+            }
+          },
+          "color_YeRgVN": {
+            "type": "color",
+            "name": "Verde",
+            "settings": {
+              "heading": "Verde",
+              "color_code": "#14854e"
+            }
+          },
+          "color_xVtdmD": {
+            "type": "color",
+            "name": "Azul-Marinho",
+            "settings": {
+              "heading": "Azul-Marinho",
+              "color_code": "#0a2594"
+            }
+          },
+          "color_EQHiCK": {
+            "type": "color",
+            "name": "Bege",
+            "settings": {
+              "heading": "Bege",
+              "color_code": "#e2d0aa"
+            }
+          },
+          "color_fyCTq6": {
+            "type": "color",
+            "name": "Branco",
+            "settings": {
+              "heading": "Branco",
+              "color_code": "#ffffff"
+            }
+          },
+          "color_CJBxRL": {
+            "type": "color",
+            "name": "Bronze",
+            "settings": {
+              "heading": "Bronze",
+              "color_code": "#da9300"
+            }
+          },
+          "color_F9WiwF": {
+            "type": "color",
+            "name": "Gold",
+            "settings": {
+              "heading": "Gold",
+              "color_code": "#e6b900"
+            }
+          },
+          "color_9TFcrK": {
+            "type": "color",
+            "name": "Grisalho",
+            "settings": {
+              "heading": "Grisalho",
+              "color_code": "#d1d1d1"
+            }
+          },
+          "color_tP7dUi": {
+            "type": "color",
+            "name": "Ouro Rosa",
+            "settings": {
+              "heading": "Ouro Rosa",
+              "color_code": "#89437b"
+            }
+          },
+          "color_qdXpBd": {
+            "type": "color",
+            "name": "Rosa",
+            "settings": {
+              "heading": "Rosa",
+              "color_code": "#f9d5eb"
+            }
+          },
+          "color_DFThy8": {
+            "type": "color",
+            "name": "Roxo",
+            "settings": {
+              "heading": "Roxo",
+              "color_code": "#6a33d8"
+            }
+          },
+          "color_Qyr4jP": {
+            "type": "color",
+            "name": "Silver",
+            "settings": {
+              "heading": "Silver",
+              "color_code": "#dadada"
+            }
+          },
+          "color_wCKqaY": {
+            "type": "color",
+            "name": "Transparente",
+            "settings": {
+              "heading": "Transparente",
+              "color_code": ""
+            }
+          },
+          "color_E9GLrD": {
+            "type": "color",
+            "name": "Amarela",
+            "settings": {
+              "heading": "Amarela",
+              "color_code": "#efec00"
+            }
+          },
+          "color_gTBGU6": {
+            "type": "color",
+            "name": "Azul",
+            "settings": {
+              "heading": "Azul",
+              "color_code": "#3456e6"
+            }
+          },
+          "color_fWjae6": {
+            "type": "color",
+            "name": "Branco",
+            "settings": {
+              "heading": "Branco",
+              "color_code": "#ffffff"
+            }
+          },
+          "color_hibBFB": {
+            "type": "color",
+            "name": "Camuflagem",
+            "settings": {
+              "heading": "Camuflagem",
+              "color_code": "rgba(0,0,0,0)",
+              "color_image": "shopify://shop_images/camuflagem.jpg"
+            }
+          },
+          "color_JMh63j": {
+            "type": "color",
+            "settings": {
+              "heading": "Multicolorido",
+              "color_code": "",
+              "color_image": "shopify://shop_images/camuflagem.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "color_aQceXa",
+          "color_3aWxeh",
+          "color_PgGGzQ",
+          "color_NHjKpq",
+          "color_YeRgVN",
+          "color_xVtdmD",
+          "color_EQHiCK",
+          "color_fyCTq6",
+          "color_CJBxRL",
+          "color_F9WiwF",
+          "color_9TFcrK",
+          "color_tP7dUi",
+          "color_qdXpBd",
+          "color_DFThy8",
+          "color_Qyr4jP",
+          "color_wCKqaY",
+          "color_E9GLrD",
+          "color_gTBGU6",
+          "color_fWjae6",
+          "color_hibBFB",
+          "color_JMh63j"
+        ],
+        "settings": {}
+      },
+      "product-quickview": {
+        "type": "product-quickview",
+        "blocks": {
+          "badges_NhM4GM": {
+            "type": "badges",
+            "settings": {}
+          },
+          "title_txJBrx": {
+            "type": "title",
+            "settings": {
+              "show_vendor": false
+            }
+          },
+          "rate_QwRHyp": {
+            "type": "rate",
+            "settings": {}
+          },
+          "price_NNg9B8": {
+            "type": "price",
+            "settings": {}
+          },
+          "description_pKXRJa": {
+            "type": "description",
+            "settings": {}
+          },
+          "variant_picker_MQYkTJ": {
+            "type": "variant_picker",
+            "settings": {}
+          },
+          "buy_buttons_pDYNX9": {
+            "type": "buy_buttons",
+            "settings": {
+              "show_dynamic_checkout": true
+            }
+          }
+        },
+        "block_order": [
+          "badges_NhM4GM",
+          "title_txJBrx",
+          "rate_QwRHyp",
+          "price_NNg9B8",
+          "description_pKXRJa",
+          "variant_picker_MQYkTJ",
+          "buy_buttons_pDYNX9"
+        ],
+        "settings": {}
+      },
+      "mobile-navigation-bar": {
+        "type": "mobile-navigation-bar",
+        "settings": {}
+      },
+      "fake-order": {
+        "type": "fake-order",
+        "settings": {
+          "show_fake_order": false,
+          "disable_mobile": false,
+          "fake_product": [
+            "anime-t-shirt-printed-short-sleeve",
+            "balloon-sleeve-blouse-square-neck",
+            "basic-bright-green-rib-extreme-crop",
+            "braid-detailed-sleeveless-flow-top"
+          ],
+          "fake_user": "Jonson (California) | Tony (Texas) | Bruno (New York) | Eren (Ohio) | Lauren (Washington) | Flortino (California) | Blue (Ohio)",
+          "text_verify": "Verify",
+          "delay_time": "5000",
+          "display_time": "6000"
+        }
+      },
+      "top-search": {
+        "type": "top-search",
+        "settings": {}
+      }
+    },
+    "content_for_index": [],
+    "blocks": {
+      "pagefly-page-builder": {
+        "type": "shopify://apps/pagefly-page-builder/blocks/app-embed/83e179f7-59a0-4589-8c66-c0dddf959200",
+        "disabled": false,
+        "settings": {}
+      },
+      "17730292167556765394": {
+        "type": "shopify://apps/pagbrasil-app-companion/blocks/app_embedded_extra_info/356201f0-7b27-4511-ac69-c1627db6da45",
+        "disabled": false,
+        "settings": {}
+      },
+      "15184704725445319147": {
+        "type": "shopify://apps/pagbrasil-app-companion/blocks/app_embedded_pagshield/356201f0-7b27-4511-ac69-c1627db6da45",
+        "disabled": false,
+        "settings": {}
+      },
+      "4893908813801555860": {
+        "type": "shopify://apps/pagbrasil-app-companion/blocks/app_embedded_pagstream/356201f0-7b27-4511-ac69-c1627db6da45",
+        "disabled": false,
+        "settings": {}
+      },
+      "17073967039101724643": {
+        "type": "shopify://apps/kokfy-whatsapp-button/blocks/kokfy-whatsapp-button/e75d6be6-5b97-463a-9d4c-1c62f00eefd0",
+        "disabled": false,
+        "settings": {
+          "start_text": "Olá, vim da loja Brk Fishing e preciso de ajuda!",
+          "country_code": "55",
+          "whatsapp": "553432194697",
+          "product_url": true,
+          "where": "all",
+          "icon": "whats-svg1",
+          "animation_duration": "animate__infinite",
+          "animation": "no-animation",
+          "position": "left",
+          "background_icon": "#28C740",
+          "color_icon": "#ffffff",
+          "image_size": 52,
+          "size_icon": 32,
+          "bottom_space": 72,
+          "side_space": 30
+        }
+      },
+      "2567389343055140935": {
+        "type": "shopify://apps/microsoft-clarity/blocks/clarity_js/31c3d126-8116-4b4a-8ba1-baeda7c4aeea",
+        "disabled": false,
+        "settings": {}
+      },
+      "2200952712151285029": {
+        "type": "shopify://apps/microsoft-clarity/blocks/brandAgents_js/31c3d126-8116-4b4a-8ba1-baeda7c4aeea",
+        "disabled": false,
+        "settings": {}
+      },
+      "16555213172727936593": {
+        "type": "shopify://apps/ns-discount-in-cart/blocks/discount_block/0cbbbcdd-bf54-49df-885c-9ca3fd52a671",
+        "disabled": true,
+        "settings": {}
+      },
+      "848591003871763955": {
+        "type": "shopify://apps/shortly-affiliate-marketing/blocks/app-embed-block/4c3d9aaa-3566-4200-9c43-34b476f6332a",
+        "disabled": false,
+        "settings": {}
+      },
+      "1505163441232620700": {
+        "type": "shopify://apps/intelipost/blocks/core/167fd468-2ada-45e2-9d34-34022af59729",
+        "disabled": true,
+        "settings": {}
+      },
+      "1530068250781986104": {
+        "type": "shopify://apps/fbp-fast-bundle/blocks/fast_bundle/9e87fbe2-9041-4c23-acf5-322413994cef",
+        "disabled": false,
+        "settings": {
+          "home": true
+        }
+      },
+      "7924418359578431505": {
+        "type": "shopify://apps/seoant-ai-seo/blocks/seoant-core/8e57283b-dcb0-4f7b-a947-fb5c57a0d59d",
+        "disabled": false,
+        "settings": {}
+      },
+      "18228966181090706294": {
+        "type": "shopify://apps/selleasy/blocks/app-embed/790c1a03-a71f-4bc1-9869-00dad526d3c2",
+        "disabled": false,
+        "settings": {
+          "storefrontAccessToken": ""
+        }
+      },
+      "12334822184266723110": {
+        "type": "shopify://apps/sa-variants/blocks/variant-king-combined-listing/ff68b20f-8c8f-491e-92bf-3e5b8f17ef88",
+        "disabled": true,
+        "settings": {
+          "alignment": "left",
+          "swatch_location": "After image",
+          "switch_on_hover": true,
+          "preselect_variant": false
+        }
+      }
+    },
+    "color_schemes": {
+      "default": {
+        "settings": {
+          "background": "#ffffff",
+          "background_gradient": "",
+          "primary_color": "#135ed1",
+          "text_color": "#444444",
+          "heading_color": "#111111",
+          "border_color": "#ebebeb",
+          "btn_primary_color": "#ffffff",
+          "btn_primary_background": "#135ed1",
+          "btn_primary_gradient": "",
+          "btn_primary_hover_color": "#ffffff",
+          "btn_primary_hover_background": "#628ac7",
+          "btn_primary_hover_background_gradient": "",
+          "btn_outline_color": "#111111",
+          "btn_outline_border_color": "#111111",
+          "button_link_color": "#111111",
+          "button_link_hover_color": "#111111"
+        }
+      },
+      "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9": {
+        "settings": {
+          "background": "#111111",
+          "background_gradient": "",
+          "primary_color": "#999999",
+          "text_color": "#ffffff",
+          "heading_color": "#ffffff",
+          "border_color": "#ebebeb",
+          "btn_primary_color": "#ffffff",
+          "btn_primary_background": "#111111",
+          "btn_primary_gradient": "",
+          "btn_primary_hover_color": "#111111",
+          "btn_primary_hover_background": "#ffffff",
+          "btn_primary_hover_background_gradient": "",
+          "btn_outline_color": "#111111",
+          "btn_outline_border_color": "#111111",
+          "button_link_color": "#111111",
+          "button_link_hover_color": "#111111"
+        }
+      },
+      "scheme-bb1431b0-be4a-4b03-a450-f572c07e3904": {
+        "settings": {
+          "background": "#253230",
+          "background_gradient": "",
+          "primary_color": "#d0473e",
+          "text_color": "#f3fc81",
+          "heading_color": "#f3fc81",
+          "border_color": "#ebebeb",
+          "btn_primary_color": "#ffffff",
+          "btn_primary_background": "#111111",
+          "btn_primary_gradient": "",
+          "btn_primary_hover_color": "#ffffff",
+          "btn_primary_hover_background": "#111111",
+          "btn_primary_hover_background_gradient": "",
+          "btn_outline_color": "#111111",
+          "btn_outline_border_color": "#111111",
+          "button_link_color": "#111111",
+          "button_link_hover_color": "#111111"
+        }
+      },
+      "scheme-3d10de96-a479-49bd-819c-e044746b4f3e": {
+        "settings": {
+          "background": "#ffffff",
+          "background_gradient": "",
+          "primary_color": "#d0473e",
+          "text_color": "#ffffff",
+          "heading_color": "#ffffff",
+          "border_color": "#ebebeb",
+          "btn_primary_color": "#111111",
+          "btn_primary_background": "#ffffff",
+          "btn_primary_gradient": "",
+          "btn_primary_hover_color": "#ffffff",
+          "btn_primary_hover_background": "#111111",
+          "btn_primary_hover_background_gradient": "",
+          "btn_outline_color": "#111111",
+          "btn_outline_border_color": "#111111",
+          "button_link_color": "#111111",
+          "button_link_hover_color": "#111111"
+        }
+      },
+      "scheme-2b5c6c91-201d-4fb1-aba3-e6d562656976": {
+        "settings": {
+          "background": "#f5f5f5",
+          "background_gradient": "",
+          "primary_color": "#d0473e",
+          "text_color": "#444444",
+          "heading_color": "#111111",
+          "border_color": "#ebebeb",
+          "btn_primary_color": "#ffffff",
+          "btn_primary_background": "#111111",
+          "btn_primary_gradient": "",
+          "btn_primary_hover_color": "#ffffff",
+          "btn_primary_hover_background": "#111111",
+          "btn_primary_hover_background_gradient": "",
+          "btn_outline_color": "#111111",
+          "btn_outline_border_color": "#111111",
+          "button_link_color": "#111111",
+          "button_link_hover_color": "#111111"
+        }
+      },
+      "scheme-accf3b11-ba40-4a3e-bafb-243ece6683ec": {
+        "settings": {
+          "background": "#ffffff",
+          "background_gradient": "",
+          "primary_color": "#d0473e",
+          "text_color": "#111111",
+          "heading_color": "#111111",
+          "border_color": "#ebebeb",
+          "btn_primary_color": "#ffffff",
+          "btn_primary_background": "#111111",
+          "btn_primary_gradient": "",
+          "btn_primary_hover_color": "#ffffff",
+          "btn_primary_hover_background": "#111111",
+          "btn_primary_hover_background_gradient": "",
+          "btn_outline_color": "#111111",
+          "btn_outline_border_color": "#111111",
+          "button_link_color": "#111111",
+          "button_link_hover_color": "#111111"
+        }
+      },
+      "scheme-c78bfb21-5aff-497b-be68-98f01962f564": {
+        "settings": {
+          "background": "#ffffff",
+          "background_gradient": "",
+          "primary_color": "#d0473e",
+          "text_color": "#111111",
+          "heading_color": "#111111",
+          "border_color": "#ebebeb",
+          "btn_primary_color": "#ffffff",
+          "btn_primary_background": "#111111",
+          "btn_primary_gradient": "",
+          "btn_primary_hover_color": "#ffffff",
+          "btn_primary_hover_background": "#111111",
+          "btn_primary_hover_background_gradient": "",
+          "btn_outline_color": "#111111",
+          "btn_outline_border_color": "#111111",
+          "button_link_color": "#111111",
+          "button_link_hover_color": "#111111"
+        }
+      },
+      "scheme-502630ec-91d1-4cab-9d06-312eedf6b2da": {
+        "settings": {
+          "background": "#135ed1",
+          "background_gradient": "",
+          "primary_color": "#ffffff",
+          "text_color": "#ffffff",
+          "heading_color": "#ffffff",
+          "border_color": "#ebebeb",
+          "btn_primary_color": "#111111",
+          "btn_primary_background": "#ffffff",
+          "btn_primary_gradient": "",
+          "btn_primary_hover_color": "#ebebeb",
+          "btn_primary_hover_background": "#111111",
+          "btn_primary_hover_background_gradient": "",
+          "btn_outline_color": "#111111",
+          "btn_outline_border_color": "#111111",
+          "button_link_color": "#111111",
+          "button_link_hover_color": "#111111"
+        }
+      },
+      "scheme-3e8af4c8-b99d-456e-90a0-9e470643087b": {
+        "settings": {
+          "background": "#135ed1",
+          "background_gradient": "",
+          "primary_color": "#ffffff",
+          "text_color": "#ffffff",
+          "heading_color": "#ffffff",
+          "border_color": "#ffffff",
+          "btn_primary_color": "#ffffff",
+          "btn_primary_background": "#135ed1",
+          "btn_primary_gradient": "",
+          "btn_primary_hover_color": "#f1f1f1",
+          "btn_primary_hover_background": "#111111",
+          "btn_primary_hover_background_gradient": "",
+          "btn_outline_color": "#ffffff",
+          "btn_outline_border_color": "#ffffff",
+          "button_link_color": "#ffffff",
+          "button_link_hover_color": "#ebebeb"
+        }
+      }
+    }
+  },
+  "presets": {
+    "Default": {}
+  },
+  "platform_customizations": {
+    "custom_css": [
+      ".minicart__product-name a {display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;}"
+    ]
+  }
+}
