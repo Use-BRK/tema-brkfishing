@@ -1,6 +1,9 @@
- 
+## Arquivos de imagem dos assets 
 "*.png" 
 "*.jpg" 
 "*.ttf" 
 "*.woff2" 
 "*.woff" 
+
+## Módulos do node
+node_modules/
