@@ -1,1 +1,96 @@
-{"parent":"header-group.json","context":{"market":"br"},"sections":{"top_bar_CbXNYj":{"custom_css":["#topbar {padding-inline: 4rem;}"],"settings":{"section_width":"full_width","show_separator_line":false},"blocks":{"text_slider_LFaC38":{"settings":{"text3":"","text2":"<a href=\"https:\/\/app.brkfishing.com.br\/\" title=\"https:\/\/app.brkfishing.com.br\/\">CLIQUE E BAIXE O APP<\/a>"}}}},"header":{"settings":{"hot":"CONFIRA","collection_list":["ofertas-ate-59","ofertas-ate-129","ofertas-ate-299","vale-presente","envio-full"],"show_wishlist_icon":false},"blocks":{"menu_promotion_NkqYkU":{"type":"menu_promotion","name":"OFERTAS","disabled":false,"settings":{"text":"OFERTAS","open-link-newtab":false,"item_label":"hot","header-1b032c61388f8518dd481b7acf160f6c":null,"promotion_menu_column":2,"mega_custom_width":600,"center_submenu":false,"full_width":false,"header-ef1c39a327ce57ca7da959b0493e4231":null,"promotion_position":"right","promotion_image_width":27,"header-405a39e756597549a6f047815104bca0":null,"promotion_image_1":null,"promotion_link_1":"","promotion_link_newtab_1":true,"header-c08d531f5f3732b7751c71d5e89d6a3e":null,"promotion_image_2":null,"promotion_link_2":"","promotion_link_newtab_2":true}},"menu_promotion_EeqGGC":{"settings":{"promotion_menu_column":3,"full_width":false}},"menu_promotion_7tMNHN":{"settings":{"promotion_menu_column":3,"full_width":false}}},"block_order":["menu_promotion_NkqYkU","menu_promotion_EeqGGC","menu_promotion_7tMNHN","menu_promotion_C6gPrq","menu_promotion_fKxpNj","menu_promotion_aQHpr9"]}}}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "header-group.json",
+  "context": {
+    "market": "br"
+  },
+  "sections": {
+    "top_bar_CbXNYj": {
+      "custom_css": [
+        "#topbar {padding-inline: 4rem;}"
+      ],
+      "settings": {
+        "section_width": "full_width",
+        "show_separator_line": false
+      },
+      "blocks": {
+        "text_slider_LFaC38": {
+          "settings": {
+            "text2": "<a href=\"https://app.brkfishing.com.br/\" title=\"https://app.brkfishing.com.br/\">CLIQUE E BAIXE O APP</a>",
+            "text3": "<a href=\"/collections/vale-presente\" title=\"Vale-Presente BRK FISHING®\">PRESENTEIE QUEM VOCÊ AMA!</a>",
+            "text1": "<a href=\"https://www.brkfishing.com.br/discount/BEMVINDO\" title=\"https://www.brkfishing.com.br/discount/BEMVINDO\"><strong>R$15 OFF </strong>na primeira compra, cupom: <strong>BEMVINDO</strong></a>"
+          }
+        }
+      }
+    },
+    "header": {
+      "settings": {
+        "hot": "CONFIRA",
+        "collection_list": [
+          "ofertas-ate-59",
+          "ofertas-ate-129",
+          "ofertas-ate-299",
+          "vale-presente",
+          "envio-full"
+        ],
+        "show_wishlist_icon": false
+      },
+      "blocks": {
+        "menu_promotion_NkqYkU": {
+          "type": "menu_promotion",
+          "name": "OFERTAS",
+          "disabled": false,
+          "settings": {
+            "text": "OFERTAS",
+            "open-link-newtab": false,
+            "item_label": "hot",
+            "header-14a124c6ae5e7d53d8c1afff21c14530": null,
+            "promotion_menu_column": 2,
+            "mega_custom_width": 600,
+            "center_submenu": false,
+            "full_width": false,
+            "header-47e1c7cc457cd4a4ba2472372bcc7808": null,
+            "promotion_position": "right",
+            "promotion_image_width": 27,
+            "header-2f83cfc6daa200510306b05b249c7500": null,
+            "promotion_image_1": null,
+            "promotion_link_1": "",
+            "promotion_link_newtab_1": true,
+            "header-53c5e91ebc8d2411a12dcb9c8067c896": null,
+            "promotion_image_2": null,
+            "promotion_link_2": "",
+            "promotion_link_newtab_2": true
+          }
+        },
+        "menu_promotion_EeqGGC": {
+          "settings": {
+            "promotion_menu_column": 3,
+            "full_width": false
+          }
+        },
+        "menu_promotion_7tMNHN": {
+          "settings": {
+            "promotion_menu_column": 3,
+            "full_width": false
+          }
+        }
+      },
+      "block_order": [
+        "menu_promotion_NkqYkU",
+        "menu_promotion_EeqGGC",
+        "menu_promotion_7tMNHN",
+        "menu_promotion_C6gPrq",
+        "menu_promotion_fKxpNj",
+        "menu_promotion_aQHpr9"
+      ]
+    }
+  }
+}

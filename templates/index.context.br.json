@@ -21,16 +21,16 @@
       "blocks": {
         "slider_item_eBDERN": {
           "type": "slider_item",
-          "disabled": true,
-          "name": "FusionX Times",
+          "name": "Natal Fishing",
+          "disabled": false,
           "settings": {
-            "header-ee229ea786269495cad09bcfd8b57c5d": null,
-            "image": "shopify://shop_images/FULLBANNER-TIMES-FUSION.png",
-            "image_mobile": "shopify://shop_images/MOBBANNER-TIMES-FUSION.png",
+            "header-b45b7053a90758e79990aad516583405": null,
+            "image": "shopify://shop_images/FULLBANNER.jpg",
+            "image_mobile": "shopify://shop_images/MOB-BANNER.jpg",
             "local_video": null,
             "overlay_opacity": 0,
-            "link_banner": "shopify://collections/times-de-futebol-colecao",
-            "header-40161688f143312dd14a57af1c739297": null,
+            "link_banner": "shopify://collections/envio-full",
+            "header-49695b14d6e306d9ddf9d8957dc7bf9d": null,
             "slider_effect": "effect_fadeinup",
             "subheading": "",
             "heading": "",
@@ -41,18 +41,18 @@
             "second_button_label": "",
             "second_button_link": "shopify://collections/camisa-fusionx-masculino",
             "second_button_style": false,
-            "header-a956ff75bb46298be01100af6d32e16c": null,
+            "header-8e352c8526bf420f9c5a353b1ed0f73d": null,
             "content_alignment": "center",
             "content_position": "top-center",
             "content_width": "full_width",
             "content_max_width": 100,
             "content_padding_block": 55,
             "content_padding_inline": 55,
-            "header-a1355d5ba004802f3ed20d0d69a802d3": null,
+            "header-fecc49529dddec1bb4227e45dfb0809a": null,
             "show_content_background": false,
             "content_background": "#ffffff",
             "content_box_opacity": 100,
-            "header-04d8b5419cf3e21f9212480f8b8eeeea": null,
+            "header-20279a9cc5d29acec85c85899450d1a1": null,
             "content_alignment_mobile": "right"
           }
         },
@@ -112,6 +112,16 @@
         "collection_4GqdHP": {
           "disabled": false,
           "settings": {}
+        }
+      }
+    },
+    "collection_tab_UNybtX": {
+      "settings": {},
+      "blocks": {
+        "collection_DUa6Xx": {
+          "settings": {
+            "collection_title": "Masculino"
+          }
         }
       }
     },
@@ -200,16 +210,6 @@
         "collection_zwPQwE": {
           "settings": {
             "collection_title": "Molinetes"
-          }
-        }
-      }
-    },
-    "collection_tab_UNybtX": {
-      "settings": {},
-      "blocks": {
-        "collection_DUa6Xx": {
-          "settings": {
-            "collection_title": "Masculino"
           }
         }
       }
