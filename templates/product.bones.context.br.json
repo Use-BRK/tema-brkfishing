@@ -12,5 +12,12 @@
   "context": {
     "market": "br"
   },
-  "sections": {}
+  "sections": {
+    "main": {
+      "settings": {
+        "desktop_media_width": 48
+      },
+      "blocks": {}
+    }
+  }
 }
