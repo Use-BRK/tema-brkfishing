@@ -13,6 +13,11 @@
     "market": "br"
   },
   "sections": {
+    "breadcrumb": {
+      "disabled": true,
+      "settings": {},
+      "blocks": {}
+    },
     "main": {
       "custom_css": [
         ".product-form__quantity {display: none;}",
@@ -22,7 +27,7 @@
       ],
       "settings": {
         "section_width": "fluid_container",
-        "desktop_media_width": 60,
+        "desktop_media_width": 50,
         "desktop_layout": "thumbnail_left",
         "mobile_options": "show_thumbnails",
         "padding_top": 35
@@ -61,11 +66,6 @@
         "complementary_products_Wip9YG",
         "frete_no_produto_shipping_calc_MJK8Br"
       ]
-    },
-    "breadcrumb": {
-      "disabled": true,
-      "settings": {},
-      "blocks": {}
     }
   }
 }
