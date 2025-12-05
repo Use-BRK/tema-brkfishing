@@ -14,9 +14,18 @@
   },
   "sections": {
     "main": {
-      "custom_css": [],
+      "custom_css": [
+        ".product-form__quantity {display: none;}",
+        ".button_buy-now span {text-transform: uppercase; font-weight: 800; font-size: 20px;}",
+        ".price-item .compare-price {font-size: 27px;}",
+        ".price {font-size: 32px;}"
+      ],
       "settings": {
-        "mobile_options": "show_thumbnails"
+        "section_width": "fluid_container",
+        "desktop_media_width": 60,
+        "desktop_layout": "thumbnail_left",
+        "mobile_options": "show_thumbnails",
+        "padding_top": 35
       },
       "blocks": {
         "sku_prazo_AN4k7": {
@@ -27,6 +36,10 @@
             "algodao": "1",
             "imediato": "0"
           }
+        },
+        "stock_countdown_JNK9zi": {
+          "disabled": true,
+          "settings": {}
         }
       },
       "block_order": [
@@ -38,7 +51,6 @@
         "countdown_timer_QB4Ydn",
         "sa_variants_product_swatch_block_e9wFLB",
         "variant_picker_tcCihG",
-        "product_addons_YRaprz",
         "stock_countdown_JNK9zi",
         "buy_buttons_LcQGtR",
         "model_size_XM7z6E",
@@ -49,6 +61,11 @@
         "complementary_products_Wip9YG",
         "frete_no_produto_shipping_calc_MJK8Br"
       ]
+    },
+    "breadcrumb": {
+      "disabled": true,
+      "settings": {},
+      "blocks": {}
     }
   }
 }
