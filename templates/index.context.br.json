@@ -98,7 +98,7 @@
     },
     "scrolling_text_U3mttg": {
       "custom_css": [
-        "* {color: white; background-color: black;}"
+        "* {color: white; background-color: #1E1E20;}"
       ],
       "settings": {},
       "blocks": {
