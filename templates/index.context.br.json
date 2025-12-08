@@ -97,6 +97,9 @@
       ]
     },
     "scrolling_text_U3mttg": {
+      "custom_css": [
+        "* {color: white; background-color: black;}"
+      ],
       "settings": {},
       "blocks": {
         "scrolling_text_Bmp7bG": {
