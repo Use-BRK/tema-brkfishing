@@ -24,13 +24,13 @@
           "name": "Natal Fishing",
           "disabled": false,
           "settings": {
-            "header-b45b7053a90758e79990aad516583405": null,
+            "header-9b4af7cb9e0cb85b0b558c58ce454e9f": null,
             "image": "shopify://shop_images/FULLBANNER.jpg",
             "image_mobile": "shopify://shop_images/MOB-BANNER.jpg",
             "local_video": null,
             "overlay_opacity": 0,
             "link_banner": "shopify://collections/envio-full",
-            "header-49695b14d6e306d9ddf9d8957dc7bf9d": null,
+            "header-ed764b0cc08e069eaf924c2ab53d5cd0": null,
             "slider_effect": "effect_fadeinup",
             "subheading": "",
             "heading": "",
@@ -41,18 +41,18 @@
             "second_button_label": "",
             "second_button_link": "shopify://collections/camisa-fusionx-masculino",
             "second_button_style": false,
-            "header-8e352c8526bf420f9c5a353b1ed0f73d": null,
+            "header-850a0ea9da8aba5fb84c70457aae16c7": null,
             "content_alignment": "center",
             "content_position": "top-center",
             "content_width": "full_width",
             "content_max_width": 100,
             "content_padding_block": 55,
             "content_padding_inline": 55,
-            "header-fecc49529dddec1bb4227e45dfb0809a": null,
+            "header-5ee7b72d40542a527a6950469dd4700b": null,
             "show_content_background": false,
             "content_background": "#ffffff",
             "content_box_opacity": 100,
-            "header-20279a9cc5d29acec85c85899450d1a1": null,
+            "header-863baa30fabe19a4a74f85f12ec30029": null,
             "content_alignment_mobile": "right"
           }
         },
@@ -101,8 +101,16 @@
       "blocks": {
         "scrolling_text_Bmp7bG": {
           "settings": {
-            "content": "Frete Fixo R$9,90"
+            "content": "FRETE FIXO R$9,90"
           }
+        },
+        "scrolling_text_7defWk": {
+          "disabled": true,
+          "settings": {}
+        },
+        "scrolling_text_fBNd9c": {
+          "disabled": true,
+          "settings": {}
         }
       }
     },
