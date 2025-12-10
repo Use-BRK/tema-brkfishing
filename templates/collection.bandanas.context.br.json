@@ -16,7 +16,7 @@
     "banner": {
       "settings": {
         "alignment": "center",
-        "background_image": "shopify://shop_images/Banner_bandana_fishing.webp",
+        "background_image": "shopify://shop_images/Banner_bandana_fishing_ct_bandana.webp",
         "overlay_opacity": 0,
         "height": "adapt"
       },
