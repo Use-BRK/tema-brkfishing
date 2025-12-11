@@ -47,6 +47,7 @@
     "show_vendor": false,
     "show_secondary_image": true,
     "product_image_ratio": "adapt",
+    "product_hover_effect": "none",
     "enable_catalog_mode": false,
     "show_action_on_mobile": true,
     "enable_color_swatches": false,
