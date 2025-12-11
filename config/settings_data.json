@@ -40,7 +40,7 @@
     "show_add_cart": false,
     "show_variant": true,
     "show_quantity_input": true,
-    "product_alignment": "start",
+    "product_alignment": "center",
     "product_size": 13,
     "product_truncation_title": "2",
     "price_size": 12,
