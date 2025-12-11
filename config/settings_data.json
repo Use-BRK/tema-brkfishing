@@ -42,7 +42,7 @@
     "show_quantity_input": true,
     "product_alignment": "start",
     "product_size": 13,
-    "product_truncation_title": "1",
+    "product_truncation_title": "2",
     "price_size": 12,
     "show_vendor": false,
     "show_secondary_image": true,
