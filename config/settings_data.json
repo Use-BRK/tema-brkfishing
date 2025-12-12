@@ -468,7 +468,7 @@
         "settings": {
           "alignment": "center",
           "swatch_location": "After price",
-          "switch_on_hover": true,
+          "switch_on_hover": false,
           "preselect_variant": true
         }
       }
