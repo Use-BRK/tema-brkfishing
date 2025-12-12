@@ -20,7 +20,8 @@
       ],
       "settings": {
         "section_width": "full_width",
-        "show_separator_line": false
+        "show_separator_line": false,
+        "font_size": 12
       },
       "blocks": {
         "text_slider_LFaC38": {
