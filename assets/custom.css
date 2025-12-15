@@ -624,8 +624,8 @@ cart-notification #minicart-form minicart-recommendations slide-section variant-
 
 
 /* Menu Mobile */
-@media screen and (max-width: 400px){
-  .header-color > a:not(:hover){
+@media screen and (max-width: 640px){
+  .navigation__menu-content .navigation__menu-content-mobile li.single a{
     flex: 1;
   }
 }
