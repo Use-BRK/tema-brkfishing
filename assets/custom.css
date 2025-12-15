@@ -625,7 +625,8 @@ cart-notification #minicart-form minicart-recommendations slide-section variant-
 
 /* Menu Mobile */
 @media screen and (max-width: 640px){
-  .navigation__menu-content.navigation__menu-content-mobile > ul > li.single > menu-item > a{
+  .navigation__menu-content.navigation__menu-content-mobile ul a{
+    display: flex;
     flex: 1;
   }
 }
