@@ -621,3 +621,11 @@ cart-notification #minicart-form minicart-recommendations slide-section variant-
   background: #000;
   border-radius: 0
 }
+
+
+/* Menu Mobile */
+@media screen and (max-width: 400px){
+  .header-color > a:not(:hover){
+    width: 100%;;
+  }
+}
