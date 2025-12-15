@@ -15,11 +15,13 @@
   "sections": {
     "top_bar_CbXNYj": {
       "custom_css": [
-        "#topbar {padding-inline: 4rem;}"
+        "#topbar{padding-inline:4rem}",
+        "@media (max-width:600px){#topbar{padding-inline:0}}"
       ],
       "settings": {
         "section_width": "full_width",
-        "show_separator_line": false
+        "show_separator_line": false,
+        "font_size": 12
       },
       "blocks": {
         "text_slider_LFaC38": {
@@ -52,19 +54,19 @@
             "text": "OFERTAS",
             "open-link-newtab": false,
             "item_label": "hot",
-            "header-d519659a0a4e6e0bc33118b176e20844": null,
+            "header-b9aa776347d9651dabd1eb9417b53592": null,
             "promotion_menu_column": 2,
             "mega_custom_width": 600,
             "center_submenu": false,
             "full_width": false,
-            "header-5056342355b86e9213b0213dbd3a054b": null,
+            "header-03d01ea73687d4fa1eafed450459941c": null,
             "promotion_position": "right",
             "promotion_image_width": 27,
-            "header-c47e57068fd08de6deed6db79b94e07a": null,
+            "header-d7f3dd987e6f0fb4800961a1ba5e0466": null,
             "promotion_image_1": null,
             "promotion_link_1": "",
             "promotion_link_newtab_1": true,
-            "header-e7606dfe9164292653a91ec3e47bc96f": null,
+            "header-27f8ae2fec85065087aedb90b7612aa1": null,
             "promotion_image_2": null,
             "promotion_link_2": "",
             "promotion_link_newtab_2": true
@@ -78,19 +80,19 @@
             "text": "ENVIO FULL",
             "open-link-newtab": false,
             "item_label": "hot",
-            "header-d2bb3ce7ab9426a72c4dcae111ee1239": null,
+            "header-ed1bd4fcce1ef9e03137685f6fc52e22": null,
             "promotion_menu_column": 2,
             "mega_custom_width": 600,
             "center_submenu": false,
             "full_width": false,
-            "header-4044fa07b3889987e5ad13c2469ae2c4": null,
+            "header-2e864fe8485914b0320843dc80f96c70": null,
             "promotion_position": "right",
             "promotion_image_width": 27,
-            "header-2e1e754fcaac67eaa28f626a3804435d": null,
+            "header-e86053c5993db4092e08a609755ce582": null,
             "promotion_image_1": null,
             "promotion_link_1": "",
             "promotion_link_newtab_1": true,
-            "header-64b5750811091f25dfffcd76d7ec7d84": null,
+            "header-8b6171bef3d4bd7187e40e0c61834b74": null,
             "promotion_image_2": null,
             "promotion_link_2": "",
             "promotion_link_newtab_2": true
