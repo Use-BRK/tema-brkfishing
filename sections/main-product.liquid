@@ -214,17 +214,17 @@
                 data-motion-delay="50"
                 class="block opacity-0"
               >            
-              <h1
-                class="product-detail__title heading-letter-spacing fs-26 mt-0 mb-10{% if enable_skeleton_loading %} skeleton-loading{% endif %}"
-                {{ block.shopify_attributes }}
-              >
-                {%- if product.title != blank -%}
-                  {{ product.title | escape }}
-                {%- else -%}
-                  {{ 'onboarding.product_title_example' | t }}
-                {% endif %}
-              </h1>
-            </motion-element>
+                <h1
+                  class="product-detail__title heading-letter-spacing fs-26 mt-0 mb-10{% if enable_skeleton_loading %} skeleton-loading{% endif %}"
+                  {{ block.shopify_attributes }}
+                >
+                  {%- if product.title != blank -%}
+                    {{ product.title | escape }}
+                  {%- else -%}
+                    {{ 'onboarding.product_title_example' | t }}
+                  {% endif %}
+                </h1>
+              </motion-element>
             {%- when 'badges' -%}
               <div
                 class="sale_badge"
