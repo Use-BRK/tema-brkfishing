@@ -339,7 +339,7 @@
             
             {%- when 'sku_prazo' -%}  
               {% if product.tags contains 'prazo_producao'or product.tags contains 'prazo_algodao' or product.tags contains 'prazo_imediato' %}
-                <li class="mb-2">
+                <li class="mb-2 list-none">
                   <div id="prazo_disponibilidade">
                     {% if product.tags contains 'prazo_imediato' %}
                       <svg width="22" height="30" viewBox="0 0 22 30" fill="none" xmlns="http://www.w3.org/2000/svg">
