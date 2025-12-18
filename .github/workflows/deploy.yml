@@ -18,7 +18,7 @@ jobs:
           node-version: "18"
 
       - name: Install Shopify CLI
-        run: npm install -g @shopify/cli@3.82.0 @shopify/theme@3.82.0
+        run: npm install -g @shopify/cli @shopify/theme
 
       - name: Deploy to Shopify
         env:
