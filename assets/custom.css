@@ -651,3 +651,7 @@ cart-notification #minicart-form minicart-recommendations slide-section variant-
     }
   }
 }
+
+.faixa-envio-full{
+  top: -1.3rem
+}
