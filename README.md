@@ -7,6 +7,7 @@ Bem-vindo ao repositório do **Tema BRK Fishing**. Este projeto é uma customiza
 Este repositório contém o código-fonte do tema Shopify utilizado na loja BRK Fishing. O tema foi desenvolvido com foco em performance, experiência do usuário (UX) mobile-first e conversão.
 
 ### Detalhes do Tema Base
+
 - **Tema Base:** Glozin
 - **Versão:** 2.6.0
 - **Autor Original:** Nextsky
@@ -18,8 +19,8 @@ Além das funcionalidades nativas do Shopify e do tema Glozin, este projeto incl
 
 - **Design Responsivo & Mobile-First:** Interface otimizada para garantir a melhor experiência de compra em dispositivos móveis.
 - **Seções Dinâmicas:**
-  - *Scrolling Text:* Faixas de texto rolante para anúncios e promoções.
-  - *Swiper Sliders:* Carrosséis de produtos e banners interativos e leves.
+  - _Scrolling Text:_ Faixas de texto rolante para anúncios e promoções.
+  - _Swiper Sliders:_ Carrosséis de produtos e banners interativos e leves.
 - **Otimização de SEO:** Integração com ferramentas de SEO (Booster SEO) para melhor ranqueamento orgânico.
 - **Badges e Etiquetas Personalizadas:**
   - Etiquetas de "Novo", "Oferta", "Esgotado" e "Pré-venda" com cores customizáveis.
@@ -56,16 +57,19 @@ A estrutura segue o padrão de temas Shopify 2.0:
 Para trabalhar neste tema localmente, recomenda-se o uso do **Shopify CLI**.
 
 1. **Instale o Shopify CLI:**
+
    ```bash
    npm install -g @shopify/cli @shopify/theme
    ```
 
 2. **Login na Loja:**
+
    ```bash
    shopify theme dev --store sua-loja.myshopify.com
    ```
 
 3. **Pull do Tema (Cuidado para não sobrescrever trabalho não salvo):**
+
    ```bash
    shopify theme pull
    ```
@@ -76,4 +80,5 @@ Para trabalhar neste tema localmente, recomenda-se o uso do **Shopify CLI**.
    ```
 
 ---
-*Desenvolvido e mantido pela equipe de tecnologia da BRK Fishing.*
+
+_Desenvolvido e mantido pela equipe de tecnologia da BRK Fishing..._
