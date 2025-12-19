@@ -41,15 +41,6 @@
             "show_collections": false
           }
         },
-        "sku_prazo_HkLApw": {
-          "type": "sku_prazo",
-          "disabled": true,
-          "settings": {
-            "producao": "9",
-            "algodao": "1",
-            "imediato": "0"
-          }
-        },
         "price_VJ4N8m": {
           "type": "price",
           "settings": {}
@@ -78,6 +69,15 @@
             "show_size_guide": true,
             "size_guide_label": "Guia de Tamanhos",
             "size_guide_page": "{{ product.metafields.custom.size_chart.value }}"
+          }
+        },
+        "sku_prazo_HkLApw": {
+          "type": "sku_prazo",
+          "disabled": true,
+          "settings": {
+            "producao": "9",
+            "algodao": "1",
+            "imediato": "0"
           }
         },
         "product_addons_YRaprz": {
@@ -173,12 +173,12 @@
         "title_G6tU8U",
         "badges_RwfTMp",
         "product_meta_kiKPhW",
-        "sku_prazo_HkLApw",
         "price_VJ4N8m",
         "short_description_9BGxVm",
         "countdown_timer_QB4Ydn",
         "sa_variants_product_swatch_block_e9wFLB",
         "variant_picker_tcCihG",
+        "sku_prazo_HkLApw",
         "product_addons_YRaprz",
         "stock_countdown_JNK9zi",
         "buy_buttons_LcQGtR",
