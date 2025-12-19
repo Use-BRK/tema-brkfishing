@@ -76,4 +76,4 @@ Para trabalhar neste tema localmente, recomenda-se o uso do **Shopify CLI**.
    ```
 
 ---
-*Desenvolvido e mantido pela equipe de tecnologia da BRK Fishing...*
+*Desenvolvido e mantido pela equipe de tecnologia da BRK Fishing.*
