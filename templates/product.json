@@ -71,6 +71,14 @@
             "size_guide_page": "{{ product.metafields.custom.size_chart.value }}"
           }
         },
+        "sku_prazo_Bwpi6V": {
+          "type": "sku_prazo",
+          "settings": {
+            "producao": "9",
+            "algodao": "1",
+            "imediato": "0"
+          }
+        },
         "product_addons_YRaprz": {
           "type": "product_addons",
           "settings": {
@@ -145,6 +153,8 @@
             "btnshipping": "#135ed1",
             "color_text": "#ffffff",
             "color_shipping": "#51a559",
+            "color_ship_name": "#000000",
+            "color_shipping_date": "#000000",
             "padding_inner": 0,
             "padding_external": 12,
             "space_top": 0,
@@ -167,6 +177,7 @@
         "countdown_timer_QB4Ydn",
         "sa_variants_product_swatch_block_e9wFLB",
         "variant_picker_tcCihG",
+        "sku_prazo_Bwpi6V",
         "product_addons_YRaprz",
         "stock_countdown_JNK9zi",
         "buy_buttons_LcQGtR",
