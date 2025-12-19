@@ -18,15 +18,39 @@
       "settings": {
         "mobile_options": "show_thumbnails"
       },
-      "blocks": {},
+      "blocks": {
+        "product_meta_FUixq": {
+          "type": "product_meta",
+          "disabled": false,
+          "settings": {
+            "show_barcode": false,
+            "show_sku": true,
+            "show_available": false,
+            "show_tags": false,
+            "show_type": false,
+            "show_collections": false
+          }
+        },
+        "sku_prazo_8wWwi": {
+          "type": "sku_prazo",
+          "disabled": false,
+          "settings": {
+            "producao": "9",
+            "algodao": "1",
+            "imediato": "0"
+          }
+        }
+      },
       "block_order": [
         "title_G6tU8U",
+        "product_meta_FUixq",
         "badges_RwfTMp",
         "price_VJ4N8m",
         "short_description_9BGxVm",
         "countdown_timer_QB4Ydn",
         "sa_variants_product_swatch_block_e9wFLB",
         "variant_picker_tcCihG",
+        "sku_prazo_8wWwi",
         "product_addons_YRaprz",
         "stock_countdown_JNK9zi",
         "buy_buttons_LcQGtR",
