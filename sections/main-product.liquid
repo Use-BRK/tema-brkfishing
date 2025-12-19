@@ -336,7 +336,7 @@
                   {% endif %}
                 </div>
               {% endif %}
-            {%- when 'sku_prazo' -%}  
+            {% comment %} {%- when 'sku_prazo' -%}  
               {% if product.tags contains 'prazo_producao'or product.tags contains 'prazo_algodao' or product.tags contains 'prazo_imediato' %}
                 <li class="mb-2 list-none">
                   <div id="prazo_disponibilidade">
@@ -365,7 +365,7 @@
                     {% endif %}
                   </div>
                 </li>
-              {% endif %}
+              {% endif %} {% endcomment %}
             {%- when 'delivery_return' -%}
               {% comment %} delivery return {% endcomment %}
               {% if block_st.delivery_content != blank
