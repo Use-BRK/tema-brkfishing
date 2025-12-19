@@ -32,7 +32,6 @@
         },
         "product_meta_kiKPhW": {
           "type": "product_meta",
-          "disabled": true,
           "settings": {
             "show_barcode": false,
             "show_sku": true,
@@ -40,6 +39,14 @@
             "show_tags": false,
             "show_type": false,
             "show_collections": false
+          }
+        },
+        "sku_prazo_HkLApw": {
+          "type": "sku_prazo",
+          "settings": {
+            "producao": "9",
+            "algodao": "1",
+            "imediato": "0"
           }
         },
         "price_VJ4N8m": {
@@ -165,6 +172,7 @@
         "title_G6tU8U",
         "badges_RwfTMp",
         "product_meta_kiKPhW",
+        "sku_prazo_HkLApw",
         "price_VJ4N8m",
         "short_description_9BGxVm",
         "countdown_timer_QB4Ydn",
