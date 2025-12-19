@@ -73,7 +73,6 @@
         },
         "sku_prazo_HkLApw": {
           "type": "sku_prazo",
-          "disabled": true,
           "settings": {
             "producao": "9",
             "algodao": "1",
