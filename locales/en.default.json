@@ -553,7 +553,7 @@
         "add_to_bundle": {
           "label_bundle": "Add to Bundle",
           "label_bundle_added": "Added to Bundle",
-          "label_add_all": "Desconto no Carrinho!"
+          "label_add_all": "Add all to Cart"
         },
         "property": {
           "custom_text": "Custom text",
