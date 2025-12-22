@@ -13,6 +13,78 @@
     "market": "br"
   },
   "sections": {
+    "product_bundle_JywJj": {
+      "type": "product-bundle",
+      "disabled": false,
+      "custom_css": [
+        "product-form-bundle .product-item__price {align-items: center !important; justify-content: center;}",
+        "product-form-bundle .product-item__price .price {font-size: 1.6em !important; font-weight: 900 !important; color: #135ed1;}",
+        "product-form-bundle .card-product-price .installment-payment {order: 3; margin-top: 0.4rem; font-size: 0.875em;}",
+        ".card-product-price {flex-direction: column;}",
+        "product-form-bundle button {border-radius: 8px !important; color: white; background-color: #135ed1; border: none !important;}"
+      ],
+      "settings": {
+        "section_width": "fluid_container",
+        "color_scheme": "",
+        "header-8838b0c5f5e61dadb5900d46dd39ee14": null,
+        "heading": "Kit Pescador 13% Off 🔥",
+        "description": "<p><strong>VÁLIDO ATÉ 31/12</strong></p>",
+        "header_size": "medium",
+        "header_alignment": "left",
+        "header-31c93a1b2a1c5562fe7ca4333af56726": null,
+        "minimum": 2,
+        "maximum": 3,
+        "enable_quantity": true,
+        "header-a22a951dd9e351227a7eefb6392340b7": null,
+        "padding_top": 35,
+        "padding_bottom": 35,
+        "reset_spacing": true
+      },
+      "blocks": {
+        "product_discount_rWFqE": {
+          "type": "product_discount",
+          "disabled": false,
+          "settings": {
+            "collection": "",
+            "products": [
+              "passagua-para-pesca-deyu-peixe-cabo-2-partes-40x40x180cm",
+              "kit-com-600-anzois-iseama-3-ao-12-caixa-estojo",
+              "alicate-de-bico-deyu-azul-12x5cm-dfm0401"
+            ],
+            "items_to_show": 3,
+            "items_per_row": 3,
+            "column_gap": 30,
+            "header-b169e2c97f9b6378311bc99590d76e96": null,
+            "carousel_on_mobile": true,
+            "items_per_row_mobile": 2
+          }
+        },
+        "your_bundle_4brzg": {
+          "type": "your_bundle",
+          "disabled": false,
+          "settings": {
+            "heading": "KIT Pescador 13% Off 🔥",
+            "description": "<p>Adicione <strong>3 Itens</strong> essenciais para pesca e <strong>Ganhe 13% de Desconto</strong>!</p>",
+            "header-75cf1b71511147516242380cb0d2fa12": null,
+            "header-6e4bf69b45730b3b4f5ed0851ce180dc": null,
+            "paragraph-1df6bf6578b6afea9d6980c6fd660373": null,
+            "heading_font_size": 24,
+            "heading_font_weight": "heading_weight",
+            "heading_uppercase": false,
+            "heading_spacing_bottom": 20,
+            "paragraph-3aca41249b2bc2338ccaf26b0430ccfb": null,
+            "des_font_size": 15,
+            "des_font_weight": "body_weight",
+            "des_spacing_bottom": 30
+          }
+        }
+      },
+      "block_order": [
+        "product_discount_rWFqE",
+        "your_bundle_4brzg"
+      ],
+      "name": "t:sections.product-bundle.name"
+    },
     "slideshow_8KKtNU": {
       "settings": {
         "slide_effect": "fade",
@@ -24,13 +96,13 @@
           "name": "Natal Fishing",
           "disabled": false,
           "settings": {
-            "header-53735deb70cc85dd7acf5c0c1920c3f0": null,
+            "header-2177963a5d34f058908617b522214535": null,
             "image": "shopify://shop_images/FULLBANNER.jpg",
             "image_mobile": "shopify://shop_images/MOB-BANNER.jpg",
             "local_video": null,
             "overlay_opacity": 0,
             "link_banner": "shopify://collections/envio-full",
-            "header-a7eb9156deeb134024065145dfb9cf25": null,
+            "header-f558cbab09746707d6955f4c627dbebe": null,
             "slider_effect": "effect_fadeinup",
             "subheading": "",
             "heading": "",
@@ -41,18 +113,18 @@
             "second_button_label": "",
             "second_button_link": "shopify://collections/camisa-fusionx-masculino",
             "second_button_style": false,
-            "header-652b6f91c05a72d0c1806bf599466c9e": null,
+            "header-3846bcdf4b74c4e9f268b02fef21956f": null,
             "content_alignment": "center",
             "content_position": "top-center",
             "content_width": "full_width",
             "content_max_width": 100,
             "content_padding_block": 55,
             "content_padding_inline": 55,
-            "header-26444c57c97b9e1e173f2859ed3ae826": null,
+            "header-cf97193971cbdc206d1dd3623230ed86": null,
             "show_content_background": false,
             "content_background": "#ffffff",
             "content_box_opacity": 100,
-            "header-1f1081f47ee68ba36920d270f92b7545": null,
+            "header-f0d4f4e0910051fe6f7d4ac955d8f558": null,
             "content_alignment_mobile": "right"
           }
         },
@@ -242,78 +314,6 @@
           }
         }
       }
-    },
-    "product_bundle_JywJj": {
-      "type": "product-bundle",
-      "disabled": false,
-      "custom_css": [
-        "product-form-bundle .product-item__price{align-items:center !important; justify-content:center;}",
-        "product-form-bundle .product-item__price .price{font-size:1.6em !important; font-weight:900!important; color:#135ED1;}",
-        "product-form-bundle .card-product-price .installment-payment{order:3;margin-top:.4rem;font-size:.875em;}",
-        ".card-product-price{flex-direction:column;}",
-        "product-form-bundle button {border-radius:8px!important;color:white;background-color:#135ed1;border:none!important;}"
-      ],
-      "settings": {
-        "section_width": "fluid_container",
-        "color_scheme": "",
-        "header-24105840591b04b16b7441a97f338186": null,
-        "heading": "Kit Pescador 10% Off 🔥",
-        "description": "<p><strong>VÁLIDO ATÉ 31/12</strong></p>",
-        "header_size": "medium",
-        "header_alignment": "left",
-        "header-e5e8a2c38d021250eafae31a3cf6c57f": null,
-        "minimum": 2,
-        "maximum": 3,
-        "enable_quantity": true,
-        "header-3326e720f460a604c16a74bb67d4f0ef": null,
-        "padding_top": 35,
-        "padding_bottom": 35,
-        "reset_spacing": true
-      },
-      "blocks": {
-        "product_discount_rWFqE": {
-          "type": "product_discount",
-          "disabled": false,
-          "settings": {
-            "collection": "",
-            "products": [
-              "passagua-para-pesca-deyu-peixe-cabo-2-partes-40x40x180cm",
-              "kit-com-600-anzois-iseama-3-ao-12-caixa-estojo",
-              "alicate-de-bico-deyu-azul-12x5cm-dfm0401"
-            ],
-            "items_to_show": 3,
-            "items_per_row": 3,
-            "column_gap": 30,
-            "header-7a943529c6277bb405108a8c7b80fda8": null,
-            "carousel_on_mobile": true,
-            "items_per_row_mobile": 2
-          }
-        },
-        "your_bundle_4brzg": {
-          "type": "your_bundle",
-          "disabled": false,
-          "settings": {
-            "heading": "KIT Pescador 20% Off 🔥",
-            "description": "<p>Adicione <strong>3 Itens</strong> essenciais para pesca e <strong>Ganhe 10% de Desconto</strong>!</p>",
-            "header-fabfef726cf46c91d4f92f83cc96a566": null,
-            "header-b4f1525703ae6b7721f4bf7209599025": null,
-            "paragraph-0459b45381ce93d26fd6d4f89672d2a5": null,
-            "heading_font_size": 24,
-            "heading_font_weight": "heading_weight",
-            "heading_uppercase": false,
-            "heading_spacing_bottom": 20,
-            "paragraph-9fef519ffcce01113c3e9da5c78441fe": null,
-            "des_font_size": 15,
-            "des_font_weight": "body_weight",
-            "des_spacing_bottom": 30
-          }
-        }
-      },
-      "block_order": [
-        "product_discount_rWFqE",
-        "your_bundle_4brzg"
-      ],
-      "name": "t:sections.product-bundle.name"
     }
   },
   "order": [
