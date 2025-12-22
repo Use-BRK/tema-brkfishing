@@ -24,13 +24,13 @@
           "name": "Natal Fishing",
           "disabled": false,
           "settings": {
-            "header-9b4af7cb9e0cb85b0b558c58ce454e9f": null,
+            "header-53735deb70cc85dd7acf5c0c1920c3f0": null,
             "image": "shopify://shop_images/FULLBANNER.jpg",
             "image_mobile": "shopify://shop_images/MOB-BANNER.jpg",
             "local_video": null,
             "overlay_opacity": 0,
             "link_banner": "shopify://collections/envio-full",
-            "header-ed764b0cc08e069eaf924c2ab53d5cd0": null,
+            "header-a7eb9156deeb134024065145dfb9cf25": null,
             "slider_effect": "effect_fadeinup",
             "subheading": "",
             "heading": "",
@@ -41,18 +41,18 @@
             "second_button_label": "",
             "second_button_link": "shopify://collections/camisa-fusionx-masculino",
             "second_button_style": false,
-            "header-850a0ea9da8aba5fb84c70457aae16c7": null,
+            "header-652b6f91c05a72d0c1806bf599466c9e": null,
             "content_alignment": "center",
             "content_position": "top-center",
             "content_width": "full_width",
             "content_max_width": 100,
             "content_padding_block": 55,
             "content_padding_inline": 55,
-            "header-5ee7b72d40542a527a6950469dd4700b": null,
+            "header-26444c57c97b9e1e173f2859ed3ae826": null,
             "show_content_background": false,
             "content_background": "#ffffff",
             "content_box_opacity": 100,
-            "header-863baa30fabe19a4a74f85f12ec30029": null,
+            "header-1f1081f47ee68ba36920d270f92b7545": null,
             "content_alignment_mobile": "right"
           }
         },
@@ -98,7 +98,7 @@
     },
     "scrolling_text_U3mttg": {
       "custom_css": [
-        "* {color: white; background-color: #1E1E20;}"
+        "* {color: white; background-color: #1e1e20;}"
       ],
       "settings": {},
       "blocks": {
@@ -224,6 +224,95 @@
           }
         }
       }
+    },
+    "product_bundle_JywJj": {
+      "type": "product-bundle",
+      "disabled": false,
+      "custom_css": [
+        "product-bunle-item .product-item__price {align-items: center !important; justify-content: center;}",
+        "product-bunle-item .product-item__price .price {font-size: 1.3em !important; font-weight: 900 !important; color: #135ED1;}",
+        "product-bunle-item .card-product-price .installment-payment {order: 3; margin-top: .4rem; font-size: .875em;}"
+      ],
+      "settings": {
+        "section_width": "fluid_container",
+        "color_scheme": "",
+        "header-24105840591b04b16b7441a97f338186": null,
+        "heading": "",
+        "description": "",
+        "header_size": "medium",
+        "header_alignment": "left",
+        "header-e5e8a2c38d021250eafae31a3cf6c57f": null,
+        "minimum": 2,
+        "maximum": 3,
+        "enable_quantity": true,
+        "header-3326e720f460a604c16a74bb67d4f0ef": null,
+        "padding_top": 35,
+        "padding_bottom": 35,
+        "reset_spacing": true
+      },
+      "blocks": {
+        "product_discount_rWFqE": {
+          "type": "product_discount",
+          "disabled": false,
+          "settings": {
+            "collection": "",
+            "products": [
+              "passagua-para-pesca-deyu-peixe-cabo-2-partes-40x40x180cm",
+              "kit-com-600-anzois-iseama-3-ao-12-caixa-estojo",
+              "alicate-de-bico-deyu-azul-12x5cm-dfm0401"
+            ],
+            "items_to_show": 3,
+            "items_per_row": 3,
+            "column_gap": 30,
+            "header-7a943529c6277bb405108a8c7b80fda8": null,
+            "carousel_on_mobile": true,
+            "items_per_row_mobile": 2
+          }
+        },
+        "your_bundle_4brzg": {
+          "type": "your_bundle",
+          "disabled": false,
+          "settings": {
+            "heading": "KIT Pescador 20% Off 🔥",
+            "description": "<p>Adicione <strong>3 Itens</strong> essenciais para pesca e <strong>Ganhe 10% de Desconto</strong>!</p>",
+            "header-fabfef726cf46c91d4f92f83cc96a566": null,
+            "header-b4f1525703ae6b7721f4bf7209599025": null,
+            "paragraph-0459b45381ce93d26fd6d4f89672d2a5": null,
+            "heading_font_size": 24,
+            "heading_font_weight": "heading_weight",
+            "heading_uppercase": false,
+            "heading_spacing_bottom": 20,
+            "paragraph-9fef519ffcce01113c3e9da5c78441fe": null,
+            "des_font_size": 15,
+            "des_font_weight": "body_weight",
+            "des_spacing_bottom": 30
+          }
+        }
+      },
+      "block_order": [
+        "product_discount_rWFqE",
+        "your_bundle_4brzg"
+      ],
+      "name": "t:sections.product-bundle.name"
     }
-  }
+  },
+  "order": [
+    "slideshow_8KKtNU",
+    "scrolling_text_U3mttg",
+    "product_bundle_JywJj",
+    "collection_list_ypj7A8",
+    "collection_tab_UNybtX",
+    "collection_tab_rUdcr6",
+    "collection_tab_CYzLaR",
+    "collection_list_VmEYkJ",
+    "pagefly_section_rYMjRK",
+    "shopable_video_Ewz3gp",
+    "collection_list_LNdi9y",
+    "divider_xPQYgr",
+    "product_testimonials_KNN6XE",
+    "rich_text_EcBgbR",
+    "instagram_shop_nrVWcV",
+    "icon_box_TRwJBD",
+    "video_width_text_ovlerlay_FyatYd"
+  ]
 }
