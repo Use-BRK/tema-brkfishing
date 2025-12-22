@@ -229,9 +229,11 @@
       "type": "product-bundle",
       "disabled": false,
       "custom_css": [
-        "product-form-bundle .product-item__price {align-items: center !important; justify-content: center;}",
-        "product-form-bundle .product-item__price .price {font-size: 1.3em !important; font-weight: 900 !important; color: #135ED1;}",
-        "product-form-bundle .card-product-price .installment-payment {order: 3; margin-top: .4rem; font-size: .875em;}"
+        "product-form-bundle .product-item__price{align-items:center !important; justify-content:center;}",
+        "product-form-bundle .product-item__price .price{font-size:1.6em !important; font-weight:900!important; color:#135ED1;}",
+        "product-form-bundle .card-product-price .installment-payment{order:3;margin-top:.4rem;font-size:.875em;}",
+        ".card-product-price{flex-direction:column;}",
+        "product-form-bundle button {border-radius:8px!important;color:white;background-color:#135ed1;border:none!important;}"
       ],
       "settings": {
         "section_width": "fluid_container",
