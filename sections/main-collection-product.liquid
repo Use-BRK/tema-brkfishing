@@ -216,9 +216,9 @@
                           </motion-element>
                         {% endif %}
                       {% endif %}
-                      <a href="{{ product.url }}">
                         <div
-                          class="grid__item{% if pagination == 'load_more_button' or pagination == 'infinit_scrolling' %} loadmore-item{% endif %} "
+                          class="grid__item{% if pagination == 'load_more_button' or pagination == 'infinit_scrolling' %} loadmore-item{% endif %} cursor-pointer"
+                          onclick="window.location.href = '{{ product.url }}'"
                         >
                           {%- if view == 'list' -%}
                             {% render 'product-item',
@@ -267,7 +267,6 @@
                             %}
                           {% endif %}
                         </div>
-                      </a>
                     {% endif %}
                   {%- endfor -%}
                 </div>
