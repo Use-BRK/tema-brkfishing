@@ -118,7 +118,9 @@
       }
     },
     "collection_list_ypj7A8": {
-      "settings": {},
+      "settings": {
+        "section_width": "stretch_width"
+      },
       "blocks": {
         "collection_4GqdHP": {
           "disabled": false,
