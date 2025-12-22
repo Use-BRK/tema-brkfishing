@@ -119,7 +119,7 @@
     },
     "collection_list_ypj7A8": {
       "settings": {
-        "section_width": "stretch_width"
+        "section_width": "fluid_container"
       },
       "blocks": {
         "collection_4GqdHP": {
@@ -130,7 +130,7 @@
     },
     "collection_tab_UNybtX": {
       "settings": {
-        "section_width": "stretch_width",
+        "section_width": "fluid_container",
         "items_to_show": 24,
         "items_per_row": 5,
         "column_gap": 30,
@@ -151,7 +151,7 @@
     },
     "collection_tab_rUdcr6": {
       "settings": {
-        "section_width": "stretch_width",
+        "section_width": "fluid_container",
         "heading": "",
         "header_size": "medium",
         "header_alignment": "center",
@@ -254,7 +254,7 @@
         "product-form-bundle button {border-radius:8px!important;color:white;background-color:#135ed1;border:none!important;}"
       ],
       "settings": {
-        "section_width": "stretch_width",
+        "section_width": "fluid_container",
         "color_scheme": "",
         "header-24105840591b04b16b7441a97f338186": null,
         "heading": "Kit Pescador 10% Off 🔥",
