@@ -67,6 +67,7 @@
 {% if card_product and card_product != empty %}
   <div
     class="product-item product__item-js {{ class }} style-as-{{ product_style }}"
+    onclick="window.location.href='{{ card_product.url }}'"
     {% if type == 'sticky' %}
       data-section="{{ section_id }}"
       data-color-trigger="{{ settings.color_swatch_trigger }}"
