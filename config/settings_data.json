@@ -54,7 +54,7 @@
     "limit_color": "3",
     "swatch_item_type": "variant_images",
     "color_swatch_trigger": "Color,Colour,Cor,Cores",
-    "size_trigger": "Size, Taglia, Tamanho",
+    "size_trigger": "Size, Taglia, Tamanho, Tamanho Baby Look",
     "search_type": "drawer",
     "search_result": "products",
     "enable_search_suggestion": true,
