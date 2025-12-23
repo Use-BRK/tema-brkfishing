@@ -115,6 +115,21 @@
             {%- assign filters = collection.filters -%}
             {%- assign total_active_values = 0 -%}
             {%- for filter in filters -%}
+              {%- liquid
+                assign is_hidden = false
+                if block.settings.filter_hidden_list != blank
+                  assign hidden_filters = block.settings.filter_hidden_list | split: ','
+                  assign filter_label_down = filter.label | downcase | strip
+                  for hidden_item in hidden_filters
+                    assign hidden_item_down = hidden_item | downcase | strip
+                    if hidden_item_down == filter_label_down
+                      assign is_hidden = true
+                      break
+                    endif
+                  endfor
+                endif
+              -%}
+              {%- if is_hidden -%}{%- continue -%}{%- endif -%}
               {%- assign total_active_values = total_active_values | plus: filter.active_values.size -%}
               <div
                 {{ block.shopify_attributes }}

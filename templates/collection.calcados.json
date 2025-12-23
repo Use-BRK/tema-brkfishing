@@ -92,7 +92,7 @@
         "filter_giBtHK": {
           "type": "filter",
           "settings": {
-            "filter_hidden_list": ""
+            "filter_hidden_list": "Marca, Produto, Preço"
           }
         },
         "popular_product_Xwjqcf": {
@@ -131,7 +131,7 @@
         "vertical_posion": "left",
         "number_products_per_page": false,
         "sorting": true,
-        "grid_list": false,
+        "grid_list": true,
         "items_to_show": 12,
         "items_per_row": 3,
         "column_gap": 30,
