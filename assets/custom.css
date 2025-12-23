@@ -651,3 +651,85 @@ cart-notification #minicart-form minicart-recommendations slide-section variant-
     }
   }
 }
+
+
+/* Política de Envio */
+    /* Estilos Básicos para Rastreio */
+    .shipping-policy-container { font-family: inherit; }
+    
+    .shipping-policy-container h1 { margin-bottom: 20px; }
+    
+    .screenshot-area img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 15px 0;
+        border: 1px solid #e0e0e0;
+        border-radius: 4px;
+    }
+
+    /* MENU DE NAVEGAÇÃO (Links Âncora) */
+    .nav-links { 
+        display: flex; 
+        gap: 10px; 
+        flex-wrap: wrap; 
+        margin-bottom: 30px; 
+    }
+    
+    .nav-btn { 
+        text-decoration: none;
+        background-color: #f4f4f4;
+        color: #333;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.9em;
+        border: 1px solid #ccc;
+        transition: 0.2s;
+        cursor: pointer;
+    }
+    
+    .nav-btn:hover { background-color: #e2e6ea; border-color: #999; }
+
+    /* ESTILO NATIVO DO DETAILS/SUMMARY */
+    details {
+        border-bottom: 1px solid #e0e0e0;
+        margin-bottom: 10px;
+    }
+
+    /* O Summary é o "botão" nativo */
+    summary {
+        cursor: pointer;
+        padding: 15px 0;
+        font-weight: bold;
+        list-style: none; /* Remove a setinha padrão feia */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        outline: none;
+    }
+
+    /* Hack para remover setinha padrão no Chrome/Safari */
+    summary::-webkit-details-marker { display: none; }
+
+    /* Criação de uma setinha customizada com CSS puro */
+    summary::after {
+        content: '+'; 
+        font-size: 1.5em;
+        color: #666;
+        font-weight: normal;
+    }
+
+    /* Quando estiver aberto (atributo [open]), muda o ícone */
+    details[open] summary::after {
+        content: '-';
+    }
+
+    /* Animação suave de entrada (Fade in) */
+    details[open] div {
+        animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
