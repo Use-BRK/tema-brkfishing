@@ -189,7 +189,7 @@
                   {%- case product.object_type -%}
                     {%- when 'product' -%}
                       <div
-                        class="grid__item{% if pagination == 'load_more_button' or pagination == 'infinit_scrolling' %} loadmore-item{% endif %} cursor"
+                        class="grid__item{% if pagination == 'load_more_button' or pagination == 'infinit_scrolling' %} loadmore-item{% endif %} pointer"
                         onclick="window.location.href='{{ product.url }}'"
                       >
                         {% render 'product-item',
