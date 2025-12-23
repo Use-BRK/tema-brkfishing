@@ -92,7 +92,7 @@
         "filter_giBtHK": {
           "type": "filter",
           "settings": {
-            "filter_hidden_list": ""
+            "filter_hidden_list": "Marca, Produto, Preço"
           }
         },
         "popular_product_Xwjqcf": {
