@@ -66,7 +66,7 @@
 {% comment %} Case card product has data, handle data {% endcomment %}
 {% if card_product and card_product != empty %}
   <div
-    class="product-item product__item-js {{ class }} style-as-{{ product_style }}"
+    class="product-item product__item-js {{ class }} style-as-{{ product_style }} pointer"
     onclick="window.location.href='{{ card_product.url }}'"
     {% if type == 'sticky' %}
       data-section="{{ section_id }}"
