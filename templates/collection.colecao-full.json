@@ -173,6 +173,7 @@
         },
         "image_banner_UUJxtT": {
           "type": "image_banner",
+          "disabled": true,
           "settings": {
             "url": "shopify://collections",
             "open_link": true
