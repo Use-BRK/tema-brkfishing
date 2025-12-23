@@ -1,40 +1,59 @@
-window.addEventListener("DOMContentLoaded", function () {
-  console.log("Carregando script da página de politica de envio");
+document.addEventListener("DOMContentLoaded", function () {
+  // Função para fechar todos os painéis
+  function closeAllAccordions() {
+    var contents = document.querySelectorAll(".accordion-content");
+    contents.forEach(function (content) {
+      content.style.maxHeight = "0px";
+    });
+  }
 
-  // Lógica para abrir/fechar as seções
-  function toggleAccordion(id) {
-    const item = document.getElementById(id);
-    const content = item.querySelector(".accordion-content");
-
-    // Verifica se está aberto (altura > 0)
-    if (content.style.maxHeight && content.style.maxHeight !== "0px") {
-      content.style.maxHeight = "0px"; // Fecha
-    } else {
-      closeAll(); // Fecha os outros (efeito sanfona única)
-      content.style.maxHeight = content.scrollHeight + "px"; // Abre
+  // Função para abrir um painel específico
+  function openAccordion(targetId) {
+    var targetItem = document.getElementById(targetId);
+    if (targetItem) {
+      var content = targetItem.querySelector(".accordion-content");
+      if (content) {
+        closeAllAccordions(); // Efeito sanfona (fecha os outros)
+        content.style.maxHeight = content.scrollHeight + "px";
+      }
     }
   }
 
-  // Fecha todos os painéis
-  function closeAll() {
-    const contents = document.querySelectorAll(".accordion-content");
-    contents.forEach((c) => (c.style.maxHeight = "0px"));
-  }
+  // 1. Configurar cliques nos Cabeçalhos (Accordion)
+  var accButtons = document.querySelectorAll(".js-accordion-btn");
+  accButtons.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var targetId = this.getAttribute("data-target");
+      var targetItem = document.getElementById(targetId);
+      var content = targetItem.querySelector(".accordion-content");
 
-  // Abre seção específica pelo menu
-  function openSection(id) {
-    closeAll();
-    const item = document.getElementById(id);
-    const content = item.querySelector(".accordion-content");
+      // Se já estiver aberto, fecha. Se fechado, abre.
+      if (content.style.maxHeight && content.style.maxHeight !== "0px") {
+        content.style.maxHeight = "0px";
+      } else {
+        openAccordion(targetId);
+      }
+    });
+  });
 
-    content.style.maxHeight = content.scrollHeight + "px";
-    item.scrollIntoView({ behavior: "smooth", block: "center" });
-  }
+  // 2. Configurar cliques no Menu de Navegação (Scroll)
+  var navButtons = document.querySelectorAll(".js-scroll-btn");
+  navButtons.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var targetId = this.getAttribute("data-target");
+      openAccordion(targetId); // Abre a seção
 
-  // Inicialização: Abre o primeiro item (Correios) ao carregar
-  window.onload = function () {
-    const first = document.getElementById("correios");
-    const content = first.querySelector(".accordion-content");
-    content.style.maxHeight = content.scrollHeight + "px";
-  };
+      // Rola até a seção
+      var element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    });
+  });
+
+  // 3. Inicialização: Abre o primeiro item (Correios) automaticamente
+  // Pequeno delay para garantir que o CSS carregou
+  setTimeout(function () {
+    openAccordion("correios");
+  }, 100);
 });

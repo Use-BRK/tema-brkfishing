@@ -655,32 +655,32 @@ cart-notification #minicart-form minicart-recommendations slide-section variant-
 
 /* Política de Envio */
 .accordion-header {
-        cursor: pointer;
-        width: 100%;
-        text-align: left;
-        background: none;
-        border: none;
-        padding: 15px 0;
-        outline: none;
-        font-weight: bold; 
-        display: flex;
-        justify-content: space-between;
-    }
-    
-    .accordion-content {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-out;
-    }
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 15px 0;
+    outline: none;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
 
-    .screenshot-area img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-        margin: 10px 0;
-        border: 1px solid #ccc;
-    }
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
 
-    .nav-menu { margin-bottom: 20px; }
-    .nav-links { display: flex; gap: 10px; flex-wrap: wrap; }
-    .nav-btn { cursor: pointer; }
+.screenshot-area img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+}
+
+.nav-menu { margin-bottom: 20px; }
+.nav-links { display: flex; gap: 10px; flex-wrap: wrap; }
+.nav-btn { cursor: pointer; }
