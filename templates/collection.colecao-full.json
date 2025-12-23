@@ -203,7 +203,7 @@
         "column_gap": 30,
         "pagination": "infinit_scrolling",
         "button_show_more": "Ver mais",
-        "promotion_link": "shopify://collections/best-seller",
+        "promotion_link": "",
         "promotion_postion": 6,
         "items_per_row_mobile": "2",
         "padding_top": 0,
