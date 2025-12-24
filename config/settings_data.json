@@ -102,6 +102,7 @@
     "show_checkbox_in_product_page": false,
     "show_check_box_in_quick_view": false,
     "page_terms_conditions": "term-and-conditions",
+    "enable_whatsapp_button": true,
     "rate_color": "#ea0606",
     "sections": {
       "custom-colors": {
@@ -392,27 +393,6 @@
         "disabled": false,
         "settings": {}
       },
-      "17073967039101724643": {
-        "type": "shopify://apps/kokfy-whatsapp-button/blocks/kokfy-whatsapp-button/e75d6be6-5b97-463a-9d4c-1c62f00eefd0",
-        "disabled": false,
-        "settings": {
-          "start_text": "Olá, vim da loja Brk Fishing e preciso de ajuda!",
-          "country_code": "55",
-          "whatsapp": "553432194697",
-          "product_url": true,
-          "where": "all",
-          "icon": "whats-svg1",
-          "animation_duration": "animate__infinite",
-          "animation": "no-animation",
-          "position": "left",
-          "background_icon": "#28C740",
-          "color_icon": "#ffffff",
-          "image_size": 52,
-          "size_icon": 32,
-          "bottom_space": 72,
-          "side_space": 30
-        }
-      },
       "2567389343055140935": {
         "type": "shopify://apps/microsoft-clarity/blocks/clarity_js/31c3d126-8116-4b4a-8ba1-baeda7c4aeea",
         "disabled": false,
@@ -470,6 +450,27 @@
           "swatch_location": "After price",
           "switch_on_hover": false,
           "preselect_variant": true
+        }
+      },
+      "17073967039101724643": {
+        "type": "shopify://apps/kokfy-whatsapp-button/blocks/kokfy-whatsapp-button/e75d6be6-5b97-463a-9d4c-1c62f00eefd0",
+        "disabled": true,
+        "settings": {
+          "start_text": "Olá, vim da loja Brk Fishing e preciso de ajuda!",
+          "country_code": "55",
+          "whatsapp": "553432194697",
+          "product_url": true,
+          "where": "all",
+          "icon": "whats-svg1",
+          "animation_duration": "animate__infinite",
+          "animation": "no-animation",
+          "position": "left",
+          "background_icon": "#28c740",
+          "color_icon": "#ffffff",
+          "image_size": 52,
+          "size_icon": 32,
+          "bottom_space": 72,
+          "side_space": 30
         }
       }
     },
