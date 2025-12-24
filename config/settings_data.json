@@ -103,6 +103,7 @@
     "show_check_box_in_quick_view": false,
     "page_terms_conditions": "term-and-conditions",
     "enable_whatsapp_button": true,
+    "whatsapp_button_bottom": 85,
     "rate_color": "#ea0606",
     "sections": {
       "custom-colors": {
