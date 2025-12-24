@@ -4,7 +4,7 @@
   assign style_right = theme_st.whatsapp_button_right | default: 20
 %}
 
-{% if theme_st.enable_whatsapp_button %}
+{% if theme_st.enable_whatsapp_button != blank %}
   <style>
     #whatsapp-button-contact {
       position: fixed;
