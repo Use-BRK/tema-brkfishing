@@ -12,5 +12,12 @@
   "context": {
     "market": "br"
   },
-  "sections": {}
+  "sections": {
+    "main": {
+      "settings": {
+        "size_filter_label": "Tamanho, Tamanho (Calçados)"
+      },
+      "blocks": {}
+    }
+  }
 }
