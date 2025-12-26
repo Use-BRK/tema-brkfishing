@@ -343,7 +343,7 @@ filter-sort[selected="selected"] {
 /* Size Pills Filter */
 .size-pills-unique-container {
   display: flex;
-  align-items: center;
+  align-items: start;
   gap: 1.5rem;
   width: auto;
 }
