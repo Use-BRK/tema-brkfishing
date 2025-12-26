@@ -4,14 +4,6 @@
   Usage: {% render 'size-pills-filter', results: collection %}
 {% endcomment %}
 
-<h1>
-  Quantidade de Results: <strong>{{ results.filters | size }}</strong>
-</h1>
-<hr>
-<p>Results em JSON:{{ results.filters | json }}</p>
-<br>
-<br>
-
 {%- liquid
   assign size_label = section.settings.size_filter_label | default: 'Tamanhos' | downcase
   assign size_filter = blank
@@ -36,6 +28,14 @@
 {% else %}
   Eita, o size_filter.values.size é menor ou igual a 0
 {% endif %}
+
+<h1>
+  Quantidade de Results: <strong>{{ size_filter.values | size }}</strong>
+</h1>
+<hr>
+<p>Results em JSON:{{ size_filter.values | json }}</p>
+<br>
+<br>
 
 {%- if size_filter != blank and size_filter.values.size > 0 -%}
   <div class="size-pills-unique-container mb-30">
