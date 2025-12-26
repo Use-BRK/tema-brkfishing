@@ -19,9 +19,14 @@
 
 {% if size_filter != blank %}
   <h1>O size_filter não é blank</h1>
+{% else %}
+  Eita, o size_filter é blank
 {% endif %}
+
 {% if size_filter.values.size > 0 %}
   <h1>O size_filter.values.size é maior que 0</h1>
+{% else %}
+  Eita, o size_filter.values.size é menor ou igual a 0
 {% endif %}
 
 {%- if size_filter != blank and size_filter.values.size > 0 -%}
