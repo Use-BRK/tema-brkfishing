@@ -160,7 +160,9 @@
         },
         "filter_giBtHK": {
           "type": "filter",
-          "settings": {}
+          "settings": {
+            "filter_hidden_list": ""
+          }
         },
         "popular_product_Xwjqcf": {
           "type": "popular_product",
@@ -191,8 +193,10 @@
       ],
       "settings": {
         "section_width": "container",
-        "enable_filtering": true,
+        "enable_filtering": false,
         "show_filter_counts": true,
+        "enable_size_pills": true,
+        "size_filter_label": "Tamanho",
         "default_filter": "first_open",
         "filter_layout": "vertical",
         "vertical_posion": "left",
