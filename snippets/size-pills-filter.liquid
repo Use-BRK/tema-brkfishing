@@ -4,15 +4,12 @@
   Usage: {% render 'size-pills-filter', results: collection %}
 {% endcomment %}
 
-
 {%- liquid
   assign size_label = section.settings.size_filter_label | default: 'Tamanhos' | downcase
   assign size_filter = blank
-  
+
   for filter in results.filters
     assign filter_label = filter.label | downcase
-    {{ filter_label | prepend: 'filter_label: ' }}
-    {{ size_label | prepend: 'size_label: ' }}
     if filter_label == size_label
       assign size_filter = filter
       break
@@ -20,6 +17,14 @@
   endfor
 -%}
 
+<h1>Size Label: {{ size_label }}</h1>
+<br>
+{% for filter in results.filters %}
+  <h1>Filter Label: {{ filter.label }}</h1>
+{% endfor %}
+<br>
+<br>
+<hr>
 
 {%- if size_filter != blank and size_filter.values.size > 0 -%}
   <div class="size-pills-unique-container mb-30">
