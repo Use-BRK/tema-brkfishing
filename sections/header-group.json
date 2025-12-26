@@ -1,1 +1,221 @@
-{"name":"t:sections.header.name","type":"header","sections":{"top_bar_CbXNYj":{"type":"top-bar","blocks":{"text_slider_LFaC38":{"type":"text_slider","settings":{"text1":"<strong>R$15 OFF <\/strong>na primeira compra, cupom: <strong>BEMVINDO<\/strong>","text2":"Baixe o App","text3":"Brk Fishing - High Performance","change_every":3,"hidden_on_mobile":false}},"cur_lang_aPwfT9":{"type":"cur_lang","settings":{"menu_link":"","show_currency":false,"show_language":false,"show_our_store":true,"hidden_on_mobile":true}}},"block_order":["text_slider_LFaC38","cur_lang_aPwfT9"],"custom_css":["#topbar {padding-inline: 3rem;}"],"settings":{"section_width":"full_width","color_scheme":"scheme-3e8af4c8-b99d-456e-90a0-9e470643087b","show_mobile":true,"show_separator_line":true,"uppercase":false,"font_size":13,"font_weight":"body_weight","padding_top":10,"padding_bottom":10}},"header":{"type":"header","blocks":{"menu_promotion_EeqGGC":{"type":"menu_promotion","name":"Menu Masculino","settings":{"text":"Masculino","open-link-newtab":false,"item_label":"unset","promotion_menu_column":2,"mega_custom_width":860,"center_submenu":true,"full_width":false,"promotion_position":"right","promotion_image_width":41,"promotion_image_1":"shopify:\/\/shop_images\/Banner_masculino.webp","promotion_link_1":"https:\/\/www.brkfishing.com.br\/collections\/masculino","promotion_link_newtab_1":true,"promotion_link_2":"","promotion_link_newtab_2":true}},"menu_promotion_7tMNHN":{"type":"menu_promotion","name":"Menu Feminino","settings":{"text":"Feminino","open-link-newtab":false,"item_label":"unset","promotion_menu_column":2,"mega_custom_width":860,"center_submenu":true,"full_width":false,"promotion_position":"right","promotion_image_width":42,"promotion_image_1":"shopify:\/\/shop_images\/banner-categoria-feminino.webp","promotion_link_1":"https:\/\/www.brkfishing.com.br\/collections\/feminino","promotion_link_newtab_1":true,"promotion_link_2":"","promotion_link_newtab_2":true}},"menu_promotion_C6gPrq":{"type":"menu_promotion","name":"Menu Coleções","settings":{"text":"Coleções","open-link-newtab":false,"item_label":"unset","promotion_menu_column":4,"mega_custom_width":1030,"center_submenu":true,"full_width":true,"promotion_position":"right","promotion_image_width":27,"promotion_link_1":"","promotion_link_newtab_1":true,"promotion_link_2":"","promotion_link_newtab_2":true}},"menu_promotion_fKxpNj":{"type":"menu_promotion","name":"Menu Pesca","settings":{"text":"Tralha de Pesca","open-link-newtab":false,"item_label":"unset","promotion_menu_column":4,"mega_custom_width":1030,"center_submenu":true,"full_width":true,"promotion_position":"right","promotion_image_width":27,"promotion_link_1":"","promotion_link_newtab_1":true,"promotion_link_2":"","promotion_link_newtab_2":true}},"menu_promotion_aQHpr9":{"type":"menu_promotion","name":"Menu Camping e Lazer","settings":{"text":"","open-link-newtab":false,"item_label":"unset","promotion_menu_column":4,"mega_custom_width":1030,"center_submenu":true,"full_width":true,"promotion_position":"right","promotion_image_width":27,"promotion_link_1":"","promotion_link_newtab_1":true,"promotion_link_2":"","promotion_link_newtab_2":true}}},"block_order":["menu_promotion_EeqGGC","menu_promotion_7tMNHN","menu_promotion_C6gPrq","menu_promotion_fKxpNj","menu_promotion_aQHpr9"],"custom_css":[],"settings":{"section_width":"stretch_width","color_scheme":"default","logo_position":"left","separator_line":"inner_page","enable_login_popup":true,"sticky_header_type":"on-scroll-up","sticky_header_mobile":true,"transparent_header":false,"transparent_mobile":false,"transparent_text_icon_color":"#ffffff","mega_menu":"main-menu","dropdowns_animation":"down-to-up","uppercase_first":true,"hot":"Hot","label_color_hot":"#ffffff","label_background_hot":"#d0473e","new":"New","label_color_new":"#ffffff","label_background_new":"#516cf4","sale":"Sale","label_color_sale":"#ffffff","label_background_sale":"#d0473e","popular":"Popular","label_color_popular":"#ffffff","label_background_popular":"#14854e","redirect_to_link":false,"menu_tab":"custom-collections","collection_list":["hot-deals","best-seller","sweaters","t-shirts","dress","blazers","activewear"],"menu_mobile_color":"#ffffff","menu_mobile_background":"#1b59b7","show_search":true,"show_account_icon":true,"show_wishlist_icon":false,"show_shopping_cart":true,"show_currency":false,"show_language":false,"show_recently_viewed":false,"padding_top":18,"padding_bottom":20}}},"order":["top_bar_CbXNYj","header"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "top_bar_CbXNYj": {
+      "type": "top-bar",
+      "blocks": {
+        "text_slider_LFaC38": {
+          "type": "text_slider",
+          "settings": {
+            "text1": "<strong>R$15 OFF </strong>na primeira compra, cupom: <strong>BEMVINDO</strong>",
+            "text2": "Baixe o App",
+            "text3": "Frete fixo <strong>por R$0,26</strong>",
+            "change_every": 3,
+            "hidden_on_mobile": false
+          }
+        },
+        "cur_lang_aPwfT9": {
+          "type": "cur_lang",
+          "settings": {
+            "menu_link": "",
+            "show_currency": false,
+            "show_language": false,
+            "show_our_store": true,
+            "hidden_on_mobile": true
+          }
+        }
+      },
+      "block_order": [
+        "text_slider_LFaC38",
+        "cur_lang_aPwfT9"
+      ],
+      "custom_css": [
+        "#topbar {padding-inline: 3rem;}"
+      ],
+      "settings": {
+        "section_width": "full_width",
+        "color_scheme": "scheme-3e8af4c8-b99d-456e-90a0-9e470643087b",
+        "show_mobile": true,
+        "show_separator_line": true,
+        "uppercase": false,
+        "font_size": 13,
+        "font_weight": "body_weight",
+        "padding_top": 10,
+        "padding_bottom": 10
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "menu_promotion_EeqGGC": {
+          "type": "menu_promotion",
+          "name": "Menu Masculino",
+          "settings": {
+            "text": "Masculino",
+            "open-link-newtab": false,
+            "item_label": "unset",
+            "promotion_menu_column": 2,
+            "mega_custom_width": 860,
+            "center_submenu": true,
+            "full_width": false,
+            "promotion_position": "right",
+            "promotion_image_width": 41,
+            "promotion_image_1": "shopify://shop_images/Banner_masculino.webp",
+            "promotion_link_1": "https://www.brkfishing.com.br/collections/masculino",
+            "promotion_link_newtab_1": true,
+            "promotion_link_2": "",
+            "promotion_link_newtab_2": true
+          }
+        },
+        "menu_promotion_7tMNHN": {
+          "type": "menu_promotion",
+          "name": "Menu Feminino",
+          "settings": {
+            "text": "Feminino",
+            "open-link-newtab": false,
+            "item_label": "unset",
+            "promotion_menu_column": 2,
+            "mega_custom_width": 860,
+            "center_submenu": true,
+            "full_width": false,
+            "promotion_position": "right",
+            "promotion_image_width": 42,
+            "promotion_image_1": "shopify://shop_images/banner-categoria-feminino.webp",
+            "promotion_link_1": "https://www.brkfishing.com.br/collections/feminino",
+            "promotion_link_newtab_1": true,
+            "promotion_link_2": "",
+            "promotion_link_newtab_2": true
+          }
+        },
+        "menu_promotion_C6gPrq": {
+          "type": "menu_promotion",
+          "name": "Menu Coleções",
+          "settings": {
+            "text": "Coleções",
+            "open-link-newtab": false,
+            "item_label": "unset",
+            "promotion_menu_column": 4,
+            "mega_custom_width": 1030,
+            "center_submenu": true,
+            "full_width": true,
+            "promotion_position": "right",
+            "promotion_image_width": 27,
+            "promotion_link_1": "",
+            "promotion_link_newtab_1": true,
+            "promotion_link_2": "",
+            "promotion_link_newtab_2": true
+          }
+        },
+        "menu_promotion_fKxpNj": {
+          "type": "menu_promotion",
+          "name": "Menu Pesca",
+          "settings": {
+            "text": "Tralha de Pesca",
+            "open-link-newtab": false,
+            "item_label": "unset",
+            "promotion_menu_column": 4,
+            "mega_custom_width": 1030,
+            "center_submenu": true,
+            "full_width": true,
+            "promotion_position": "right",
+            "promotion_image_width": 27,
+            "promotion_link_1": "",
+            "promotion_link_newtab_1": true,
+            "promotion_link_2": "",
+            "promotion_link_newtab_2": true
+          }
+        },
+        "menu_promotion_aQHpr9": {
+          "type": "menu_promotion",
+          "name": "Menu Camping e Lazer",
+          "settings": {
+            "text": "",
+            "open-link-newtab": false,
+            "item_label": "unset",
+            "promotion_menu_column": 4,
+            "mega_custom_width": 1030,
+            "center_submenu": true,
+            "full_width": true,
+            "promotion_position": "right",
+            "promotion_image_width": 27,
+            "promotion_link_1": "",
+            "promotion_link_newtab_1": true,
+            "promotion_link_2": "",
+            "promotion_link_newtab_2": true
+          }
+        }
+      },
+      "block_order": [
+        "menu_promotion_EeqGGC",
+        "menu_promotion_7tMNHN",
+        "menu_promotion_C6gPrq",
+        "menu_promotion_fKxpNj",
+        "menu_promotion_aQHpr9"
+      ],
+      "custom_css": [],
+      "settings": {
+        "section_width": "stretch_width",
+        "color_scheme": "default",
+        "logo_position": "left",
+        "separator_line": "inner_page",
+        "enable_login_popup": true,
+        "sticky_header_type": "on-scroll-up",
+        "sticky_header_mobile": true,
+        "transparent_header": false,
+        "transparent_mobile": false,
+        "transparent_text_icon_color": "#ffffff",
+        "mega_menu": "main-menu",
+        "dropdowns_animation": "down-to-up",
+        "uppercase_first": true,
+        "hot": "Hot",
+        "label_color_hot": "#ffffff",
+        "label_background_hot": "#d0473e",
+        "new": "New",
+        "label_color_new": "#ffffff",
+        "label_background_new": "#516cf4",
+        "sale": "Sale",
+        "label_color_sale": "#ffffff",
+        "label_background_sale": "#d0473e",
+        "popular": "Popular",
+        "label_color_popular": "#ffffff",
+        "label_background_popular": "#14854e",
+        "redirect_to_link": false,
+        "menu_tab": "custom-collections",
+        "collection_list": [
+          "hot-deals",
+          "best-seller",
+          "sweaters",
+          "t-shirts",
+          "dress",
+          "blazers",
+          "activewear"
+        ],
+        "menu_mobile_color": "#ffffff",
+        "menu_mobile_background": "#1b59b7",
+        "show_search": true,
+        "show_account_icon": true,
+        "show_wishlist_icon": false,
+        "show_shopping_cart": true,
+        "show_currency": false,
+        "show_language": false,
+        "show_recently_viewed": false,
+        "padding_top": 18,
+        "padding_bottom": 20
+      }
+    }
+  },
+  "order": [
+    "top_bar_CbXNYj",
+    "header"
+  ]
+}
