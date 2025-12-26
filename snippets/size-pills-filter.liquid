@@ -23,8 +23,18 @@
     <div class="size-pills-wrapper flex flex-wrap gap-10">
       {%- for value in size_filter.values -%}
         {%- if value.count > 0 or value.active -%}
+          {%- liquid
+            assign target_url = value.url_to_add
+            unless value.active
+              unless target_url contains 'filter.v.availability'
+                assign target_url = target_url | append: '&filter.v.availability=1'
+              endunless
+            else
+              assign target_url = value.url_to_remove
+            endunless
+          -%}
           <a
-            href="{% if value.active %}{{ value.url_to_remove }}{% else %}{{ value.url_to_add }}{% endif %}"
+            href="{{ target_url }}"
             class="size-pill-item transistion {% if value.active %}active{% endif %}"
             title="{{ value.label }}"
           >
