@@ -10,32 +10,15 @@
 
   for filter in results.filters
     assign filter_label = filter.label | downcase
+    <h1>Filter Label:{{ filter_label }}</h1>
+    <h1>Size Label: {{ size_label }}</h1>
     if filter_label == size_label
       assign size_filter = filter
       break
     endif
+    <hr>
   endfor
 -%}
-
-{% if size_filter != blank %}
-  <h1>O size_filter não é blank</h1>
-{% else %}
-  Eita, o size_filter é blank
-{% endif %}
-
-{% if size_filter.values.size > 0 %}
-  <h1>O size_filter.values.size é maior que 0</h1>
-{% else %}
-  Eita, o size_filter.values.size é menor ou igual a 0
-{% endif %}
-
-<h1>
-  Quantidade de Results: <strong>{{ size_filter.values | size }}</strong>
-</h1>
-<hr>
-<p>Results em JSON:{{ size_filter.values | json }}</p>
-<br>
-<br>
 
 {%- if size_filter != blank and size_filter.values.size > 0 -%}
   <div class="size-pills-unique-container mb-30">
