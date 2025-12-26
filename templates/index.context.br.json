@@ -26,16 +26,16 @@
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
-        "header-07ec4fc5ff27908e1ecf67802e5e2ca5": null,
+        "header-5d357e7be0243ba512cde93f6415d0de": null,
         "heading": "Kit Pescador 13% Off 🔥",
         "description": "<p><strong>VÁLIDO ATÉ 31/12</strong></p>",
         "header_size": "medium",
         "header_alignment": "left",
-        "header-cecf906f7115730652d7487c488abb33": null,
+        "header-809ec0cad39bf3ef8254a31e8f2e4bfc": null,
         "minimum": 2,
         "maximum": 3,
         "enable_quantity": true,
-        "header-4f2309af6c286284d8d02c4d49b88bb8": null,
+        "header-eb155884abd0c638d1eb50b68ef20d4e": null,
         "padding_top": 35,
         "padding_bottom": 35,
         "reset_spacing": true
@@ -54,7 +54,7 @@
             "items_to_show": 3,
             "items_per_row": 3,
             "column_gap": 30,
-            "header-18c886e9ccebfdcfbb716f1ad0e6a545": null,
+            "header-fdf86f14b8fb12864095593c6ba5913d": null,
             "carousel_on_mobile": true,
             "items_per_row_mobile": 2
           }
@@ -65,14 +65,14 @@
           "settings": {
             "heading": "KIT Pescador 13% Off 🔥",
             "description": "<p>Adicione <strong>3 Itens</strong> essenciais para pesca e <strong>Ganhe 13% de Desconto</strong>!</p>",
-            "header-269c18194249ed8ec605335cca612ec2": null,
-            "header-3c71a084996023ad872e53bafcb9d7f6": null,
-            "paragraph-bd53d0302fb84804b770039071f0d34b": null,
+            "header-cbd6390c1409ef906339b176cb3d35a4": null,
+            "header-be293279eb1589e9feff84afd9e77531": null,
+            "paragraph-f1f7c2930cc1a175cc83c15ac4c18a2e": null,
             "heading_font_size": 24,
             "heading_font_weight": "heading_weight",
             "heading_uppercase": false,
             "heading_spacing_bottom": 20,
-            "paragraph-5f707de2b13d2fe0cccac324f95c7f51": null,
+            "paragraph-ac753598997c9bf8ab7ece5a52ab3cef": null,
             "des_font_size": 15,
             "des_font_weight": "body_weight",
             "des_spacing_bottom": 30
@@ -83,7 +83,7 @@
         "product_discount_rWFqE",
         "your_bundle_4brzg"
       ],
-      "name": "Kit Pescador"
+      "name": "t:sections.product-bundle.name"
     },
     "slideshow_8KKtNU": {
       "settings": {
@@ -93,16 +93,16 @@
       "blocks": {
         "slider_item_eBDERN": {
           "type": "slider_item",
-          "name": "Natal Fishing",
+          "name": "Virada Fishing",
           "disabled": false,
           "settings": {
-            "header-d35253bd86a761673346aa531ecf6df2": null,
+            "header-c43875ca8dabc97015e231b7353e2e57": null,
             "image": "shopify://shop_images/FULLBANNER_FISHING_MOTORS.webp",
             "image_mobile": "shopify://shop_images/MOBBANNER_FISHING_MOTORS_V2.webp",
             "local_video": null,
             "overlay_opacity": 0,
             "link_banner": "shopify://collections/envio-full",
-            "header-5a3fe8adce554d223955878693b22212": null,
+            "header-d594d6de83acf94604eebb0c4ff78767": null,
             "slider_effect": "effect_fadeinup",
             "subheading": "",
             "heading": "",
@@ -113,18 +113,18 @@
             "second_button_label": "",
             "second_button_link": "shopify://collections/camisa-fusionx-masculino",
             "second_button_style": false,
-            "header-e8924aead04d618f1d2e97f4b3466854": null,
+            "header-d0efba275ad673dd592259d5c41656ab": null,
             "content_alignment": "center",
             "content_position": "top-center",
             "content_width": "full_width",
             "content_max_width": 100,
             "content_padding_block": 55,
             "content_padding_inline": 55,
-            "header-ab951b0b8405a8d717c5436971739b2b": null,
+            "header-18fbe62bdfc578dde7f546f70aee7828": null,
             "show_content_background": false,
             "content_background": "#ffffff",
             "content_box_opacity": 100,
-            "header-e7b56813def13314ac6b10e05e255764": null,
+            "header-39a365343b6fff5dc2f383dc32ea8d93": null,
             "content_alignment_mobile": "right"
           }
         },
