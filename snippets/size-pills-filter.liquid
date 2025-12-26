@@ -9,15 +9,15 @@
   assign size_filter = blank
 
   for filter in results.filters
-    assign filter_label = filter.label | downcase
-    <h1>Filter Label:{{ filter_label }}</h1>
+    assign filter_label = filter.label | downcase 
+  %}
     <h1>Size Label: {{ size_label }}</h1>
-    if filter_label == size_label
+    {%- liquid if filter_label == size_label
       assign size_filter = filter
       break
-    endif
+    endif %}
     <hr />
-  endfor
+  {%- liquid endfor
 -%}
 
 {%- if size_filter != blank and size_filter.values.size > 0 -%}
