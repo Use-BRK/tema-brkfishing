@@ -5,26 +5,23 @@
 {% endcomment %}
 
 {%- liquid
-  assign size_label = section.settings.size_filter_label | default: 'Tamanhos' | downcase
+  assign size_labels = section.settings.size_filter_label | default: 'Tamanho' | downcase | split: ','
   assign size_filter = blank
 
   for filter in results.filters
-    assign filter_label = filter.label | downcase
-    if filter_label == size_label
-      assign size_filter = filter
+    assign filter_label = filter.label | downcase | strip
+    for label in size_labels
+      assign clean_label = label | strip
+      if filter_label == clean_label
+        assign size_filter = filter
+        break
+      endif
+    endfor
+    if size_filter != blank
       break
     endif
   endfor
 -%}
-
-<h1>Size Label: {{ size_label }}</h1>
-<br>
-{% for filter in results.filters %}
-  <h1>Filter Label: {{ filter.label }}</h1>
-{% endfor %}
-<br>
-<br>
-<hr>
 
 {%- if size_filter != blank and size_filter.values.size > 0 -%}
   <div class="size-pills-unique-container mb-30">

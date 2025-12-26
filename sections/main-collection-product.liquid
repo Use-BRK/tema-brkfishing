@@ -181,15 +181,23 @@
                     {%- liquid
                       assign has_stock_match = true
                       if section.settings.enable_size_pills
-                        assign size_filter_label = section.settings.size_filter_label | default: 'Tamanho' | downcase
+                        assign size_filter_labels = section.settings.size_filter_label | default: 'Tamanho' | downcase | split: ','
                         assign target_size_filter = blank
+
                         for filter in collection.filters
-                          assign filter_label = filter.label | downcase
-                          if filter_label == size_filter_label
-                            assign target_size_filter = filter
+                          assign filter_label = filter.label | downcase | strip
+                          for label in size_filter_labels
+                            assign clean_label = label | strip
+                            if filter_label == clean_label
+                              assign target_size_filter = filter
+                              break
+                            endif
+                          endfor
+                          if target_size_filter != blank
                             break
                           endif
                         endfor
+
                         assign active_sizes = target_size_filter.active_values | map: 'label'
 
                         if active_sizes.size > 0
@@ -394,7 +402,7 @@
       "id": "size_filter_label",
       "label": "Filter Label for Pills",
       "default": "Tamanho",
-      "info": "Case insensitive label of the filter to display as pills."
+      "info": "Case insensitive label of the filter to display as pills. Separate multiple labels with comma (e.g. 'Tamanho, Numeração')."
     },
     {
       "type": "select",
