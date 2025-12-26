@@ -57,10 +57,20 @@
       {%- endif -%}
     {% endif %}
   {%- endif -%}
+
+  {%- if section.settings.enable_size_pills -%}
+    <div class="toolbar-pills flex-1 flex align-center justify-content-center hidden-sm">
+      {%- render 'size-pills-filter', results: collection -%}
+    </div>
+  {%- endif -%}
+
   {%- if grid_list -%}
     <div class="show-type-products flex grow-1 gap-5{% if number_products_per_page and sorting  %} justify-content-center{% endif %}{% if number_products_per_page and sorting == false  %} justify-content-end{% endif %}">
       {%- if pageurl == 'list' -%}
-        <view-mode class="grid-mode view-mode pointer tooltip relative w-30 h-30 inline-flex content-center" data-view="grid">
+        <view-mode
+          class="grid-mode view-mode pointer tooltip relative w-30 h-30 inline-flex content-center"
+          data-view="grid"
+        >
           <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="none">
             <g fill="currentColor"><path d="M2.073 4a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM2.073 9a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM2.073 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM7.073 4a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM7.073 9a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM7.073 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM12.073 4a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM12.073 9a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM12.073 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/></g>
           </svg>

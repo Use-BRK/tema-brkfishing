@@ -342,13 +342,17 @@ filter-sort[selected="selected"] {
 
 /* Size Pills Filter */
 .size-pills-unique-container {
-  display: block;
-  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: auto;
 }
 .size-pills-label {
   display: block;
   font-size: 1.4rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
+  margin-right: 0.5rem;
+  white-space: nowrap;
 }
 .size-pills-wrapper {
   display: flex;
