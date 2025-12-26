@@ -25,7 +25,7 @@
 
 {%- if size_filter != blank and size_filter.values.size > 0 -%}
   <div class="size-pills-unique-container flex-column">
-    <div class="size-pills-label mb-10 subheading_weight">{{ size_filter.label }}</div>
+    <div class="size-pills-label mb-10 subheading_weight">{{ size_filter.label }}:</div>
     <div class="size-pills-wrapper flex flex-wrap gap-10">
       {%- for value in size_filter.values -%}
         {%- if value.count > 0 or value.active -%}
