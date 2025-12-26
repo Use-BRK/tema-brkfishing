@@ -178,6 +178,43 @@
                     assign found = false
                   -%}
                   {%- for product in collection.products -%}
+                    {%- liquid
+                      assign has_stock_match = true
+                      if section.settings.enable_size_pills
+                        assign size_filter_label = section.settings.size_filter_label | default: 'Tamanho' | downcase
+                        assign target_size_filter = blank
+                        for filter in collection.filters
+                          assign filter_label = filter.label | downcase
+                          if filter_label == size_filter_label
+                            assign target_size_filter = filter
+                            break
+                          endif
+                        endfor
+                        assign active_sizes = target_size_filter.active_values | map: 'label'
+
+                        if active_sizes.size > 0
+                          assign has_stock_match = false
+                          for variant in product.variants
+                            if variant.available
+                              for aspect in active_sizes
+                                if variant.options contains aspect
+                                  assign has_stock_match = true
+                                  break
+                                endif
+                              endfor
+                            endif
+                            if has_stock_match
+                              break
+                            endif
+                          endfor
+                        endif
+                      endif
+                    -%}
+
+                    {%- unless has_stock_match -%}
+                      {%- continue -%}
+                    {%- endunless -%}
+
                     {% if product.tags contains 'Sem Estoque' %}
                       {% comment %} Exibe apenas produtos com estoque{% endcomment %}
                     {% else %}
