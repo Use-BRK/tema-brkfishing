@@ -107,6 +107,10 @@
             {%- render 'filter-current', class: 'mb-30' -%}
           {% endif %}
 
+          {%- if section_st.enable_size_pills -%}
+            {%- render 'size-pills-filter', results: collection -%}
+          {%- endif -%}
+
           <div
             class="product-grid-container relative"
           >
@@ -337,6 +341,23 @@
       "id": "show_filter_counts",
       "label": "t:sections.collection-main.settings.show_filter_counts",
       "default": true
+    },
+    {
+      "type": "header",
+      "content": "Size Pills Filter"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_size_pills",
+      "label": "Enable Size Pills",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "size_filter_label",
+      "label": "Filter Label for Pills",
+      "default": "Tamanho",
+      "info": "Case insensitive label of the filter to display as pills."
     },
     {
       "type": "select",
