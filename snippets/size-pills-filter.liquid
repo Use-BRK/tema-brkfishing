@@ -4,6 +4,14 @@
   Usage: {% render 'size-pills-filter', results: collection %}
 {% endcomment %}
 
+<h1>
+  Quantidade de Results: <strong>{{ results.filters | size }}</strong>
+</h1>
+<hr>
+<p>Results em JSON:{{ results.filters | json }}</p>
+<br>
+<br>
+
 {%- liquid
   assign size_label = section.settings.size_filter_label | default: 'Tamanhos' | downcase
   assign size_filter = blank
