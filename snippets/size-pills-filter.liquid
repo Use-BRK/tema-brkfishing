@@ -17,6 +17,13 @@
   endfor
 -%}
 
+{% if size_filter != blank %}
+  <h1>O size_filter não é blank</h1>
+{% endif %}
+{% if size_filter.values.size > 0 %}
+  <h1>O size_filter.values.size é maior que 0</h1>
+{% endif %}
+
 {%- if size_filter != blank and size_filter.values.size > 0 -%}
   <div class="size-pills-unique-container mb-30">
     <div class="size-pills-label mb-10 subheading_weight">{{ size_filter.label }}</div>
