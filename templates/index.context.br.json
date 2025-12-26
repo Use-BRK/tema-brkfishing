@@ -26,16 +26,16 @@
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
-        "header-5d357e7be0243ba512cde93f6415d0de": null,
+        "header-1b100973d193e7b39db7921abe69f6f7": null,
         "heading": "Kit Pescador 13% Off 🔥",
         "description": "<p><strong>VÁLIDO ATÉ 31/12</strong></p>",
         "header_size": "medium",
         "header_alignment": "left",
-        "header-809ec0cad39bf3ef8254a31e8f2e4bfc": null,
+        "header-de3b59be51cb3fc8497cd190aaf1e8b3": null,
         "minimum": 2,
         "maximum": 3,
         "enable_quantity": true,
-        "header-eb155884abd0c638d1eb50b68ef20d4e": null,
+        "header-e4646e5372067a94013b35df7e76d164": null,
         "padding_top": 35,
         "padding_bottom": 35,
         "reset_spacing": true
@@ -54,7 +54,7 @@
             "items_to_show": 3,
             "items_per_row": 3,
             "column_gap": 30,
-            "header-fdf86f14b8fb12864095593c6ba5913d": null,
+            "header-87126916bcf1a76c1704da9107af3363": null,
             "carousel_on_mobile": true,
             "items_per_row_mobile": 2
           }
@@ -65,14 +65,14 @@
           "settings": {
             "heading": "KIT Pescador 13% Off 🔥",
             "description": "<p>Adicione <strong>3 Itens</strong> essenciais para pesca e <strong>Ganhe 13% de Desconto</strong>!</p>",
-            "header-cbd6390c1409ef906339b176cb3d35a4": null,
-            "header-be293279eb1589e9feff84afd9e77531": null,
-            "paragraph-f1f7c2930cc1a175cc83c15ac4c18a2e": null,
+            "header-b811ba988e299da326df8f50cf953999": null,
+            "header-4accaa2fd82499cb6933ddca77cd15a6": null,
+            "paragraph-f76d1c9773a86e77305aabdad75c1b3d": null,
             "heading_font_size": 24,
             "heading_font_weight": "heading_weight",
             "heading_uppercase": false,
             "heading_spacing_bottom": 20,
-            "paragraph-ac753598997c9bf8ab7ece5a52ab3cef": null,
+            "paragraph-189707c5a53a12ce5d5e4482795d8119": null,
             "des_font_size": 15,
             "des_font_weight": "body_weight",
             "des_spacing_bottom": 30
@@ -83,7 +83,7 @@
         "product_discount_rWFqE",
         "your_bundle_4brzg"
       ],
-      "name": "t:sections.product-bundle.name"
+      "name": "Kit Pescador"
     },
     "slideshow_8KKtNU": {
       "settings": {
@@ -96,13 +96,13 @@
           "name": "Virada Fishing",
           "disabled": false,
           "settings": {
-            "header-c43875ca8dabc97015e231b7353e2e57": null,
+            "header-7518523ef238c4a26398d02ad9af64bd": null,
             "image": "shopify://shop_images/FULLBANNER_FISHING_MOTORS.webp",
             "image_mobile": "shopify://shop_images/MOBBANNER_FISHING_MOTORS_V2.webp",
             "local_video": null,
             "overlay_opacity": 0,
             "link_banner": "shopify://collections/envio-full",
-            "header-d594d6de83acf94604eebb0c4ff78767": null,
+            "header-dfd30bfa284727ce98a22c0e9f55ec14": null,
             "slider_effect": "effect_fadeinup",
             "subheading": "",
             "heading": "",
@@ -113,18 +113,18 @@
             "second_button_label": "",
             "second_button_link": "shopify://collections/camisa-fusionx-masculino",
             "second_button_style": false,
-            "header-d0efba275ad673dd592259d5c41656ab": null,
+            "header-7e2f4078ef7b41a653a7870645fc9a7d": null,
             "content_alignment": "center",
             "content_position": "top-center",
             "content_width": "full_width",
             "content_max_width": 100,
             "content_padding_block": 55,
             "content_padding_inline": 55,
-            "header-18fbe62bdfc578dde7f546f70aee7828": null,
+            "header-5ce30660c91cfd1edcc42ebe96d63bb8": null,
             "show_content_background": false,
             "content_background": "#ffffff",
             "content_box_opacity": 100,
-            "header-39a365343b6fff5dc2f383dc32ea8d93": null,
+            "header-75ff38f866e0d36688f3eaa4173a5fc1": null,
             "content_alignment_mobile": "right"
           }
         },
@@ -194,7 +194,9 @@
     },
     "collection_list_ypj7A8": {
       "settings": {
-        "section_width": "fluid_container"
+        "section_width": "fluid_container",
+        "reset_spacing": true,
+        "padding_bottom": 25
       },
       "blocks": {
         "collection_4GqdHP": {
@@ -210,7 +212,9 @@
         "items_per_row": 5,
         "column_gap": 30,
         "autoplay": false,
-        "reveal": false
+        "reveal": false,
+        "padding_top": 15,
+        "padding_bottom": 15
       },
       "blocks": {
         "collection_DUa6Xx": {
@@ -233,7 +237,8 @@
         "items_to_show": 24,
         "items_per_row": 5,
         "autoplay": false,
-        "reveal": false
+        "reveal": false,
+        "horizontal_tab_style": "underline"
       },
       "blocks": {
         "collection_NqMAWp": {
@@ -314,6 +319,16 @@
         "collection_zwPQwE": {
           "settings": {
             "collection_title": "Molinetes"
+          }
+        }
+      }
+    },
+    "collection_list_VmEYkJ": {
+      "settings": {},
+      "blocks": {
+        "collection_fyfMEN": {
+          "settings": {
+            "collection_image": "shopify://shop_images/OCULOS.jpg"
           }
         }
       }
