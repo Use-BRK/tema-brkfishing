@@ -26,16 +26,16 @@
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
-        "header-8838b0c5f5e61dadb5900d46dd39ee14": null,
+        "header-23116352d3e3674cb81542c69b2e69df": null,
         "heading": "Kit Pescador 13% Off 🔥",
         "description": "<p><strong>VÁLIDO ATÉ 31/12</strong></p>",
         "header_size": "medium",
         "header_alignment": "left",
-        "header-31c93a1b2a1c5562fe7ca4333af56726": null,
+        "header-6404f0ee0e0ac0eb6fd710a6f9db8e82": null,
         "minimum": 2,
         "maximum": 3,
         "enable_quantity": true,
-        "header-a22a951dd9e351227a7eefb6392340b7": null,
+        "header-ca30c21b4c2548218023fdcdc95c88a4": null,
         "padding_top": 35,
         "padding_bottom": 35,
         "reset_spacing": true
@@ -54,7 +54,7 @@
             "items_to_show": 3,
             "items_per_row": 3,
             "column_gap": 30,
-            "header-b169e2c97f9b6378311bc99590d76e96": null,
+            "header-38692ab2b651cdf0cd42f98720faa4b3": null,
             "carousel_on_mobile": true,
             "items_per_row_mobile": 2
           }
@@ -65,14 +65,14 @@
           "settings": {
             "heading": "KIT Pescador 13% Off 🔥",
             "description": "<p>Adicione <strong>3 Itens</strong> essenciais para pesca e <strong>Ganhe 13% de Desconto</strong>!</p>",
-            "header-75cf1b71511147516242380cb0d2fa12": null,
-            "header-6e4bf69b45730b3b4f5ed0851ce180dc": null,
-            "paragraph-1df6bf6578b6afea9d6980c6fd660373": null,
+            "header-a20055634a0bd02df10c71095dee208b": null,
+            "header-0a4a5c0fcc1919e55991188a6a5148e3": null,
+            "paragraph-03ff889be71012c20500484d33d3bdb6": null,
             "heading_font_size": 24,
             "heading_font_weight": "heading_weight",
             "heading_uppercase": false,
             "heading_spacing_bottom": 20,
-            "paragraph-3aca41249b2bc2338ccaf26b0430ccfb": null,
+            "paragraph-68fdbb7e2d5d392069109ae57c4e70d7": null,
             "des_font_size": 15,
             "des_font_weight": "body_weight",
             "des_spacing_bottom": 30
@@ -96,13 +96,13 @@
           "name": "Natal Fishing",
           "disabled": false,
           "settings": {
-            "header-2177963a5d34f058908617b522214535": null,
+            "header-01d9a357f875b09ea6e3f6c556cdd902": null,
             "image": "shopify://shop_images/FULLBANNER.jpg",
             "image_mobile": "shopify://shop_images/MOB-BANNER.jpg",
             "local_video": null,
             "overlay_opacity": 0,
             "link_banner": "shopify://collections/envio-full",
-            "header-f558cbab09746707d6955f4c627dbebe": null,
+            "header-c35357a16148c81a9008783a294a627b": null,
             "slider_effect": "effect_fadeinup",
             "subheading": "",
             "heading": "",
@@ -113,18 +113,18 @@
             "second_button_label": "",
             "second_button_link": "shopify://collections/camisa-fusionx-masculino",
             "second_button_style": false,
-            "header-3846bcdf4b74c4e9f268b02fef21956f": null,
+            "header-5ff5545be24d54837e8595c059ff270e": null,
             "content_alignment": "center",
             "content_position": "top-center",
             "content_width": "full_width",
             "content_max_width": 100,
             "content_padding_block": 55,
             "content_padding_inline": 55,
-            "header-cf97193971cbdc206d1dd3623230ed86": null,
+            "header-23d84a484c2c1feb4fa375731010a6eb": null,
             "show_content_background": false,
             "content_background": "#ffffff",
             "content_box_opacity": 100,
-            "header-f0d4f4e0910051fe6f7d4ac955d8f558": null,
+            "header-741cea584eee47251fb5eebe143b628a": null,
             "content_alignment_mobile": "right"
           }
         },
@@ -172,7 +172,10 @@
       "custom_css": [
         "* {color: white; background-color: #1e1e20;}"
       ],
-      "settings": {},
+      "settings": {
+        "speed": 11,
+        "space_between_text": 60
+      },
       "blocks": {
         "scrolling_text_Bmp7bG": {
           "settings": {
