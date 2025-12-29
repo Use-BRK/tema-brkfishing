@@ -735,7 +735,7 @@ cart-notification #minicart-form minicart-recommendations slide-section variant-
     }
 
     /* resize font menu */
-    @media (max-width: 1600px){
+    @media (min-width: 1024px) and (max-width: 1600px){
       header .header__menu nav .navigation__menu-content ul li a{
         font-size: clamp(1rem, 2vw, 1.1rem);
       }
