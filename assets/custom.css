@@ -603,7 +603,9 @@ cart-notification #minicart-form minicart-recommendations slide-section variant-
 }
 
 .btn-personalize{
-  border: 1px solid #000;
+  background:#135ed1;
+  border: 1px solid #135ed1;
+  color:hsl(0% 0% 100%)!important;
   border-radius: 30rem;
   padding-inline: 3rem;
 }
