@@ -664,6 +664,17 @@ cart-notification #minicart-form minicart-recommendations slide-section variant-
   }
 }
 
+mobile-navigation-bar.show a span .wishlist-count, 
+mobile-navigation-bar.show a span .cart-count {
+    background: white;
+}
+
+mobile-navigation-bar.show a span .wishlist-count, 
+mobile-navigation-bar.show a span .cart-count span{
+    color: #135ed1;
+    font-weight: 600
+}
+
 
 /* Política de Envio */
     /* Estilos Básicos para Rastreio */
