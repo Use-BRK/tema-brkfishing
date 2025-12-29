@@ -130,7 +130,7 @@
         "enable_filtering": false,
         "show_filter_counts": true,
         "enable_size_pills": true,
-        "size_filter_label": "Tamanho",
+        "size_filter_label": "Tamanho, Tamanhos (Calçados)",
         "default_filter": "first_open",
         "filter_layout": "vertical",
         "vertical_posion": "left",
