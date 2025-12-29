@@ -670,7 +670,7 @@ mobile-navigation-bar.show .cart-count {
 }
 
 mobile-navigation-bar.show .wishlist-count, 
-mobile-navigation-bar.show .cart-count {
+mobile-navigation-bar.show .cart-count, mobile-navigation-bar.show .cart-count span {
     color: #135ed1;
     font-weight: 600;
 }
