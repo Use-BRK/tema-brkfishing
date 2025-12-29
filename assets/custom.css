@@ -608,9 +608,11 @@ cart-notification #minicart-form minicart-recommendations slide-section variant-
   color:hsl(0 0 100%)!important;
   border-radius: 30rem;
   padding-inline: 3rem;
+  box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.3);
 
   &:hover{
     opacity: 0.8;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.3);
   }
 }
 
