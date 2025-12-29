@@ -24,47 +24,41 @@
 -%}
 
 {%- if size_filter != blank and size_filter.values.size > 0 -%}
-  {%- capture pills_content -%}
-    {%- for value in size_filter.values -%}
-      {%- if value.count > 0 or value.active -%}
-        {%- liquid
-          assign target_url = value.url_to_add
-          if value.active
-            assign target_url = value.url_to_remove
-          elsif size_filter.active_values.size > 0
-            assign base_url = size_filter.url_to_remove
-            assign separator = '&'
-            unless base_url contains '?'
-              assign separator = '?'
-            endunless
-            assign target_url = base_url | append: separator | append: value.param_name | append: '=' | append: value.value
-          endif
+  <div class="size-pills-unique-container flex-column">
+    <div class="size-pills-label mb-10 subheading_weight">{{ size_filter.label }}:</div>
+    <div class="size-pills-wrapper flex flex-wrap gap-10">
+      {%- for value in size_filter.values -%}
+        {%- if value.count > 0 or value.active -%}
+          {%- liquid
+            assign target_url = value.url_to_add
+            if value.active
+              assign target_url = value.url_to_remove
+            elsif size_filter.active_values.size > 0
+              assign base_url = size_filter.url_to_remove
+              assign separator = '&'
+              unless base_url contains '?'
+                assign separator = '?'
+              endunless
+              assign target_url = base_url | append: separator | append: value.param_name | append: '=' | append: value.value
+            endif
 
-          unless target_url contains 'filter.v.availability'
-            assign separator = '&'
-            unless target_url contains '?'
-              assign separator = '?'
+            unless target_url contains 'filter.v.availability'
+              assign separator = '&'
+              unless target_url contains '?'
+                assign separator = '?'
+              endunless
+              assign target_url = target_url | append: separator | append: 'filter.v.availability=1'
             endunless
-            assign target_url = target_url | append: separator | append: 'filter.v.availability=1'
-          endunless
-        -%}
-        <a
-          href="{{ target_url }}"
-          class="size-pill-item transistion {% if value.active %}active{% endif %}"
-          title="{{ value.label }}"
-        >
-          {{ value.label }}
-        </a>
-      {%- endif -%}
-    {%- endfor -%}
-  {%- endcapture -%}
-  {%- assign pills_content = pills_content | strip -%}
-  {%- if pills_content != blank -%}
-    <div class="size-pills-unique-container flex-column">
-      <div class="size-pills-label mb-10 subheading_weight">{{ size_filter.label }}:</div>
-      <div class="size-pills-wrapper flex flex-wrap gap-10">
-        {{ pills_content }}
-      </div>
+          -%}
+          <a
+            href="{{ target_url }}"
+            class="size-pill-item transistion {% if value.active %}active{% endif %}"
+            title="{{ value.label }}"
+          >
+            {{ value.label }}
+          </a>
+        {%- endif -%}
+      {%- endfor -%}
     </div>
-  {%- endif -%}
+  </div>
 {%- endif -%}
