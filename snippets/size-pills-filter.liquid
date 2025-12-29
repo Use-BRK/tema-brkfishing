@@ -51,6 +51,14 @@
               assign is_available = true
             endif
 
+            if value.active
+              assign is_available = true
+            endif
+
+            if size_filter.active_values.size > 0 and value.active == false
+              assign is_available = false
+            endif
+
             assign target_url = value.url_to_add
             if value.active
               assign target_url = value.url_to_remove
@@ -79,6 +87,11 @@
             >
               {{ value.label }}
             </a>
+            {%- if value.active -%}
+              <a href="{{ value.url_to_remove }}" class="size-pill-clear-item transistion" title="Limpar filtro">
+                Limpar
+              </a>
+            {%- endif -%}
           {%- endif -%}
         {%- endif -%}
       {%- endfor -%}
