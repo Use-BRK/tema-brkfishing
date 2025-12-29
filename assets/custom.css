@@ -630,6 +630,15 @@ cart-notification #minicart-form minicart-recommendations slide-section variant-
     display: flex;
     flex: 1;
   }
+  
+  .navigation__menu-content.navigation__menu-content-mobile ul a.btn-personalize-mobile{
+    background: #1b59b7;
+    color: #fff;
+    padding-inline: 1rem;
+    border-radius: 6px;
+    transform: translateX(-1rem);
+    margin-right: -20px;
+  }
 }
 
 /* Custom delivery message */
