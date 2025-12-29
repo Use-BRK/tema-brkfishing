@@ -664,15 +664,15 @@ cart-notification #minicart-form minicart-recommendations slide-section variant-
   }
 }
 
-mobile-navigation-bar.show a span .wishlist-count, 
-mobile-navigation-bar.show a span .cart-count {
+mobile-navigation-bar.show .wishlist-count, 
+mobile-navigation-bar.show .cart-count {
     background: white;
 }
 
-mobile-navigation-bar.show a span .wishlist-count, 
-mobile-navigation-bar.show a span .cart-count span{
+mobile-navigation-bar.show .wishlist-count, 
+mobile-navigation-bar.show .cart-count {
     color: #135ed1;
-    font-weight: 600
+    font-weight: 600;
 }
 
 
