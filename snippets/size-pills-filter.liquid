@@ -58,6 +58,7 @@
       {%- endif -%}
     {%- endfor -%}
   {%- endcapture -%}
+  {%- assign pills_content = pills_content | strip -%}
   {%- if pills_content != blank -%}
     <div class="size-pills-unique-container flex-column">
       <div class="size-pills-label mb-10 subheading_weight">{{ size_filter.label }}:</div>
