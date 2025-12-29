@@ -618,11 +618,6 @@ cart-notification #minicart-form minicart-recommendations slide-section variant-
   display:none
 }
 
-.btn-personalize:hover{
-  background: #000!important;
-  color:#FFF!important;
-}
-
 .product__badges-sale-scrolling.badge-detail-page{
   background: #000;
   border-radius: 0
