@@ -28,6 +28,7 @@
     <div class="size-pills-label mb-10 subheading_weight">{{ size_filter.label }}:</div>
     <div class="size-pills-wrapper flex flex-wrap gap-10">
       {%- for value in size_filter.values -%}
+        <h1>Quantidade:{{ value.count }}</h1>
         {%- if value.count > 0 -%}
           {%- liquid
             assign target_url = value.url_to_add
