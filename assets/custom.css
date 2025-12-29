@@ -605,9 +605,13 @@ cart-notification #minicart-form minicart-recommendations slide-section variant-
 .btn-personalize{
   background:#135ed1;
   border: 1px solid #135ed1;
-  color:hsl(0% 0% 100%)!important;
+  color:hsl(0 0 100%)!important;
   border-radius: 30rem;
   padding-inline: 3rem;
+
+  &:hover{
+    opacity: 0.8;
+  }
 }
 
 .horizontal-list .level0>menu-item>a.btn-personalize:hover:after{
