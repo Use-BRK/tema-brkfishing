@@ -733,3 +733,10 @@ cart-notification #minicart-form minicart-recommendations slide-section variant-
         from { opacity: 0; transform: translateY(-10px); }
         to { opacity: 1; transform: translateY(0); }
     }
+
+    /* resize font menu */
+    @media (max-width: 1600px){
+      header .header__menu nav .navigation__menu-content ul li a{
+        font-size: clamp(1.2rem, 2vw, 1.2rem);
+      }
+    }
