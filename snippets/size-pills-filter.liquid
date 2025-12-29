@@ -24,12 +24,41 @@
 -%}
 
 {%- if size_filter != blank and size_filter.values.size > 0 -%}
+  {%- liquid
+    assign available_sizes_list = '|'
+    for product in results.products
+      for variant in product.variants
+        if variant.available
+          for option_value in variant.options
+            assign clean_value = option_value | strip | downcase
+            assign available_sizes_list = available_sizes_list | append: clean_value | append: '|'
+          endfor
+        endif
+      endfor
+    endfor
+  -%}
+
   <div class="size-pills-unique-container flex-column">
     <div class="size-pills-label mb-10 subheading_weight">{{ size_filter.label }}:</div>
-    <div class="size-pills-wrapper flex flex-wrap gap-10">
+    <div class="size-pills-wrapper flex flex-wrap align-center gap-10">
       {%- for value in size_filter.values -%}
         {%- if value.count > 0 or value.active -%}
           {%- liquid
+            assign is_available = false
+            assign clean_filter_value = value.label | strip | downcase
+            assign search_term = '|' | append: clean_filter_value | append: '|'
+            if available_sizes_list contains search_term
+              assign is_available = true
+            endif
+
+            if value.active
+              assign is_available = true
+            endif
+
+            if size_filter.active_values.size > 0 and value.active == false
+              assign is_available = false
+            endif
+
             assign target_url = value.url_to_add
             if value.active
               assign target_url = value.url_to_remove
@@ -50,13 +79,20 @@
               assign target_url = target_url | append: separator | append: 'filter.v.availability=1'
             endunless
           -%}
-          <a
-            href="{{ target_url }}"
-            class="size-pill-item transistion {% if value.active %}active{% endif %}"
-            title="{{ value.label }}"
-          >
-            {{ value.label }}
-          </a>
+          {%- if is_available -%}
+            <a
+              href="{{ target_url }}"
+              class="size-pill-item transistion {% if value.active %}active{% endif %}"
+              title="{{ value.label }}"
+            >
+              {{ value.label }}
+            </a>
+            {%- if value.active -%}
+              <a href="{{ value.url_to_remove }}" class="size-pill-clear-item transistion" title="Limpar filtro">
+                Limpar
+              </a>
+            {%- endif -%}
+          {%- endif -%}
         {%- endif -%}
       {%- endfor -%}
     </div>
