@@ -319,6 +319,7 @@
           },
           "rate_QwRHyp": {
             "type": "rate",
+            "disabled": true,
             "settings": {}
           },
           "price_NNg9B8": {
@@ -327,6 +328,7 @@
           },
           "description_pKXRJa": {
             "type": "description",
+            "disabled": true,
             "settings": {}
           },
           "variant_picker_MQYkTJ": {
