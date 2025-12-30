@@ -286,7 +286,11 @@
                             colunm: column,
                             colunm_mobile: section_st.items_per_row_mobile,
                             padding: section_st.column_gap,
-                            collection_product: true
+                            collection_product: true,
+                            show_wishlist: section_st.show_wishlist,
+                            show_compare: section_st.show_compare,
+                            show_quick_view: section_st.show_quick_view,
+                            show_add_cart: section_st.show_add_cart
                           %}
                         {%- else -%}
                           {% render 'product-item',
@@ -308,7 +312,11 @@
                             colunm: column,
                             colunm_mobile: section_st.items_per_row_mobile,
                             padding: section_st.column_gap,
-                            collection_product: true
+                            collection_product: true,
+                            show_wishlist: section_st.show_wishlist,
+                            show_compare: section_st.show_compare,
+                            show_quick_view: section_st.show_quick_view,
+                            show_add_cart: section_st.show_add_cart
                           %}
                         {% endif %}
                       </div>
@@ -320,8 +328,7 @@
                     paginate: paginate,
                     section_st: section_st,
                     pagination: pagination,
-                    number_page: number_products,
-                    paginate: paginate
+                    number_page: number_products
                   %}
                 {% endif %}
               {% endif %}
@@ -511,6 +518,34 @@
       "step": 5,
       "default": 30,
       "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Product Action Buttons"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_wishlist",
+      "label": "Show Wishlist",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_compare",
+      "label": "Show Compare",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_quick_view",
+      "label": "Show Quick View",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_add_cart",
+      "label": "Show Add to Cart",
+      "default": true
     },
     {
       "type": "select",
