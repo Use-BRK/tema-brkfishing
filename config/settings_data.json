@@ -35,9 +35,9 @@
     "product_style": "card",
     "show_detail": false,
     "show_quick_view": false,
-    "show_wishlist": true,
+    "show_wishlist": false,
     "show_compare": false,
-    "show_add_cart": true,
+    "show_add_cart": false,
     "show_variant": true,
     "show_quantity_input": true,
     "product_alignment": "center",
@@ -426,11 +426,6 @@
           "home": true
         }
       },
-      "7924418359578431505": {
-        "type": "shopify://apps/seoant-ai-seo/blocks/seoant-core/8e57283b-dcb0-4f7b-a947-fb5c57a0d59d",
-        "disabled": false,
-        "settings": {}
-      },
       "18228966181090706294": {
         "type": "shopify://apps/selleasy/blocks/app-embed/790c1a03-a71f-4bc1-9869-00dad526d3c2",
         "disabled": false,
@@ -451,27 +446,6 @@
           "swatch_location": "After price",
           "switch_on_hover": false,
           "preselect_variant": true
-        }
-      },
-      "17073967039101724643": {
-        "type": "shopify://apps/kokfy-whatsapp-button/blocks/kokfy-whatsapp-button/e75d6be6-5b97-463a-9d4c-1c62f00eefd0",
-        "disabled": true,
-        "settings": {
-          "start_text": "Olá, vim da loja Brk Fishing e preciso de ajuda!",
-          "country_code": "55",
-          "whatsapp": "553432194697",
-          "product_url": true,
-          "where": "all",
-          "icon": "whats-svg1",
-          "animation_duration": "animate__infinite",
-          "animation": "no-animation",
-          "position": "left",
-          "background_icon": "#28c740",
-          "color_icon": "#ffffff",
-          "image_size": 52,
-          "size_icon": 32,
-          "bottom_space": 72,
-          "side_space": 30
         }
       }
     },
