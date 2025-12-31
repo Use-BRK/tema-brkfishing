@@ -11,10 +11,14 @@
   "sections": {
     "breadcrumb": {
       "type": "breadcrumb",
+      "custom_css": [
+        "span {-webkit-box-orient: vertical; text-overflow: ellipsis; -webkit-line-clamp: 1; overflow: hidden; display: -webkit-box;}"
+      ],
       "settings": {
+        "breadcrumb_style": "custom",
         "section_width": "container",
-        "color_scheme": "",
-        "next_prev": true
+        "color_scheme": "default",
+        "next_prev": false
       }
     },
     "main": {
