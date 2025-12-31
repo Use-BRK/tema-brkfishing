@@ -12,6 +12,37 @@
     "slideshow_8KKtNU": {
       "type": "slideshow",
       "blocks": {
+        "slider_item_pcE9Pw": {
+          "type": "slider_item",
+          "name": "01 de Janeiro",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/VIRADAOFERTA_DESK.webp",
+            "image_mobile": "shopify://shop_images/VIRADAOFERTA_MOB.webp",
+            "overlay_opacity": 0,
+            "link_banner": "shopify://collections/envio-full-camisas",
+            "slider_effect": "effect_fadeinup",
+            "subheading": "",
+            "heading": "",
+            "description": "",
+            "first_button_label": "",
+            "first_button_link": "shopify://collections/best-seller",
+            "first_button_style": false,
+            "second_button_label": "Clique Aqui",
+            "second_button_link": "",
+            "second_button_style": false,
+            "content_alignment": "left",
+            "content_position": "bottom-left",
+            "content_width": "full_width",
+            "content_max_width": 100,
+            "content_padding_block": 60,
+            "content_padding_inline": 60,
+            "show_content_background": false,
+            "content_background": "#ffffff",
+            "content_box_opacity": 100,
+            "content_alignment_mobile": "center"
+          }
+        },
         "slider_item_FrQknE": {
           "type": "slider_item",
           "settings": {
@@ -39,35 +70,6 @@
             "content_background": "#ffffff",
             "content_box_opacity": 100,
             "content_alignment_mobile": "left"
-          }
-        },
-        "slider_item_pcE9Pw": {
-          "type": "slider_item",
-          "settings": {
-            "image": "shopify://shop_images/FULLBANNER-MAORI.png",
-            "image_mobile": "shopify://shop_images/MOB-BANNER-MAORI.png",
-            "overlay_opacity": 0,
-            "link_banner": "https://www.brkfishing.com.br/collections/maori",
-            "slider_effect": "effect_fadeinup",
-            "subheading": "",
-            "heading": "",
-            "description": "",
-            "first_button_label": "",
-            "first_button_link": "shopify://collections/best-seller",
-            "first_button_style": false,
-            "second_button_label": "Clique Aqui",
-            "second_button_link": "",
-            "second_button_style": false,
-            "content_alignment": "left",
-            "content_position": "bottom-left",
-            "content_width": "full_width",
-            "content_max_width": 100,
-            "content_padding_block": 60,
-            "content_padding_inline": 60,
-            "show_content_background": false,
-            "content_background": "#ffffff",
-            "content_box_opacity": 100,
-            "content_alignment_mobile": "center"
           }
         },
         "slider_item_jiLA39": {
@@ -159,8 +161,8 @@
         }
       },
       "block_order": [
-        "slider_item_FrQknE",
         "slider_item_pcE9Pw",
+        "slider_item_FrQknE",
         "slider_item_jiLA39",
         "slider_item_TJiTLz",
         "slider_item_PLGTpm"
@@ -189,7 +191,7 @@
         "show_arrow": true,
         "carousel_pagination": "show_dots",
         "pagination_position": "center",
-        "autoplay": true,
+        "autoplay": false,
         "autorotate_speed": 5,
         "content_below_image": false,
         "padding_top": 0,
