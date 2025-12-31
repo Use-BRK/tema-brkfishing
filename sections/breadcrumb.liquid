@@ -6,13 +6,29 @@
 -%}
 <section class="breadcrumbs color-{{ color_scheme }} gradien fs-small{% if t == 'product' and section.settings.next_prev %} py-20{% else %} py-25{% endif %}">
   <div class="{{ section_width }}">
-    {% render 'breadcrumbs' | next_prev: section_st.next_prev %}
+    {% render 'breadcrumbs', next_prev: section_st.next_prev, breadcrumb_style: section_st.breadcrumb_style %}
   </div>
 </section>
 {% schema %}
 {
   "name": "t:sections.breadcrumbs.name",
   "settings": [
+    {
+      "type": "select",
+      "id": "breadcrumb_style",
+      "label": "Estilo de Breadcrumb",
+      "options": [
+        {
+          "value": "default",
+          "label": "Padrão"
+        },
+        {
+          "value": "custom",
+          "label": "Custom"
+        }
+      ],
+      "default": "default"
+    },
     {
       "type": "select",
       "id": "section_width",
