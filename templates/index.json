@@ -12,6 +12,35 @@
     "slideshow_8KKtNU": {
       "type": "slideshow",
       "blocks": {
+        "slider_item_FrQknE": {
+          "type": "slider_item",
+          "settings": {
+            "image": "shopify://shop_images/FULLBANNER_FISHING_MOTORS.webp",
+            "image_mobile": "shopify://shop_images/MOBBANNER_FISHING_MOTORS_V2.webp",
+            "overlay_opacity": 0,
+            "link_banner": "shopify://collections/envio-full",
+            "slider_effect": "effect_fadeindown",
+            "subheading": "",
+            "heading": "",
+            "description": "",
+            "first_button_label": "",
+            "first_button_link": "",
+            "first_button_style": false,
+            "second_button_label": "",
+            "second_button_link": "",
+            "second_button_style": false,
+            "content_alignment": "left",
+            "content_position": "bottom-left",
+            "content_width": "container",
+            "content_max_width": 100,
+            "content_padding_block": 60,
+            "content_padding_inline": 30,
+            "show_content_background": false,
+            "content_background": "#ffffff",
+            "content_box_opacity": 100,
+            "content_alignment_mobile": "left"
+          }
+        },
         "slider_item_pcE9Pw": {
           "type": "slider_item",
           "settings": {
@@ -130,6 +159,7 @@
         }
       },
       "block_order": [
+        "slider_item_FrQknE",
         "slider_item_pcE9Pw",
         "slider_item_jiLA39",
         "slider_item_TJiTLz",
@@ -224,9 +254,10 @@
       "blocks": {
         "collection_qTPgYY": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "collection": "vale-presente",
-            "collection_image": "shopify://shop_images/OFERTA_05.png",
+            "collection_image": "shopify://shop_images/CARD_FISH_05.webp",
             "collection_title": ""
           }
         },
@@ -234,7 +265,7 @@
           "type": "collection",
           "settings": {
             "collection": "ofertas-ate-59",
-            "collection_image": "shopify://shop_images/OFERTA_01.png",
+            "collection_image": "shopify://shop_images/CARD_FISH_01.webp",
             "collection_title": ""
           }
         },
@@ -242,7 +273,7 @@
           "type": "collection",
           "settings": {
             "collection": "ofertas-ate-129",
-            "collection_image": "shopify://shop_images/OFERTA_02.png",
+            "collection_image": "shopify://shop_images/CARD_FISH_02.webp",
             "collection_title": ""
           }
         },
@@ -250,7 +281,7 @@
           "type": "collection",
           "settings": {
             "collection": "ofertas-ate-299",
-            "collection_image": "shopify://shop_images/OFERTA_03_14bd8042-8804-4d6b-82c2-2c1a94571401.png",
+            "collection_image": "shopify://shop_images/CARD_FISH_03.webp",
             "collection_title": ""
           }
         },
@@ -258,7 +289,7 @@
           "type": "collection",
           "settings": {
             "collection": "envio-full",
-            "collection_image": "shopify://shop_images/OFERTA_04.png",
+            "collection_image": "shopify://shop_images/CARD_FISH_04.webp",
             "collection_title": ""
           }
         }

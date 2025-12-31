@@ -11,14 +11,14 @@ These are all open standards ;)
 Title and Description
 {%- endcomment -%}
 
-{%- assign booster_config = shop.metafields.booster_apps_seo.config -%}
+{%- assign booster_config = shop.metafields.booster_apps_seo.config.value -%}
 {%- if template.name == 'index' or template == "index" -%}
   {%- assign booster_title = booster_config.index_title -%}
   {%- assign booster_desc = booster_config.index_desc -%}
   {%- assign baType = 'shop' -%}
 {%- elsif template.name == 'product' or template == 'product' -%}
 
-  {%- assign item_config = product.metafields.booster_apps_seo.config -%}
+  {%- assign item_config = product.metafields.booster_apps_seo.config.value -%}
 
   {%- if booster_config.auto_meta_title_active -%}
     {%- if booster_config.auto_meta_title_rules == 'custom' -%}
@@ -27,9 +27,9 @@ Title and Description
       {%- assign booster_title = product.title | append: ' | ' | append: shop.name -%}
     {%- endif -%}
 
-    {%-if item_config.override_title and item_config.meta_title %}
+    {%- if item_config.override_title and item_config.meta_title -%}
       {%- assign booster_title = item_config.meta_title -%}
-    {%-endif %}
+    {%- endif -%}
   {%- elsif item_config.meta_title -%}
     {%- assign booster_title = item_config.meta_title -%}
   {%- endif -%}
@@ -57,7 +57,7 @@ Title and Description
     {%- assign booster_desc = booster_config.collections_all_desc -%}
   {%- else -%}
 
-    {%- assign item_config = collection.metafields.booster_apps_seo.config -%}
+    {%- assign item_config = collection.metafields.booster_apps_seo.config.value -%}
 	  {%- if booster_config.auto_meta_title_active -%}
       {%- if booster_config.auto_meta_title_rules == 'auto' -%}
         {%- assign booster_title = collection.title | append: ' | ' | append: shop.name -%}
@@ -68,7 +68,7 @@ Title and Description
       {%- if item_config.override_title and item_config.meta_title -%}
         {%- assign booster_title = item_config.meta_title -%}
       {%- endif -%}
-  	{%-elsif item_config.meta_title -%}
+  	{%- elsif item_config.meta_title -%}
       {%- assign booster_title = item_config.meta_title -%}
     {%- endif -%}
 
@@ -94,7 +94,7 @@ Title and Description
   {%- assign baType = 'collection' -%}
 {%- elsif template.name == 'article' or template == 'article' -%}
 
-  {%- assign item_config = article.metafields.booster_apps_seo.config -%}
+  {%- assign item_config = article.metafields.booster_apps_seo.config.value -%}
 	{%- if booster_config.auto_meta_title_active -%}
     {%- if booster_config.auto_meta_title_rules == 'auto' -%}
       {%- assign booster_title = article.title | append: ' | ' | append: shop.name -%}
@@ -106,7 +106,7 @@ Title and Description
       {%- assign booster_title = item_config.meta_title -%}
     {%- endif -%}
 
-  {%-elsif item_config.meta_title -%}
+  {%- elsif item_config.meta_title -%}
     {%- assign booster_title = item_config.meta_title -%}
   {%- endif -%}
 
@@ -121,13 +121,13 @@ Title and Description
       {%- assign booster_desc = item_config.meta_desc -%}
     {%- endif -%}
 
-  {%-elsif item_config.meta_desc -%}
+  {%- elsif item_config.meta_desc -%}
     {%- assign booster_desc = item_config.meta_desc -%}
   {%- endif -%}
   {%- assign baType = 'article' -%}
 {%- elsif template.name == 'page' or template == 'page' -%}
 
-  {%- assign item_config = page.metafields.booster_apps_seo.config -%}
+  {%- assign item_config = page.metafields.booster_apps_seo.config.value -%}
 	 {%- if booster_config.auto_meta_title_active -%}
      {%- if booster_config.auto_meta_title_rules == 'auto' -%}
        {%- assign booster_title = page.title | append: ' | ' | append: shop.name -%}
@@ -138,7 +138,7 @@ Title and Description
      {%- if item_config.override_title and item_config.meta_title -%}
        {%- assign booster_title = item_config.meta_title -%}
      {%- endif -%}
-	 {%-elsif item_config.meta_title -%}
+	 {%- elsif item_config.meta_title -%}
      {%- assign booster_title = item_config.meta_title -%}
    {%- endif -%}
 
@@ -152,7 +152,7 @@ Title and Description
      {%- if item_config.override_desc and item_config.meta_desc -%}
        {%- assign booster_desc = item_config.meta_desc -%}
      {%- endif -%}
-	 {%-elsif item_config.meta_desc -%}
+	 {%- elsif item_config.meta_desc -%}
      {%- assign booster_desc = item_config.meta_desc -%}
    {%- endif -%}
    {%- assign baType = 'page' -%}
@@ -168,7 +168,7 @@ Title and Description
   {%- assign baType = 'shop' -%}
 {%- endif -%}
 
-{%-unless booster_title == blank %}
+{%- unless booster_title == blank -%}
   {%- assign booster_title = booster_title | replace : "[title]", [baType].title -%}
   {%- if baType == 'product' -%}
     {%- assign formatted_price = product.variants[0].price | money -%}
@@ -184,20 +184,20 @@ Title and Description
   <title>{{ booster_title | escape_once }}</title>
 {%- else -%}
   <title>{{ page_title -}}
-  {%- if current_tags %} –
+  {%- if current_tags -%} –
   {%- assign meta_tags = current_tags | join: ', ' -%}
   {%- assign translated_tags = 'general.meta.tags' | t: tags: meta_tags -%}
-  {%- if translated_tags contains 'translation missing' %} {{ meta_tags}}{%- else %} {{ translated_tags }}{%- endif -%}
+  {%- if translated_tags contains 'translation missing' -%} {{ meta_tags}}{%- else -%} {{ translated_tags }}{%- endif -%}
   {%- endif -%}
-  {%- if current_page != 1 %} –
+  {%- if current_page != 1 -%} –
   {%- assign translated_page = 'general.meta.page' | t: page: current_page -%}
-  {%- if translated_page contains 'translation missing' or translated_page contains 'I18n Error' %} {{ current_page }}{%- else %} {{ translated_page }}{%- endif -%}
+  {%- if translated_page contains 'translation missing' or translated_page contains 'I18n Error' -%} {{ current_page }}{%- else -%} {{ translated_page }}{%- endif -%}
   {%- endif -%}
   </title>
 {%- endunless -%}
 
 {%- unless booster_config.google_verification_meta_tag == blank -%}
-  {{ booster_config.google_verification_meta_tag }}
+  <meta name="google-site-verification" content="{{ booster_config.google_verification_meta_tag }}" />
 {%- endunless -%}
 
 {%- unless booster_desc == blank -%}
@@ -239,7 +239,7 @@ Organization and Website Schema Markup
     {%- unless logo_url == blank -%}
       "image": "{{ logo_url | remove: "\" }}",
       "logo": "{{ logo_url | remove: "\" }}",
-    {%- else - -%}
+    {%- else -%}
       "image": "https:{{ 'logo.png' | asset_url }}",
       "logo": "https:{{ 'logo.png' | asset_url }}",
     {%- endunless -%}
@@ -367,7 +367,7 @@ Organization and Website Schema Markup
 "reviewCount": {{ product.metafields.opinew_metafields.reviews_count }},
 "ratingValue": {{ product.metafields.opinew_metafields.reviews_average }}
 }
-{%-endif-%}
+{%- endif -%}
 {%- elsif prs == 'orankl' -%}
 {%- if product.metafields.orankl.review_count and product.metafields.orankl.review_count != "0" -%}
 ,"aggregateRating": {
@@ -393,7 +393,7 @@ Organization and Website Schema Markup
 }
 {%- endif -%}
 {%- elsif prs == 'ryviu' -%}
-{% if product.metafields.ryviu and product.metafields.ryviu.product_reviews_info != "0;0" %}
+{%- if product.metafields.ryviu and product.metafields.ryviu.product_reviews_info != "0;0" -%}
 ,"aggregateRating": {
 "@type": "AggregateRating",
 "reviewCount": {{ product.metafields.ryviu.product_reviews_info | split: ';' | first }},
@@ -497,7 +497,7 @@ Organization and Website Schema Markup
 "reviewCount": {{ product.metafields.opinew_metafields.reviews_count }},
 "ratingValue": {{ product.metafields.opinew_metafields.reviews_average }}
 }
-{%-endif-%}
+{%- endif -%}
 
 {%- if product.metafields.loox.num_reviews and product.metafields.loox.num_reviews != "0" -%}
 ,"aggregateRating": {
@@ -659,5 +659,5 @@ Organization and Website Schema Markup
 
   http.send(data);
 </script>
-{%-endif %}
+{%- endif -%}
 <!-- end of Booster Apps SEO -->

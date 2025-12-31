@@ -1,1 +1,24 @@
-{"parent":"footer-group.json","context":{"market":"br"},"sections":{"footer":{"settings":{"payment_image":"shopify:\/\/shop_images\/bandeiras-cartoes-credito.png"},"blocks":{}}}}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "footer-group.json",
+  "context": {
+    "market": "br"
+  },
+  "sections": {
+    "footer": {
+      "settings": {
+        "payment_image": "shopify://shop_images/bandeiras-cartoes-credito.png",
+        "enable_back_top": false
+      },
+      "blocks": {}
+    }
+  }
+}

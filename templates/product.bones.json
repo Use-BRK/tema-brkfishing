@@ -12,9 +12,10 @@
     "breadcrumb": {
       "type": "breadcrumb",
       "settings": {
+        "breadcrumb_style": "custom",
         "section_width": "container",
         "color_scheme": "",
-        "next_prev": true
+        "next_prev": false
       }
     },
     "main": {
@@ -145,6 +146,8 @@
             "btnshipping": "#135ed1",
             "color_text": "#ffffff",
             "color_shipping": "#51a559",
+            "color_ship_name": "#000000",
+            "color_shipping_date": "#000000",
             "padding_inner": 0,
             "padding_external": 12,
             "space_top": 0,

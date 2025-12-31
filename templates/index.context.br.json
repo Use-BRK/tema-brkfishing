@@ -26,16 +26,16 @@
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
-        "header-8838b0c5f5e61dadb5900d46dd39ee14": null,
+        "header-520823fd8040f9175fb09f616679d029": null,
         "heading": "Kit Pescador 13% Off 🔥",
         "description": "<p><strong>VÁLIDO ATÉ 31/12</strong></p>",
         "header_size": "medium",
         "header_alignment": "left",
-        "header-31c93a1b2a1c5562fe7ca4333af56726": null,
+        "header-c5387279220f5868e42a9d86b8a2de8d": null,
         "minimum": 2,
         "maximum": 3,
         "enable_quantity": true,
-        "header-a22a951dd9e351227a7eefb6392340b7": null,
+        "header-5d7475843a96066bd76e65c4de12a659": null,
         "padding_top": 35,
         "padding_bottom": 35,
         "reset_spacing": true
@@ -54,7 +54,7 @@
             "items_to_show": 3,
             "items_per_row": 3,
             "column_gap": 30,
-            "header-b169e2c97f9b6378311bc99590d76e96": null,
+            "header-09fe69da8e3e9b9555183dff38ba8db5": null,
             "carousel_on_mobile": true,
             "items_per_row_mobile": 2
           }
@@ -65,14 +65,14 @@
           "settings": {
             "heading": "KIT Pescador 13% Off 🔥",
             "description": "<p>Adicione <strong>3 Itens</strong> essenciais para pesca e <strong>Ganhe 13% de Desconto</strong>!</p>",
-            "header-75cf1b71511147516242380cb0d2fa12": null,
-            "header-6e4bf69b45730b3b4f5ed0851ce180dc": null,
-            "paragraph-1df6bf6578b6afea9d6980c6fd660373": null,
+            "header-3d16e929bc9f5e46750200eacc1c2e54": null,
+            "header-51a2b230a88b4234b514a4c0ae533d8e": null,
+            "paragraph-ec90e5ca26bacd0f16b10f4fb5a1a6a6": null,
             "heading_font_size": 24,
             "heading_font_weight": "heading_weight",
             "heading_uppercase": false,
             "heading_spacing_bottom": 20,
-            "paragraph-3aca41249b2bc2338ccaf26b0430ccfb": null,
+            "paragraph-6a6ac6d09669178d905586722c2c5bd8": null,
             "des_font_size": 15,
             "des_font_weight": "body_weight",
             "des_spacing_bottom": 30
@@ -83,7 +83,7 @@
         "product_discount_rWFqE",
         "your_bundle_4brzg"
       ],
-      "name": "t:sections.product-bundle.name"
+      "name": "Kit Pescador"
     },
     "slideshow_8KKtNU": {
       "settings": {
@@ -93,16 +93,16 @@
       "blocks": {
         "slider_item_eBDERN": {
           "type": "slider_item",
-          "name": "Natal Fishing",
+          "name": "Virada Fishing",
           "disabled": false,
           "settings": {
-            "header-2177963a5d34f058908617b522214535": null,
-            "image": "shopify://shop_images/FULLBANNER.jpg",
-            "image_mobile": "shopify://shop_images/MOB-BANNER.jpg",
+            "header-be87d5e8ae62fb34f56f4d16ed8e9cd2": null,
+            "image": "shopify://shop_images/FULLBANNER_FISHING_MOTORS.webp",
+            "image_mobile": "shopify://shop_images/MOBBANNER_FISHING_MOTORS_V2.webp",
             "local_video": null,
             "overlay_opacity": 0,
             "link_banner": "shopify://collections/envio-full",
-            "header-f558cbab09746707d6955f4c627dbebe": null,
+            "header-eab7406489a19a373270babf182b14f1": null,
             "slider_effect": "effect_fadeinup",
             "subheading": "",
             "heading": "",
@@ -113,18 +113,18 @@
             "second_button_label": "",
             "second_button_link": "shopify://collections/camisa-fusionx-masculino",
             "second_button_style": false,
-            "header-3846bcdf4b74c4e9f268b02fef21956f": null,
+            "header-4d812da0a05d6175c05e3c1bae3a1a7c": null,
             "content_alignment": "center",
             "content_position": "top-center",
             "content_width": "full_width",
             "content_max_width": 100,
             "content_padding_block": 55,
             "content_padding_inline": 55,
-            "header-cf97193971cbdc206d1dd3623230ed86": null,
+            "header-c682110d2b8be50aba66a5b617202c94": null,
             "show_content_background": false,
             "content_background": "#ffffff",
             "content_box_opacity": 100,
-            "header-f0d4f4e0910051fe6f7d4ac955d8f558": null,
+            "header-38ed9722ee0db01e98479ec0d2ab0224": null,
             "content_alignment_mobile": "right"
           }
         },
@@ -172,11 +172,14 @@
       "custom_css": [
         "* {color: white; background-color: #1e1e20;}"
       ],
-      "settings": {},
+      "settings": {
+        "speed": 11,
+        "space_between_text": 60
+      },
       "blocks": {
         "scrolling_text_Bmp7bG": {
           "settings": {
-            "content": "FRETE FIXO R$9,90"
+            "content": "FRETE FIXO POR R$0,26"
           }
         },
         "scrolling_text_7defWk": {
@@ -191,7 +194,9 @@
     },
     "collection_list_ypj7A8": {
       "settings": {
-        "section_width": "fluid_container"
+        "section_width": "fluid_container",
+        "padding_bottom": 25,
+        "reset_spacing": true
       },
       "blocks": {
         "collection_4GqdHP": {
@@ -207,7 +212,9 @@
         "items_per_row": 5,
         "column_gap": 30,
         "autoplay": false,
-        "reveal": false
+        "reveal": false,
+        "padding_top": 15,
+        "padding_bottom": 15
       },
       "blocks": {
         "collection_DUa6Xx": {
@@ -227,6 +234,7 @@
         "heading": "",
         "header_size": "medium",
         "header_alignment": "center",
+        "horizontal_tab_style": "underline",
         "items_to_show": 24,
         "items_per_row": 5,
         "autoplay": false,
@@ -251,6 +259,16 @@
         "autorotate_speed": 2
       },
       "blocks": {}
+    },
+    "collection_list_VmEYkJ": {
+      "settings": {},
+      "blocks": {
+        "collection_fyfMEN": {
+          "settings": {
+            "collection_image": "shopify://shop_images/OCULOS.jpg"
+          }
+        }
+      }
     },
     "shopable_video_Ewz3gp": {
       "settings": {
@@ -319,11 +337,11 @@
   "order": [
     "slideshow_8KKtNU",
     "scrolling_text_U3mttg",
-    "product_bundle_JywJj",
     "collection_list_ypj7A8",
     "collection_tab_UNybtX",
     "collection_tab_rUdcr6",
     "collection_tab_CYzLaR",
+    "product_bundle_JywJj",
     "collection_list_VmEYkJ",
     "pagefly_section_rYMjRK",
     "shopable_video_Ewz3gp",
