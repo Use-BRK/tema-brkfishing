@@ -102,6 +102,8 @@
     "show_checkbox_in_product_page": false,
     "show_check_box_in_quick_view": false,
     "page_terms_conditions": "term-and-conditions",
+    "enable_whatsapp_button": true,
+    "whatsapp_button_bottom": 85,
     "rate_color": "#ea0606",
     "sections": {
       "custom-colors": {
@@ -317,6 +319,7 @@
           },
           "rate_QwRHyp": {
             "type": "rate",
+            "disabled": true,
             "settings": {}
           },
           "price_NNg9B8": {
@@ -325,6 +328,7 @@
           },
           "description_pKXRJa": {
             "type": "description",
+            "disabled": true,
             "settings": {}
           },
           "variant_picker_MQYkTJ": {
@@ -392,27 +396,6 @@
         "disabled": false,
         "settings": {}
       },
-      "17073967039101724643": {
-        "type": "shopify://apps/kokfy-whatsapp-button/blocks/kokfy-whatsapp-button/e75d6be6-5b97-463a-9d4c-1c62f00eefd0",
-        "disabled": false,
-        "settings": {
-          "start_text": "Olá, vim da loja Brk Fishing e preciso de ajuda!",
-          "country_code": "55",
-          "whatsapp": "553432194697",
-          "product_url": true,
-          "where": "all",
-          "icon": "whats-svg1",
-          "animation_duration": "animate__infinite",
-          "animation": "no-animation",
-          "position": "left",
-          "background_icon": "#28C740",
-          "color_icon": "#ffffff",
-          "image_size": 52,
-          "size_icon": 32,
-          "bottom_space": 72,
-          "side_space": 30
-        }
-      },
       "2567389343055140935": {
         "type": "shopify://apps/microsoft-clarity/blocks/clarity_js/31c3d126-8116-4b4a-8ba1-baeda7c4aeea",
         "disabled": false,
@@ -444,11 +427,6 @@
         "settings": {
           "home": true
         }
-      },
-      "7924418359578431505": {
-        "type": "shopify://apps/seoant-ai-seo/blocks/seoant-core/8e57283b-dcb0-4f7b-a947-fb5c57a0d59d",
-        "disabled": false,
-        "settings": {}
       },
       "18228966181090706294": {
         "type": "shopify://apps/selleasy/blocks/app-embed/790c1a03-a71f-4bc1-9869-00dad526d3c2",
