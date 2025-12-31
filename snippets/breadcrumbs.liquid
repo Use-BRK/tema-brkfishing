@@ -26,12 +26,8 @@
   {% endif %}
   {%- if breadcrumb_style == 'custom' and t == 'product' -%}
     <div class="breadcrumb-custom flex align-center gap-10">
-      {%- assign back_url = collection.url
-        | default: product.collections.first.url
-        | default: routes.all_products_collection_url
-      -%}
       <a
-        href="{{ back_url }}"
+        href="{% if collection %}{{ collection.url }}{% else %}{{ routes.all_products_collection_url }}{% endif %}"
         class="breadcrumb-back-link flex align-center justify-center color-{{ section_st.color_scheme }} no-underline"
       >
         <svg
