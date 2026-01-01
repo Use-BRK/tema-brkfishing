@@ -15,7 +15,6 @@
         "slider_item_pcE9Pw": {
           "type": "slider_item",
           "name": "01 de Janeiro",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/VIRADAOFERTA_DESK.webp",
             "image_mobile": "shopify://shop_images/VIRADAOFERTA_MOB.webp",
@@ -45,6 +44,7 @@
         },
         "slider_item_FrQknE": {
           "type": "slider_item",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/FULLBANNER_FISHING_MOTORS.webp",
             "image_mobile": "shopify://shop_images/MOBBANNER_FISHING_MOTORS_V2.webp",
