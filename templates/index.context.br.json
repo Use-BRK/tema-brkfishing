@@ -13,6 +13,59 @@
     "market": "br"
   },
   "sections": {
+    "collection_tab_Ei9xq7": {
+      "type": "collection-tab",
+      "disabled": false,
+      "settings": {
+        "section_width": "fluid_container",
+        "color_scheme": "",
+        "header-87205e2bd670a3d5e61eb9a7f12612f4": null,
+        "heading": "",
+        "description": "",
+        "header_size": "medium",
+        "header_alignment": "center",
+        "header-31d48875db388594cb61d1d87ccdff94": null,
+        "tab_header_style": "horizontal",
+        "horizontal_tab_style": "underline",
+        "display_mode": "carousel",
+        "items_to_show": 24,
+        "items_per_row": 5,
+        "column_gap": 30,
+        "header-66fa82d64dd8bc1249efc7c069c0dd6c": null,
+        "show_arrow": true,
+        "carousel_pagination": "show_dots",
+        "infinite": true,
+        "autoplay": false,
+        "autorotate_speed": 3,
+        "reveal": false,
+        "header-5052a46a6135e0b5825ebc23096bc396": null,
+        "rows": 2,
+        "show_load_more_button": true,
+        "button_label": "Ver +",
+        "header-2e4c123d0df1af32b295dad2c0f95507": null,
+        "carousel_on_mobile": true,
+        "items_per_row_mobile": 1.5,
+        "header-dbf1c57e881e40d302d22c0856641bfe": null,
+        "padding_top": 20,
+        "padding_bottom": 15,
+        "reset_spacing": true
+      },
+      "blocks": {
+        "collection_dLGAyF": {
+          "type": "collection",
+          "name": "Calçados de Pesca - Envio Full",
+          "disabled": false,
+          "settings": {
+            "collection": "envio-full-camisas",
+            "collection_title": "Envio Imediato"
+          }
+        }
+      },
+      "block_order": [
+        "collection_dLGAyF"
+      ],
+      "name": "Envio FULL"
+    },
     "product_bundle_JywJj": {
       "type": "product-bundle",
       "disabled": false,
@@ -26,16 +79,16 @@
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
-        "header-957e12cbb3ae956ce16792628fdecb68": null,
+        "header-6d92a8bc99635d758c3d9f9ebb74dc59": null,
         "heading": "Kit Pescador 13% Off 🔥",
         "description": "<p><strong>VÁLIDO ATÉ 31/12</strong></p>",
         "header_size": "medium",
         "header_alignment": "left",
-        "header-33b262d73f66e6ec89023efa34d0ecf6": null,
+        "header-a50e0189b592aaa763b99b09828684a6": null,
         "minimum": 2,
         "maximum": 3,
         "enable_quantity": true,
-        "header-1e5a471d323fc24779a71b91aa010ffd": null,
+        "header-ae05ffec2730bc0bd791f0a92ced21db": null,
         "padding_top": 35,
         "padding_bottom": 35,
         "reset_spacing": true
@@ -54,7 +107,7 @@
             "items_to_show": 3,
             "items_per_row": 3,
             "column_gap": 30,
-            "header-50fa4c8977c2e254716eb3f2effee32b": null,
+            "header-67796909668640d586839419db623231": null,
             "carousel_on_mobile": true,
             "items_per_row_mobile": 2
           }
@@ -65,14 +118,14 @@
           "settings": {
             "heading": "KIT Pescador 13% Off 🔥",
             "description": "<p>Adicione <strong>3 Itens</strong> essenciais para pesca e <strong>Ganhe 13% de Desconto</strong>!</p>",
-            "header-a29f43be5e041b0dd12dc5694947e711": null,
-            "header-f3168a28623a87b8bb43fac26898e4c4": null,
-            "paragraph-de66c85e77be2ec3e0bbddb632e0119a": null,
+            "header-345defd0a582d203693ee9c1b77c6d7d": null,
+            "header-575385391fad6385349ede10c56494b1": null,
+            "paragraph-6d812be284db2dd52326f6bd52b60608": null,
             "heading_font_size": 24,
             "heading_font_weight": "heading_weight",
             "heading_uppercase": false,
             "heading_spacing_bottom": 20,
-            "paragraph-151ccde94386f076f57ea1ba4df915e8": null,
+            "paragraph-9bd28def93c6eb27aa4b7305d11431ff": null,
             "des_font_size": 15,
             "des_font_weight": "body_weight",
             "des_spacing_bottom": 30
@@ -96,13 +149,13 @@
           "name": "01 de Janeiro",
           "disabled": false,
           "settings": {
-            "header-4503933d582d903256da8ae6df302edf": null,
+            "header-d6a92b80e25e6199848c687d085c1e29": null,
             "image": "shopify://shop_images/VIRADAOFERTA_DESK.webp",
             "image_mobile": "shopify://shop_images/VIRADAOFERTA_MOB.webp",
             "local_video": null,
             "overlay_opacity": 0,
             "link_banner": "shopify://collections/envio-full",
-            "header-a43a8f6e58b16a960664978f0c5467c7": null,
+            "header-4a56635ac33fd6cb3f9980c8b31b4ad0": null,
             "slider_effect": "effect_fadeinup",
             "subheading": "",
             "heading": "",
@@ -113,55 +166,18 @@
             "second_button_label": "",
             "second_button_link": "shopify://collections/camisa-fusionx-masculino",
             "second_button_style": false,
-            "header-42c96cf316877111a8854317df642ede": null,
+            "header-7ffd8b4553bad3180dd4655c41518061": null,
             "content_alignment": "center",
             "content_position": "top-center",
             "content_width": "full_width",
             "content_max_width": 100,
             "content_padding_block": 55,
             "content_padding_inline": 55,
-            "header-22065fb6ee1551fcfb7ae8b319cb1985": null,
+            "header-5d940e54c76fff7916a30bd46c7b82e3": null,
             "show_content_background": false,
             "content_background": "#ffffff",
             "content_box_opacity": 100,
-            "header-a776ebb954edac0e12811bd847d0be8d": null,
-            "content_alignment_mobile": "right"
-          }
-        },
-        "slider_item_xxj4p": {
-          "type": "slider_item",
-          "name": "Virada Fishing",
-          "disabled": false,
-          "settings": {
-            "header-47d50163f2ced01ef12407337f689bcf": null,
-            "image": "shopify://shop_images/FULLBANNER_FISHING_MOTORS.webp",
-            "image_mobile": "shopify://shop_images/MOBBANNER_FISHING_MOTORS_V2.webp",
-            "local_video": null,
-            "overlay_opacity": 0,
-            "link_banner": "shopify://collections/envio-full",
-            "header-ffe863e3d5c8afc1b84130c4b744872c": null,
-            "slider_effect": "effect_fadeinup",
-            "subheading": "",
-            "heading": "",
-            "description": "",
-            "first_button_label": "",
-            "first_button_link": "shopify://collections/camisa-fusionx-masculino",
-            "first_button_style": false,
-            "second_button_label": "",
-            "second_button_link": "shopify://collections/camisa-fusionx-masculino",
-            "second_button_style": false,
-            "header-1b46b5da5306b8207a18a177914a552c": null,
-            "content_alignment": "center",
-            "content_position": "top-center",
-            "content_width": "full_width",
-            "content_max_width": 100,
-            "content_padding_block": 55,
-            "content_padding_inline": 55,
-            "header-cf1c7881497182ed108328af659356ac": null,
-            "show_content_background": false,
-            "content_background": "#ffffff",
-            "content_box_opacity": 100,
-            "header-e9ec3b50a9c1a560636d4609ae18865a": null,
+            "header-491e32722312c757d48e7210fc81f2da": null,
             "content_alignment_mobile": "right"
           }
         },
@@ -183,11 +199,41 @@
             "content_alignment_mobile": "right"
           }
         },
-        "slider_item_pcE9Pw": {
-          "name": "Maori",
+        "slider_item_thxfTj": {
+          "type": "slider_item",
+          "name": "Hybrid",
+          "disabled": false,
           "settings": {
+            "header-5750dbb5e821c1a416262cf4e781f648": null,
+            "image": "shopify://shop_images/FULLBANNER_NOVO_SITE_CAMISA_HYBRID_7d884d7f-338f-46b6-ae58-5ee7f6ce714e.png",
+            "image_mobile": "shopify://shop_images/MOBILE_HYBRID_7e2c2129-4a63-4534-8c83-fef4bf5cc373.png",
+            "local_video": null,
+            "overlay_opacity": 0,
+            "link_banner": "shopify://collections/camisa-hybrid-masculino",
+            "header-c3cfb102b130cca64c888ba07013c1cd": null,
+            "slider_effect": "effect_fadeinup",
+            "subheading": "",
+            "heading": "",
+            "description": "",
+            "first_button_label": "",
+            "first_button_link": "shopify://collections/camisa-fusionx-masculino",
+            "first_button_style": false,
             "second_button_label": "",
-            "second_button_link": "shopify://collections/maori"
+            "second_button_link": "shopify://collections/camisa-fusionx-masculino",
+            "second_button_style": false,
+            "header-e4b153429cf2f4dcaf3e3d18935a84b5": null,
+            "content_alignment": "center",
+            "content_position": "top-center",
+            "content_width": "full_width",
+            "content_max_width": 100,
+            "content_padding_block": 55,
+            "content_padding_inline": 55,
+            "header-9a4031b4faf1ddc63676f035e29c4139": null,
+            "show_content_background": false,
+            "content_background": "#ffffff",
+            "content_box_opacity": 100,
+            "header-a2df522bd637546d483cf8d208088e14": null,
+            "content_alignment_mobile": "right"
           }
         },
         "slider_item_TJiTLz": {
@@ -200,9 +246,8 @@
       },
       "block_order": [
         "slider_item_eBDERN",
-        "slider_item_xxj4p",
         "slider_item_jiLA39",
-        "slider_item_pcE9Pw",
+        "slider_item_thxfTj",
         "slider_item_TJiTLz"
       ]
     },
@@ -370,59 +415,6 @@
           }
         }
       }
-    },
-    "collection_tab_Ei9xq7": {
-      "type": "collection-tab",
-      "disabled": false,
-      "settings": {
-        "section_width": "fluid_container",
-        "color_scheme": "",
-        "header-68a780f64bad8d831e38b35883f781a9": null,
-        "heading": "",
-        "description": "",
-        "header_size": "medium",
-        "header_alignment": "center",
-        "header-b72175c73681ea49f03121fe18ae108f": null,
-        "tab_header_style": "horizontal",
-        "horizontal_tab_style": "underline",
-        "display_mode": "carousel",
-        "items_to_show": 24,
-        "items_per_row": 5,
-        "column_gap": 30,
-        "header-80791ec0a62727591e516431fcebde27": null,
-        "show_arrow": true,
-        "carousel_pagination": "show_dots",
-        "infinite": true,
-        "autoplay": false,
-        "autorotate_speed": 3,
-        "reveal": false,
-        "header-6449f60f93691e4ed71589a89c2d019f": null,
-        "rows": 2,
-        "show_load_more_button": true,
-        "button_label": "Ver +",
-        "header-dc1c48f6ab721b6a99a330ce30ab43f7": null,
-        "carousel_on_mobile": true,
-        "items_per_row_mobile": 1.5,
-        "header-c957fbff1eae7aea6af3c5a1523d0545": null,
-        "padding_top": 20,
-        "padding_bottom": 15,
-        "reset_spacing": true
-      },
-      "blocks": {
-        "collection_dLGAyF": {
-          "type": "collection",
-          "name": "Calçados de Pesca - Envio Full",
-          "disabled": false,
-          "settings": {
-            "collection": "envio-full-camisas",
-            "collection_title": "Envio Imediato"
-          }
-        }
-      },
-      "block_order": [
-        "collection_dLGAyF"
-      ],
-      "name": "Envio FULL"
     }
   },
   "order": [
