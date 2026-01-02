@@ -49,8 +49,8 @@
       "blocks": {
         "menu_promotion_NkqYkU": {
           "type": "menu_promotion",
+          "disabled": true,
           "name": "OFERTAS",
-          "disabled": false,
           "settings": {
             "text": "OFERTAS",
             "open-link-newtab": false,
