@@ -29,6 +29,7 @@
       <a
         href="{{ collection.url | default: product.collections.first.url | default: routes.all_products_collection_url }}"
         class="breadcrumb-back-link flex align-center justify-center color-{{ section_st.color_scheme }} no-underline"
+        onclick="if(document.referrer && document.referrer.indexOf(window.location.host) !== -1) { event.preventDefault(); history.back(); }"
       >
         <svg
           width="24"
