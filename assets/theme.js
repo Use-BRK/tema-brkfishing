@@ -8692,3 +8692,53 @@ class ProductWithBanner extends HTMLElement {
   }
 }
 customElements.define("product-with-banner", ProductWithBanner);
+
+class ProductBundle extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    // Wait for the components to be ready
+    setTimeout(() => {
+      this.initAutoClick();
+    }, 1000);
+  }
+
+  initAutoClick() {
+    const sectionId = this.getAttribute('id');
+    console.log(`ProductBundle: initializing for ${sectionId}`);
+
+    // Determine maximum items allowed in bundle
+    const submitBtn = this.querySelector('button-submit-bundle');
+    const maxItems = submitBtn ? parseInt(submitBtn.getAttribute('data-maximum') || 3) : 3;
+
+    // Find the 'Add' buttons (which add products to the bundle)
+    // Selector based on user provided HTML: class="product__add-cart__bundle"
+    const addButtons = Array.from(this.querySelectorAll('.product__add-cart__bundle'));
+
+    if (addButtons.length === 0) {
+       console.log('ProductBundle: No add buttons found.');
+       return;
+    }
+
+    let clickedCount = 0;
+
+    addButtons.forEach((btn, index) => {
+      if (clickedCount < maxItems) {
+         // Check if button is enabled
+         if (!btn.hasAttribute('disabled')) {
+            setTimeout(() => {
+               console.log(`ProductBundle: Auto-clicking button for product ${index}`);
+               btn.click();
+            }, index * 500); // 500ms delay between clicks to be safe
+            clickedCount++;
+         }
+      }
+    });
+  }
+}
+
+if (!customElements.get('product-bundle')) {
+  customElements.define('product-bundle', ProductBundle);
+}
