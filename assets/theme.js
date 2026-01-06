@@ -8692,3 +8692,198 @@ class ProductWithBanner extends HTMLElement {
   }
 }
 customElements.define("product-with-banner", ProductWithBanner);
+
+class ProductBundle extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.initPreloadedItems();
+    // Using setTimeout to ensure all child elements (like grid items) are ready
+    setTimeout(() => {
+        this.updateButtonsStateInitial();
+        this.updateContainerOrders();
+    }, 0);
+  }
+
+  initPreloadedItems() {
+    const bundleItems = this.querySelectorAll(
+      "[data-product-bundle-variant][data-variant-id]"
+    );
+    bundleItems.forEach((item) => {
+      // Determine the remove button. My Liquid uses bundle-cart-remove-button which wraps the button.
+      // But we need to click the 'button' inside it or the element itself?
+      // In theme.js/bundle-item.liquid: <bundle-cart-remove-button ...><button ...></button></bundle-cart-remove-button>
+      // The theme.js attaches listener to 'newRemoveButton' which is the bundle-cart-remove-button element itself?
+      // Let's check theme.js: 
+      // const bundleRemoveButton = doc.querySelector("bundle-cart-remove-button");
+      // const newRemoveButton = bundleActionContainer.querySelector("bundle-cart-remove-button:last-child");
+      // newRemoveButton.addEventListener... 
+      // So it attaches to the custom element <bundle-cart-remove-button>!
+      
+      const removeBtn = item.querySelector("bundle-cart-remove-button");
+      if (removeBtn) {
+        removeBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          this.removeItem(item);
+        });
+      }
+    });
+  }
+
+  removeItem(targetContainer) {
+    targetContainer.removeAttribute("data-variant-id");
+    targetContainer.removeAttribute("data-quantity");
+
+    const mediaContainer = targetContainer.querySelector(
+      "[data-product-bundle-variant-media]"
+    );
+    if (mediaContainer) {
+      mediaContainer.innerHTML = "";
+        mediaContainer.classList.add("skeleton"); // Add skeleton class back? 
+        // theme.js says: mediaContainer.classList.remove("skeleton") when adding.
+        // It doesn't seem to add it back in clearBundle? 
+        // clearBundle: mediaContainer.innerHTML = "";
+    }
+
+    const contentContainer = targetContainer.querySelector(
+      "[data-product-bundle-variant-content]"
+    );
+    if (contentContainer) {
+      contentContainer.innerHTML = `
+          <span class="horizontal-product__skeleton skeleton-1"></span>
+          <span class="horizontal-product__skeleton skeleton-2"></span>
+          <span class="horizontal-product__skeleton skeleton-3"></span>
+        `;
+    }
+    
+    // Remove bundle-action div if present?
+    const actionContainer = targetContainer.querySelector(".bundle-action");
+    if (actionContainer) {
+        actionContainer.remove();
+    }
+
+    this.updateContainerOrders();
+    this.updateBundleTotal();
+    
+    // Dispatch event
+    document.dispatchEvent(new CustomEvent("bundle:item-changed"));
+
+    // Update Buttons State
+    this.updateButtonsState();
+     
+    // Check minimum requirements for main button
+    this.updateMainButtonStatus();
+  }
+
+  updateContainerOrders() {
+    const bundleContainers = this.querySelectorAll(
+      "[data-product-bundle-variant]"
+    );
+
+    bundleContainers.forEach((container) => {
+      container.style.order = "";
+    });
+
+    let filledCount = 0;
+    let emptyCount = 0;
+
+    bundleContainers.forEach((container, index) => {
+      if (container.hasAttribute("data-variant-id")) {
+        container.style.order = filledCount.toString();
+        filledCount++;
+      } else {
+        container.style.order = (
+          bundleContainers.length + emptyCount
+        ).toString();
+        emptyCount++;
+      }
+    });
+  }
+
+  updateBundleTotal() {
+    let itemTotalPrice = 0;
+    const bundleItems = this.querySelectorAll(
+      "[data-product-bundle-variant][data-variant-id]"
+    );
+
+    bundleItems.forEach((item) => {
+      const priceElement = item.querySelector(".price-item--regular");
+      if (!priceElement || !priceElement.dataset.price) return;
+
+      const price = parseFloat(priceElement.dataset.price);
+      const quantity = parseInt(item.getAttribute("data-quantity")) || 1;
+
+      if (!isNaN(price) && !isNaN(quantity)) {
+        itemTotalPrice += price * quantity;
+      }
+    });
+
+    const totalElement = this.querySelector(".subtotal-price__bundle");
+    if (totalElement) {
+      if (itemTotalPrice > 0) {
+        totalElement.textContent = Shopify.formatMoney(
+          itemTotalPrice,
+          typeof cartStrings !== 'undefined' ? cartStrings.money_format : window.cartStrings?.money_format
+        );
+      } else {
+        totalElement.textContent = Shopify.formatMoney(
+          0,
+          typeof cartStrings !== 'undefined' ? cartStrings.money_format : window.cartStrings?.money_format
+        );
+      }
+    }
+  }
+
+  updateButtonsState() {
+     // Re-enable all buttons first
+     const allButtons = this.querySelectorAll("product-form-bundle button");
+     allButtons.forEach(btn => btn.classList.remove("disabled"));
+
+     // Check if full
+     const bundleItems = this.querySelectorAll(
+      "[data-product-bundle-variant][data-variant-id]"
+    );
+    // Max is on the submit button?
+    const submitBtn = this.querySelector("button-submit-bundle");
+    const max = submitBtn ? parseInt(submitBtn.dataset.maximum) : 3;
+
+    if (bundleItems.length >= max) {
+         allButtons.forEach(btn => btn.classList.add("disabled"));
+    }
+  }
+  
+  updateButtonsStateInitial() {
+      this.updateButtonsState();
+  }
+
+  updateMainButtonStatus() {
+     const submitBtn = this.querySelector("button-submit-bundle");
+     if (submitBtn && submitBtn.updateButtonStatus) {
+         submitBtn.updateButtonStatus();
+     } else if (submitBtn) {
+         // Fallback if method not available (it IS defined in theme.js on ButtonSubmitBundle)
+         // But we can manually trigger it check
+         const minimum = parseInt(submitBtn.dataset.minimum);
+         const bundleItems = this.querySelectorAll("[data-product-bundle-variant][data-variant-id]");
+         // Note: Logic in theme.js counts length+1 ?? 
+         // "let itemCount = 0; if (bundleItems.length > 0) { itemCount = bundleItems.length + 1; }"
+         // Wait, why +1? That seems like a bug or specific logic in ButtonSubmitBundle.updateButtonStatus
+         // Let's check theme.js line 4301.
+         // Yes: itemCount = bundleItems.length + 1;
+         // That's weird. Maybe it counts the "current" item being added?
+         // But updateButtonStatus is called after clearing?
+         
+         // Actually, let's rely on the element's method if possible.
+         // We can recreate the logic properly:
+         if (bundleItems.length >= minimum) {
+             submitBtn.classList.remove("disabled");
+         } else {
+             submitBtn.classList.add("disabled");
+         }
+     }
+  }
+}
+
+customElements.define('product-bundle', ProductBundle);
