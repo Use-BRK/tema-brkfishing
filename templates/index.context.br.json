@@ -19,33 +19,33 @@
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
-        "header-a6bdee217d8ca14a548774df94ede142": null,
+        "header-e8364422d4c374b8742ae4c976c27d62": null,
         "heading": "",
         "description": "",
         "header_size": "medium",
         "header_alignment": "center",
-        "header-8dd94031558072ce3e10352c6c085c17": null,
+        "header-8dabad5345615b572387ac5da42e1c2b": null,
         "tab_header_style": "horizontal",
         "horizontal_tab_style": "underline",
         "display_mode": "carousel",
         "items_to_show": 24,
         "items_per_row": 5,
         "column_gap": 30,
-        "header-4763973d03cdb0a13e64499b4839e590": null,
+        "header-2a3a7d6ac50aadd029e23c800fcb1132": null,
         "show_arrow": true,
         "carousel_pagination": "show_dots",
         "infinite": true,
         "autoplay": false,
         "autorotate_speed": 3,
         "reveal": false,
-        "header-fada4014bee8ffb00fc938c18447d5de": null,
+        "header-75644cf8d9d20cd91c80008e4635a61c": null,
         "rows": 2,
         "show_load_more_button": true,
         "button_label": "Ver +",
-        "header-105ca792a270c56ee798a6a62e48879a": null,
+        "header-0bfb8ef0d14a90a597acc59b10c81c7e": null,
         "carousel_on_mobile": true,
         "items_per_row_mobile": 1.5,
-        "header-634447cc51bf3a67eadd1fc6f68d0046": null,
+        "header-5df6fbac6c11c7e522c8df94300f1fc8": null,
         "padding_top": 20,
         "padding_bottom": 15,
         "reset_spacing": true
@@ -57,7 +57,7 @@
           "disabled": false,
           "settings": {
             "collection": "envio-full-camisas",
-            "collection_title": "Envio Imediato"
+            "collection_title": "Envio Imediato + BRINDE 🎁"
           }
         }
       },
@@ -79,18 +79,18 @@
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
-        "header-5db3da8a81b2983da165980dd430cca6": null,
-        "heading": "Kit Essencial — 10% Off🔥",
+        "header-63089e122f969148f38e77dd46f05ff0": null,
+        "heading": "Kit Essencial 10% Off🔥",
         "description": "<p><strong>VÁLIDO ATÉ 31/01</strong></p>",
         "header_size": "medium",
         "header_alignment": "left",
-        "header-e3f39d8a4e335a3728163f484471dc6b": null,
+        "header-cdfc92eef56536700a32502b8b3de217": null,
         "minimum": 2,
         "maximum": 3,
         "enable_quantity": true,
-        "header-f386e9d5466bd90658dab2d11934661f": null,
+        "header-cd599c8907b5c656c53008647b77a442": null,
         "padding_top": 35,
-        "padding_bottom": 35,
+        "padding_bottom": 0,
         "reset_spacing": true
       },
       "blocks": {
@@ -107,7 +107,7 @@
             "items_to_show": 3,
             "items_per_row": 3,
             "column_gap": 30,
-            "header-4a90aa71ef58048d3f28d55aab82942c": null,
+            "header-1df767af759b40def07c4500001995ee": null,
             "carousel_on_mobile": true,
             "items_per_row_mobile": 2
           }
@@ -116,16 +116,16 @@
           "type": "your_bundle",
           "disabled": false,
           "settings": {
-            "heading": "KIT Essencial — 10% OFF 🔥",
-            "description": "<p>Adicione <strong>3 Itens</strong> essenciais para pesca e <strong>Ganhe 13% de Desconto</strong>!<br/><br/><strong>- Copo Térmico<br/>- Bolsa Térmica<br/>- Pederneira </strong></p>",
-            "header-4cc710cbe2f11d89be38abfb55742a75": null,
-            "header-62110037ece37dddc6dcae42726cfecc": null,
-            "paragraph-8d891e515f57b7021bf4702dcc8aea34": null,
+            "heading": "",
+            "description": "<p>Adicione <strong>3 Itens</strong> essenciais para pesca e <strong>Ganhe 10% de Desconto</strong>!<br/><br/><strong>- Copo Térmico<br/>- Bolsa Térmica<br/>- Pederneira </strong></p>",
+            "header-1bfb3b07a212b0c4e4625e9dcc01a3f1": null,
+            "header-18dab757dae6cd2e934825445c8a4476": null,
+            "paragraph-6c8db0484c30afef7f91b06abc8fb488": null,
             "heading_font_size": 24,
             "heading_font_weight": "heading_weight",
             "heading_uppercase": false,
             "heading_spacing_bottom": 20,
-            "paragraph-0633019fdea553a853472cb6314f6a74": null,
+            "paragraph-d2645b06195a2f71e9b69cbba8bfb703": null,
             "des_font_size": 15,
             "des_font_weight": "body_weight",
             "des_spacing_bottom": 30
@@ -136,7 +136,7 @@
         "product_discount_rWFqE",
         "your_bundle_4brzg"
       ],
-      "name": "Kit Pescador"
+      "name": "Kit Essencial"
     },
     "slideshow_8KKtNU": {
       "settings": {
@@ -167,13 +167,13 @@
           "name": "Hybrid",
           "disabled": false,
           "settings": {
-            "header-dde519029632f62e0bdeb102e9ea2362": null,
+            "header-46497311f7396a1e63e0fc36b789c77d": null,
             "image": "shopify://shop_images/FULLBANNER_NOVO_SITE_CAMISA_HYBRID_7d884d7f-338f-46b6-ae58-5ee7f6ce714e.png",
             "image_mobile": "shopify://shop_images/MOBILE_HYBRID_7e2c2129-4a63-4534-8c83-fef4bf5cc373.png",
             "local_video": null,
             "overlay_opacity": 0,
             "link_banner": "shopify://collections/camisa-hybrid-masculino",
-            "header-6cac82dcb46c820ff865513848caf7e2": null,
+            "header-67f548a3501bb05fd3e11c0aa238f900": null,
             "slider_effect": "effect_fadeinup",
             "subheading": "",
             "heading": "",
@@ -184,18 +184,18 @@
             "second_button_label": "",
             "second_button_link": "shopify://collections/camisa-fusionx-masculino",
             "second_button_style": false,
-            "header-c174e29320f1d0a5c26e943c80b9ad46": null,
+            "header-daaff1ae48cb1209106574d69a342c0b": null,
             "content_alignment": "center",
             "content_position": "top-center",
             "content_width": "full_width",
             "content_max_width": 100,
             "content_padding_block": 55,
             "content_padding_inline": 55,
-            "header-6e14aeac45f09e80e4eb25c34dcc3318": null,
+            "header-aebb592ea47503d556223b26edaca0c1": null,
             "show_content_background": false,
             "content_background": "#ffffff",
             "content_box_opacity": 100,
-            "header-9dea07941f75123b62928346ef21e5bb": null,
+            "header-27f8a49236129e8bb9fca0b68ace889e": null,
             "content_alignment_mobile": "right"
           }
         },
@@ -378,12 +378,29 @@
           }
         }
       }
+    },
+    "custom_liquid_MNBWB": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "section_width": "full_width",
+        "color_scheme": "",
+        "custom_liquid": "{%- assign brk_video = \"https://cdn.shopify.com/videos/c/o/v/406f3167182c406d9fdbeae3733724bd.mp4\" -%}\n\n<video \n  src=\"{{ brk_video }}\" \n  autoplay \n  muted \n  loop \n  playsinline\n  style=\"width: 100%; height: auto; display: block;\">\n</video>",
+        "header-52478c0374a1b57aa3dafea5e3804364": null,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "reset_spacing": false
+      },
+      "blocks": {},
+      "block_order": [],
+      "name": "t:sections.custom_liquid.name"
     }
   },
   "order": [
     "slideshow_8KKtNU",
     "scrolling_text_U3mttg",
     "collection_tab_Ei9xq7",
+    "custom_liquid_MNBWB",
     "product_bundle_JywJj",
     "collection_list_ypj7A8",
     "collection_tab_UNybtX",
