@@ -8702,7 +8702,7 @@ class ProductBundle extends HTMLElement {
     // Wait for the components to be ready
     setTimeout(() => {
       this.initAutoClick();
-    }, 1000);
+    }, 100);
   }
 
   initAutoClick() {
@@ -8731,7 +8731,7 @@ class ProductBundle extends HTMLElement {
             setTimeout(() => {
                console.log(`ProductBundle: Auto-clicking button for product ${index}`);
                btn.click();
-            }, index * 500); // 500ms delay between clicks to be safe
+            }, index * 100); // 500ms delay between clicks to be safe
             clickedCount++;
          }
       }
