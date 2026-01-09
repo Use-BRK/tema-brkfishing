@@ -19,33 +19,33 @@
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
-        "header-e8364422d4c374b8742ae4c976c27d62": null,
+        "header-8c3fa0cf2407c566ac65323593b94047": null,
         "heading": "",
         "description": "",
         "header_size": "medium",
         "header_alignment": "center",
-        "header-8dabad5345615b572387ac5da42e1c2b": null,
+        "header-5711924be754d0c168a8efd3a1b944bc": null,
         "tab_header_style": "horizontal",
         "horizontal_tab_style": "underline",
         "display_mode": "carousel",
         "items_to_show": 24,
         "items_per_row": 5,
         "column_gap": 30,
-        "header-2a3a7d6ac50aadd029e23c800fcb1132": null,
+        "header-a37bec51c7fcbda7ac7977078d6bae09": null,
         "show_arrow": true,
         "carousel_pagination": "show_dots",
         "infinite": true,
         "autoplay": false,
         "autorotate_speed": 3,
         "reveal": false,
-        "header-75644cf8d9d20cd91c80008e4635a61c": null,
+        "header-5695a1c1f4f835529aaa3574fdef5137": null,
         "rows": 2,
         "show_load_more_button": true,
         "button_label": "Ver +",
-        "header-0bfb8ef0d14a90a597acc59b10c81c7e": null,
+        "header-d127585249af40875d95ca1b0eff2422": null,
         "carousel_on_mobile": true,
         "items_per_row_mobile": 1.5,
-        "header-5df6fbac6c11c7e522c8df94300f1fc8": null,
+        "header-509bef0a696e7c24783046ffe23a89de": null,
         "padding_top": 20,
         "padding_bottom": 15,
         "reset_spacing": true
@@ -66,6 +66,22 @@
       ],
       "name": "Envio FULL"
     },
+    "custom_liquid_MNBWB": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "section_width": "full_width",
+        "color_scheme": "",
+        "custom_liquid": "{%- assign brk_video = \"https://cdn.shopify.com/videos/c/o/v/406f3167182c406d9fdbeae3733724bd.mp4\" -%}\n\n<video \n  src=\"{{ brk_video }}\" \n  autoplay \n  muted \n  loop \n  playsinline\n  style=\"width: 100%; height: auto; display: block;\">\n</video>",
+        "header-b4e77a6b4cfbc473b5e3adc6da9b9d9e": null,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "reset_spacing": false
+      },
+      "blocks": {},
+      "block_order": [],
+      "name": "t:sections.custom_liquid.name"
+    },
     "product_bundle_JywJj": {
       "type": "product-bundle",
       "disabled": false,
@@ -79,16 +95,16 @@
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
-        "header-63089e122f969148f38e77dd46f05ff0": null,
+        "header-fa2165bbbb922ac2733110c43860784e": null,
         "heading": "Kit Essencial 10% Off🔥",
         "description": "<p><strong>VÁLIDO ATÉ 31/01</strong></p>",
         "header_size": "medium",
         "header_alignment": "left",
-        "header-cdfc92eef56536700a32502b8b3de217": null,
+        "header-435dfab7ad9d9006e76b78188655eeb7": null,
         "minimum": 2,
         "maximum": 3,
         "enable_quantity": true,
-        "header-cd599c8907b5c656c53008647b77a442": null,
+        "header-e61a94c02fc42d21bcbc14b9f4d8bd2a": null,
         "padding_top": 35,
         "padding_bottom": 0,
         "reset_spacing": true
@@ -107,7 +123,7 @@
             "items_to_show": 3,
             "items_per_row": 3,
             "column_gap": 30,
-            "header-1df767af759b40def07c4500001995ee": null,
+            "header-950f5e0183e2617dfc00d8f1cafdb3fc": null,
             "carousel_on_mobile": true,
             "items_per_row_mobile": 2
           }
@@ -118,14 +134,14 @@
           "settings": {
             "heading": "",
             "description": "<p>Adicione <strong>3 Itens</strong> essenciais para pesca e <strong>Ganhe 10% de Desconto</strong>! 🔥</p>",
-            "header-1bfb3b07a212b0c4e4625e9dcc01a3f1": null,
-            "header-18dab757dae6cd2e934825445c8a4476": null,
-            "paragraph-6c8db0484c30afef7f91b06abc8fb488": null,
+            "header-ac2e7e6f536a2fac80a70b208b3942aa": null,
+            "header-8233017888b097cd2848f8fd5415ab8b": null,
+            "paragraph-e95c8858265c4df40af8ce2600e396c3": null,
             "heading_font_size": 24,
             "heading_font_weight": "heading_weight",
             "heading_uppercase": false,
             "heading_spacing_bottom": 20,
-            "paragraph-d2645b06195a2f71e9b69cbba8bfb703": null,
+            "paragraph-336f15fb86e99da5685e6b1a43ea0496": null,
             "des_font_size": 15,
             "des_font_weight": "body_weight",
             "des_spacing_bottom": 30
@@ -148,11 +164,11 @@
           "name": "Amazon",
           "disabled": false,
           "settings": {
-            "image": "shopify://shop_images/Prancheta_1_be1de53c-1aed-4297-89ba-6e68048ec1ac.png",
-            "image_mobile": "shopify://shop_images/Prancheta_2.png",
+            "image": "shopify://shop_images/FULLBANNER.png",
+            "image_mobile": "shopify://shop_images/MOB_BANNER.png",
             "local_video": null,
             "overlay_opacity": 0,
-            "link_banner": "shopify://collections/master-amazon-femininas",
+            "link_banner": "https://www.brkfishing.com.br/collections/envio-full",
             "first_button_link": "shopify://collections/camisa-fusionx-masculino",
             "second_button_link": "shopify://collections/camisa-fusionx-masculino",
             "content_alignment": "center",
@@ -162,18 +178,18 @@
             "content_alignment_mobile": "right"
           }
         },
-        "slider_item_thxfTj": {
+        "slider_item_dP4zBf": {
           "type": "slider_item",
-          "name": "Hybrid",
+          "name": "Amazon",
           "disabled": false,
           "settings": {
-            "header-46497311f7396a1e63e0fc36b789c77d": null,
-            "image": "shopify://shop_images/FULLBANNER_NOVO_SITE_CAMISA_HYBRID_7d884d7f-338f-46b6-ae58-5ee7f6ce714e.png",
-            "image_mobile": "shopify://shop_images/MOBILE_HYBRID_7e2c2129-4a63-4534-8c83-fef4bf5cc373.png",
+            "header-8e92da5424e2a2c48ae20facad970e0b": null,
+            "image": "shopify://shop_images/Prancheta_1_be1de53c-1aed-4297-89ba-6e68048ec1ac.png",
+            "image_mobile": "shopify://shop_images/Prancheta_2.png",
             "local_video": null,
             "overlay_opacity": 0,
-            "link_banner": "shopify://collections/camisa-hybrid-masculino",
-            "header-67f548a3501bb05fd3e11c0aa238f900": null,
+            "link_banner": "shopify://collections/master-amazon-femininas",
+            "header-fbd7878f5d596cc6f16aabd7a67e3ebd": null,
             "slider_effect": "effect_fadeinup",
             "subheading": "",
             "heading": "",
@@ -184,18 +200,55 @@
             "second_button_label": "",
             "second_button_link": "shopify://collections/camisa-fusionx-masculino",
             "second_button_style": false,
-            "header-daaff1ae48cb1209106574d69a342c0b": null,
+            "header-1669d0134b49d75fb09cd0ac4bd593dc": null,
             "content_alignment": "center",
             "content_position": "top-center",
             "content_width": "full_width",
             "content_max_width": 100,
             "content_padding_block": 55,
             "content_padding_inline": 55,
-            "header-aebb592ea47503d556223b26edaca0c1": null,
+            "header-55b5b70eced8ffcd6d7e7c21adc2a948": null,
             "show_content_background": false,
             "content_background": "#ffffff",
             "content_box_opacity": 100,
-            "header-27f8a49236129e8bb9fca0b68ace889e": null,
+            "header-8eebc2bb28eaa802d1675fa6a327737f": null,
+            "content_alignment_mobile": "right"
+          }
+        },
+        "slider_item_thxfTj": {
+          "type": "slider_item",
+          "name": "Hybrid",
+          "disabled": false,
+          "settings": {
+            "header-c8d841f3a4fda76ff2993f65df8bbcdd": null,
+            "image": "shopify://shop_images/FULLBANNER_NOVO_SITE_CAMISA_HYBRID_7d884d7f-338f-46b6-ae58-5ee7f6ce714e.png",
+            "image_mobile": "shopify://shop_images/MOBILE_HYBRID_7e2c2129-4a63-4534-8c83-fef4bf5cc373.png",
+            "local_video": null,
+            "overlay_opacity": 0,
+            "link_banner": "shopify://collections/camisa-hybrid-masculino",
+            "header-def2ee8ae0589bbb3340e3562ca007b6": null,
+            "slider_effect": "effect_fadeinup",
+            "subheading": "",
+            "heading": "",
+            "description": "",
+            "first_button_label": "",
+            "first_button_link": "shopify://collections/camisa-fusionx-masculino",
+            "first_button_style": false,
+            "second_button_label": "",
+            "second_button_link": "shopify://collections/camisa-fusionx-masculino",
+            "second_button_style": false,
+            "header-be5d895c6dc7f32b96622a434b82b6bc": null,
+            "content_alignment": "center",
+            "content_position": "top-center",
+            "content_width": "full_width",
+            "content_max_width": 100,
+            "content_padding_block": 55,
+            "content_padding_inline": 55,
+            "header-27648fc4b98ac5fb13c382dcd3ccff74": null,
+            "show_content_background": false,
+            "content_background": "#ffffff",
+            "content_box_opacity": 100,
+            "header-76ee4eaf6a240d761c7d75981f7920dd": null,
             "content_alignment_mobile": "right"
           }
         },
@@ -209,6 +262,7 @@
       },
       "block_order": [
         "slider_item_jiLA39",
+        "slider_item_dP4zBf",
         "slider_item_thxfTj",
         "slider_item_TJiTLz"
       ]
@@ -378,22 +432,6 @@
           }
         }
       }
-    },
-    "custom_liquid_MNBWB": {
-      "type": "custom-liquid",
-      "disabled": true,
-      "settings": {
-        "section_width": "full_width",
-        "color_scheme": "",
-        "custom_liquid": "{%- assign brk_video = \"https://cdn.shopify.com/videos/c/o/v/406f3167182c406d9fdbeae3733724bd.mp4\" -%}\n\n<video \n  src=\"{{ brk_video }}\" \n  autoplay \n  muted \n  loop \n  playsinline\n  style=\"width: 100%; height: auto; display: block;\">\n</video>",
-        "header-52478c0374a1b57aa3dafea5e3804364": null,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "reset_spacing": false
-      },
-      "blocks": {},
-      "block_order": [],
-      "name": "t:sections.custom_liquid.name"
     }
   },
   "order": [
