@@ -12,10 +12,10 @@
     "splash_screen": {
       "settings": {
         "video": "shopify://files/videos/Video_Generation_Complete.mp4",
-        "enable_fade": false,
-        "duration": 3,
+        "resolution": "16x9",
         "mobile_height": 300,
-        "resolution": "16x9"
+        "duration": 8,
+        "enable_fade": true
       },
       "blocks": {}
     }
