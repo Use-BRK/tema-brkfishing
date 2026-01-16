@@ -4,36 +4,92 @@
   "class": "splash-screen-section",
   "settings": [
     {
+      "type": "header",
+      "content": "Video Settings"
+    },
+    {
       "type": "video",
       "id": "video",
       "label": "Video",
       "info": "Upload a video to play on load."
     },
     {
-      "type": "range",
-      "id": "duration",
-      "min": 1,
-      "max": 10,
-      "step": 0.5,
-      "unit": "s",
-      "label": "Display Duration",
-      "default": 3.0
+      "type": "header",
+      "content": "Layout & Resolution"
+    },
+    {
+      "type": "select",
+      "id": "resolution",
+      "label": "Video Resolution / Size",
+      "default": "full_screen",
+      "options": [
+        { "value": "full_screen", "label": "Full Screen (Cover)" },
+        { "value": "fit_screen", "label": "Full Screen (Contain/Best Fit)" },
+        { "value": "16x9", "label": "16:9 Widescreen" },
+        { "value": "4x3", "label": "4:3 Standard" },
+        { "value": "1x1", "label": "1:1 Square" },
+        { "value": "custom", "label": "Custom Height" }
+      ]
     },
     {
       "type": "range",
-      "id": "fade_duration",
-      "min": 0.5,
-      "max": 5,
-      "step": 0.5,
-      "unit": "s",
-      "label": "Fade Out Duration",
-      "default": 1.0
+      "id": "desktop_height",
+      "label": "Desktop Height (Custom)",
+      "min": 200,
+      "max": 1000,
+      "step": 10,
+      "unit": "px",
+      "default": 600,
+      "info": "Only applies if Resolution is 'Custom Height'"
+    },
+    {
+      "type": "range",
+      "id": "mobile_height",
+      "label": "Mobile Height (Custom)",
+      "min": 150,
+      "max": 800,
+      "step": 10,
+      "unit": "px",
+      "default": 400,
+      "info": "Only applies if Resolution is 'Custom Height'"
     },
     {
       "type": "color",
       "id": "background_color",
       "label": "Background Color",
-      "default": "#000000"
+      "default": "#000000",
+      "info": "Visible if video doesn't cover the full screen."
+    },
+    {
+      "type": "header",
+      "content": "Behavior"
+    },
+    {
+      "type": "range",
+      "id": "duration",
+      "min": 1,
+      "max": 15,
+      "step": 0.5,
+      "unit": "s",
+      "label": "Display Duration",
+      "default": 3.0,
+      "info": "How long the splash screen stays visible."
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_fade",
+      "label": "Enable Fade Out Transition",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "fade_duration",
+      "min": 0,
+      "max": 5,
+      "step": 0.5,
+      "unit": "s",
+      "label": "Fade Duration",
+      "default": 1.0
     },
     {
       "type": "checkbox",
@@ -53,79 +109,136 @@
 {% if section.settings.enabled and section.settings.video != blank %}
   <style>
     #shopify-section-{{ section.id }} {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 999999;
-      pointer-events: none; /* Allow clicks to pass through immediately if needed, but we want to block interaction initially so we toggle this */
+      /* Ensure the section itself doesn't disrupt flow, but the overlay is fixed */
+      display: block;
+      width: 0;
+      height: 0;
     }
 
     .splash-screen-overlay {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
+      width: 100vw;
+      height: 100vh;
+      z-index: 999999;
       background-color: {{ section.settings.background_color }};
       display: flex;
       align-items: center;
       justify-content: center;
+      overflow: hidden;
       opacity: 1;
-      transition: opacity {{ section.settings.fade_duration }}s ease-in-out;
-      pointer-events: auto; /* Block interaction while visible */
+      pointer-events: auto;
     }
+
+    {% if section.settings.enable_fade %}
+    .splash-screen-overlay {
+        transition: opacity {{ section.settings.fade_duration }}s ease-in-out;
+    }
+    {% endif %}
 
     .splash-screen-overlay.hidden-fade {
       opacity: 0;
       pointer-events: none;
     }
 
+    .splash-video-container {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .splash-screen-video {
       width: 100%;
       height: 100%;
-      object-fit: cover;
     }
 
-    /* Hide scrollbar while splash is active? Optional, but might be jarring if it reappears.
-       For now, we just overlay everything. */
+    /* Resolution Logic */
+    {% case section.settings.resolution %}
+        {% when 'full_screen' %}
+            .splash-video-container { width: 100%; height: 100%; }
+            .splash-screen-video { object-fit: cover; }
+        {% when 'fit_screen' %}
+            .splash-video-container { width: 100%; height: 100%; }
+            .splash-screen-video { object-fit: contain; }
+        {% when '16x9' %}
+            .splash-video-container { aspect-ratio: 16 / 9; max-width: 100%; max-height: 100vh; width: auto; height: auto; margin: 0 auto; }
+            .splash-screen-video { object-fit: cover; }
+        {% when '4x3' %}
+            .splash-video-container { aspect-ratio: 4 / 3; max-width: 100%; max-height: 100vh; width: auto; height: auto; margin: 0 auto;  }
+            .splash-screen-video { object-fit: cover; }
+        {% when '1x1' %}
+            .splash-video-container { aspect-ratio: 1 / 1; max-width: 100%; max-height: 100vh; width: auto; height: auto; margin: 0 auto; }
+            .splash-screen-video { object-fit: cover; }
+        {% when 'custom' %}
+            .splash-video-container { height: {{ section.settings.mobile_height }}px; }
+            .splash-screen-video { object-fit: cover; }
+            @media (min-width: 768px) {
+                .splash-video-container { height: {{ section.settings.desktop_height }}px; }
+            }
+    {% endcase %}
   </style>
 
   <div class="splash-screen-overlay" id="SplashOverlay-{{ section.id }}">
-    {{
-      section.settings.video
-      | video_tag:
-        autoplay: true,
-        loop: false,
-        muted: true,
-        controls: false,
-        class: 'splash-screen-video',
-        playsinline: true
-    }}
+    <div class="splash-video-container">
+      {{
+        section.settings.video
+        | video_tag:
+          autoplay: true,
+          loop: false,
+          muted: true,
+          controls: false,
+          class: 'splash-screen-video',
+          playsinline: true
+      }}
+    </div>
   </div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const overlay = document.getElementById('SplashOverlay-{{ section.id }}');
-      const video = overlay.querySelector('video');
+    (function() {
+      const overlayId = 'SplashOverlay-{{ section.id }}';
       const duration = {{ section.settings.duration | times: 1000 }};
+      const fadeEnabled = {{ section.settings.enable_fade | default: false }};
       const fadeDuration = {{ section.settings.fade_duration | times: 1000 }};
 
-      // Ensure video plays (sometimes browsers block autoplay if not handled right, but muted usually works)
-      if (video) {
-          video.play().catch(e => console.log('Autoplay blocked:', e));
-      }
+      const removeSplash = () => {
+          const overlay = document.getElementById(overlayId);
+          if (overlay) {
+              overlay.remove();
+          }
+      };
 
-      setTimeout(() => {
-        overlay.classList.add('hidden-fade');
+      const startExitSequence = () => {
+        const overlay = document.getElementById(overlayId);
+        if (!overlay) return;
 
-        // Remove from DOM after fade to ensure no z-index issues remain
-        setTimeout(() => {
-            overlay.remove();
-        }, fadeDuration);
+        if (fadeEnabled && fadeDuration > 0) {
+            overlay.classList.add('hidden-fade');
+            // Wait for transition to end before removing
+            setTimeout(removeSplash, fadeDuration);
+        } else {
+            // Immediate removal
+            removeSplash();
+        }
+      };
 
-      }, duration);
-    });
+      document.addEventListener('DOMContentLoaded', function() {
+        const overlay = document.getElementById(overlayId);
+        if(!overlay) return;
+
+        const video = overlay.querySelector('video');
+
+        // Robust autoplay
+        if (video) {
+            video.muted = true; // double ensure muted
+            video.play().catch(e => console.log('Splash autoplay blocked:', e));
+        }
+
+        // Timer for removal
+        setTimeout(startExitSequence, duration);
+      });
+    })();
   </script>
 {% endif %}
