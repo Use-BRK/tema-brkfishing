@@ -19,33 +19,33 @@
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
-        "header-4bed12e941fb2a9e3f67705b5f50f9ee": null,
+        "header-5b1ed3731c202f398d9233ad37dd4b58": null,
         "heading": "",
         "description": "",
         "header_size": "medium",
         "header_alignment": "center",
-        "header-2b5ca99980cecc2a402ab0a7e5909b09": null,
+        "header-d5455c7a6e36fa9da806ba4cda5bafc1": null,
         "tab_header_style": "horizontal",
         "horizontal_tab_style": "underline",
         "display_mode": "carousel",
         "items_to_show": 24,
         "items_per_row": 5,
         "column_gap": 30,
-        "header-53cfb8b42b3cce70f8d427adca2deb59": null,
+        "header-5c1ccbe7c0006820d94cbd499eae46df": null,
         "show_arrow": true,
         "carousel_pagination": "show_dots",
         "infinite": true,
         "autoplay": false,
         "autorotate_speed": 3,
         "reveal": false,
-        "header-2b7cb8ac13dcd50950617c717bddad76": null,
+        "header-2b667729d4687dc0746021f99cf162da": null,
         "rows": 2,
         "show_load_more_button": true,
         "button_label": "Ver +",
-        "header-749d1e7a69ec5ea56beebc3dbf5680b4": null,
+        "header-40c75ec57a3d714456bda0fff9d068f4": null,
         "carousel_on_mobile": true,
         "items_per_row_mobile": 1.5,
-        "header-405b3ec0b28bf559a4767a518a6c5e56": null,
+        "header-fa9c3f29c768160796c4dc25f9480eab": null,
         "padding_top": 20,
         "padding_bottom": 15,
         "reset_spacing": true
@@ -66,6 +66,92 @@
       ],
       "name": "Envio FULL"
     },
+    "lookbook_product_KMnJB": {
+      "type": "lookbook-product",
+      "disabled": false,
+      "settings": {
+        "section_width": "fluid_container",
+        "color_scheme": "",
+        "header-10f2f650630ff7afe57559fdeb579d0c": null,
+        "heading": "Corta Vento BRK",
+        "description": "",
+        "header_size": "medium",
+        "header_alignment": "left",
+        "header-d6d9839b472b81ca53ff9c12751af6f8": null,
+        "items_per_row": 2,
+        "column_gap": 30,
+        "image": "shopify://shop_images/2-capa_152b5203-b975-4367-86e0-dcdb2f04f72c.jpg",
+        "image_ratio": "square",
+        "custom_ratio": "",
+        "position": "left",
+        "hotspot_style": "dot",
+        "header-a2c73be4da349e9e076695b6161dd2a1": null,
+        "content": "#ffffff",
+        "padding_top_content": 0,
+        "padding_bottom_content": 0,
+        "header-32adb8fb168d3e0d1805d1f17bd7cb94": null,
+        "show_arrow": true,
+        "carousel_pagination": "show_dots_on_mobile",
+        "infinite": false,
+        "autoplay": false,
+        "autorotate_speed": 5,
+        "header-b4bae3ab7b984ec03e474a9d249b7dec": null,
+        "items_per_row_mobile": 1.5,
+        "header-30286ba1ff9b9f3e159ee170ce29df14": null,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "reset_spacing": false
+      },
+      "blocks": {
+        "product_nfVAz": {
+          "type": "product",
+          "disabled": false,
+          "settings": {
+            "product": "jaqueta-corta-vento-brk-brasil-repelente-a-agua-com-uv50",
+            "header-dbb305640115a260a79d18818c1d8eb4": null,
+            "offset_top": 50,
+            "offset_left": 50
+          }
+        },
+        "product_qPFkf": {
+          "type": "product",
+          "disabled": false,
+          "settings": {
+            "product": "jaqueta-corta-vento-brk-preta-repelente-a-agua-com-uv50",
+            "header-ae6535132ed8f10b5e4b6b1f4b4c039e": null,
+            "offset_top": 50,
+            "offset_left": 50
+          }
+        },
+        "product_rBYh3": {
+          "type": "product",
+          "disabled": false,
+          "settings": {
+            "product": "jaqueta-corta-vento-brk-bordo-repelente-a-agua-com-uv50",
+            "header-b0ca9902db268ba5e49c703e78db3885": null,
+            "offset_top": 50,
+            "offset_left": 50
+          }
+        },
+        "product_UM63k": {
+          "type": "product",
+          "disabled": false,
+          "settings": {
+            "product": "jaqueta-corta-vento-impermeavel-brk-laranja-com-uv50",
+            "header-3597b7bf3f5129a0dff738d8b9befc83": null,
+            "offset_top": 50,
+            "offset_left": 50
+          }
+        }
+      },
+      "block_order": [
+        "product_nfVAz",
+        "product_qPFkf",
+        "product_rBYh3",
+        "product_UM63k"
+      ],
+      "name": "Corta Vento BRK"
+    },
     "custom_liquid_MNBWB": {
       "type": "custom-liquid",
       "disabled": true,
@@ -73,7 +159,7 @@
         "section_width": "full_width",
         "color_scheme": "",
         "custom_liquid": "{%- assign brk_video = \"https://cdn.shopify.com/videos/c/o/v/406f3167182c406d9fdbeae3733724bd.mp4\" -%}\n\n<video \n  src=\"{{ brk_video }}\" \n  autoplay \n  muted \n  loop \n  playsinline\n  style=\"width: 100%; height: auto; display: block;\">\n</video>",
-        "header-9b6418b3f94a66fbaae767c725e96567": null,
+        "header-d8d93db3100334495370cecb85157cfd": null,
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -95,16 +181,16 @@
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
-        "header-ac284182173c3cc2781ea32a7b76ba2b": null,
+        "header-658fc2a5eb4ce764ed98edf3002dda55": null,
         "heading": "Kit Essencial 10% Off🔥",
         "description": "<p><strong>VÁLIDO ATÉ 31/01</strong></p>",
         "header_size": "medium",
         "header_alignment": "left",
-        "header-dff86bcfe5f94329c03be68fdb1780f3": null,
+        "header-75702a6a36b5867bef68673e8a02ec71": null,
         "minimum": 2,
         "maximum": 3,
         "enable_quantity": true,
-        "header-0e198ca1c4ed973f101c3cb2bbf9b60e": null,
+        "header-32c14f22a56ddee7ef098475f8eae462": null,
         "padding_top": 35,
         "padding_bottom": 0,
         "reset_spacing": true
@@ -123,7 +209,7 @@
             "items_to_show": 3,
             "items_per_row": 3,
             "column_gap": 30,
-            "header-0aa8b2c2fd8fff734590323c5df04b42": null,
+            "header-733d1455b752893dd0d0cfdad303c9a4": null,
             "carousel_on_mobile": true,
             "items_per_row_mobile": 2
           }
@@ -134,14 +220,14 @@
           "settings": {
             "heading": "",
             "description": "<p>Adicione <strong>3 Itens</strong> essenciais para pesca e <strong>Ganhe 10% de Desconto</strong>! 🔥</p>",
-            "header-dee687ee2bfb50cc84e8f9e163adbacc": null,
-            "header-09581775ec9a2656133dd239248b895d": null,
-            "paragraph-862c8280510b588a202681e989899c9e": null,
+            "header-b8eb5697d0238500b102fcd9386c1d4e": null,
+            "header-0e6afe4762dd9ddbfdc717f0b9029447": null,
+            "paragraph-d10c84027e20ec869c705dcfe4f6098e": null,
             "heading_font_size": 24,
             "heading_font_weight": "heading_weight",
             "heading_uppercase": false,
             "heading_spacing_bottom": 20,
-            "paragraph-209a7208e4a579722614d4e77094cf1d": null,
+            "paragraph-5e0d706f04d0e20f4edbf1037bf17052": null,
             "des_font_size": 15,
             "des_font_weight": "body_weight",
             "des_spacing_bottom": 30
@@ -183,13 +269,13 @@
           "name": "Amazon",
           "disabled": false,
           "settings": {
-            "header-4bcec12b99079df90bea282f1510eb17": null,
+            "header-1399763610467fc827fce274cdbc992b": null,
             "image": "shopify://shop_images/Prancheta_1_be1de53c-1aed-4297-89ba-6e68048ec1ac.png",
             "image_mobile": "shopify://shop_images/Prancheta_2.png",
             "local_video": null,
             "overlay_opacity": 0,
             "link_banner": "shopify://collections/master-amazon-femininas",
-            "header-af00a8c68b2efcd2156c3da1f90d8c9c": null,
+            "header-780a6457e667da5fe998649c394863fd": null,
             "slider_effect": "effect_fadeinup",
             "subheading": "",
             "heading": "",
@@ -200,18 +286,18 @@
             "second_button_label": "",
             "second_button_link": "shopify://collections/camisa-fusionx-masculino",
             "second_button_style": false,
-            "header-9dcd9dc548709435db61bf3589f3f2c1": null,
+            "header-f7955bbab0e4b02c9c4892876d4c8c48": null,
             "content_alignment": "center",
             "content_position": "top-center",
             "content_width": "full_width",
             "content_max_width": 100,
             "content_padding_block": 55,
             "content_padding_inline": 55,
-            "header-31eb83fcac363fe8816ee11e243b7194": null,
+            "header-7812b4f8bbfdfcd485e238890fa0a003": null,
             "show_content_background": false,
             "content_background": "#ffffff",
             "content_box_opacity": 100,
-            "header-4e0f2b7c46e90f1a4288cda4af280501": null,
+            "header-66f133b20712612ca8fe39acffa4177a": null,
             "content_alignment_mobile": "right"
           }
         },
@@ -220,13 +306,13 @@
           "name": "Hybrid",
           "disabled": false,
           "settings": {
-            "header-f18667f6d5787c49def92a5804d38bc4": null,
+            "header-18659d9869cf4eeec9c4553c8a18055c": null,
             "image": "shopify://shop_images/FULLBANNER_NOVO_SITE_CAMISA_HYBRID_7d884d7f-338f-46b6-ae58-5ee7f6ce714e.png",
             "image_mobile": "shopify://shop_images/MOBILE_HYBRID_7e2c2129-4a63-4534-8c83-fef4bf5cc373.png",
             "local_video": null,
             "overlay_opacity": 0,
             "link_banner": "shopify://collections/camisa-hybrid-masculino",
-            "header-7fb50a4d065dc83b60efc9fccb9c6c8a": null,
+            "header-34d87a716bb9e6fc9852e46729474144": null,
             "slider_effect": "effect_fadeinup",
             "subheading": "",
             "heading": "",
@@ -237,18 +323,18 @@
             "second_button_label": "",
             "second_button_link": "shopify://collections/camisa-fusionx-masculino",
             "second_button_style": false,
-            "header-67dc1133aff5e336b7af926a370a7242": null,
+            "header-60db8a1669929a5be69c1932024f23ad": null,
             "content_alignment": "center",
             "content_position": "top-center",
             "content_width": "full_width",
             "content_max_width": 100,
             "content_padding_block": 55,
             "content_padding_inline": 55,
-            "header-4d1fb68c52c9ac4b78db2edfdb512cf1": null,
+            "header-988060b2694fe9c5ed12d11efe829897": null,
             "show_content_background": false,
             "content_background": "#ffffff",
             "content_box_opacity": 100,
-            "header-7d69f8686eccf1ebfd05b7067f26d6be": null,
+            "header-f61ddf25086d6ad3b1c22621c0eceaba": null,
             "content_alignment_mobile": "right"
           }
         },
@@ -432,92 +518,6 @@
           }
         }
       }
-    },
-    "lookbook_product_KMnJB": {
-      "type": "lookbook-product",
-      "disabled": false,
-      "settings": {
-        "section_width": "fluid_container",
-        "color_scheme": "",
-        "header-c5ba7fadfebc5fedec9217481fde6e1c": null,
-        "heading": "Corta Vento BRK",
-        "description": "",
-        "header_size": "medium",
-        "header_alignment": "left",
-        "header-1b6ef8f48b64baae7daf0a3fe5da1923": null,
-        "items_per_row": 2,
-        "column_gap": 30,
-        "image": "shopify://shop_images/2-capa_152b5203-b975-4367-86e0-dcdb2f04f72c.jpg",
-        "image_ratio": "square",
-        "custom_ratio": "",
-        "position": "left",
-        "hotspot_style": "dot",
-        "header-af836ccb572c0ec46460890745326315": null,
-        "content": "#fff",
-        "padding_top_content": 0,
-        "padding_bottom_content": 0,
-        "header-e4ee217b8a4d8011d86093b8bce86789": null,
-        "show_arrow": true,
-        "carousel_pagination": "show_dots_on_mobile",
-        "infinite": false,
-        "autoplay": false,
-        "autorotate_speed": 5,
-        "header-7e8474c12dcb6a8292ca9594a47f5b15": null,
-        "items_per_row_mobile": 1.5,
-        "header-c0e85ff352f15305e97da7ecd3a57685": null,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "reset_spacing": false
-      },
-      "blocks": {
-        "product_nfVAz": {
-          "type": "product",
-          "disabled": false,
-          "settings": {
-            "product": "jaqueta-corta-vento-brk-brasil-repelente-a-agua-com-uv50",
-            "header-89fe2df442fc2221c42cb43d81bf8eb9": null,
-            "offset_top": 50,
-            "offset_left": 50
-          }
-        },
-        "product_qPFkf": {
-          "type": "product",
-          "disabled": false,
-          "settings": {
-            "product": "jaqueta-corta-vento-brk-preta-repelente-a-agua-com-uv50",
-            "header-538c379eac99981d381adfc15d6db134": null,
-            "offset_top": 50,
-            "offset_left": 50
-          }
-        },
-        "product_rBYh3": {
-          "type": "product",
-          "disabled": false,
-          "settings": {
-            "product": "jaqueta-corta-vento-brk-bordo-repelente-a-agua-com-uv50",
-            "header-c2f29e5fe1a27040c6773005b855f1ff": null,
-            "offset_top": 50,
-            "offset_left": 50
-          }
-        },
-        "product_UM63k": {
-          "type": "product",
-          "disabled": false,
-          "settings": {
-            "product": "jaqueta-corta-vento-brk-repelente-a-agua-bege-cargo",
-            "header-3a5bf1762bfb7ae5845cfc54e8c4a553": null,
-            "offset_top": 50,
-            "offset_left": 50
-          }
-        }
-      },
-      "block_order": [
-        "product_nfVAz",
-        "product_qPFkf",
-        "product_rBYh3",
-        "product_UM63k"
-      ],
-      "name": "Corta Vento BRK"
     }
   },
   "order": [
