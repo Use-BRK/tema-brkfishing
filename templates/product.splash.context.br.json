@@ -1,0 +1,27 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "splash_screen": {
+      "settings": {
+        "video": "shopify://files/videos/Video_Generation_Complete.mp4",
+        "enable_fade": false,
+        "duration": 3,
+        "mobile_height": 300,
+        "resolution": "16x9"
+      },
+      "blocks": {}
+    }
+  },
+  "context": {
+    "market": "br"
+  },
+  "parent": "product.splash.json"
+}
