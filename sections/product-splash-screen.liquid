@@ -1,0 +1,131 @@
+{% schema %}
+{
+  "name": "Splash Screen",
+  "class": "splash-screen-section",
+  "settings": [
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video",
+      "info": "Upload a video to play on load."
+    },
+    {
+      "type": "range",
+      "id": "duration",
+      "min": 1,
+      "max": 10,
+      "step": 0.5,
+      "unit": "s",
+      "label": "Display Duration",
+      "default": 3.0
+    },
+    {
+      "type": "range",
+      "id": "fade_duration",
+      "min": 0.5,
+      "max": 5,
+      "step": 0.5,
+      "unit": "s",
+      "label": "Fade Out Duration",
+      "default": 1.0
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "checkbox",
+      "id": "enabled",
+      "label": "Enable Splash Screen",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Splash Screen"
+    }
+  ]
+}
+{% endschema %}
+
+{% if section.settings.enabled and section.settings.video != blank %}
+  <style>
+    #shopify-section-{{ section.id }} {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 999999;
+      pointer-events: none; /* Allow clicks to pass through immediately if needed, but we want to block interaction initially so we toggle this */
+    }
+
+    .splash-screen-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: {{ section.settings.background_color }};
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 1;
+      transition: opacity {{ section.settings.fade_duration }}s ease-in-out;
+      pointer-events: auto; /* Block interaction while visible */
+    }
+
+    .splash-screen-overlay.hidden-fade {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .splash-screen-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Hide scrollbar while splash is active? Optional, but might be jarring if it reappears.
+       For now, we just overlay everything. */
+  </style>
+
+  <div class="splash-screen-overlay" id="SplashOverlay-{{ section.id }}">
+    {{
+      section.settings.video
+      | video_tag:
+        autoplay: true,
+        loop: false,
+        muted: true,
+        controls: false,
+        class: 'splash-screen-video',
+        playsinline: true
+    }}
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const overlay = document.getElementById('SplashOverlay-{{ section.id }}');
+      const video = overlay.querySelector('video');
+      const duration = {{ section.settings.duration | times: 1000 }};
+      const fadeDuration = {{ section.settings.fade_duration | times: 1000 }};
+
+      // Ensure video plays (sometimes browsers block autoplay if not handled right, but muted usually works)
+      if (video) {
+          video.play().catch(e => console.log('Autoplay blocked:', e));
+      }
+
+      setTimeout(() => {
+        overlay.classList.add('hidden-fade');
+
+        // Remove from DOM after fade to ensure no z-index issues remain
+        setTimeout(() => {
+            overlay.remove();
+        }, fadeDuration);
+
+      }, duration);
+    });
+  </script>
+{% endif %}
