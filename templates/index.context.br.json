@@ -341,43 +341,6 @@
             "content_alignment_mobile": "right"
           }
         },
-        "slider_item_thxfTj": {
-          "type": "slider_item",
-          "name": "Hybrid",
-          "disabled": false,
-          "settings": {
-            "header-8861511a4f5662a7c5d29fcca45f16a6": null,
-            "image": "shopify://shop_images/FULLBANNER_NOVO_SITE_CAMISA_HYBRID_7d884d7f-338f-46b6-ae58-5ee7f6ce714e.png",
-            "image_mobile": "shopify://shop_images/MOBILE_HYBRID_7e2c2129-4a63-4534-8c83-fef4bf5cc373.png",
-            "local_video": null,
-            "overlay_opacity": 0,
-            "link_banner": "shopify://collections/camisa-hybrid-masculino",
-            "header-7a4a4ad5c139b974907c307cf7d6e0f1": null,
-            "slider_effect": "effect_fadeinup",
-            "subheading": "",
-            "heading": "",
-            "description": "",
-            "first_button_label": "",
-            "first_button_link": "shopify://collections/camisa-fusionx-masculino",
-            "first_button_style": false,
-            "second_button_label": "",
-            "second_button_link": "shopify://collections/camisa-fusionx-masculino",
-            "second_button_style": false,
-            "header-186879057f8ece699e574688dec559b1": null,
-            "content_alignment": "center",
-            "content_position": "top-center",
-            "content_width": "full_width",
-            "content_max_width": 100,
-            "content_padding_block": 55,
-            "content_padding_inline": 55,
-            "header-33bbc7f93bf33748a91455ff75db7581": null,
-            "show_content_background": false,
-            "content_background": "#ffffff",
-            "content_box_opacity": 100,
-            "header-7bc70c3f55bad2062899e3f65ac485c5": null,
-            "content_alignment_mobile": "right"
-          }
-        },
         "slider_item_TJiTLz": {
           "name": "Fusion",
           "settings": {
@@ -390,7 +353,6 @@
         "slider_item_jiLA39",
         "slider_item_4UQN4k",
         "slider_item_dP4zBf",
-        "slider_item_thxfTj",
         "slider_item_TJiTLz"
       ]
     },
