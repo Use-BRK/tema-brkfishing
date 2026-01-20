@@ -15,6 +15,35 @@
         "slider_item_jiLA39": {
           "type": "slider_item",
           "settings": {
+            "image": "shopify://shop_images/FULLBANNER-02.png",
+            "image_mobile": "shopify://shop_images/MOB-BANNER-02.png",
+            "overlay_opacity": 0,
+            "link_banner": "shopify://collections/lancamentos-masculino-1",
+            "slider_effect": "effect_fadeinup",
+            "subheading": "",
+            "heading": "",
+            "description": "",
+            "first_button_label": "",
+            "first_button_link": "shopify://collections/camisa-fusionx-masculino",
+            "first_button_style": false,
+            "second_button_label": "",
+            "second_button_link": "shopify://collections/camisa-fusionx-masculino",
+            "second_button_style": false,
+            "content_alignment": "left",
+            "content_position": "middle-right",
+            "content_width": "full_width",
+            "content_max_width": 100,
+            "content_padding_block": 60,
+            "content_padding_inline": 60,
+            "show_content_background": false,
+            "content_background": "#ffffff",
+            "content_box_opacity": 100,
+            "content_alignment_mobile": "center"
+          }
+        },
+        "slider_item_chh8c7": {
+          "type": "slider_item",
+          "settings": {
             "image": "shopify://shop_images/FULLBANNER_FUSIONX_MASC.png",
             "image_mobile": "shopify://shop_images/MOBILE_MASC.png",
             "overlay_opacity": 0,
@@ -102,6 +131,7 @@
       },
       "block_order": [
         "slider_item_jiLA39",
+        "slider_item_chh8c7",
         "slider_item_TJiTLz",
         "slider_item_PLGTpm"
       ],
