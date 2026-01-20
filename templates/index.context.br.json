@@ -253,8 +253,8 @@
           "name": "Desconto Progressivo",
           "disabled": false,
           "settings": {
-            "image": "shopify://shop_images/FULLBANNER-02.png",
-            "image_mobile": "shopify://shop_images/MOB-BANNER-02.png",
+            "image": "shopify://shop_images/FULLBANNER-02_1.png",
+            "image_mobile": "shopify://shop_images/MOB-BANNER.png",
             "local_video": null,
             "overlay_opacity": 0,
             "link_banner": "shopify://collections/linha-fusion-2026",
