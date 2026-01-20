@@ -408,7 +408,8 @@
       "blocks": {
         "collection_DUa6Xx": {
           "settings": {
-            "collection_title": "Masculino"
+            "collection_title": "Masculino",
+            "collection": "lancamentos-masculino-1"
           }
         }
       },
