@@ -408,8 +408,13 @@
       "blocks": {
         "collection_DUa6Xx": {
           "settings": {
-            "collection_title": "Masculino",
-            "collection": "lancamentos-masculino-1"
+            "collection": "lancamentos-masculino-1",
+            "collection_title": "Masculino"
+          }
+        },
+        "collection_gw7XPN": {
+          "settings": {
+            "collection": "master-amazon-femininas"
           }
         }
       },
@@ -527,12 +532,12 @@
   "order": [
     "slideshow_8KKtNU",
     "scrolling_text_U3mttg",
-    "collection_tab_Ei9xq7",
+    "collection_tab_UNybtX",
     "lookbook_product_KMnJB",
+    "collection_tab_Ei9xq7",
     "custom_liquid_MNBWB",
     "product_bundle_JywJj",
     "collection_list_ypj7A8",
-    "collection_tab_UNybtX",
     "collection_tab_rUdcr6",
     "collection_tab_CYzLaR",
     "collection_list_VmEYkJ",
