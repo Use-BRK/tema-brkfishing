@@ -209,11 +209,12 @@
         "scrolling_text_7defWk": {
           "type": "scrolling_text",
           "settings": {
-            "content": "Não Serviu? 1ª Troca Grátis!"
+            "content": "SÓ HOJE 2.2"
           }
         },
         "scrolling_text_fBNd9c": {
           "type": "scrolling_text",
+          "disabled": true,
           "settings": {
             "content": "Parcele em até 6x no cartão"
           }
