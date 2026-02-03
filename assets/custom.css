@@ -665,6 +665,12 @@ cart-notification #minicart-form minicart-recommendations slide-section variant-
   }
 }
 
+#prazo_disponibilidade span::after {
+  content: "*não incluso prazo da transportadora";
+  display: block;
+  font-size: 10px;
+}
+
 mobile-navigation-bar.show .wishlist-count, 
 mobile-navigation-bar.show .cart-count {
     background: white;
