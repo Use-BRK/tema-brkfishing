@@ -30,6 +30,12 @@
           "settings": {}
         }
       }
+    },
+    "main": {
+      "settings": {
+        "grid_list": false
+      },
+      "blocks": {}
     }
   }
 }
