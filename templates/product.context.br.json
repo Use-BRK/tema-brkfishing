@@ -39,6 +39,14 @@
             "algodao": "1",
             "imediato": "0"
           }
+        },
+        "product_addons_YRaprz": {
+          "disabled": true,
+          "settings": {
+            "show_compare_color": false,
+            "show_ask_question": false,
+            "show_share": false
+          }
         }
       },
       "block_order": [
