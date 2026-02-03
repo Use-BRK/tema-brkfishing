@@ -652,6 +652,7 @@ cart-notification #minicart-form minicart-recommendations slide-section variant-
   border-bottom: 0.5px solid hsl(0 0% 85%);
   padding-block: 2rem;
   margin-bottom: 1.5rem;
+  line-height: 1;
 
   span{
     color: hsl(0 0% 5%)!important;
