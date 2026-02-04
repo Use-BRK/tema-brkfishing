@@ -14,9 +14,10 @@
   },
   "sections": {
     "footer": {
+      "disabled": false,
       "settings": {
-        "payment_image": "shopify://shop_images/bandeiras-cartoes-credito.png",
-        "enable_back_top": false
+        "enable_back_top": false,
+        "payment_image": "shopify://shop_images/bandeiras-cartoes-credito.png"
       },
       "blocks": {}
     }
