@@ -12,5 +12,19 @@
     "market": "br"
   },
   "parent": "product.raptorx.json",
-  "sections": {}
+  "sections": {
+    "main": {
+      "settings": {},
+      "blocks": {
+        "product_addons_YRaprz": {
+          "disabled": true,
+          "settings": {
+            "show_compare_color": false,
+            "show_ask_question": false,
+            "show_share": false
+          }
+        }
+      }
+    }
+  }
 }
