@@ -8,14 +8,42 @@
  * ------------------------------------------------------------
  */
 {
+  "parent": "product.raptorx.json",
   "context": {
     "market": "br"
   },
-  "parent": "product.raptorx.json",
   "sections": {
     "main": {
-      "settings": {},
+      "custom_css": [],
+      "settings": {
+        "mobile_options": "show_thumbnails"
+      },
       "blocks": {
+        "product_meta_FUixq": {
+          "type": "product_meta",
+          "disabled": false,
+          "settings": {
+            "show_barcode": false,
+            "show_sku": true,
+            "show_available": false,
+            "show_tags": false,
+            "show_type": false,
+            "show_collections": false
+          }
+        },
+        "short_description_9BGxVm": {
+          "disabled": true,
+          "settings": {}
+        },
+        "sku_prazo_8wWwi": {
+          "type": "sku_prazo",
+          "disabled": false,
+          "settings": {
+            "producao": "9",
+            "algodao": "1",
+            "imediato": "0"
+          }
+        },
         "product_addons_YRaprz": {
           "disabled": true,
           "settings": {
@@ -23,8 +51,47 @@
             "show_ask_question": false,
             "show_share": false
           }
+        },
+        "model_size_XM7z6E": {
+          "disabled": true,
+          "settings": {}
+        },
+        "pickup_avaiability_cyVydQ": {
+          "disabled": true,
+          "settings": {}
+        },
+        "product_grouped_6epkNf": {
+          "disabled": false,
+          "settings": {}
+        },
+        "more_colors_3zmxGq": {
+          "disabled": false,
+          "settings": {}
+        },
+        "complementary_products_Wip9YG": {
+          "disabled": true,
+          "settings": {}
         }
-      }
+      },
+      "block_order": [
+        "title_G6tU8U",
+        "product_meta_FUixq",
+        "badges_RwfTMp",
+        "price_VJ4N8m",
+        "short_description_9BGxVm",
+        "sa_variants_product_swatch_block_e9wFLB",
+        "variant_picker_tcCihG",
+        "sku_prazo_8wWwi",
+        "product_addons_YRaprz",
+        "stock_countdown_JNK9zi",
+        "buy_buttons_LcQGtR",
+        "model_size_XM7z6E",
+        "pickup_avaiability_cyVydQ",
+        "product_grouped_6epkNf",
+        "more_colors_3zmxGq",
+        "complementary_products_Wip9YG",
+        "frete_no_produto_shipping_calc_MJK8Br"
+      ]
     }
   }
 }
