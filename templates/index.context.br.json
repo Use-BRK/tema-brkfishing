@@ -19,33 +19,33 @@
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
-        "header-c4e3a3b2addf8ba9d5f5e44f670e9d18": null,
+        "header-6d953ec70d3e5ed797cf0eef75639b8f": null,
         "heading": "",
         "description": "",
         "header_size": "medium",
         "header_alignment": "center",
-        "header-844004673327c8d31a742efc9c0b3502": null,
+        "header-96e5c2bab9426b62b5974ab28bd7495e": null,
         "tab_header_style": "horizontal",
         "horizontal_tab_style": "underline",
         "display_mode": "carousel",
         "items_to_show": 24,
         "items_per_row": 5,
         "column_gap": 30,
-        "header-6f7f9632bd8f201d88a8bd54037f5793": null,
+        "header-dc14013223fe1860c81850b8b7723037": null,
         "show_arrow": true,
         "carousel_pagination": "show_dots",
         "infinite": true,
         "autoplay": false,
         "autorotate_speed": 3,
         "reveal": false,
-        "header-ac12c580cef9892879aa2a17af6281a9": null,
+        "header-8bdff91301459d4ee88a6ae837c3b24e": null,
         "rows": 2,
         "show_load_more_button": true,
         "button_label": "Ver +",
-        "header-1c1e1ad43ff548ab4e7501a26f00721e": null,
+        "header-5d24191a2ce1925df1a13066e23a78b9": null,
         "carousel_on_mobile": true,
         "items_per_row_mobile": 1.5,
-        "header-2889ed764183896884c11d71ad8eeaf4": null,
+        "header-c269086adc01940086af652959037663": null,
         "padding_top": 20,
         "padding_bottom": 15,
         "reset_spacing": true
@@ -73,7 +73,7 @@
         "section_width": "full_width",
         "color_scheme": "",
         "custom_liquid": "{%- assign brk_video = \"https://cdn.shopify.com/videos/c/o/v/406f3167182c406d9fdbeae3733724bd.mp4\" -%}\n\n<video \n  src=\"{{ brk_video }}\" \n  autoplay \n  muted \n  loop \n  playsinline\n  style=\"width: 100%; height: auto; display: block;\">\n</video>",
-        "header-a6f4aa762f901aa3e7d74e6030f14dbe": null,
+        "header-b2d3ca23cb4871c3dd7aadb88fd1c715": null,
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -95,16 +95,16 @@
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
-        "header-caab90025126167c1375f0d3dfe7d393": null,
+        "header-701ae46fe3ceb503bc2b6b5b64ec980f": null,
         "heading": "Kit Essencial 10% Off🔥",
         "description": "<p><strong>VÁLIDO ATÉ 31/01</strong></p>",
         "header_size": "medium",
         "header_alignment": "left",
-        "header-82b833e39412f96ca3033c7512efb1c3": null,
+        "header-2b0038c1a38eae577c4e0fde49a31dcf": null,
         "minimum": 2,
         "maximum": 3,
         "enable_quantity": true,
-        "header-359ac91e211502bef3c0eaacd2ec72e6": null,
+        "header-b056c8a872a3c8ec2f14bae54193c182": null,
         "padding_top": 35,
         "padding_bottom": 0,
         "reset_spacing": true
@@ -123,7 +123,7 @@
             "items_to_show": 3,
             "items_per_row": 3,
             "column_gap": 30,
-            "header-b8bc369ed1074b0737b2f7a29b4df702": null,
+            "header-54f61435da7633fac92ed300abe5ff9d": null,
             "carousel_on_mobile": true,
             "items_per_row_mobile": 2
           }
@@ -134,14 +134,14 @@
           "settings": {
             "heading": "",
             "description": "<p>Adicione <strong>3 Itens</strong> essenciais para pesca e <strong>Ganhe 10% de Desconto</strong>! 🔥</p>",
-            "header-a417a074e1b0b9f2c6ce41bd280e97b6": null,
-            "header-ae72dc7d98abb9b14eb536599303638d": null,
-            "paragraph-2d97fd540aad03660def065480799947": null,
+            "header-e8f55f4188a959f40d89d50a0bcd32f3": null,
+            "header-696e36d636f64980bef0a2034cba00a7": null,
+            "paragraph-b3320e5ffbf36ea82bb9661966c0f95b": null,
             "heading_font_size": 24,
             "heading_font_weight": "heading_weight",
             "heading_uppercase": false,
             "heading_spacing_bottom": 20,
-            "paragraph-cc63230be2f0168ed8945b25416a50d6": null,
+            "paragraph-d628d20095c81ec4bc7470d2cfbc4a16": null,
             "des_font_size": 15,
             "des_font_weight": "body_weight",
             "des_spacing_bottom": 30
@@ -163,12 +163,12 @@
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
-        "header-46dde8b284e1b4eeb44c2ff8fc11e0bb": null,
+        "header-81e6ae1f47bd7905e48adf729cad731c": null,
         "heading": "Corta Vento BRK",
         "description": "",
         "header_size": "medium",
         "header_alignment": "left",
-        "header-029a44cedcf8c6619eaa02ce38799951": null,
+        "header-10fa2d9cadc58f43dddc8314344bed29": null,
         "items_per_row": 2,
         "column_gap": 30,
         "image": "shopify://shop_images/Layer_0.jpg",
@@ -176,19 +176,19 @@
         "custom_ratio": "",
         "position": "left",
         "hotspot_style": "dot",
-        "header-d465a15c0f3b3b2b9dac60a863a314f8": null,
+        "header-0fbee9cf3eb24946afa1a770642646cd": null,
         "content": "#ffffff",
         "padding_top_content": 0,
         "padding_bottom_content": 0,
-        "header-3754d9b7707ee3c41642954d62acf8a0": null,
+        "header-521544d49b07e37ef6974c62dcfd2a6b": null,
         "show_arrow": true,
         "carousel_pagination": "show_dots_on_mobile",
         "infinite": false,
         "autoplay": false,
         "autorotate_speed": 5,
-        "header-9a8be0e893d7d720cdc57f0b25c2c215": null,
+        "header-46ac095521cfec0f68e9fe9bcf8b144d": null,
         "items_per_row_mobile": 1.5,
-        "header-514915064c46c3688cecb823860fc120": null,
+        "header-02eb09845cba6de03479f9173ebe8313": null,
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -199,7 +199,7 @@
           "disabled": false,
           "settings": {
             "product": "jaqueta-corta-vento-brk-brasil-repelente-a-agua-com-uv50",
-            "header-643ab97f8288f990656e85de2d1b467d": null,
+            "header-52b69f6e9fc666c103709a51f4de9897": null,
             "offset_top": 50,
             "offset_left": 50
           }
@@ -209,7 +209,7 @@
           "disabled": false,
           "settings": {
             "product": "jaqueta-corta-vento-brk-preta-repelente-a-agua-com-uv50",
-            "header-304b13f9bf1c8a28f052b33e0e787731": null,
+            "header-7fbb0fcad95fe4e9202cf68aa1cda191": null,
             "offset_top": 50,
             "offset_left": 50
           }
@@ -219,7 +219,7 @@
           "disabled": false,
           "settings": {
             "product": "jaqueta-corta-vento-brk-bordo-repelente-a-agua-com-uv50",
-            "header-d3040ba6a0f23b76f1117a2496a2d2c0": null,
+            "header-d70213cf0aa3a2f91b7c638dd0632f87": null,
             "offset_top": 50,
             "offset_left": 50
           }
@@ -229,7 +229,7 @@
           "disabled": false,
           "settings": {
             "product": "jaqueta-corta-vento-impermeavel-brk-laranja-com-uv50",
-            "header-e71251df3277134a3ab95aecfd2c08bf": null,
+            "header-d14af1853448a80a32f0379a3cd47ec0": null,
             "offset_top": 50,
             "offset_left": 50
           }
@@ -246,7 +246,8 @@
     "slideshow_8KKtNU": {
       "settings": {
         "slide_effect": "fade",
-        "content_below_image": false
+        "content_below_image": false,
+        "autoplay": true
       },
       "blocks": {
         "slider_item_jiLA39": {
@@ -279,13 +280,13 @@
           "name": "Amazon",
           "disabled": false,
           "settings": {
-            "header-a369be73cbd9174994312dd3f7554901": null,
+            "header-5c0cf04436e279ef7abff34c7be92a92": null,
             "image": "shopify://shop_images/Amazon_NewBanner.jpg",
             "image_mobile": "shopify://shop_images/Bannermob.jpg",
             "local_video": null,
             "overlay_opacity": 0,
             "link_banner": "shopify://collections/master-amazon-femininas",
-            "header-0daf783e45185029fd98ed69304f4e03": null,
+            "header-422ce54cc1f3727949a3d11f77805a1a": null,
             "slider_effect": "effect_fadeinup",
             "subheading": "",
             "heading": "",
@@ -296,18 +297,18 @@
             "second_button_label": "",
             "second_button_link": "shopify://collections/camisa-fusionx-masculino",
             "second_button_style": false,
-            "header-d69b49e6b7e41508593a7ee1a165c8ae": null,
+            "header-fe86b0e1428dfc87c0a8c034f12a07ff": null,
             "content_alignment": "center",
             "content_position": "top-center",
             "content_width": "full_width",
             "content_max_width": 100,
             "content_padding_block": 55,
             "content_padding_inline": 55,
-            "header-0f012b81519e127f3b13f677b79eeb81": null,
+            "header-bbd667ae3e78f418836d1eb93450222e": null,
             "show_content_background": false,
             "content_background": "#ffffff",
             "content_box_opacity": 100,
-            "header-1b70af5a393e7979c087a39b76adf054": null,
+            "header-58ee399e427015278540fc0eae08e06d": null,
             "content_alignment_mobile": "right"
           }
         },
@@ -316,13 +317,13 @@
           "disabled": true,
           "name": "Desconto Progressivo",
           "settings": {
-            "header-1be010601bd5277630432623dbf77208": null,
+            "header-84bbfc5b321c7a1ce5c7e21f13896fab": null,
             "image": "shopify://shop_images/FULLBANNER.png",
             "image_mobile": "shopify://shop_images/MOB_BANNER.png",
             "local_video": null,
             "overlay_opacity": 0,
             "link_banner": "https://www.brkfishing.com.br/collections/envio-full",
-            "header-8a09a6742fef1a889558dc96b5c447df": null,
+            "header-963ca909b2fecc7a6f69839acbc00894": null,
             "slider_effect": "effect_fadeinup",
             "subheading": "",
             "heading": "",
@@ -333,25 +334,25 @@
             "second_button_label": "",
             "second_button_link": "shopify://collections/camisa-fusionx-masculino",
             "second_button_style": false,
-            "header-377614decb68c15fa7ba75cb664c7875": null,
+            "header-5d9d15ccc7a79b1916f5221d3bc55ddc": null,
             "content_alignment": "center",
             "content_position": "top-center",
             "content_width": "full_width",
             "content_max_width": 100,
             "content_padding_block": 55,
             "content_padding_inline": 55,
-            "header-94da1f5e7abbf1aa28488e28a166212e": null,
+            "header-f840e148d19932ff0129c0fae60e3c7c": null,
             "show_content_background": false,
             "content_background": "#ffffff",
             "content_box_opacity": 100,
-            "header-ee8a8f930e96c15760e50450b9436e72": null,
+            "header-cc82230688cb74b9446461924f3be6c3": null,
             "content_alignment_mobile": "right"
           }
         }
       },
       "block_order": [
-        "slider_item_jiLA39",
         "slider_item_TJiTLz",
+        "slider_item_jiLA39",
         "slider_item_dP4zBf",
         "slider_item_4UQN4k"
       ]
