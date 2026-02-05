@@ -13,10 +13,56 @@
     "market": "br"
   },
   "sections": {
+    "image_with_text_overlay_daWQb": {
+      "type": "image-with-text-overlay",
+      "disabled": false,
+      "settings": {
+        "section_width": "full_width",
+        "color_scheme": "",
+        "header-24db33435610d5ecbe59fe7ce15ad4b7": null,
+        "image": null,
+        "image_mobile": null,
+        "image_behavior": "none",
+        "overlay_opacity": 0,
+        "image_height": "adapt",
+        "header-27f97b391b1761edef75dab67438da12": null,
+        "desktop_height": 600,
+        "mobile_height": 500,
+        "header-362cba45ca5eae3a1536b88801f4d459": null,
+        "product_list": [],
+        "content_alignment": "center",
+        "content_position": "top-center",
+        "content_width": "full_width",
+        "content_max_width": 100,
+        "content_padding_block": 50,
+        "content_padding_inline": 50,
+        "header-3e68ea0ecc53ab715cb427ed3242ff42": null,
+        "show_content_background": false,
+        "content_background": "#ffffff",
+        "content_box_opacity": 100,
+        "header-8125e54f64f8e30b520105d24da05497": null,
+        "content_below_image": false,
+        "content_alignment_mobile": "center",
+        "header-0f0bcd01cd09adeb29d0d5e2e658c4d9": null,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "reset_spacing": false
+      },
+      "blocks": {},
+      "block_order": [],
+      "name": "t:sections.image_with_text_overlay.name"
+    },
+    "breadcrumb": {
+      "disabled": true,
+      "settings": {},
+      "blocks": {}
+    },
     "main": {
       "custom_css": [],
       "settings": {
-        "mobile_options": "show_thumbnails"
+        "desktop_media_width": 60,
+        "mobile_options": "show_thumbnails",
+        "desktop_layout": "thumbnail_left"
       },
       "blocks": {
         "product_meta_FUixq": {
@@ -93,51 +139,22 @@
         "frete_no_produto_shipping_calc_MJK8Br"
       ]
     },
-    "breadcrumb": {
+    "product-set": {
       "disabled": true,
       "settings": {},
       "blocks": {}
     },
-    "image_with_text_overlay_daWQb": {
-      "type": "image-with-text-overlay",
-      "disabled": false,
-      "settings": {
-        "section_width": "full_width",
-        "color_scheme": "",
-        "header-0db5d7726143f49f598e84ad9fb77bba": null,
-        "image": null,
-        "image_mobile": null,
-        "image_behavior": "none",
-        "overlay_opacity": 0,
-        "image_height": "adapt",
-        "header-c80749680feac6e1a5592502b0a7b15e": null,
-        "desktop_height": 600,
-        "mobile_height": 500,
-        "header-e9e3137daee813b2cbf3b0371aec3997": null,
-        "product_list": [],
-        "content_alignment": "center",
-        "content_position": "top-center",
-        "content_width": "full_width",
-        "content_max_width": 100,
-        "content_padding_block": 50,
-        "content_padding_inline": 50,
-        "header-5cb557db76b7f04e7d3705c207363cd0": null,
-        "show_content_background": false,
-        "content_background": "#fff",
-        "content_box_opacity": 100,
-        "header-fd4ed5af836033bac6a2be013423513a": null,
-        "content_below_image": false,
-        "content_alignment_mobile": "center",
-        "header-3f1e9dd192e316d36b7f07a8dccc8382": null,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "reset_spacing": false
-      },
-      "blocks": {},
-      "block_order": [],
-      "name": "t:sections.image_with_text_overlay.name"
+    "divider_E3r6ih": {
+      "disabled": true,
+      "settings": {},
+      "blocks": {}
     },
-    "products_recently_viewed_GdCNUL": {
+    "custom_liquid_bzNYb6": {
+      "disabled": true,
+      "settings": {},
+      "blocks": {}
+    },
+    "divider_TKLM6L": {
       "disabled": true,
       "settings": {},
       "blocks": {}
@@ -152,22 +169,7 @@
       "settings": {},
       "blocks": {}
     },
-    "divider_TKLM6L": {
-      "disabled": true,
-      "settings": {},
-      "blocks": {}
-    },
-    "custom_liquid_bzNYb6": {
-      "disabled": true,
-      "settings": {},
-      "blocks": {}
-    },
-    "divider_E3r6ih": {
-      "disabled": true,
-      "settings": {},
-      "blocks": {}
-    },
-    "product-set": {
+    "products_recently_viewed_GdCNUL": {
       "disabled": true,
       "settings": {},
       "blocks": {}
