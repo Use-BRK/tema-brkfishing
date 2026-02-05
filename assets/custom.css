@@ -778,7 +778,7 @@ mobile-navigation-bar.show .cart-count, mobile-navigation-bar.show .cart-count s
    margin-bottom: 0;
    font-weight: bold;
    line-height: 1.1;
-   font-size: 11vw;
+   font-size: 6vw;
 }
 
 @media (min-width: 768px) {
@@ -815,4 +815,18 @@ mobile-navigation-bar.show .cart-count, mobile-navigation-bar.show .cart-count s
     .raptorx-layout .media-gallery__image img {
         width: 100%;
     }
+}
+
+.calculoFrete button {
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.calculoFrete {
+  padding-bottom: 3rem !important;
+  padding-top: 2rem !important;
+}
+
+.calculoFrete .container-btn {
+  flex-direction: row !important;
 }
