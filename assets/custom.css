@@ -776,7 +776,15 @@ mobile-navigation-bar.show .cart-count, mobile-navigation-bar.show .cart-count s
    word-wrap: break-word;
    overflow-wrap: break-word;
    margin-bottom: 0;
-   /* Padding removed */
+   font-weight: bold;
+   line-height: 1.1;
+   font-size: 11vw;
+}
+
+@media (min-width: 768px) {
+    .raptorx-title {
+        font-size: 2.5em;
+    }
 }
 
 /* Remove border radius */
