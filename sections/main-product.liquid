@@ -82,14 +82,13 @@
     <div class="{{ section_width }}">
   {% endif %}
   <div
-    class="flex flex-cols gap flex-wrap main-product"
+    class="flex flex-cols gap flex-wrap main-product{% if template.suffix == 'raptorx' %} raptorx-layout{% endif %}"
     style="--col-gap: 30px;--col-width: {{ desktop_media_width }}%"
   >
     {%- if template.suffix == 'raptorx' -%}
-      <div id="raptorx-header" class="raptorx-header mb-30 text-center w-full">
-        <h1 class="raptorx-title h2">{{ product.title }}</h1>
-        <div class="raptorx-sku text-medium p-10">
-          <span class="raptorx-sku-label">{{ 'products.product.sku' | t }}: </span>
+      <div id="raptorx-header" class="raptorx-header text-left w-full">
+        <h1 class="raptorx-title h2 mb-0">{{ product.title }}</h1>
+        <div class="raptorx-sku text-medium">
           <span class="raptorx-sku-value">{{ product.selected_or_first_available_variant.sku }}</span>
         </div>
       </div>
