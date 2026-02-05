@@ -19,16 +19,16 @@
       "settings": {
         "section_width": "full_width",
         "color_scheme": "",
-        "header-24db33435610d5ecbe59fe7ce15ad4b7": null,
+        "header-50e17da30072c64b4b07169c7890d892": null,
         "image": null,
         "image_mobile": null,
         "image_behavior": "none",
         "overlay_opacity": 0,
         "image_height": "adapt",
-        "header-27f97b391b1761edef75dab67438da12": null,
+        "header-23abb99185f5a0f19feaadaafe449ba6": null,
         "desktop_height": 600,
         "mobile_height": 500,
-        "header-362cba45ca5eae3a1536b88801f4d459": null,
+        "header-c7af77ba2ee1f058619d02962982f289": null,
         "product_list": [],
         "content_alignment": "center",
         "content_position": "top-center",
@@ -36,14 +36,14 @@
         "content_max_width": 100,
         "content_padding_block": 50,
         "content_padding_inline": 50,
-        "header-3e68ea0ecc53ab715cb427ed3242ff42": null,
+        "header-44d2e7af9772fc7ebb2e216a1724573a": null,
         "show_content_background": false,
         "content_background": "#ffffff",
         "content_box_opacity": 100,
-        "header-8125e54f64f8e30b520105d24da05497": null,
+        "header-00083ba7905935b6824df5648381b4d4": null,
         "content_below_image": false,
         "content_alignment_mobile": "center",
-        "header-0f0bcd01cd09adeb29d0d5e2e658c4d9": null,
+        "header-ee52384222038e6f4a67080ef5e843f6": null,
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -115,6 +115,10 @@
           "settings": {}
         },
         "complementary_products_Wip9YG": {
+          "disabled": true,
+          "settings": {}
+        },
+        "frete_no_produto_shipping_calc_MJK8Br": {
           "disabled": true,
           "settings": {}
         }
