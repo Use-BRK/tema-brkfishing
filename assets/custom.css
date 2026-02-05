@@ -775,7 +775,8 @@ mobile-navigation-bar.show .cart-count, mobile-navigation-bar.show .cart-count s
 .raptorx-title {
    word-wrap: break-word;
    overflow-wrap: break-word;
-   padding: 0 15px; /* Add padding for mobile */
+   margin-bottom: 0;
+   /* Padding removed */
 }
 
 /* Remove border radius */
