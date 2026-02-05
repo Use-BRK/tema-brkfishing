@@ -1,0 +1,7 @@
+@media (max-width: 640px) {
+  #formKokfyShipping .container-btn {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 5px !important;
+  }
+}
