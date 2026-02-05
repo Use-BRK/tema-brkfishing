@@ -61,8 +61,8 @@
       "custom_css": [],
       "settings": {
         "desktop_media_width": 60,
-        "mobile_options": "show_thumbnails",
-        "desktop_layout": "thumbnail_left"
+        "desktop_layout": "thumbnail_left",
+        "mobile_options": "show_thumbnails"
       },
       "blocks": {
         "product_meta_FUixq": {
@@ -176,8 +176,8 @@
     }
   },
   "order": [
-    "image_with_text_overlay_daWQb",
     "breadcrumb",
+    "image_with_text_overlay_daWQb",
     "main",
     "product-set",
     "divider_E3r6ih",
