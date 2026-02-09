@@ -24,6 +24,24 @@
         "font_size": 12
       },
       "blocks": {
+        "store_information_pVeAk": {
+          "type": "store_information",
+          "disabled": false,
+          "settings": {
+            "paragraph-3d6efbf30ecb356fd9d0661e1462b61d": null,
+            "show_email": false,
+            "show_phone": true,
+            "hidden_on_mobile": false
+          }
+        },
+        "text_dBJV7": {
+          "type": "text",
+          "disabled": false,
+          "settings": {
+            "text": "<a href=\"/pages/politica-de-frete\" title=\"Política de Frete\"><strong>Rastrear Pedido</strong></a>",
+            "hidden_on_mobile": true
+          }
+        },
         "text_slider_LFaC38": {
           "settings": {
             "text1": "<a href=\"https://www.brkfishing.com.br/discount/BEMVINDO\" title=\"https://www.brkfishing.com.br/discount/BEMVINDO\"><strong>R$15 OFF </strong>na primeira compra, cupom: <strong>BEMVINDO</strong></a>",
@@ -31,7 +49,12 @@
             "text3": "<a href=\"/collections/vale-presente\" title=\"Vale-Presente BRK FISHING®\">PRESENTEIE QUEM VOCÊ AMA!</a>"
           }
         }
-      }
+      },
+      "block_order": [
+        "store_information_pVeAk",
+        "text_slider_LFaC38",
+        "text_dBJV7"
+      ]
     },
     "header": {
       "disabled": false,
@@ -53,19 +76,19 @@
             "text": "OFERTAS",
             "open-link-newtab": false,
             "item_label": "hot",
-            "header-6be4cc88ad3412135f0a9efd41f13d6e": null,
+            "header-2a27104fefdad0670ad7c017cfaa789c": null,
             "promotion_menu_column": 2,
             "mega_custom_width": 600,
             "center_submenu": false,
             "full_width": false,
-            "header-36f8af0917cfd8d29882d6dd7c2d5d9f": null,
+            "header-4ecc866d10df986000ea6d0a4a03d860": null,
             "promotion_position": "right",
             "promotion_image_width": 27,
-            "header-f04c633db81139b5b815ffd2ceab49b2": null,
+            "header-275e3208cf93d8e6d03767e2ae908b73": null,
             "promotion_image_1": null,
             "promotion_link_1": "",
             "promotion_link_newtab_1": true,
-            "header-4d7f8458c8a5ca9dd5f65d3e92d1a6b8": null,
+            "header-f1254efa63fbc74e3dbc0967d1452e14": null,
             "promotion_image_2": null,
             "promotion_link_2": "",
             "promotion_link_newtab_2": true
@@ -79,19 +102,19 @@
             "text": "ENVIO FULL",
             "open-link-newtab": false,
             "item_label": "hot",
-            "header-89aea1ab65927093bc3393880ebb9641": null,
+            "header-07e7e58fae6f6b3f3dbd7218ca1af467": null,
             "promotion_menu_column": 2,
             "mega_custom_width": 600,
             "center_submenu": false,
             "full_width": false,
-            "header-6acbc4e5c1c6597eca1f494be8b720ad": null,
+            "header-6cdabf3be1b8221e68bb14c7c1a0b157": null,
             "promotion_position": "right",
             "promotion_image_width": 27,
-            "header-f46fd42b66263b081e6a76919cad0bab": null,
+            "header-a61c99bbbffbe6104daa1ebab9fa5eef": null,
             "promotion_image_1": null,
             "promotion_link_1": "",
             "promotion_link_newtab_1": true,
-            "header-10977eaf4fcaa53441eebc10c74021d8": null,
+            "header-b4f2902ecb98d03c8b55eda2d3ac2bb1": null,
             "promotion_image_2": null,
             "promotion_link_2": "",
             "promotion_link_newtab_2": true
