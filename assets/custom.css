@@ -854,14 +854,15 @@ mobile-navigation-bar.show .cart-count, mobile-navigation-bar.show .cart-count s
     overflow: hidden !important;
     visibility: visible !important;
     opacity: 1 !important;
-    transition: max-height 0.35s ease-in-out !important;
+    transition: max-height 0.2s ease-out !important;
   }
 
   /* 2. When parent menu-item has is-open, expand the submenu */
   .navigation.mobile .is-open + .submenu,
   .navigation.mobile .is-open + .sub-children-menu {
-    max-height: 3000px;
+    max-height: 800px;
     transform: none !important;
+    transition: max-height 0.35s ease-in !important;
   }
 
   /* 3. Hide the back-menu header bar (not needed in accordion) */
