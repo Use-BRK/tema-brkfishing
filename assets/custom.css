@@ -832,102 +832,88 @@ mobile-navigation-bar.show .cart-count, mobile-navigation-bar.show .cart-count s
 }
 
 /* ============================================
-   MENU VERTICAL DESKTOP - Accordion Style
+   MENU VERTICAL MOBILE - Accordion Style
    ============================================ */
-@media screen and (min-width: 1025px) {
+@media screen and (max-width: 1024.98px) {
 
-  /* 1. Stack the main menu items vertically */
-  .navigation.horizontal .navigation__menu-content ul.horizontal-list {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: stretch !important;
-    flex-wrap: nowrap !important;
-  }
-
-  /* 2. Make each top-level item full-width and block-level */
-  .horizontal-list .level0 {
-    display: block !important;
-    width: 100% !important;
-    border-bottom: 1px solid rgba(0,0,0,0.08);
-  }
-
-  /* 3. Submenu: relative, not absolute, for vertical flow */
-  .horizontal-list .level0 .submenu.submenu-horizontal {
+  /* 1. Override submenu slide-in: make it inline/relative */
+  .navigation.mobile .submenu,
+  .navigation.mobile .sub-children-menu {
     position: relative !important;
     top: auto !important;
     left: auto !important;
     right: auto !important;
-    width: 100% !important;
+    bottom: auto !important;
     max-width: 100% !important;
-    box-shadow: none !important;
-    border-radius: 0 !important;
-    background: rgba(0,0,0,0.02);
-    overflow: hidden !important;
+    width: 100% !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+    z-index: auto !important;
+    background: transparent !important;
     max-height: 0;
-    opacity: 1 !important;
+    overflow: hidden !important;
     visibility: visible !important;
-    pointer-events: auto !important;
-    transition: max-height 0.4s ease-in-out !important;
+    opacity: 1 !important;
+    transition: max-height 0.35s ease-in-out !important;
+  }
+
+  /* 2. When parent menu-item has is-open, expand the submenu */
+  .navigation.mobile .is-open + .submenu,
+  .navigation.mobile .is-open + .sub-children-menu {
+    max-height: 3000px;
     transform: none !important;
   }
 
-  /* 4. When parent is hovered/visible, expand the submenu */
-  .horizontal-list .level0.menu-parent.visible .submenu.submenu-horizontal {
-    max-height: 2000px;
-  }
-
-  /* 5. Rotate the down arrow on open */
-  .horizontal-list .level0 > menu-item .icon-down {
-    transition: transform 0.3s ease;
-  }
-  .horizontal-list .level0.visible > menu-item .icon-down {
-    transform: rotate(180deg);
-  }
-
-  /* 6. Remove the underline hover effect on menu items */
-  .horizontal-list .level0 > menu-item > a:after {
+  /* 3. Hide the back-menu header bar (not needed in accordion) */
+  .navigation.mobile .submenu > .grey-bg,
+  .navigation.mobile .submenu > li.hidden-1025,
+  .navigation.mobile .sub-children-menu > li.hidden-1025 {
     display: none !important;
   }
 
-  /* 7. Fix the mega-menu custom width to be full */
-  .horizontal-list .level0 .mega-menu-custom-width {
-    width: 100% !important;
-    max-width: 100% !important;
+  /* 4. Indent submenu items for visual hierarchy */
+  .navigation.mobile .submenu .subchildmenu,
+  .navigation.mobile .submenu > .stretch_width {
+    padding-left: 1.5rem !important;
+    padding-right: 0 !important;
   }
 
-  /* 8. Make internal flex layout of submenu vertical-friendly */
-  .horizontal-list .level0 .submenu .flex-1025-row,
-  .horizontal-list .level0 .submenu .flex-1025-row-reverse {
-    flex-direction: column !important;
+  .navigation.mobile .sub-children-menu > ul {
+    padding-left: 3rem !important;
   }
 
-  /* 9. Make menu-list and col-mega full width in vertical layout */
-  .horizontal-list .level0 .submenu .menu-list {
-    width: 100% !important;
+  /* 5. Rotate the toggle arrow on open */
+  .navigation.mobile .level0 > menu-item open-children-toggle svg {
+    transition: transform 0.3s ease;
   }
-  .horizontal-list .level0 .submenu .col-mega {
-    width: 100% !important;
-  }
-
-  /* 10. Reset full-width absolute behavior */
-  .horizontal-list .level0 .submenu.full-width {
-    position: relative !important;
+  .navigation.mobile .level0 > menu-item.is-open open-children-toggle svg {
+    transform: rotate(90deg);
   }
 
-  /* 11. Fix animation override - prevent transform */
-  .animation-down-to-up .horizontal-list .level0 .submenu,
-  .animation-fade-in .horizontal-list .level0 .submenu {
-    transform: none !important;
-    -webkit-transform: none !important;
+  /* Level 1 toggle arrow rotation */
+  .navigation.mobile .level-1 > menu-item open-children-toggle svg {
+    transition: transform 0.3s ease;
+  }
+  .navigation.mobile .level-1 > menu-item.is-open open-children-toggle svg {
+    transform: rotate(90deg);
   }
 
-  /* 12. Adjust the header layout to accommodate vertical menu */
-  .header__menu {
-    flex: 1;
+  /* 6. Make sure the menu content area scrolls properly */
+  .navigation.mobile .navigation__menu-content {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
   }
 
-  /* 13. Vertical nav needs block display, not inline */
-  .navigation.horizontal.static-1025 {
-    display: block !important;
+  /* 7. Reset the horizontal-list scroll behavior */
+  .navigation.mobile .horizontal-list {
+    overflow: visible !important;
+    max-height: none !important;
+  }
+
+  /* 8. Add subtle border for open submenu sections */
+  .navigation.mobile .is-open + .submenu {
+    border-left: 2px solid var(--color-primary, #135ed1);
+    margin-left: 1.5rem;
   }
 }
+
