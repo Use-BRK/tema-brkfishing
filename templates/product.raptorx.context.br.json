@@ -19,16 +19,16 @@
       "settings": {
         "section_width": "full_width",
         "color_scheme": "",
-        "header-874b0848f70c2aab55c72e65fe639378": null,
-        "image": null,
+        "header-b8e6ecde5bb2049afcad7941453a5f8f": null,
+        "image": "shopify://shop_images/videoslo.png",
         "image_mobile": null,
         "image_behavior": "none",
         "overlay_opacity": 0,
         "image_height": "adapt",
-        "header-75b81ff5aaae3febc2ae426998a3c378": null,
+        "header-31a8eb15a861b9f87a0fcda583c031cb": null,
         "desktop_height": 600,
         "mobile_height": 500,
-        "header-2d9a36010eb38e02de14ffda41f11cca": null,
+        "header-5930e6b3321dacba55a3eadc7734cfe3": null,
         "product_list": [],
         "content_alignment": "center",
         "content_position": "top-center",
@@ -36,14 +36,14 @@
         "content_max_width": 100,
         "content_padding_block": 50,
         "content_padding_inline": 50,
-        "header-55ae8bdd451e6fb82cb6c4f0e41b2739": null,
+        "header-2b5dd7742f3f314c8b799ac12b2a1a24": null,
         "show_content_background": false,
         "content_background": "#ffffff",
         "content_box_opacity": 100,
-        "header-50ca2e423dc483a0ca14ae35cbcaed9e": null,
+        "header-297bca297e205c302531cc010b448304": null,
         "content_below_image": false,
         "content_alignment_mobile": "center",
-        "header-301b874d4c671b2962d8ea0b7ba636c6": null,
+        "header-b09464ce0ea45fae92469729f78e839f": null,
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -51,6 +51,18 @@
       "blocks": {},
       "block_order": [],
       "name": "t:sections.image_with_text_overlay.name"
+    },
+    "pagefly_section_H8UAr": {
+      "type": "pagefly-section",
+      "disabled": false,
+      "settings": {
+        "section_id": "pf-37e1495f",
+        "paragraph-750bc14933c06302a452ac5aa6c74160": null,
+        "paragraph-91d5510e965b6296b94e2e2a88a37fb8": null
+      },
+      "blocks": {},
+      "block_order": [],
+      "name": "PageFly Section"
     },
     "breadcrumb": {
       "disabled": true,
@@ -177,18 +189,6 @@
       "disabled": true,
       "settings": {},
       "blocks": {}
-    },
-    "pagefly_section_H8UAr": {
-      "type": "pagefly-section",
-      "disabled": false,
-      "settings": {
-        "section_id": "pf-37e1495f",
-        "paragraph-24ffda012bacb783ae19975cd12a7fff": null,
-        "paragraph-93602f7a728c2b41afa93d2567dc3a65": null
-      },
-      "blocks": {},
-      "block_order": [],
-      "name": "PageFly Section"
     }
   },
   "order": [
