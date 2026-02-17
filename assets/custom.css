@@ -839,3 +839,91 @@ mobile-navigation-bar.show .cart-count, mobile-navigation-bar.show .cart-count s
 .calculoFrete .container-btn {
   flex-direction: row !important;
 }
+
+
+/* ============================================
+   MENU VERTICAL MOBILE - Accordion Style
+   ============================================ */
+@media screen and (max-width: 1024.98px) {
+
+  /* 1. Override submenu slide-in: make it inline/relative */
+  .navigation.mobile .submenu,
+  .navigation.mobile .sub-children-menu {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    transform: none !important;
+    -webkit-transform: none !important;
+    z-index: auto !important;
+    background: transparent !important;
+    max-height: 0;
+    overflow: hidden !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transition: max-height 0.2s ease-out !important;
+  }
+
+  /* 2. When parent menu-item has is-open, expand the submenu */
+  .navigation.mobile .is-open + .submenu,
+  .navigation.mobile .is-open + .sub-children-menu {
+    max-height: 800px;
+    transform: none !important;
+    transition: max-height 0.35s ease-in !important;
+  }
+
+  /* 3. Hide the back-menu header bar (not needed in accordion) */
+  .navigation.mobile .submenu > .grey-bg,
+  .navigation.mobile .submenu > li.hidden-1025,
+  .navigation.mobile .sub-children-menu > li.hidden-1025 {
+    display: none !important;
+  }
+
+  /* 4. Indent submenu items for visual hierarchy */
+  .navigation.mobile .submenu .subchildmenu,
+  .navigation.mobile .submenu > .stretch_width {
+    padding-left: 1.5rem !important;
+    padding-right: 0 !important;
+  }
+
+  .navigation.mobile .sub-children-menu > ul {
+    padding-left: 3rem !important;
+  }
+
+  /* 5. Rotate the toggle arrow on open */
+  .navigation.mobile .level0 > menu-item open-children-toggle svg {
+    transition: transform 0.3s ease;
+  }
+  .navigation.mobile .level0 > menu-item.is-open open-children-toggle svg {
+    transform: rotate(90deg);
+  }
+
+  /* Level 1 toggle arrow rotation */
+  .navigation.mobile .level-1 > menu-item open-children-toggle svg {
+    transition: transform 0.3s ease;
+  }
+  .navigation.mobile .level-1 > menu-item.is-open open-children-toggle svg {
+    transform: rotate(90deg);
+  }
+
+  /* 6. Make sure the menu content area scrolls properly */
+  .navigation.mobile .navigation__menu-content {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+
+  /* 7. Reset the horizontal-list scroll behavior */
+  .navigation.mobile .horizontal-list {
+    overflow: visible !important;
+    max-height: none !important;
+  }
+
+  /* 8. Add subtle border for open submenu sections */
+  .navigation.mobile .is-open + .submenu {
+    border-left: 2px solid var(--color-primary, #135ed1);
+    margin-left: 1.5rem;
+  }
+}
