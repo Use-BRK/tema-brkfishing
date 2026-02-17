@@ -19,16 +19,16 @@
       "settings": {
         "section_width": "full_width",
         "color_scheme": "",
-        "header-fa6a4ed5d09e626e9ced7664d32a2cc7": null,
-        "image": "shopify://shop_images/tophero_3_9c2fb8f7-751b-4517-8e88-60d8454f4a21.gif",
-        "image_mobile": "shopify://shop_images/tophero_3_9c2fb8f7-751b-4517-8e88-60d8454f4a21.gif",
+        "header-e5773c2b7741570722e35d979cb717f8": null,
+        "image": null,
+        "image_mobile": null,
         "image_behavior": "none",
         "overlay_opacity": 0,
         "image_height": "adapt",
-        "header-fcc2690faf37cbc6bd8c9c049c48a7f7": null,
+        "header-7429910a1c348f78991faddc48033eaf": null,
         "desktop_height": 600,
         "mobile_height": 500,
-        "header-b80acce3157ad004cd2d2c9b5ffd9475": null,
+        "header-8d602c8c3d6db558c222bb9c17631e9b": null,
         "product_list": [],
         "content_alignment": "center",
         "content_position": "top-center",
@@ -36,14 +36,14 @@
         "content_max_width": 100,
         "content_padding_block": 50,
         "content_padding_inline": 50,
-        "header-ba82d832bfdbec7d3e70a27e9240837f": null,
+        "header-80b2359b9dfb9fbec11b5007efbfa9cb": null,
         "show_content_background": false,
         "content_background": "#ffffff",
         "content_box_opacity": 100,
-        "header-4dfbb7c2906ea683e992ed0c5c245469": null,
+        "header-7e7f47e58a562faff4dfe86edb1ae605": null,
         "content_below_image": false,
         "content_alignment_mobile": "center",
-        "header-a61b0fe6fc95da01161d60041cf763d7": null,
+        "header-7106de8bb032c853df7c0ce528b6b5ea": null,
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -57,8 +57,8 @@
       "disabled": false,
       "settings": {
         "section_id": "pf-37e1495f",
-        "paragraph-9b71279aa8c1875387faa42051984117": null,
-        "paragraph-8eed4850a3997bbd6b15f0321d413bda": null
+        "paragraph-880208dbdaba48c7fdb7d62f77b0fe92": null,
+        "paragraph-98c587779cf895b0d5a09552a4ca05ff": null
       },
       "blocks": {},
       "block_order": [],
@@ -74,6 +74,8 @@
       "settings": {
         "desktop_media_width": 60,
         "desktop_layout": "thumbnail_left",
+        "enable_video_looping": false,
+        "enable_video_autoplay": false,
         "mobile_options": "show_thumbnails"
       },
       "blocks": {
