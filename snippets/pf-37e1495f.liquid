@@ -28,14 +28,13 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 .video-wrapper {
   position: relative;
   width: 100%;
-  /* Define a largura máxima no Desktop para não ocupar a tela toda */
-  max-width: 450px; 
-  /* Proporção vertical 9:16 */
-  aspect-ratio: 9 / 16; 
+  /* AJUSTE WIDE PARA DESKTOP */
+  max-width: 900px; 
+  aspect-ratio: 16 / 9; 
   background: #000;
   cursor: pointer;
   overflow: hidden;
-  border-radius: 12px; /* Opcional: deixa as bordas arredondadas como no celular */
+  border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
@@ -51,8 +50,8 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
 }
 
 .glass-play-button svg {
-  width: 100px; 
-  height: 100px;
+  width: 120px; /* Aumentado um pouco para o formato wide */
+  height: 120px;
   fill-opacity: 0.78; 
   filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.3));
   transition: all 0.3s ease;
@@ -72,11 +71,18 @@ If you plan to remove PageFly, please see the guide in our help center first: ht
   border: none;
 }
 
-/* AJUSTE PARA MOBILE */
+/* AJUSTE PARA MOBILE (Mantém o comportamento que você definiu) */
 @media (max-width: 768px) {
   .video-wrapper {
-    max-width: 90%; /* No celular ele ocupa quase a largura toda */
-    height: 445px;
+    max-width: 90%;
+    aspect-ratio: 9 / 16; /* Força o formato vertical no mobile */
+    height: auto; /* Deixa o aspect-ratio trabalhar */
+    min-height: 445px;
+  }
+  
+  .glass-play-button svg {
+    width: 80px;
+    height: 80px;
   }
 }
 </style>
@@ -94,7 +100,7 @@ function startVideo(element) {
     overlay.style.display = 'none'; 
   }, 400);
 }
-</script></div><div data-pf-type="FlexBlock" class="sc-fYXHKj TqaeK pf-37e1495fcc2a-38_ pf-lg-hide"><div data-pf-type="Youtube4" class="sc-gwZLmR cgtXNY pf-37e1495fcc2a-39_"><div class="pf-iframe-wrapper"><iframe class="pf-ifr" src="https://www.youtube.com/embed/UhP76B2SMiE?start=0&autoplay=0&loop=0&mute=0&controls=0&enablejsapi=1" allowfullscreen="" width="560" height="315" allow="autoplay" title="Youtube" srcDoc="<a href='https://www.youtube.com/embed/UhP76B2SMiE?start=0&autoplay=0&loop=0&mute=0&controls=0&enablejsapi=1' id='pf-youtube-play-button' aria-label='Play Video'></a><script>window.addEventListener('DOMContentLoaded',()=>{let e=document.querySelector('#pf-youtube-play-button');if('IntersectionObserver'in window){let t=new IntersectionObserver((t,n)=>{t[0].isIntersecting&&(e.click(),n.unobserve(t[0].target))}, {'rootMargin':'0px','threshold':0.1});t.observe(document.body)}else e.click()});</script>" style="border-radius:inherit"></iframe></div></div></div></div></section></div><script>
+</script></div><div data-pf-type="FlexBlock" class="sc-fYXHKj TqaeK pf-37e1495fcc2a-38_ pf-lg-hide pf-md-hide pf-sm-hide pf-hide"><div data-pf-type="Youtube4" class="sc-gwZLmR cgtXNY pf-37e1495fcc2a-39_"><div class="pf-iframe-wrapper"><iframe class="pf-ifr" src="https://www.youtube.com/embed/UhP76B2SMiE?start=0&autoplay=0&loop=0&mute=0&controls=0&enablejsapi=1" allowfullscreen="" width="560" height="315" allow="autoplay" title="Youtube" srcDoc="<a href='https://www.youtube.com/embed/UhP76B2SMiE?start=0&autoplay=0&loop=0&mute=0&controls=0&enablejsapi=1' id='pf-youtube-play-button' aria-label='Play Video'></a><script>window.addEventListener('DOMContentLoaded',()=>{let e=document.querySelector('#pf-youtube-play-button');if('IntersectionObserver'in window){let t=new IntersectionObserver((t,n)=>{t[0].isIntersecting&&(e.click(),n.unobserve(t[0].target))}, {'rootMargin':'0px','threshold':0.1});t.observe(document.body)}else e.click()});</script>" style="border-radius:inherit"></iframe></div></div></div></div></section></div><script>
     !function(){
       window.__pagefly_section_setting__ = {"pageTitle":"RAPTORX - 1","pageType":"section","pageId":"37e1495f-cc2a-4965-9583-2838e65b698e","lazyLoad":true,"forceByPassGoogleLightHouse":false,"imageLazyLoad":true,"nativeImageLazyLoad":true,"useThemeJQ":false,"sectionRootType":"FlexSection","trackingIDs":[]};
       window.__pagefly_setting__&&(window.__pagefly_setting2__=window.__pagefly_setting__),window.__pagefly_setting__={"baseURL":"https://apps.pagefly.io","analyticsURL":"https://analytics.pagefly.io","isBackend":false,"cdnURL":"https://cdn.pagefly.io","pageflyVersion":"4.25.7.9","shopDomain":"k1y01s-5r.myshopify.com","elementData":{},"shopifyProxyPath":"/apps/pagefly"},window.__pagefly_setting2__&&(window.__pagefly_setting__=function _(d,b){let c={...d||{}};for(let a of Object.keys(b))b[a]instanceof Object&&(Array.isArray(b[a])&&c[a]?Object.assign(b[a],[...b[a],...c[a]]):Object.assign(b[a],_(c[a],b[a])));return Object.assign(c||{},b),c}(__pagefly_setting2__,__pagefly_setting__),delete window.__pagefly_setting2__),window.__pagefly_setting__.moneyFormat={{shop.money_format|json}}}();
