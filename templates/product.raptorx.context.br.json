@@ -22,16 +22,16 @@
       "settings": {
         "section_width": "full_width",
         "color_scheme": "",
-        "header-c1cf89fe612695d8fef4f81be7d6c01c": null,
+        "header-0b61ddf663aec72c380393a8cff7efcd": null,
         "image": "shopify://shop_images/01_5c12780a-6570-4d70-aab4-0dde0df00d0d.png",
         "image_mobile": "shopify://shop_images/HEROINSTINTOSUPERIOR.gif",
         "image_behavior": "none",
         "overlay_opacity": 0,
         "image_height": "adapt",
-        "header-fde3df1702c2f8d03ebf9d47c1264fb1": null,
+        "header-be10ebea49712681c4d59b634e864a1c": null,
         "desktop_height": 600,
         "mobile_height": 500,
-        "header-6065dd2cb12cc07b727e5589563737dd": null,
+        "header-9b1363f74f321360c05ec31ad93df447": null,
         "product_list": [],
         "content_alignment": "center",
         "content_position": "top-center",
@@ -39,14 +39,14 @@
         "content_max_width": 100,
         "content_padding_block": 50,
         "content_padding_inline": 50,
-        "header-4acc712853aed15e153fd9630705d354": null,
+        "header-0f955d8064552ecfe4f7017e6912f7d8": null,
         "show_content_background": false,
         "content_background": "#ffffff",
         "content_box_opacity": 100,
-        "header-a7ad7dcd49e9257882e4bf5bfad1a98b": null,
+        "header-a52eeed5bc5c13fb7cb0c975016b0915": null,
         "content_below_image": false,
         "content_alignment_mobile": "center",
-        "header-d2eae28903d39e0b107572375f6a5b89": null,
+        "header-f9f35b5ca9d08e2bd1b011b5c90ec5cd": null,
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -60,12 +60,102 @@
       "disabled": false,
       "settings": {
         "section_id": "pf-37e1495f",
-        "paragraph-c5bd397b43ac3f48cf891a03bec3371d": null,
-        "paragraph-359cad3c5e5d8e1945f6b64742a5c7ee": null
+        "paragraph-958d10dda31c67c0090f124e64145350": null,
+        "paragraph-c3c8310f985ca11cf95d040787504cff": null
       },
       "blocks": {},
       "block_order": [],
       "name": "PageFly Section"
+    },
+    "testimonials_KRtDt": {
+      "type": "testimonials",
+      "disabled": false,
+      "custom_css": [
+        "p {font-size: 2rem;}"
+      ],
+      "settings": {
+        "section_width": "fluid_container",
+        "color_scheme": "",
+        "header-81b4d075adcc340de5a962d2eee4089b": null,
+        "heading": "Veja de quem já usou",
+        "description": "",
+        "header_size": "medium",
+        "header_alignment": "center",
+        "header-7dbecb642bc8a53a1effa204a49bc772": null,
+        "show_rate": true,
+        "show_date_published": true,
+        "show_author_image": true,
+        "show_author_name": true,
+        "show_author_info": true,
+        "content_alignment": "center",
+        "img_position": "top",
+        "design": "morden",
+        "img_width": 100,
+        "framed": true,
+        "rate_color": "#ff9c05",
+        "items_per_row": 3,
+        "column_gap": 30,
+        "header-0118abff8862a5f9497bee6820ddf7b0": null,
+        "show_arrow": false,
+        "carousel_pagination": "show_dots_on_mobile",
+        "infinite": false,
+        "autoplay": false,
+        "autorotate_speed": 5,
+        "reveal": false,
+        "header-d7226a252018b4b8a4825de4601d1043": null,
+        "items_per_row_mobile": 1,
+        "header-8ae01e9cf869ad6a4a21438930dcd576": null,
+        "padding_top": 15,
+        "padding_bottom": 0,
+        "reset_spacing": false
+      },
+      "blocks": {
+        "testimonials_items_xHkG4": {
+          "type": "testimonials_items",
+          "name": "Wellington Rabelo",
+          "disabled": false,
+          "settings": {
+            "author_image": "shopify://shop_images/WELLINGTON-RABELO.jpg",
+            "author_rating": 5,
+            "author_text": "<p>Tênis robusto e confortável, feito para uso intenso. <br/>Oferece ajuste firme, boa absorção de impacto e solado estável. <br/>Visual moderno com desempenho confiável no dia a dia.</p>",
+            "author_name": "Wellington Rabelo — @wellington_cuei",
+            "author_address": "",
+            "author_published": ""
+          }
+        },
+        "testimonials_items_kcktE": {
+          "type": "testimonials_items",
+          "name": "Luca Niero",
+          "disabled": false,
+          "settings": {
+            "author_image": "shopify://shop_images/LUCAS-NIERO.png",
+            "author_rating": 5,
+            "author_text": "<p>Tênis seguro e confortável desde o primeiro uso, com encaixe firme. Boa absorção de impacto e solado com ótima aderência. Resistente e confiável para terrenos irregulares.</p>",
+            "author_name": "Luca Niero — @brazilfish",
+            "author_address": "",
+            "author_published": ""
+          }
+        },
+        "testimonials_items_LfKGx": {
+          "type": "testimonials_items",
+          "name": "Diego Catole",
+          "disabled": false,
+          "settings": {
+            "author_image": "shopify://shop_images/DIEGO-CATOLE.jpg",
+            "author_rating": 5,
+            "author_text": "<p>Encaixe firme e estável, com palmilha confortável para uso prolongado. <br/>Solado antiderrapante e biqueira reforçada garantem segurança. <br/>Bonito, resistente e acima das expectativas.</p>",
+            "author_name": "Diego Catole — @diegocatole",
+            "author_address": "",
+            "author_published": ""
+          }
+        }
+      },
+      "block_order": [
+        "testimonials_items_xHkG4",
+        "testimonials_items_kcktE",
+        "testimonials_items_LfKGx"
+      ],
+      "name": "Avaliações"
     },
     "breadcrumb": {
       "disabled": true,
@@ -194,93 +284,6 @@
       "disabled": true,
       "settings": {},
       "blocks": {}
-    },
-    "testimonials_KRtDt": {
-      "type": "testimonials",
-      "disabled": false,
-      "settings": {
-        "section_width": "fluid_container",
-        "color_scheme": "",
-        "header-9202f8e539cf9b2a61404be03a27841f": null,
-        "heading": "Veja de quem já usou",
-        "description": "",
-        "header_size": "medium",
-        "header_alignment": "center",
-        "header-d13a2b6a3ce6e2a69f9d1d546e7a85b5": null,
-        "show_rate": true,
-        "show_date_published": true,
-        "show_author_image": true,
-        "show_author_name": true,
-        "show_author_info": true,
-        "content_alignment": "center",
-        "img_position": "top",
-        "design": "morden",
-        "img_width": 80,
-        "framed": true,
-        "rate_color": "#FF9C05",
-        "items_per_row": 3,
-        "column_gap": 30,
-        "header-8c803f8b623e0a777220a2678f5a8603": null,
-        "show_arrow": false,
-        "carousel_pagination": "show_dots_on_mobile",
-        "infinite": false,
-        "autoplay": false,
-        "autorotate_speed": 5,
-        "reveal": false,
-        "header-25692d1e2a040643d931abb5e24a7fed": null,
-        "items_per_row_mobile": 1,
-        "header-4e1590f9f2eb92191cd05c3cead98758": null,
-        "padding_top": 15,
-        "padding_bottom": 0,
-        "reset_spacing": false
-      },
-      "blocks": {
-        "testimonials_items_xHkG4": {
-          "type": "testimonials_items",
-          "name": "Wellington Rabelo",
-          "disabled": false,
-          "settings": {
-            "author_image": "shopify://shop_images/WELLINGTON-RABELO.jpg",
-            "author_rating": 5,
-            "author_text": "<p>Tênis robusto e confortável, feito para uso intenso. <br/>Oferece ajuste firme, boa absorção de impacto e solado estável. <br/>Visual moderno com desempenho confiável no dia a dia.</p>",
-            "author_name": "Wellington Rabelo — @wellington_cuei",
-            "author_address": "",
-            "author_published": ""
-          }
-        },
-        "testimonials_items_kcktE": {
-          "type": "testimonials_items",
-          "name": "Luca Niero",
-          "disabled": false,
-          "settings": {
-            "author_image": "shopify://shop_images/LUCAS-NIERO.png",
-            "author_rating": 5,
-            "author_text": "<p>Tênis seguro e confortável desde o primeiro uso, com encaixe firme. Boa absorção de impacto e solado com ótima aderência. Resistente e confiável para terrenos irregulares.</p>",
-            "author_name": "Luca Niero — @brazilfish",
-            "author_address": "",
-            "author_published": ""
-          }
-        },
-        "testimonials_items_LfKGx": {
-          "type": "testimonials_items",
-          "name": "Diego Catole",
-          "disabled": false,
-          "settings": {
-            "author_image": "shopify://shop_images/DIEGO-CATOLE.jpg",
-            "author_rating": 5,
-            "author_text": "<p>Encaixe firme e estável, com palmilha confortável para uso prolongado. <br/>Solado antiderrapante e biqueira reforçada garantem segurança. <br/>Bonito, resistente e acima das expectativas.</p>",
-            "author_name": "Diego Catole — @diegocatole",
-            "author_address": "",
-            "author_published": ""
-          }
-        }
-      },
-      "block_order": [
-        "testimonials_items_xHkG4",
-        "testimonials_items_kcktE",
-        "testimonials_items_LfKGx"
-      ],
-      "name": "Avaliações"
     }
   },
   "order": [
