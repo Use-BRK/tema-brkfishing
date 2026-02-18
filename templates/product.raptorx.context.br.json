@@ -16,19 +16,22 @@
     "image_with_text_overlay_daWQb": {
       "type": "image-with-text-overlay",
       "disabled": false,
+      "custom_css": [
+        "* {margin-bottom: 0 !important;}"
+      ],
       "settings": {
         "section_width": "full_width",
         "color_scheme": "",
-        "header-17708374087648ddce092cbfad9938f1": null,
+        "header-898cfde161d9540c9a5653046b14a760": null,
         "image": "shopify://shop_images/01_5c12780a-6570-4d70-aab4-0dde0df00d0d.png",
-        "image_mobile": null,
+        "image_mobile": "shopify://shop_images/HEROINSTINTOSUPERIOR.gif",
         "image_behavior": "none",
         "overlay_opacity": 0,
         "image_height": "adapt",
-        "header-1d14d383e724b24852d843bdd236587d": null,
+        "header-d2226d01fde8bb9f29de3f9c2aabf38a": null,
         "desktop_height": 600,
         "mobile_height": 500,
-        "header-5fc0ecf34a2074b54f1fc9e939e12631": null,
+        "header-2bd6a3ab243339331c4b983e17b8c7d8": null,
         "product_list": [],
         "content_alignment": "center",
         "content_position": "top-center",
@@ -36,14 +39,14 @@
         "content_max_width": 100,
         "content_padding_block": 50,
         "content_padding_inline": 50,
-        "header-6cb9d2415425d2279e7de01ca8940fbc": null,
+        "header-47472592e527168c2ade4be1e9f3636b": null,
         "show_content_background": false,
         "content_background": "#ffffff",
         "content_box_opacity": 100,
-        "header-e644058804d1653dfb91b2a23031a747": null,
+        "header-bf5a4f6084c0998bb47c9761c295ea89": null,
         "content_below_image": false,
         "content_alignment_mobile": "center",
-        "header-a5b7029b9cf415d14d2cef77049eee4d": null,
+        "header-594783a22f6dc0fe9632ee0aae7496a4": null,
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -57,8 +60,8 @@
       "disabled": false,
       "settings": {
         "section_id": "pf-37e1495f",
-        "paragraph-927a0dae5d24aa82c0db8209bdba6956": null,
-        "paragraph-e95669e37e528c626c5fa5d7fa093fe9": null
+        "paragraph-f19cc4aaa11451c9cdc4bcaf3e66ef18": null,
+        "paragraph-6c25f93a48e56f50e336c56a92d89ad4": null
       },
       "blocks": {},
       "block_order": [],
