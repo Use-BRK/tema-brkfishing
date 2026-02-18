@@ -22,16 +22,16 @@
       "settings": {
         "section_width": "full_width",
         "color_scheme": "",
-        "header-7face1fc91e771b2363f87fbc53c6e6b": null,
+        "header-320489edc8902c1ce9adcb0b0ea664d5": null,
         "image": "shopify://shop_images/01_5c12780a-6570-4d70-aab4-0dde0df00d0d.png",
         "image_mobile": "shopify://shop_images/HEROINSTINTOSUPERIOR.gif",
         "image_behavior": "none",
         "overlay_opacity": 0,
         "image_height": "adapt",
-        "header-c3356ba867a5d97897a66392ca0a376c": null,
+        "header-062b8cd122dd758062e0c9d25d33922f": null,
         "desktop_height": 600,
         "mobile_height": 500,
-        "header-a6204303e38c2b37ceafb88d035512fc": null,
+        "header-c7fa201016114ba23add76d7e3753c58": null,
         "product_list": [],
         "content_alignment": "center",
         "content_position": "top-center",
@@ -39,14 +39,14 @@
         "content_max_width": 100,
         "content_padding_block": 50,
         "content_padding_inline": 50,
-        "header-47b4484eb9b4d05ec713c1e57e8e92e3": null,
+        "header-b22fde40b7c3161243b9983be9b4a3df": null,
         "show_content_background": false,
         "content_background": "#ffffff",
         "content_box_opacity": 100,
-        "header-496d57287db8812c2ee1818d06205977": null,
+        "header-1e63950669a85109c8d3acda21132f73": null,
         "content_below_image": false,
         "content_alignment_mobile": "center",
-        "header-0d2effe2a65a90f87961c835be036178": null,
+        "header-0d42060c396942f2c99e8c264cc8fd58": null,
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -60,8 +60,8 @@
       "disabled": false,
       "settings": {
         "section_id": "pf-37e1495f",
-        "paragraph-032a084cb0ef2ed25f9776b3086ff60d": null,
-        "paragraph-67d86a94f0cccdecf0459ddf7cb38643": null
+        "paragraph-45d900fc679ca760b5647eb4c1c74f98": null,
+        "paragraph-14317c6c93b7d969b5ecabe5638734af": null
       },
       "blocks": {},
       "block_order": [],
@@ -76,12 +76,12 @@
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
-        "header-d17f0725392e6b3458a47132da8b4ac5": null,
+        "header-b557c6b10f2d6f8348953f21d44a6e45": null,
         "heading": "Quem testou e já aprovou!",
         "description": "",
         "header_size": "medium",
         "header_alignment": "center",
-        "header-bd791cda331fb99132763e937ba4d13c": null,
+        "header-1fc3f882f8bd800c3142ccd91820dfed": null,
         "show_rate": true,
         "show_date_published": true,
         "show_author_image": true,
@@ -95,16 +95,16 @@
         "rate_color": "#ff9c05",
         "items_per_row": 3,
         "column_gap": 30,
-        "header-25368f97fbe6e2fbc5db0fc4f9f7c071": null,
+        "header-f6b59e0d8c6a3ea2f00caaa4fa575eff": null,
         "show_arrow": false,
         "carousel_pagination": "show_dots_on_mobile",
         "infinite": false,
         "autoplay": false,
         "autorotate_speed": 5,
         "reveal": false,
-        "header-651e37264c077d4939cbf3dc968cd6db": null,
+        "header-d932862705fa019ed8dc31b3bba24708": null,
         "items_per_row_mobile": 1,
-        "header-caf82558658df9bfcf09083a6fef95d9": null,
+        "header-81cb29e84c44fcaf491bf75fe30a5889": null,
         "padding_top": 15,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -284,12 +284,28 @@
       "disabled": true,
       "settings": {},
       "blocks": {}
+    },
+    "17714464127bf95e84": {
+      "type": "apps",
+      "disabled": false,
+      "settings": {},
+      "blocks": {
+        "selleasy_lb_upsell_widget_bac_BpEt3": {
+          "type": "shopify://apps/selleasy/blocks/lb-upsell-widget-bac/790c1a03-a71f-4bc1-9869-00dad526d3c2",
+          "disabled": false,
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "selleasy_lb_upsell_widget_bac_BpEt3"
+      ]
     }
   },
   "order": [
     "breadcrumb",
     "image_with_text_overlay_daWQb",
     "main",
+    "17714464127bf95e84",
     "pagefly_section_H8UAr",
     "testimonials_KRtDt",
     "product-set",
