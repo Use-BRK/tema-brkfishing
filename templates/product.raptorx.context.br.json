@@ -87,7 +87,7 @@
         "show_author_image": true,
         "show_author_name": true,
         "show_author_info": true,
-        "content_alignment": "center",
+        "content_alignment": "left",
         "img_position": "top",
         "design": "morden",
         "img_width": 100,
