@@ -140,6 +140,7 @@ class CartNotification extends HTMLElement {
       target != this &&
       !target.closest(".header__minicart") &&
       !target.closest("cart-notification") &&
+      !target.closest("mobile-navigation-bar") &&
       !target.closest(".cart-quick-edit-modal") &&
       !target.closest(".tingle-modal")
     ) {
