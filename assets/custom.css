@@ -680,12 +680,12 @@ cart-notification #minicart-form minicart-recommendations slide-section variant-
   font-size: 12px;
 }
 
-/* mobile-navigation-bar.show .wishlist-count, 
+mobile-navigation-bar.show .wishlist-count, 
 mobile-navigation-bar.show .cart-count {
     background: white;
 }
 
-mobile-navigation-bar.show .wishlist-count, 
+/* mobile-navigation-bar.show .wishlist-count, 
 mobile-navigation-bar.show .cart-count, mobile-navigation-bar.show .cart-count span {
     color: #135ed1;
     font-weight: 600;
@@ -939,11 +939,11 @@ mobile-navigation-bar {
 	transform: translateY(0px);
 	padding: 10px;
 }
-mobile-navigation-bar > span {
+mobile-navigation-bar span {
 	color: #1e1e1e;
 	font-weight: 600;
 }
-mobile-navigation-bar > svg {
+mobile-navigation-bar svg {
 	color: #1e1e1e;
 	transform: scale(0.8);
 	transform-origin: center;
