@@ -1,0 +1,202 @@
+{%- liquid
+  assign section_st = section.settings
+  assign model_file = section_st.model_file
+  assign poster_image = section_st.poster_image
+  assign max_width = section_st.max_width
+  assign aspect_ratio = section_st.aspect_ratio
+  if section_st.reset_spacing
+    assign reset_spacing = ' remove_spacing'
+  endif
+-%}
+
+{%- if model_file != blank -%}
+  {%- capture style -%}
+    --section-pt: {{ section_st.padding_top }}; --section-pb: {{ section_st.padding_bottom }};
+  {%- endcapture -%}
+
+  {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+  {{ 'component-product-model.css' | asset_url | stylesheet_tag }}
+  <link
+    rel="stylesheet"
+    href="https://cdn.shopify.com/shopifycloud/model-viewer-ui/assets/v1.0/model-viewer-ui.css"
+    media="print"
+    onload="this.media='all'"
+  >
+  <link
+    rel="stylesheet"
+    href="{{ 'component-model-viewer-ui.css' | asset_url }}"
+    media="print"
+    onload="this.media='all'"
+  >
+  <script src="{{ 'product-model.js' | asset_url }}" defer="defer"></script>
+ {% comment %} Sobe arquivo  {% endcomment %}
+  <style>
+    .model-3d-viewer__container {
+      max-width: {{ max_width }}px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .model-3d-viewer__container model-viewer {
+      width: 100%;
+      display: block;
+      {%- case aspect_ratio -%}
+        {%- when '1_1' -%}
+          aspect-ratio: 1 / 1;
+        {%- when '4_3' -%}
+          aspect-ratio: 4 / 3;
+        {%- when '3_4' -%}
+          aspect-ratio: 3 / 4;
+        {%- when '16_9' -%}
+          aspect-ratio: 16 / 9;
+      {%- endcase -%}
+    }
+
+    .model-3d-viewer__heading {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .model-3d-viewer__heading h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+  </style>
+
+  <div
+    class="section{% if section_st.padding_top < 30 %} pt-min{% endif %}{% if section_st.padding_bottom < 30 %} pb-min{% endif %}{{ reset_spacing }}"
+    style="{{ style | strip | strip_newlines }}"
+  >
+    <div class="container">
+      {%- if section_st.heading != blank -%}
+        <div class="model-3d-viewer__heading">
+          <h3>{{ section_st.heading }}</h3>
+        </div>
+      {%- endif -%}
+
+      <div class="model-3d-viewer__container">
+        <model-viewer
+          src="{{ model_file }}"
+          {%- if poster_image != blank -%}
+            poster="{{ poster_image | image_url: width: 800 }}"
+          {%- endif -%}
+          camera-controls
+          touch-action="pan-y"
+          auto-rotate
+          shadow-intensity="1"
+          interaction-prompt="auto"
+          ar
+          ar-modes="webxr scene-viewer quick-look"
+          loading="lazy"
+          style="background-color: {{ section_st.background_color }};"
+        >
+        </model-viewer>
+      </div>
+    </div>
+  </div>
+{%- else -%}
+  {%- if request.design_mode -%}
+    <div class="section" style="padding: 40px 20px; text-align: center; border: 2px dashed #ccc; margin: 20px;">
+      <div class="container">
+        {% render 'icon-3d-model' %}
+        <p style="margin-top: 10px; color: #666;">
+          Selecione um arquivo de modelo 3D (.glb) nas configurações da seção
+        </p>
+      </div>
+    </div>
+  {%- endif -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Modelo 3D",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": ""
+    },
+    {
+      "type": "url",
+      "id": "model_file",
+      "label": "URL do modelo 3D",
+      "info": "Cole a URL do arquivo .glb (copie dos Files da loja Shopify)"
+    },
+    {
+      "type": "image_picker",
+      "id": "poster_image",
+      "label": "Imagem de preview (poster)",
+      "info": "Imagem exibida enquanto o modelo carrega (opcional)"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Largura máxima (px)",
+      "default": 400,
+      "min": 200,
+      "max": 800,
+      "step": 10,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "aspect_ratio",
+      "label": "Proporção",
+      "default": "1_1",
+      "options": [
+        { "value": "1_1", "label": "1:1 (quadrado)" },
+        { "value": "4_3", "label": "4:3" },
+        { "value": "3_4", "label": "3:4" },
+        { "value": "16_9", "label": "16:9" }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Cor de fundo do viewer",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Espaçamento"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Espaço superior",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Espaço inferior",
+      "default": 20,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id": "reset_spacing",
+      "label": "Remover espaçamento",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Modelo 3D"
+    }
+  ]
+}
+{% endschema %}
