@@ -1,0 +1,260 @@
+{%- liquid
+  assign st = section.settings
+  assign video = st.video
+  assign bubble_size = st.bubble_size
+  assign border_width = st.border_width
+  assign border_color = st.border_color
+  assign border_radius = st.border_radius
+  assign label_text = st.label_text
+  assign link_url = st.link_url
+  assign offset_left = st.offset_left
+  assign offset_bottom = st.offset_bottom
+-%}
+
+<style>
+  .video-bubble-widget {
+    position: fixed;
+    z-index: 999;
+    left: {{ offset_left }}px;
+    bottom: {{ offset_bottom }}px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+  }
+
+  .video-bubble-widget:hover {
+    transform: scale(1.05);
+    filter: brightness(1.08);
+  }
+
+  /* ----- Circle / Video Bubble ----- */
+  .video-bubble__circle {
+    width: {{ bubble_size }}px;
+    height: {{ bubble_size }}px;
+    border-radius: {{ border_radius }}%;
+    border: {{ border_width }}px solid {{ border_color }};
+    overflow: hidden;
+    box-shadow:
+      0 4px 18px rgba(0, 0, 0, 0.25),
+      0 0 0 2px rgba(255, 255, 255, 0.06);
+    flex-shrink: 0;
+    background: #000;
+    position: relative;
+  }
+
+  .video-bubble__circle video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Placeholder when no video */
+  .video-bubble__placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #2a2a2a, #1e1e1e);
+    color: #fff;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* ----- Label Rectangle ----- */
+  .video-bubble__label {
+    margin-top: -4px;
+    padding: 6px 14px;
+    background: linear-gradient(135deg, #1e1e1e 0%, #2c2c2c 50%, #1e1e1e 100%);
+    border-radius: 6px;
+    box-shadow:
+      0 4px 14px rgba(0, 0, 0, 0.30),
+      0 -6px 12px -4px rgba(0, 0, 0, 0.20);
+    max-width: {{ bubble_size | plus: 40 }}px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .video-bubble__label span {
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-shadow: 0 1px 6px rgba(255, 255, 255, 0.18), 0 0 20px rgba(255, 255, 255, 0.06);
+    white-space: nowrap;
+    line-height: 1.3;
+    display: block;
+  }
+
+  /* Subtle glow connector between bubble and label */
+  .video-bubble__connector {
+    width: 60%;
+    height: 8px;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.18) 0%, transparent 70%);
+    margin-top: -2px;
+    z-index: 0;
+    pointer-events: none;
+  }
+</style>
+
+<a
+  href="{{ link_url }}"
+  class="video-bubble-widget"
+  aria-label="{{ label_text | default: 'Ver mais' }}"
+>
+  <div class="video-bubble__circle">
+    {%- if video != blank -%}
+      {%- liquid
+        assign source_url = ''
+        for s in video.sources
+          if s.format == 'mp4'
+            assign source_url = s.url
+            break
+          endif
+        endfor
+        assign poster = video.preview_image | image_url: width: 300
+      -%}
+      <video
+        src="{{ source_url }}"
+        poster="{{ poster }}"
+        playsinline
+        autoplay
+        loop
+        muted
+      ></video>
+    {%- else -%}
+      <div class="video-bubble__placeholder">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
+      </div>
+    {%- endif -%}
+  </div>
+
+  <div class="video-bubble__connector"></div>
+
+  {%- if label_text != blank -%}
+    <div class="video-bubble__label">
+      <span>{{ label_text }}</span>
+    </div>
+  {%- endif -%}
+</a>
+
+{% schema %}
+{
+  "name": "Video Bubble",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Vídeo"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Vídeo da bubble"
+    },
+    {
+      "type": "header",
+      "content": "Estilo da Bubble"
+    },
+    {
+      "type": "range",
+      "id": "bubble_size",
+      "label": "Tamanho da bubble",
+      "default": 90,
+      "min": 60,
+      "max": 150,
+      "step": 5,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "label": "Espessura da borda",
+      "default": 3,
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Cor da borda",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Arredondamento (50 = círculo)",
+      "default": 50,
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "%"
+    },
+    {
+      "type": "header",
+      "content": "Texto e Link"
+    },
+    {
+      "type": "text",
+      "id": "label_text",
+      "label": "Texto do retângulo",
+      "default": "LANÇAMENTO RAPTORX"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link de destino"
+    },
+    {
+      "type": "header",
+      "content": "Posição"
+    },
+    {
+      "type": "range",
+      "id": "offset_left",
+      "label": "Posição esquerda (left)",
+      "default": 20,
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "offset_bottom",
+      "label": "Posição inferior (bottom)",
+      "default": 30,
+      "min": 0,
+      "max": 300,
+      "step": 5,
+      "unit": "px"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video Bubble"
+    }
+  ]
+}
+{% endschema %}
