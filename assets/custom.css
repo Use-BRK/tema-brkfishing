@@ -955,3 +955,17 @@ mobile-navigation-bar svg {
 	transform-origin: center;
 	transition: transform 0.3s ease;	
 } */
+
+/* Esconde botão Ver Carrinho no cart drawer */ 
+
+.viewcart {
+  display: none !important;
+}
+
+.drawer-bottom {
+  padding: 1rem !important;
+}
+
+button[form="minicart"] {
+  border-radius: 8px !important;
+}
