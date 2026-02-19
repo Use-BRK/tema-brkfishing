@@ -16,7 +16,10 @@
     "main": {
       "custom_css": [],
       "settings": {
-        "mobile_options": "show_thumbnails"
+        "enable_sticky_content_on_desktop": true,
+        "mobile_options": "show_thumbnails",
+        "enable_on_mobile": false,
+        "enable_on_desktop": false
       },
       "blocks": {
         "product_meta_FUixq": {
@@ -92,6 +95,11 @@
         "complementary_products_Wip9YG",
         "frete_no_produto_shipping_calc_MJK8Br"
       ]
+    },
+    "product-set": {
+      "disabled": true,
+      "settings": {},
+      "blocks": {}
     }
   }
 }
