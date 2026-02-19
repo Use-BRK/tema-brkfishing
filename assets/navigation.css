@@ -104,7 +104,7 @@
   }
   .navigation.mobile {
     background: var(--color-background);
-    --menu-mobile-width: 75%;
+    --menu-mobile-width: 85%;
     --show-overlay-bg: rgba(0, 0, 0, 0.5);
     width: var(--menu-mobile-width);
     max-width: 33rem;
