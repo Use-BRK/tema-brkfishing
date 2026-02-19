@@ -250,21 +250,13 @@
         "content_below_image": false
       },
       "blocks": {
-        "slider_item_TJiTLz": {
-          "name": "Fusion",
-          "settings": {
-            "image": "shopify://shop_images/DESKTOP_BOLSATERMICA.webp",
-            "image_mobile": "shopify://shop_images/MOBILE_BOLSATERMICA.webp",
-            "link_banner": "shopify://collections/linha-fusion-2026"
-          }
-        },
         "slider_item_TzyDJp": {
           "type": "slider_item",
           "name": "RaptorX",
           "disabled": false,
           "settings": {
             "header-c6cd223c88b0b3ac9176278b1099aba9": null,
-            "image": "shopify://shop_images/FULLBANNER_LINKTREE.png",
+            "image": "shopify://shop_images/FULLBANNER_LANCAMENTO_TENIS.png",
             "image_mobile": "shopify://shop_images/MOBILE_LANCAMENTO_TENIS.png",
             "local_video": null,
             "overlay_opacity": 0,
@@ -293,6 +285,14 @@
             "content_box_opacity": 100,
             "header-3682310f1ca125b1e71c027825321cc6": null,
             "content_alignment_mobile": "center"
+          }
+        },
+        "slider_item_TJiTLz": {
+          "name": "Fusion",
+          "settings": {
+            "image": "shopify://shop_images/DESKTOP_BOLSATERMICA.webp",
+            "image_mobile": "shopify://shop_images/MOBILE_BOLSATERMICA.webp",
+            "link_banner": "shopify://collections/linha-fusion-2026"
           }
         },
         "slider_item_dP4zBf": {
