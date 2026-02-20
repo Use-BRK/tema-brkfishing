@@ -969,3 +969,9 @@ mobile-navigation-bar svg {
 button[form="minicart"] {
   border-radius: 8px !important;
 }
+
+
+/* esconde botão de inserir cupom nativo do glozin */
+.mini_cart_coupon {
+  display: none;
+}
