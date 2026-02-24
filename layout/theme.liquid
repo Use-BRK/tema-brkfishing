@@ -224,6 +224,40 @@
     {%- render 'sprite-svg' -%}
     {%- render 'content-bottom' -%}
     {%  render 'whatsapp-button' %}
+
+    <!-- Forçar textos customizados no discount-block do app -->
+    <script>
+      (function () {
+        var PLACEHOLDER = 'INSIRA UM CUPOM';
+        var BUTTON_TEXT = 'OK';
+
+        function forceDiscountTexts() {
+          var blocks = document.querySelectorAll('discount-block');
+          blocks.forEach(function (block) {
+            var input = block.querySelector('.dmp_discount-form input[type="text"]');
+            var button = block.querySelector('.dmp_discount-form button');
+            if (input && input.placeholder !== PLACEHOLDER) {
+              input.placeholder = PLACEHOLDER;
+            }
+            if (button && button.textContent.trim() !== BUTTON_TEXT) {
+              button.textContent = BUTTON_TEXT;
+            }
+          });
+        }
+
+        // Executar imediatamente e a cada mudança no DOM
+        forceDiscountTexts();
+        var observer = new MutationObserver(forceDiscountTexts);
+        observer.observe(document.body, { childList: true, subtree: true });
+
+        // Fallback: rodar novamente após carregamento completo
+        window.addEventListener('load', function () {
+          forceDiscountTexts();
+          setTimeout(forceDiscountTexts, 2000);
+          setTimeout(forceDiscountTexts, 5000);
+        });
+      })();
+    </script>    
   </body>
   {{ 'custom-frete.css' | asset_url | stylesheet_tag }}
 </html>
