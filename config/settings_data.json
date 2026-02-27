@@ -25,6 +25,7 @@
     "enable_browser_tab_notifications": false,
     "first_notification": "",
     "secondary_notification": "",
+    "sale_background": "#26a826",
     "sale_badge_type": "percent",
     "sale_badge_addons": "countdown",
     "show_new": false,
