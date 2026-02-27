@@ -221,6 +221,8 @@
 
                     {% if product.tags contains 'Sem Estoque' %}
                       {% comment %} Exibe apenas produtos com estoque{% endcomment %}
+                    {% elsif product.tags contains 'VIP' %}
+                      {% comment %} Oculta produtos VIP (visíveis apenas na coleção password) {% endcomment %}
                     {% else %}
                       {%- liquid
                         assign index = forloop.index0 | plus: 1 | plus: midnum

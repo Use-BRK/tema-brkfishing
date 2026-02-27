@@ -54,236 +54,237 @@
       hold
     {% endif %}
   >
-  <div class="{{ section_width }}">
-    <div class="title-wrapper-with-link text-center page-title section-spacing-top mb-60">
-      <div class="breadcrumbs">
-        {%- render 'breadcrumbs', class: 'justify-content-center' -%}
-      </div>
-      {%- if terms -%}
-        {% if search.performed and search.results_count > 0 %}
-          <h1 class="heading-title heading-letter-spacing h2 mt-8 mb-0">{{ 'templates.search.title' | t }}</h1>
+    <div class="{{ section_width }}">
+      <div class="title-wrapper-with-link text-center page-title section-spacing-top mb-60">
+        <div class="breadcrumbs">
+          {%- render 'breadcrumbs', class: 'justify-content-center' -%}
+        </div>
+        {%- if terms -%}
+          {% if search.performed and search.results_count > 0 %}
+            <h1 class="heading-title heading-letter-spacing h2 mt-8 mb-0">{{ 'templates.search.title' | t }}</h1>
+          {%- else -%}
+            <h1 class="heading-title heading-letter-spacing h2 mt-8 mb-0">
+              {{ 'templates.search.results_with_count_and_term.none' | t: terms: terms }}
+            </h1>
+          {% endif %}
         {%- else -%}
           <h1 class="heading-title heading-letter-spacing h2 mt-8 mb-0">
-            {{ 'templates.search.results_with_count_and_term.none' | t: terms: terms }}
+            {{ 'templates.search.title_no_search' | t }}
           </h1>
         {% endif %}
-      {%- else -%}
-        <h1 class="heading-title heading-letter-spacing h2 mt-8 mb-0">
-          {{ 'templates.search.title_no_search' | t }}
-        </h1>
-      {% endif %}
-      <div class="search-form inset-x-0 z-4 bg-default h-full d-flex flex-column">
-        <action-search
-          class="has-close-btn close-slide-up page_search"
-          data-focus-item="search-icon-bubble"
-        >
-          <div class="search-form inset-x-0 z-4 bg-default h-full d-flex flex-column">
-            <form
-              action="{{ routes.search_url }}"
-              method="get"
-              role="search"
-              class="search search-modal__form pb-0 mt-15 mt-1025-55"
-            >
-              <div
-                class="field align-center flex-nowrap gap-medium gap-0 accent-color-second-bg rounded-10 btn-large max-w-custom mx-auto relative"
-                style="--max-width: 63rem;"
+        <div class="search-form inset-x-0 z-4 bg-default h-full d-flex flex-column">
+          <action-search
+            class="has-close-btn close-slide-up page_search"
+            data-focus-item="search-icon-bubble"
+          >
+            <div class="search-form inset-x-0 z-4 bg-default h-full d-flex flex-column">
+              <form
+                action="{{ routes.search_url }}"
+                method="get"
+                role="search"
+                class="search search-modal__form pb-0 mt-15 mt-1025-55"
               >
-                <input
-                  class="pl-44-impo ssearch__input field__input border-0 pr-60 overflow-hidden w-full"
-                  type="search"
-                  name="q"
-                  value="{{ search.terms | escape }}"
-                  placeholder="{{ 'general.search.search' | t }}"
-                  maxlength="128"
-                  role="combobox"
-                  aria-expanded="false"
-                  aria-haspopup="listbox"
-                  aria-autocomplete="list"
-                  autocorrect="off"
-                  autocomplete="off"
-                  autocapitalize="off"
-                  spellcheck="false"
-                  id="Search-In-Page"
-                  style="{% if enable_rtl %} --input-padding: 1rem 2rem 1rem 4.5rem;{% else %} --input-padding: 1rem 4.5rem 1rem 2rem;{% endif %}"
+                <div
+                  class="field align-center flex-nowrap gap-medium gap-0 accent-color-second-bg rounded-10 btn-large max-w-custom mx-auto relative"
+                  style="--max-width: 63rem;"
                 >
-                <label class="visually-hidden" for="Search-In-Page"> {{ 'general.search.search' | t }}</label>
-                <input type="hidden" name="options[unavailable_products]" value="show">
-                <input type="hidden" name="options[prefix]" value="last">
-                <input type="hidden" name="type" value="all">
-                <input type="hidden" name="options[fields]" value="title,vendor,product_type,variants.title">
-                <div class="search__action-right d-flex gap-10 absolute right-15 top-0 bottom-0 z-1 align-center">
-                  <div tabindex="0" class="clear-btn d-none touch-target btn-text-transform pointer"></div>
+                  <input
+                    class="pl-44-impo ssearch__input field__input border-0 pr-60 overflow-hidden w-full"
+                    type="search"
+                    name="q"
+                    value="{{ search.terms | escape }}"
+                    placeholder="{{ 'general.search.search' | t }}"
+                    maxlength="128"
+                    role="combobox"
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
+                    aria-autocomplete="list"
+                    autocorrect="off"
+                    autocomplete="off"
+                    autocapitalize="off"
+                    spellcheck="false"
+                    id="Search-In-Page"
+                    style="{% if enable_rtl %} --input-padding: 1rem 2rem 1rem 4.5rem;{% else %} --input-padding: 1rem 4.5rem 1rem 2rem;{% endif %}"
+                  >
+                  <label class="visually-hidden" for="Search-In-Page"> {{ 'general.search.search' | t }}</label>
+                  <input type="hidden" name="options[unavailable_products]" value="show">
+                  <input type="hidden" name="options[prefix]" value="last">
+                  <input type="hidden" name="type" value="all">
+                  <input type="hidden" name="options[fields]" value="title,vendor,product_type,variants.title">
+                  <div class="search__action-right d-flex gap-10 absolute right-15 top-0 bottom-0 z-1 align-center">
+                    <div tabindex="0" class="clear-btn d-none touch-target btn-text-transform pointer"></div>
+                  </div>
+                  <button
+                    type="submit"
+                    class="button btn-reset search__button inline-flex absolute top-0 bottom-0 z-1 align-center heading-color{% if enable_rtl %} left-20{% else %} right-20{% endif %}"
+                    tabindex="0"
+                    aria-label="{{ 'general.search.search' | t }}"
+                  >
+                    <svg width="17" height="17" viewBox="0 0 17 17" fill="currentColor">
+                      <use href="#icon-search" />
+                    </svg>
+                  </button>
                 </div>
-                <button
-                  type="submit"
-                  class="button btn-reset search__button inline-flex absolute top-0 bottom-0 z-1 align-center heading-color{% if enable_rtl %} left-20{% else %} right-20{% endif %}"
-                  tabindex="0"
-                  aria-label="{{ 'general.search.search' | t }}"
-                >
-                  <svg width="17" height="17" viewBox="0 0 17 17" fill="currentColor">
-                    <use href="#icon-search" />
-                  </svg>
-                </button>
-              </div>
-              <div
-                class=" absolute inset-0 invisible transition pointer-none z-2 gradient color-default"
-              ></div>
-            </form>
-          </div>
-        </action-search>
+                <div
+                  class=" absolute inset-0 invisible transition pointer-none z-2 gradient color-default"
+                ></div>
+              </form>
+            </div>
+          </action-search>
+        </div>
       </div>
-    </div>
-    <div
-      class="{% if enable_filtering and filter_layout == 'vertical' %} flex flex-nowrap gap{% if vertical_posion == 'right' %} flex-row-reverse{% endif %}{% endif %}"
-      {% if enable_filtering and filter_layout == 'vertical' %}
-        style="{{ style | strip | strip_newlines }}"
-      {% endif %}
-    >
-      {%- if enable_filtering and filter_layout == 'vertical' -%}
-        {%- render 'search-sidebar',
-          section_st: section_st,
-          filter_layout: filter_layout,
-          default_filter: default_filter
-        -%}
-      {% endif %}
       <div
-        id="productgridcontainer"
-        class="{% if enable_filtering and filter_layout == 'vertical' %}w-full col-1025-remaining{% endif %}"
+        class="{% if enable_filtering and filter_layout == 'vertical' %} flex flex-nowrap gap{% if vertical_posion == 'right' %} flex-row-reverse{% endif %}{% endif %}"
+        {% if enable_filtering and filter_layout == 'vertical' %}
+          style="{{ style | strip | strip_newlines }}"
+        {% endif %}
       >
-        {% # theme-check-disable UnclosedHTMLElement %}
-        {% if enable_filtering and filter_layout == 'vertical' %}<div class="sticky-1025 top-30">{% endif %}
-        {% # theme-check-disable UnclosedHTMLElement %}
-        {%- if enable_filtering and filter_layout == 'horizontal' -%}
+        {%- if enable_filtering and filter_layout == 'vertical' -%}
           {%- render 'search-sidebar',
             section_st: section_st,
             filter_layout: filter_layout,
             default_filter: default_filter
           -%}
         {% endif %}
-        {%- if enable_filtering and filter_layout != 'drawer' -%}
-          {%- render 'search-filter-current', class: 'mb-20' -%}
-        {% endif %}
-        {%- render 'search-toolbar',
-          section_st: section_st,
-          pageurl: view,
-          enable_filtering: enable_filtering,
-          filter_layout: filter_layout,
-          products_column: products_column
-        -%}
-        {%- if enable_filtering and filter_layout == 'drawer' -%}
-          {%- render 'search-filter-current', class: 'mb-30' -%}
-        {% endif %}
         <div
-          class="product-grid-container relative"
+          id="productgridcontainer"
+          class="{% if enable_filtering and filter_layout == 'vertical' %}w-full col-1025-remaining{% endif %}"
         >
-          {%- paginate search.results by number_products -%}
-            {%- if search.results.size > 0 -%}
-              <div
-                id="product-grid"
-                data-id="{{ section.id }}"
-                class="grid grid-cols row-gap-custom product-grid gap container-products-switch{% if pagination == 'load_more_button' or pagination == 'infinit_scrolling' %} loadmore-lists{% endif %}"
-                style="--row-gap: 3rem;--col-desktop: {{ products_column }};--col-tablet: 3;--col-desktop-small: 3;--col-number: {{ items_per_row_mobile }};{% if section_st.column_gap < 15 %}--col-gap: {{ section_st.column_gap }}px;--col-gap-desktop: {{  section_st.column_gap }}px;{% else %}--col-gap: 15px;--col-gap-desktop: {{  section_st.column_gap }}px;{% endif %};"
-                data-view-mode="{{ products_column }}"
-              >
-                {%- for product in search.results -%}
-                  {%- case product.object_type -%}
-                    {%- when 'product' -%}
-                      <div
-                        class="grid__item{% if pagination == 'load_more_button' or pagination == 'infinit_scrolling' %} loadmore-item{% endif %} pointer"
-                        onclick="window.location.href='{{ product.url }}'"
-                      >
-                        {% render 'product-item',
-                          scroll_animation: scroll_animation,
-                          indexFor: forloop.index,
-                          card_product: product,
-                          section_id: section.id,
-                          template_enable_action: true,
-                          template_enable_price: true,
-                          template_enable_product_vendor: true,
-                          template_enable_rate: true,
-                          template_enable_add_cart: true,
-                          template_enable_product_short_description: true,
-                          template_enable_color_swatches: true,
-                          type: 'grid',
-                          template_enable_product_badges: true,
-                          collection_product: true
-                        %}
-                      </div>
-                    {%- when 'article' -%}
-                      {% if search_result == 'all' %}
-                        <motion-element
-                          data-motion="fade-up-lg"
-                          hold
-                          class="block"
+          {% # theme-check-disable UnclosedHTMLElement %}
+          {% if enable_filtering and filter_layout == 'vertical' %}<div class="sticky-1025 top-30">{% endif %}
+          {% # theme-check-disable UnclosedHTMLElement %}
+          {%- if enable_filtering and filter_layout == 'horizontal' -%}
+            {%- render 'search-sidebar',
+              section_st: section_st,
+              filter_layout: filter_layout,
+              default_filter: default_filter
+            -%}
+          {% endif %}
+          {%- if enable_filtering and filter_layout != 'drawer' -%}
+            {%- render 'search-filter-current', class: 'mb-20' -%}
+          {% endif %}
+          {%- render 'search-toolbar',
+            section_st: section_st,
+            pageurl: view,
+            enable_filtering: enable_filtering,
+            filter_layout: filter_layout,
+            products_column: products_column
+          -%}
+          {%- if enable_filtering and filter_layout == 'drawer' -%}
+            {%- render 'search-filter-current', class: 'mb-30' -%}
+          {% endif %}
+          <div
+            class="product-grid-container relative"
+          >
+            {%- paginate search.results by number_products -%}
+              {%- if search.results.size > 0 -%}
+                <div
+                  id="product-grid"
+                  data-id="{{ section.id }}"
+                  class="grid grid-cols row-gap-custom product-grid gap container-products-switch{% if pagination == 'load_more_button' or pagination == 'infinit_scrolling' %} loadmore-lists{% endif %}"
+                  style="--row-gap: 3rem;--col-desktop: {{ products_column }};--col-tablet: 3;--col-desktop-small: 3;--col-number: {{ items_per_row_mobile }};{% if section_st.column_gap < 15 %}--col-gap: {{ section_st.column_gap }}px;--col-gap-desktop: {{  section_st.column_gap }}px;{% else %}--col-gap: 15px;--col-gap-desktop: {{  section_st.column_gap }}px;{% endif %};"
+                  data-view-mode="{{ products_column }}"
+                >
+                  {%- for product in search.results -%}
+                    {%- case product.object_type -%}
+                      {%- when 'product' -%}
+                        {%- if product.tags contains 'VIP' -%}{%- continue -%}{%- endif -%}
+                        <div
+                          class="grid__item{% if pagination == 'load_more_button' or pagination == 'infinit_scrolling' %} loadmore-item{% endif %} pointer"
+                          onclick="window.location.href='{{ product.url }}'"
                         >
-                          {%- render 'article-card',
+                          {% render 'product-item',
                             scroll_animation: scroll_animation,
                             indexFor: forloop.index,
-                            article: product,
-                            show_category: false,
-                            show_date: true,
-                            show_excerpt: true,
-                            show_author: true,
-                            image_ratio: 'adapt',
-                            show_comment_count: true,
-                            pagination: pagination,
-                            search_card: true
-                          -%}
-                        </motion-element>
-                      {% endif %}
-                    {%- when 'page' -%}
-                      {% if search_result == 'all' %}
-                        <motion-element
-                          data-motion="fade-up-lg"
-                          hold
-                          class="block {% if scroll_animation == 'slide_in' and scroll_animation != null %} scroll-trigger slide_in {% endif %} {% if pagination == 'load_more_button' or pagination == 'infinit_scrolling' %} loadmore-item{% endif %}"
-                        >
-                          <div class="article-card-wrapper  card-wrapper underline-links-hover">
-                            <div
-                              class="card card--card card--text ratio"
-                              style="--ratio-percent: 100%;"
-                            >
-                              <div class="card__content">
-                                <div class="card__information">
-                                  <h3 class="card__heading">
-                                    <a href="{{ product.url }}" class="full-unstyled-link">
-                                      {{ product.title | escape }}
-                                    </a>
-                                  </h3>
-                                </div>
-                                <div class="card__badge">
-                                  <span class="badge color-background-1">{{ 'templates.search.page' | t }}</span>
+                            card_product: product,
+                            section_id: section.id,
+                            template_enable_action: true,
+                            template_enable_price: true,
+                            template_enable_product_vendor: true,
+                            template_enable_rate: true,
+                            template_enable_add_cart: true,
+                            template_enable_product_short_description: true,
+                            template_enable_color_swatches: true,
+                            type: 'grid',
+                            template_enable_product_badges: true,
+                            collection_product: true
+                          %}
+                        </div>
+                      {%- when 'article' -%}
+                        {% if search_result == 'all' %}
+                          <motion-element
+                            data-motion="fade-up-lg"
+                            hold
+                            class="block"
+                          >
+                            {%- render 'article-card',
+                              scroll_animation: scroll_animation,
+                              indexFor: forloop.index,
+                              article: product,
+                              show_category: false,
+                              show_date: true,
+                              show_excerpt: true,
+                              show_author: true,
+                              image_ratio: 'adapt',
+                              show_comment_count: true,
+                              pagination: pagination,
+                              search_card: true
+                            -%}
+                          </motion-element>
+                        {% endif %}
+                      {%- when 'page' -%}
+                        {% if search_result == 'all' %}
+                          <motion-element
+                            data-motion="fade-up-lg"
+                            hold
+                            class="block {% if scroll_animation == 'slide_in' and scroll_animation != null %} scroll-trigger slide_in {% endif %} {% if pagination == 'load_more_button' or pagination == 'infinit_scrolling' %} loadmore-item{% endif %}"
+                          >
+                            <div class="article-card-wrapper  card-wrapper underline-links-hover">
+                              <div
+                                class="card card--card card--text ratio"
+                                style="--ratio-percent: 100%;"
+                              >
+                                <div class="card__content">
+                                  <div class="card__information">
+                                    <h3 class="card__heading">
+                                      <a href="{{ product.url }}" class="full-unstyled-link">
+                                        {{ product.title | escape }}
+                                      </a>
+                                    </h3>
+                                  </div>
+                                  <div class="card__badge">
+                                    <span class="badge color-background-1">{{ 'templates.search.page' | t }}</span>
+                                  </div>
                                 </div>
                               </div>
                             </div>
-                          </div>
-                        </motion-element>
-                      {% endif %}
-                  {%- endcase -%}
-                {%- endfor -%}
-              </div>
-              {%- if paginate.pages > 1 -%}
-                {% render 'pagination',
-                  paginate: paginate,
-                  section_st: section_st,
-                  pagination: pagination,
-                  number_page: number_products,
-                  paginate: paginate
-                %}
+                          </motion-element>
+                        {% endif %}
+                    {%- endcase -%}
+                  {%- endfor -%}
+                </div>
+                {%- if paginate.pages > 1 -%}
+                  {% render 'pagination',
+                    paginate: paginate,
+                    section_st: section_st,
+                    pagination: pagination,
+                    number_page: number_products,
+                    paginate: paginate
+                  %}
+                {% endif %}
               {% endif %}
-            {% endif %}
-          {%- endpaginate -%}
-          <div
-            class="loading-overlay absolute inset-0 invisible transition pointer-none z-2 gradient color-default"
-          ></div>
+            {%- endpaginate -%}
+            <div
+              class="loading-overlay absolute inset-0 invisible transition pointer-none z-2 gradient color-default"
+            ></div>
+          </div>
         </div>
+        {% # theme-check-disable UnclosedHTMLElement %}
+        {% if enable_filtering and filter_layout == 'vertical' %}</div>{% endif %}
+        {% # theme-check-disable UnclosedHTMLElement %}
       </div>
-      {% # theme-check-disable UnclosedHTMLElement %}
-      {% if enable_filtering and filter_layout == 'vertical' %}</div>{% endif %}
-      {% # theme-check-disable UnclosedHTMLElement %}
     </div>
-  </div>
-</grid-list>
+  </grid-list>
 </section>
 
 {% schema %}
