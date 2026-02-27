@@ -21,16 +21,16 @@
       ],
       "settings": {
         "section_width": "full_width",
+        "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
         "show_separator_line": false,
-        "font_size": 12,
-        "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9"
+        "font_size": 12
       },
       "blocks": {
         "store_information_pVeAk": {
           "type": "store_information",
           "disabled": false,
           "settings": {
-            "paragraph-4a0a898fc024bba05acf1a2ac9da2f6a": null,
+            "paragraph-8373a24198c5594c528ef0feabba8674": null,
             "show_email": false,
             "show_phone": true,
             "hidden_on_mobile": true
@@ -80,19 +80,19 @@
             "text": "OFERTAS",
             "open-link-newtab": false,
             "item_label": "hot",
-            "header-d66b4a77ec07143db054a8ec2defa18f": null,
+            "header-96dad2a40fa70cff9480317cb37dd0c3": null,
             "promotion_menu_column": 2,
             "mega_custom_width": 600,
             "center_submenu": false,
             "full_width": false,
-            "header-c77a07182b28b892116168d1f9cbdd36": null,
+            "header-2b0423a1a5b7866b4a762a6e3be5701d": null,
             "promotion_position": "right",
             "promotion_image_width": 27,
-            "header-c96026ba287741ee3c193b3ebc1cc47c": null,
+            "header-4e45b9cb6c8885bcaaee1df730a158b6": null,
             "promotion_image_1": null,
             "promotion_link_1": "",
             "promotion_link_newtab_1": true,
-            "header-35bd79d5a42981a7dcdc9d65ddae8198": null,
+            "header-428f969aec99851fab10f896a25b2dcd": null,
             "promotion_image_2": null,
             "promotion_link_2": "",
             "promotion_link_newtab_2": true
@@ -106,19 +106,19 @@
             "text": "ENVIO FULL",
             "open-link-newtab": false,
             "item_label": "hot",
-            "header-3325a021354cf62da95228fead3741e5": null,
+            "header-3c4758d63a25a3f1a5834f91458f2293": null,
             "promotion_menu_column": 2,
             "mega_custom_width": 600,
             "center_submenu": false,
             "full_width": false,
-            "header-5c087e79e49bfedb7a66c7d8d82bd391": null,
+            "header-ab96656a5f8a37cc8b87e3c9c95b38a6": null,
             "promotion_position": "right",
             "promotion_image_width": 27,
-            "header-d2aeacf4c46c34cd04e93f04c5dc2cf0": null,
+            "header-fed53349fc2efe9457a3ee24625dbb79": null,
             "promotion_image_1": null,
             "promotion_link_1": "",
             "promotion_link_newtab_1": true,
-            "header-29cfd39ae458f2c3278a42cf18d8984b": null,
+            "header-e80af94e972780abb9baf1e22a1b16a2": null,
             "promotion_image_2": null,
             "promotion_link_2": "",
             "promotion_link_newtab_2": true
@@ -147,5 +147,9 @@
         "menu_promotion_aQHpr9"
       ]
     }
-  }
+  },
+  "order": [
+    "top_bar_CbXNYj",
+    "header"
+  ]
 }
