@@ -36,7 +36,7 @@
     "product_style": "card",
     "show_detail": false,
     "show_quick_view": false,
-    "show_wishlist": true,
+    "show_wishlist": false,
     "show_compare": false,
     "show_add_cart": true,
     "show_variant": true,

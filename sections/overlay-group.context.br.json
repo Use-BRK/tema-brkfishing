@@ -18,10 +18,15 @@
         "mobile-navigation-bar {backdrop-filter: blur(10px); background: #ffffffcf; transition: opacity 0.3s, transform 0.3s; opacity: 1; transform: translateY(0px); padding: 10px;}",
         "span {color: #1e1e1e; font-weight: 600;}",
         "svg {color: #1e1e1e; transform: scale(0.8); transform-origin: center; transition: transform 0.3s ease;}",
-        "span .wishlist-count, span .cart-count {background: #135ED1; color: #fff;}"
+        "span .wishlist-count,span .cart-count {background: #135ed1; color: #fff;}"
       ],
       "settings": {},
-      "blocks": {}
+      "blocks": {
+        "wishlist_DHxNDy": {
+          "disabled": true,
+          "settings": {}
+        }
+      }
     }
   }
 }
