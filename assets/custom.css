@@ -12,6 +12,12 @@ header {
 }
 
 
+/* sale badge fixes */
+.product__badges-sale{
+  padding-block: 1.8px !important;
+  padding-inline: 6px !important;
+  font-size: 11.8px !important;
+}
 
 /* Custom Whatsapp Bottom Button */
 #kokfy-whats-button{
