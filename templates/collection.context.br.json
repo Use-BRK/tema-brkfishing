@@ -1,1 +1,31 @@
-{"parent":"collection.json","context":{"market":"br"},"sections":{}}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "collection.json",
+  "context": {
+    "market": "br"
+  },
+  "sections": {
+    "main": {
+      "settings": {
+        "enable_filtering": false,
+        "show_wishlist": false,
+        "show_compare": false,
+        "show_quick_view": false,
+        "items_per_row": 5,
+        "section_width": "stretch_width",
+        "items_to_show": 24,
+        "show_add_cart": true,
+        "enable_size_pills": false
+      },
+      "blocks": {}
+    }
+  }
+}
