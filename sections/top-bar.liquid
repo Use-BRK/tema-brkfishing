@@ -283,7 +283,7 @@
                   <label for="coupon-modal-1" class="coupon-modal-overlay">
                     <div class="coupon-modal" onclick="event.stopPropagation()">
                       <label for="coupon-modal-1" class="coupon-modal-close">&times;</label>
-                      {{ block_st.modal_text_1 }}
+                      {{ block_st.modal_text_1 | newline_to_br }}
                     </div>
                   </label>
                 {%- endif -%}
@@ -292,7 +292,7 @@
                   <label for="coupon-modal-2" class="coupon-modal-overlay">
                     <div class="coupon-modal" onclick="event.stopPropagation()">
                       <label for="coupon-modal-2" class="coupon-modal-close">&times;</label>
-                      {{ block_st.modal_text_2 }}
+                      {{ block_st.modal_text_2 | newline_to_br }}
                     </div>
                   </label>
                 {%- endif -%}
@@ -301,7 +301,7 @@
                   <label for="coupon-modal-3" class="coupon-modal-overlay">
                     <div class="coupon-modal" onclick="event.stopPropagation()">
                       <label for="coupon-modal-3" class="coupon-modal-close">&times;</label>
-                      {{ block_st.modal_text_3 }}
+                      {{ block_st.modal_text_3 | newline_to_br }}
                     </div>
                   </label>
                 {%- endif -%}
@@ -549,7 +549,7 @@
           "info": "Código que será copiado ao clicar em COPIAR"
         },
         {
-          "type": "liquid",
+          "type": "textarea",
           "id": "modal_text_1",
           "label": "Texto do modal (Texto 1)",
           "info": "Mensagem exibida no popup após copiar"
@@ -573,7 +573,7 @@
           "info": "Código que será copiado ao clicar em COPIAR"
         },
         {
-          "type": "liquid",
+          "type": "textarea",
           "id": "modal_text_2",
           "label": "Texto do modal (Texto 2)",
           "info": "Mensagem exibida no popup após copiar"
@@ -597,7 +597,7 @@
           "info": "Código que será copiado ao clicar em COPIAR"
         },
         {
-          "type": "liquid",
+          "type": "textarea",
           "id": "modal_text_3",
           "label": "Texto do modal (Texto 3)",
           "info": "Mensagem exibida no popup após copiar"
