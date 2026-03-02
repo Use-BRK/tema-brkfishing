@@ -373,8 +373,8 @@ class SlideSection extends HTMLElement {
       autoHeight: autoHeight,
       speed: speed,
       watchSlidesProgress: true,
-      watchSlidesVisibility: true,
       grabCursor: true,
+      touchStartPreventDefault: false,
       grid: {
         rows: row,
         fill: "row",
