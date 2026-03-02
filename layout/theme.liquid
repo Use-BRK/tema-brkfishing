@@ -198,7 +198,8 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
-  {% include 'pagefly-app-header' %}</head>
+    {% include 'pagefly-app-header' %}
+  </head>
   <body
     class="gradient{% if settings.rounded_corner > 1 and settings.enable_rounded %} rounded-style{% endif %}{% if settings.action_after_add_cart == 'show_popup' %} minicart_type-popup{% endif %}{% if enable_rtl %} rtl{% endif %} {% if request.page_type == 'cart'%}template-cart{% endif %} {{ request.page_type }}"
   >
@@ -223,13 +224,27 @@
     {%- render 'scripts-tag' -%}
     {%- render 'sprite-svg' -%}
     {%- render 'content-bottom' -%}
-    {%  render 'whatsapp-button' %}
+    {% render 'whatsapp-button' %}
 
     <!-- Forçar textos customizados no discount-block do app -->
     <script>
       (function () {
         var PLACEHOLDER = 'INSIRA UM CUPOM';
         var BUTTON_TEXT = 'OK';
+
+        // Mapa de traduções para mensagens de erro do NS Discount
+        var ERROR_TRANSLATIONS = {
+          'Coupon code is not valid!': 'Cupom inválido',
+          'Coupon code is not valid': 'Cupom inválido',
+          'Discount code is not valid!': 'Cupom inválido',
+          'Discount code is not valid': 'Cupom inválido',
+          'Coupon code has expired!': 'Cupom expirado',
+          'Coupon code has expired': 'Cupom expirado',
+          'Coupon code usage limit reached!': 'Limite de uso do cupom atingido!',
+          'Coupon code usage limit reached': 'Limite de uso do cupom atingido!',
+          'Minimum purchase amount not met!': 'Valor mínimo de compra não atingido!',
+          'Minimum purchase amount not met': 'Valor mínimo de compra não atingido!',
+        };
 
         function forceDiscountTexts() {
           var blocks = document.querySelectorAll('discount-block');
@@ -241,6 +256,24 @@
             }
             if (button && button.textContent.trim() !== BUTTON_TEXT) {
               button.textContent = BUTTON_TEXT;
+            }
+
+            // Traduzir mensagens de erro do NS Discount
+            var errorMessages = block.querySelectorAll('.dmp_error-message');
+            errorMessages.forEach(function (errorSpan) {
+              var originalText = errorSpan.textContent.trim();
+              if (ERROR_TRANSLATIONS[originalText]) {
+                errorSpan.textContent = ERROR_TRANSLATIONS[originalText];
+              }
+            });
+          });
+
+          // Também buscar fora dos discount-block (caso o erro seja injetado em outro lugar)
+          var globalErrors = document.querySelectorAll('.dmp_error-message');
+          globalErrors.forEach(function (errorSpan) {
+            var originalText = errorSpan.textContent.trim();
+            if (ERROR_TRANSLATIONS[originalText]) {
+              errorSpan.textContent = ERROR_TRANSLATIONS[originalText];
             }
           });
         }
@@ -257,7 +290,7 @@
           setTimeout(forceDiscountTexts, 5000);
         });
       })();
-    </script>    
+    </script>
   </body>
   {{ 'custom-frete.css' | asset_url | stylesheet_tag }}
 </html>

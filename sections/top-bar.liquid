@@ -43,6 +43,70 @@
         justify-content: center;
       }
     }
+    /* Coupon copy button */
+    .topbar-copy-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      margin-left: 6px;
+      padding: 1px 8px;
+      border: 1px solid currentColor;
+      border-radius: 3px;
+      font-size: 0.85em;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: opacity 0.2s;
+      vertical-align: middle;
+      line-height: 1.6;
+    }
+    .topbar-copy-btn:hover {
+      opacity: 0.7;
+    }
+    /* Coupon modal — checkbox hack */
+    .coupon-modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0, 0, 0, 0.45);
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      cursor: pointer;
+    }
+    .coupon-modal-check:checked + .coupon-modal-overlay {
+      display: flex;
+    }
+    .coupon-modal {
+      position: relative;
+      background: #fff;
+      color: #111;
+      border-radius: 12px;
+      padding: 28px 24px 24px;
+      max-width: 340px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+      font-size: 14px;
+      line-height: 1.6;
+      cursor: default;
+    }
+    .coupon-modal-close {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      background: none;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      color: #666;
+      line-height: 1;
+      padding: 4px;
+    }
+    .coupon-modal-close:hover {
+      color: #111;
+    }
   {%- endstyle -%}
   {%- capture style -%}
     --section-pt: {{ section_st.padding_top }}; --section-pb: {{ section_st.padding_bottom }};--swiper-navigation-color: var(--color-text);
@@ -157,6 +221,14 @@
                       <div class="swiper-slide flex align-center text-center text-lg-start lh-normal">
                         <div class="px-15">
                           {{- block_st.text1 -}}
+                          {%- if block_st.enable_copy_1 and block_st.coupon_code_1 != blank -%}
+                            <label
+                              for="coupon-modal-1"
+                              onclick="navigator.clipboard.writeText('{{ block_st.coupon_code_1 | escape }}')"
+                              class="topbar-copy-btn"
+                              >COPIAR</label
+                            >
+                          {%- endif -%}
                         </div>
                       </div>
                     {% endif %}
@@ -164,6 +236,14 @@
                       <div class="swiper-slide flex align-center text-center text-lg-start lh-normal">
                         <div class="px-15">
                           {{- block_st.text2 -}}
+                          {%- if block_st.enable_copy_2 and block_st.coupon_code_2 != blank -%}
+                            <label
+                              for="coupon-modal-2"
+                              onclick="navigator.clipboard.writeText('{{ block_st.coupon_code_2 | escape }}')"
+                              class="topbar-copy-btn"
+                              >COPIAR</label
+                            >
+                          {%- endif -%}
                         </div>
                       </div>
                     {% endif %}
@@ -171,11 +251,47 @@
                       <div class="swiper-slide flex align-center text-center text-lg-start lh-normal">
                         <div class="px-15">
                           {{- block_st.text3 -}}
+                          {%- if block_st.enable_copy_3 and block_st.coupon_code_3 != blank -%}
+                            <label
+                              for="coupon-modal-3"
+                              onclick="navigator.clipboard.writeText('{{ block_st.coupon_code_3 | escape }}')"
+                              class="topbar-copy-btn"
+                              >COPIAR</label
+                            >
+                          {%- endif -%}
                         </div>
                       </div>
                     {% endif %}
                   </div>
                 </slide-section>
+                {%- comment -%} Coupon modals — pure CSS checkbox hack {%- endcomment -%}
+                {%- if block_st.enable_copy_1 and block_st.coupon_code_1 != blank and block_st.modal_text_1 != blank -%}
+                  <input type="checkbox" id="coupon-modal-1" class="coupon-modal-check" hidden>
+                  <label for="coupon-modal-1" class="coupon-modal-overlay">
+                    <div class="coupon-modal" onclick="event.stopPropagation()">
+                      <label for="coupon-modal-1" class="coupon-modal-close">&times;</label>
+                      <p>{{ block_st.modal_text_1 }}</p>
+                    </div>
+                  </label>
+                {%- endif -%}
+                {%- if block_st.enable_copy_2 and block_st.coupon_code_2 != blank and block_st.modal_text_2 != blank -%}
+                  <input type="checkbox" id="coupon-modal-2" class="coupon-modal-check" hidden>
+                  <label for="coupon-modal-2" class="coupon-modal-overlay">
+                    <div class="coupon-modal" onclick="event.stopPropagation()">
+                      <label for="coupon-modal-2" class="coupon-modal-close">&times;</label>
+                      <p>{{ block_st.modal_text_2 }}</p>
+                    </div>
+                  </label>
+                {%- endif -%}
+                {%- if block_st.enable_copy_3 and block_st.coupon_code_3 != blank and block_st.modal_text_3 != blank -%}
+                  <input type="checkbox" id="coupon-modal-3" class="coupon-modal-check" hidden>
+                  <label for="coupon-modal-3" class="coupon-modal-overlay">
+                    <div class="coupon-modal" onclick="event.stopPropagation()">
+                      <label for="coupon-modal-3" class="coupon-modal-close">&times;</label>
+                      <p>{{ block_st.modal_text_3 }}</p>
+                    </div>
+                  </label>
+                {%- endif -%}
               </div>
             {%- when 'cur_lang' -%}
               <div class="lang__currency-desktop justify-content-center justity-md-unset topbar-item{% if block_st.hidden_on_mobile %} hidden flex-1025{% else %} flex{% endif %} flex-wrap gap-10 gap-lg-25 align-center row-gap-0">
@@ -408,16 +524,70 @@
           "default": "Sign up for 10% off your first order. Sign Up"
         },
         {
+          "type": "checkbox",
+          "id": "enable_copy_1",
+          "label": "Ativar botão COPIAR no Texto 1",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "coupon_code_1",
+          "label": "Código do cupom (Texto 1)",
+          "info": "Código que será copiado ao clicar em COPIAR"
+        },
+        {
+          "type": "textarea",
+          "id": "modal_text_1",
+          "label": "Texto do modal (Texto 1)",
+          "info": "Mensagem exibida no popup após copiar"
+        },
+        {
           "type": "inline_richtext",
           "id": "text2",
           "label": "t:sections.top-bar.blocks.text_slider.settings.text_2.label",
           "default": "100% secure online payment"
         },
         {
+          "type": "checkbox",
+          "id": "enable_copy_2",
+          "label": "Ativar botão COPIAR no Texto 2",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "coupon_code_2",
+          "label": "Código do cupom (Texto 2)",
+          "info": "Código que será copiado ao clicar em COPIAR"
+        },
+        {
+          "type": "textarea",
+          "id": "modal_text_2",
+          "label": "Texto do modal (Texto 2)",
+          "info": "Mensagem exibida no popup após copiar"
+        },
+        {
           "type": "inline_richtext",
           "id": "text3",
           "label": "t:sections.top-bar.blocks.text_slider.settings.text_3.label",
           "default": "Free Shipping for all order over $99"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_copy_3",
+          "label": "Ativar botão COPIAR no Texto 3",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "coupon_code_3",
+          "label": "Código do cupom (Texto 3)",
+          "info": "Código que será copiado ao clicar em COPIAR"
+        },
+        {
+          "type": "textarea",
+          "id": "modal_text_3",
+          "label": "Texto do modal (Texto 3)",
+          "info": "Mensagem exibida no popup após copiar"
         },
         {
           "type": "range",
