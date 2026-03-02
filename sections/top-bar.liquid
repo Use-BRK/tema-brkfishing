@@ -273,7 +273,7 @@
                   <label for="coupon-modal-1" class="coupon-modal-overlay">
                     <div class="coupon-modal" onclick="event.stopPropagation()">
                       <label for="coupon-modal-1" class="coupon-modal-close">&times;</label>
-                      <p>{{ block_st.modal_text_1 }}</p>
+                      {{ block_st.modal_text_1 }}
                     </div>
                   </label>
                 {%- endif -%}
@@ -282,7 +282,7 @@
                   <label for="coupon-modal-2" class="coupon-modal-overlay">
                     <div class="coupon-modal" onclick="event.stopPropagation()">
                       <label for="coupon-modal-2" class="coupon-modal-close">&times;</label>
-                      <p>{{ block_st.modal_text_2 }}</p>
+                      {{ block_st.modal_text_2 }}
                     </div>
                   </label>
                 {%- endif -%}
@@ -291,7 +291,7 @@
                   <label for="coupon-modal-3" class="coupon-modal-overlay">
                     <div class="coupon-modal" onclick="event.stopPropagation()">
                       <label for="coupon-modal-3" class="coupon-modal-close">&times;</label>
-                      <p>{{ block_st.modal_text_3 }}</p>
+                      {{ block_st.modal_text_3 }}
                     </div>
                   </label>
                 {%- endif -%}
@@ -539,7 +539,7 @@
           "info": "Código que será copiado ao clicar em COPIAR"
         },
         {
-          "type": "textarea",
+          "type": "richtext",
           "id": "modal_text_1",
           "label": "Texto do modal (Texto 1)",
           "info": "Mensagem exibida no popup após copiar"
@@ -563,7 +563,7 @@
           "info": "Código que será copiado ao clicar em COPIAR"
         },
         {
-          "type": "textarea",
+          "type": "richtext",
           "id": "modal_text_2",
           "label": "Texto do modal (Texto 2)",
           "info": "Mensagem exibida no popup após copiar"
@@ -587,7 +587,7 @@
           "info": "Código que será copiado ao clicar em COPIAR"
         },
         {
-          "type": "textarea",
+          "type": "richtext",
           "id": "modal_text_3",
           "label": "Texto do modal (Texto 3)",
           "info": "Mensagem exibida no popup após copiar"
