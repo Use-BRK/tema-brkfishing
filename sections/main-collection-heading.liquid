@@ -32,7 +32,7 @@
     class="section remove_spacing sec__page-heading color-{{ color_scheme }} gradient{% if image_bg != blank %} bg-transparent relative mb-60{% else %} mb-60{% endif %} flex align-center justify-content-{{ section_st.alignment }}"
     style="{{ style | strip | strip_newlines }}"
   >
-    {% if show_collection_image or background_image != blank %}
+    {% if image_bg != blank %}
       <div class="overlay-bg">
         {%- if image_bg != blank -%}
           {%- assign image_class = 'background-heading absolute inset-0 z--1 pointer-none w-full h-full object-position-center '
