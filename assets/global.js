@@ -373,8 +373,6 @@ class SlideSection extends HTMLElement {
       autoHeight: autoHeight,
       speed: speed,
       watchSlidesProgress: true,
-      grabCursor: true,
-      touchStartPreventDefault: false,
       grid: {
         rows: row,
         fill: "row",
@@ -889,7 +887,6 @@ class SlideLazyLoad {
       speed: speed,
       watchSlidesProgress: true,
       watchSlidesVisibility: true,
-      touchStartPreventDefault: false,
       grid: {
         rows: row,
         fill: "row",

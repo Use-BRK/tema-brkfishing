@@ -8135,7 +8135,6 @@ class SlideWithThumbs extends HTMLElement {
       speed: speed,
       watchSlidesProgress: true,
       watchSlidesVisibility: true,
-      touchStartPreventDefault: false,
       navigation: {
         nextEl: container?.querySelector(".swiper-button-next"),
         prevEl: container?.querySelector(".swiper-button-prev"),
@@ -8221,7 +8220,6 @@ class SlideWithThumbs extends HTMLElement {
       watchSlidesVisibility: watchSlidesVisibility,
       watchSlidesProgress: true,
       watchOverflow: watchOverflow,
-      touchStartPreventDefault: false,
       breakpoints: {
         768: {
           direction: direction,
