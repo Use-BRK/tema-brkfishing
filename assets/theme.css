@@ -202,15 +202,7 @@ input[type="checkbox"]:checked + .checkmark:before {
   user-select: none;
   -webkit-user-select: none;
 }
-/* Swiper mobile touch performance */
-slide-section.swiper {
-  touch-action: pan-y;
-}
-.swiper-slide {
-  will-change: transform;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
+
 .toolbar-sorter {
   text-wrap: nowrap;
 }

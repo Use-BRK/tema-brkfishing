@@ -889,6 +889,7 @@ class SlideLazyLoad {
       speed: speed,
       watchSlidesProgress: true,
       watchSlidesVisibility: true,
+      touchStartPreventDefault: false,
       grid: {
         rows: row,
         fill: "row",

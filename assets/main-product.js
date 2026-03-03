@@ -1154,6 +1154,7 @@ class SlideSectionProductSet extends HTMLElement {
       speed: speed,
       watchSlidesProgress: true,
       watchSlidesVisibility: true,
+      touchStartPreventDefault: false,
       grid: {
         rows: row,
         fill: "row",
