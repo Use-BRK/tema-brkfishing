@@ -206,7 +206,7 @@
                   <span class="content-badges-scrolling">
                     {{- card_product.metafields.custom.custom_product_badge | replace: '[percent_sale]', percent_number -}}
                   </span>
-                  {% if card_product.metafields.custom.custom_product_badge == "BRINDE" %}
+                  {% if card_product.metafields.custom.custom_product_badge contains "BRINDE" %}
                     {% render 'icon-gift' %}
                   {% else %}      
                     {% render 'icon-lighting' %}
