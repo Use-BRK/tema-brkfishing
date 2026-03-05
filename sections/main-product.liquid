@@ -32,7 +32,6 @@
   endif
   assign wishlist = pages.wishlist
   assign action_when_click_added_wishlist = theme_st.action_when_click_added_wishlist
-  assign is_detail_page = true
 -%}
 {%- capture style -%}
   --section-pt: {{ section_st.padding_top }}; --section-pb: {{ section_st.padding_bottom }};--speed: {{ section_st.speed }}s; --font-size: {{ section_st.font_size }};
@@ -212,7 +211,9 @@
       data-motion="fade-up-sm"
     >
       {% if enable_sticky_content_on_desktop %}
-        <div class="sticky top-30 {% if product.tags contains '_full' %}pt-55{% endif %}">
+        <div
+          class="sticky top-30 {% if product.tags contains '_full' or product.metafields.custom.custom_product_badge != blank %}pt-55{% endif %}"
+        >
       {% endif %}
       {%- assign product_form_id = 'product-form-' | append: section.id -%}
       {% if section.settings.image_zoom == 'external_zoom' %}
