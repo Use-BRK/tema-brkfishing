@@ -9,6 +9,10 @@
     assign enable_video_looping = section_st.enable_video_looping
     assign enable_video_autoplay = section_st.enable_video_autoplay
   endif
+  assign img_sizes = blank
+  if is_thumbnail
+    assign img_sizes = '150px'
+  endif
 %}
 {% for image in images %}
   {% if image.alt == 'image-360' and image.media_type == 'image' %}
@@ -46,7 +50,12 @@
     {% if image.alt == 'image-360' and image.media_type == 'image' %}
       <div class="{{ custom_class }}" style="--aspect-ratio: {{ ratio }}">
         {%- assign image_alt = image.alt | default: 'product' | escape -%}
-        {% render 'responsive-image', type: 'product', image: image.preview_image, image_alt: image_alt %}
+        {% render 'responsive-image',
+          type: 'product',
+          sizes: img_sizes,
+          image: image.preview_image,
+          image_alt: image_alt
+        %}
       </div>
       {% break %}
     {% endif %}
@@ -61,7 +70,7 @@
       class="cloudimage-360{{ custom_class }} rounded-5"
       data-fullscreen="true"
       {% comment %} product 360 will not work if use "" on data-image-list-x {% endcomment %}
-      data-image-list-x='[{{ image_list }}]'
+      data-image-list-x="[{{ image_list }}]"
       data-autoplay="true"
       data-play-once="true"
       data-speed="150"
@@ -122,6 +131,7 @@
           {%- assign image_alt = featured_media.alt | default: 'product' | escape -%}
           {% render 'responsive-image',
             type: 'product',
+            sizes: img_sizes,
             image: featured_media.preview_image,
             image_alt: image_alt,
             no_animate: true
@@ -170,6 +180,7 @@
           {%- assign image_alt = featured_media.alt | default: 'product' | escape -%}
           {% render 'responsive-image',
             type: 'product',
+            sizes: img_sizes,
             image: featured_media.preview_image,
             image_alt: image_alt,
             class: 'rounded-5',
@@ -213,6 +224,7 @@
           {%- assign image_alt = featured_media.alt | default: 'product' | escape -%}
           {% render 'responsive-image',
             type: 'product',
+            sizes: img_sizes,
             image: featured_media.preview_image,
             image_alt: image_alt,
             class: 'rounded-5',
@@ -235,6 +247,7 @@
                 {%- assign image_alt = featured_media.alt | default: 'product' | escape -%}
                 {% render 'responsive-image',
                   type: 'product',
+                  sizes: img_sizes,
                   image: featured_media.preview_image,
                   image_alt: image_alt
                 %}
@@ -291,6 +304,7 @@
           {%- assign image_alt = featured_media.alt | default: 'product' | escape -%}
           {% render 'responsive-image',
             type: 'product',
+            sizes: img_sizes,
             image: featured_media.preview_image,
             image_alt: image_alt,
             class: 'drift-trigger'
@@ -305,6 +319,7 @@
           {% if type != 'quickview' %}
             {% render 'responsive-image',
               type: 'product',
+              sizes: img_sizes,
               image: featured_media.preview_image,
               image_alt: image_alt,
               class: 'nn',
@@ -313,6 +328,7 @@
           {% else %}
             {% render 'responsive-image',
               type: 'product',
+              sizes: img_sizes,
               image: featured_media.preview_image,
               image_alt: image_alt,
               class: 'quickview'
@@ -374,6 +390,7 @@
             {%- assign image_alt = image.alt | default: 'product' | escape -%}
             {% render 'responsive-image',
               type: 'product',
+              sizes: img_sizes,
               image: image.preview_image,
               image_alt: image_alt,
               no_animate: true
@@ -432,6 +449,7 @@
             {%- assign image_alt = image.alt | default: 'product' | escape -%}
             {% render 'responsive-image',
               type: 'product',
+              sizes: img_sizes,
               image: image.preview_image,
               image_alt: image_alt,
               class: 'rounded-5',
@@ -475,6 +493,7 @@
             {%- assign image_alt = image.alt | default: 'product' | escape -%}
             {% render 'responsive-image',
               type: 'product',
+              sizes: img_sizes,
               image: image.preview_image,
               image_alt: image_alt,
               class: 'rounded-5',
@@ -495,7 +514,12 @@
                     {%- render 'icon-3d-model' -%}
                   </span>
                   {%- assign image_alt = image.alt | default: 'product' | escape -%}
-                  {% render 'responsive-image', type: 'product', image: image.preview_image, image_alt: image_alt %}
+                  {% render 'responsive-image',
+                    type: 'product',
+                    sizes: img_sizes,
+                    image: image.preview_image,
+                    image_alt: image_alt
+                  %}
                 </button>
                 <template>
                   {%- liquid
@@ -549,6 +573,7 @@
             {%- assign image_alt = image.alt | default: 'product' | escape -%}
             {% render 'responsive-image',
               type: 'product',
+              sizes: img_sizes,
               image: image.preview_image,
               image_alt: image_alt,
               class: 'drift-trigger'
@@ -571,12 +596,18 @@
             {% if is_thumbnail %}
               {% render 'responsive-image',
                 type: 'product',
+                sizes: img_sizes,
                 image: image.preview_image,
                 image_alt: image_alt,
                 no_animate: true
               %}
             {% else %}
-              {% render 'responsive-image', type: 'product', image: image.preview_image, image_alt: image_alt %}
+              {% render 'responsive-image',
+                type: 'product',
+                sizes: img_sizes,
+                image: image.preview_image,
+                image_alt: image_alt
+              %}
             {% endif %}
           {% endif %}
           {% if zoom_type != 'no_zoom' %}
