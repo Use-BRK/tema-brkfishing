@@ -19,33 +19,33 @@
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
-        "header-b0e284efebc733b52719e8ae30ecf911": null,
+        "header-b9849384f25cd33843219614fa15e53c": null,
         "heading": "🔥 Lançamentos 🔥",
         "description": "",
         "header_size": "medium",
         "header_alignment": "center",
-        "header-e9cf79df67484d6dc39ea25a94e3bb81": null,
+        "header-a0cb22b2decd5dc80eb6060ff541aa2c": null,
         "tab_header_style": "horizontal",
         "horizontal_tab_style": "underline",
         "display_mode": "grid",
         "items_to_show": 8,
         "items_per_row": 4,
         "column_gap": 30,
-        "header-d076e58df1362abefc4cf369a2eb77e2": null,
+        "header-b95b0948c70fd47fb6cdd17d1c263d4a": null,
         "show_arrow": false,
         "carousel_pagination": "disable",
         "infinite": false,
         "autoplay": false,
         "autorotate_speed": 5,
         "reveal": false,
-        "header-7f7ab39e7012a4fa401d8217b567340a": null,
+        "header-18c4fb3280c5119c3f836f4d9797e583": null,
         "rows": 2,
         "show_load_more_button": true,
         "button_label": "VER TUDO",
-        "header-45090c2c660bd76a9067b5936bbed3e3": null,
+        "header-e8acefdb0138bf6b13e59fa7db9d2f86": null,
         "carousel_on_mobile": true,
         "items_per_row_mobile": 1.5,
-        "header-30e2c71a8c0817c88d6d9c8f21f687d8": null,
+        "header-f44c2e6b670a74818854265e045d4549": null,
         "padding_top": 15,
         "padding_bottom": 15,
         "reset_spacing": false
@@ -82,18 +82,18 @@
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
-        "header-65677dd01cbb95ecffbc81bff6dc807f": null,
+        "header-dd620b8dc067e833e34e604c64598c70": null,
         "heading": "LANÇAMENTO • RaptorX",
         "description": "<strong>Oferta Exclusiva no Lançamento!</strong>",
         "show_view_all_button": false,
         "header_size": "small",
         "header_alignment": "center",
-        "header-56ec3ae1c195fa6f586fc8d9d87bc0ec": null,
+        "header-84c04524efa324c38189599af3e1afa8": null,
         "collection": "raptorx",
         "items_to_show": 3,
         "items_per_row": 3,
         "column_gap": 30,
-        "header-56590d09984b8a5bb3ce9618c1bb4346": null,
+        "header-a2c3d36ef5b1db756c8ce6c9190e2161": null,
         "show_banner": false,
         "sticky_banner": false,
         "banner_width": 30,
@@ -104,16 +104,16 @@
         "video_url": "",
         "local_video": null,
         "video_autoplay": true,
-        "header-bc3a646c4e93d2ecc285139cc6d8ce78": null,
+        "header-3c673d896660d27410c420cd005bb8a7": null,
         "show_arrow": false,
         "carousel_pagination": "show_dots_on_mobile",
         "infinite": false,
         "autoplay": false,
         "autorotate_speed": 5,
         "reveal": false,
-        "header-9ff6e76ad15fc15b84c3d8e0ede47057": null,
+        "header-d6f72f89a17f2d2918660ea9ae6cfdcc": null,
         "items_per_row_mobile": 1,
-        "header-8603ef945d291f9c8c79657fcb37ac86": null,
+        "header-44bcfba9860212eacb7b33981f52ff9e": null,
         "padding_top": 20,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -122,39 +122,150 @@
       "block_order": [],
       "name": "t:sections.products-carousel.name"
     },
+    "lookbook_product_KMnJB": {
+      "type": "lookbook-product",
+      "disabled": false,
+      "custom_css": [
+        "lookbook-item {display: none;}"
+      ],
+      "settings": {
+        "section_width": "stretch_width",
+        "color_scheme": "",
+        "header-81ef9a9ddc9aacc2813f56eabaa70054": null,
+        "heading": "Coleção Amazon + Brinde",
+        "description": "",
+        "header_size": "medium",
+        "header_alignment": "left",
+        "header-741127b808c305c428673a029c42917d": null,
+        "items_per_row": 2,
+        "column_gap": 30,
+        "image": "shopify://shop_images/ARARA_AZUL02.jpg",
+        "image_ratio": "square",
+        "custom_ratio": "",
+        "position": "left",
+        "hotspot_style": "dot",
+        "header-2c912d240844dd5a4bc6482c2736cd33": null,
+        "content": "#ffffff",
+        "padding_top_content": 0,
+        "padding_bottom_content": 0,
+        "header-a9570c71edb86a80e9d602b30829f2d0": null,
+        "show_arrow": true,
+        "carousel_pagination": "show_dots_on_mobile",
+        "infinite": false,
+        "autoplay": false,
+        "autorotate_speed": 5,
+        "header-74936c269d85c24aa1e6fab909fe1f99": null,
+        "items_per_row_mobile": 1.5,
+        "header-beab876c618d8dfe9a30f014dd102b7a": null,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "reset_spacing": false
+      },
+      "blocks": {
+        "product_6YfUJ": {
+          "type": "product",
+          "disabled": false,
+          "settings": {
+            "product": "camisa-de-pesca-feminina-brk-amazon-onca-com-protecao-uv50-1",
+            "header-f1aa6db55c0f87b9103be12539f3f6c1": null,
+            "offset_top": 50,
+            "offset_left": 50
+          }
+        },
+        "product_nfVAz": {
+          "type": "product",
+          "disabled": false,
+          "settings": {
+            "product": "camisa-de-pesca-feminina-brk-amazon-arara-vermelha-com-protecao-uv50",
+            "header-6318d85b4fb718f588b3122dcfccbd28": null,
+            "offset_top": 50,
+            "offset_left": 50
+          }
+        },
+        "product_rBYh3": {
+          "type": "product",
+          "disabled": false,
+          "settings": {
+            "product": "camisa-de-pesca-feminina-brk-amazon-onca-azul-com-protecao-uv50",
+            "header-0ef7a73658044e0d1c5e298efbdac364": null,
+            "offset_top": 50,
+            "offset_left": 50
+          }
+        },
+        "product_UM63k": {
+          "type": "product",
+          "disabled": false,
+          "settings": {
+            "product": "camisa-de-pesca-feminina-brk-amazon-tucano-com-protecao-uv50",
+            "header-a0f9a2eeefc2c6c77386debec425e0d0": null,
+            "offset_top": 50,
+            "offset_left": 50
+          }
+        },
+        "product_fe4bf": {
+          "type": "product",
+          "disabled": false,
+          "settings": {
+            "product": "camisa-de-pesca-feminina-brk-amazon-arara-vermelha-floral-com-protecao-uv50",
+            "header-20668bc57ba8a72dc0c5c16736740481": null,
+            "offset_top": 50,
+            "offset_left": 50
+          }
+        },
+        "product_7hzLb": {
+          "type": "product",
+          "disabled": false,
+          "settings": {
+            "product": "camisa-de-pesca-feminina-brk-amazon-onca-bege-com-protecao-uv50",
+            "header-796c7c75dd8f1c49e115357591dba259": null,
+            "offset_top": 50,
+            "offset_left": 50
+          }
+        }
+      },
+      "block_order": [
+        "product_6YfUJ",
+        "product_nfVAz",
+        "product_rBYh3",
+        "product_UM63k",
+        "product_fe4bf",
+        "product_7hzLb"
+      ],
+      "name": "Amazon BRK"
+    },
     "collection_tab_Ei9xq7": {
       "type": "collection-tab",
       "disabled": false,
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
-        "header-1514f4e4e322f5de4e8c8279b0d9c82f": null,
+        "header-909e3872ee402827a647f99ae75deb2c": null,
         "heading": "",
         "description": "",
         "header_size": "medium",
         "header_alignment": "center",
-        "header-9432e9324e2f407fa1b30806dc785cc8": null,
+        "header-f5a35b845979f5bd0c0a39f856132135": null,
         "tab_header_style": "horizontal",
         "horizontal_tab_style": "underline",
         "display_mode": "carousel",
         "items_to_show": 24,
         "items_per_row": 5,
         "column_gap": 30,
-        "header-4621346f3311dbc6cc4282f7d94cf543": null,
+        "header-79728f19b4817b5a36c9c4e459e85bb7": null,
         "show_arrow": true,
         "carousel_pagination": "show_dots",
         "infinite": true,
         "autoplay": false,
         "autorotate_speed": 3,
         "reveal": false,
-        "header-8d8ed7f735ad5fba45786abe09398a88": null,
+        "header-81b2ba379d0f40cbcd1ec0dc94a3cd05": null,
         "rows": 2,
         "show_load_more_button": true,
         "button_label": "Ver +",
-        "header-82f9d2d0d42e83017a8e974a00bbb3a0": null,
+        "header-04f75bad1424733a7909ec829185964e": null,
         "carousel_on_mobile": true,
         "items_per_row_mobile": 1.5,
-        "header-0a06e525aaec195da117c128eb02637b": null,
+        "header-d89df39d3f327d18a6902d82e7d66dcc": null,
         "padding_top": 20,
         "padding_bottom": 15,
         "reset_spacing": true
@@ -182,7 +293,7 @@
         "section_width": "full_width",
         "color_scheme": "",
         "custom_liquid": "{%- assign brk_video = \"https://cdn.shopify.com/videos/c/o/v/406f3167182c406d9fdbeae3733724bd.mp4\" -%}\n\n<video \n  src=\"{{ brk_video }}\" \n  autoplay \n  muted \n  loop \n  playsinline\n  style=\"width: 100%; height: auto; display: block;\">\n</video>",
-        "header-a2ec5f77428ee2b26b1e8f2ffae5de28": null,
+        "header-0963c98c4dbdc34fadfe392f67af36e5": null,
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -204,16 +315,16 @@
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
-        "header-4c6b1b41d736a1e0cb2a1eea626c56a3": null,
+        "header-ae3e77538f9ad990546bb73a7cb48695": null,
         "heading": "Kit Essencial 10% Off🔥",
         "description": "<p><strong>VÁLIDO ATÉ 31/01</strong></p>",
         "header_size": "medium",
         "header_alignment": "left",
-        "header-28d1fdfebfb255900733ae2b5f241c69": null,
+        "header-614cf1ab5e4e5f0027ebc8d442a2a1da": null,
         "minimum": 2,
         "maximum": 3,
         "enable_quantity": true,
-        "header-68025e5e72bc4088bbc48774f2ed4a4c": null,
+        "header-77ac1d272a445500f119f0e20d666090": null,
         "padding_top": 35,
         "padding_bottom": 0,
         "reset_spacing": true
@@ -232,7 +343,7 @@
             "items_to_show": 3,
             "items_per_row": 3,
             "column_gap": 30,
-            "header-7e3778048cb672df7427f14c0dc1e08c": null,
+            "header-9377f292eb913247a67e343fc677c1c7": null,
             "carousel_on_mobile": true,
             "items_per_row_mobile": 2
           }
@@ -243,14 +354,14 @@
           "settings": {
             "heading": "",
             "description": "<p>Adicione <strong>3 Itens</strong> essenciais para pesca e <strong>Ganhe 10% de Desconto</strong>! 🔥</p>",
-            "header-648a0086715ff7caea0147e8399e0791": null,
-            "header-7fb4986793dcce07f8f63e49271aa4cb": null,
-            "paragraph-b4cf418d1d04e49dfe5fb77164a9f9df": null,
+            "header-db3536fb99e44298618c94b43a418c39": null,
+            "header-8c06970cf741f38a9702a9f70d8d4a28": null,
+            "paragraph-b4b70c2046c43a3399d9c2deed850002": null,
             "heading_font_size": 24,
             "heading_font_weight": "heading_weight",
             "heading_uppercase": false,
             "heading_spacing_bottom": 20,
-            "paragraph-363664102fb7e5a406a31e7fe3e8d682": null,
+            "paragraph-ff9bc7194a1d7246fa82da344345d984": null,
             "des_font_size": 15,
             "des_font_weight": "body_weight",
             "des_spacing_bottom": 30
@@ -263,117 +374,6 @@
       ],
       "name": "Kit Essencial"
     },
-    "lookbook_product_KMnJB": {
-      "type": "lookbook-product",
-      "disabled": false,
-      "custom_css": [
-        "lookbook-item {display: none;}"
-      ],
-      "settings": {
-        "section_width": "stretch_width",
-        "color_scheme": "",
-        "header-1c533c6f3ca3f6b64eaaf443506c9048": null,
-        "heading": "Coleção Amazon + Brinde",
-        "description": "",
-        "header_size": "medium",
-        "header_alignment": "left",
-        "header-f1301d63ff2d515542be2931df66f1ed": null,
-        "items_per_row": 2,
-        "column_gap": 30,
-        "image": "shopify://shop_images/ARARA_AZUL02.jpg",
-        "image_ratio": "square",
-        "custom_ratio": "",
-        "position": "left",
-        "hotspot_style": "dot",
-        "header-85d8923841bbe3d6a9642a37ef4d4dbb": null,
-        "content": "#ffffff",
-        "padding_top_content": 0,
-        "padding_bottom_content": 0,
-        "header-590487d4c1963d6443e96bf8217189af": null,
-        "show_arrow": true,
-        "carousel_pagination": "show_dots_on_mobile",
-        "infinite": false,
-        "autoplay": false,
-        "autorotate_speed": 5,
-        "header-a9ea2679aabc02f222330bc445bb4142": null,
-        "items_per_row_mobile": 1.5,
-        "header-ba32edabfec8a2c5fcf5907a2218a84c": null,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "reset_spacing": false
-      },
-      "blocks": {
-        "product_6YfUJ": {
-          "type": "product",
-          "disabled": false,
-          "settings": {
-            "product": "camisa-de-pesca-feminina-brk-amazon-onca-com-protecao-uv50-1",
-            "header-5ed2000f786dde0631e853d49018a45b": null,
-            "offset_top": 50,
-            "offset_left": 50
-          }
-        },
-        "product_nfVAz": {
-          "type": "product",
-          "disabled": false,
-          "settings": {
-            "product": "camisa-de-pesca-feminina-brk-amazon-arara-vermelha-com-protecao-uv50",
-            "header-9930a706f0fc3986d41065959b1304f4": null,
-            "offset_top": 50,
-            "offset_left": 50
-          }
-        },
-        "product_rBYh3": {
-          "type": "product",
-          "disabled": false,
-          "settings": {
-            "product": "camisa-de-pesca-feminina-brk-amazon-onca-azul-com-protecao-uv50",
-            "header-338c6fa27eea6f7d06ac20b8a0f54711": null,
-            "offset_top": 50,
-            "offset_left": 50
-          }
-        },
-        "product_UM63k": {
-          "type": "product",
-          "disabled": false,
-          "settings": {
-            "product": "camisa-de-pesca-feminina-brk-amazon-tucano-com-protecao-uv50",
-            "header-d67e741615a7b5643f2ffc2459d1d1aa": null,
-            "offset_top": 50,
-            "offset_left": 50
-          }
-        },
-        "product_fe4bf": {
-          "type": "product",
-          "disabled": false,
-          "settings": {
-            "product": "camisa-de-pesca-feminina-brk-amazon-arara-vermelha-floral-com-protecao-uv50",
-            "header-44a453207a3423551db31f00a65704cd": null,
-            "offset_top": 50,
-            "offset_left": 50
-          }
-        },
-        "product_7hzLb": {
-          "type": "product",
-          "disabled": false,
-          "settings": {
-            "product": "camisa-de-pesca-feminina-brk-amazon-onca-bege-com-protecao-uv50",
-            "header-880568cdcd0d5a90025b490efbb86347": null,
-            "offset_top": 50,
-            "offset_left": 50
-          }
-        }
-      },
-      "block_order": [
-        "product_6YfUJ",
-        "product_nfVAz",
-        "product_rBYh3",
-        "product_UM63k",
-        "product_fe4bf",
-        "product_7hzLb"
-      ],
-      "name": "Amazon BRK"
-    },
     "video_bubble_KRgEh": {
       "type": "video-bubble",
       "disabled": false,
@@ -381,17 +381,17 @@
         "* {z-index: 13;}"
       ],
       "settings": {
-        "header-fdd47f340db778c29b827d35821cebd2": null,
+        "header-fd865ccd9021839f7e804cfbbe237e50": null,
         "video": "shopify://files/videos/TENIS RAPTOR X.mp4",
-        "header-4e2d2c002ba2e0ea1f6871b4d9fc4665": null,
+        "header-b0ca9420df7d05f37c987f5ebe3f89fd": null,
         "bubble_size": 70,
         "border_width": 1,
         "border_color": "#8f3104",
         "border_radius": 50,
-        "header-6b5cd0b511e00aaad7b4d513dd1156ac": null,
+        "header-ac702e763bab1b0aa86ac26f19a0edaa": null,
         "label_text": "RAPTORX",
         "link_url": "shopify://products/tenis-de-pesca-raptor-x-preto",
-        "header-b64a9301b74f22576c6996f3073b5aad": null,
+        "header-526dafbe0c1da2d4d9ea76ab2851ddb7": null,
         "offset_left": 20,
         "offset_bottom": 100
       },
@@ -411,13 +411,13 @@
           "name": "ArmorX",
           "disabled": false,
           "settings": {
-            "header-a5249899f8542f585cf5895201263a1c": null,
+            "header-655fed80253c66d1fab45bb33f41abd9": null,
             "image": "shopify://shop_images/DESKTOP_ARMORX_4f2e7dbb-f084-481a-9d03-96f02969ec8d.webp",
             "image_mobile": "shopify://shop_images/MOBILE_ARMORX_de1719c5-ef6c-4692-a9f6-53cb52a8055f.webp",
             "local_video": null,
             "overlay_opacity": 0,
             "link_banner": "shopify://collections/colecao-armorx-2026",
-            "header-8592b2aabeaea47abf91678cb62ee14c": null,
+            "header-57feb03f8b92e4712b83349bd112405f": null,
             "slider_effect": "effect_fadeinup",
             "subheading": "",
             "heading": "",
@@ -428,18 +428,18 @@
             "second_button_label": "",
             "second_button_link": "shopify://collections/camisa-fusionx-feminino",
             "second_button_style": false,
-            "header-1e2ba0b144406404d4c955e102b2c345": null,
+            "header-52c46599f3c5b7b56ea858d809fc3a69": null,
             "content_alignment": "left",
             "content_position": "bottom-left",
             "content_width": "full_width",
             "content_max_width": 100,
             "content_padding_block": 60,
             "content_padding_inline": 60,
-            "header-fb597d73b86b6c264843cab780167d92": null,
+            "header-239ca66cd127a1bbfe18dff6fcada151": null,
             "show_content_background": false,
             "content_background": "#ffffff",
             "content_box_opacity": 100,
-            "header-77c603e3e6c07a18cedad1c74efdab09": null,
+            "header-fbbee953198819cffcf9297bbf8386c3": null,
             "content_alignment_mobile": "center"
           }
         },
@@ -448,13 +448,13 @@
           "name": "RaptorX",
           "disabled": false,
           "settings": {
-            "header-c1d6fdd79a639eaecffa4e8a2d707bcc": null,
+            "header-df2e675b9ddfdfafeebc7055696f70c7": null,
             "image": "shopify://shop_images/FULLBANNER_LANCAMENTO_TENIS.png",
             "image_mobile": "shopify://shop_images/MOBILE_LANCAMENTO_TENIS.png",
             "local_video": null,
             "overlay_opacity": 0,
             "link_banner": "shopify://products/tenis-de-pesca-raptor-x-preto",
-            "header-55e9609fe05656311b349c16441791e5": null,
+            "header-b5f8ab5a85df06081752d4a8473347fb": null,
             "slider_effect": "effect_fadeinup",
             "subheading": "",
             "heading": "",
@@ -465,18 +465,18 @@
             "second_button_label": "",
             "second_button_link": "shopify://collections/camisa-fusionx-feminino",
             "second_button_style": false,
-            "header-aa7ddb8198df00073a7974914b96fb71": null,
+            "header-fb01e5d5b48222546cb4511d7d134145": null,
             "content_alignment": "left",
             "content_position": "bottom-left",
             "content_width": "full_width",
             "content_max_width": 100,
             "content_padding_block": 60,
             "content_padding_inline": 60,
-            "header-c4381d39618225ccabf8ecbc50cbf100": null,
+            "header-7f22468f487ffcf8763a9a8cc8b6ab78": null,
             "show_content_background": false,
             "content_background": "#ffffff",
             "content_box_opacity": 100,
-            "header-a911768f0d8ccc91260d785ef2fa1a9c": null,
+            "header-5940dbb9f33a40d771dfd3da29f874bb": null,
             "content_alignment_mobile": "center"
           }
         },
@@ -485,13 +485,13 @@
           "name": "Amazon",
           "disabled": false,
           "settings": {
-            "header-6088202cfbc67ba29c4512a0a6f86d0f": null,
+            "header-3df8dceb93cce3756219603f867a67f6": null,
             "image": "shopify://shop_images/Amazon_NewBanner.jpg",
             "image_mobile": "shopify://shop_images/Bannermob.jpg",
             "local_video": null,
             "overlay_opacity": 0,
             "link_banner": "shopify://collections/master-amazon-femininas",
-            "header-16392e5dc90b1da84d13e160df548f84": null,
+            "header-00dd23c546fafe64549a50c480b158b4": null,
             "slider_effect": "effect_fadeinup",
             "subheading": "",
             "heading": "",
@@ -502,18 +502,18 @@
             "second_button_label": "",
             "second_button_link": "shopify://collections/camisa-fusionx-masculino",
             "second_button_style": false,
-            "header-df062e0b292bbab6dbac0095d2a84094": null,
+            "header-cd0cc849738f3e963bb5db61a682fa88": null,
             "content_alignment": "center",
             "content_position": "top-center",
             "content_width": "full_width",
             "content_max_width": 100,
             "content_padding_block": 55,
             "content_padding_inline": 55,
-            "header-38daf5c014012375f0846861444d9812": null,
+            "header-09d5e2eb07aa2e7f1fbe201f59a8f33a": null,
             "show_content_background": false,
             "content_background": "#ffffff",
             "content_box_opacity": 100,
-            "header-8f59279e7b757e1d5f52919d5e8c547e": null,
+            "header-77392ed1c55ad0807c9d7872f01ccb34": null,
             "content_alignment_mobile": "right"
           }
         },
@@ -522,13 +522,13 @@
           "name": "Fusion",
           "disabled": false,
           "settings": {
-            "header-1419ff7e35d975b30e63024d00e2b75c": null,
+            "header-60649c4590f98e927e78bb7ae46bdfce": null,
             "image": "shopify://shop_images/FULLBANNER_NOVO_SITE_CAMISA_FUSIONX_FEM.png",
             "image_mobile": "shopify://shop_images/MOBILE_FEM_acb1c9b5-af40-4d51-8005-a4cb5445fc94.png",
             "local_video": null,
             "overlay_opacity": 0,
             "link_banner": "shopify://collections/camisa-fusionx-feminino",
-            "header-0fab03c1056ba416505e49385a0d6624": null,
+            "header-2eb8f486e1a0c986e8b44581f3ceca9d": null,
             "slider_effect": "effect_fadeinup",
             "subheading": "",
             "heading": "",
@@ -539,18 +539,18 @@
             "second_button_label": "",
             "second_button_link": "shopify://collections/camisa-fusionx-feminino",
             "second_button_style": false,
-            "header-63fc4dd88a5d5ec79f03f9bedea2bced": null,
+            "header-e28001df131f5160c363246615b360bc": null,
             "content_alignment": "left",
             "content_position": "bottom-left",
             "content_width": "full_width",
             "content_max_width": 100,
             "content_padding_block": 60,
             "content_padding_inline": 60,
-            "header-2912e8ed91235833ce9f5d3e098b82d2": null,
+            "header-8abd2f4db612bc4ea46e1d2bda681b7b": null,
             "show_content_background": false,
             "content_background": "#ffffff",
             "content_box_opacity": 100,
-            "header-2dfeb90f7f5e52dfb2cda77143faba58": null,
+            "header-69281d82d5e0e8e173ee562ad0c5b37c": null,
             "content_alignment_mobile": "center"
           }
         }
@@ -573,7 +573,7 @@
       "blocks": {
         "scrolling_text_Bmp7bG": {
           "settings": {
-            "content": "FRETE FIXO R$9,90"
+            "content": "ENVIO RÁPIDO"
           }
         },
         "scrolling_text_7defWk": {
