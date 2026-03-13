@@ -17,9 +17,9 @@
       "custom_css": [],
       "settings": {
         "enable_sticky_content_on_desktop": true,
-        "mobile_options": "show_thumbnails",
+        "enable_on_desktop": false,
         "enable_on_mobile": false,
-        "enable_on_desktop": false
+        "mobile_options": "show_thumbnails"
       },
       "blocks": {
         "product_meta_FUixq": {
@@ -42,7 +42,7 @@
           "type": "sku_prazo",
           "disabled": false,
           "settings": {
-            "producao": "9",
+            "producao": "10",
             "algodao": "1",
             "imediato": "0"
           }
