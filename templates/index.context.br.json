@@ -405,7 +405,7 @@
         "scrolling_text_7defWk": {
           "disabled": false,
           "settings": {
-            "content": "PARA TODO O BRASIL"
+            "content": "PARA TODO BRASIL"
           }
         },
         "scrolling_text_fBNd9c": {
@@ -418,6 +418,7 @@
       "disabled": false,
       "settings": {
         "section_width": "fluid_container",
+        "display_mode": "grid",
         "items_to_show": 24,
         "items_per_row": 5,
         "column_gap": 30,
@@ -426,19 +427,18 @@
         "autoplay": false,
         "reveal": false,
         "padding_top": 15,
-        "padding_bottom": 15,
-        "display_mode": "grid"
+        "padding_bottom": 15
       },
       "blocks": {
+        "collection_gw7XPN": {
+          "settings": {
+            "collection": "master-amazon-femininas"
+          }
+        },
         "collection_DUa6Xx": {
           "settings": {
             "collection": "lancamentos-masculino-1",
             "collection_title": "Masculino"
-          }
-        },
-        "collection_gw7XPN": {
-          "settings": {
-            "collection": "master-amazon-femininas"
           }
         }
       },
