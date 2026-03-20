@@ -614,7 +614,7 @@
             "image_mobile": "shopify://shop_images/MOBILE_NOVOS_OCULOS_POLARIZADOS.gif",
             "local_video": null,
             "overlay_opacity": 0,
-            "link_banner": "",
+            "link_banner": "shopify://collections/oculos-de-sol",
             "header-a5512cb88da0b5795990f75d0726e29b": null,
             "slider_effect": "effect_fadeindown",
             "subheading": "",
