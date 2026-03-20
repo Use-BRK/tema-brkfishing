@@ -12,18 +12,10 @@
     "market": "br"
   },
   "current": {
-    "product_recommendations_heading": "Mês do Consumidor 🔥",
-    "product_recommendations_type": "select",
-    "select_product_recommendations": [
-      "vara-de-pesca-maruri-attack-c-561m-17lb-2-10m-carretilha-inteirica",
-      "carretilha-maruri-juice-preta-6-rol-recolhimento-7-3-1-manivela-esquerda",
-      "carretilha-maruri-juice-vermelha-6-rol-recolhimento-7-3-1-manivela-esquerda",
-      "vara-de-pesca-maruri-laranja-hyperion-c-902h-60lb-2-70m-carretilha-2-partes",
-      "vara-de-pesca-maruri-verde-hyperion-c-802h-60lb-2-40m-carretilha-2-partes",
-      "vara-de-pesca-maruri-attack-c-561mh-20lb-1-65m-carretilha-inteirica",
-      "vara-de-pesca-maruri-drako-c-601h-25lb-1-73m-carretilha-inteirica",
-      "vara-de-pesca-marine-sports-titan-x-bg-ttx-c902h-40lbs-2-74m-carretilha-2-partes"
-    ],
+    "product_recommendations_heading": "",
+    "minicart_type": "disable",
+    "product_recommendations_type": "auto",
+    "select_product_recommendations": [],
     "color_schemes": {
       "default": {
         "settings": {}
