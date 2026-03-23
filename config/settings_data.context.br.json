@@ -44,6 +44,13 @@
       "scheme-3e8af4c8-b99d-456e-90a0-9e470643087b": {
         "settings": {}
       }
+    },
+    "blocks": {
+      "16555213172727936593": {
+        "type": "shopify://apps/ns-discount-in-cart/blocks/discount_block/0cbbbcdd-bf54-49df-885c-9ca3fd52a671",
+        "disabled": true,
+        "settings": {}
+      }
     }
   }
 }
