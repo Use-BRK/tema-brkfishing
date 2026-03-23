@@ -39,7 +39,10 @@ header {
 
 /* Custom Detail Product */
 input.option-disabled+.product__item-option, .option-disabled .product__item-option{
-  opacity: .4;
+  display: none;
+}
+input.option-disabled{
+  display: none;
 }
 
 /*Custom App Grid Variants Style*/
