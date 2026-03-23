@@ -979,9 +979,9 @@ button[form="minicart"] {
 
 
 /* esconde botão de inserir cupom nativo do glozin */
-.mini_cart_coupon {
+/* .mini_cart_coupon {
   display: none;
-}
+} */
 
 @media screen and (max-width: 768px) {
   .minicart-body {
