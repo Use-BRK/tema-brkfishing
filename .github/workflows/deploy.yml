@@ -1,4 +1,4 @@
-name: Deploy to Shopify development theme
+name: Deploy to Shopify Development Theme
 
 on:
   push:
