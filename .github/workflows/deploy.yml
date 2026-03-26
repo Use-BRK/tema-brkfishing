@@ -1,4 +1,4 @@
-name: Deploy Theme to Shopify
+name: Deploy to Shopify Production Theme
 
 on:
   push:
@@ -20,7 +20,7 @@ jobs:
       - name: Install Shopify CLI
         run: npm install -g @shopify/cli@latest
 
-      - name: Deploy to Shopify
+      - name: Deploy to Shopify Production Theme
         env:
           SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_CLI_THEME_TOKEN }}
         run: |
