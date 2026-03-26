@@ -3,7 +3,7 @@ name: Deploy to Shopify Production Theme
 on:
   push:
     branches:
-      - main # O deploy acontece quando você faz push ou merge na main
+      - main
 
 jobs:
   deploy:
