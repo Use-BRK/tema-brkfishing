@@ -8133,7 +8133,6 @@ class SlideWithThumbs extends HTMLElement {
       loop: loop,
       effect: effect,
       speed: speed,
-      autoHeight: true,
       watchSlidesProgress: true,
       watchSlidesVisibility: true,
       navigation: {
