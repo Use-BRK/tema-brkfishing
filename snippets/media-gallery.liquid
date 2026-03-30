@@ -55,6 +55,13 @@
     {% assign class_prodcut_mobile = 'show-on-mobile' %}
   {% endif %}
 {% endif %}
+{% comment %} Get the featured image aspect ratio to unify all swiper slide heights {% endcomment %}
+{% assign featured_ratio = null %}
+{% if product.selected_or_first_available_variant.featured_media != null %}
+  {% assign featured_ratio = product.selected_or_first_available_variant.featured_media.preview_image.aspect_ratio %}
+{% elsif images.first.preview_image != blank %}
+  {% assign featured_ratio = images.first.preview_image.aspect_ratio %}
+{% endif %}
 <media-gallery
   class="block{% if enable_sticky_content_on_desktop %} sticky top-30{% endif %}"
   data-layout="{{ layout }}"
@@ -109,7 +116,8 @@
                 custom_class: ' swiper-slide media-item',
                 is_thumbnail: is_shopable_video,
                 zoom_type: image_zoom,
-                type: type
+                type: type,
+                forced_ratio: featured_ratio
               %}
             </div>
             {%- render 'swiper-navigation', class: 'main-slide__navigation', class_prodcut_mobile: class_prodcut_mobile -%}
