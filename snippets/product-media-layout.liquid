@@ -105,9 +105,7 @@
           endif
       endcase
     else
-      if forced_ratio != blank and forced_ratio != null
-        assign ratio = forced_ratio
-      elsif featured_media.preview_image != blank
+      if featured_media.preview_image != blank
         assign ratio = featured_media.preview_image.aspect_ratio
       else
         assign ratio = '3/4'
@@ -365,9 +363,7 @@
             endif
         endcase
       else
-        if forced_ratio != blank and forced_ratio != null
-          assign ratio = forced_ratio
-        elsif image.preview_image != blank
+        if image.preview_image != blank
           assign ratio = image.preview_image.aspect_ratio
         else
           assign ratio = '3/4'
