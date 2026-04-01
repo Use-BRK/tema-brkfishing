@@ -327,43 +327,6 @@
         "content_below_image": false
       },
       "blocks": {
-        "slider_item_dP4zBf": {
-          "type": "slider_item",
-          "name": "Amazon",
-          "disabled": false,
-          "settings": {
-            "header-84eae13b4d3eb0e4216eae54694b8e35": null,
-            "image": "shopify://shop_images/Amazon_NewBanner.jpg",
-            "image_mobile": "shopify://shop_images/Bannermob.jpg",
-            "local_video": null,
-            "overlay_opacity": 0,
-            "link_banner": "shopify://collections/master-amazon-femininas",
-            "header-f6218bddc2cc446ad1bcc773b9acbbeb": null,
-            "slider_effect": "effect_fadeinup",
-            "subheading": "",
-            "heading": "",
-            "description": "",
-            "first_button_label": "",
-            "first_button_link": "shopify://collections/camisa-fusionx-masculino",
-            "first_button_style": false,
-            "second_button_label": "",
-            "second_button_link": "shopify://collections/camisa-fusionx-masculino",
-            "second_button_style": false,
-            "header-f76ccf5ecc9d8d7c9d8fcfc748580a55": null,
-            "content_alignment": "center",
-            "content_position": "top-center",
-            "content_width": "full_width",
-            "content_max_width": 100,
-            "content_padding_block": 55,
-            "content_padding_inline": 55,
-            "header-fa80c8993f7e634503e84111ccadfa91": null,
-            "show_content_background": false,
-            "content_background": "#ffffff",
-            "content_box_opacity": 100,
-            "header-8dd5a7cbda1a4a7da0d21ebb5a742871": null,
-            "content_alignment_mobile": "right"
-          }
-        },
         "slider_item_TzyDJp": {
           "type": "slider_item",
           "name": "RaptorX",
@@ -399,6 +362,43 @@
             "content_box_opacity": 100,
             "header-5d3ba65a1324b39572cf9c4b55216551": null,
             "content_alignment_mobile": "center"
+          }
+        },
+        "slider_item_dP4zBf": {
+          "type": "slider_item",
+          "name": "Amazon",
+          "disabled": false,
+          "settings": {
+            "header-84eae13b4d3eb0e4216eae54694b8e35": null,
+            "image": "shopify://shop_images/Amazon_NewBanner.jpg",
+            "image_mobile": "shopify://shop_images/Bannermob.jpg",
+            "local_video": null,
+            "overlay_opacity": 0,
+            "link_banner": "shopify://collections/master-amazon-femininas",
+            "header-f6218bddc2cc446ad1bcc773b9acbbeb": null,
+            "slider_effect": "effect_fadeinup",
+            "subheading": "",
+            "heading": "",
+            "description": "",
+            "first_button_label": "",
+            "first_button_link": "shopify://collections/camisa-fusionx-masculino",
+            "first_button_style": false,
+            "second_button_label": "",
+            "second_button_link": "shopify://collections/camisa-fusionx-masculino",
+            "second_button_style": false,
+            "header-f76ccf5ecc9d8d7c9d8fcfc748580a55": null,
+            "content_alignment": "center",
+            "content_position": "top-center",
+            "content_width": "full_width",
+            "content_max_width": 100,
+            "content_padding_block": 55,
+            "content_padding_inline": 55,
+            "header-fa80c8993f7e634503e84111ccadfa91": null,
+            "show_content_background": false,
+            "content_background": "#ffffff",
+            "content_box_opacity": 100,
+            "header-8dd5a7cbda1a4a7da0d21ebb5a742871": null,
+            "content_alignment_mobile": "right"
           }
         },
         "slider_item_8BGnEt": {
@@ -521,25 +521,27 @@
         "infinite": false,
         "autoplay": false,
         "reveal": false,
-        "padding_top": 15,
-        "padding_bottom": 15
+        "padding_top": 0,
+        "padding_bottom": 15,
+        "reset_spacing": true,
+        "button_label": "VER MAIS"
       },
       "blocks": {
-        "collection_gw7XPN": {
-          "settings": {
-            "collection": "master-amazon-femininas"
-          }
-        },
         "collection_DUa6Xx": {
           "settings": {
             "collection": "lancamentos-masculino-1",
             "collection_title": "Masculino"
           }
+        },
+        "collection_gw7XPN": {
+          "settings": {
+            "collection": "master-amazon-femininas"
+          }
         }
       },
       "block_order": [
-        "collection_gw7XPN",
-        "collection_DUa6Xx"
+        "collection_DUa6Xx",
+        "collection_gw7XPN"
       ]
     },
     "collection_list_LNdi9y": {
