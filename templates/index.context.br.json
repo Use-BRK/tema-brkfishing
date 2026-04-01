@@ -327,43 +327,6 @@
         "content_below_image": false
       },
       "blocks": {
-        "slider_item_TzyDJp": {
-          "type": "slider_item",
-          "name": "RaptorX",
-          "disabled": false,
-          "settings": {
-            "header-99fac99f677075346ae82b454911af72": null,
-            "image": "shopify://shop_images/FULLBANNER_LANCAMENTO_TENIS.png",
-            "image_mobile": "shopify://shop_images/MOBILE_LANCAMENTO_TENIS.png",
-            "local_video": null,
-            "overlay_opacity": 0,
-            "link_banner": "shopify://products/tenis-de-pesca-raptor-x-preto",
-            "header-2e45207406f2b21e14e7c03b92c57c8c": null,
-            "slider_effect": "effect_fadeinup",
-            "subheading": "",
-            "heading": "",
-            "description": "",
-            "first_button_label": "",
-            "first_button_link": "shopify://collections/camisa-fusionx-feminino",
-            "first_button_style": false,
-            "second_button_label": "",
-            "second_button_link": "shopify://collections/camisa-fusionx-feminino",
-            "second_button_style": false,
-            "header-1d1928ef255bd8162c999ed9cd9259a0": null,
-            "content_alignment": "left",
-            "content_position": "bottom-left",
-            "content_width": "full_width",
-            "content_max_width": 100,
-            "content_padding_block": 60,
-            "content_padding_inline": 60,
-            "header-8abb07c29f7d12992090cda295fe83ad": null,
-            "show_content_background": false,
-            "content_background": "#ffffff",
-            "content_box_opacity": 100,
-            "header-5d3ba65a1324b39572cf9c4b55216551": null,
-            "content_alignment_mobile": "center"
-          }
-        },
         "slider_item_dP4zBf": {
           "type": "slider_item",
           "name": "Amazon",
@@ -399,6 +362,43 @@
             "content_box_opacity": 100,
             "header-8dd5a7cbda1a4a7da0d21ebb5a742871": null,
             "content_alignment_mobile": "right"
+          }
+        },
+        "slider_item_TzyDJp": {
+          "type": "slider_item",
+          "name": "RaptorX",
+          "disabled": false,
+          "settings": {
+            "header-99fac99f677075346ae82b454911af72": null,
+            "image": "shopify://shop_images/FULLBANNER_LANCAMENTO_TENIS.png",
+            "image_mobile": "shopify://shop_images/MOBILE_LANCAMENTO_TENIS.png",
+            "local_video": null,
+            "overlay_opacity": 0,
+            "link_banner": "shopify://products/tenis-de-pesca-raptor-x-preto",
+            "header-2e45207406f2b21e14e7c03b92c57c8c": null,
+            "slider_effect": "effect_fadeinup",
+            "subheading": "",
+            "heading": "",
+            "description": "",
+            "first_button_label": "",
+            "first_button_link": "shopify://collections/camisa-fusionx-feminino",
+            "first_button_style": false,
+            "second_button_label": "",
+            "second_button_link": "shopify://collections/camisa-fusionx-feminino",
+            "second_button_style": false,
+            "header-1d1928ef255bd8162c999ed9cd9259a0": null,
+            "content_alignment": "left",
+            "content_position": "bottom-left",
+            "content_width": "full_width",
+            "content_max_width": 100,
+            "content_padding_block": 60,
+            "content_padding_inline": 60,
+            "header-8abb07c29f7d12992090cda295fe83ad": null,
+            "show_content_background": false,
+            "content_background": "#ffffff",
+            "content_box_opacity": 100,
+            "header-5d3ba65a1324b39572cf9c4b55216551": null,
+            "content_alignment_mobile": "center"
           }
         },
         "slider_item_8BGnEt": {
@@ -538,8 +538,8 @@
         }
       },
       "block_order": [
-        "collection_DUa6Xx",
-        "collection_gw7XPN"
+        "collection_gw7XPN",
+        "collection_DUa6Xx"
       ]
     },
     "collection_list_LNdi9y": {
