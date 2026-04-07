@@ -30,7 +30,7 @@
           "type": "store_information",
           "disabled": false,
           "settings": {
-            "paragraph-7dfcbfbc666231e8930af95dbff8ef6f": null,
+            "paragraph-07a41f3a067a6c21dd24e0361b5d3402": null,
             "show_email": false,
             "show_phone": true,
             "hidden_on_mobile": true
@@ -64,14 +64,11 @@
       "disabled": false,
       "settings": {
         "hot": "+ BRINDE",
-        "collection_list": [
-          "ofertas-ate-59",
-          "ofertas-ate-129",
-          "ofertas-ate-299"
-        ],
+        "collection_list": [],
         "show_wishlist_icon": false,
         "padding_top": 15,
-        "padding_bottom": 15
+        "padding_bottom": 15,
+        "menu_tab": "unset"
       },
       "blocks": {
         "menu_promotion_NkqYkU": {
@@ -82,19 +79,19 @@
             "text": "LINHA AMAZON 🎁",
             "open-link-newtab": false,
             "item_label": "hot",
-            "header-e02916287e2ef9b4133d1c43e7666bb2": null,
+            "header-9fe05ddab9bf998c5900f80b96ffb0a7": null,
             "promotion_menu_column": 2,
             "mega_custom_width": 600,
             "center_submenu": false,
             "full_width": false,
-            "header-344ccc9f69918a4984c4fae3a016bb22": null,
+            "header-d9857cad67f4becf493dc464dd321146": null,
             "promotion_position": "right",
             "promotion_image_width": 27,
-            "header-32cfc362f68af39fc36a078a468ec778": null,
+            "header-1d98708a57c3e4d4521458f90f131844": null,
             "promotion_image_1": null,
             "promotion_link_1": "",
             "promotion_link_newtab_1": true,
-            "header-9346a92f3bb5dc9762433b647b36bbf3": null,
+            "header-6b84e5533bc2314c6f4ed9327d4e7841": null,
             "promotion_image_2": null,
             "promotion_link_2": "",
             "promotion_link_newtab_2": true
@@ -108,19 +105,19 @@
             "text": "ARMORX",
             "open-link-newtab": false,
             "item_label": "hot",
-            "header-ee435015189c059c3ea17a5c875369b0": null,
+            "header-3db041e302ef1413c050be7f28aced74": null,
             "promotion_menu_column": 2,
             "mega_custom_width": 600,
             "center_submenu": false,
             "full_width": false,
-            "header-20bccb69924fea5c9a860c746cdbe1ce": null,
+            "header-a8d92850a1e182fb9f9eb42e900a871c": null,
             "promotion_position": "right",
             "promotion_image_width": 27,
-            "header-7f0519e6f477bc3652c83010a34bc6e0": null,
+            "header-586f3d62a8d4dca40e4bca96604c2840": null,
             "promotion_image_1": null,
             "promotion_link_1": "",
             "promotion_link_newtab_1": true,
-            "header-07a97d4f86a6d10070cc592928c942fc": null,
+            "header-db12cae281564c8ad66765953874950c": null,
             "promotion_image_2": null,
             "promotion_link_2": "",
             "promotion_link_newtab_2": true
