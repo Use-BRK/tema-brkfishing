@@ -18,8 +18,14 @@
           "type": "text_slider",
           "settings": {
             "text1": "<strong>R$15 OFF </strong>na primeira compra, cupom: <strong>BEMVINDO</strong>",
+            "enable_copy_1": true,
+            "coupon_code_1": "BEMVINDO",
             "text2": "Baixe o App",
+            "enable_copy_2": false,
+            "coupon_code_2": "",
             "text3": "Frete fixo <strong>por R$0,26</strong>",
+            "enable_copy_3": false,
+            "coupon_code_3": "",
             "change_every": 3,
             "hidden_on_mobile": false
           }
