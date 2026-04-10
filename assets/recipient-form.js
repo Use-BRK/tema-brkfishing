@@ -53,7 +53,7 @@ if (!customElements.get('recipient-form')) {
           this.onChange();
           
           // === AÇÕES AO CARREGAR ===
-          const skuArea = document.querySelector('.product_sku__area');
+          const skuArea = document.querySelector('.product__sku');
           if (skuArea) {
             skuArea.textContent = 'Consultar prazo de fabricação dos produtos que serão presenteados';
           }

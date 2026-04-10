@@ -5598,8 +5598,7 @@ class SwatchFunctions extends SwatchInit {
     const compare_at_price = this.currentVariant.compare_at_price;
     const price = this.currentVariant.price;
     let avaiable = productTarget.querySelector(".available-value");
-    // let sku_area = productTarget.querySelector(".product__sku");
-    let sku_area = productTarget.querySelector(".product_sku__area");
+    let sku_area = productTarget.querySelector(".product__sku");
     // Update option labels
     const productDetailPicker = productTarget.querySelector(
       ".product-detail__variant-picker"
@@ -5633,11 +5632,8 @@ class SwatchFunctions extends SwatchInit {
       }
     }
 
-    // if (sku_area) sku_area.innerHTML = sku ? sku : "N/A";
     if (sku_area) {
-      sku_area.innerHTML = `${sku}`;
-    } else {
-      sku_area.innerHTML = 'N/A';
+      sku_area.innerHTML = sku ? sku : 'N/A';
     }
 
 
