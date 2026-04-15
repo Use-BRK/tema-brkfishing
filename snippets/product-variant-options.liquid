@@ -24,6 +24,9 @@
           endif
       endcase
     endfor
+    if option_disabled
+      continue
+    endif
   -%}
   {% if variant_type == 'dropdown' %}
     <swatch-dropdown-item class="block text-color hover-heading-color transition body_weight">
