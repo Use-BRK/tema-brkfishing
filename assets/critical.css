@@ -3325,7 +3325,7 @@ nav.mobile {
 
 .product-detail__variant-picker fieldset .ident-size-block {
   display:flex;
-  gap: 1.5rem!important;
+  gap: 1rem!important;
   flex-wrap:wrap;
 }
 
@@ -3335,7 +3335,7 @@ nav.mobile {
   .product-detail__variant-picker fieldset .ident-size-block {
     display: flex;
     width: 100%;
-    column-gap: 1.5rem;
+    column-gap: 1rem;
     flex-wrap:nowrap;
   }
   
