@@ -4558,6 +4558,7 @@ class ButtonSubmitBundle extends HTMLElement {
           if (cartFreeShip) {
             cartFreeShip.init(cart.items_subtotal_price);
           }
+          GiftProgressBar.scheduleSync();
         }
       })
       .catch((error) => {
@@ -4809,6 +4810,7 @@ if (!customElements.get("product-form-quick-edit")) {
                   if (cart_free_ship) {
                     cart_free_ship.init(cart.items_subtotal_price);
                   }
+                  GiftProgressBar.scheduleSync();
                 }
               })
               .catch((error) => {
@@ -7527,6 +7529,7 @@ if (!customElements.get("product-form")) {
                   if (cart_free_ship) {
                     cart_free_ship.init(cart.items_subtotal_price);
                   }
+                  GiftProgressBar.scheduleSync();
                 }
               })
               .catch((error) => {
