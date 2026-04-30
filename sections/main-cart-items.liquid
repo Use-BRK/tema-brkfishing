@@ -643,6 +643,7 @@
                   </div>
                 </free-ship-progress-bar>
               {% endif %}
+              {%- render 'gift-progress-bar', context: 'cart-page' -%}
               {%- if enable_cart_note -%}
                 <cart-note class="cart__note field block gap-0 border-0 border-bottom lh-1 {% if free_shipping and shipping_rate > 0 %} pt-25 pb-30{% else %} pb-30{% endif %} mb-25">
                   <h6 class="mt-0 mb-15 lh-normal">

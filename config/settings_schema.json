@@ -1299,6 +1299,84 @@
       },
       {
         "type": "header",
+        "content": "Barra de Brinde"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_gift_bar",
+        "label": "Ativar barra de brinde",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "gift_threshold_1",
+        "label": "Brinde 1 - valor minimo",
+        "info": "Valor em reais, sem simbolo. Ex.: 100"
+      },
+      {
+        "type": "product",
+        "id": "gift_product_1",
+        "label": "Brinde 1 - produto"
+      },
+      {
+        "type": "text",
+        "id": "gift_threshold_2",
+        "label": "Brinde 2 - valor minimo",
+        "info": "Valor em reais, sem simbolo. Ex.: 200"
+      },
+      {
+        "type": "product",
+        "id": "gift_product_2",
+        "label": "Brinde 2 - produto"
+      },
+      {
+        "type": "text",
+        "id": "gift_threshold_3",
+        "label": "Brinde 3 - valor minimo",
+        "info": "Valor em reais, sem simbolo. Ex.: 300"
+      },
+      {
+        "type": "product",
+        "id": "gift_product_3",
+        "label": "Brinde 3 - produto"
+      },
+      {
+        "type": "text",
+        "id": "gift_threshold_4",
+        "label": "Brinde 4 - valor minimo",
+        "info": "Valor em reais, sem simbolo. Ex.: 400"
+      },
+      {
+        "type": "product",
+        "id": "gift_product_4",
+        "label": "Brinde 4 - produto"
+      },
+      {
+        "type": "text",
+        "id": "gift_threshold_5",
+        "label": "Brinde 5 - valor minimo",
+        "info": "Valor em reais, sem simbolo. Ex.: 500"
+      },
+      {
+        "type": "product",
+        "id": "gift_product_5",
+        "label": "Brinde 5 - produto"
+      },
+      {
+        "type": "text",
+        "id": "gift_bar_unavailable_text",
+        "label": "Texto quando falta valor",
+        "info": "Use {{ amount }} para o valor restante",
+        "default": "Faltam {{ amount }} para ganhar um brinde!"
+      },
+      {
+        "type": "text",
+        "id": "gift_bar_available_text",
+        "label": "Texto quando atingiu o valor",
+        "default": "Parabéns! Você ganhou um brinde!"
+      },
+      {
+        "type": "header",
         "content": "t:settings_schema.cart.settings.cart_count_down.label"
       },
       {

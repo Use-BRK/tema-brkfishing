@@ -397,6 +397,10 @@ class CartNotification extends HTMLElement {
               if (cart_free_ship) {
                 cart_free_ship.init(cart.items_subtotal_price);
               }
+              const cart_gift_bar = document.querySelector("gift-progress-bar");
+              if (cart_gift_bar) {
+                cart_gift_bar.init(cart.items_subtotal_price);
+              }
             }
           })
           .catch((error) => {
@@ -528,6 +532,10 @@ class CartNotification extends HTMLElement {
               cart_free_ship.init(parsedState.items_subtotal_price);
             }
           });
+          const updated_gift_bar = document.querySelector("gift-progress-bar");
+          if (updated_gift_bar) {
+            updated_gift_bar.init(parsedState.items_subtotal_price);
+          }
         }
         this.cartAction();
       })
