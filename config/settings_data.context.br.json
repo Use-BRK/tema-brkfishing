@@ -16,6 +16,7 @@
     "minicart_type": "disable",
     "product_recommendations_type": "auto",
     "select_product_recommendations": [],
+    "scroll_animation": "none",
     "color_schemes": {
       "default": {
         "settings": {}
