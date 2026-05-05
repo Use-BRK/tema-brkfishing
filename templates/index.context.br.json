@@ -324,17 +324,18 @@
       "settings": {
         "slide_effect": "fade",
         "autoplay": true,
-        "content_below_image": false
+        "content_below_image": false,
+        "autorotate_speed": 6
       },
       "blocks": {
         "slider_item_xaVAy": {
           "type": "slider_item",
-          "disabled": true,
-          "name": "Campanha Dia do Trabalho",
+          "name": "Campanha 5.5",
+          "disabled": false,
           "settings": {
             "header-a6b9e3a9f949d39c705a1aa493cdf673": null,
-            "image": "shopify://shop_images/FISH.webp",
-            "image_mobile": "shopify://shop_images/MOB_FISH.webp",
+            "image": "shopify://shop_images/DESK_FISH.webp",
+            "image_mobile": "shopify://shop_images/FISH_MOB.webp",
             "local_video": null,
             "overlay_opacity": 0,
             "link_banner": "shopify://collections/abril-de-vantagens",
@@ -526,13 +527,17 @@
         "* {color: white; background-color: #1e1e20;}"
       ],
       "settings": {
+        "direction": "right",
+        "icon_between_item": "star",
         "speed": 11,
-        "space_between_text": 60
+        "space_between_text": 60,
+        "padding_top": 8,
+        "padding_bottom": 8
       },
       "blocks": {
         "scrolling_text_Bmp7bG": {
           "settings": {
-            "content": "FRETE GRÁTIS"
+            "content": "<strong>FRETE GRÁTIS</strong>"
           }
         },
         "scrolling_text_7defWk": {
@@ -540,12 +545,12 @@
           "settings": {
             "content": "5.5 FISHING"
           }
-        },
-        "scrolling_text_fBNd9c": {
-          "disabled": true,
-          "settings": {}
         }
-      }
+      },
+      "block_order": [
+        "scrolling_text_Bmp7bG",
+        "scrolling_text_7defWk"
+      ]
     },
     "collection_tab_UNybtX": {
       "disabled": false,
