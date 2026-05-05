@@ -322,10 +322,10 @@
     },
     "slideshow_8KKtNU": {
       "settings": {
-        "slide_effect": "fade",
+        "slide_effect": "slide",
         "autoplay": true,
-        "content_below_image": false,
-        "autorotate_speed": 6
+        "autorotate_speed": 6,
+        "content_below_image": false
       },
       "blocks": {
         "slider_item_xaVAy": {
@@ -531,8 +531,8 @@
         "icon_between_item": "star",
         "speed": 11,
         "space_between_text": 60,
-        "padding_top": 8,
-        "padding_bottom": 8
+        "padding_top": 12,
+        "padding_bottom": 12
       },
       "blocks": {
         "scrolling_text_Bmp7bG": {
