@@ -13,6 +13,51 @@
     "market": "br"
   },
   "sections": {
+    "scrolling_text_exjPq": {
+      "type": "scrolling-text",
+      "disabled": false,
+      "settings": {
+        "section_width": "full_width",
+        "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
+        "header-178e02608f413660514af18d1d141a4e": null,
+        "direction": "right",
+        "icon_between_item": "unset",
+        "speed": 10,
+        "space_between_text": 60,
+        "header-f78d10e235245dc27b72062a083b3134": null,
+        "font_size": 14,
+        "font_weight": "body_weight",
+        "uppercase": false,
+        "use_heading_font": false,
+        "header-1a65d015e4b98e643bf60b5e12c577df": null,
+        "padding_top": 5,
+        "padding_bottom": 5,
+        "reset_spacing": true
+      },
+      "blocks": {
+        "scrolling_text_WYNUT": {
+          "type": "scrolling_text",
+          "disabled": false,
+          "settings": {
+            "image": null,
+            "content": "<strong>FRETE FIXO R$9,90</strong>"
+          }
+        },
+        "scrolling_text_tKg9K": {
+          "type": "scrolling_text",
+          "disabled": false,
+          "settings": {
+            "image": null,
+            "content": "ENVIO RÁPIDO"
+          }
+        }
+      },
+      "block_order": [
+        "scrolling_text_WYNUT",
+        "scrolling_text_tKg9K"
+      ],
+      "name": "t:sections.scrolling_text.name"
+    },
     "banner": {
       "settings": {
         "show_collection_image": true,
@@ -75,51 +120,6 @@
         "popular_product_Xwjqcf",
         "image_banner_UUJxtT"
       ]
-    },
-    "scrolling_text_exjPq": {
-      "type": "scrolling-text",
-      "disabled": false,
-      "settings": {
-        "section_width": "full_width",
-        "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
-        "header-437a2ffc666b90c20a97cdd81b6a07e2": null,
-        "direction": "right",
-        "icon_between_item": "unset",
-        "speed": 10,
-        "space_between_text": 60,
-        "header-de5a815b22f8287daccc3fab2be2f77c": null,
-        "font_size": 14,
-        "font_weight": "body_weight",
-        "uppercase": false,
-        "use_heading_font": false,
-        "header-77f3091cafbc6ec59ad18bdab5913aea": null,
-        "padding_top": 5,
-        "padding_bottom": 5,
-        "reset_spacing": true
-      },
-      "blocks": {
-        "scrolling_text_WYNUT": {
-          "type": "scrolling_text",
-          "disabled": false,
-          "settings": {
-            "image": null,
-            "content": "<strong>FRETE GRÁTIS</strong>"
-          }
-        },
-        "scrolling_text_tKg9K": {
-          "type": "scrolling_text",
-          "disabled": false,
-          "settings": {
-            "image": null,
-            "content": "5.5 FISHING"
-          }
-        }
-      },
-      "block_order": [
-        "scrolling_text_WYNUT",
-        "scrolling_text_tKg9K"
-      ],
-      "name": "t:sections.scrolling_text.name"
     }
   },
   "order": [
