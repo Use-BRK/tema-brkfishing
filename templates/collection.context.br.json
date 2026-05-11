@@ -19,17 +19,17 @@
       "settings": {
         "section_width": "full_width",
         "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
-        "header-178e02608f413660514af18d1d141a4e": null,
+        "header-c0926abd9f8d50fc1c2ca53cdac82047": null,
         "direction": "right",
         "icon_between_item": "unset",
         "speed": 10,
         "space_between_text": 60,
-        "header-f78d10e235245dc27b72062a083b3134": null,
+        "header-0ce2855125e23a481bdcaab2dbfb1bc4": null,
         "font_size": 14,
         "font_weight": "body_weight",
         "uppercase": false,
         "use_heading_font": false,
-        "header-1a65d015e4b98e643bf60b5e12c577df": null,
+        "header-cb125d91dfed46597d80ffcc738ea64f": null,
         "padding_top": 5,
         "padding_bottom": 5,
         "reset_spacing": true
@@ -108,7 +108,8 @@
             "label_masculino": "Masculino",
             "label_feminino": "Feminino",
             "filter_collection_list": [
-              "abril-de-vantagens"
+              "abril-de-vantagens",
+              "copa-2026"
             ]
           }
         }
