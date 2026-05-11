@@ -12,8 +12,10 @@
     "market": "br"
   },
   "current": {
-    "font_type_body": "shopify",
-    "font_type_heading": "shopify",
+    "font_type_body": "default_font",
+    "font_type_heading": "default_font",
+    "show_secondary_image": false,
+    "product_hover_effect": "hover_zoom",
     "product_recommendations_heading": "",
     "minicart_type": "disable",
     "product_recommendations_type": "auto",
