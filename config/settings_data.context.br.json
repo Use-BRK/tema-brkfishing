@@ -12,6 +12,8 @@
     "market": "br"
   },
   "current": {
+    "font_type_body": "shopify",
+    "font_type_heading": "shopify",
     "product_recommendations_heading": "",
     "minicart_type": "disable",
     "product_recommendations_type": "auto",
@@ -53,5 +55,11 @@
         "settings": {}
       }
     }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      ".minicart__product-name a {display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;}",
+      "* {-webkit-font-smoothing: antialiased !important; text-rendering: optimizeLegibility !important;}"
+    ]
   }
 }
