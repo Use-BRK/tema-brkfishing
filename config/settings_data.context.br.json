@@ -14,6 +14,9 @@
   "current": {
     "font_type_body": "default_font",
     "font_type_heading": "default_font",
+    "heading_letter_spacing": "unset",
+    "button_radius": 8,
+    "show_rate": false,
     "show_secondary_image": false,
     "product_hover_effect": "hover_zoom",
     "product_recommendations_heading": "",
