@@ -8157,7 +8157,18 @@ class TabItems extends HTMLElement {
     this.content = this.querySelectorAll(".collection-tab__tab-content");
     this.select_li = this.querySelectorAll(".collection_title_input");
     this.type = this.dataset.type;
+    this.viewAllBtns = this.querySelectorAll('[data-role="view-all"]');
     this.init();
+
+    this.addEventListener("click", (e) => {
+      const btn = e.target.closest('[data-role="view-all"]');
+      if (!btn) return;
+      const url = this.getActiveCollectionUrl();
+      if (!url || url === "#") { e.preventDefault(); return; }
+      e.preventDefault();
+      btn.setAttribute("href", url);
+      window.location.assign(url);
+    });
   }
   init() {
     if (this.type === "horizontal") {
@@ -8198,6 +8209,7 @@ class TabItems extends HTMLElement {
         });
       });
     }
+    this.syncViewAll();
   }
   onClick(tab) {
     const blockId = tab.dataset.blockId;
@@ -8230,6 +8242,18 @@ class TabItems extends HTMLElement {
         content.classList.remove("active");
       }
     });
+    this.syncViewAll();
+  }
+
+  getActiveCollectionUrl() {
+    const activeContent = this.querySelector(".collection-tab__tab-content.active");
+    return activeContent?.dataset.collectionUrl || null;
+  }
+
+  syncViewAll() {
+    const url = this.getActiveCollectionUrl();
+    const finalUrl = url && url !== "#" ? url : "#";
+    this.viewAllBtns.forEach((btn) => btn.setAttribute("href", finalUrl));
   }
 }
 customElements.define("tab-items", TabItems);

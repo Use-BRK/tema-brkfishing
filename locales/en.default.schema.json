@@ -4027,6 +4027,11 @@
             "label": "Horizontal tab style",
             "underline": "Underline",
             "fill": "Fill"
+          },
+          "tab_header_postion": {
+            "label": "Tab header position",
+            "default": "Default",
+            "horizontal_header": "Horizontal header"
           }
         },
         "grid_settings": {
