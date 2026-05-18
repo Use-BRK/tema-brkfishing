@@ -15,23 +15,23 @@
   "sections": {
     "image_with_text_overlay_daWQb": {
       "type": "image-with-text-overlay",
-      "disabled": false,
+      "disabled": true,
       "custom_css": [
         "* {margin-bottom: 0 !important;}"
       ],
       "settings": {
         "section_width": "full_width",
         "color_scheme": "",
-        "header-36d0c30a8dada6ca6827902e9bebdd12": null,
+        "header-850537e4cc980c13a8a70f280824276f": null,
         "image": "shopify://shop_images/01_5c12780a-6570-4d70-aab4-0dde0df00d0d.png",
         "image_mobile": "shopify://shop_images/HEROINSTINTOSUPERIOR.gif",
         "image_behavior": "none",
         "overlay_opacity": 0,
         "image_height": "adapt",
-        "header-00021d8d68da0af3776de25bb3d4adae": null,
+        "header-8978091b7d2d5923f57e139102b4392f": null,
         "desktop_height": 600,
         "mobile_height": 500,
-        "header-0fe0d613c708aaabc80b2c07a1b39d67": null,
+        "header-cbf7fbea224271a023198c3a9a6949f1": null,
         "product_list": [],
         "content_alignment": "center",
         "content_position": "top-center",
@@ -39,14 +39,14 @@
         "content_max_width": 100,
         "content_padding_block": 50,
         "content_padding_inline": 50,
-        "header-331daff746df3e114aa1646321e420bd": null,
+        "header-d81d3ef23f9ba19f8224321785033606": null,
         "show_content_background": false,
         "content_background": "#ffffff",
         "content_box_opacity": 100,
-        "header-923ccccee58780cf3e2a268cea9c9946": null,
+        "header-819e026a48f6cd79cc7443738fa00c51": null,
         "content_below_image": false,
         "content_alignment_mobile": "center",
-        "header-03cc9dbe6641d994334beec5dff5a929": null,
+        "header-31978415bfe4aa39157d501f612410e4": null,
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -60,8 +60,8 @@
       "disabled": false,
       "settings": {
         "section_id": "pf-37e1495f",
-        "paragraph-38f597a188ac36aa3c27659aeb651c9c": null,
-        "paragraph-8b2ad9571a7c04ebd19f635eef9e8d9b": null
+        "paragraph-480dfc4050625ea7208bffd864631272": null,
+        "paragraph-cfa2ccf1a149332fa445d9a909d860fc": null
       },
       "blocks": {},
       "block_order": [],
@@ -76,12 +76,12 @@
       "settings": {
         "section_width": "fluid_container",
         "color_scheme": "",
-        "header-bdb4913f246c0720ce612f9696331700": null,
+        "header-224d2d76922c0eb497fe788a1f4ecbbc": null,
         "heading": "Quem testou e já aprovou!",
         "description": "",
         "header_size": "medium",
         "header_alignment": "center",
-        "header-16cd1c864bc511d41c7343bf1d3a802b": null,
+        "header-2d1e6030ddca45b0dfd404f83ca53d34": null,
         "show_rate": true,
         "show_date_published": true,
         "show_author_image": true,
@@ -95,16 +95,16 @@
         "rate_color": "#ff9c05",
         "items_per_row": 3,
         "column_gap": 30,
-        "header-1c3d504fc69bb904f6cb012dd65ddb16": null,
+        "header-6db1ae8b54b79b61f5f39417c5094436": null,
         "show_arrow": false,
         "carousel_pagination": "show_dots_on_mobile",
         "infinite": false,
         "autoplay": false,
         "autorotate_speed": 5,
         "reveal": false,
-        "header-132922fc9bff8e0df1cb1f5acbf61b66": null,
+        "header-aee95db4eeea1fae1f4a825a7fd5b576": null,
         "items_per_row_mobile": 1,
-        "header-fc6576dce2de1bb660693c86e9b85401": null,
+        "header-e5be82b2176be40a7ef19efa9a70fcd3": null,
         "padding_top": 15,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -169,9 +169,9 @@
         "desktop_layout": "thumbnail_left",
         "enable_video_looping": false,
         "enable_video_autoplay": false,
-        "mobile_options": "show_thumbnails",
+        "enable_on_desktop": false,
         "enable_on_mobile": false,
-        "enable_on_desktop": false
+        "mobile_options": "show_thumbnails"
       },
       "blocks": {
         "product_meta_FUixq": {
