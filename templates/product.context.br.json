@@ -19,12 +19,12 @@
       "settings": {
         "section_width": "container",
         "color_scheme": "",
-        "header-0a7f1111d32901dbbbbdbd8e3b1903ce": null,
+        "header-7de652941f38196a3327d877bface8fc": null,
         "heading": "Perguntas Frequentes",
         "description": "",
         "header_size": "medium",
         "header_alignment": "center",
-        "header-014a42db58a3ca36c13133ccb84e1e91": null,
+        "header-2027c50815e24d7e41f0e46d55c727de": null,
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -67,7 +67,7 @@
           "disabled": false,
           "settings": {
             "faq_title": "Quais são as formas de pagamento e prazos de entrega?",
-            "faq_content": "Aceitamos as principais bandeiras de cartão de crédito (com parcelamento), boleto bancário e PIX. O prazo de entrega varia de acordo com a sua região e a modalidade de frete escolhida no carrinho."
+            "faq_content": "Aceitamos as principais bandeiras de cartão de crédito (com parcelamento) e PIX. O prazo de entrega varia de acordo com a sua região e a modalidade de frete escolhida no carrinho."
           }
         },
         "faq_items_YrMf9": {
