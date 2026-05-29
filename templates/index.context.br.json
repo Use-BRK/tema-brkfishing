@@ -854,8 +854,12 @@
       "settings": {},
       "blocks": {
         "icon_box_ACjiqA": {
-          "disabled": true,
-          "settings": {}
+          "disabled": false,
+          "settings": {
+            "heading": "Parcelamento",
+            "description": "<p>Folga na fatura! Parcele sua compra em até 6x sem juros no cartão de crédito.</p>",
+            "icon_svg": "payment"
+          }
         }
       }
     }
