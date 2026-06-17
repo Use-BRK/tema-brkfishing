@@ -19,17 +19,17 @@
       "settings": {
         "section_width": "full_width",
         "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
-        "header-c0926abd9f8d50fc1c2ca53cdac82047": null,
+        "header-87904de5679285abf6fcd4ccd2ad7a59": null,
         "direction": "right",
         "icon_between_item": "unset",
         "speed": 10,
         "space_between_text": 60,
-        "header-0ce2855125e23a481bdcaab2dbfb1bc4": null,
+        "header-13c6a9170a85dde46f19b3b7faff1d12": null,
         "font_size": 14,
         "font_weight": "body_weight",
         "uppercase": false,
         "use_heading_font": false,
-        "header-cb125d91dfed46597d80ffcc738ea64f": null,
+        "header-05b9f284bc6f8edfc2503099767f2eb4": null,
         "padding_top": 5,
         "padding_bottom": 5,
         "reset_spacing": true
@@ -109,7 +109,9 @@
             "label_feminino": "Feminino",
             "filter_collection_list": [
               "abril-de-vantagens",
-              "copa-2026"
+              "copa-2026",
+              "fusion-cax-2026",
+              "hybrid-cax-2026"
             ]
           }
         }
