@@ -19,12 +19,12 @@
       "settings": {
         "section_width": "container",
         "color_scheme": "",
-        "header-7de652941f38196a3327d877bface8fc": null,
+        "header-15c89f318787f469cc887fca10fdb582": null,
         "heading": "Perguntas Frequentes",
         "description": "",
         "header_size": "medium",
         "header_alignment": "center",
-        "header-2027c50815e24d7e41f0e46d55c727de": null,
+        "header-f29db1cf8cce0d1d24acb62da6851425": null,
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -131,6 +131,19 @@
             "show_share": false
           }
         },
+        "custom_name_button_XTkeF": {
+          "type": "custom_name_button",
+          "disabled": false,
+          "settings": {
+            "enable_button": true,
+            "button_label": "Quero meu nome na Camisa (R$29,90)",
+            "whatsapp_number": "553432194697",
+            "collections": [
+              "roupas-masculinas",
+              "roupas-femininas-1"
+            ]
+          }
+        },
         "model_size_XM7z6E": {
           "disabled": true,
           "settings": {}
@@ -164,6 +177,7 @@
         "product_addons_YRaprz",
         "stock_countdown_JNK9zi",
         "buy_buttons_LcQGtR",
+        "custom_name_button_XTkeF",
         "model_size_XM7z6E",
         "pickup_avaiability_cyVydQ",
         "product_grouped_6epkNf",
