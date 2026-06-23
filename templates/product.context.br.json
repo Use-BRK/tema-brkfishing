@@ -19,12 +19,12 @@
       "settings": {
         "section_width": "container",
         "color_scheme": "",
-        "header-15c89f318787f469cc887fca10fdb582": null,
+        "header-5ebedb4d4169ba15d1157408140312a7": null,
         "heading": "Perguntas Frequentes",
         "description": "",
         "header_size": "medium",
         "header_alignment": "center",
-        "header-f29db1cf8cce0d1d24acb62da6851425": null,
+        "header-bf016965adf6d2a26919e18f4de5e76e": null,
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -133,7 +133,7 @@
         },
         "custom_name_button_XTkeF": {
           "type": "custom_name_button",
-          "disabled": false,
+          "disabled": true,
           "settings": {
             "enable_button": true,
             "button_label": "Quero meu nome na Camisa (R$29,90)",
