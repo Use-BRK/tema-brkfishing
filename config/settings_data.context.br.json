@@ -24,6 +24,7 @@
     "product_recommendations_type": "auto",
     "select_product_recommendations": [],
     "scroll_animation": "none",
+    "store_email": "sacbrk@usebrk.com.br",
     "color_schemes": {
       "default": {
         "settings": {}
