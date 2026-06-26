@@ -19,12 +19,12 @@
       "settings": {
         "section_width": "container",
         "color_scheme": "",
-        "header-d0267bf704c7b9b86989bb1280c3a427": null,
+        "header-af092f7f50ada8a7c414290819cfc7a9": null,
         "heading": "Perguntas Frequentes",
         "description": "",
         "header_size": "medium",
         "header_alignment": "center",
-        "header-c22475528ea565051a3605c0f407c31d": null,
+        "header-dac2b0b6a655ab2f5f4be19b0bb0477a": null,
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -114,6 +114,28 @@
           "disabled": true,
           "settings": {}
         },
+        "brk_apps_fishing_combined_listing_6KLCz": {
+          "type": "shopify://apps/brk-apps-fishing/blocks/combined-listing/019f0510-f075-72ba-9c2f-a80926df6a59",
+          "disabled": false,
+          "settings": {
+            "header-e8e2b67aa32674ceea03c8e9cd0b0170": null,
+            "show_option_name": true,
+            "show_label": true,
+            "header-912da5e296a09ddc859c34cb15db3403": null,
+            "swatch_size": 86,
+            "border_radius": 4,
+            "border_width": 1,
+            "gap": 4,
+            "header-db13a526993c5f30a1dfe19bb03d3c1e": null,
+            "border_color": "#cfcfcf",
+            "selected_color": "#135ED1",
+            "selected_text_color": "#ffffff",
+            "hover_color": "#135ED1",
+            "header-e05011c032c6583b59939929437842cc": null,
+            "label_color": "#6a6a6a",
+            "label_size": 12
+          }
+        },
         "sku_prazo_8wWwi": {
           "type": "sku_prazo",
           "disabled": false,
@@ -142,13 +164,6 @@
               "roupas-masculinas",
               "roupas-femininas-1"
             ]
-          }
-        },
-        "brk_apps_fishing_combined_listing_6KLCz": {
-          "type": "shopify://apps/brk-apps-fishing/blocks/combined-listing/019f0510-f075-72ba-9c2f-a80926df6a59",
-          "disabled": false,
-          "settings": {
-            "show_option_name": true
           }
         },
         "model_size_XM7z6E": {
