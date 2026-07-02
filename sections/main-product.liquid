@@ -216,6 +216,7 @@
         >
       {% endif %}
       {%- assign product_form_id = 'product-form-' | append: section.id -%}
+      {%- assign bulk_grid_active = false -%}
       {% if section.settings.image_zoom == 'external_zoom' %}
         <div class="zoom-external-area"></div>
       {% endif %}
@@ -297,8 +298,9 @@
               {%- render 'price', scope: 'detail', product: product, class: 'price-large', show_badges: false -%}
             </div>
           {%- when 'buy_buttons' -%}
-            {% comment %} Buy button {% endcomment %}
-            {%- if product.metafields.custom.external_affiliate == blank -%}
+            {% comment %} Buy button — oculto quando a grade de bulk order está ativa (ela tem botão próprio) {% endcomment %}
+            {%- if bulk_grid_active -%}
+            {%- elsif product.metafields.custom.external_affiliate == blank -%}
               {% if products_group == blank %}
                 <div
                   class="product-detail__buy-buttons button-trigger__sticky mb-20"
@@ -345,7 +347,24 @@
             {% endif %}
           {%- when 'variant_picker' -%}
             {% comment %} Variant picker {% endcomment %}
-            {% if products_group == blank %}
+            {%- liquid
+              assign use_bulk_grid = false
+              if block_st.variant_type == 'bulk_grid'
+                assign use_bulk_grid = true
+              elsif block_st.bulk_tag != blank and product.tags contains block_st.bulk_tag
+                assign use_bulk_grid = true
+              endif
+              if product.variants.size <= 1
+                assign use_bulk_grid = false
+              endif
+            -%}
+            {% if use_bulk_grid %}
+              {% comment %} Bulk order grid (substitui o app Multivariants) {% endcomment %}
+              {%- assign bulk_grid_active = true -%}
+              <div class="product-detail__variant-picker" {{ block.shopify_attributes }} data-type="bulk_grid">
+                {%- render 'bulk-variant-grid', product: product, block: block -%}
+              </div>
+            {% elsif products_group == blank %}
               <div
                 class="product-detail__variant-picker mb-25"
                 {{ block.shopify_attributes }}
@@ -1840,9 +1859,86 @@
             {
               "value": "dropdown",
               "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.options__1.label"
+            },
+            {
+              "value": "bulk_grid",
+              "label": "Grade / Bulk order"
             }
           ],
           "default": "swatches"
+        },
+        {
+          "type": "header",
+          "content": "Grade / Bulk order"
+        },
+        {
+          "type": "paragraph",
+          "content": "Exibe todas as variantes em grade com stepper de quantidade e um único botão que adiciona tudo ao carrinho. Ative escolhendo o tipo 'Grade / Bulk order' acima, ou automaticamente por tag abaixo."
+        },
+        {
+          "type": "text",
+          "id": "bulk_tag",
+          "label": "Ativar por tag",
+          "info": "Produtos com esta tag usam a grade mesmo com outro tipo selecionado. Ex: Isca Artificial"
+        },
+        {
+          "type": "text",
+          "id": "bulk_title",
+          "label": "Título da grade",
+          "default": "Escolha os modelos:"
+        },
+        {
+          "type": "text",
+          "id": "bulk_button_label",
+          "label": "Texto do botão",
+          "default": "Adicionar ao carrinho"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_variant_image",
+          "label": "Mostrar miniatura da variante",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_bulk_price",
+          "label": "Mostrar preço unitário",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "show_stock",
+          "label": "Mostrar estoque disponível",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "stock_label",
+          "label": "Texto do estoque",
+          "info": "Use [qty] para a quantidade disponível.",
+          "default": "[qty] disponíveis"
+        },
+        {
+          "type": "checkbox",
+          "id": "hide_soldout",
+          "label": "Ocultar variantes esgotadas",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_subtotal",
+          "label": "Mostrar subtotal",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "bulk_max_height",
+          "label": "Altura máxima da lista",
+          "min": 200,
+          "max": 800,
+          "step": 20,
+          "unit": "px",
+          "default": 400
         },
         {
           "type": "header",

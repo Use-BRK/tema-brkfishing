@@ -1,0 +1,160 @@
+{% comment %}
+  Bulk order variant grid — substitui o app Multivariants.
+  Renderiza cada variante em uma linha (miniatura + nome + stepper + estoque),
+  com subtotal e um botão que adiciona todas as variantes selecionadas ao carrinho.
+
+  Aceita:
+    product (obrigatório)
+    block   (bloco variant_picker da section main-product; fornece as settings)
+
+  Ativado pelo case 'variant_picker' de sections/main-product.liquid.
+{% endcomment %}
+
+{{ 'bulk-variant-grid.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'bulk-variant-grid.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign bst = block.settings
+  assign show_image = bst.show_variant_image
+  assign show_price = bst.show_bulk_price
+  assign show_stock = bst.show_stock
+  assign hide_soldout = bst.hide_soldout
+  assign show_subtotal = bst.show_subtotal
+  assign max_height = bst.bulk_max_height | default: 400
+  assign title = bst.bulk_title | default: 'Escolha os modelos:'
+  assign button_label = bst.bulk_button_label | default: 'Adicionar ao carrinho'
+  assign stock_label = bst.stock_label | default: '[qty] disponíveis'
+
+  comment
+    Conta quantas variantes serão de fato renderizadas para decidir o fallback.
+  endcomment
+  assign renderable = 0
+  for v in product.variants
+    if hide_soldout and v.available == false
+      continue
+    endif
+    assign renderable = renderable | plus: 1
+  endfor
+-%}
+
+{%- if renderable > 0 -%}
+  <bulk-variant-grid
+    class="bulk-grid"
+    data-product-id="{{ product.id }}"
+    {{ block.shopify_attributes }}
+  >
+    {%- if title != blank -%}
+      <p class="bulk-grid__title heading-color">{{ title }}</p>
+    {%- endif -%}
+
+    <div class="bulk-grid__list custom-scrollbar" style="--bulk-max-height: {{ max_height }}px;">
+      {%- for variant in product.variants -%}
+        {%- if hide_soldout and variant.available == false -%}
+          {%- continue -%}
+        {%- endif -%}
+
+        {%- liquid
+          assign tracked = false
+          if variant.inventory_management == 'shopify'
+            assign tracked = true
+          endif
+          assign capped = false
+          if tracked and variant.inventory_policy == 'deny'
+            assign capped = true
+          endif
+          assign variant_image = variant.featured_media.preview_image | default: variant.featured_image | default: product.featured_image
+        -%}
+
+        <div
+          class="bulk-grid__row{% unless variant.available %} is-soldout{% endunless %}"
+          data-variant-id="{{ variant.id }}"
+          data-price="{{ variant.price }}"
+        >
+          {%- if show_image -%}
+            <div class="bulk-grid__media">
+              {%- if variant_image -%}
+                {{
+                  variant_image
+                  | image_url: width: 120
+                  | image_tag:
+                    loading: 'lazy',
+                    width: 60,
+                    height: 60,
+                    class: 'bulk-grid__thumb',
+                    alt: variant.title
+                }}
+              {%- else -%}
+                <span class="bulk-grid__thumb bulk-grid__thumb--placeholder"></span>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+
+          <div class="bulk-grid__info">
+            <span class="bulk-grid__name heading-color">{{ variant.title }}</span>
+            {%- if show_price -%}
+              <span class="bulk-grid__price">{{ variant.price | money }}</span>
+            {%- endif -%}
+          </div>
+
+          <div class="bulk-grid__control">
+            <quantity-input class="quantity bulk-grid__stepper btn-rounded overflow-hidden border inline-flex text-center grey-bg">
+              <button
+                class="quantity__button inline-flex content-center pointer border-0 no-js-hidden grey-bg"
+                name="minus"
+                type="button"
+              >
+                <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: variant.title | escape }}</span>
+                {% render 'icon-minus' %}
+              </button>
+              <input
+                class="quantity-input bulk-grid__qty bg-unset text-center appearance-none p-0-important"
+                type="number"
+                name="quantity"
+                inputmode="numeric"
+                min="0"
+                {% if capped %}max="{{ variant.inventory_quantity }}"{% endif %}
+                step="1"
+                value="0"
+                data-variant-id="{{ variant.id }}"
+                aria-label="{{ variant.title | escape }}"
+              >
+              <button
+                class="quantity__button inline-flex content-center pointer border-0 no-js-hidden grey-bg"
+                name="plus"
+                type="button"
+              >
+                <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: variant.title | escape }}</span>
+                {% render 'icon-plus' %}
+              </button>
+            </quantity-input>
+
+            {%- if show_stock and tracked -%}
+              <span class="bulk-grid__stock">
+                {%- if variant.available -%}
+                  {{ stock_label | replace: '[qty]', variant.inventory_quantity }}
+                {%- else -%}
+                  {{ 'products.product.sold_out' | t }}
+                {%- endif -%}
+              </span>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+
+    {%- if show_subtotal -%}
+      <div class="bulk-grid__subtotal">
+        <span class="bulk-grid__subtotal-label heading-color">
+          Subtotal (<span data-bulk-count>0</span>)
+        </span>
+        <span class="bulk-grid__subtotal-price heading-color" data-bulk-subtotal>{{ 0 | money }}</span>
+      </div>
+    {%- endif -%}
+
+    <div class="bulk-grid__error" data-bulk-error hidden></div>
+
+    <button type="button" class="btn btn-primary bulk-grid__submit" data-bulk-submit>
+      <span>{{ button_label }}</span>
+    </button>
+  </bulk-variant-grid>
+{%- endif -%}

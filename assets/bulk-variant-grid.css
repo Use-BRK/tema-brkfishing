@@ -1,0 +1,171 @@
+/* Bulk order variant grid — substitui o app Multivariants.
+   Herda a identidade do tema (fonte Instrument Sans, cores de botão nativas). */
+
+.bulk-grid {
+  display: block;
+  margin-bottom: 2.5rem;
+}
+
+.bulk-grid__title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0 0 1.2rem;
+}
+
+.bulk-grid__list {
+  max-height: var(--bulk-max-height, 400px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 0.5rem;
+  border-top: 1px solid var(--color-border, #ebebeb);
+}
+
+.bulk-grid__row {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1rem 0.2rem;
+  border-bottom: 1px solid var(--color-border, #ebebeb);
+}
+
+.bulk-grid__row.is-soldout {
+  opacity: 0.55;
+}
+
+.bulk-grid__media {
+  flex: 0 0 auto;
+}
+
+.bulk-grid__thumb {
+  width: 6rem;
+  height: 6rem;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--color-border, #ebebeb);
+  display: block;
+}
+
+.bulk-grid__thumb--placeholder {
+  background: #f2f2f2;
+}
+
+.bulk-grid__info {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.bulk-grid__name {
+  font-size: 1.45rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.bulk-grid__price {
+  font-size: 1.35rem;
+  color: var(--color-text-light, #666);
+}
+
+.bulk-grid__control {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Stepper compacto (reaproveita o componente quantity-input do tema) */
+.bulk-grid__stepper {
+  --custom-width: 3.4rem;
+}
+
+.bulk-grid__stepper .quantity__button {
+  width: 3.4rem;
+  height: 3.6rem;
+}
+
+.bulk-grid__qty {
+  width: 3.6rem;
+  height: 3.6rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: 0;
+  --input-bg: transparent;
+}
+
+.bulk-grid__stock {
+  font-size: 1.15rem;
+  color: #999;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.is-soldout .bulk-grid__stock {
+  color: #780000;
+  font-weight: 600;
+}
+
+.bulk-grid__subtotal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1.6rem 0;
+  font-size: 1.6rem;
+}
+
+.bulk-grid__subtotal-label {
+  font-weight: 500;
+}
+
+.bulk-grid__subtotal-price {
+  font-weight: 700;
+}
+
+.bulk-grid__error {
+  margin-bottom: 1rem;
+  padding: 1rem 1.2rem;
+  border-radius: 6px;
+  background: #fdecea;
+  color: #780000;
+  font-size: 1.35rem;
+}
+
+.bulk-grid__error[hidden] {
+  display: none;
+}
+
+.bulk-grid__submit {
+  width: 100%;
+  min-height: 4.8rem;
+}
+
+.bulk-grid__submit.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+@media (max-width: 480px) {
+  .bulk-grid__thumb {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .bulk-grid__name {
+    font-size: 1.35rem;
+  }
+
+  .bulk-grid__stepper {
+    --custom-width: 3rem;
+  }
+
+  .bulk-grid__stepper .quantity__button {
+    width: 3rem;
+  }
+
+  .bulk-grid__qty {
+    width: 3.2rem;
+  }
+}
