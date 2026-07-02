@@ -97,17 +97,13 @@
           </div>
 
           <div class="bulk-grid__control">
-            <quantity-input class="quantity bulk-grid__stepper btn-rounded overflow-hidden border inline-flex text-center grey-bg">
-              <button
-                class="quantity__button inline-flex content-center pointer border-0 no-js-hidden grey-bg"
-                name="minus"
-                type="button"
-              >
+            <quantity-input class="bulk-grid__stepper">
+              <button class="quantity__button bulk-grid__step" name="minus" type="button">
                 <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: variant.title | escape }}</span>
                 {% render 'icon-minus' %}
               </button>
               <input
-                class="quantity-input bulk-grid__qty bg-unset text-center appearance-none p-0-important"
+                class="bulk-grid__qty"
                 type="number"
                 name="quantity"
                 inputmode="numeric"
@@ -118,11 +114,7 @@
                 data-variant-id="{{ variant.id }}"
                 aria-label="{{ variant.title | escape }}"
               >
-              <button
-                class="quantity__button inline-flex content-center pointer border-0 no-js-hidden grey-bg"
-                name="plus"
-                type="button"
-              >
+              <button class="quantity__button bulk-grid__step" name="plus" type="button">
                 <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: variant.title | escape }}</span>
                 {% render 'icon-plus' %}
               </button>
