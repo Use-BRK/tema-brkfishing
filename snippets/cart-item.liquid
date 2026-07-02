@@ -5,6 +5,19 @@
   assign show_message_when_remove = theme_st.show_message_when_remove
   assign show_currency_code = theme_st.show_currency_code
   assign show_quantity = theme_st.show_quantity_input
+
+  assign is_perso = false
+  if item.sku == 'PE1198'
+    assign is_perso = true
+  endif
+  assign perso_arte = ''
+  if is_perso
+    for property in item.properties
+      if property.first == 'Arte'
+        assign perso_arte = property.last
+      endif
+    endfor
+  endif
 -%}
 {% liquid
   assign enable_rtl = settings.rtl
@@ -25,7 +38,9 @@
 >
   <div class="minicart__product__image global-media-settings w-custom fs-0 relative" style="--custom-width: 9rem">
     <a href="{{- item.url -}}" class="rounded-5 fs-0 " aria-label="{{ item.product.title | escape }}">
-      {%- if item.image != blank -%}
+      {%- if is_perso and perso_arte != blank -%}
+        <img src="{{ perso_arte }}" alt="Personalização" width="64" height="80" loading="lazy" class="rounded-5" style="width:100%;height:auto;object-fit:cover;">
+      {%- elsif item.image != blank -%}
         {%- assign image_alt = item.image.alt | default: item.product.title | escape -%}
         {% render 'responsive-image',
           type: 'product',
@@ -58,20 +73,22 @@
       {%- if item.properties.size != 0 -%}<div class="product-option-property">{%- endif -%}
       {%- for property in item.properties -%}
         {%- assign property_first_char = property.first | slice: 0 -%}
-        {%- if property.last != blank and property_first_char != '_' -%}
-          <div class="product-option">
-            <span>{{ property.first }}: </span>
-            <span>
-              {%- if property.last contains '/uploads/' -%}
-                <a href="{{ property.last }}" class="link" target="_blank">
-                  {{ property.last | split: '/' | last }}
-                </a>
-              {%- else -%}
-                {{ property.last }}
-              {%- endif -%}
-            </span>
-          </div>
-        {%- endif -%}
+        {%- if property.last == blank or property_first_char == '_' -%}{%- continue -%}{%- endif -%}
+        {%- comment -%} no item de personalização: esconde SKU interno e o link do arquivo (a arte já é a miniatura) {%- endcomment -%}
+        {%- if is_perso and property.first == 'Produto' -%}{%- continue -%}{%- endif -%}
+        {%- if is_perso and property.first == 'Arte' -%}{%- continue -%}{%- endif -%}
+        <div class="product-option">
+          <span>{{ property.first }}: </span>
+          <span>
+            {%- if property.last contains '/uploads/' -%}
+              <a href="{{ property.last }}" class="link" target="_blank">
+                {{ property.last | split: '/' | last }}
+              </a>
+            {%- else -%}
+              {{ property.last }}
+            {%- endif -%}
+          </span>
+        </div>
       {%- endfor -%}
       {%- if item.properties.size != 0 -%}</div>{%- endif -%}
     </div>

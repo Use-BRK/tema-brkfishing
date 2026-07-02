@@ -1,0 +1,345 @@
+{% liquid
+  assign block_st = block.settings
+  # product e block sao recebidos via render no main-product (Glozin 2.6.0 = section block, sem closest)
+  assign show_button = block_st.enable_button
+  assign selected_collections = block_st.collections
+  assign has_collection_filter = false
+  assign matches_collection = false
+
+  if selected_collections.size > 0
+    assign has_collection_filter = true
+  endif
+
+  if has_collection_filter
+    for selected_collection in selected_collections
+      for product_collection in product.collections
+        if product_collection.id == selected_collection.id
+          assign matches_collection = true
+          break
+        endif
+      endfor
+      if matches_collection
+        break
+      endif
+    endfor
+  else
+    assign matches_collection = true
+  endif
+
+  comment
+    Envio imediato (FULL): personalização não é aplicável (a peça precisa ser produzida).
+    Se QUALQUER variante tiver 'FULL' no SKU, o botão NÃO aparece.
+  endcomment
+  assign has_full_sku = false
+  for variant in product.variants
+    assign variant_sku_up = variant.sku | upcase
+    if variant_sku_up contains 'FULL'
+      assign has_full_sku = true
+      break
+    endif
+  endfor
+
+  assign button_label = block_st.button_label | default: 'Quero meu nome na Camisa (R$29,90)'
+  assign perso_variant_id = block_st.perso_variant_id | default: ''
+  assign perso_price = block_st.perso_price | default: '29,90'
+  assign button_mode = block_st.button_mode | default: 'whatsapp'
+  assign mockup_frente = block_st.mockup_frente | default: 'https://cdn.shopify.com/s/files/1/0920/4799/9271/files/MOCKUP_FRENTE.png'
+  assign mockup_costas = block_st.mockup_costas | default: 'https://cdn.shopify.com/s/files/1/0920/4799/9271/files/MOCKUP_COSTAS.png'
+
+  comment
+    WhatsApp: monta a URL com mensagem pré-preenchida + link do produto
+  endcomment
+  assign product_url = request.origin | append: product.url
+  assign message = 'Olá, gostei dessa camisa e quero meu nome nela! Estou ciente do valor adicional (+R$29,90)'
+  assign whatsapp_text = message | append: ' ' | append: product_url | url_encode
+  assign whatsapp_number = block_st.whatsapp_number | remove: ' ' | remove: '+' | remove: '-' | remove: '(' | remove: ')'
+  if whatsapp_number != blank
+    assign whatsapp_url = 'https://wa.me/' | append: whatsapp_number | append: '?text=' | append: whatsapp_text
+  else
+    assign whatsapp_url = 'https://api.whatsapp.com/send?text=' | append: whatsapp_text
+  endif
+%}
+
+{% if show_button and matches_collection and has_full_sku == false %}
+  {% comment %} ============ MODO WHATSAPP (comportamento atual de produção) ============ {% endcomment %}
+  {% if button_mode == 'whatsapp' %}
+    <div class="product-detail__custom-name-button mb-20" {{ block.shopify_attributes }}>
+      <div class="button_buy-now grow-1 skeleton-loading">
+        <a
+          id="custom-name-button-{{ block.id }}"
+          href="{{ whatsapp_url }}"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-primary w-full product-form__submit word-wrap relative no-underline custom-name-button__link"
+          style="--btn-padding-x: 1.4rem;"
+        >
+          <span class="btn-label hidden-on-load inline-flex align-center content-center gap-10 custom-name-button__label">
+            <img class="custom-name-button__icon" src="https://cdn.shopify.com/s/files/1/0887/2083/4857/files/customize.svg" alt="" width="16" height="16" loading="lazy">
+            <span>{{ button_label }}</span>
+          </span>
+        </a>
+      </div>
+      <script>
+        (() => {
+          const button = document.getElementById('custom-name-button-{{ block.id }}');
+          if (!button) return;
+          button.addEventListener('click', () => {
+            if (typeof window.clarity === 'function') {
+              window.clarity('event', 'nome_personalizado_click');
+              window.clarity('set', 'botao_nome_camisa', {{ product.handle | json }});
+            }
+            if (window.Shopify && Shopify.analytics && typeof Shopify.analytics.publish === 'function') {
+              Shopify.analytics.publish('brkfishing:nome_personalizado_click', {
+                productId: {{ product.id | json }},
+                productTitle: {{ product.title | json }},
+                productHandle: {{ product.handle | json }},
+                productUrl: {{ product_url | json }},
+                buttonText: {{ button_label | json }},
+              });
+            }
+          });
+        })();
+      </script>
+    </div>
+  {% else %}
+  {% comment %} ============ MODO PERSONALIZAÇÃO IN-SITE (modal) ============ {% endcomment %}
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap"
+  >
+  <script src="{{ 'custom-name-modal.js' | asset_url }}" defer="defer"></script>
+
+  <div class="product-detail__custom-name-button mb-20" {{ block.shopify_attributes }}>
+    <div class="button_buy-now grow-1 skeleton-loading">
+      <button
+        type="button"
+        class="btn btn-primary w-full product-form__submit word-wrap relative no-underline custom-name-button__link cnm-open-js"
+        data-target="#cnm-{{ block.id }}"
+        style="--btn-padding-x: 1.4rem;"
+      >
+        <span class="btn-label inline-flex align-center content-center gap-10 custom-name-button__label">
+          <img class="custom-name-button__icon" src="https://cdn.shopify.com/s/files/1/0887/2083/4857/files/customize.svg" alt="" width="16" height="16" loading="lazy">
+          <span>{{ button_label }}</span>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  {% comment %} ---------------- Modal de personalização ---------------- {% endcomment %}
+  <custom-name-modal
+    id="cnm-{{ block.id }}"
+    hidden
+    class="cnm"
+    data-variant-id="{{ perso_variant_id }}"
+    data-price="{{ perso_price }}"
+    data-mockup-frente="{{ mockup_frente }}"
+    data-mockup-costas="{{ mockup_costas }}"
+    data-default-variant-id="{{ product.selected_or_first_available_variant.id }}"
+    data-positions='{"frente":{"peito_esquerdo":{"cx":0.6,"cy":0.324,"maxW":0.16},"peito_direito":{"cx":0.389,"cy":0.323,"maxW":0.16}},"costas":{"costas_cima":{"cx":0.512,"cy":0.221,"maxW":0.31},"costas_baixo":{"cx":0.513,"cy":0.815,"maxW":0.31}}}'
+  >
+    <div class="cnm__overlay"></div>
+    <div class="cnm__dialog" role="dialog" aria-modal="true" aria-label="Personalizar camisa">
+      <button type="button" class="cnm__close" aria-label="Fechar">&times;</button>
+      <h3 class="cnm__title">Personalize sua camisa</h3>
+
+      {% comment %} Preview primeiro — o cliente preenche as opções abaixo e sobe pra ver {% endcomment %}
+      <div class="cnm__stage">
+        <canvas class="cnm__canvas" width="1080" height="1080"></canvas>
+        <div class="cnm__zoom">
+          <button type="button" class="cnm__zoom-out" aria-label="Diminuir zoom">&minus;</button>
+          <button type="button" class="cnm__zoom-in" aria-label="Aumentar zoom">+</button>
+        </div>
+      </div>
+      <p class="cnm__illustrative">*Imagem meramente ilustrativa</p>
+
+      {% if product.variants.size > 1 %}
+        {%- assign cnm_def_variant = product.selected_or_first_available_variant -%}
+        {%- comment -%} Um seletor por OPÇÃO (Cor, Tamanho...) em vez de listar todas as combinações. {%- endcomment -%}
+        {%- for option in product.options_with_values -%}
+          {%- assign cnm_opt_idx = forloop.index0 -%}
+          <div class="cnm__field">
+            <span class="cnm__label">{{ option.name }}:</span>
+            <div class="cnm__sizes cnm__options product-form__input" data-option-position="{{ option.position }}">
+              {%- for value in option.values -%}
+                <input
+                  type="radio"
+                  id="cnm-opt-{{ block.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                  name="cnm-opt-{{ block.id }}-{{ option.position }}"
+                  value="{{ value | escape }}"
+                  class="visually-hidden cnm__opt-input"
+                  {% if cnm_def_variant.options[cnm_opt_idx] == value %}checked{% endif %}
+                >
+                <label
+                  for="cnm-opt-{{ block.id }}-{{ option.position }}-{{ forloop.index0 }}"
+                  class="product__item-option inline-flex align-center border rounded-3 subheading_weight btn-hover lh-normal px-20 py-10 transition relative pointer"
+                >
+                  <span class="relative z-2 uppercase-first-letter">{{ value }}</span>
+                </label>
+              {%- endfor -%}
+            </div>
+          </div>
+        {%- endfor -%}
+        <script type="application/json" class="cnm__variants-data">{{ product.variants | json }}</script>
+      {% endif %}
+
+      <div class="cnm__field">
+        <span class="cnm__label">O que personalizar:</span>
+        <div class="cnm__modes">
+          <button type="button" data-mode="name" class="active">Nome</button>
+          <button type="button" data-mode="company">Nome da Empresa</button>
+        </div>
+      </div>
+
+      <div class="cnm__field">
+        <label class="cnm__label cnm__name-label" for="cnm-name-{{ block.id }}">Nome:</label>
+        <div class="cnm__name-wrap">
+          <textarea id="cnm-name-{{ block.id }}" maxlength="20" rows="1" class="cnm__name" placeholder="Digite o nome" autocomplete="off"></textarea>
+          <span class="cnm__counter">0/20</span>
+        </div>
+      </div>
+
+      <div class="cnm__field">
+        <span class="cnm__label">Local:</span>
+        <div class="cnm__sides">
+          <button type="button" data-side="frente">FRENTE</button>
+          <button type="button" data-side="costas">COSTAS</button>
+        </div>
+      </div>
+
+      <div class="cnm__field">
+        <span class="cnm__label">Posição:</span>
+        <div class="cnm__positions" data-positions="frente">
+          <button type="button" data-pos-key="peito_esquerdo" data-pos-label="Peito Esquerdo">Peito Esquerdo</button>
+          <button type="button" data-pos-key="peito_direito" data-pos-label="Peito Direito">Peito Direito</button>
+        </div>
+        <div class="cnm__positions" data-positions="costas" hidden>
+          <button type="button" data-pos-key="costas_cima" data-pos-label="Costas Cima">Costas Cima</button>
+          <button type="button" data-pos-key="costas_baixo" data-pos-label="Costas Baixo">Costas Baixo</button>
+        </div>
+      </div>
+
+      <div class="cnm__disclaimer">
+        <p class="cnm__disclaimer-strong"><strong>A personalização adiciona +6 dias ao prazo de entrega.</strong></p>
+        <p>Vamos utilizar uma fonte padrão com alguma cor selecionada da camisa, não vamos escrever em laranja em uma parte da camisa que é laranja, em função de preservar o design da camisa.</p>
+        <p>O designer mantém os elementos visuais da camisa — nenhum texto da arte é removido para inserir o nome. Se o nome ficar no mesmo local de algum elemento, ele será adaptado pelo designer.</p>
+        <p style="color: red;">Não é possível trocar um produto personalizado.</p>
+        <p>Camisas de envio imediato (ou FULL) não podem ser personalizadas, uma vez que já estão produzidas.</p>
+      </div>
+
+      <p class="cnm__hint-up">Arraste pra cima para ver sua camisa</p>
+
+      <label class="cnm__terms">
+        <input type="checkbox" class="cnm__accept">
+        <span>Aceito os termos de personalização</span>
+      </label>
+
+      <p class="cnm__msg" hidden></p>
+      <button type="button" class="cnm__buy btn btn-primary w-full no-underline" disabled>
+        Comprar Personalizada (R$ {{ perso_price }})
+      </button>
+    </div>
+  </custom-name-modal>
+  {% endif %}
+{% endif %}
+
+<style>
+  .custom-name-button__link { min-height: 4.4rem; line-height: 1.15; white-space: normal; }
+  .custom-name-button__label { max-width: 100%; text-align: center; }
+  .custom-name-button__icon { flex: 0 0 auto; }
+  @media (max-width: 749px) {
+    .custom-name-button__link { min-height: 4.6rem; font-size: 1.6rem; }
+    .custom-name-button__label { gap: 0.5rem; }
+  }
+
+  /* ---------- Modal ---------- */
+  custom-name-modal[hidden] { display: none; }
+  .cnm {
+    position: fixed;
+    inset: 0;
+    z-index: 100000; /* acima do header sticky (o modal é portado pro <body> via JS) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cnm__overlay { position: absolute; inset: 0; background: rgba(0,0,0,.6); }
+  .cnm__dialog {
+    position: relative;
+    background: #fff;
+    width: min(560px, 94vw);
+    max-height: 92vh;
+    overflow-y: auto;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.3);
+  }
+  .cnm__close {
+    position: absolute; top: 10px; right: 12px;
+    background: none; border: 0; font-size: 28px; line-height: 1; cursor: pointer; color: #111;
+  }
+  .cnm__title { margin: 0 0 16px; font-size: 1.4rem; }
+  .cnm__field { margin-bottom: 14px; }
+  .cnm__label { display: block; font-weight: 600; margin-bottom: 6px; }
+  .cnm__name-wrap { position: relative; }
+  .cnm__name {
+    width: 100%; min-height: 44px; padding: 11px 56px 11px 14px;
+    border: 1px solid #ccc; border-radius: 8px; font-size: 16px;
+    font-family: inherit; line-height: 1.3; resize: none; display: block;
+  }
+  .cnm__counter { position: absolute; right: 12px; top: 14px; font-size: 12px; color: #888; }
+
+  /* Pills de tamanho: layout em linha; o visual do pill vem das classes do tema */
+  .cnm__sizes { display: flex; flex-wrap: wrap; gap: 8px; }
+
+  .cnm__modes { display: flex; gap: 10px; }
+  .cnm__modes button {
+    flex: 1; height: 42px; border: 1px solid #ccc; border-radius: 8px;
+    background: #fff; cursor: pointer; font-weight: 600; color: #111;
+  }
+  .cnm__modes button.active { background: #135ed1; color: #fff; border-color: #135ed1; }
+
+  .cnm__sides { display: flex; gap: 10px; }
+  .cnm__sides button {
+    flex: 1; height: 44px; border: 1px solid #ccc; border-radius: 8px;
+    background: #fff; cursor: pointer; font-weight: 700; letter-spacing: .04em; color: #111;
+  }
+  .cnm__sides button.active { background: #135ed1; color: #fff; border-color: #135ed1; }
+
+  /* Stage: scroll passa direto (sem touch-action:none / pan), zoom só pelos botões */
+  .cnm__stage {
+    position: relative; width: 100%; aspect-ratio: 1 / 1; overflow: hidden;
+    background: #f3f3f3; border-radius: 10px; margin-bottom: 14px;
+  }
+  .cnm__canvas { width: 100%; height: 100%; display: block; transform-origin: center center; will-change: transform; }
+  .cnm__zoom { position: absolute; right: 10px; bottom: 10px; display: flex; gap: 6px; }
+  .cnm__zoom button {
+    width: 36px; height: 36px; border-radius: 50%; border: 0; background: rgba(0,0,0,.65);
+    color: #fff; font-size: 20px; line-height: 1; cursor: pointer;
+  }
+
+  .cnm__positions { display: flex; gap: 10px; }
+  .cnm__positions[hidden] { display: none; }
+  .cnm__positions button {
+    flex: 1; height: 42px; border: 1px solid #ccc; border-radius: 8px; background: #fff; cursor: pointer; color: #111;
+  }
+  .cnm__positions button.active { border-color: #135ed1; box-shadow: 0 0 0 2px #135ed133; font-weight: 600; }
+
+  .cnm__illustrative { margin: -6px 0 14px; font-size: 11px; color: #999; text-align: center; }
+
+  .cnm__disclaimer {
+    background: #f5f5f5; border: 1px solid #e3e3e3; border-radius: 8px;
+    padding: 10px 12px; margin: 4px 0 12px;
+  }
+  .cnm__disclaimer p { color: #6a6a6a; font-size: 11.5px; line-height: 1.4; margin: 0 0 8px; }
+  .cnm__disclaimer p:last-child { margin-bottom: 0; }
+  .cnm__disclaimer .cnm__disclaimer-strong strong { color: #333; }
+
+  .cnm__hint-up { color: #135ed1; font-size: 12px; font-weight: 600; text-align: center; margin: 0 0 10px; }
+
+  .cnm__terms { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; cursor: pointer; font-weight: 600; }
+  .cnm__terms input { width: 18px; height: 18px; flex: 0 0 auto; }
+
+  .cnm__msg { color: #c0392b; margin: 8px 0; font-size: 14px; }
+  .cnm__buy { margin-top: 8px; }
+  .cnm__buy[data-loading] { opacity: .7; pointer-events: none; }
+  .cnm__buy:disabled { opacity: .5; cursor: not-allowed; }
+</style>

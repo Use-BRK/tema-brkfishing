@@ -155,11 +155,16 @@
         },
         "custom_name_button_XTkeF": {
           "type": "custom_name_button",
-          "disabled": true,
+          "disabled": false,
           "settings": {
             "enable_button": true,
+            "button_mode": "personalization",
             "button_label": "Quero meu nome na Camisa (R$29,90)",
             "whatsapp_number": "553432194697",
+            "perso_variant_id": "43812419240002",
+            "perso_price": "29,90",
+            "mockup_frente": "https://cdn.shopify.com/s/files/1/0628/1445/3826/files/MOCKUP_FRENTE.png",
+            "mockup_costas": "https://cdn.shopify.com/s/files/1/0628/1445/3826/files/MOCKUP_COSTAS.png",
             "collections": [
               "roupas-masculinas",
               "roupas-femininas-1"
