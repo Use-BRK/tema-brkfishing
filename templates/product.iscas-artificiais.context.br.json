@@ -18,7 +18,20 @@
         "enable_on_desktop": false,
         "enable_on_mobile": false
       },
-      "blocks": {}
+      "blocks": {
+        "variant_picker_tcCihG": {
+          "disabled": false,
+          "settings": {
+            "variant_type": "bulk_grid",
+            "bulk_tag": "Isca Artificial",
+            "bulk_button_label": "Comprar"
+          }
+        },
+        "multivariants_bulk_order_app_block_product_RcfM4H": {
+          "disabled": true,
+          "settings": {}
+        }
+      }
     }
   }
 }
