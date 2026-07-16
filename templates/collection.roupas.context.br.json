@@ -12,5 +12,27 @@
     "market": "br"
   },
   "parent": "collection.roupas.json",
-  "sections": {}
+  "sections": {
+    "main": {
+      "settings": {},
+      "blocks": {
+        "gender_filter_NERkV": {
+          "type": "gender_filter",
+          "disabled": false,
+          "settings": {
+            "label_masculino": "Masculino",
+            "label_feminino": "Feminino",
+            "filter_collection_list": []
+          }
+        }
+      },
+      "block_order": [
+        "gender_filter_NERkV",
+        "categories_LYDr6p",
+        "filter_giBtHK",
+        "popular_product_Xwjqcf",
+        "image_banner_UUJxtT"
+      ]
+    }
+  }
 }
