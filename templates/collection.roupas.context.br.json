@@ -14,7 +14,11 @@
   "parent": "collection.roupas.json",
   "sections": {
     "main": {
-      "settings": {},
+      "settings": {
+        "show_filter_counts": true,
+        "grid_list": false,
+        "number_products_per_page": true
+      },
       "blocks": {
         "gender_filter_NERkV": {
           "type": "gender_filter",
