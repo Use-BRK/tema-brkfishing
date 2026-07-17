@@ -15,21 +15,21 @@
   "sections": {
     "scrolling_text_exjPq": {
       "type": "scrolling-text",
-      "disabled": false,
+      "disabled": true,
       "settings": {
         "section_width": "full_width",
         "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
-        "header-87904de5679285abf6fcd4ccd2ad7a59": null,
+        "header-d1ad2e3a5c6ddc0876fe7706efa99ae2": null,
         "direction": "right",
         "icon_between_item": "unset",
         "speed": 10,
         "space_between_text": 60,
-        "header-13c6a9170a85dde46f19b3b7faff1d12": null,
+        "header-24a5bd49f7b5026c80894b28df45ee1f": null,
         "font_size": 14,
         "font_weight": "body_weight",
         "uppercase": false,
         "use_heading_font": false,
-        "header-05b9f284bc6f8edfc2503099767f2eb4": null,
+        "header-d10bb96f3f9b95269c1a33ea077c8938": null,
         "padding_top": 5,
         "padding_bottom": 5,
         "reset_spacing": true
@@ -111,7 +111,8 @@
               "abril-de-vantagens",
               "copa-2026",
               "fusion-cax-2026",
-              "hybrid-cax-2026"
+              "hybrid-cax-2026",
+              "colecao-armorx-2026"
             ]
           }
         }
