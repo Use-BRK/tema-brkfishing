@@ -19,17 +19,17 @@
       "settings": {
         "section_width": "full_width",
         "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
-        "header-d1ad2e3a5c6ddc0876fe7706efa99ae2": null,
+        "header-81fe503d1f36c563a651e4a8f8aebb59": null,
         "direction": "right",
         "icon_between_item": "unset",
         "speed": 10,
         "space_between_text": 60,
-        "header-24a5bd49f7b5026c80894b28df45ee1f": null,
+        "header-c5c1bca4d344538a8987687013432ede": null,
         "font_size": 14,
         "font_weight": "body_weight",
         "uppercase": false,
         "use_heading_font": false,
-        "header-d10bb96f3f9b95269c1a33ea077c8938": null,
+        "header-bfd3fe84d79588078ae0db4302d7a552": null,
         "padding_top": 5,
         "padding_bottom": 5,
         "reset_spacing": true
@@ -112,7 +112,8 @@
               "copa-2026",
               "fusion-cax-2026",
               "hybrid-cax-2026",
-              "colecao-armorx-2026"
+              "colecao-armorx-2026",
+              "linha-fusion-2026"
             ]
           }
         }
