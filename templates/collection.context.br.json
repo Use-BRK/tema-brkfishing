@@ -19,17 +19,17 @@
       "settings": {
         "section_width": "full_width",
         "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
-        "header-81fe503d1f36c563a651e4a8f8aebb59": null,
+        "header-33acbc6d6b6f22ebb80ace42aec05881": null,
         "direction": "right",
         "icon_between_item": "unset",
         "speed": 10,
         "space_between_text": 60,
-        "header-c5c1bca4d344538a8987687013432ede": null,
+        "header-74bad85579199c3a554bd7112463979a": null,
         "font_size": 14,
         "font_weight": "body_weight",
         "uppercase": false,
         "use_heading_font": false,
-        "header-bfd3fe84d79588078ae0db4302d7a552": null,
+        "header-2048a92c04a453e5231246b05cd37d76": null,
         "padding_top": 5,
         "padding_bottom": 5,
         "reset_spacing": true
@@ -113,7 +113,8 @@
               "fusion-cax-2026",
               "hybrid-cax-2026",
               "colecao-armorx-2026",
-              "linha-fusion-2026"
+              "linha-fusion-2026",
+              "camisas-hybrid"
             ]
           }
         }
