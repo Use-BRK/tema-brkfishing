@@ -225,6 +225,8 @@
         {%- case block.type -%}
           {%- when 'custom_name_button' -%}
             {% render 'custom-name-button', product: product, block: block %}
+          {%- when 'whatsapp_cta' -%}
+            {% render 'product-whatsapp-cta', product: product, block: block %}
           {%- when 'title' -%}
             {%- unless template.suffix == 'raptorx' -%}
               {% if block_st.show_vendor and product.vendor != blank %}
@@ -1681,6 +1683,63 @@
           "id": "collections",
           "label": "Exibir apenas nestas collections",
           "info": "Se nenhuma collection for selecionada, o botão aparece em todos os produtos."
+        }
+      ]
+    },
+    {
+      "type": "whatsapp_cta",
+      "name": "Compre pelo WhatsApp",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "enable_button",
+          "default": true,
+          "label": "Exibir bloco"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "default": "Ou se preferir {{whatsapp_button}} COMPRE PELO WHATSAPP",
+          "label": "Texto",
+          "info": "Use {{whatsapp_button}} onde quiser exibir o ícone do WhatsApp."
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Cor do texto",
+          "default": "#128c4a"
+        },
+        {
+          "type": "header",
+          "content": "Conversa"
+        },
+        {
+          "type": "text",
+          "id": "whatsapp_number",
+          "label": "Número do WhatsApp",
+          "info": "DDI + DDD + número (ex.: 5511999999999). Vazio = abre o compartilhamento do WhatsApp."
+        },
+        {
+          "type": "textarea",
+          "id": "whatsapp_message",
+          "default": "Olá! Tenho interesse neste produto:",
+          "label": "Mensagem enviada"
+        },
+        {
+          "type": "checkbox",
+          "id": "append_product_link",
+          "default": true,
+          "label": "Adicionar link do produto à mensagem"
+        },
+        {
+          "type": "header",
+          "content": "Exibição"
+        },
+        {
+          "type": "collection_list",
+          "id": "collections",
+          "label": "Exibir apenas nestas collections",
+          "info": "Se nenhuma collection for selecionada, o bloco aparece em todos os produtos."
         }
       ]
     },
