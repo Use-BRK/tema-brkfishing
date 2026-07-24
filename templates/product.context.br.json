@@ -19,12 +19,12 @@
       "settings": {
         "section_width": "container",
         "color_scheme": "",
-        "header-af092f7f50ada8a7c414290819cfc7a9": null,
+        "header-3b3a684d91b399842ccb43bf6575c3e2": null,
         "heading": "Perguntas Frequentes",
         "description": "",
         "header_size": "medium",
         "header_alignment": "center",
-        "header-dac2b0b6a655ab2f5f4be19b0bb0477a": null,
+        "header-cdb1f4b812c0889c5786c8bed9c56879": null,
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -118,20 +118,21 @@
           "type": "shopify://apps/brk-apps-fishing/blocks/combined-listing/019f0510-f075-72ba-9c2f-a80926df6a59",
           "disabled": false,
           "settings": {
-            "header-e8e2b67aa32674ceea03c8e9cd0b0170": null,
+            "header-135e10e0720c5a11d82799b65ce4d123": null,
             "show_option_name": true,
             "show_label": true,
-            "header-912da5e296a09ddc859c34cb15db3403": null,
+            "header-c2256a8f96e63591c0cb068d6599ca3e": null,
             "swatch_size": 86,
             "border_radius": 4,
             "border_width": 1,
             "gap": 4,
-            "header-db13a526993c5f30a1dfe19bb03d3c1e": null,
+            "margin_y": 10,
+            "header-3140975e17ffcdd7017e4587e0df3974": null,
             "border_color": "#cfcfcf",
-            "selected_color": "#135ED1",
+            "selected_color": "#135ed1",
             "selected_text_color": "#ffffff",
-            "hover_color": "#135ED1",
-            "header-e05011c032c6583b59939929437842cc": null,
+            "hover_color": "#135ed1",
+            "header-c10457fae816cd047a091f0ebba7c22d": null,
             "label_color": "#6a6a6a",
             "label_size": 12
           }
@@ -160,7 +161,9 @@
             "enable_button": true,
             "button_mode": "personalization",
             "button_label": "Quero meu nome na Camisa (R$29,90)",
+            "header-b51305f7aa29e5806fa26ee0d49fa245": null,
             "whatsapp_number": "553432194697",
+            "header-8e583875dc952574c8b16179e4afe2b8": null,
             "perso_variant_id": "43812419240002",
             "perso_price": "29,90",
             "mockup_frente": "https://cdn.shopify.com/s/files/1/0628/1445/3826/files/MOCKUP_FRENTE.png",
@@ -169,6 +172,21 @@
               "roupas-masculinas",
               "roupas-femininas-1"
             ]
+          }
+        },
+        "whatsapp_cta_4pXDG": {
+          "type": "whatsapp_cta",
+          "disabled": false,
+          "settings": {
+            "enable_button": true,
+            "button_text": "Ou se preferir [whatsapp] <strong>COMPRE PELO WHATSAPP</strong>",
+            "text_color": "#128c4a",
+            "header-3408062f0b904bc251ae3d6b3a00ce29": null,
+            "whatsapp_number": "553432194697",
+            "whatsapp_message": "Olá! Tenho interesse neste produto:",
+            "append_product_link": true,
+            "header-b98ae58c5211c445721d5d19fdfcce33": null,
+            "collections": []
           }
         },
         "model_size_XM7z6E": {
@@ -205,6 +223,7 @@
         "stock_countdown_JNK9zi",
         "buy_buttons_LcQGtR",
         "custom_name_button_XTkeF",
+        "whatsapp_cta_4pXDG",
         "model_size_XM7z6E",
         "pickup_avaiability_cyVydQ",
         "product_grouped_6epkNf",
