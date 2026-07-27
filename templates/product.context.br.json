@@ -19,12 +19,12 @@
       "settings": {
         "section_width": "container",
         "color_scheme": "",
-        "header-3b3a684d91b399842ccb43bf6575c3e2": null,
+        "header-65eae634e412b3bbdba055b39007da5e": null,
         "heading": "Perguntas Frequentes",
         "description": "",
         "header_size": "medium",
         "header_alignment": "center",
-        "header-cdb1f4b812c0889c5786c8bed9c56879": null,
+        "header-93a0d982069280bdf5b68ca7a3ab8cfd": null,
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -118,21 +118,21 @@
           "type": "shopify://apps/brk-apps-fishing/blocks/combined-listing/019f0510-f075-72ba-9c2f-a80926df6a59",
           "disabled": false,
           "settings": {
-            "header-135e10e0720c5a11d82799b65ce4d123": null,
+            "header-2f708cf0ce63a16fad11d095226c7f10": null,
             "show_option_name": true,
             "show_label": true,
-            "header-c2256a8f96e63591c0cb068d6599ca3e": null,
+            "header-60d96bfb074cefb6721e95ff14242daa": null,
             "swatch_size": 86,
             "border_radius": 4,
             "border_width": 1,
             "gap": 4,
             "margin_y": 10,
-            "header-3140975e17ffcdd7017e4587e0df3974": null,
+            "header-15d7fe6b73fbe02970dbbcd27137fe94": null,
             "border_color": "#cfcfcf",
             "selected_color": "#135ed1",
             "selected_text_color": "#ffffff",
             "hover_color": "#135ed1",
-            "header-c10457fae816cd047a091f0ebba7c22d": null,
+            "header-21c18ed3364fe61ba95d8c78d98e672e": null,
             "label_color": "#6a6a6a",
             "label_size": 12
           }
@@ -161,9 +161,9 @@
             "enable_button": true,
             "button_mode": "personalization",
             "button_label": "Quero meu nome na Camisa (R$29,90)",
-            "header-b51305f7aa29e5806fa26ee0d49fa245": null,
+            "header-20185b35fd41881392925f8bdb64725a": null,
             "whatsapp_number": "553432194697",
-            "header-8e583875dc952574c8b16179e4afe2b8": null,
+            "header-5874936e0a08cfe423df4d7318857b34": null,
             "perso_variant_id": "43812419240002",
             "perso_price": "29,90",
             "mockup_frente": "https://cdn.shopify.com/s/files/1/0628/1445/3826/files/MOCKUP_FRENTE.png",
@@ -181,11 +181,11 @@
             "enable_button": true,
             "button_text": "Ou se preferir [whatsapp] <strong>COMPRE PELO WHATSAPP</strong>",
             "text_color": "#128c4a",
-            "header-3408062f0b904bc251ae3d6b3a00ce29": null,
+            "header-20390e92971f32d5884598ecf80bab4f": null,
             "whatsapp_number": "553432194697",
             "whatsapp_message": "Olá! Tenho interesse neste produto:",
             "append_product_link": true,
-            "header-b98ae58c5211c445721d5d19fdfcce33": null,
+            "header-2345f3561fb3d3eb7166d67ba3a0d18c": null,
             "collections": []
           }
         },
@@ -200,6 +200,22 @@
         "product_grouped_6epkNf": {
           "disabled": false,
           "settings": {}
+        },
+        "brk_apps_fishing_bundle_addon_zJW6Q": {
+          "type": "shopify://apps/brk-apps-fishing/blocks/bundle-addon/019f0510-f075-72ba-9c2f-a80926df6a59",
+          "disabled": false,
+          "settings": {
+            "paragraph-2912a288ee4ff05090647fd54b0afc2b": null,
+            "header-81efe33d84b271d6c2a3d31eb49737ae": null,
+            "title_size": 15,
+            "border_radius": 12,
+            "margin_y": 16,
+            "header-50101a056a26a784e670d4c3ad025e4f": null,
+            "border_color": "#E1E3E5",
+            "accent_color": "#085B47",
+            "label_bg": "#085B47",
+            "label_text_color": "#FFFFFF"
+          }
         },
         "more_colors_3zmxGq": {
           "disabled": false,
@@ -221,6 +237,7 @@
         "sku_prazo_8wWwi",
         "product_addons_YRaprz",
         "stock_countdown_JNK9zi",
+        "brk_apps_fishing_bundle_addon_zJW6Q",
         "buy_buttons_LcQGtR",
         "custom_name_button_XTkeF",
         "whatsapp_cta_4pXDG",
