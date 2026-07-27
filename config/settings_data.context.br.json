@@ -55,6 +55,13 @@
       "scheme-3e8af4c8-b99d-456e-90a0-9e470643087b": {
         "settings": {}
       }
+    },
+    "blocks": {
+      "4859221151553693301": {
+        "type": "shopify://apps/brk-apps-fishing/blocks/bundle-embed/019f0510-f075-72ba-9c2f-a80926df6a59",
+        "disabled": false,
+        "settings": {}
+      }
     }
   },
   "platform_customizations": {
