@@ -1733,6 +1733,31 @@
         },
         {
           "type": "header",
+          "content": "Horário de atendimento"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_schedule",
+          "default": false,
+          "label": "Ativar horário",
+          "info": "Quando ligado, o botão só aparece dentro do horário abaixo (fuso UTC-3, horário de Brasília). Fora do horário fica oculto automaticamente."
+        },
+        {
+          "type": "text",
+          "id": "hours_start",
+          "default": "08:00",
+          "label": "Início",
+          "info": "Formato 24h HH:MM (ex.: 08:00)."
+        },
+        {
+          "type": "text",
+          "id": "hours_end",
+          "default": "18:00",
+          "label": "Fim",
+          "info": "Formato 24h HH:MM (ex.: 18:00)."
+        },
+        {
+          "type": "header",
           "content": "Exibição"
         },
         {
