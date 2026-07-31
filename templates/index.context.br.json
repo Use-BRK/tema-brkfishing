@@ -646,47 +646,10 @@
             "content_alignment_mobile": "center"
           }
         },
-        "slider_item_dP4zBf": {
-          "type": "slider_item",
-          "name": "Amazon",
-          "disabled": false,
-          "settings": {
-            "header-ef8f262cce6c3aeb868bdc42328d9617": null,
-            "image": "shopify://shop_images/Amazon_NewBanner.jpg",
-            "image_mobile": "shopify://shop_images/Bannermob.jpg",
-            "local_video": null,
-            "overlay_opacity": 0,
-            "link_banner": "shopify://collections/master-amazon-femininas",
-            "header-fbbe8fd4e157621948fde4fd38c361f2": null,
-            "slider_effect": "effect_fadeinup",
-            "subheading": "",
-            "heading": "",
-            "description": "",
-            "first_button_label": "",
-            "first_button_link": "shopify://collections/camisa-fusionx-masculino",
-            "first_button_style": false,
-            "second_button_label": "",
-            "second_button_link": "shopify://collections/camisa-fusionx-masculino",
-            "second_button_style": false,
-            "header-08f75d0a82d5856e74091327151fb379": null,
-            "content_alignment": "center",
-            "content_position": "top-center",
-            "content_width": "full_width",
-            "content_max_width": 100,
-            "content_padding_block": 55,
-            "content_padding_inline": 55,
-            "header-6190c19d1329fa4218ad7382f72f54d3": null,
-            "show_content_background": false,
-            "content_background": "#ffffff",
-            "content_box_opacity": 100,
-            "header-ec6883f7618c19f825fee90545668cf8": null,
-            "content_alignment_mobile": "right"
-          }
-        },
         "slider_item_PiP3V": {
           "type": "slider_item",
-          "disabled": true,
           "name": "Óculos de Sol",
+          "disabled": false,
           "settings": {
             "header-ff0891afe27c03a87eeb38a50f628357": null,
             "image": "shopify://shop_images/MOBILE_OCULOS_POLARIZADOS_2669b995-1e2d-4d0b-89c6-e003db1fcc9e.gif",
@@ -719,13 +682,50 @@
             "header-6489b7b5ca85d5bb23a99879456a281d": null,
             "content_alignment_mobile": "center"
           }
+        },
+        "slider_item_MzKCV": {
+          "type": "slider_item",
+          "name": "Novos Bonés",
+          "disabled": false,
+          "settings": {
+            "header-912aaed411be30f9ae5f51c5a9d5598e": null,
+            "image": "shopify://shop_images/NOVOS_BONES_FISHING_DESKTOP.webp",
+            "image_mobile": "shopify://shop_images/NOVOS_BONES_FISHING_MOBILE.webp",
+            "local_video": null,
+            "overlay_opacity": 0,
+            "link_banner": "shopify://collections/bones-de-pesca-vestuario-e-acessorios",
+            "header-0256754159240d1ede27b94bd5c0ab97": null,
+            "slider_effect": "effect_fadeinup",
+            "subheading": "",
+            "heading": "",
+            "description": "",
+            "first_button_label": "",
+            "first_button_link": "shopify://collections/camisa-fusionx-feminino",
+            "first_button_style": false,
+            "second_button_label": "",
+            "second_button_link": "shopify://collections/camisa-fusionx-feminino",
+            "second_button_style": false,
+            "header-f2f0793d88b3413f3e2eb06725468852": null,
+            "content_alignment": "left",
+            "content_position": "bottom-left",
+            "content_width": "full_width",
+            "content_max_width": 100,
+            "content_padding_block": 60,
+            "content_padding_inline": 60,
+            "header-e5035c35c63d76dd7c47b9aa546e2cf3": null,
+            "show_content_background": false,
+            "content_background": "#ffffff",
+            "content_box_opacity": 100,
+            "header-d9bf0da7666f4af5f6a3d8e8f74af00f": null,
+            "content_alignment_mobile": "center"
+          }
         }
       },
       "block_order": [
         "slider_item_Ebn78",
+        "slider_item_MzKCV",
         "slider_item_picEy",
         "slider_item_TzyDJp",
-        "slider_item_dP4zBf",
         "slider_item_PiP3V"
       ]
     },
@@ -876,6 +876,12 @@
             "collection_title": "Camisa ArmorX"
           }
         },
+        "collection_qdMHYe": {
+          "settings": {
+            "collection_image": "shopify://shop_images/RAPTORS_brk_fishing.png",
+            "collection_title": "Calçados de Pesca"
+          }
+        },
         "collection_kUA3MH": {
           "disabled": true,
           "settings": {}
@@ -883,12 +889,6 @@
         "collection_fyfMEN": {
           "settings": {
             "collection_image": "shopify://shop_images/oculos_brk_fishing_3.png"
-          }
-        },
-        "collection_qdMHYe": {
-          "settings": {
-            "collection_image": "shopify://shop_images/RAPTORS_brk_fishing.png",
-            "collection_title": "Calçados de Pesca"
           }
         }
       },
