@@ -1073,3 +1073,32 @@ input.option-disabled + .miniatura-swatch {
     font-size: 11px;
   }
 }
+
+/* ---- Combined listing (grupo de variantes / brk-cl) ----
+   Transforma o grid "stacked" em um carrossel horizontal: os swatches
+   ficam numa única linha e deslizam ao chegar na borda (swipe no mobile,
+   barra de rolagem no desktop). Especificidade .brk-cl .brk-cl__* vence
+   a do CSS do app (classe única) independente da ordem de carregamento. */
+.brk-cl .brk-cl__list {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  padding-bottom: 6px;
+}
+.brk-cl .brk-cl__item {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+.brk-cl .brk-cl__list::-webkit-scrollbar {
+  height: 4px;
+}
+.brk-cl .brk-cl__list::-webkit-scrollbar-track {
+  background: transparent;
+}
+.brk-cl .brk-cl__list::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
