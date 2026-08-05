@@ -19,17 +19,17 @@
       "settings": {
         "section_width": "full_width",
         "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
-        "header-33acbc6d6b6f22ebb80ace42aec05881": null,
+        "header-cd8c4cfd0e2673e929e3c1b687b4694a": null,
         "direction": "right",
         "icon_between_item": "unset",
         "speed": 10,
         "space_between_text": 60,
-        "header-74bad85579199c3a554bd7112463979a": null,
+        "header-9329633dc7b5d9193212fff2acddcb57": null,
         "font_size": 14,
         "font_weight": "body_weight",
         "uppercase": false,
         "use_heading_font": false,
-        "header-2048a92c04a453e5231246b05cd37d76": null,
+        "header-19da9c13f406022e94b0d4e39cfbc9e6": null,
         "padding_top": 5,
         "padding_bottom": 5,
         "reset_spacing": true
@@ -82,7 +82,7 @@
       }
     },
     "subcollection": {
-      "disabled": true,
+      "disabled": false,
       "settings": {},
       "blocks": {}
     },
