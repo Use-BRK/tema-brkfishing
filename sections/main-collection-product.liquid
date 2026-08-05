@@ -57,6 +57,27 @@
     min-height: 42px;
     box-sizing: border-box;
   }
+  /* Desktop/tablet: 3 colunas (Filtro | gênero centralizado | Ordenar).
+     Centraliza o gênero mesmo quando não há botão de Filtro na coleção. */
+  @media (min-width: 576px) {
+    .toolbar-products.toolbar--gender {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+    }
+    .toolbar--gender .toolbar-left {
+      grid-column: 1;
+      justify-self: start;
+    }
+    .toolbar--gender .gender-filter-bar {
+      grid-column: 2;
+      justify-self: center;
+    }
+    .toolbar--gender .toolbar-sorter {
+      grid-column: 3;
+      justify-self: end;
+    }
+  }
   @media (max-width: 749px) {
     /* Mobile: Filtro + gênero + Ordenar numa linha só */
     .toolbar-products.toolbar--gender {

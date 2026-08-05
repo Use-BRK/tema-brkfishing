@@ -6,6 +6,12 @@
   justify-content: safe center;
 }
 
+/* Imagens das coleções em "contain" (temporário) — mostra a imagem inteira
+   sem cortar. Escopo: seções de collection list / subcollection list. */
+.sec__collection-list .collection-item__media :is(img, picture) {
+  object-fit: contain;
+}
+
 /* Header Menor no Mobile */
 @media screen and (max-width: 750px) {
   .header {

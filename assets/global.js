@@ -365,6 +365,7 @@ class SlideSection extends HTMLElement {
     }
     this.globalSlide = new Swiper(_this, {
       slidesPerView: autoItem ? "auto" : itemMobile,
+      centerInsufficientSlides: _this?.dataset.centerInsufficient === "true",
       spaceBetween: spacing >= 15 ? 15 : spacing,
       autoplay: autoplaying,
       direction: direction,
