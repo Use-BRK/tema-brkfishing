@@ -412,13 +412,6 @@
         "disabled": true,
         "settings": {}
       },
-      "1530068250781986104": {
-        "type": "shopify://apps/fbp-fast-bundle/blocks/fast_bundle/9e87fbe2-9041-4c23-acf5-322413994cef",
-        "disabled": false,
-        "settings": {
-          "home": true
-        }
-      },
       "18228966181090706294": {
         "type": "shopify://apps/selleasy/blocks/app-embed/790c1a03-a71f-4bc1-9869-00dad526d3c2",
         "disabled": false,
@@ -431,24 +424,14 @@
         "disabled": false,
         "settings": {}
       },
-      "12334822184266723110": {
-        "type": "shopify://apps/sa-variants/blocks/variant-king-combined-listing/ff68b20f-8c8f-491e-92bf-3e5b8f17ef88",
-        "disabled": false,
-        "settings": {
-          "alignment": "center",
-          "swatch_location": "After price",
-          "switch_on_hover": false,
-          "preselect_variant": true
-        }
-      },
       "2200952712151285029": {
         "type": "shopify://apps/microsoft-clarity/blocks/brandAgents_js/31c3d126-8116-4b4a-8ba1-baeda7c4aeea",
         "disabled": true,
         "settings": {}
       },
-      "16555213172727936593": {
-        "type": "shopify://apps/ns-discount-in-cart/blocks/discount_block/0cbbbcdd-bf54-49df-885c-9ca3fd52a671",
-        "disabled": true,
+      "14060646107696862457": {
+        "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "disabled": false,
         "settings": {}
       }
     },

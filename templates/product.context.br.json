@@ -19,12 +19,12 @@
       "settings": {
         "section_width": "container",
         "color_scheme": "",
-        "header-291287c12e64b9fa34f56ed9c77f1ae2": null,
+        "header-fbfb43af4977479aa8f53aad5c2aae26": null,
         "heading": "Perguntas Frequentes",
         "description": "",
         "header_size": "medium",
         "header_alignment": "center",
-        "header-730c26fdde84a327ba4d197b2a46ac96": null,
+        "header-b772a5e51b4e77424837fe2a6f5572e0": null,
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -118,21 +118,21 @@
           "type": "shopify://apps/brk-apps-fishing/blocks/combined-listing/019f0510-f075-72ba-9c2f-a80926df6a59",
           "disabled": false,
           "settings": {
-            "header-c6c7cd41f0c11d2b792a1a97b8a3b0ab": null,
+            "header-99c43b3acf18574748e4dc0f0deaa2e1": null,
             "show_option_name": true,
             "show_label": true,
-            "header-f7c77853866011c8c5bd55815812d1dc": null,
+            "header-9bb6e325fa223e96b4ace9bec2e6e489": null,
             "swatch_size": 86,
             "border_radius": 4,
             "border_width": 1,
             "gap": 4,
             "margin_y": 10,
-            "header-7a5c019f72eb53ee9a096bc64e179f3e": null,
+            "header-b29d17ed829d51096cda557d832e3385": null,
             "border_color": "#cfcfcf",
             "selected_color": "#135ed1",
             "selected_text_color": "#ffffff",
             "hover_color": "#135ed1",
-            "header-af54e59eb205026f3bcda91c06c0c4f0": null,
+            "header-7a288e6ac44dcbdfcaf1029a9193763d": null,
             "label_color": "#6a6a6a",
             "label_size": 12
           }
@@ -158,12 +158,12 @@
           "type": "shopify://apps/brk-apps-fishing/blocks/bundle-addon/019f0510-f075-72ba-9c2f-a80926df6a59",
           "disabled": false,
           "settings": {
-            "paragraph-b6a4c7f70b55b23c85d38ff7264c3970": null,
-            "header-3a33b29be2295b54c9434f1463d66466": null,
+            "paragraph-eb0f50d3e913e9b8e3ae847f92d175af": null,
+            "header-a880679f8fd7b8cf6afaf42b6019224e": null,
             "title_size": 15,
             "border_radius": 12,
             "margin_y": 16,
-            "header-f8860107dc8b154b13e09fd386eca21a": null,
+            "header-fc96b986315826538601a93cdaff56a6": null,
             "border_color": "#e1e3e5",
             "accent_color": "#085b47",
             "label_bg": "#085b47",
@@ -177,9 +177,9 @@
             "enable_button": true,
             "button_mode": "personalization",
             "button_label": "Quero meu nome na Camisa (R$29,90)",
-            "header-6c311723a94adc2ccb3d7bb38ec51d54": null,
+            "header-4740eadf0320af45adbb8b9c863f763a": null,
             "whatsapp_number": "553432194697",
-            "header-f001699632b47338be19db5bfbff98c5": null,
+            "header-a7d7d583f8e12c45e14a994a4edbfe16": null,
             "perso_variant_id": "43812419240002",
             "perso_price": "29,90",
             "mockup_frente": "https://cdn.shopify.com/s/files/1/0628/1445/3826/files/MOCKUP_FRENTE.png",
@@ -197,15 +197,15 @@
             "enable_button": true,
             "button_text": "Ou se preferir [whatsapp] <strong>COMPRE PELO WHATSAPP</strong>",
             "text_color": "#128c4a",
-            "header-8259102dcd15c890a27ea8514de59e9e": null,
+            "header-7bc0baaed5cfa5a1499d18bf3b7837bb": null,
             "whatsapp_number": "553432194697",
             "whatsapp_message": "Olá! Tenho interesse neste produto:",
             "append_product_link": true,
-            "header-ac5866e5119895cd84a1b0302997c8e3": null,
+            "header-fad7b0960e07668eef2621c5f1980cd7": null,
             "enable_schedule": true,
             "hours_start": "08:00",
             "hours_end": "17:00",
-            "header-a00ec825cedb9c1ad8043c2b4c01bf7c": null,
+            "header-2554fc90c9d551a7813f4be6e60474b1": null,
             "collections": []
           }
         },
@@ -257,6 +257,29 @@
       "disabled": true,
       "settings": {},
       "blocks": {}
+    },
+    "1785956660a4b22876": {
+      "type": "apps",
+      "disabled": false,
+      "settings": {},
+      "blocks": {
+        "judge_me_reviews_review_widget_yAkyq": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": false,
+          "settings": {
+            "review_data": "real_data",
+            "max_width": 1200,
+            "paragraph-a40c581fe3a0d0de8be5b0a18db1c11d": null,
+            "show_shop_reviews": false,
+            "empty_state": "other_products_reviews",
+            "paragraph-db09a372c82d6e3f9708be7a361f6925": null,
+            "paragraph-5196b0186d170b033c450fc4a246c7fb": null
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_yAkyq"
+      ]
     }
   },
   "order": [
@@ -269,6 +292,7 @@
     "divider_TKLM6L",
     "related_products",
     "divider_HtLXd3",
+    "1785956660a4b22876",
     "products_recently_viewed_GdCNUL",
     "faq_NnNnA"
   ]
