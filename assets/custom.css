@@ -1,3 +1,11 @@
+/* Subcollection list (portado do Agro) — centraliza o grupo quando os itens
+   não preenchem a linha. Chaveado em .center-insufficient (exclusivo da
+   subcollection-list), sem impacto nas outras seções de coleção. */
+.swiper.center-insufficient:not([class*='initialized']) .swiper-wrapper,
+.swiper.center-insufficient.swiper-css-mode .swiper-wrapper {
+  justify-content: safe center;
+}
+
 /* Header Menor no Mobile */
 @media screen and (max-width: 750px) {
   .header {
