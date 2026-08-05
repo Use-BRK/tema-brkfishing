@@ -1,0 +1,152 @@
+{% comment %}
+  Estilos exclusivos da página /pages/links (linktree BRK Fishing).
+  Carregado condicionalmente em layout/theme.liquid apenas quando
+  page.handle == 'links'. Não afeta nenhuma outra página.
+
+  Diferença vs. Agro: fundo é a imagem Background_fishing.png (não o
+  gradiente verde) e NÃO há a barra de busca aberta no mobile (o tema
+  Fishing não tem esse recurso implementado).
+{% endcomment %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Science+Gothic:wdth,wght@50..200,100..900&display=optional">
+
+<style>
+  /* ═══════════════════════════════════════════════════════════
+     /pages/links — fundo conectado: header + conteúdo + footer
+     Seletores base do tema Glozin.
+  ═══════════════════════════════════════════════════════════ */
+
+  /* 1. FUNDO FIXO NO BODY
+        Imagem de fundo do Fishing. background-attachment:fixed → fica
+        relativo ao viewport, não repete conforme o conteúdo cresce. */
+  body.page-links {
+    background: url('https://cdn.shopify.com/s/files/1/0628/1445/3826/files/Background_Fishing.png?v=1785962267') no-repeat center center !important;
+    background-attachment: fixed !important;
+    background-size: cover !important;
+    min-height: 100vh !important;
+  }
+  /* Backstop: com background-attachment:fixed no mobile, o fundo do html
+     aparece (branco) ao rolar/overscroll -> a "barra branca" embaixo.
+     Pinta o html com o navy escuro da imagem para esconder isso. */
+  html:has(body.page-links) {
+    background-color: #0a2444 !important;
+  }
+
+  /* Esconde a topbar nesta página */
+  body.page-links #topbar { display: none !important; }
+
+  /* 2. HEADER NÃO-STICKY
+        Resolvido na origem: header.liquid passa data-sticky="none" para esta página.
+        O JS lê "none" e nunca inicializa o sticky → zero CLS de reflow.
+        Fallback CSS caso o JS ainda dispare por algum motivo: */
+  body.page-links .section-header,
+  body.page-links .section-header.shopify-section-header-sticky {
+    position: relative !important;
+    top: auto !important;
+  }
+
+  /* 3. HEADER TRANSPARENTE */
+  body.page-links .header {
+    --gradient-background: transparent !important;
+    --color-background: transparent !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+  }
+  body.page-links #header-sticky {
+    background: transparent !important;
+  }
+
+  /* 4. LOGO → branco (filtro branco, independente da cor original) */
+  body.page-links .header__logo img,
+  body.page-links .header__logo svg {
+    filter: brightness(0) invert(1) !important;
+  }
+
+  /* 5. ÍCONES E TEXTO DO HEADER → brancos */
+  body.page-links .header .header-color,
+  body.page-links .header .heading-color,
+  body.page-links .header .header-icon,
+  body.page-links .header a,
+  body.page-links .header button,
+  body.page-links .header .nav-toggle {
+    color: #ffffff !important;
+    --color-heading: #ffffff;
+  }
+  body.page-links .header svg {
+    color: #ffffff !important;
+    fill: currentColor !important;
+  }
+
+  /* (Sem barra de busca mobile no Fishing — recurso inexistente no tema) */
+
+  /* 6. FOOTER TRANSPARENTE
+        O fundo fixed do body aparece por baixo. */
+  body.page-links footer.footer {
+    --gradient-background: transparent !important;
+    --color-background: transparent !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border-top: none !important;
+    box-shadow: none !important;
+  }
+  body.page-links footer.footer,
+  body.page-links footer.footer a,
+  body.page-links footer.footer p,
+  body.page-links footer.footer span,
+  body.page-links footer.footer li,
+  body.page-links footer.footer svg {
+    color: rgba(255,255,255,0.85) !important;
+    fill: currentColor !important;
+  }
+  body.page-links footer.footer .footer__block-heading {
+    color: #ffffff !important;
+  }
+  body.page-links footer.footer [class*="border"] {
+    border-color: rgba(255,255,255,0.15) !important;
+  }
+
+  /* 7. BADGES carrinho/wishlist — mantém discretos */
+  body.page-links .cart-count,
+  body.page-links .wishlist-count {
+    background-color: transparent !important;
+    color: transparent !important;
+  }
+
+  /* 8. ÍCONES DAS REDES SOCIAIS DO FOOTER
+        Seletor mais específico que a regra do footer svg acima
+        para vencer na cascata mesmo com !important. */
+  body.page-links footer.footer .list-social svg {
+    color: white !important;
+    fill: transparent !important;
+  }
+
+  /* 9. ELEMENTOS OCULTOS NESTA PÁGINA */
+  body.page-links .page-title              { display: none !important; }
+  body.page-links #whatsapp-button-contact { display: none !important; }
+  body.page-links mobile-navigation-bar    { display: none !important; }
+
+  /* 10. SEM PADDING EXTRA no conteúdo (o linktree tem o próprio) */
+  body.page-links #MainContent         { padding: 0 !important; }
+  body.page-links .page-default.section { padding: 0 !important; }
+
+  /* 11. RESERVA ESPAÇO DO H1 (Science Gothic)
+         font-display:optional não faz swap após primeiro paint → sem CLS.
+         size-adjust aproxima as métricas do fallback às da Science Gothic. */
+  @font-face {
+    font-family: 'Science Gothic Fallback';
+    src: local('Arial');
+    size-adjust: 105%;
+    ascent-override: 90%;
+    descent-override: 22%;
+    line-gap-override: 0%;
+  }
+  body.page-links h1 {
+    font-family: 'Science Gothic', 'Science Gothic Fallback', sans-serif !important;
+  }
+</style>
