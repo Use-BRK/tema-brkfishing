@@ -131,9 +131,20 @@
   body.page-links #whatsapp-button-contact { display: none !important; }
   body.page-links mobile-navigation-bar    { display: none !important; }
 
-  /* 10. SEM PADDING EXTRA no conteúdo (o linktree tem o próprio) */
-  body.page-links #MainContent         { padding: 0 !important; }
-  body.page-links .page-default.section { padding: 0 !important; }
+  /* 10. SEM PADDING EXTRA no conteúdo + fundo transparente.
+         O linktree usa margens negativas para ser full-bleed; os wrappers
+         internos (.container, .rte) têm fundo branco por padrão no Glozin
+         e aparecem como caixa branca por baixo do linktree transparente. */
+  body.page-links #MainContent,
+  body.page-links .page-default.section,
+  body.page-links .page-default .container,
+  body.page-links .page-default .fluid_container,
+  body.page-links .page-default .rte {
+    padding: 0 !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+  }
 
   /* 11. RESERVA ESPAÇO DO H1 (Science Gothic)
          font-display:optional não faz swap após primeiro paint → sem CLS.
@@ -175,24 +186,26 @@
     border-bottom: none !important;
   }
 
-  /* 14. Drawer de navegação mobile deve permanecer opaco.
-         --color-background: transparent setado no .header pode vazar para
-         o drawer se ele for descendente. Força fundo sólido no drawer. */
-  body.page-links .mobile-nav,
-  body.page-links .nav-mobile,
-  body.page-links .navigation-mobile,
-  body.page-links .mobile-navigation,
-  body.page-links .nav-drawer,
-  body.page-links .mobile-menu,
-  body.page-links .menu-drawer,
-  body.page-links .header__drawer,
-  body.page-links [class*="mobile-nav"],
-  body.page-links [class*="nav-mobile"],
-  body.page-links [id*="mobile-nav"],
-  body.page-links [id*="MobileMenu"] {
+  /* 14. Navegação mobile opaca + mega menu opaco.
+         --gradient-background: transparent no .header é HERDADO por elementos
+         filhos que usam var(--gradient-background) via classe "gradient".
+         Seletores reais do tema Glozin (lidos de horizontal-menu.liquid):
+           - nav.navigation.mobile  → overlay mobile full-screen
+           - .submenu.gradient       → painel do mega menu / dropdown desktop */
+
+  /* Mobile nav overlay: nav.navigation.mobile.fixed.inset-0 */
+  body.page-links .header nav.navigation.mobile {
     --gradient-background: #0a2444 !important;
-    --color-background: #0a2444 !important;
+    background: #0a2444 !important;
     background-color: #0a2444 !important;
+    background-image: none !important;
+  }
+
+  /* Mega menu e dropdowns: div.submenu.gradient (sem color-default próprio) */
+  body.page-links .header .submenu.gradient {
+    --gradient-background: #ffffff !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
     background-image: none !important;
   }
 </style>
