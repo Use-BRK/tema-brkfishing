@@ -19,17 +19,17 @@
       "settings": {
         "section_width": "full_width",
         "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
-        "header-cd8c4cfd0e2673e929e3c1b687b4694a": null,
+        "header-d9a2864fa94fb8135fe039f858817b5b": null,
         "direction": "right",
         "icon_between_item": "unset",
         "speed": 10,
         "space_between_text": 60,
-        "header-9329633dc7b5d9193212fff2acddcb57": null,
+        "header-efdea8078c075c591fb12ad60adaaac2": null,
         "font_size": 14,
         "font_weight": "body_weight",
         "uppercase": false,
         "use_heading_font": false,
-        "header-19da9c13f406022e94b0d4e39cfbc9e6": null,
+        "header-e1edaa4e78e00563aceecaaa39bf83cd": null,
         "padding_top": 5,
         "padding_bottom": 5,
         "reset_spacing": true
@@ -114,7 +114,8 @@
               "hybrid-cax-2026",
               "colecao-armorx-2026",
               "linha-fusion-2026",
-              "camisas-hybrid"
+              "camisas-hybrid",
+              "8-8-fishing"
             ]
           }
         }
