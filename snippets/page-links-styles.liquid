@@ -149,4 +149,50 @@
   body.page-links h1 {
     font-family: 'Science Gothic', 'Science Gothic Fallback', sans-serif !important;
   }
+
+  /* ── CORREÇÕES LINKTREE ──────────────────────────────────────────── */
+
+  /* 12. Remove marcador nativo (+/▶) do <summary> */
+  body.page-links details > summary::marker,
+  body.page-links details > summary::-webkit-details-marker {
+    display: none !important;
+  }
+  body.page-links details > summary::after {
+    display: none !important;
+    content: '' !important;
+  }
+
+  /* 13. Remove sublinhado e border-bottom que o tema aplica ao summary */
+  body.page-links details > summary {
+    text-decoration: none !important;
+    border-bottom: none !important;
+  }
+  body.page-links details > summary:focus,
+  body.page-links details > summary:focus-visible {
+    outline: none !important;
+  }
+  body.page-links details {
+    border-bottom: none !important;
+  }
+
+  /* 14. Drawer de navegação mobile deve permanecer opaco.
+         --color-background: transparent setado no .header pode vazar para
+         o drawer se ele for descendente. Força fundo sólido no drawer. */
+  body.page-links .mobile-nav,
+  body.page-links .nav-mobile,
+  body.page-links .navigation-mobile,
+  body.page-links .mobile-navigation,
+  body.page-links .nav-drawer,
+  body.page-links .mobile-menu,
+  body.page-links .menu-drawer,
+  body.page-links .header__drawer,
+  body.page-links [class*="mobile-nav"],
+  body.page-links [class*="nav-mobile"],
+  body.page-links [id*="mobile-nav"],
+  body.page-links [id*="MobileMenu"] {
+    --gradient-background: #0a2444 !important;
+    --color-background: #0a2444 !important;
+    background-color: #0a2444 !important;
+    background-image: none !important;
+  }
 </style>
