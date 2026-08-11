@@ -48,8 +48,8 @@
         "carousel_on_mobile": true,
         "items_per_row_mobile": 1.5,
         "header-31db377a31a1d1431c075aebe73d59b2": null,
-        "padding_top": 20,
-        "padding_bottom": 20,
+        "padding_top": 5,
+        "padding_bottom": 5,
         "reset_spacing": true
       },
       "blocks": {
@@ -535,6 +535,43 @@
         "content_below_image": false
       },
       "blocks": {
+        "slider_item_picEy": {
+          "type": "slider_item",
+          "name": "Maori",
+          "disabled": false,
+          "settings": {
+            "header-2b91dd829f937a8b2ff1824e1091d57c": null,
+            "image": "shopify://shop_images/DESKTOP_BANNER_MAORI.webp",
+            "image_mobile": "shopify://shop_images/MOBILE_BANNER_MAORI.webp",
+            "local_video": null,
+            "overlay_opacity": 0,
+            "link_banner": "shopify://collections/maori",
+            "header-68161f2d184fe43ffb2fc62b63ff1925": null,
+            "slider_effect": "effect_fadeinup",
+            "subheading": "",
+            "heading": "",
+            "description": "",
+            "first_button_label": "",
+            "first_button_link": "shopify://collections/camisa-fusionx-masculino",
+            "first_button_style": false,
+            "second_button_label": "",
+            "second_button_link": "shopify://collections/camisa-fusionx-masculino",
+            "second_button_style": false,
+            "header-4275938ddb69691d85e91f9a27c88196": null,
+            "content_alignment": "center",
+            "content_position": "top-center",
+            "content_width": "full_width",
+            "content_max_width": 100,
+            "content_padding_block": 55,
+            "content_padding_inline": 55,
+            "header-f193b6e063bb0bade354551fe330c216": null,
+            "show_content_background": false,
+            "content_background": "#ffffff",
+            "content_box_opacity": 100,
+            "header-ccb31c1566ba4c883025504c075ccdfe": null,
+            "content_alignment_mobile": "right"
+          }
+        },
         "slider_item_PiP3V": {
           "type": "slider_item",
           "name": "Óculos de Sol",
@@ -545,7 +582,7 @@
             "image_mobile": "shopify://shop_images/MOBILE_NOVOS_OCULOS_POLARIZADOS_8c56e113-8902-4f75-9b75-64f7e285531a.gif",
             "local_video": null,
             "overlay_opacity": 0,
-            "link_banner": "shopify://collections/8-8-fishing",
+            "link_banner": "shopify://collections/oculos-de-sol",
             "header-ad7fdabf0277c967afe3da68c214c95a": null,
             "slider_effect": "effect_fadeinup",
             "subheading": "",
@@ -570,43 +607,6 @@
             "content_box_opacity": 100,
             "header-978eb6d5fa04348a4317308cf1a0dfbd": null,
             "content_alignment_mobile": "center"
-          }
-        },
-        "slider_item_Ebn78": {
-          "type": "slider_item",
-          "name": "Camisas Adventure",
-          "disabled": false,
-          "settings": {
-            "header-8d8cd70085a6e2c9544859113045d4a9": null,
-            "image": "shopify://shop_images/WORK_FULLBANER_DESKTOP.webp",
-            "image_mobile": "shopify://shop_images/WORK_FULLBANER_MOBILE.webp",
-            "local_video": null,
-            "overlay_opacity": 0,
-            "link_banner": "shopify://collections/camisas-adventure",
-            "header-3fa9f149feeaa57eafac36130fa1f5d7": null,
-            "slider_effect": "effect_fadeinup",
-            "subheading": "",
-            "heading": "",
-            "description": "",
-            "first_button_label": "",
-            "first_button_link": "shopify://collections/camisa-fusionx-masculino",
-            "first_button_style": false,
-            "second_button_label": "",
-            "second_button_link": "shopify://collections/camisa-fusionx-masculino",
-            "second_button_style": false,
-            "header-1e33f8efdbd094379299ceba9136b16f": null,
-            "content_alignment": "center",
-            "content_position": "top-center",
-            "content_width": "full_width",
-            "content_max_width": 100,
-            "content_padding_block": 55,
-            "content_padding_inline": 55,
-            "header-2b54668b338f66da493c5867edf352fc": null,
-            "show_content_background": false,
-            "content_background": "#ffffff",
-            "content_box_opacity": 100,
-            "header-87379d1499f9dd87312a9c7328d622ea": null,
-            "content_alignment_mobile": "right"
           }
         },
         "slider_item_MzKCV": {
@@ -646,18 +646,18 @@
             "content_alignment_mobile": "center"
           }
         },
-        "slider_item_picEy": {
+        "slider_item_Ebn78": {
           "type": "slider_item",
-          "name": "Maori",
+          "name": "Camisas Adventure",
           "disabled": false,
           "settings": {
-            "header-2b91dd829f937a8b2ff1824e1091d57c": null,
-            "image": "shopify://shop_images/DESKTOP_BANNER_MAORI.webp",
-            "image_mobile": "shopify://shop_images/MOBILE_BANNER_MAORI.webp",
+            "header-8d8cd70085a6e2c9544859113045d4a9": null,
+            "image": "shopify://shop_images/WORK_FULLBANER_DESKTOP.webp",
+            "image_mobile": "shopify://shop_images/WORK_FULLBANER_MOBILE.webp",
             "local_video": null,
             "overlay_opacity": 0,
-            "link_banner": "shopify://collections/maori",
-            "header-68161f2d184fe43ffb2fc62b63ff1925": null,
+            "link_banner": "shopify://collections/camisas-adventure",
+            "header-3fa9f149feeaa57eafac36130fa1f5d7": null,
             "slider_effect": "effect_fadeinup",
             "subheading": "",
             "heading": "",
@@ -668,18 +668,18 @@
             "second_button_label": "",
             "second_button_link": "shopify://collections/camisa-fusionx-masculino",
             "second_button_style": false,
-            "header-4275938ddb69691d85e91f9a27c88196": null,
+            "header-1e33f8efdbd094379299ceba9136b16f": null,
             "content_alignment": "center",
             "content_position": "top-center",
             "content_width": "full_width",
             "content_max_width": 100,
             "content_padding_block": 55,
             "content_padding_inline": 55,
-            "header-f193b6e063bb0bade354551fe330c216": null,
+            "header-2b54668b338f66da493c5867edf352fc": null,
             "show_content_background": false,
             "content_background": "#ffffff",
             "content_box_opacity": 100,
-            "header-ccb31c1566ba4c883025504c075ccdfe": null,
+            "header-87379d1499f9dd87312a9c7328d622ea": null,
             "content_alignment_mobile": "right"
           }
         },
@@ -722,16 +722,18 @@
         }
       },
       "block_order": [
+        "slider_item_picEy",
         "slider_item_PiP3V",
         "slider_item_MzKCV",
         "slider_item_Ebn78",
-        "slider_item_picEy",
         "slider_item_TzyDJp"
       ]
     },
     "collection_list_VmEYkJ": {
       "settings": {
-        "heading": ""
+        "heading": "",
+        "padding_top": 25,
+        "padding_bottom": 0
       },
       "blocks": {
         "collection_dGqYQ": {
