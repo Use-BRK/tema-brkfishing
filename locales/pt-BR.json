@@ -833,5 +833,12 @@
       "signup_form_success": "We will send you an email right before we open!",
       "password_link": "Enter using password"
     }
+  },
+  "shopify": {
+    "checkout": {
+      "marketing": {
+        "accept_marketing_checkbox_label": "Receba rastreio dos seus pedidos por e-mail e SMS"
+      }
+    }
   }
 }
