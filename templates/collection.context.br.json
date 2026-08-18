@@ -15,16 +15,39 @@
   "sections": {
     "scrolling_text_exjPq": {
       "type": "scrolling-text",
+      "disabled": true,
+      "settings": {
+        "section_width": "full_width",
+        "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
+        "header-36203b05dc920d94a61db6384d7566a1": null,
+        "direction": "right",
+        "icon_between_item": "unset",
+        "speed": 10,
+        "space_between_text": 60,
+        "header-0c8d8416626d63548c56ebe153e13066": null,
+        "font_size": 14,
+        "font_weight": "body_weight",
+        "uppercase": false,
+        "use_heading_font": false,
+        "header-b4a852dacdb55f87a103511044bfd17e": null,
+        "padding_top": 5,
+        "padding_bottom": 5,
+        "reset_spacing": true
+      },
       "blocks": {
         "scrolling_text_WYNUT": {
           "type": "scrolling_text",
+          "disabled": false,
           "settings": {
+            "image": null,
             "content": "<strong>FRETE FIXO R$9,90</strong>"
           }
         },
         "scrolling_text_tKg9K": {
           "type": "scrolling_text",
+          "disabled": false,
           "settings": {
+            "image": null,
             "content": "ENVIO RÁPIDO"
           }
         }
@@ -33,48 +56,40 @@
         "scrolling_text_WYNUT",
         "scrolling_text_tKg9K"
       ],
-      "disabled": true,
-      "name": "t:sections.scrolling_text.name",
-      "settings": {
-        "section_width": "full_width",
-        "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
-        "direction": "right",
-        "icon_between_item": "unset",
-        "speed": 10,
-        "space_between_text": 60,
-        "font_size": 14,
-        "font_weight": "body_weight",
-        "uppercase": false,
-        "use_heading_font": false,
-        "padding_top": 5,
-        "padding_bottom": 5,
-        "reset_spacing": true
-      }
+      "name": "t:sections.scrolling_text.name"
     },
     "banner": {
-      "blocks": {
-        "breadcrumb_MJHLQb": {
-          "disabled": true
-        },
-        "heading_fntt9G": {
-          "disabled": true
-        }
-      },
       "settings": {
         "show_collection_image": true,
         "overlay_opacity": 0,
         "height": "contain",
         "padding_top": 0,
         "padding_bottom": 0
+      },
+      "blocks": {
+        "breadcrumb_MJHLQb": {
+          "disabled": true,
+          "settings": {}
+        },
+        "heading_fntt9G": {
+          "disabled": true,
+          "settings": {}
+        }
       }
     },
-    "subcollection": {
-      "settings": {}
-    },
     "main": {
+      "settings": {
+        "section_width": "stretch_width",
+        "sorting": true,
+        "items_to_show": 24,
+        "items_per_row": 5,
+        "show_add_cart": true,
+        "pagination": "load_more_button"
+      },
       "blocks": {
         "gender_filter_nTpWw": {
           "type": "gender_filter",
+          "disabled": false,
           "settings": {
             "label_masculino": "Masculino",
             "label_feminino": "Feminino",
@@ -86,7 +101,8 @@
               "colecao-armorx-2026",
               "linha-fusion-2026",
               "camisas-hybrid",
-              "envio-imediato-brkfishing"
+              "envio-imediato-brkfishing",
+              "fusionx-raptor"
             ]
           }
         }
@@ -97,15 +113,7 @@
         "filter_giBtHK",
         "popular_product_Xwjqcf",
         "image_banner_UUJxtT"
-      ],
-      "settings": {
-        "section_width": "stretch_width",
-        "sorting": true,
-        "items_to_show": 24,
-        "items_per_row": 5,
-        "show_add_cart": true,
-        "pagination": "load_more_button"
-      }
+      ]
     }
   },
   "order": [
