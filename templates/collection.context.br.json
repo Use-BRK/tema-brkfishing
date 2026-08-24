@@ -19,17 +19,17 @@
       "settings": {
         "section_width": "full_width",
         "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
-        "header-36203b05dc920d94a61db6384d7566a1": null,
+        "header-5371b283e8a11ddc226faa2422c96388": null,
         "direction": "right",
         "icon_between_item": "unset",
         "speed": 10,
         "space_between_text": 60,
-        "header-0c8d8416626d63548c56ebe153e13066": null,
+        "header-d52aef0d0e220d4a8b1e15e6580b008d": null,
         "font_size": 14,
         "font_weight": "body_weight",
         "uppercase": false,
         "use_heading_font": false,
-        "header-b4a852dacdb55f87a103511044bfd17e": null,
+        "header-53a748a076f096910b7423e249698053": null,
         "padding_top": 5,
         "padding_bottom": 5,
         "reset_spacing": true
@@ -102,7 +102,8 @@
               "linha-fusion-2026",
               "camisas-hybrid",
               "envio-imediato-brkfishing",
-              "fusionx-raptor"
+              "fusionx-raptor",
+              "colecao-elements"
             ]
           }
         }
