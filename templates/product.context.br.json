@@ -24,11 +24,11 @@
           "settings": {
             "review_data": "real_data",
             "max_width": 1200,
-            "paragraph-a91cc654758c0852c9c8d99c3dc207be": null,
+            "paragraph-fb12731d3d355c0272bea17f089ee52d": null,
             "show_shop_reviews": false,
             "empty_state": "other_products_reviews",
-            "paragraph-24cf78b2a820098d2696b9aec0353fa6": null,
-            "paragraph-52d5794dddc849373b25f0e21e72db4b": null
+            "paragraph-504787629b375938048dc8bcd67b427a": null,
+            "paragraph-5301fe7512733058e3c2b5f8c6cb1e27": null
           }
         }
       },
@@ -42,12 +42,12 @@
       "settings": {
         "section_width": "container",
         "color_scheme": "",
-        "header-51253b5d907c73eb69a7622e4458583c": null,
+        "header-a393e8e5520e0f7f0cbf11ca538780fd": null,
         "heading": "Perguntas Frequentes",
         "description": "",
         "header_size": "medium",
         "header_alignment": "center",
-        "header-760139f972c80539442ba16c7daab97b": null,
+        "header-e45fd2ac08ff15079367753930bd828e": null,
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -141,21 +141,21 @@
           "type": "shopify://apps/brk-apps-fishing/blocks/combined-listing/019f0510-f075-72ba-9c2f-a80926df6a59",
           "disabled": false,
           "settings": {
-            "header-86203fa5397236dc1e31a4731f70c174": null,
+            "header-d590c968289e734ccdef3e7ed0b82cd9": null,
             "show_option_name": true,
             "show_label": true,
-            "header-f6719b1572ee451bea1c5b5b6307af01": null,
+            "header-02bdc8ff33d3076f632688c474d19b49": null,
             "swatch_size": 86,
             "border_radius": 4,
             "border_width": 1,
             "gap": 4,
             "margin_y": 10,
-            "header-dcb7206881aec9d4babdcb2324dab8ab": null,
+            "header-6a5434e2647206812b86be31bb4d53fe": null,
             "border_color": "#cfcfcf",
             "selected_color": "#135ed1",
             "selected_text_color": "#ffffff",
             "hover_color": "#135ed1",
-            "header-8d78d4ec647a85aa3831d9636563276a": null,
+            "header-270535407d9b9766d3459d8fabf2a083": null,
             "label_color": "#6a6a6a",
             "label_size": 12
           }
@@ -181,12 +181,12 @@
           "type": "shopify://apps/brk-apps-fishing/blocks/bundle-addon/019f0510-f075-72ba-9c2f-a80926df6a59",
           "disabled": false,
           "settings": {
-            "paragraph-74106ca757257e8474c3e01a03715417": null,
-            "header-90e0757bc81bb613a50dd08f3aaf6abd": null,
+            "paragraph-90727b2c643c641e6da1ef7921208e0b": null,
+            "header-eda55a8c8390070421087d97ad84ae2a": null,
             "title_size": 15,
             "border_radius": 12,
             "margin_y": 16,
-            "header-62f236893c292ff46135286d502b7f71": null,
+            "header-a70e8a9766c475e03e4fae058b8800af": null,
             "border_color": "#e1e3e5",
             "accent_color": "#085b47",
             "label_bg": "#085b47",
@@ -200,9 +200,9 @@
             "enable_button": true,
             "button_mode": "personalization",
             "button_label": "Quero meu nome na Camisa (R$29,90)",
-            "header-cfb95ecfefac6e24b58e476105020c41": null,
+            "header-bde8671365061f11ccdc55d6a0c1ffc2": null,
             "whatsapp_number": "553432194697",
-            "header-4cc81aafecd338efaa0c20b4b61b3a85": null,
+            "header-d3bdc2127deceb19624fb411541be16d": null,
             "perso_variant_id": "43812419240002",
             "perso_price": "29,90",
             "mockup_frente": "https://cdn.shopify.com/s/files/1/0628/1445/3826/files/MOCKUP_FRENTE.png",
@@ -215,20 +215,20 @@
         },
         "whatsapp_cta_4pXDG": {
           "type": "whatsapp_cta",
-          "disabled": true,
+          "disabled": false,
           "settings": {
             "enable_button": true,
             "button_text": "Ou se preferir [whatsapp] <strong>COMPRE PELO WHATSAPP</strong>",
             "text_color": "#128c4a",
-            "header-d8084b2d2766985e7fb86b720f65740f": null,
+            "header-32ec330c89a7b3861d4372e4809cae88": null,
             "whatsapp_number": "553432194697",
             "whatsapp_message": "Olá! Tenho interesse neste produto:",
             "append_product_link": true,
-            "header-9aed706ea2d835f3f6775fb53c88191e": null,
+            "header-d983b11ae3af03501b935f625dc6539f": null,
             "enable_schedule": true,
             "hours_start": "08:00",
             "hours_end": "17:00",
-            "header-b36bcdfe7c057b2fa939a052ecd76a50": null,
+            "header-6a3f1d5e7f064be101f8df7c5f469567": null,
             "collections": []
           }
         },
