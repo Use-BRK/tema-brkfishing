@@ -813,6 +813,14 @@ class CartDiscount extends HTMLElement {
     const discountCodeValue = discountCode.value.trim();
     if (!discountCodeValue) return;
 
+    // Cupons de troca (código contém "TROCA") são restritos ao cliente que fez
+    // a compra original e só aplicam autenticado no checkout. Tratamos à parte
+    // para não cair no erro genérico de "cupom inválido".
+    if (discountCodeValue.toUpperCase().includes("TROCA")) {
+      this.#handleExchangeDiscount(discountCodeValue);
+      return;
+    }
+
     // Check if discount already exists
     const existingDiscounts = this.#existingDiscounts();
     if (existingDiscounts.includes(discountCodeValue)) {
@@ -908,6 +916,57 @@ class CartDiscount extends HTMLElement {
       removeButton.closest("[data-discount-code]")?.dataset.discountCode ||
       null
     );
+  }
+
+  /**
+   * Trata cupons de troca (código contém "TROCA"). Estes são restritos ao
+   * cliente da compra original e só aplicam autenticado no checkout.
+   * - Logado: aplica o cupom e segue direto pro checkout.
+   * - Deslogado: grava o cookie do cupom (que sobrevive ao login) e orienta o
+   *   login, encadeando de volta pro checkout com o cupom aplicado.
+   * @param {string} code - Código do cupom de troca.
+   */
+  #handleExchangeDiscount(code) {
+    const target = `/discount/${encodeURIComponent(code)}?redirect=/checkout`;
+    const loggedIn = this.dataset.loggedIn === "true";
+
+    if (loggedIn) {
+      window.location.href = target;
+      return;
+    }
+
+    // Grava o cookie do desconto antes do login como reforço: mesmo que o
+    // return_url não encadeie, o cupom ainda aplica quando chegar ao checkout.
+    fetch(`${window.shopUrl || ""}/discount/${encodeURIComponent(code)}`).catch(
+      () => {}
+    );
+
+    const loginUrl = this.dataset.loginUrl || "/account/login";
+    const returnUrl = `${loginUrl}?return_url=${encodeURIComponent(target)}`;
+    this.#showExchangeLoginPrompt(returnUrl);
+  }
+
+  /**
+   * Renderiza a mensagem explicativa + botão de login para cupons de troca.
+   * @param {string} returnUrl - URL de login já encadeada para o checkout.
+   */
+  #showExchangeLoginPrompt(returnUrl) {
+    const message =
+      cartStrings?.exchange_login_required ||
+      "Cupons de troca só funcionam quando você está logado na conta que fez a compra original. Faça login para aplicar seu cupom.";
+    const cta =
+      cartStrings?.exchange_login_cta || "Fazer login e aplicar cupom";
+
+    const html = `
+      <div class="troca-login-prompt error form__message mt-10 mb-10 p-10" role="alert">
+        <p class="m-0 mb-10">${message}</p>
+        <a href="${returnUrl}" class="btn-primary w-full text-center no-underline">${cta}</a>
+      </div>`;
+
+    const existing = this.querySelector(".troca-login-prompt");
+    if (existing) existing.remove();
+    const form = this.querySelector("form");
+    if (form) form.insertAdjacentHTML("afterend", html);
   }
 
   /**
