@@ -919,35 +919,29 @@ class CartDiscount extends HTMLElement {
   }
 
   /**
-   * Trata cupons de troca (código contém "TROCA"). Estes são restritos ao
-   * cliente da compra original e só aplicam autenticado no checkout.
-   * - Logado: aplica o cupom e segue direto pro checkout.
-   * - Deslogado: grava o cookie do cupom (que sobrevive ao login) e orienta o
-   *   login, encadeando de volta pro checkout com o cupom aplicado.
+   * Trata cupons de troca (código contém "TROCA"). São restritos ao cliente da
+   * compra original e só aplicam autenticado no checkout (cupom manual não
+   * aplica no cart). Levamos ao /discount -> checkout.
+   * - Logado: redireciona direto.
+   * - Deslogado: orienta o login com return_to encadeando pro /discount ->
+   *   checkout (mecanismo oficial, compatível com as novas contas de clientes).
    * @param {string} code - Código do cupom de troca.
    */
   #handleExchangeDiscount(code) {
+    // Cupom manual só aplica no checkout (não no cart), e cupom de troca exige
+    // o cliente autenticado. Levamos direto ao /discount -> checkout.
     const target = `/discount/${encodeURIComponent(code)}?redirect=/checkout`;
-    const loggedIn = this.dataset.loggedIn === "true";
 
-    if (loggedIn) {
+    if (this.dataset.loggedIn === "true") {
       window.location.href = target;
       return;
     }
 
-    // Grava o cookie do desconto como reforço (sobrevive ao login) e guarda a
-    // intenção de retomar no checkout após o login (ver content-bottom.liquid).
-    fetch(`${window.shopUrl || ""}/discount/${encodeURIComponent(code)}`).catch(
-      () => {}
-    );
-    try {
-      localStorage.setItem(
-        "brk_troca_pending",
-        JSON.stringify({ url: target, ts: Date.now() })
-      );
-    } catch (e) {}
-
-    const loginUrl = this.dataset.loginUrl || "/account/login";
+    // Deslogado: manda pro login e, ao autenticar, o Shopify segue pro return_to
+    // (/discount -> checkout). Mecanismo oficial, compatível com as novas contas.
+    const loginUrl = `/customer_authentication/login?return_to=${encodeURIComponent(
+      target
+    )}`;
     this.#showExchangeLoginPrompt(loginUrl);
   }
 
