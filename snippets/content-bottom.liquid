@@ -83,6 +83,7 @@
   
   
   window.shopUrl = '{{ request.origin }}';
+  window.customerLoggedIn = {% if customer %}true{% else %}false{% endif %};
   window.routes = {
     cart_add_url: '{{ routes.cart_add_url }}',
     cart_change_url: '{{ routes.cart_change_url }}',
@@ -134,6 +135,25 @@
     firstNotification: `{{ theme_st.first_notification }}`,
     secondaryNotification: `{{ theme_st.secondary_notification }}`
   }
+
+  // Retomada do cupom de troca: se o cliente pediu um cupom "TROCA" deslogado,
+  // guardamos a intenção. Assim que ele aparecer logado em qualquer página
+  // (o Shopify manda pra /account após o login), levamos ao /discount -> checkout.
+  (function () {
+    try {
+      if (!window.customerLoggedIn) return;
+      var raw = localStorage.getItem('brk_troca_pending');
+      if (!raw) return;
+      localStorage.removeItem('brk_troca_pending');
+      var data = JSON.parse(raw);
+      if (!data || !data.url) return;
+      // Expira em 1h para não sequestrar sessões antigas.
+      if (Date.now() - (data.ts || 0) > 3600000) return;
+      var path = window.location.pathname;
+      if (path.indexOf('/checkout') === 0 || path.indexOf('/discount') === 0) return;
+      window.location.replace(data.url);
+    } catch (e) {}
+  })();
 </script>
 {% if settings.enable_discount_code %}
   <script src="{{ 'cart-discount.js' | asset_url }}" defer="defer"></script>

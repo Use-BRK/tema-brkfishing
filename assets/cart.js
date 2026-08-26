@@ -935,22 +935,27 @@ class CartDiscount extends HTMLElement {
       return;
     }
 
-    // Grava o cookie do desconto antes do login como reforço: mesmo que o
-    // return_url não encadeie, o cupom ainda aplica quando chegar ao checkout.
+    // Grava o cookie do desconto como reforço (sobrevive ao login) e guarda a
+    // intenção de retomar no checkout após o login (ver content-bottom.liquid).
     fetch(`${window.shopUrl || ""}/discount/${encodeURIComponent(code)}`).catch(
       () => {}
     );
+    try {
+      localStorage.setItem(
+        "brk_troca_pending",
+        JSON.stringify({ url: target, ts: Date.now() })
+      );
+    } catch (e) {}
 
     const loginUrl = this.dataset.loginUrl || "/account/login";
-    const returnUrl = `${loginUrl}?return_url=${encodeURIComponent(target)}`;
-    this.#showExchangeLoginPrompt(returnUrl);
+    this.#showExchangeLoginPrompt(loginUrl);
   }
 
   /**
    * Renderiza a mensagem explicativa + botão de login para cupons de troca.
-   * @param {string} returnUrl - URL de login já encadeada para o checkout.
+   * @param {string} loginUrl - URL da página de login.
    */
-  #showExchangeLoginPrompt(returnUrl) {
+  #showExchangeLoginPrompt(loginUrl) {
     const message =
       cartStrings?.exchange_login_required ||
       "Cupons de troca só funcionam quando você está logado na conta que fez a compra original. Faça login para aplicar seu cupom.";
@@ -958,9 +963,11 @@ class CartDiscount extends HTMLElement {
       cartStrings?.exchange_login_cta || "Fazer login e aplicar cupom";
 
     const html = `
-      <div class="troca-login-prompt error form__message mt-10 mb-10 p-10" role="alert">
-        <p class="m-0 mb-10">${message}</p>
-        <a href="${returnUrl}" class="btn-primary w-full text-center no-underline">${cta}</a>
+      <div class="troca-login-prompt mt-10 mb-10" role="alert">
+        <div class="error form__message p-10 mb-10">
+          <p class="m-0">${message}</p>
+        </div>
+        <a href="${loginUrl}" class="btn-primary w-full text-center no-underline">${cta}</a>
       </div>`;
 
     const existing = this.querySelector(".troca-login-prompt");
