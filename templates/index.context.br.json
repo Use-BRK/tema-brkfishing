@@ -917,6 +917,74 @@
           }
         }
       }
+    },
+    "collection_tab_gQA4W": {
+      "type": "collection-tab",
+      "disabled": false,
+      "settings": {
+        "section_width": "stretch_width",
+        "color_scheme": "",
+        "header-5166a3c47771cdd6adbb94c9ee942f89": null,
+        "heading": "Equipamentos de Pesca",
+        "description": "",
+        "show_view_all_button": true,
+        "header_size": "small",
+        "header_alignment": "center",
+        "header-9b4be84e813f30182e3032e570eb6c21": null,
+        "tab_header_style": "horizontal",
+        "horizontal_tab_style": "underline",
+        "tab_header_postion": "default",
+        "display_mode": "carousel",
+        "items_to_show": 24,
+        "items_per_row": 5,
+        "column_gap": 15,
+        "header-d3a9ec33508bfe72042e8c6ac7386224": null,
+        "show_arrow": true,
+        "carousel_pagination": "show_dots",
+        "infinite": false,
+        "autoplay": false,
+        "autorotate_speed": 2,
+        "reveal": false,
+        "header-6d53bc53521a8d57ef3531618ca6fc65": null,
+        "rows": 1,
+        "show_load_more_button": false,
+        "button_label": "VER MAIS",
+        "header-eeb58f413fbab27e8ecf4d92b3a4c562": null,
+        "carousel_on_mobile": true,
+        "items_per_row_mobile": 1.5,
+        "header-aee37a61af75149e1cad1cdd12a86179": null,
+        "padding_top": 15,
+        "padding_bottom": 15,
+        "reset_spacing": true
+      },
+      "blocks": {
+        "collection_mnQa7": {
+          "type": "collection",
+          "disabled": false,
+          "settings": {
+            "collection": "super-ofertas-🔥",
+            "collection_title": "Confira as ofertas"
+          }
+        }
+      },
+      "block_order": [
+        "collection_mnQa7"
+      ],
+      "name": "Tralhas de Pesca"
+    },
+    "divider_PhNhz": {
+      "type": "divider",
+      "disabled": false,
+      "settings": {
+        "section_width": "container",
+        "border_height": 1,
+        "border_color": "#ebebeb",
+        "header-b1f189c06964433f29438071f1384dd8": null,
+        "reset_spacing": false
+      },
+      "blocks": {},
+      "block_order": [],
+      "name": "t:sections.divider.name"
     }
   },
   "order": [
@@ -925,6 +993,8 @@
     "collection_list_VmEYkJ",
     "scrolling_text_U3mttg",
     "collection_tab_LtRtt",
+    "divider_PhNhz",
+    "collection_tab_gQA4W",
     "products_carousel_wpW8Q",
     "collection_tab_pp6Vg",
     "collection_tab_UNybtX",
