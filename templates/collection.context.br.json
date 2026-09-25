@@ -19,17 +19,17 @@
       "settings": {
         "section_width": "full_width",
         "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
-        "header-5371b283e8a11ddc226faa2422c96388": null,
+        "header-ccf7e548a800e2b45616f75e7e0a5cfc": null,
         "direction": "right",
         "icon_between_item": "unset",
         "speed": 10,
         "space_between_text": 60,
-        "header-d52aef0d0e220d4a8b1e15e6580b008d": null,
+        "header-04d01a6884c3dfb4c68220bc8da4a02d": null,
         "font_size": 14,
         "font_weight": "body_weight",
         "uppercase": false,
         "use_heading_font": false,
-        "header-53a748a076f096910b7423e249698053": null,
+        "header-619d0ac2723c490f50765f429aa6c153": null,
         "padding_top": 5,
         "padding_bottom": 5,
         "reset_spacing": true
@@ -103,7 +103,8 @@
               "camisas-hybrid",
               "envio-imediato-brkfishing",
               "fusionx-raptor",
-              "colecao-elements"
+              "colecao-elements",
+              "amazon-2-0"
             ]
           }
         }
