@@ -19,17 +19,17 @@
       "settings": {
         "section_width": "full_width",
         "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
-        "header-750a91e4e4826736393d133f896ff359": null,
+        "header-50e8a782f45aba4ecb7d45d54b0d2083": null,
         "direction": "right",
         "icon_between_item": "unset",
         "speed": 10,
         "space_between_text": 60,
-        "header-e5639ce666cdee98aa2d3278edbf31d6": null,
+        "header-8b9e6be54f0be37270c7fb591ea0bc6e": null,
         "font_size": 14,
         "font_weight": "body_weight",
         "uppercase": false,
         "use_heading_font": false,
-        "header-4fd48fb43e80e88e9cec74b63751c752": null,
+        "header-e322af085950fa99ab2bd8b95b7367a1": null,
         "padding_top": 5,
         "padding_bottom": 5,
         "reset_spacing": true
@@ -84,7 +84,10 @@
         "items_to_show": 24,
         "items_per_row": 5,
         "show_add_cart": true,
-        "pagination": "load_more_button"
+        "pagination": "load_more_button",
+        "show_wishlist": false,
+        "show_compare": false,
+        "show_quick_view": false
       },
       "blocks": {
         "gender_filter_nTpWw": {
