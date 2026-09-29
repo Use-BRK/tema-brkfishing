@@ -19,17 +19,17 @@
       "settings": {
         "section_width": "full_width",
         "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
-        "header-ccf7e548a800e2b45616f75e7e0a5cfc": null,
+        "header-750a91e4e4826736393d133f896ff359": null,
         "direction": "right",
         "icon_between_item": "unset",
         "speed": 10,
         "space_between_text": 60,
-        "header-04d01a6884c3dfb4c68220bc8da4a02d": null,
+        "header-e5639ce666cdee98aa2d3278edbf31d6": null,
         "font_size": 14,
         "font_weight": "body_weight",
         "uppercase": false,
         "use_heading_font": false,
-        "header-619d0ac2723c490f50765f429aa6c153": null,
+        "header-4fd48fb43e80e88e9cec74b63751c752": null,
         "padding_top": 5,
         "padding_bottom": 5,
         "reset_spacing": true
@@ -104,7 +104,8 @@
               "envio-imediato-brkfishing",
               "fusionx-raptor",
               "colecao-elements",
-              "amazon-2-0"
+              "amazon-2-0",
+              "camisas-master"
             ]
           }
         }
