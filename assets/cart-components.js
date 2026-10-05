@@ -84,6 +84,26 @@ class ErrorHandler {
   }
 }
 
+// BRK Bundles: soma `quantity` unidades da variante numa linha SEM o bundle.
+// Se já existe uma linha normal dela, aumenta essa linha (apps como a Intelipost
+// põem properties nas linhas, então um add sem properties criaria outra linha).
+function brkAddUnbundled(variantId, quantity) {
+  return fetch("/cart.js")
+    .then((r) => r.json())
+    .then((cart) => {
+      const line = (cart.items || []).find(
+        (item) => item.variant_id === variantId && !(item.properties || {})._brk_bundle
+      );
+      const changeUrl = `${routes?.cart_change_url || "/cart/change"}.js`;
+      const addUrl = `${routes?.cart_add_url || "/cart/add"}.js`;
+      return line
+        ? fetch(changeUrl, { ...fetchConfig(), body: JSON.stringify({ id: line.key, quantity: line.quantity + quantity }) })
+        : fetch(addUrl, { ...fetchConfig(), body: JSON.stringify({ items: [{ id: variantId, quantity }] }) });
+    });
+}
+// este arquivo é importado como módulo pelo theme.js; o cart.js (página do carrinho) usa via window
+window.brkAddUnbundled = brkAddUnbundled;
+
 class CartNotification extends HTMLElement {
   constructor() {
     super();
@@ -427,6 +447,7 @@ class CartNotification extends HTMLElement {
   }
 
   onChange(event) {
+    if (event.target.getAttribute("name") == "updates[]" && this.splitBrkAddon(event.target)) return;
     if (event.target.getAttribute("name") == "updates[]")
       this.updateQuantity(
         event.target.dataset.id,
@@ -459,7 +480,7 @@ class CartNotification extends HTMLElement {
       cartRecommend.classList.remove("open");
     }
     const cart_free_ship = document.querySelector("free-ship-progress-bar");
-    fetch(`${routes?.cart_change_url}`, { ...fetchConfig(), ...{ body } })
+    return fetch(`${routes?.cart_change_url}`, { ...fetchConfig(), ...{ body } })
       .then((response) => {
         return response.text();
       })
@@ -577,6 +598,48 @@ class CartNotification extends HTMLElement {
           }
         }
       });
+  }
+
+  // BRK Bundles: a linha do add-on (data-brk-max) não passa do limite do bundle.
+  // O excedente vai para uma linha nova, sem as properties do bundle, a preço cheio.
+  splitBrkAddon(target) {
+    const row = target.closest("[data-brk-max]");
+    if (!row) return false;
+    const max = Number(row.dataset.brkMax) || 0;
+    const quantity = Number(target.value) || 0;
+    if (max <= 0 || quantity <= max) return false;
+
+    const extra = quantity - max;
+    const variantId = Number(row.dataset.brkVariant);
+    this.updateQuantity(target.dataset.id, max, target.dataset.value, target, "updates[]")
+      .then(() => brkAddUnbundled(variantId, extra))
+      .catch((e) => console.error(e))
+      .finally(() => this.brkRefreshMinicart());
+    return true;
+  }
+
+  // Re-renderiza o minicart e os contadores a partir do carrinho atual.
+  brkRefreshMinicart() {
+    return Promise.all([
+      fetch(`${window.location.pathname}?section_id=minicart-form`).then((r) => r.text()),
+      fetch("/cart.js").then((r) => r.json()),
+    ])
+      .then(([html, cart]) => {
+        const form = document.getElementById("minicart-form");
+        const fresh = new DOMParser().parseFromString(html, "text/html").querySelector("#minicart-form");
+        if (form && fresh) form.innerHTML = fresh.innerHTML;
+        document.querySelectorAll(".cart-count").forEach((el) => {
+          el.innerHTML = el.classList.contains("cart-count-drawer")
+            ? `(${cart.item_count})`
+            : cart.item_count > 100 ? "~" : cart.item_count;
+        });
+        document.querySelector("header-total-price")?.updateTotal(cart);
+        document.querySelector("free-ship-progress-bar")?.init(cart.items_subtotal_price);
+        document.querySelector("gift-progress-bar")?.init(cart.items_subtotal_price);
+        this.cartAction();
+        BlsLazyloadImg.init();
+      })
+      .catch((e) => console.error(e));
   }
 
   updateMessageErrors(line, message, target) {
