@@ -271,7 +271,7 @@ class CartItems extends HTMLElement {
     const extra = quantity - keep;
     const variantId = Number(row.dataset.brkVariant);
     const sectionId = this.getSectionsToRender()[0].section;
-    // brkAddUnbundled vem do cart-components.js (importado pelo theme.js em todas as páginas)
+    // brkAddUnbundled vem do cart-components.js (scripts-tag.liquid, em todas as páginas)
     this.updateQuantity(target.dataset.index, target.dataset.key, keep, "updates[]", target)
       .then(() => window.brkAddUnbundled(variantId, extra))
       .then(() =>

@@ -10,6 +10,8 @@
   <script src="{{ 'animation.js' | asset_url }}" defer="defer"></script>
 {%- endif %}
 <script src="{{ 'tingle.min.js' | asset_url }}" defer="defer"></script>
+{%- comment -%} antes do theme.js e com asset_url: a URL versionada garante que a CDN entregue a versão atual {%- endcomment -%}
+<script src="{{ 'cart-components.js' | asset_url }}" defer="defer" type="module"></script>
 <script src="{{ 'theme.js' | asset_url }}"  defer="defer" type="module"></script>
 {%- case t -%}
   {%- when 'collection' -%}
