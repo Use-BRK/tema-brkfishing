@@ -14,6 +14,7 @@
   },
   "sections": {
     "mobile_navigation_bar_GG8UWc": {
+      "disabled": true,
       "custom_css": [
         "mobile-navigation-bar {backdrop-filter: blur(10px); background: #ffffffcf; transition: opacity 0.3s, transform 0.3s; opacity: 1; transform: translateY(0px); padding: 10px;}",
         "span {color: #1e1e1e; font-weight: 600;}",
