@@ -1,0 +1,164 @@
+/* Subcollection list — layout "cards horizontais" (imagem à esquerda, nome + subtítulo à direita)
+   em um trilho com rolagem lateral nativa (scroll-snap) e setas no desktop. Ocupa bem menos
+   altura que o layout de círculos. Variáveis definidas inline pela seção (--sr-*). */
+.subcol-rail__header {
+  margin-bottom: 14px;
+}
+.subcol-rail__heading {
+  font-size: var(--sr-heading-size, 20px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+.subcol-rail__heading.mb-10 {
+  margin-bottom: 4px;
+}
+.subcol-rail__subheading {
+  font-size: 13px;
+  line-height: 1.4;
+  opacity: 0.65;
+}
+.subcol-rail {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.subcol-rail__track {
+  display: flex;
+  gap: var(--sr-gap, 16px);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 4px 2px 8px;
+  width: 100%;
+}
+.subcol-rail__track::-webkit-scrollbar {
+  display: none;
+}
+.subcol-rail.is-centered .subcol-rail__track {
+  justify-content: safe center;
+}
+.subcol-rail__card {
+  flex: 0 0 var(--sr-card-width, 300px);
+  max-width: 85vw;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: var(--sr-card-padding, 10px);
+  border: 1px solid var(--sr-border, #eaeaea);
+  border-radius: var(--sr-radius, 14px);
+  background: var(--sr-bg, #fafafa);
+  color: inherit;
+  text-decoration: none;
+  scroll-snap-align: start;
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+.subcol-rail__card:hover {
+  transform: translateY(-2px);
+  border-color: var(--sr-accent, #135ed1);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+.subcol-rail__media {
+  flex: 0 0 var(--sr-img-width, 72px);
+  width: var(--sr-img-width, 72px);
+  aspect-ratio: var(--sr-img-ratio, 1);
+  border-radius: calc(var(--sr-radius, 14px) - 4px);
+  overflow: hidden;
+  background: var(--sr-img-bg, #f0f0f0);
+}
+.subcol-rail__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: var(--sr-img-fit, cover);
+  display: block;
+  transition: transform 0.35s ease;
+}
+.subcol-rail__card:hover .subcol-rail__media img {
+  transform: scale(1.05);
+}
+.subcol-rail__info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+.subcol-rail__name {
+  margin: 0;
+  font-size: var(--sr-title-size, 14px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--color-heading, #0a0a0a);
+}
+.subcol-rail--uppercase .subcol-rail__name {
+  text-transform: uppercase;
+}
+.subcol-rail__desc {
+  margin: 0;
+  font-size: var(--sr-subtitle-size, 12px);
+  line-height: 1.35;
+  color: var(--sr-subtitle-color, #666);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.subcol-rail__arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid #dcdcdc;
+  border-radius: 50%;
+  background: #fff;
+  color: #0a0a0a;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: opacity 0.2s ease;
+}
+.subcol-rail__arrow svg {
+  width: 18px;
+  height: 18px;
+}
+.subcol-rail__arrow--prev {
+  left: -8px;
+}
+.subcol-rail__arrow--next {
+  right: -8px;
+}
+.subcol-rail__arrow[disabled],
+.subcol-rail:not(.is-scrollable) .subcol-rail__arrow {
+  opacity: 0;
+  pointer-events: none;
+}
+@media (max-width: 767.98px) {
+  .subcol-rail__header {
+    margin-bottom: 10px;
+  }
+  .subcol-rail__heading {
+    font-size: calc(var(--sr-heading-size, 20px) * 0.85);
+  }
+  .subcol-rail__arrow {
+    display: none;
+  }
+  .subcol-rail__card {
+    flex-basis: var(--sr-card-width-mobile, 230px);
+    gap: 10px;
+  }
+  .subcol-rail__media {
+    flex-basis: calc(var(--sr-img-width, 64px) * 0.8);
+    width: calc(var(--sr-img-width, 64px) * 0.8);
+  }
+  .subcol-rail__name {
+    font-size: calc(var(--sr-title-size, 14px) * 0.9);
+  }
+}
