@@ -382,6 +382,20 @@ class CustomNameModal extends HTMLElement {
 
     if (buyBtn) { buyBtn.disabled = true; buyBtn.dataset.loading = "true"; }
     try {
+      // Brindes/add-ons do app BRK Bundles marcados na página: o modal não submete o
+      // form do produto, então pede os itens à API do app ANTES de adicionar a camisa
+      // (o limite por carrinho é calculado sem ela) e os adiciona DEPOIS que ela entrou.
+      const bundles = window.BRKBundles;
+      let bundleItems = [];
+      if (bundles && typeof bundles.prepareAddons === "function") {
+        try {
+          bundleItems = await bundles.prepareAddons({ quantity: 1 });
+        } catch (e) {
+          bundleItems = [];
+        }
+        if (bundleItems === null) return; // fechou o popup do bundle → cancela
+      }
+
       // Uma request só (FormData): camisa + PE1198 aninhado (parent_id = variant da camisa)
       // + PNG (file property) + properties de texto.
       const blob = await this.exportPng();
@@ -410,9 +424,13 @@ class CustomNameModal extends HTMLElement {
       const d2 = await r2.json();
       if (!r2.ok) throw new Error((d2 && d2.description) || "Erro ao adicionar ao carrinho");
 
+      // Add-ons do bundle (falha aqui não desfaz a compra da camisa)
+      if (bundleItems.length) await bundles.addAddons(bundleItems);
+
       // ── Atualiza o minicart (Glozin 2.5.0) e abre o drawer ──
       // 1) HTML da section do minicart: da resposta do add; senão, busca fresco.
-      let sectionHTML = (d2 && d2.sections && d2.sections["minicart-form"]) || null;
+      //    Com add-ons, a resposta do add já está desatualizada → busca fresco.
+      let sectionHTML = (!bundleItems.length && d2 && d2.sections && d2.sections["minicart-form"]) || null;
       if (!sectionHTML) {
         try {
           const sres = await fetch(this.root + "?sections=minicart-form");
