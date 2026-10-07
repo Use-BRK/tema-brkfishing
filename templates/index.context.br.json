@@ -532,7 +532,7 @@
     },
     "video_bubble_KRgEh": {
       "type": "video-bubble",
-      "disabled": false,
+      "disabled": true,
       "custom_css": [
         "* {z-index: 13;}"
       ],
@@ -569,7 +569,7 @@
           "disabled": false,
           "settings": {
             "header-150a703fccdbeee754cd62089ebd5c65": null,
-            "image": "shopify://shop_images/DESK_FISH_ec37acf1-bad5-491d-b506-0337e38d1f0b.png",
+            "image": "shopify://shop_images/DESK_FISH_1.png",
             "image_mobile": "shopify://shop_images/MOB_FISH_1.png",
             "local_video": null,
             "overlay_opacity": 0,
