@@ -57,7 +57,7 @@
           "type": "collection",
           "disabled": false,
           "settings": {
-            "collection": "brasil-fishing",
+            "collection": "brasil-fishing-masculinas",
             "collection_title": "Masculinas"
           }
         },
@@ -65,7 +65,7 @@
           "type": "collection",
           "disabled": false,
           "settings": {
-            "collection": "amazon-2-0-femininas",
+            "collection": "brasil-fishing-femininas",
             "collection_title": "Femininas"
           }
         }
@@ -569,8 +569,8 @@
           "disabled": false,
           "settings": {
             "header-150a703fccdbeee754cd62089ebd5c65": null,
-            "image": "shopify://shop_images/DESK_FISH.png",
-            "image_mobile": "shopify://shop_images/MOB_FISH.png",
+            "image": "shopify://shop_images/DESK_FISH_1ad59b15-92ff-45a7-8a69-a3faf25784fe.png",
+            "image_mobile": "shopify://shop_images/MOB_FISH_00fe0641-4b44-4966-9182-f0dc93221103.png",
             "local_video": null,
             "overlay_opacity": 0,
             "link_banner": "shopify://collections/brasil-fishing",
