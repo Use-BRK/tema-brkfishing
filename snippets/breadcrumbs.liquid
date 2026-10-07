@@ -29,6 +29,7 @@
       <a
         href="{{ collection.url | default: product.collections.first.url | default: routes.all_products_collection_url }}"
         class="breadcrumb-back-link flex align-center justify-center color-{{ section_st.color_scheme }} no-underline"
+        data-history-back
       >
         <svg
           width="24"
@@ -67,7 +68,7 @@
         {%- when 'product' -%}
           {%- if collection.url -%}
             <li class="breadcrumb-item dot-between inline-flex align-center light-dark-grey">
-              {{ collection.title | link_to: collection.url }}
+              <a href="{{ collection.url }}" data-history-back>{{ collection.title }}</a>
             </li>
           {%- endif -%}
           <li class="breadcrumb-item dot-between inline-flex align-center {% if next_product %}breadcrumb-truncate{% endif %}">
@@ -258,6 +259,24 @@
     </div>
   {%- endif -%}
   {%- if t == 'product' and next_prev -%}</div>{% endif %}
+  {%- if t == 'product' -%}
+    <script>
+      document.addEventListener('click', function (e) {
+        var link = e.target.closest('[data-history-back]');
+        if (!link || e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+        var ref = document.referrer;
+        var cameFromStore = false;
+        try {
+          var refUrl = new URL(ref);
+          cameFromStore = refUrl.origin === location.origin && refUrl.pathname !== location.pathname;
+        } catch (err) {}
+        if (cameFromStore && history.length > 1) {
+          e.preventDefault();
+          history.back();
+        }
+      });
+    </script>
+  {%- endif -%}
 {%- endunless -%}
 {% comment %}
 
