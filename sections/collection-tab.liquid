@@ -189,7 +189,7 @@
                   assign block_st = block.settings
                   assign collection = collections[block_st.collection]
                   assign collection_title = block_st.collection_title | default: collection.title
-                  assign collection_url = collection.url | default: '#'
+                  assign collection_url = block_st.view_all_collection.url | default: collection.url | default: '#'
                 %}
 
                 {% if tab_header_style == 'horizontal' -%}
@@ -288,7 +288,7 @@
                     <div
                       class="collection-tab__tab-content collection-tab-{{ block.id }} absolute invisible inset-0 transition pointer-none{% if forloop.first %} active{% endif %}"
                       data-block-id="{{ block.id }}"
-                      data-collection-url="{{ collection.url }}"
+                      data-collection-url="{{ block_st.view_all_collection.url | default: collection.url }}"
                     >
                       {% if section_st.items_per_row_mobile > 1
                         and section_st.items_per_row_mobile < 2
@@ -368,7 +368,7 @@
                   <div
                     class="collection-tab__tab-content absolute invisible inset-0 transition pointer-none{% if forloop.first %} active{% endif %}"
                     data-block-id="{{ block.id }}"
-                    data-collection-url="{{ collection.url }}"
+                    data-collection-url="{{ block_st.view_all_collection.url | default: collection.url }}"
                   >
                     {% if section_st.items_per_row_mobile > 1
                       and section_st.items_per_row_mobile < 2
@@ -418,7 +418,7 @@
                 <div
                   class="collection-tab__tab-content absolute invisible inset-0 transition pointer-none{% if forloop.first %} active{% endif %}"
                   data-block-id="{{ block.id }}"
-                  data-collection-url="#"
+                  data-collection-url="{{ block_st.view_all_collection.url | default: '#' }}"
                 >
                   {% if section_st.items_per_row_mobile > 1
                     and section_st.items_per_row_mobile < 2
@@ -477,7 +477,7 @@
                   <div
                     class="collection-tab__tab-content absolute invisible inset-0 transition pointer-none{% if forloop.first %} active{% endif %}"
                     data-block-id="{{ block.id }}"
-                    data-collection-url="{{ block_st.collection.url }}"
+                    data-collection-url="{{ block_st.view_all_collection.url | default: block_st.collection.url }}"
                   >
                     {% if section_st.items_per_row_mobile > 1 and section_st.items_per_row_mobile < 2 %}
                       <div class="free-scroll">
@@ -547,7 +547,7 @@
                 <div
                   class="collection-tab__tab-content absolute invisible inset-0 transition pointer-none{% if forloop.first %} active{% endif %}"
                   data-block-id="{{ block.id }}"
-                  data-collection-url="#"
+                  data-collection-url="{{ block_st.view_all_collection.url | default: '#' }}"
                 >
                   {% if section_st.items_per_row_mobile > 1
                     and section_st.items_per_row_mobile < 2
@@ -982,6 +982,12 @@
           "id": "collection_title",
           "label": "t:sections.collection-tab.blocks.collection_title.label",
           "info": "t:sections.collection-tab.blocks.collection_title.info"
+        },
+        {
+          "type": "collection",
+          "id": "view_all_collection",
+          "label": "Coleção de destino do botão \"Ver tudo\"",
+          "info": "Opcional. Se vazio, o botão leva para a coleção desta aba."
         }
       ]
     }
