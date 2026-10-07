@@ -24,11 +24,11 @@
           "settings": {
             "review_data": "real_data",
             "max_width": 1200,
-            "paragraph-d03010767cdfd5a1a6ee261e39b13904": null,
+            "paragraph-01b2babe5fc1653b062534e182cb0d31": null,
             "show_shop_reviews": false,
             "empty_state": "other_products_reviews",
-            "paragraph-aa316ea2fc6c9e7e174231df2fbc964a": null,
-            "paragraph-42a0b98f0feb6a755a2fc2dd0f084e46": null
+            "paragraph-0c09bf92993f876ebda876e05fae4b21": null,
+            "paragraph-791adc53c02ed9e27049e334db1e3bd8": null
           }
         }
       },
@@ -42,12 +42,12 @@
       "settings": {
         "section_width": "container",
         "color_scheme": "",
-        "header-e8faed6e797db85ca6b12b4b41a03d19": null,
+        "header-bd2d0ed0075b0ac9492ccb9223720aef": null,
         "heading": "Perguntas Frequentes",
         "description": "",
         "header_size": "medium",
         "header_alignment": "center",
-        "header-1cd3484f973300ac9630391fe76f542e": null,
+        "header-289487a66229dbd3f3c52a37d129ce8a": null,
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -141,21 +141,21 @@
           "type": "shopify://apps/brk-apps-fishing/blocks/combined-listing/019f0510-f075-72ba-9c2f-a80926df6a59",
           "disabled": false,
           "settings": {
-            "header-fc846f1cb6ba1d5b3248769fbd037f50": null,
+            "header-f80c52560b9e3f59ff57efbdc22b9f77": null,
             "show_option_name": true,
             "show_label": true,
-            "header-b7c528b51f3ffc2d24733c13c3e1604f": null,
+            "header-281d27f3a13a71fae941c3f23ea5c257": null,
             "swatch_size": 86,
             "border_radius": 4,
             "border_width": 1,
             "gap": 4,
             "margin_y": 10,
-            "header-a6e25606f28fff628e4679dd099acf4b": null,
+            "header-8994495c54553cde90d0ba0de54e9914": null,
             "border_color": "#cfcfcf",
             "selected_color": "#135ed1",
             "selected_text_color": "#ffffff",
             "hover_color": "#135ed1",
-            "header-984edfb626b3b0ffe2c2d5d7f0e3f137": null,
+            "header-6a018450108af0cb4b7d2a029e6f4cea": null,
             "label_color": "#6a6a6a",
             "label_size": 12
           }
@@ -177,22 +177,6 @@
             "show_share": false
           }
         },
-        "brk_apps_fishing_bundle_addon_zJW6Q": {
-          "type": "shopify://apps/brk-apps-fishing/blocks/bundle-addon/019f0510-f075-72ba-9c2f-a80926df6a59",
-          "disabled": false,
-          "settings": {
-            "paragraph-eb3f3f163d150c24f8bba38d268a79d4": null,
-            "header-e1e5173443f26376dccceaf983da09e5": null,
-            "title_size": 15,
-            "border_radius": 12,
-            "margin_y": 16,
-            "header-dabc9a78f5495114d2f151ae3927071b": null,
-            "border_color": "#e1e3e5",
-            "accent_color": "#085b47",
-            "label_bg": "#085b47",
-            "label_text_color": "#ffffff"
-          }
-        },
         "custom_name_button_XTkeF": {
           "type": "custom_name_button",
           "disabled": false,
@@ -200,9 +184,9 @@
             "enable_button": true,
             "button_mode": "personalization",
             "button_label": "Quero meu nome na Camisa (R$29,90)",
-            "header-3dfcc3b1497aa6c291047cf18045dca7": null,
+            "header-780b0648d3f68a35b60e270d4421907c": null,
             "whatsapp_number": "553432194697",
-            "header-1775d8e7af47354db6c0ef9cdf017fd7": null,
+            "header-13e16d60ae6eaba5b152ae40b285cef7": null,
             "perso_variant_id": "43812419240002",
             "perso_price": "29,90",
             "mockup_frente": "https://cdn.shopify.com/s/files/1/0628/1445/3826/files/MOCKUP_FRENTE.png",
@@ -220,16 +204,32 @@
             "enable_button": true,
             "button_text": "Ou se preferir [whatsapp] <strong>COMPRE PELO WHATSAPP</strong>",
             "text_color": "#128c4a",
-            "header-202c8160de0d2a286e44cc2df210b044": null,
+            "header-097c72f2d79406013034213b7a4b4d22": null,
             "whatsapp_number": "553432194697",
             "whatsapp_message": "Vim da loja online e tenho interesse nesse produto:",
             "append_product_link": true,
-            "header-27f3b3f1eda7fcde1b2b176142571103": null,
+            "header-51c760dab7061d8b71922a336bfcc396": null,
             "enable_schedule": true,
             "hours_start": "08:00",
             "hours_end": "17:15",
-            "header-a279330b7001a89d81a7944788c78079": null,
+            "header-0b41a0f2b048ead3f0b51f7f13fb1fdc": null,
             "collections": []
+          }
+        },
+        "brk_apps_fishing_bundle_addon_zJW6Q": {
+          "type": "shopify://apps/brk-apps-fishing/blocks/bundle-addon/019f0510-f075-72ba-9c2f-a80926df6a59",
+          "disabled": false,
+          "settings": {
+            "paragraph-db96d44105559df5a6853468bf670588": null,
+            "header-c63bd6f69187bebb7f6303d64d21aa8c": null,
+            "title_size": 15,
+            "border_radius": 12,
+            "margin_y": 16,
+            "header-297943e6a8c9ba73e8c7707550dee063": null,
+            "border_color": "#e1e3e5",
+            "accent_color": "#085b47",
+            "label_bg": "#085b47",
+            "label_text_color": "#ffffff"
           }
         },
         "model_size_XM7z6E": {
@@ -261,13 +261,13 @@
         "short_description_9BGxVm",
         "brk_apps_fishing_combined_listing_6KLCz",
         "variant_picker_tcCihG",
-        "sku_prazo_8wWwi",
         "product_addons_YRaprz",
         "stock_countdown_JNK9zi",
-        "brk_apps_fishing_bundle_addon_zJW6Q",
         "buy_buttons_LcQGtR",
         "custom_name_button_XTkeF",
         "whatsapp_cta_4pXDG",
+        "brk_apps_fishing_bundle_addon_zJW6Q",
+        "sku_prazo_8wWwi",
         "model_size_XM7z6E",
         "pickup_avaiability_cyVydQ",
         "product_grouped_6epkNf",

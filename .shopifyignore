@@ -1,0 +1,3 @@
+# Temporários de escrita atômica de editores/ferramentas: o `shopify theme dev`
+# tenta subir e trava em "Must have a .liquid file extension"
+*.tmp.*

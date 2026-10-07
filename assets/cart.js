@@ -246,6 +246,7 @@ class CartItems extends HTMLElement {
   }
 
   onChange(event) {
+    if (this.splitBrkAddon(event.target)) return;
     this.updateQuantity(
       event.target.dataset.index,
       event.target.dataset.key,
@@ -253,6 +254,43 @@ class CartItems extends HTMLElement {
       document.activeElement.getAttribute("name"),
       event.target
     );
+  }
+
+  // BRK Bundles: a linha do add-on (data-brk-max) não passa do limite do bundle.
+  // O excedente vai para uma linha nova, sem as properties do bundle, a preço cheio.
+  splitBrkAddon(target) {
+    const row = target.closest("[data-brk-max]");
+    if (!row || target.getAttribute("name") !== "updates[]") return false;
+    const max = Number(row.dataset.brkMax) || 0;
+    const quantity = Number(target.value) || 0;
+    const previous = Number(target.dataset.value) || 0;
+    // só quando aumenta além do que o bundle ainda aceita (data-brk-max)
+    if (quantity <= previous || quantity <= max) return false;
+
+    const keep = Math.max(max, Math.min(previous, quantity));
+    const extra = quantity - keep;
+    const variantId = Number(row.dataset.brkVariant);
+    const sectionId = this.getSectionsToRender()[0].section;
+    // brkAddUnbundled vem do cart-components.js (scripts-tag.liquid, em todas as páginas)
+    this.updateQuantity(target.dataset.index, target.dataset.key, keep, "updates[]", target)
+      .then(() => window.brkAddUnbundled(variantId, extra))
+      .then(() =>
+        Promise.all([
+          fetch(`${window.location.pathname}?section_id=${sectionId}`).then((r) => r.text()),
+          fetch("/cart.json").then((r) => r.json()),
+        ])
+      )
+      .then(([html, cart]) => {
+        CartUtils.updateCartUI({
+          parsedState: { ...cart, sections: { [sectionId]: html } },
+          sectionsToRender: this.getSectionsToRender(),
+          cartInstance: this,
+          totalsSelector: ".cart-info .totals",
+        });
+      })
+      .catch((e) => console.error(e))
+      .finally(() => this.disableLoading());
+    return true;
   }
 
   getSectionsToRender() {
@@ -278,11 +316,11 @@ class CartItems extends HTMLElement {
       sections_url: window.location.pathname,
     });
 
-    fetch(`${routes.cart_change_url}`, { ...fetchConfig(), ...{ body } })
+    return fetch(`${routes.cart_change_url}`, { ...fetchConfig(), ...{ body } })
       .then((response) => response.text())
       .then((state) => {
         const parsedState = JSON.parse(state);
-        
+
         if (parsedState.errors) {
           this.updateMessageErrors(line, parsedState.errors, target);
           this.disableLoading();

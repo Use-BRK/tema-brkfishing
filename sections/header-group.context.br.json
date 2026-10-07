@@ -30,7 +30,7 @@
           "type": "store_information",
           "disabled": true,
           "settings": {
-            "paragraph-b43867baa421a7705d5d9a4d9334a8f5": null,
+            "paragraph-9fa006c27dcfa7e4db7ee96aa88cb51e": null,
             "show_email": false,
             "show_phone": true,
             "hidden_on_mobile": true
@@ -84,19 +84,19 @@
             "text": "🌟 LANÇAMENTOS",
             "open-link-newtab": false,
             "item_label": "new",
-            "header-19c6b34f898e6193e7bbfab2c2505d36": null,
+            "header-6582f3fb47fb4ce750282744fa13cf92": null,
             "promotion_menu_column": 2,
             "mega_custom_width": 600,
             "center_submenu": false,
             "full_width": false,
-            "header-366eea20adb4248ca77b5c477b68079a": null,
+            "header-073ef5148c105f254b0543884a094e4f": null,
             "promotion_position": "right",
             "promotion_image_width": 27,
-            "header-b3090edb1ab162a09b365d8c8937ce75": null,
+            "header-ad548a0d7f80920c0af1404c4059aefe": null,
             "promotion_image_1": null,
             "promotion_link_1": "",
             "promotion_link_newtab_1": true,
-            "header-3f231516402da81d6ba34e02c97ac292": null,
+            "header-d3d227c2aca9c247a84f988c57d0174c": null,
             "promotion_image_2": null,
             "promotion_link_2": "",
             "promotion_link_newtab_2": true
@@ -110,19 +110,19 @@
             "text": "🎁 AMAZON",
             "open-link-newtab": false,
             "item_label": "hot",
-            "header-2726abbcd6135c5b240b9c07a680d51b": null,
+            "header-566697944f0102aad38f14efafe34ecd": null,
             "promotion_menu_column": 2,
             "mega_custom_width": 600,
             "center_submenu": false,
             "full_width": false,
-            "header-5372c83e9960eafcca5adb2d9ed00823": null,
+            "header-55d54b69da42c9b7fcf55e2367be2255": null,
             "promotion_position": "right",
             "promotion_image_width": 27,
-            "header-6bbbfb5ba0fdc61344b3838a1d57e17c": null,
+            "header-b621187e918d055e764c29165692380e": null,
             "promotion_image_1": null,
             "promotion_link_1": "",
             "promotion_link_newtab_1": true,
-            "header-0c54d4dcd2180f8e3b76970571733a16": null,
+            "header-3e20e30a6b6e73a669c59301ebfdf137": null,
             "promotion_image_2": null,
             "promotion_link_2": "",
             "promotion_link_newtab_2": true
@@ -136,19 +136,19 @@
             "text": "ARMORX",
             "open-link-newtab": false,
             "item_label": "hot",
-            "header-efe26e57e2f420282ab1c1dbef681efe": null,
+            "header-5d7fed59918272a183d4aa1fd30791ac": null,
             "promotion_menu_column": 2,
             "mega_custom_width": 600,
             "center_submenu": false,
             "full_width": false,
-            "header-7fd65ac10a84f6377f4ea381c6d496f7": null,
+            "header-f26b38ab5d0e9a1a894aa80e903d47e8": null,
             "promotion_position": "right",
             "promotion_image_width": 27,
-            "header-3517d3c9da422c1cbbbc445dd981e9b1": null,
+            "header-09af98f9caef8ae5bac78e63cc917046": null,
             "promotion_image_1": null,
             "promotion_link_1": "",
             "promotion_link_newtab_1": true,
-            "header-fdc27d8311b41a74d2a9f2ab149e163f": null,
+            "header-8368c46b7e22c68558cc993564772f9c": null,
             "promotion_image_2": null,
             "promotion_link_2": "",
             "promotion_link_newtab_2": true
@@ -156,13 +156,13 @@
         },
         "menu_promotion_EeqGGC": {
           "settings": {
-            "promotion_menu_column": 3,
+            "promotion_menu_column": 2,
             "full_width": false
           }
         },
         "menu_promotion_7tMNHN": {
           "settings": {
-            "promotion_menu_column": 3,
+            "promotion_menu_column": 2,
             "full_width": false
           }
         }

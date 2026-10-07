@@ -52,6 +52,7 @@
       "settings": {
         "section_width": "stretch_width",
         "color_scheme": "",
+        "layout": "cards",
         "heading": "Confira outras coleções",
         "description": "",
         "header_size": "medium",

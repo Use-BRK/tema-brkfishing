@@ -28,6 +28,7 @@
   assign image_custom_width = section_st.image_custom_width
   assign scroll_animation = settings.scroll_animation
   assign animate_delay = 0
+  assign layout = section_st.layout | default: 'circles'
 -%}
 {%- capture style -%}
   --section-pt: {{ section_st.padding_top }}; --section-pb: {{ section_st.padding_bottom }};
@@ -80,13 +81,22 @@
 {% if collection.metafields.custom.subcollection.value %}
   {% assign sub_collection = collection.metafields.custom.subcollection.value %}
   {% if sub_collection != blank %}
+    {% if layout == 'cards' %}
+      {{ 'subcollection-rail.css' | asset_url | stylesheet_tag }}
+      <script src="{{ 'subcollection-rail.js' | asset_url }}" defer="defer"></script>
+    {% endif %}
     <div
-      class="section remove_spacing mb-60{% if section_st.padding_top < 30 %} pt-min{% endif %}{% if section_st.padding_bottom < 30 %} pb-min{% endif %} sec__collection-list color-{{ color_scheme }} gradient{% if reveal %} overflow-hidden{% endif %}"
-      style="{{ style | strip | strip_newlines }}"
+      class="section remove_spacing{% unless layout == 'cards' %} mb-60{% endunless %}{% if section_st.padding_top < 30 %} pt-min{% endif %}{% if section_st.padding_bottom < 30 %} pb-min{% endif %} sec__collection-list color-{{ color_scheme }} gradient{% if reveal %} overflow-hidden{% endif %}"
+      style="{{ style | strip | strip_newlines }}{% if layout == 'cards' %}margin-bottom: {{ section_st.cards_margin_bottom }}px;{% endif %}"
     >
       <div class="{{ section_width }}">
         {%- if heading != blank or description != blank -%}
-          <div class="section__header mb-33 mb-sm-20 text-{{ section_st.header_alignment }}{% if section_st.section_width == 'full_width' %} px-20{% endif %}">
+          <div
+            class="section__header {% if layout == 'cards' %}subcol-rail__header{% else %}mb-33 mb-sm-20{% endif %} text-{{ section_st.header_alignment }}{% if section_st.section_width == 'full_width' %} px-20{% endif %}"
+            {% if layout == 'cards' %}
+              style="--sr-heading-size: {{ section_st.cards_heading_size }}px;"
+            {% endif %}
+          >
             {%- if section_st.heading != blank -%}
               <motion-element
                 data-motion="{{ scroll_animation }}"
@@ -97,7 +107,7 @@
                 class="block"
               >
                 <h2
-                  class="section__header-heading heading-letter-spacing {{ header_size  }} mt-0{% if section_st.description != blank %} mb-10{% else %} mb-0{% endif %}"
+                  class="section__header-heading heading-letter-spacing {% if layout == 'cards' %}subcol-rail__heading{% else %}{{ header_size }}{% endif %} mt-0{% if section_st.description != blank %} mb-10{% else %} mb-0{% endif %}"
                 >
                   {{ section.settings.heading }}
                 </h2>
@@ -111,13 +121,84 @@
                 {% if scroll_animation == 'none' %}
                   hold
                 {% endif %}
-                class="section__header-des block rich__text-m0"
+                class="section__header-des block rich__text-m0{% if layout == 'cards' %} subcol-rail__subheading{% endif %}"
               >
                 {{ section.settings.description }}
               </motion-element>
             {% endif %}
           </div>
         {% endif %}
+        {% if layout == 'cards' %}
+          {%- comment -%}
+            Layout "cards horizontais": trilho com rolagem nativa (scroll-snap) + setas no desktop.
+            Subtítulo de cada card: metafield custom.subtitle da subcoleção; sem ele, a descrição
+            da coleção (sem HTML, 2 linhas) ou a contagem de produtos, conforme a configuração.
+          {%- endcomment -%}
+          <subcollection-rail
+            class="subcol-rail{% if section_st.center_insufficient %} is-centered{% endif %}{% if section_st.cards_uppercase %} subcol-rail--uppercase{% endif %}"
+            style="--sr-gap: {{ column_gap | at_least: 12 }}px; --sr-card-width: {{ section_st.cards_width }}px; --sr-card-width-mobile: {{ section_st.cards_width_mobile }}px; --sr-img-width: {{ section_st.cards_image_width }}px; --sr-img-ratio: {{ section_st.cards_image_ratio }}; --sr-img-fit: {{ section_st.cards_image_fit }}; --sr-radius: {{ section_st.cards_radius }}px; --sr-bg: {{ section_st.cards_background }}; --sr-border: {{ section_st.cards_border_color }}; --sr-accent: {{ section_st.cards_hover_color }}; --sr-title-size: {{ section_st.font_size }}px; --sr-subtitle-size: {{ section_st.cards_subtitle_size }}px;"
+          >
+            {% if show_arrow %}
+              <button type="button" class="subcol-rail__arrow subcol-rail__arrow--prev" aria-label="Voltar" disabled>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              </button>
+            {% endif %}
+            <div class="subcol-rail__track">
+              {% for card in sub_collection %}
+                {%- liquid
+                  if section_st.image_source == 'first_product'
+                    assign card_media = card.products.first.featured_image
+                  else
+                    assign card_media = card.image | default: card.featured_image
+                  endif
+
+                  assign card_subtitle = ''
+                  case section_st.cards_subtitle_source
+                    when 'metafield'
+                      assign card_subtitle = card.metafields.custom.subtitle.value
+                      if card_subtitle == blank
+                        assign card_subtitle = card.description | strip_html | strip | truncatewords: 12
+                      endif
+                    when 'product_count'
+                      if card.products_count > 1
+                        assign card_subtitle = 'general.collections.collection_count_multiple' | t: number: card.products_count
+                      else
+                        assign card_subtitle = 'general.collections.collection_count_single' | t: number: card.products_count
+                      endif
+                  endcase
+                -%}
+                <a href="{{ card.url }}" class="subcol-rail__card" draggable="false">
+                  <div class="subcol-rail__media">
+                    {%- if card_media -%}
+                      {{
+                        card_media
+                        | image_url: width: 300
+                        | image_tag:
+                          loading: 'lazy',
+                          widths: '150, 300',
+                          sizes: '(min-width: 768px) 150px, 100px',
+                          alt: card.title
+                      }}
+                    {%- else -%}
+                      {%- render 'placeholder-render' -%}
+                    {%- endif -%}
+                  </div>
+                  <div class="subcol-rail__info">
+                    <h3 class="subcol-rail__name">{{ card.title }}</h3>
+                    {%- if card_subtitle != blank -%}
+                      <p class="subcol-rail__desc">{{ card_subtitle }}</p>
+                    {%- endif -%}
+                  </div>
+                </a>
+              {% endfor %}
+            </div>
+            {% if show_arrow %}
+              <button type="button" class="subcol-rail__arrow subcol-rail__arrow--next" aria-label="Avançar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+            {% endif %}
+          </subcollection-rail>
+        {% else %}
         {% if scroll_animation %}
           <motion-items-effect data-motion="{{ scroll_animation }}">
         {% endif %}
@@ -175,6 +256,7 @@
         {% if scroll_animation %}
           </motion-items-effect>
         {% endif %}
+        {% endif %}
       </div>
     </div>
   {% endif %}
@@ -213,6 +295,23 @@
       "id": "color_scheme",
       "label": "t:sections.all.color_scheme.label",
       "default": "scheme-1"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "info": "Cards horizontais: carrossel compacto (imagem + nome + subtítulo lado a lado), ocupa bem menos altura.",
+      "default": "circles",
+      "options": [
+        {
+          "value": "circles",
+          "label": "Imagens (padrão)"
+        },
+        {
+          "value": "cards",
+          "label": "Cards horizontais"
+        }
+      ]
     },
     {
       "type": "header",
@@ -518,6 +617,182 @@
       "step": 5,
       "default": 200,
       "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Cards horizontais",
+      "visible_if": "{{ section.settings.layout == 'cards' }}"
+    },
+    {
+      "type": "paragraph",
+      "content": "Usa também: Fonte da imagem, Espaçamento entre colunas, Centralizar itens, Tamanho da fonte (título do card) e Mostrar setas.",
+      "visible_if": "{{ section.settings.layout == 'cards' }}"
+    },
+    {
+      "type": "range",
+      "id": "cards_heading_size",
+      "label": "Tamanho do título da seção",
+      "info": "No mobile o título fica um pouco menor automaticamente.",
+      "min": 14,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 20,
+      "visible_if": "{{ section.settings.layout == 'cards' }}"
+    },
+    {
+      "type": "select",
+      "id": "cards_subtitle_source",
+      "label": "Subtítulo do card",
+      "info": "Metafield: usa custom.subtitle da subcoleção; se vazio, um trecho da descrição da coleção.",
+      "default": "metafield",
+      "options": [
+        {
+          "value": "metafield",
+          "label": "Metafield / descrição da coleção"
+        },
+        {
+          "value": "product_count",
+          "label": "Quantidade de produtos"
+        },
+        {
+          "value": "none",
+          "label": "Sem subtítulo"
+        }
+      ],
+      "visible_if": "{{ section.settings.layout == 'cards' }}"
+    },
+    {
+      "type": "range",
+      "id": "cards_subtitle_size",
+      "label": "Tamanho do subtítulo",
+      "min": 10,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "default": 12,
+      "visible_if": "{{ section.settings.layout == 'cards' }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "cards_uppercase",
+      "label": "Título em maiúsculas",
+      "default": true,
+      "visible_if": "{{ section.settings.layout == 'cards' }}"
+    },
+    {
+      "type": "range",
+      "id": "cards_width",
+      "label": "Largura do card (desktop)",
+      "min": 200,
+      "max": 420,
+      "step": 10,
+      "unit": "px",
+      "default": 280,
+      "visible_if": "{{ section.settings.layout == 'cards' }}"
+    },
+    {
+      "type": "range",
+      "id": "cards_width_mobile",
+      "label": "Largura do card (mobile)",
+      "min": 160,
+      "max": 320,
+      "step": 10,
+      "unit": "px",
+      "default": 230,
+      "visible_if": "{{ section.settings.layout == 'cards' }}"
+    },
+    {
+      "type": "range",
+      "id": "cards_image_width",
+      "label": "Largura da imagem",
+      "min": 40,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "default": 64,
+      "visible_if": "{{ section.settings.layout == 'cards' }}"
+    },
+    {
+      "type": "select",
+      "id": "cards_image_ratio",
+      "label": "Proporção da imagem",
+      "default": "1",
+      "options": [
+        {
+          "value": "1",
+          "label": "Quadrada"
+        },
+        {
+          "value": "0.86",
+          "label": "Retrato"
+        },
+        {
+          "value": "1.33",
+          "label": "Paisagem"
+        }
+      ],
+      "visible_if": "{{ section.settings.layout == 'cards' }}"
+    },
+    {
+      "type": "select",
+      "id": "cards_image_fit",
+      "label": "Encaixe da imagem",
+      "default": "cover",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Preencher (corta)"
+        },
+        {
+          "value": "contain",
+          "label": "Inteira (sem cortar)"
+        }
+      ],
+      "visible_if": "{{ section.settings.layout == 'cards' }}"
+    },
+    {
+      "type": "range",
+      "id": "cards_radius",
+      "label": "Arredondamento",
+      "min": 0,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14,
+      "visible_if": "{{ section.settings.layout == 'cards' }}"
+    },
+    {
+      "type": "color",
+      "id": "cards_background",
+      "label": "Fundo do card",
+      "default": "#FAFAFA",
+      "visible_if": "{{ section.settings.layout == 'cards' }}"
+    },
+    {
+      "type": "color",
+      "id": "cards_border_color",
+      "label": "Borda do card",
+      "default": "#EAEAEA",
+      "visible_if": "{{ section.settings.layout == 'cards' }}"
+    },
+    {
+      "type": "color",
+      "id": "cards_hover_color",
+      "label": "Borda no hover",
+      "default": "#135ED1",
+      "visible_if": "{{ section.settings.layout == 'cards' }}"
+    },
+    {
+      "type": "range",
+      "id": "cards_margin_bottom",
+      "label": "Espaço abaixo da seção",
+      "min": 0,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "default": 32,
+      "visible_if": "{{ section.settings.layout == 'cards' }}"
     },
     {
       "type": "header",

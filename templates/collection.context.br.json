@@ -19,17 +19,17 @@
       "settings": {
         "section_width": "full_width",
         "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
-        "header-5371b283e8a11ddc226faa2422c96388": null,
+        "header-993a614a38a6f055aac1eb53aadabbd1": null,
         "direction": "right",
         "icon_between_item": "unset",
         "speed": 10,
         "space_between_text": 60,
-        "header-d52aef0d0e220d4a8b1e15e6580b008d": null,
+        "header-b90675d29c43164291923f57fd467dab": null,
         "font_size": 14,
         "font_weight": "body_weight",
         "uppercase": false,
         "use_heading_font": false,
-        "header-53a748a076f096910b7423e249698053": null,
+        "header-e36d494b8b1e6eb2a84e6ee934c6e1b2": null,
         "padding_top": 5,
         "padding_bottom": 5,
         "reset_spacing": true
@@ -83,6 +83,9 @@
         "sorting": true,
         "items_to_show": 24,
         "items_per_row": 5,
+        "show_wishlist": false,
+        "show_compare": false,
+        "show_quick_view": false,
         "show_add_cart": true,
         "pagination": "load_more_button"
       },
@@ -103,7 +106,10 @@
               "camisas-hybrid",
               "envio-imediato-brkfishing",
               "fusionx-raptor",
-              "colecao-elements"
+              "colecao-elements",
+              "amazon-2-0",
+              "camisas-master",
+              "brasil-fishing"
             ]
           }
         }

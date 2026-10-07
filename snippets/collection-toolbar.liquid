@@ -6,6 +6,10 @@
   assign sorting = section_st.sorting
   assign grid_list = section_st.grid_list
   assign products_column = products_column
+  assign floating_toolbar = floating_toolbar
+  if sorting == false and enable_filtering == false and show_gender_filter == false
+    assign floating_toolbar = false
+  endif
 -%}
 {% liquid
   assign enable_rtl = settings.rtl
@@ -19,7 +23,16 @@
     endif
   endif
 %}
-<div class="toolbar toolbar-products flex gap-15 gap-md-30 align-center mb-20{% if filter_layout == 'horizontal' %} mt-1025-60{% endif %}{% if show_gender_filter %} toolbar--gender{% endif %}">
+{%- if section.settings.enable_size_pills and floating_toolbar or section.settings.enable_size_pills and show_gender_filter and capsule_toolbar -%}
+  {%- comment -%}
+    Cápsulas (mobile flutuante / desktop com gênero): os tamanhos não cabem nelas, então esta cópia fica
+    acima, no fluxo normal. Fora das cápsulas fica oculta e vale a de dentro da toolbar (collection-page.css).
+  {%- endcomment -%}
+  <div class="size-pills-standalone">
+    {%- render 'size-pills-filter', results: collection -%}
+  </div>
+{%- endif -%}
+<div class="toolbar toolbar-products flex gap-15 gap-md-30 align-center mb-20{% if filter_layout == 'horizontal' %} mt-1025-60{% endif %}{% if show_gender_filter %} toolbar--gender{% endif %}{% if floating_toolbar %} toolbar-products--floating{% endif %}{% if capsule_toolbar and show_gender_filter %} toolbar-products--capsule{% endif %}">
   {%- if enable_filtering or number_products_per_page -%}
     {% if number_products_per_page %}
       <div class="toolbar-left flex gap-15 gap-md-30 align-center flex-1">
@@ -145,6 +158,7 @@
   {%- endif -%}
   {%- if show_gender_filter -%}
     <div class="gender-filter-bar" id="gender-filter-bar" {{ gender_attrs }}>
+      <span class="gender-filter-label" aria-hidden="true">Filtrar por gênero</span>
       <button class="gender-filter-btn{% if masc_active %} active{% endif %}" data-filter-value="{{ masc_value }}" type="button">{{ gender_label_masc }}</button>
       <button class="gender-filter-btn{% if fem_active %} active{% endif %}" data-filter-value="{{ fem_value }}" type="button">{{ gender_label_fem }}</button>
     </div>

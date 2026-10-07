@@ -1,5 +1,6 @@
 "use-strict";
-import "./cart-components.js";
+// cart-components.js é carregado em snippets/scripts-tag.liquid com asset_url (URL versionada).
+// Importado daqui ("./cart-components.js", sem ?v=) a CDN servia a versão antiga indefinidamente.
 
 function initComparisons() {
   var x, i;
