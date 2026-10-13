@@ -21,6 +21,9 @@
     "show_secondary_image": false,
     "product_hover_effect": "hover_zoom",
     "show_action_on_mobile": false,
+    "show_on_minicart_cart_page": true,
+    "free_shipping_unavailable_text": "Falta {{ amount }} para ganhar <strong>FRETE GRÁTIS!</strong>",
+    "free_shipping_available_text": "Você ganhou <strong>FRETE GRÁTIS,</strong> prossiga para o checkout",
     "product_recommendations_heading": "",
     "minicart_type": "disable",
     "product_recommendations_type": "auto",
@@ -65,11 +68,6 @@
       },
       "14060646107696862457": {
         "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-        "disabled": true,
-        "settings": {}
-      },
-      "18228966181090706294": {
-        "type": "shopify://apps/selleasy/blocks/app-embed/790c1a03-a71f-4bc1-9869-00dad526d3c2",
         "disabled": true,
         "settings": {}
       }
