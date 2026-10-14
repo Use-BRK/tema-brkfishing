@@ -68,9 +68,27 @@
     {% endif %}
     <div class="sec__content">
       <faq-item>
+        {%- liquid
+          comment
+            Na página de produto, cada pergunta pode ser restrita a camisas ou a não-camisas (setting show_on).
+            Camisa = título contém "camis" (Camisa, Camiseta).
+          endcomment
+          assign faq_product_group = ''
+          if product
+            assign faq_title_lc = product.title | downcase
+            if faq_title_lc contains 'camis'
+              assign faq_product_group = 'camisas'
+            else
+              assign faq_product_group = 'outros'
+            endif
+          endif
+        -%}
         {%- for block in section.blocks -%}
           {%- liquid
             assign block_st = block.settings
+            if faq_product_group != blank and block_st.show_on != blank and block_st.show_on != 'all' and block_st.show_on != faq_product_group
+              continue
+            endif
           -%}
           <motion-element
             data-motion="fade-up-lg"
@@ -242,6 +260,18 @@
           "id": "faq_content",
           "default": "Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
           "label": "t:sections.faq.settings.block.content_quenstion"
+        },
+        {
+          "type": "select",
+          "id": "show_on",
+          "label": "Exibir em",
+          "info": "Só vale na página de produto. Camisa = título do produto contém \"Camis\" (Camisa, Camiseta).",
+          "default": "all",
+          "options": [
+            { "value": "all", "label": "Todos os produtos" },
+            { "value": "camisas", "label": "Só camisas" },
+            { "value": "outros", "label": "Só produtos que não são camisa" }
+          ]
         }
       ]
     }

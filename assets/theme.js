@@ -8588,6 +8588,20 @@ class SlideWithThumbs extends HTMLElement {
         swiper: this.thumbnailSlide ? this.thumbnailSlide : null,
       },
     });
+    // O autoHeight do Swiper só mede a altura na troca de slide. Se a foto termina de carregar
+    // ou muda de tamanho depois (lazy load, resize), a altura fica presa no valor antigo e não
+    // volta a diminuir. Remede sempre que algum slide muda de tamanho e ao fim da transição.
+    if (this.globalSlide && window.ResizeObserver) {
+      const swiper = this.globalSlide;
+      const remeasure = () => {
+        if (!swiper.destroyed) swiper.updateAutoHeight(0);
+      };
+      const resizeObserver = new ResizeObserver(remeasure);
+      swiper.slides.forEach((slide) =>
+        resizeObserver.observe(slide, { box: "border-box" })
+      );
+      swiper.on("slideChangeTransitionEnd", remeasure);
+    }
   }
 
   initThumbnail() {

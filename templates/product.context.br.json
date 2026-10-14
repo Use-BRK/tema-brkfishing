@@ -58,7 +58,8 @@
           "disabled": false,
           "settings": {
             "faq_title": "Os produtos da BRK possuem proteção solar real?",
-            "faq_content": "Sim. Nossas camisas contam com a tecnologia <strong>UV50+</strong>, que bloqueia até 98% dos raios UVA e UVB. Essa proteção é aplicada diretamente nas fibras do tecido, o que garante que a eficácia não saia nas lavagens, mantendo você seguro durante toda a vida útil da peça."
+            "faq_content": "Sim. Nossas camisas contam com a tecnologia <strong>UV50+</strong>, que bloqueia até 98% dos raios UVA e UVB. Essa proteção é aplicada diretamente nas fibras do tecido, o que garante que a eficácia não saia nas lavagens, mantendo você seguro durante toda a vida útil da peça.",
+            "show_on": "camisas"
           }
         },
         "faq_items_qnq7X": {
@@ -66,7 +67,8 @@
           "disabled": false,
           "settings": {
             "faq_title": "Qual é o diferencial do tecido das camisas BRK?",
-            "faq_content": "Utilizamos tecidos de alta tecnologia, que permite a rápida evaporação do suor, mantendo o corpo seco e em temperatura agradável, mesmo em atividades sob sol intenso ou práticas esportivas."
+            "faq_content": "Utilizamos tecidos de alta tecnologia, que permite a rápida evaporação do suor, mantendo o corpo seco e em temperatura agradável, mesmo em atividades sob sol intenso ou práticas esportivas.",
+            "show_on": "camisas"
           }
         },
         "faq_items_zydbb": {
@@ -74,7 +76,8 @@
           "disabled": false,
           "settings": {
             "faq_title": "Como escolher o tamanho ideal para mim?",
-            "faq_content": "Em cada página de produto, disponibilizamos uma <strong>Tabela de Medidas</strong>. Recomendamos comparar as medidas de uma peça que você já usa com os nossos valores."
+            "faq_content": "Em cada página de produto, disponibilizamos uma <strong>Tabela de Medidas</strong>. Recomendamos comparar as medidas de uma peça que você já usa com os nossos valores.",
+            "show_on": "camisas"
           }
         },
         "faq_items_riHMK": {
@@ -82,7 +85,8 @@
           "disabled": false,
           "settings": {
             "faq_title": "As cores das camisas desbotam com o tempo?",
-            "faq_content": "Não. Utilizamos um processo de sublimação de alta definição. Isso garante que as estampas e cores permaneçam vivas e vibrantes mesmo após diversas lavagens e exposição prolongada ao sol."
+            "faq_content": "Não. Utilizamos um processo de sublimação de alta definição. Isso garante que as estampas e cores permaneçam vivas e vibrantes mesmo após diversas lavagens e exposição prolongada ao sol.",
+            "show_on": "camisas"
           }
         },
         "faq_items_fYnQw": {
