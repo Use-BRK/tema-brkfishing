@@ -19,17 +19,17 @@
       "settings": {
         "section_width": "full_width",
         "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
-        "header-478ab184962bd1329e30b5e8bf9de17d": null,
+        "header-a1518a8b0674155c6118368ed5fdc7d7": null,
         "direction": "right",
         "icon_between_item": "unset",
         "speed": 10,
         "space_between_text": 60,
-        "header-3ca6571f3936d5d710d7f3d7370f0b3b": null,
+        "header-53c84ae747b8d2b9f688556a2eff61c9": null,
         "font_size": 14,
         "font_weight": "body_weight",
         "uppercase": false,
         "use_heading_font": false,
-        "header-1df48b178261b4fbe0f4a600e787e3fb": null,
+        "header-eea4671bec333189efbb2a8966313a49": null,
         "padding_top": 5,
         "padding_bottom": 5,
         "reset_spacing": true
@@ -77,6 +77,11 @@
         }
       }
     },
+    "subcollection": {
+      "disabled": false,
+      "settings": {},
+      "blocks": {}
+    },
     "main": {
       "settings": {
         "section_width": "stretch_width",
@@ -109,7 +114,10 @@
               "colecao-elements",
               "amazon-2-0",
               "camisas-master",
-              "brasil-fishing"
+              "brasil-fishing",
+              "elements-armorx",
+              "elements-fusion",
+              "elements-hybrid"
             ]
           }
         }
@@ -121,11 +129,6 @@
         "popular_product_Xwjqcf",
         "image_banner_UUJxtT"
       ]
-    },
-    "subcollection": {
-      "disabled": false,
-      "settings": {},
-      "blocks": {}
     }
   },
   "order": [
