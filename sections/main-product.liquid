@@ -737,14 +737,75 @@
               {% endif %}
             {% endif %}
           {%- when 'short_description' -%}
-            {%- if product.metafields.custom.short_description -%}
+            {%- liquid
+              comment
+                Texto por grupo de produtos: o grupo é o prefixo de letras do SKU (FUSION263BLPP → FUSION,
+                C01191P → C = Master, CADV012M → CADV). Se o grupo do produto tiver texto no bloco, ele
+                aparece; senão, o metafield custom.short_description (comportamento original).
+              endcomment
+              assign sd_prefix = ''
+              assign sd_letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+              for sd_variant in product.variants
+                assign sd_sku = sd_variant.sku | strip | upcase
+                if sd_sku == blank
+                  continue
+                endif
+                assign sd_chars = sd_sku | split: ''
+                for sd_char in sd_chars
+                  unless sd_letters contains sd_char
+                    break
+                  endunless
+                  assign sd_prefix = sd_prefix | append: sd_char
+                endfor
+                break
+              endfor
+
+              assign sd_content = ''
+              case sd_prefix
+                when 'C'
+                  assign sd_content = block_st.text_master
+                when 'FUSION'
+                  assign sd_content = block_st.text_fusion
+                when 'HYB'
+                  assign sd_content = block_st.text_hybrid
+                when 'CAX'
+                  assign sd_content = block_st.text_armorx
+                when 'RAGLAN'
+                  assign sd_content = block_st.text_raglan
+                when 'CCPBR'
+                  assign sd_content = block_st.text_capuz
+                when 'CASUAL'
+                  assign sd_content = block_st.text_casual
+                when 'CM'
+                  assign sd_content = block_st.text_manga_curta
+                when 'CI'
+                  assign sd_content = block_st.text_master_infantil
+                when 'APC', 'PM'
+                  assign sd_content = block_st.text_algodao
+                when 'BP'
+                  assign sd_content = block_st.text_brasil_patriota
+                when 'CMB'
+                  assign sd_content = block_st.text_work
+                when 'ADV'
+                  assign sd_content = block_st.text_master_moto
+                when 'CADV'
+                  assign sd_content = block_st.text_casual_moto
+                when 'CF'
+                  assign sd_content = block_st.text_casual_fishing
+              endcase
+              if sd_content == blank and product.metafields.custom.short_description != blank
+                assign sd_content = product.metafields.custom.short_description | truncate: block_st.excerpt_length
+              endif
+            -%}
+            {%- if sd_content != blank -%}
               <div
                 {{ block.shopify_attributes }}
                 class="product_detail-des mb-22{% if enable_skeleton_loading %} skeleton-loading{% endif %}"
+                {% if sd_prefix != blank %}data-product-group="{{ sd_prefix | downcase }}"{% endif %}
               >
-                {{ product.metafields.custom.short_description | truncate: block_st.excerpt_length }}
+                {{ sd_content }}
               </div>
-            {% endif %}
+            {%- endif -%}
           {%- when 'model_size' -%}
             {%- if product.metafields.custom.model_size -%}
               <div
@@ -2319,6 +2380,145 @@
           "id": "excerpt_length",
           "label": "t:sections.main-product.blocks.short_description.settings.excerpt_length",
           "default": 150
+        },
+        {
+          "type": "paragraph",
+          "content": "O texto do grupo aparece nos produtos cujo SKU começa com o prefixo indicado. Grupo sem texto: mostra o metafield do produto."
+        },
+        {
+          "type": "header",
+          "content": "Master (SKU C0…)"
+        },
+        {
+          "type": "richtext",
+          "id": "text_master",
+          "label": "Texto"
+        },
+        {
+          "type": "header",
+          "content": "FusionX (SKU FUSION)"
+        },
+        {
+          "type": "richtext",
+          "id": "text_fusion",
+          "label": "Texto"
+        },
+        {
+          "type": "header",
+          "content": "Hybrid (SKU HYB)"
+        },
+        {
+          "type": "richtext",
+          "id": "text_hybrid",
+          "label": "Texto"
+        },
+        {
+          "type": "header",
+          "content": "ArmorX (SKU CAX)"
+        },
+        {
+          "type": "richtext",
+          "id": "text_armorx",
+          "label": "Texto"
+        },
+        {
+          "type": "header",
+          "content": "Raglan / Segunda pele (SKU RAGLAN)"
+        },
+        {
+          "type": "richtext",
+          "id": "text_raglan",
+          "label": "Texto"
+        },
+        {
+          "type": "header",
+          "content": "Com Capuz (SKU CCPBR)"
+        },
+        {
+          "type": "richtext",
+          "id": "text_capuz",
+          "label": "Texto"
+        },
+        {
+          "type": "header",
+          "content": "Camiseta Casual (SKU CASUAL)"
+        },
+        {
+          "type": "richtext",
+          "id": "text_casual",
+          "label": "Texto"
+        },
+        {
+          "type": "header",
+          "content": "Manga Curta (SKU CM)"
+        },
+        {
+          "type": "richtext",
+          "id": "text_manga_curta",
+          "label": "Texto"
+        },
+        {
+          "type": "header",
+          "content": "Master Infantil (SKU CI)"
+        },
+        {
+          "type": "richtext",
+          "id": "text_master_infantil",
+          "label": "Texto"
+        },
+        {
+          "type": "header",
+          "content": "Camiseta de Algodão (SKU APC e PM)"
+        },
+        {
+          "type": "richtext",
+          "id": "text_algodao",
+          "label": "Texto"
+        },
+        {
+          "type": "header",
+          "content": "Brasil Patriota (SKU BP)"
+        },
+        {
+          "type": "richtext",
+          "id": "text_brasil_patriota",
+          "label": "Texto"
+        },
+        {
+          "type": "header",
+          "content": "Work (SKU CMB)"
+        },
+        {
+          "type": "richtext",
+          "id": "text_work",
+          "label": "Texto"
+        },
+        {
+          "type": "header",
+          "content": "Master Motociclismo (SKU ADV)"
+        },
+        {
+          "type": "richtext",
+          "id": "text_master_moto",
+          "label": "Texto"
+        },
+        {
+          "type": "header",
+          "content": "Casual Motociclismo (SKU CADV)"
+        },
+        {
+          "type": "richtext",
+          "id": "text_casual_moto",
+          "label": "Texto"
+        },
+        {
+          "type": "header",
+          "content": "Casual Fishing (SKU CF)"
+        },
+        {
+          "type": "richtext",
+          "id": "text_casual_fishing",
+          "label": "Texto"
         }
       ]
     },
