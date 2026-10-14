@@ -8522,9 +8522,10 @@ class SlideWithThumbs extends HTMLElement {
     this.globalSlide = new Swiper(initSwiper, {
       slidesPerView: itemMobile,
       spaceBetween: spacing >= 15 ? 15 : spacing,
-      // Fotos com proporções diferentes: a altura acompanha o slide ativo em vez do mais alto,
-      // senão sobra um vão entre a foto e as miniaturas.
-      autoHeight: true,
+      // Fotos com proporções diferentes: a altura acompanha o slide ativo (ver fitActiveHeight).
+      // O autoHeight do Swiper fica desligado porque ele mede o DOM no meio da troca e, no
+      // celular, guardava a altura errada (cortava a foto ou não diminuía).
+      autoHeight: false,
       autoplay: autoplaying,
       direction: direction,
       loop: loop,
@@ -8588,20 +8589,63 @@ class SlideWithThumbs extends HTMLElement {
         swiper: this.thumbnailSlide ? this.thumbnailSlide : null,
       },
     });
-    // O autoHeight do Swiper só mede a altura na troca de slide. Se a foto termina de carregar
-    // ou muda de tamanho depois (lazy load, resize), a altura fica presa no valor antigo e não
-    // volta a diminuir. Remede sempre que algum slide muda de tamanho e ao fim da transição.
-    if (this.globalSlide && window.ResizeObserver) {
-      const swiper = this.globalSlide;
-      const remeasure = () => {
-        if (!swiper.destroyed) swiper.updateAutoHeight(0);
-      };
-      const resizeObserver = new ResizeObserver(remeasure);
+    this.fitActiveHeight();
+  }
+
+  // Altura da galeria = altura da(s) foto(s) visível(is). Para imagens, calcula pela proporção
+  // original (atributos width/height do <img>) × largura exibida, sem depender do momento em que
+  // o navegador termina o layout. Vídeo/3D/outros: usa a altura renderizada do slide.
+  fitActiveHeight() {
+    const swiper = this.globalSlide;
+    if (!swiper) return;
+    // Mantém o CSS do modo autoHeight (slides com altura própria, wrapper alinhado no topo e
+    // transição de altura), mas quem define a altura é este método.
+    swiper.el.classList.add("swiper-autoheight");
+
+    const slideHeight = (slide) => {
+      const img = slide.querySelector("img");
+      const isOtherMedia = slide.querySelector("video, iframe, model-viewer");
+      if (img && !isOtherMedia) {
+        const ratioW = Number(img.getAttribute("width")) || img.naturalWidth;
+        const ratioH = Number(img.getAttribute("height")) || img.naturalHeight;
+        const shownWidth = img.getBoundingClientRect().width;
+        if (ratioW && ratioH && shownWidth) {
+          const extra = Math.max(0, slide.offsetHeight - img.offsetHeight);
+          return Math.ceil((shownWidth * ratioH) / ratioW + extra);
+        }
+      }
+      return slide.offsetHeight;
+    };
+
+    const fit = () => {
+      if (swiper.destroyed || !swiper.slides.length) return;
+      const perView = Math.max(1, Math.ceil(Number(swiper.params.slidesPerView) || 1));
+      let height = 0;
+      for (let i = 0; i < perView; i++) {
+        const slide = swiper.slides[swiper.activeIndex + i];
+        if (slide) height = Math.max(height, slideHeight(slide));
+      }
+      if (height > 0) swiper.wrapperEl.style.height = `${height}px`;
+    };
+
+    // Na troca (antes da animação, para a altura acompanhar o slide), ao fim da transição,
+    // ao mudar o tamanho da tela e quando uma foto termina de carregar.
+    swiper.on("slideChange", fit);
+    swiper.on("slideChangeTransitionEnd", fit);
+    swiper.on("resize", fit);
+    swiper.on("breakpoint", fit);
+    swiper.slides.forEach((slide) =>
+      slide.querySelectorAll("img").forEach((img) => {
+        if (!img.complete) img.addEventListener("load", fit);
+      })
+    );
+    if (window.ResizeObserver) {
+      const resizeObserver = new ResizeObserver(fit);
       swiper.slides.forEach((slide) =>
         resizeObserver.observe(slide, { box: "border-box" })
       );
-      swiper.on("slideChangeTransitionEnd", remeasure);
     }
+    fit();
   }
 
   initThumbnail() {
