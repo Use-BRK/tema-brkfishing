@@ -8522,6 +8522,9 @@ class SlideWithThumbs extends HTMLElement {
     this.globalSlide = new Swiper(initSwiper, {
       slidesPerView: itemMobile,
       spaceBetween: spacing >= 15 ? 15 : spacing,
+      // Fotos com proporções diferentes: a altura acompanha o slide ativo em vez do mais alto,
+      // senão sobra um vão entre a foto e as miniaturas.
+      autoHeight: true,
       autoplay: autoplaying,
       direction: direction,
       loop: loop,
@@ -8599,6 +8602,10 @@ class SlideWithThumbs extends HTMLElement {
     const spaceBetween = this.dataset.thumbSpaceBetween
       ? this.dataset.thumbSpaceBetween
       : 10;
+    // Distância entre a foto principal e as miniaturas = distância entre as miniaturas.
+    if (container.classList.contains("thumb-bottom")) {
+      container.style.marginTop = `${spaceBetween}px`;
+    }
     const watchSlidesVisibility = this.dataset.thumbWatchSlidesVisibility
       ? this.dataset.thumbWatchSlidesVisibility
       : true;
