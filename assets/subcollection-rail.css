@@ -98,7 +98,7 @@
 }
 .subcol-rail__desc {
   margin: 0;
-  font-size: var(--sr-subtitle-size, 12px);
+  font-size: var(--sr-subtitle-size, 10px);
   line-height: 1.35;
   color: var(--sr-subtitle-color, #666);
   display: -webkit-box;
