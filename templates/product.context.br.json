@@ -24,11 +24,11 @@
           "settings": {
             "review_data": "real_data",
             "max_width": 1200,
-            "paragraph-fa609fd5e1ae760c00e2a805c195c22c": null,
+            "paragraph-e131b2fff405052ec952141c8fc2de82": null,
             "show_shop_reviews": false,
             "empty_state": "other_products_reviews",
-            "paragraph-472991a66266bc31329a5f307534eddb": null,
-            "paragraph-dda7f93ff9fb25dd31598566cad30680": null
+            "paragraph-86fbd074be36058d0a0a2a3c7ffdd517": null,
+            "paragraph-0323197cc61f17034c9491bc62a9f92e": null
           }
         }
       },
@@ -42,12 +42,12 @@
       "settings": {
         "section_width": "container",
         "color_scheme": "",
-        "header-0cca438dfe265ef606ebe6a94f555844": null,
+        "header-bab5ebeb765de2e4e6100139d5ea20e6": null,
         "heading": "Perguntas Frequentes",
         "description": "",
         "header_size": "medium",
         "header_alignment": "center",
-        "header-344b346719fbe484ab5f26111bbb97c2": null,
+        "header-74f8f93d8e9dcd632cbbcf192d23f5ef": null,
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -122,10 +122,10 @@
       "custom_css": [],
       "settings": {
         "enable_sticky_content_on_desktop": true,
+        "desktop_layout": "hidden_thumbnail",
         "enable_on_desktop": false,
         "enable_on_mobile": false,
-        "mobile_options": "show_thumbnails",
-        "desktop_layout": "hidden_thumbnail"
+        "mobile_options": "show_thumbnails"
       },
       "blocks": {
         "product_meta_FUixq": {
@@ -148,21 +148,21 @@
           "type": "shopify://apps/brk-apps-fishing/blocks/combined-listing/019f0510-f075-72ba-9c2f-a80926df6a59",
           "disabled": false,
           "settings": {
-            "header-db44cfc35fa0f54d4c0c7da818215829": null,
+            "header-9bddbebfd87fef494b225c03ae6afc1f": null,
             "show_option_name": true,
             "show_label": true,
-            "header-f53c58d27df1ba18069f096aaf4ee075": null,
+            "header-726cdd4d5323965dfe496978e8615e77": null,
             "swatch_size": 86,
             "border_radius": 4,
             "border_width": 1,
             "gap": 4,
             "margin_y": 10,
-            "header-37549a1b4d44fa4f50a55167ef965357": null,
+            "header-d648dd810c79a8e087de8dccac296413": null,
             "border_color": "#cfcfcf",
             "selected_color": "#135ed1",
             "selected_text_color": "#ffffff",
             "hover_color": "#135ed1",
-            "header-575cf2e461b83c2670b7a5f9f7667f09": null,
+            "header-1f6f904f2306db4f7837f38d46a4d76a": null,
             "label_color": "#6a6a6a",
             "label_size": 12
           }
@@ -171,18 +171,18 @@
           "disabled": false,
           "settings": {
             "show_uv": true,
-            "show_ziper": true,
-            "show_capuz": true,
-            "show_bandana": true,
-            "show_luva": true,
             "title_uv": "PROTEÇÃO UV50+",
             "text_uv": "Tecnologia que bloqueia até\n98% dos raios UVA e UVB.",
+            "show_ziper": true,
             "title_ziper": "GOLA COM ZÍPER",
             "text_ziper": "Abertura da gola para maior\nventilação ou cobertura",
+            "show_capuz": true,
             "title_capuz": "CAPUZ FUNCIONAL",
             "text_capuz": "Garante proteção solar extra\npara a cabeça e pescoço.",
+            "show_bandana": true,
             "title_bandana": "BANDANA RESPIRÁVEL",
-            "text_bandana": "Feita com microfuros que permitem\numa respiração fácil e confortável.",
+            "text_bandana": "Com microfuros que permitem\numa respiração fácil e confortável.",
+            "show_luva": true,
             "title_luva": "LUVA INTEGRADA",
             "text_luva": "Suas mãos protegidas do sol\ne sem abrir mão do conforto."
           }
@@ -202,9 +202,9 @@
             "enable_button": true,
             "button_mode": "personalization",
             "button_label": "Quero meu nome na camisa",
-            "header-55f681d389a3cbb155fce86f7399c6ff": null,
+            "header-7ff17fbc897f0cfb136f1c41f954bb82": null,
             "whatsapp_number": "553432194697",
-            "header-73a86c6793baeb01ff781f0d66f94c95": null,
+            "header-d335e9f50ef6901cf0c6c40a4e02db64": null,
             "perso_variant_id": "43812419240002",
             "perso_price": "29,90",
             "mockup_frente": "https://cdn.shopify.com/s/files/1/0628/1445/3826/files/MOCKUP_FRENTE.png",
@@ -224,15 +224,15 @@
             "divider_text": "Ou",
             "button_text": "[whatsapp] Compre pelo Whatsapp",
             "text_color": "#0f6049",
-            "header-f22c1a7b5ebefea8da24f7ecc74ae000": null,
+            "header-60e899e3d07b3361a79629b1244c800c": null,
             "whatsapp_number": "553432194697",
             "whatsapp_message": "Vim da loja online e tenho interesse nesse produto:",
             "append_product_link": true,
-            "header-a833941a53fe573f188fbec941183db8": null,
+            "header-8b4f8e174dc1084d6bba12aee1d98192": null,
             "enable_schedule": true,
             "hours_start": "08:00",
             "hours_end": "17:15",
-            "header-21070a13e29e472a525bb2b87cdfc8e0": null,
+            "header-56cc3d63dbe0af61af51416a4a6de06c": null,
             "collections": []
           }
         },
@@ -240,12 +240,12 @@
           "type": "shopify://apps/brk-apps-fishing/blocks/bundle-addon/019f0510-f075-72ba-9c2f-a80926df6a59",
           "disabled": false,
           "settings": {
-            "paragraph-7311f78b72a2d960d5b0dcbc9d5f2784": null,
-            "header-3bed794b4dfed4e04926db3bd18c1271": null,
+            "paragraph-5e4cf78ef32b928e34bb2989fef7062e": null,
+            "header-643d118d3ab7d10c99c65c0f75a4d4e3": null,
             "title_size": 15,
             "border_radius": 12,
             "margin_y": 16,
-            "header-b79fbe1aafe2f1bea4bae146d9445967": null,
+            "header-2ecba3a175b5127e30f1dbf983c6e859": null,
             "border_color": "#e1e3e5",
             "accent_color": "#085b47",
             "label_bg": "#085b47",
