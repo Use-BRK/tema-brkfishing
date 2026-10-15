@@ -285,6 +285,15 @@ section[class*=main-product-section] .product-detail__price .card-product-price 
 section[class*=main-product-section] .product-detail__price .card-product-price .price {
   font-size: 22px;
 }
+/* preço "De" riscado (compare at price) */
+section[class*=main-product-section] .product-detail__price .card-product-price .compare-price {
+  font-size: 18px;
+}
+/* "De" sem o risco: inline-block não herda o text-decoration do <s> */
+section[class*=main-product-section] .product-detail__price .card-product-price .compare-price small {
+  display: inline-block;
+  font-size: 14.85px;
+}
 
 /*Tamanhos de fonte título / SKU / descrição | Main Product Section*/
 section[class*=main-product-section] .product-detail__title {
