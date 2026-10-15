@@ -297,7 +297,7 @@
               class="product-detail__price mb-10{% if enable_skeleton_loading %} skeleton-loading{% endif %}"
               {{ block.shopify_attributes }}
             >
-              {%- render 'price', scope: 'detail', product: product, class: 'price-large', show_badges: false -%}
+              {%- render 'price', scope: 'detail', product: product, class: 'price-large', show_badges: false, inline_installment: true -%}
             </div>
           {%- when 'buy_buttons' -%}
             {% comment %} Buy button — oculto quando a grade de bulk order está ativa (ela tem botão próprio) {% endcomment %}

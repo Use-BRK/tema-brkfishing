@@ -54,7 +54,11 @@
       </span>
     </div>
   {%- endif -%}
-  <div class="installment-payment"><p>em <strong style="margin:0;">até 6x de {{ price | divided_by:6 | money }}</strong> sem juros</p></div>
+  {%- if inline_installment -%}
+    <div class="installment-payment installment-payment--inline">ou 6x {{ price | divided_by: 6 | money_without_currency }}</div>
+  {%- else -%}
+    <div class="installment-payment"><p>em <strong style="margin:0;">até 6x de {{ price | divided_by:6 | money }}</strong> sem juros</p></div>
+  {%- endif -%}
   {% if target.unit_price_measurement != null %}
     <small class="unit-price">
       <span class="visually-hidden-price">{{ 'products.product.price.unit_price' | t }}</span>

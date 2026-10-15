@@ -264,6 +264,57 @@ section[class*=main-product-section] .card-product-price .price small {
   font-weight: 500;
 }
 
+/*Preço em linha "R$ 199,00 ou 6x 33,16" | Main Product Section*/
+section[class*=main-product-section] .product-detail__price .card-product-price {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 0.5rem;
+  line-height: 1.2;
+}
+section[class*=main-product-section] .product-detail__price .card-product-price .current-price {
+  flex-basis: 100%;
+}
+section[class*=main-product-section] .product-detail__price .card-product-price .installment-payment--inline {
+  order: 2;
+  margin: 0;
+  line-height: 1.2;
+  font-size: 18px;
+  color: #102d51;
+}
+section[class*=main-product-section] .product-detail__price .card-product-price .price {
+  font-size: 22px;
+}
+
+/*Tamanhos de fonte título / SKU / descrição | Main Product Section*/
+section[class*=main-product-section] .product-detail__title {
+  font-size: 22px;
+}
+section[class*=main-product-section] .product-detail__meta .product__sku {
+  font-size: 18px;
+}
+section[class*=main-product-section] .product_detail-des {
+  font-size: 18px;
+}
+
+/*Respiros título / SKU / descrição / preço | Main Product Section*/
+section[class*=main-product-section] .product-detail__title {
+  margin-bottom: 0.4rem;
+}
+section[class*=main-product-section] .product-detail__meta {
+  margin-bottom: 2rem;
+}
+section[class*=main-product-section] .product-detail__meta li:last-child {
+  margin-bottom: 0;
+}
+section[class*=main-product-section] .product_detail-des {
+  margin-bottom: 2rem;
+  line-height: 1.4;
+}
+section[class*=main-product-section] .product_detail-des > :last-child {
+  margin-bottom: 0;
+}
+
 /*Custom Price Style | Collection Tabs Products*/
 section[id*=collection_tab] .collection-tab__tab-item {
   font-size: clamp(1.275em, 2vw, 2.5rem);
