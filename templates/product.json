@@ -76,6 +76,11 @@
         "feature_cards_brk01": {
           "type": "feature_cards",
           "settings": {
+            "show_uv": true,
+            "show_ziper": true,
+            "show_capuz": true,
+            "show_bandana": true,
+            "show_luva": true,
             "title_uv": "PROTEÇÃO UV50+",
             "text_uv": "Tecnologia que bloqueia até\n98% dos raios UVA e UVB.",
             "title_ziper": "GOLA COM ZÍPER",

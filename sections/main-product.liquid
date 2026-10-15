@@ -430,6 +430,10 @@
                     assign fc_image = block_st[fc_image_key]
                     assign fc_title = block_st[fc_title_key]
                     assign fc_text = block_st[fc_text_key]
+                    assign fc_show_key = 'show_' | append: fc_key
+                    if block_st[fc_show_key] == false
+                      continue
+                    endif
                     assign fc_default_image = ''
                     case fc_key
                       when 'uv'
@@ -1968,6 +1972,12 @@
           "content": "Proteção UV50+ (todas as camisas)"
         },
         {
+          "type": "checkbox",
+          "id": "show_uv",
+          "label": "Exibir card Proteção UV50+",
+          "default": true
+        },
+        {
           "type": "image_picker",
           "id": "image_uv",
           "label": "Imagem"
@@ -1987,6 +1997,12 @@
         {
           "type": "header",
           "content": "Gola com zíper (CAX)"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_ziper",
+          "label": "Exibir card Gola com zíper",
+          "default": true
         },
         {
           "type": "image_picker",
@@ -2010,6 +2026,12 @@
           "content": "Capuz (FUSION e HYB)"
         },
         {
+          "type": "checkbox",
+          "id": "show_capuz",
+          "label": "Exibir card Capuz",
+          "default": true
+        },
+        {
           "type": "image_picker",
           "id": "image_capuz",
           "label": "Imagem"
@@ -2031,6 +2053,12 @@
           "content": "Bandana (FUSION)"
         },
         {
+          "type": "checkbox",
+          "id": "show_bandana",
+          "label": "Exibir card Bandana",
+          "default": true
+        },
+        {
           "type": "image_picker",
           "id": "image_bandana",
           "label": "Imagem"
@@ -2050,6 +2078,12 @@
         {
           "type": "header",
           "content": "Luva (FUSION, HYB e CAX)"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_luva",
+          "label": "Exibir card Luva",
+          "default": true
         },
         {
           "type": "image_picker",

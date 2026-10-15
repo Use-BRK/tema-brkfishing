@@ -409,8 +409,10 @@ section[class*=main-product-section] .product-feature-cards__track.is-dragging {
   user-select: none;
 }
 section[class*=main-product-section] .product-feature-card {
-  /* largura acompanha o conteúdo: título numa linha só (card da bandana fica mais largo) */
+  /* largura acompanha o conteúdo (título numa linha só), mas ocupa no mínimo a coluna - 60px:
+     a ponta do próximo card fica visível, indicando que dá pra deslizar */
   flex: 0 0 auto;
+  min-width: calc(100% - 60px);
   display: flex;
   align-items: stretch;
   height: 122px;
