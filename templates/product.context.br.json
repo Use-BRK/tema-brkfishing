@@ -140,10 +140,6 @@
             "show_collections": false
           }
         },
-        "short_description_9BGxVm": {
-          "disabled": false,
-          "settings": {}
-        },
         "judge_me_reviews_preview_badge_7TGbg": {
           "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "disabled": false,
@@ -151,6 +147,10 @@
             "paragraph-db9e537e4fbbb5029916fade7aff655d": null,
             "paragraph-ac5ca5a65ebc956aee4d8af2b819fa2e": null
           }
+        },
+        "short_description_9BGxVm": {
+          "disabled": false,
+          "settings": {}
         },
         "brk_apps_fishing_combined_listing_6KLCz": {
           "type": "shopify://apps/brk-apps-fishing/blocks/combined-listing/019f0510-f075-72ba-9c2f-a80926df6a59",
@@ -324,6 +324,29 @@
       "disabled": true,
       "settings": {},
       "blocks": {}
+    },
+    "1792088625dc71acf2": {
+      "type": "apps",
+      "disabled": false,
+      "settings": {},
+      "blocks": {
+        "judge_me_reviews_review_widget_9JktP": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": false,
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1000,
+            "paragraph-88459bb40e2c1ce9418093ef0e55839e": null,
+            "show_shop_reviews": true,
+            "empty_state": "other_products_reviews",
+            "paragraph-1bd7ae7705671ba6dc1b0cf480694f05": null,
+            "paragraph-95e56dcf28561a69a8f258808e9af886": null
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_9JktP"
+      ]
     }
   },
   "order": [
@@ -337,6 +360,7 @@
     "related_products",
     "divider_HtLXd3",
     "1785956660a4b22876",
+    "1792088625dc71acf2",
     "products_recently_viewed_GdCNUL",
     "faq_NnNnA"
   ]
