@@ -302,9 +302,15 @@ section[class*=main-product-section] .product-detail__variant-picker .product-fo
 section[class*=main-product-section] .product-detail__variant-picker .ident-size-block {
   gap: 6px;
 }
-/* quebra de linha se ainda faltar espaço (ex.: PP até G3 em celular estreito) */
+/* quebra de linha se ainda faltar espaço (ex.: PP até G3 em celular estreito).
+   O critical.css força gap: 1rem !important aqui, por isso o !important. */
 section[class*=main-product-section] .product-detail__variant-picker .ident-size-block {
   flex-wrap: wrap;
+  gap: 6px !important;
+}
+/* os inputs escondidos de cada tamanho também eram itens da linha e somavam gaps extras */
+section[class*=main-product-section] .product-detail__variant-picker .ident-size-block > input {
+  position: absolute;
 }
 section[class*=main-product-section] .product-detail__variant-picker .product__item-option {
   justify-content: center;
@@ -322,6 +328,14 @@ section[class*=main-product-section] .product-detail__variant-picker .product__i
     width: 36px;
     height: 32px;
     font-size: 14px;
+  }
+}
+/* 360px: PP até G3 (8 botões) cabem numa linha */
+@media (max-width: 380px) {
+  section[class*=main-product-section] .product-detail__variant-picker .product__item-option {
+    width: 34px;
+    height: 30px;
+    font-size: 13px;
   }
 }
 
@@ -442,6 +456,9 @@ section[class*=main-product-section] .product-feature-card__media svg {
   pointer-events: none;
 }
 section[class*=main-product-section] .product-feature-card__content {
+  /* o body do tema usa overflow-wrap: break-word, que cortava palavras no meio (ex.: RESPIRÁ-VEL) */
+  overflow-wrap: normal;
+  word-break: normal;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -489,6 +506,28 @@ section[class*=main-product-section] .product-feature-card__text br {
   section[class*=main-product-section] .product-feature-card__title,
   section[class*=main-product-section] .product-feature-card__text {
     white-space: normal;
+  }
+}
+/* Celulares até 430px: card = coluna - 64px (sempre ~40px do próximo à vista), imagem e fontes
+   menores e texto fluindo sem as quebras do editor, para não sobrar palavra solta */
+@media (max-width: 430px) {
+  section[class*=main-product-section] .product-feature-card {
+    flex-basis: calc(100% - 64px);
+  }
+  section[class*=main-product-section] .product-feature-card__media {
+    flex-basis: 76px;
+  }
+  section[class*=main-product-section] .product-feature-card__content {
+    padding: 10px 10px 10px 12px;
+  }
+  section[class*=main-product-section] .product-feature-card__title {
+    font-size: 14px;
+  }
+  section[class*=main-product-section] .product-feature-card__text {
+    font-size: 11px;
+  }
+  section[class*=main-product-section] .product-feature-card__text br {
+    display: none;
   }
 }
 /* PC: grade de 2 colunas, todos os cards à vista */
