@@ -302,6 +302,10 @@ section[class*=main-product-section] .product-detail__variant-picker .product-fo
 section[class*=main-product-section] .product-detail__variant-picker .ident-size-block {
   gap: 6px;
 }
+/* alinha os tamanhos com o preço: o tema dá 4px de padding lateral (respiro p/ sombra de swatch) */
+section[class*=main-product-section] .product-detail__variant-picker variant-radios-detail {
+  padding-inline: 0;
+}
 /* quebra de linha se ainda faltar espaço (ex.: PP até G3 em celular estreito).
    O critical.css força gap: 1rem !important aqui, por isso o !important. */
 section[class*=main-product-section] .product-detail__variant-picker .ident-size-block {
@@ -329,6 +333,14 @@ section[class*=main-product-section] .product-detail__variant-picker .product__i
     height: 32px;
     font-size: 14px;
   }
+}
+/* Produtos que não são camisa (ex.: linha de pesca "0.30mm - 30lb/13.6kg - 274m"): a pílula
+   acompanha o texto em vez da largura fixa dos tamanhos de roupa (classe --shirt no main-product) */
+section[class*=main-product-section] .product-detail__variant-picker:not(.product-detail__variant-picker--shirt) .product__item-option {
+  width: auto;
+  min-width: 40px;
+  padding: 0 14px;
+  white-space: nowrap;
 }
 /* 360px: PP até G3 (8 botões) cabem numa linha */
 @media (max-width: 380px) {

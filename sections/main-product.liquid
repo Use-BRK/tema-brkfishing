@@ -226,6 +226,17 @@
       {% if section.settings.image_zoom == 'external_zoom' %}
         <div class="zoom-external-area"></div>
       {% endif %}
+      {%- liquid
+        comment
+          Produto é camisa/camiseta? (o tipo de produto vem vazio em muitas camisas, então olha o título também)
+          Usado nos cards de destaque (só em camisas) e no seletor de tamanho (formato pílula fixa só em camisas).
+        endcomment
+        assign is_shirt = false
+        assign shirt_title = product.title | downcase
+        if shirt_title contains 'camisa' or shirt_title contains 'camiseta' or product.type contains 'Camisa'
+          assign is_shirt = true
+        endif
+      -%}
       {%- for block in section.blocks -%}
         {% assign block_st = block.settings %}
         {%- case block.type -%}
@@ -374,7 +385,7 @@
               </div>
             {% elsif products_group == blank %}
               <div
-                class="product-detail__variant-picker mb-25"
+                class="product-detail__variant-picker mb-25{% if is_shirt %} product-detail__variant-picker--shirt{% endif %}"
                 {{ block.shopify_attributes }}
                 data-type="{{ block.settings.variant_type }}"
               >
@@ -386,6 +397,7 @@
               </div>
             {% endif %}
           {%- when 'feature_cards' -%}
+            {%- unless is_shirt -%}{%- continue -%}{%- endunless -%}
             {%- liquid
               comment
                 Cards de destaque por grupo de SKU (prefixo de letras, mesma regra da short description):
