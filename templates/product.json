@@ -73,6 +73,21 @@
             "content": "🔥 Hurry Up! Sale ends in:"
           }
         },
+        "feature_cards_brk01": {
+          "type": "feature_cards",
+          "settings": {
+            "title_uv": "PROTEÇÃO UV50+",
+            "text_uv": "Tecnologia que bloqueia até\n98% dos raios UVA e UVB.",
+            "title_ziper": "GOLA COM ZÍPER",
+            "text_ziper": "Abertura da gola para maior\nventilação ou cobertura",
+            "title_capuz": "CAPUZ FUNCIONAL",
+            "text_capuz": "Garante proteção solar extra\npara a cabeça e pescoço.",
+            "title_bandana": "BANDANA RESPIRÁVEL",
+            "text_bandana": "Feita com microfuros que permitem\numa respiração fácil e confortável.",
+            "title_luva": "LUVA INTEGRADA",
+            "text_luva": "Suas mãos protegidas do sol\ne sem abrir mão do conforto."
+          }
+        },
         "variant_picker_tcCihG": {
           "type": "variant_picker",
           "settings": {
@@ -111,7 +126,9 @@
             "show_dynamic_checkout": false,
             "show_gift_card_recipient": true,
             "show_wishlist": false,
-            "show_compare": false
+            "show_compare": false,
+            "add_to_cart_label": "Adicionar à Sacola",
+            "show_bag_icon": true
           }
         },
         "model_size_XM7z6E": {
@@ -187,6 +204,7 @@
         "short_description_9BGxVm",
         "countdown_timer_QB4Ydn",
         "variant_picker_tcCihG",
+        "feature_cards_brk01",
         "sku_prazo_HkLApw",
         "product_addons_YRaprz",
         "stock_countdown_JNK9zi",

@@ -109,18 +109,20 @@
   >
   <script src="{{ 'custom-name-modal.js' | asset_url }}" defer="defer"></script>
 
+  {%- comment -%} Preço fica à direita (perso_price); um "(R$...)" antigo no texto do botão é descartado. {%- endcomment -%}
+  {%- assign cnm_label = button_label | split: ' (R$' | first | strip -%}
   <div class="product-detail__custom-name-button mb-20" {{ block.shopify_attributes }}>
     <div class="button_buy-now grow-1 skeleton-loading">
       <button
         type="button"
-        class="btn btn-primary w-full product-form__submit word-wrap relative no-underline custom-name-button__link cnm-open-js"
+        class="w-full relative no-underline custom-name-button__link custom-name-button__link--outline cnm-open-js"
         data-target="#cnm-{{ block.id }}"
-        style="--btn-padding-x: 1.4rem;"
       >
-        <span class="btn-label inline-flex align-center content-center gap-10 custom-name-button__label">
-          <img class="custom-name-button__icon" src="https://cdn.shopify.com/s/files/1/0887/2083/4857/files/customize.svg" alt="" width="16" height="16" loading="lazy">
-          <span>{{ button_label }}</span>
-        </span>
+        <svg class="custom-name-button__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/>
+        </svg>
+        <span class="custom-name-button__text">{{ cnm_label }}</span>
+        <span class="custom-name-button__price">R${{ perso_price }}</span>
       </button>
     </div>
   </div>

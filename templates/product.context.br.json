@@ -172,13 +172,29 @@
             "show_share": false
           }
         },
+        "feature_cards_brk01": {
+          "type": "feature_cards",
+          "disabled": false,
+          "settings": {
+            "title_uv": "PROTEÇÃO UV50+",
+            "text_uv": "Tecnologia que bloqueia até\n98% dos raios UVA e UVB.",
+            "title_ziper": "GOLA COM ZÍPER",
+            "text_ziper": "Abertura da gola para maior\nventilação ou cobertura",
+            "title_capuz": "CAPUZ FUNCIONAL",
+            "text_capuz": "Garante proteção solar extra\npara a cabeça e pescoço.",
+            "title_bandana": "BANDANA RESPIRÁVEL",
+            "text_bandana": "Feita com microfuros que permitem\numa respiração fácil e confortável.",
+            "title_luva": "LUVA INTEGRADA",
+            "text_luva": "Suas mãos protegidas do sol\ne sem abrir mão do conforto."
+          }
+        },
         "custom_name_button_XTkeF": {
           "type": "custom_name_button",
           "disabled": false,
           "settings": {
             "enable_button": true,
             "button_mode": "personalization",
-            "button_label": "Quero meu nome na Camisa (R$29,90)",
+            "button_label": "Quero meu nome na camisa",
             "header-d0419c833ca7483a96742b7a4e1f08e8": null,
             "whatsapp_number": "553432194697",
             "header-1356a7cbb45567fc60ad529499b1676d": null,
@@ -198,8 +214,9 @@
           "disabled": false,
           "settings": {
             "enable_button": true,
-            "button_text": "Ou se preferir [whatsapp] <strong>COMPRE PELO WHATSAPP</strong>",
-            "text_color": "#128c4a",
+            "divider_text": "Ou",
+            "button_text": "[whatsapp] Compre pelo Whatsapp",
+            "text_color": "#0f6049",
             "header-7b7d00c82487273c4f5c2cd614b1ae8c": null,
             "whatsapp_number": "553432194697",
             "whatsapp_message": "Vim da loja online e tenho interesse nesse produto:",
@@ -266,6 +283,7 @@
         "price_VJ4N8m",
         "brk_apps_fishing_combined_listing_6KLCz",
         "variant_picker_tcCihG",
+        "feature_cards_brk01",
         "product_addons_YRaprz",
         "stock_countdown_JNK9zi",
         "buy_buttons_LcQGtR",

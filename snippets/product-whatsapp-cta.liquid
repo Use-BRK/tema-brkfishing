@@ -25,7 +25,7 @@
 
   assign wa_number = block_st.whatsapp_number | remove: ' ' | remove: '+' | remove: '-' | remove: '(' | remove: ')' | remove: '.'
   assign wa_message = block_st.whatsapp_message | default: 'Olá! Tenho interesse neste produto:'
-  assign button_text = block_st.button_text | default: 'Ou se preferir [whatsapp] <strong>COMPRE PELO WHATSAPP</strong>'
+  assign button_text = block_st.button_text | default: '[whatsapp] Compre pelo Whatsapp'
 
   assign product_url = request.origin | append: product.url
   if block_st.append_product_link
@@ -50,22 +50,45 @@
 
   <style>
     .product-detail__whatsapp-cta { text-align: center; }
+    .whatsapp-cta__divider {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 11px;
+      font-size: 10px;
+      line-height: 14px;
+      color: #505050;
+    }
+    .whatsapp-cta__divider::before,
+    .whatsapp-cta__divider::after {
+      content: '';
+      flex: 1 1 auto;
+      height: 1px;
+      background-color: #bec0bf;
+    }
     .whatsapp-cta {
-      color: var(--wa-color, #128c4a);
-      line-height: 1.5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      width: 100%;
+      min-height: 48px;
+      padding: 0 16px;
+      border: 1px solid #22d231;
+      border-radius: 8px;
+      background-color: #fff;
+      color: var(--wa-color, #0f6049);
+      font-family: 'Mona Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.2;
       text-decoration: none;
+      transition: background-color .2s;
     }
-    .whatsapp-cta:hover { text-decoration: none; opacity: .85; }
+    .whatsapp-cta:hover { text-decoration: none; background-color: #f2fdf3; }
     .whatsapp-cta * { color: inherit; }
-    .whatsapp-cta__icon { display: inline-block; vertical-align: middle; line-height: 0; margin: 0 5px; }
-    .whatsapp-cta__icon svg {
-      width: 1.5em; height: 1.5em;
-      background: #25d366;
-      border-radius: 50%;
-      padding: 3px;
-      fill: #fff;
-      vertical-align: middle;
-    }
+    .whatsapp-cta__icon { display: inline-flex; line-height: 0; }
+    .whatsapp-cta__icon svg { width: 15px; height: 15px; fill: #22d231; }
   </style>
 
   <div
@@ -79,6 +102,9 @@
     {% endif %}
     {{ block.shopify_attributes }}
   >
+    {%- if block_st.divider_text != blank -%}
+      <div class="whatsapp-cta__divider"><span>{{ block_st.divider_text }}</span></div>
+    {%- endif -%}
     <a
       href="{{ wa_url }}"
       target="_blank"

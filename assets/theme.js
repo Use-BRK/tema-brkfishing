@@ -6271,10 +6271,12 @@ class SwatchFunctions extends SwatchInit {
       ".product_submit_button"
     );
     btns_add_cart.forEach((btn_add_cart) => {
+      // Texto próprio do botão (data-add-label do bloco buy_buttons) tem prioridade sobre o global.
+      const addToCartLabel =
+        btn_add_cart.dataset.addLabel || window.variantStrings.addToCart;
       if (btn_add_cart.querySelector(".btn-label")) {
         if (im === null) {
-          btn_add_cart.querySelector(".btn-label").innerHTML =
-            window.variantStrings.addToCart;
+          btn_add_cart.querySelector(".btn-label").innerHTML = addToCartLabel;
           btn_add_cart.disabled = false;
         } else {
           if (av) {
@@ -6283,8 +6285,7 @@ class SwatchFunctions extends SwatchInit {
                 window.variantStrings.preOrder;
               btn_add_cart.disabled = false;
             } else {
-              btn_add_cart.querySelector(".btn-label").innerHTML =
-                window.variantStrings.addToCart;
+              btn_add_cart.querySelector(".btn-label").innerHTML = addToCartLabel;
               btn_add_cart.disabled = false;
             }
           } else {

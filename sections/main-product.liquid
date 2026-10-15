@@ -74,6 +74,12 @@
     {{ 'photoswipe.css' | asset_url | stylesheet_tag }}
   {% endif %}
   <script src="{{ 'photoswipe-init.js' | asset_url }}" defer="defer" type="module"></script>
+  {% comment %} Mona Sans: cards de destaque e botões de compra / nome / WhatsApp {% endcomment %}
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Mona+Sans:wght@400;500;700&display=swap"
+  >
   {% if enable_skeleton_loading == true %}
     {{ 'skeleton.css' | asset_url | stylesheet_tag }}
     <skeleton-page class="{{ section_width }} skeleton  block">
@@ -379,6 +385,118 @@
                 {% endif %}
               </div>
             {% endif %}
+          {%- when 'feature_cards' -%}
+            {%- liquid
+              comment
+                Cards de destaque por grupo de SKU (prefixo de letras, mesma regra da short description):
+                FUSION → UV50+, capuz, bandana, luva | HYB → UV50+, capuz, luva | CAX → UV50+, zíper, luva
+                demais → só UV50+. Imagem vazia no editor: usa a imagem padrão do tema (só UV50+ e luva têm).
+              endcomment
+              assign fc_prefix = ''
+              assign fc_letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+              for fc_variant in product.variants
+                assign fc_sku = fc_variant.sku | strip | upcase
+                if fc_sku == blank
+                  continue
+                endif
+                assign fc_chars = fc_sku | split: ''
+                for fc_char in fc_chars
+                  unless fc_letters contains fc_char
+                    break
+                  endunless
+                  assign fc_prefix = fc_prefix | append: fc_char
+                endfor
+                break
+              endfor
+
+              case fc_prefix
+                when 'FUSION'
+                  assign fc_keys = 'uv,capuz,bandana,luva' | split: ','
+                when 'HYB'
+                  assign fc_keys = 'uv,capuz,luva' | split: ','
+                when 'CAX'
+                  assign fc_keys = 'uv,ziper,luva' | split: ','
+                else
+                  assign fc_keys = 'uv' | split: ','
+              endcase
+            -%}
+            <div class="product-feature-cards" {{ block.shopify_attributes }}>
+              <div class="product-feature-cards__track">
+                {%- for fc_key in fc_keys -%}
+                  {%- liquid
+                    assign fc_image_key = 'image_' | append: fc_key
+                    assign fc_title_key = 'title_' | append: fc_key
+                    assign fc_text_key = 'text_' | append: fc_key
+                    assign fc_image = block_st[fc_image_key]
+                    assign fc_title = block_st[fc_title_key]
+                    assign fc_text = block_st[fc_text_key]
+                    assign fc_default_image = ''
+                    case fc_key
+                      when 'uv'
+                        assign fc_default_image = 'feature-card-uv50.png'
+                      when 'luva'
+                        assign fc_default_image = 'feature-card-luva.jpg'
+                    endcase
+                  -%}
+                  {%- if fc_title != blank -%}
+                    <div class="product-feature-card" data-card="{{ fc_key }}">
+                      <div class="product-feature-card__media">
+                        {%- if fc_image != blank -%}
+                          {{
+                            fc_image
+                            | image_url: width: 400
+                            | image_tag: loading: 'lazy', widths: '150, 300, 400', sizes: '145px', alt: fc_title
+                          }}
+                        {%- elsif fc_default_image != blank -%}
+                          <img
+                            src="{{ fc_default_image | asset_url }}"
+                            alt="{{ fc_title | escape }}"
+                            width="145"
+                            height="118"
+                            loading="lazy"
+                          >
+                        {%- else -%}
+                          {{ 'image' | placeholder_svg_tag: 'product-feature-card__placeholder' }}
+                        {%- endif -%}
+                      </div>
+                      <div class="product-feature-card__content">
+                        <p class="product-feature-card__title">{{ fc_title }}</p>
+                        {%- if fc_text != blank -%}
+                          <p class="product-feature-card__text">{{ fc_text | escape | newline_to_br }}</p>
+                        {%- endif -%}
+                      </div>
+                    </div>
+                  {%- endif -%}
+                {%- endfor -%}
+              </div>
+            </div>
+              <script>
+                (function () {
+                  document.querySelectorAll('.product-feature-cards__track:not([data-drag])').forEach(function (track) {
+                    track.setAttribute('data-drag', '');
+                    var startX = 0, startScroll = 0, down = false, moved = false;
+                    track.addEventListener('pointerdown', function (e) {
+                      if (e.pointerType !== 'mouse') return;
+                      down = true; moved = false; startX = e.clientX; startScroll = track.scrollLeft;
+                    });
+                    window.addEventListener('pointermove', function (e) {
+                      if (!down) return;
+                      var dx = e.clientX - startX;
+                      if (!moved && Math.abs(dx) > 4) { moved = true; track.classList.add('is-dragging'); }
+                      if (moved) track.scrollLeft = startScroll - dx;
+                    });
+                    window.addEventListener('pointerup', function () {
+                      if (!down) return;
+                      down = false;
+                      if (moved) {
+                        var left = track.scrollLeft;
+                        track.classList.remove('is-dragging');
+                        track.scrollLeft = left;
+                      }
+                    });
+                  });
+                })();
+              </script>
           {%- when 'sku_prazo' -%}
             {% if product.tags contains 'prazo_producao'
               or product.tags contains 'prazo_algodao'
@@ -1758,9 +1876,16 @@
           "label": "Exibir bloco"
         },
         {
+          "type": "text",
+          "id": "divider_text",
+          "default": "Ou",
+          "label": "Texto do separador",
+          "info": "Aparece entre linhas acima do botão. Vazio: sem separador."
+        },
+        {
           "type": "inline_richtext",
           "id": "button_text",
-          "default": "Ou se preferir [whatsapp] <strong>COMPRE PELO WHATSAPP</strong>",
+          "default": "[whatsapp] Compre pelo Whatsapp",
           "label": "Texto",
           "info": "Use a barra de formatação para negrito/itálico/link. Use [whatsapp] onde quiser exibir o ícone do WhatsApp."
         },
@@ -1826,6 +1951,122 @@
           "id": "collections",
           "label": "Exibir apenas nestas collections",
           "info": "Se nenhuma collection for selecionada, o bloco aparece em todos os produtos."
+        }
+      ]
+    },
+    {
+      "type": "feature_cards",
+      "name": "Cards de destaque",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Os cards aparecem conforme o prefixo do SKU: FUSION → UV50+, capuz, bandana e luva; HYB → UV50+, capuz e luva; CAX → UV50+, zíper e luva; demais camisas → só UV50+. Sem imagem escolhida, UV50+ e luva usam a imagem padrão do tema. No texto, use Enter para quebrar a linha: o card se ajusta à linha mais longa."
+        },
+        {
+          "type": "header",
+          "content": "Proteção UV50+ (todas as camisas)"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_uv",
+          "label": "Imagem"
+        },
+        {
+          "type": "text",
+          "id": "title_uv",
+          "label": "Título",
+          "default": "PROTEÇÃO UV50+"
+        },
+        {
+          "type": "textarea",
+          "id": "text_uv",
+          "label": "Texto",
+          "default": "Tecnologia que bloqueia até\n98% dos raios UVA e UVB."
+        },
+        {
+          "type": "header",
+          "content": "Gola com zíper (CAX)"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_ziper",
+          "label": "Imagem"
+        },
+        {
+          "type": "text",
+          "id": "title_ziper",
+          "label": "Título",
+          "default": "GOLA COM ZÍPER"
+        },
+        {
+          "type": "textarea",
+          "id": "text_ziper",
+          "label": "Texto",
+          "default": "Abertura da gola para maior\nventilação ou cobertura"
+        },
+        {
+          "type": "header",
+          "content": "Capuz (FUSION e HYB)"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_capuz",
+          "label": "Imagem"
+        },
+        {
+          "type": "text",
+          "id": "title_capuz",
+          "label": "Título",
+          "default": "CAPUZ FUNCIONAL"
+        },
+        {
+          "type": "textarea",
+          "id": "text_capuz",
+          "label": "Texto",
+          "default": "Garante proteção solar extra\npara a cabeça e pescoço."
+        },
+        {
+          "type": "header",
+          "content": "Bandana (FUSION)"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_bandana",
+          "label": "Imagem"
+        },
+        {
+          "type": "text",
+          "id": "title_bandana",
+          "label": "Título",
+          "default": "BANDANA RESPIRÁVEL"
+        },
+        {
+          "type": "textarea",
+          "id": "text_bandana",
+          "label": "Texto",
+          "default": "Feita com microfuros que permitem\numa respiração fácil e confortável."
+        },
+        {
+          "type": "header",
+          "content": "Luva (FUSION, HYB e CAX)"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_luva",
+          "label": "Imagem"
+        },
+        {
+          "type": "text",
+          "id": "title_luva",
+          "label": "Título",
+          "default": "LUVA INTEGRADA"
+        },
+        {
+          "type": "textarea",
+          "id": "text_luva",
+          "label": "Texto",
+          "default": "Suas mãos protegidas do sol\ne sem abrir mão do conforto."
         }
       ]
     },
@@ -1919,6 +2160,19 @@
       "name": "t:sections.main-product.blocks.buy_buttons.name",
       "limit": 1,
       "settings": [
+        {
+          "type": "text",
+          "id": "add_to_cart_label",
+          "label": "Texto do botão de compra",
+          "default": "Adicionar à Sacola",
+          "info": "Vazio: usa o texto padrão do tema."
+        },
+        {
+          "type": "checkbox",
+          "id": "show_bag_icon",
+          "label": "Mostrar ícone de sacola",
+          "default": true
+        },
         {
           "type": "checkbox",
           "id": "show_dynamic_checkout",

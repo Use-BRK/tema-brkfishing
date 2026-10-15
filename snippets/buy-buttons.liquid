@@ -104,18 +104,36 @@
                 </div>
               {% endif %}
               <div class="button_buy-now grow-1 skeleton-loading">
+                {%- liquid
+                  comment
+                    Texto próprio do botão (bloco buy_buttons da página de produto). O theme.js usa
+                    o data-add-label ao trocar de variante, em vez do texto global.
+                  endcomment
+                  assign add_label = 'products.product.general.add_to_cart' | t
+                  if block.settings.add_to_cart_label != blank
+                    assign add_label = block.settings.add_to_cart_label
+                  endif
+                -%}
                 <button
                   type="submit"
                   name="add"
                   class="btn btn-primary w-full product_submit_button product-form__submit word-wrap relative"
                   style="--btn-padding-x: 2.5rem;"
+                  {% if block.settings.add_to_cart_label != blank %}
+                    data-add-label="{{ block.settings.add_to_cart_label | escape }}"
+                  {% endif %}
                   {% if product.selected_or_first_available_variant.available == false %}
                     disabled
                   {% endif %}
                 >
+                  {%- if block.settings.show_bag_icon -%}
+                    <svg class="product_submit_button__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                    </svg>
+                  {%- endif -%}
                   <span class="btn-label hidden-on-load">
                     {%- if product.selected_or_first_available_variant.inventory_management == null -%}
-                      {{ 'products.product.general.add_to_cart' | t }}
+                      {{ add_label }}
                     {%- else -%}
                       {%- if product.selected_or_first_available_variant.available == false -%}
                         {{ 'products.product.general.outstock' | t }}
@@ -124,7 +142,7 @@
                           {{ 'products.product.general.pre_order' | t }}
 
                         {%- else -%}
-                          {{ 'products.product.general.add_to_cart' | t }}
+                          {{ add_label }}
                         {%- endif -%}
                       {%- endif -%}
                     {%- endif -%}

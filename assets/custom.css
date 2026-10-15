@@ -291,10 +291,190 @@ section[class*=main-product-section] .product-detail__title {
   font-size: 22px;
 }
 section[class*=main-product-section] .product-detail__meta .product__sku {
-  font-size: 18px;
+  font-size: 16px;
 }
 section[class*=main-product-section] .product_detail-des {
-  font-size: 18px;
+  font-size: 16px;
+}
+
+/*Botões de tamanho arredondados (círculo / pílula) | Main Product Section*/
+section[class*=main-product-section] .product-detail__variant-picker .product-form__input_size,
+section[class*=main-product-section] .product-detail__variant-picker .ident-size-block {
+  gap: 6px;
+}
+/* quebra de linha se ainda faltar espaço (ex.: PP até G3 em celular estreito) */
+section[class*=main-product-section] .product-detail__variant-picker .ident-size-block {
+  flex-wrap: wrap;
+}
+section[class*=main-product-section] .product-detail__variant-picker .product__item-option {
+  justify-content: center;
+  width: 40px;
+  height: 35px;
+  padding: 0;
+  border-radius: 999px;
+  border-color: #252525;
+  color: #252525;
+  font-size: 15px;
+  font-weight: 400;
+}
+@media (max-width: 480px) {
+  section[class*=main-product-section] .product-detail__variant-picker .product__item-option {
+    width: 36px;
+    height: 32px;
+    font-size: 14px;
+  }
+}
+
+/*Botões de compra / nome na camisa | Main Product Section (WhatsApp: snippets/product-whatsapp-cta.liquid)*/
+section[class*=main-product-section] .product-detail__buy-buttons {
+  margin-bottom: 12px;
+}
+section[class*=main-product-section] .product-detail__buy-buttons .product_submit_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  min-height: 48px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 8px;
+  background-color: #135ed1;
+  color: #fff;
+  font-family: 'Mona Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-transform: none;
+}
+section[class*=main-product-section] .product-detail__buy-buttons .product_submit_button__icon {
+  flex: 0 0 auto;
+  width: 17px;
+  height: 17px;
+}
+section[class*=main-product-section] .product-detail__custom-name-button {
+  margin-bottom: 13px;
+}
+section[class*=main-product-section] .custom-name-button__link--outline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 20px 0 18px;
+  border: 1px solid #135ed1;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #135ed1;
+  font-family: 'Mona Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+section[class*=main-product-section] .custom-name-button__link--outline:hover {
+  background-color: #f3f7fd;
+}
+section[class*=main-product-section] .custom-name-button__link--outline .custom-name-button__icon {
+  width: 16px;
+  height: 16px;
+}
+section[class*=main-product-section] .custom-name-button__link--outline .custom-name-button__price {
+  margin-left: auto;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/*Cards de destaque (bloco feature_cards) | Main Product Section*/
+/* 38px abaixo dos tamanhos: 5px (padding do variant-radios) + 33px (colapsa com o mb-25 do variant picker) */
+section[class*=main-product-section] .product-feature-cards {
+  margin: 33px 0 38px;
+}
+section[class*=main-product-section] .product-feature-cards__track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+}
+section[class*=main-product-section] .product-feature-cards__track::-webkit-scrollbar {
+  display: none;
+}
+section[class*=main-product-section] .product-feature-cards__track.is-dragging {
+  cursor: grabbing;
+  scroll-snap-type: none;
+  user-select: none;
+}
+section[class*=main-product-section] .product-feature-card {
+  /* largura acompanha o conteúdo: título numa linha só (card da bandana fica mais largo) */
+  flex: 0 0 auto;
+  display: flex;
+  align-items: stretch;
+  height: 122px;
+  /* leve contorno do fundo em volta da imagem */
+  padding: 2px 0 2px 2px;
+  border-radius: 18px;
+  background-color: #e6ecf2;
+  scroll-snap-align: start;
+  overflow: hidden;
+}
+section[class*=main-product-section] .product-feature-card__media {
+  flex: 0 0 143px;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #d5dde6;
+}
+section[class*=main-product-section] .product-feature-card__media img,
+section[class*=main-product-section] .product-feature-card__media svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+section[class*=main-product-section] .product-feature-card__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  padding: 0 24px 0 26px;
+  font-family: 'Mona Sans', sans-serif;
+  color: #0f2e52;
+}
+section[class*=main-product-section] .product-feature-card__title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #0f2e52;
+}
+section[class*=main-product-section] .product-feature-card__text {
+  /* quebra de linha só onde o texto tem Enter no editor: o card se ajusta à linha mais longa */
+  white-space: nowrap;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.35;
+  color: #0f2e52;
+}
+/* o tema esconde <br> abaixo de 1200px (critical.css); aqui a quebra é intencional */
+section[class*=main-product-section] .product-feature-card__text br {
+  display: inline;
+}
+@media (max-width: 767px) {
+  section[class*=main-product-section] .product-feature-card {
+    height: 110px;
+  }
+  section[class*=main-product-section] .product-feature-card__media {
+    flex-basis: 110px;
+  }
+  section[class*=main-product-section] .product-feature-card__content {
+    padding: 0 16px 0 18px;
+  }
 }
 
 /*Respiros título / SKU / descrição / preço | Main Product Section*/
