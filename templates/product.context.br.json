@@ -24,11 +24,11 @@
           "settings": {
             "review_data": "real_data",
             "max_width": 1200,
-            "paragraph-2762690034426b8a2fd98ef687974d31": null,
+            "paragraph-f5aff757a22bd364564c7ecd5d75bbc6": null,
             "show_shop_reviews": false,
             "empty_state": "other_products_reviews",
-            "paragraph-4a62d0bfdf86946b416239494d3f767d": null,
-            "paragraph-95d45b32e9adff4c6bba3dec7b2da96d": null
+            "paragraph-3f1370c0f75da19348b2e22916d25422": null,
+            "paragraph-6bf8440ae2ca2419a69288745bef445d": null
           }
         }
       },
@@ -42,12 +42,12 @@
       "settings": {
         "section_width": "container",
         "color_scheme": "",
-        "header-d91b5d346546b91517432de6e3a33905": null,
+        "header-316ff81c81e2a894f56fdd91285fe7b6": null,
         "heading": "Perguntas Frequentes",
         "description": "",
         "header_size": "medium",
         "header_alignment": "center",
-        "header-40feca35ce48f9223e28c1f2ef446faa": null,
+        "header-b0e105a2ca4059ee4e4780dbdc1315d6": null,
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -140,6 +140,14 @@
             "show_collections": false
           }
         },
+        "judge_me_reviews_preview_badge_7TGbg": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": false,
+          "settings": {
+            "paragraph-db9e537e4fbbb5029916fade7aff655d": null,
+            "paragraph-ac5ca5a65ebc956aee4d8af2b819fa2e": null
+          }
+        },
         "short_description_9BGxVm": {
           "disabled": false,
           "settings": {}
@@ -148,21 +156,21 @@
           "type": "shopify://apps/brk-apps-fishing/blocks/combined-listing/019f0510-f075-72ba-9c2f-a80926df6a59",
           "disabled": false,
           "settings": {
-            "header-aea9321e685b2d2f329f2b72b87a334e": null,
+            "header-83f44b0879b48c6f0bf1825dd614f1b7": null,
             "show_option_name": true,
             "show_label": true,
-            "header-a4f2518cd9f2284db599acb6f88bdf52": null,
+            "header-8377aef71e6f23dd00bd8af9ad31444d": null,
             "swatch_size": 86,
             "border_radius": 4,
             "border_width": 1,
             "gap": 4,
             "margin_y": 10,
-            "header-81c0455febf32d476e66a26d09af427c": null,
+            "header-ad26d6ba1af64faf4feba0385b990024": null,
             "border_color": "#cfcfcf",
             "selected_color": "#135ed1",
             "selected_text_color": "#ffffff",
             "hover_color": "#135ed1",
-            "header-6f6804cda526b2e8c343664e9d28941a": null,
+            "header-7cf1edba8008e572ce9c4a5e8e1eb78d": null,
             "label_color": "#6a6a6a",
             "label_size": 12
           }
@@ -179,6 +187,7 @@
             "title_ziper": "GOLA COM ZÍPER",
             "text_ziper": "Abertura da gola para maior\nventilação ou cobertura",
             "show_capuz": true,
+            "image_capuz": "shopify://shop_images/6e6cd879-aa77-4a70-a1bf-a80c85567c9f.png",
             "title_capuz": "CAPUZ FUNCIONAL",
             "text_capuz": "Garante proteção solar extra\npara a cabeça e pescoço.",
             "show_bandana": true,
@@ -188,8 +197,7 @@
             "show_luva": true,
             "image_luva": "shopify://shop_images/88a82c04-8d5d-4d55-96e1-8f36bab2b236.png",
             "title_luva": "LUVA INTEGRADA",
-            "text_luva": "Suas mãos protegidas do sol\ne sem abrir mão do conforto.",
-            "image_capuz": "shopify://shop_images/6e6cd879-aa77-4a70-a1bf-a80c85567c9f.png"
+            "text_luva": "Suas mãos protegidas do sol\ne sem abrir mão do conforto."
           }
         },
         "product_addons_YRaprz": {
@@ -207,9 +215,9 @@
             "enable_button": true,
             "button_mode": "personalization",
             "button_label": "Quero meu nome na camisa",
-            "header-9858a844a882507999555bcd2c26feac": null,
+            "header-7640ffd980553ae378c290fe6dd5975c": null,
             "whatsapp_number": "553432194697",
-            "header-79d776711b50ec3f6b177095297fd1cb": null,
+            "header-f6b2ec5d6e7b55a837e4fef98b922d3c": null,
             "perso_variant_id": "43812419240002",
             "perso_price": "29,90",
             "mockup_frente": "https://cdn.shopify.com/s/files/1/0628/1445/3826/files/MOCKUP_FRENTE.png",
@@ -229,15 +237,15 @@
             "divider_text": "Ou",
             "button_text": "[whatsapp] Compre pelo Whatsapp",
             "text_color": "#0f6049",
-            "header-b86635fcf8f3f9ac9b9d4744c60e834f": null,
+            "header-98c0d031e76006aed993e6a56647beff": null,
             "whatsapp_number": "553432194697",
             "whatsapp_message": "Vim da loja online e tenho interesse nesse produto:",
             "append_product_link": true,
-            "header-43fd4a4e55bfd006cb46a3b5234c8155": null,
+            "header-5a444a1e49b01ef77c7434c4037da018": null,
             "enable_schedule": true,
             "hours_start": "08:00",
             "hours_end": "17:15",
-            "header-ee442b8eb500852df94856ca27d587bd": null,
+            "header-c82509c74cdf41a6f9329378c940854d": null,
             "collections": []
           }
         },
@@ -245,12 +253,12 @@
           "type": "shopify://apps/brk-apps-fishing/blocks/bundle-addon/019f0510-f075-72ba-9c2f-a80926df6a59",
           "disabled": false,
           "settings": {
-            "paragraph-751b05bca640948f988ce1f3b1af0bb4": null,
-            "header-860806805da7c475e67b1f9f6eb655fb": null,
+            "paragraph-2db5527e41590154c9cdbee6f6c8ce2c": null,
+            "header-f24a7ae503f9f2392238af73ac5546ec": null,
             "title_size": 15,
             "border_radius": 12,
             "margin_y": 16,
-            "header-0d46fb42b95113e37694e5219347cf51": null,
+            "header-970bce08c7e66b2f663834169b43fcd7": null,
             "border_color": "#e1e3e5",
             "accent_color": "#085b47",
             "label_bg": "#085b47",
@@ -291,6 +299,7 @@
         "title_G6tU8U",
         "product_meta_FUixq",
         "badges_RwfTMp",
+        "judge_me_reviews_preview_badge_7TGbg",
         "short_description_9BGxVm",
         "price_VJ4N8m",
         "brk_apps_fishing_combined_listing_6KLCz",
@@ -315,6 +324,29 @@
       "disabled": true,
       "settings": {},
       "blocks": {}
+    },
+    "1792088625dc71acf2": {
+      "type": "apps",
+      "disabled": false,
+      "settings": {},
+      "blocks": {
+        "judge_me_reviews_review_widget_9JktP": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": false,
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1000,
+            "paragraph-88459bb40e2c1ce9418093ef0e55839e": null,
+            "show_shop_reviews": true,
+            "empty_state": "other_products_reviews",
+            "paragraph-1bd7ae7705671ba6dc1b0cf480694f05": null,
+            "paragraph-95e56dcf28561a69a8f258808e9af886": null
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_9JktP"
+      ]
     }
   },
   "order": [
@@ -328,6 +360,7 @@
     "related_products",
     "divider_HtLXd3",
     "1785956660a4b22876",
+    "1792088625dc71acf2",
     "products_recently_viewed_GdCNUL",
     "faq_NnNnA"
   ]
