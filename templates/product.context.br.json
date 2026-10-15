@@ -24,11 +24,11 @@
           "settings": {
             "review_data": "real_data",
             "max_width": 1200,
-            "paragraph-34324660ab81d1d9b5004955af0e3f90": null,
+            "paragraph-fa609fd5e1ae760c00e2a805c195c22c": null,
             "show_shop_reviews": false,
             "empty_state": "other_products_reviews",
-            "paragraph-3803befbb0bdff6506b13f3affab70c5": null,
-            "paragraph-23d2a30774d9c6dfb885870d6d8d9a37": null
+            "paragraph-472991a66266bc31329a5f307534eddb": null,
+            "paragraph-dda7f93ff9fb25dd31598566cad30680": null
           }
         }
       },
@@ -42,12 +42,12 @@
       "settings": {
         "section_width": "container",
         "color_scheme": "",
-        "header-c554afc69ee3e6e47339edc0fdd9e95d": null,
+        "header-0cca438dfe265ef606ebe6a94f555844": null,
         "heading": "Perguntas Frequentes",
         "description": "",
         "header_size": "medium",
         "header_alignment": "center",
-        "header-bbc4220f79c573e7699f56e56133b47b": null,
+        "header-344b346719fbe484ab5f26111bbb97c2": null,
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -94,7 +94,8 @@
           "disabled": false,
           "settings": {
             "faq_title": "Quais são as formas de pagamento e prazos de entrega?",
-            "faq_content": "Aceitamos as principais bandeiras de cartão de crédito (com parcelamento) e PIX. O prazo de entrega varia de acordo com a sua região e a modalidade de frete escolhida no carrinho."
+            "faq_content": "Aceitamos as principais bandeiras de cartão de crédito (com parcelamento) e PIX. O prazo de entrega varia de acordo com a sua região e a modalidade de frete escolhida no carrinho.",
+            "show_on": "all"
           }
         },
         "faq_items_YrMf9": {
@@ -102,7 +103,8 @@
           "disabled": false,
           "settings": {
             "faq_title": "Posso trocar o produto se não servir?",
-            "faq_content": "Se você recebeu um produto e não ficou satisfeito ou ele simplesmente não serviu, é possível fazer a solicitação devolução para estorno <strong>em até 7 dias corridos após a entrega</strong>. Para isso, o produto deverá estar em sua embalagem original, sem indícios de uso e com todos os itens e acessórios recebidos. Para os casos de insatisfação com o produto adquirido, solicite a troca, através do nosso Portal de Trocas e Devoluções, pelo endereço <a href=\"https://brkagro.troque.app.br/\" target=\"_blank\">https://brkfishing.troque.app.br/</a>"
+            "faq_content": "Se você recebeu um produto e não ficou satisfeito ou ele simplesmente não serviu, é possível fazer a solicitação devolução para estorno <strong>em até 7 dias corridos após a entrega</strong>. Para isso, o produto deverá estar em sua embalagem original, sem indícios de uso e com todos os itens e acessórios recebidos. Para os casos de insatisfação com o produto adquirido, solicite a troca, através do nosso Portal de Trocas e Devoluções, pelo endereço <a href=\"https://brkagro.troque.app.br/\" target=\"_blank\">https://brkfishing.troque.app.br/</a>",
+            "show_on": "all"
           }
         }
       },
@@ -122,7 +124,8 @@
         "enable_sticky_content_on_desktop": true,
         "enable_on_desktop": false,
         "enable_on_mobile": false,
-        "mobile_options": "show_thumbnails"
+        "mobile_options": "show_thumbnails",
+        "desktop_layout": "hidden_thumbnail"
       },
       "blocks": {
         "product_meta_FUixq": {
@@ -145,35 +148,26 @@
           "type": "shopify://apps/brk-apps-fishing/blocks/combined-listing/019f0510-f075-72ba-9c2f-a80926df6a59",
           "disabled": false,
           "settings": {
-            "header-781e891af46ebfd3dfac2751251fd9d9": null,
+            "header-db44cfc35fa0f54d4c0c7da818215829": null,
             "show_option_name": true,
             "show_label": true,
-            "header-6d86639050a9db9db8f5225f6fbe5df3": null,
+            "header-f53c58d27df1ba18069f096aaf4ee075": null,
             "swatch_size": 86,
             "border_radius": 4,
             "border_width": 1,
             "gap": 4,
             "margin_y": 10,
-            "header-7ba388f4f9ea90c265a477cf24fc2d21": null,
+            "header-37549a1b4d44fa4f50a55167ef965357": null,
             "border_color": "#cfcfcf",
             "selected_color": "#135ed1",
             "selected_text_color": "#ffffff",
             "hover_color": "#135ed1",
-            "header-2d562b5aa218b485f1152d1a71fe3695": null,
+            "header-575cf2e461b83c2670b7a5f9f7667f09": null,
             "label_color": "#6a6a6a",
             "label_size": 12
           }
         },
-        "product_addons_YRaprz": {
-          "disabled": true,
-          "settings": {
-            "show_compare_color": false,
-            "show_ask_question": false,
-            "show_share": false
-          }
-        },
         "feature_cards_brk01": {
-          "type": "feature_cards",
           "disabled": false,
           "settings": {
             "title_uv": "PROTEÇÃO UV50+",
@@ -188,6 +182,14 @@
             "text_luva": "Suas mãos protegidas do sol\ne sem abrir mão do conforto."
           }
         },
+        "product_addons_YRaprz": {
+          "disabled": true,
+          "settings": {
+            "show_compare_color": false,
+            "show_ask_question": false,
+            "show_share": false
+          }
+        },
         "custom_name_button_XTkeF": {
           "type": "custom_name_button",
           "disabled": false,
@@ -195,9 +197,9 @@
             "enable_button": true,
             "button_mode": "personalization",
             "button_label": "Quero meu nome na camisa",
-            "header-d0419c833ca7483a96742b7a4e1f08e8": null,
+            "header-55f681d389a3cbb155fce86f7399c6ff": null,
             "whatsapp_number": "553432194697",
-            "header-1356a7cbb45567fc60ad529499b1676d": null,
+            "header-73a86c6793baeb01ff781f0d66f94c95": null,
             "perso_variant_id": "43812419240002",
             "perso_price": "29,90",
             "mockup_frente": "https://cdn.shopify.com/s/files/1/0628/1445/3826/files/MOCKUP_FRENTE.png",
@@ -217,15 +219,15 @@
             "divider_text": "Ou",
             "button_text": "[whatsapp] Compre pelo Whatsapp",
             "text_color": "#0f6049",
-            "header-7b7d00c82487273c4f5c2cd614b1ae8c": null,
+            "header-f22c1a7b5ebefea8da24f7ecc74ae000": null,
             "whatsapp_number": "553432194697",
             "whatsapp_message": "Vim da loja online e tenho interesse nesse produto:",
             "append_product_link": true,
-            "header-b8e8d8f7200766cbab9d420cb3f463a3": null,
+            "header-a833941a53fe573f188fbec941183db8": null,
             "enable_schedule": true,
             "hours_start": "08:00",
             "hours_end": "17:15",
-            "header-49b883f57a37d61a52b5c1c1fc2cf00b": null,
+            "header-21070a13e29e472a525bb2b87cdfc8e0": null,
             "collections": []
           }
         },
@@ -233,12 +235,12 @@
           "type": "shopify://apps/brk-apps-fishing/blocks/bundle-addon/019f0510-f075-72ba-9c2f-a80926df6a59",
           "disabled": false,
           "settings": {
-            "paragraph-fd7bd6117208b2a17956f191cbae13dd": null,
-            "header-69707e78d2b7362ece9412042eaa7f2e": null,
+            "paragraph-7311f78b72a2d960d5b0dcbc9d5f2784": null,
+            "header-3bed794b4dfed4e04926db3bd18c1271": null,
             "title_size": 15,
             "border_radius": 12,
             "margin_y": 16,
-            "header-febfff88a90ccedfd302c2e90a23cbd4": null,
+            "header-b79fbe1aafe2f1bea4bae146d9445967": null,
             "border_color": "#e1e3e5",
             "accent_color": "#085b47",
             "label_bg": "#085b47",
