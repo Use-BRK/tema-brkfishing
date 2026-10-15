@@ -285,6 +285,11 @@ section[class*=main-product-section] .product-detail__price .card-product-price 
 section[class*=main-product-section] .product-detail__price .card-product-price .price {
   font-size: 22px;
 }
+/* "De" do preço riscado sem o risco, em todo o site (cards e página de produto):
+   inline-block não herda o text-decoration do <s> */
+.card-product-price .compare-price small {
+  display: inline-block;
+}
 /* preço "De" riscado (compare at price) */
 section[class*=main-product-section] .product-detail__price .card-product-price .compare-price {
   font-size: 18px;
