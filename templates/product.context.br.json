@@ -171,6 +171,7 @@
           "disabled": false,
           "settings": {
             "show_uv": true,
+            "image_uv": "shopify://shop_images/d3186897-2466-41e8-b154-51e6e28f2ad6.png",
             "title_uv": "PROTEÇÃO UV50+",
             "text_uv": "Tecnologia que bloqueia até\n98% dos raios UVA e UVB.",
             "show_ziper": true,
@@ -181,12 +182,14 @@
             "title_capuz": "CAPUZ FUNCIONAL",
             "text_capuz": "Garante proteção solar extra\npara a cabeça e pescoço.",
             "show_bandana": true,
+            "image_bandana": "shopify://shop_images/7911f75f-0912-4ad5-a8ae-d3ca7bcf62b6.png",
             "title_bandana": "BANDANA RESPIRÁVEL",
             "text_bandana": "Com microfuros que permitem\numa respiração fácil e confortável.",
             "show_luva": true,
+            "image_luva": "shopify://shop_images/88a82c04-8d5d-4d55-96e1-8f36bab2b236.png",
             "title_luva": "LUVA INTEGRADA",
             "text_luva": "Suas mãos protegidas do sol\ne sem abrir mão do conforto.",
-            "image_bandana": "shopify://shop_images/7911f75f-0912-4ad5-a8ae-d3ca7bcf62b6.png"
+            "image_capuz": "shopify://shop_images/6e6cd879-aa77-4a70-a1bf-a80c85567c9f.png"
           }
         },
         "product_addons_YRaprz": {
