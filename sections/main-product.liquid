@@ -1287,13 +1287,39 @@
               {% endif %}
               {% if block_st.show_sku %}
                 {%- unless template.suffix == 'raptorx' -%}
-                  <li class="mb-2">
+                  {%- liquid
+                    comment
+                      Nota e nº de avaliações do Judge.me, lidos do metafield judgeme.badge
+                      (ex.: data-average-rating='4.50' data-number-of-reviews='2')
+                    endcomment
+                    assign jdgm_count = 0
+                    assign jdgm_badge = product.metafields.judgeme.badge | append: ''
+                    if jdgm_badge contains 'data-number-of-reviews'
+                      assign jdgm_count = jdgm_badge | split: "data-number-of-reviews='" | last | split: "'" | first | plus: 0
+                      assign jdgm_avg = jdgm_badge | split: "data-average-rating='" | last | split: "'" | first | plus: 0 | round: 1
+                      assign jdgm_avg_floor = jdgm_avg | floor
+                      if jdgm_avg == jdgm_avg_floor
+                        assign jdgm_avg = jdgm_avg_floor
+                      endif
+                      assign jdgm_avg = jdgm_avg | append: '' | replace: '.', ','
+                    endif
+                  -%}
+                  <li class="product-detail__sku-rating mb-2">
                     <span
                       class="product__sku product-detail__meta-value no-underline{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}"
                       role="status"
                     >
                       {{- product.selected_or_first_available_variant.sku | default: 'N/A' -}}
                     </span>
+                    {%- if jdgm_count > 0 -%}
+                      <a href="#judgeme_product_reviews" class="product-detail__rating no-underline">
+                        <svg class="product-detail__rating-star" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                          <path fill="currentColor" d="M12 2.5l2.94 6.26 6.86.83-5.06 4.72 1.3 6.79L12 17.77l-6.04 3.33 1.3-6.79L2.2 9.59l6.86-.83L12 2.5z"/>
+                        </svg>
+                        <span class="product-detail__rating-avg">{{ jdgm_avg }}</span>
+                        <span class="product-detail__rating-count">({{ jdgm_count }} {% if jdgm_count == 1 %}review{% else %}reviews{% endif %})</span>
+                      </a>
+                    {%- endif -%}
                   </li>
                 {%- endunless -%}
               {% endif %}

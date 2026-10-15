@@ -299,6 +299,11 @@ section[class*=main-product-section] .product-detail__price .card-product-price 
   display: inline-block;
   font-size: 14.85px;
 }
+/* esconde o bloco do preço riscado quando a variante não tem compare at price
+   (o JS cria/esvazia esse bloco ao trocar de variante e ele ocupava espaço no flex) */
+.card-product-price .price-regular:has(.compare-price:empty) {
+  display: none;
+}
 
 /*Tamanhos de fonte título / SKU / descrição | Main Product Section*/
 section[class*=main-product-section] .product-detail__title {
@@ -309,6 +314,34 @@ section[class*=main-product-section] .product-detail__meta .product__sku {
 }
 section[class*=main-product-section] .product_detail-des {
   font-size: 16px;
+}
+
+/*Avaliações "★ 5 (N reviews)" na linha do SKU, alinhadas à direita | Main Product Section*/
+section[class*=main-product-section] .product-detail__sku-rating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+section[class*=main-product-section] .product-detail__rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  flex-shrink: 0;
+  font-size: 16px;
+  line-height: 1;
+  color: #102d51;
+}
+section[class*=main-product-section] .product-detail__rating:hover {
+  color: #135ed1;
+}
+section[class*=main-product-section] .product-detail__rating-star {
+  width: 1em;
+  height: 1em;
+}
+/* o selo padrão do Judge.me (5 estrelas) vira redundante: a nota já aparece ao lado do SKU */
+section[class*=main-product-section] .shopify-app-block:has(> .jdgm-preview-badge) {
+  display: none;
 }
 
 /*Botões de tamanho arredondados (círculo / pílula) | Main Product Section*/

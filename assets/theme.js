@@ -5771,7 +5771,7 @@ class SwatchFunctions extends SwatchInit {
         cp.classList.add("price-item", "compare-price");
         sp.appendChild(cp);
         ps.appendChild(sp);
-        ps.classList.add("price-regular");
+        ps.classList.add("price-regular", "current-price");
         bls__price.appendChild(ps);
       }
       const cpp = bls__price.querySelector(".compare-price");
@@ -5805,7 +5805,7 @@ class SwatchFunctions extends SwatchInit {
               price_format;
             bls__price
               .querySelector(".price-regular .price")
-              .classList.remove("price--special", "primary-color");
+              .classList.remove("price--special");
           }
         }
         if (!this.currentVariant.available) {
