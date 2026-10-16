@@ -12,9 +12,9 @@
     "splash_screen": {
       "type": "product-splash-screen",
       "settings": {
+        "background_color": "#000000",
         "duration": 3,
         "fade_duration": 1,
-        "background_color": "#000000",
         "enabled": true
       }
     },
@@ -70,10 +70,6 @@
             "timer_style": "default",
             "content": "🔥 Hurry Up! Sale ends in:"
           }
-        },
-        "sa_variants_product_swatch_block_e9wFLB": {
-          "type": "shopify://apps/sa-variants/blocks/product-swatch-block/ff68b20f-8c8f-491e-92bf-3e5b8f17ef88",
-          "settings": {}
         },
         "variant_picker_tcCihG": {
           "type": "variant_picker",
@@ -189,7 +185,6 @@
         "price_VJ4N8m",
         "short_description_9BGxVm",
         "countdown_timer_QB4Ydn",
-        "sa_variants_product_swatch_block_e9wFLB",
         "variant_picker_tcCihG",
         "sku_prazo_HkLApw",
         "product_addons_YRaprz",
@@ -213,13 +208,13 @@
         "enable_skeleton_loading": false,
         "desktop_media_width": 50,
         "desktop_layout": "thumbnail_bottom",
+        "mobile_options": "hidden_thumbnail",
         "image_zoom": "open_lightbox",
         "enable_video_looping": true,
         "enable_video_autoplay": true,
         "enable_frequently_bought_together": true,
         "enable_on_desktop": true,
         "enable_on_mobile": true,
-        "mobile_options": "hidden_thumbnail",
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
