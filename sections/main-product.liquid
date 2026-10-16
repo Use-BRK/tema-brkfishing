@@ -1308,6 +1308,15 @@
                     if jdgm_badge contains 'data-number-of-reviews'
                       assign jdgm_count = jdgm_badge | split: "data-number-of-reviews='" | last | split: "'" | first | plus: 0
                       assign jdgm_avg = jdgm_badge | split: "data-average-rating='" | last | split: "'" | first | plus: 0 | round: 1
+                    endif
+                    comment
+                      Sem avaliações no produto: exibe a nota e o total de avaliações da loja
+                    endcomment
+                    if jdgm_count == 0 and shop.metafields.judgeme.all_reviews_count != blank
+                      assign jdgm_count = shop.metafields.judgeme.all_reviews_count | plus: 0
+                      assign jdgm_avg = shop.metafields.judgeme.all_reviews_rating | plus: 0 | round: 1
+                    endif
+                    if jdgm_count > 0
                       assign jdgm_avg_floor = jdgm_avg | floor
                       if jdgm_avg == jdgm_avg_floor
                         assign jdgm_avg = jdgm_avg_floor
