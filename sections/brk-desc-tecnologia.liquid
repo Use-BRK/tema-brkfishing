@@ -1,0 +1,532 @@
+{%- comment -%}
+  Descrição visual de tecnologia (ex.: XTech Pro + UV50+ Homologada) na página de produto.
+  Só aparece quando o produto bate com "SKUs iniciais" (algum SKU de variante começa com o prefixo)
+  ou com "Títulos que começam com" (listas separadas por vírgula, sem diferenciar maiúsculas).
+  Textos em HTML (h2/p) para indexação; imagens vêm do Shopify Files pelo editor (nunca em assets/ do tema).
+{%- endcomment -%}
+{%- liquid
+  assign st = section.settings
+  assign show = false
+
+  if st.sku_prefixes != blank
+    assign sku_prefixes = st.sku_prefixes | upcase | split: ','
+    for v in product.variants
+      assign v_sku = v.sku | upcase | strip
+      if v_sku == blank
+        continue
+      endif
+      for raw in sku_prefixes
+        assign pfx = raw | strip
+        if pfx == blank
+          continue
+        endif
+        assign v_start = v_sku | slice: 0, pfx.size
+        if v_start == pfx
+          assign show = true
+          break
+        endif
+      endfor
+      if show
+        break
+      endif
+    endfor
+  endif
+
+  if show == false and st.title_prefixes != blank
+    assign title_prefixes = st.title_prefixes | downcase | split: ','
+    assign p_title = product.title | downcase | strip
+    for raw in title_prefixes
+      assign pfx = raw | strip
+      if pfx == blank
+        continue
+      endif
+      assign t_start = p_title | slice: 0, pfx.size
+      if t_start == pfx
+        assign show = true
+        break
+      endif
+    endfor
+  endif
+-%}
+
+{%- if show -%}
+  {%- liquid
+    assign uid = section.id | handleize
+    assign sizes_full = '(min-width: 1200px) 1100px, 100vw'
+    assign alt_tecido = st.image_tecido.alt | default: st.tec_title
+    assign alt_logo = st.image_logo.alt | default: st.tec_title
+    assign alt_uv = st.image_uv.alt | default: st.uv_title
+    assign alt_selo = st.image_selo.alt | default: 'Selo UV50+ homologado'
+  -%}
+  <div
+    class="brk-desc section"
+    style="--section-pt: {{ st.padding_top }}; --section-pb: {{ st.padding_bottom }};"
+  >
+    <div class="container">
+      <article class="brk-desc__inner" aria-labelledby="brk-desc-tec-{{ uid }}">
+        {%- comment -%} Bloco 1: tecnologia do tecido {%- endcomment -%}
+        <div class="brk-desc__media brk-desc__media--top">
+          {%- if st.image_tecido != blank -%}
+            {{ st.image_tecido | image_url: width: 1600 | image_tag: class: 'brk-desc__img', loading: 'lazy', sizes: sizes_full, widths: '600,900,1200,1600', alt: alt_tecido }}
+          {%- endif -%}
+          {%- if st.image_logo != blank -%}
+            {{ st.image_logo | image_url: width: 400 | image_tag: class: 'brk-desc__logo', loading: 'lazy', alt: alt_logo }}
+          {%- endif -%}
+        </div>
+
+        <div class="brk-desc__row">
+          <h2 class="brk-desc__heading" id="brk-desc-tec-{{ uid }}">
+            <span class="brk-desc__eyebrow">{{ st.tec_eyebrow }}</span>
+            <span class="brk-desc__title">{{ st.tec_title }}</span>
+          </h2>
+          {%- if st.tec_text != blank -%}
+            <div class="brk-desc__text">{{ st.tec_text }}</div>
+          {%- endif -%}
+        </div>
+
+        <ul class="brk-desc__features" role="list">
+          {%- for i in (1..3) -%}
+            {%- liquid
+              assign f_icon_key = 'feature_' | append: i | append: '_icon'
+              assign f_l1_key = 'feature_' | append: i | append: '_line1'
+              assign f_l2_key = 'feature_' | append: i | append: '_line2'
+              assign f_icon = st[f_icon_key]
+              assign f_l1 = st[f_l1_key]
+              assign f_l2 = st[f_l2_key]
+            -%}
+            {%- if f_l1 != blank or f_l2 != blank -%}
+              <li class="brk-desc__feature">
+                <span class="brk-desc__feature-icon" aria-hidden="true">
+                  {%- if f_icon != blank -%}
+                    {{ f_icon | image_url: width: 96 | image_tag: loading: 'lazy', alt: '' }}
+                  {%- else -%}
+                    {%- case i -%}
+                      {%- when 1 -%}
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4.5 4 7v5.2c0 4.3 3 7.6 7 8.8 1.6-.5 3-1.3 4.1-2.5"/><path d="m7.6 12.6 2.3 2.3 4-4.3"/><circle cx="17.5" cy="7" r="2.6" fill="currentColor" stroke="none"/><path d="M17.5 1.8v1.4M17.5 10.8v1.4M12.3 7h1.4M21.3 7h1.4M13.8 3.3l1 1M20.2 9.7l1 1M13.8 10.7l1-1M20.2 4.3l1-1"/></svg>
+                      {%- when 2 -%}
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M3.3 7l17.4 10M3.3 17 20.7 7"/><path d="m9.5 3.5 2.5 2 2.5-2M9.5 20.5l2.5-2 2.5 2M3.8 10.2l3-1-.6-3.1M20.2 13.8l-3 1 .6 3.1M3.8 13.8l3 1-.6 3.1M20.2 10.2l-3-1 .6-3.1"/></svg>
+                      {%- else -%}
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="13.5" r="8"/><path d="M9 2.5h4M11 2.5v3M11 9v4.5l3 2"/><path d="M19.5 3.5s-2 2.3-2 3.6a2 2 0 0 0 4 0c0-1.3-2-3.6-2-3.6Z"/></svg>
+                    {%- endcase -%}
+                  {%- endif -%}
+                </span>
+                <span class="brk-desc__feature-text">
+                  {{ f_l1 }}
+                  {% if f_l2 != blank %}<strong>{{ f_l2 }}</strong>{% endif %}
+                </span>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+
+        {%- comment -%} Bloco 2: proteção UV {%- endcomment -%}
+        <div class="brk-desc__media brk-desc__media--uv">
+          {%- if st.image_uv != blank -%}
+            {{ st.image_uv | image_url: width: 1600 | image_tag: class: 'brk-desc__img', loading: 'lazy', sizes: sizes_full, widths: '600,900,1200,1600', alt: alt_uv }}
+          {%- endif -%}
+          {%- if st.image_selo != blank -%}
+            {{ st.image_selo | image_url: width: 400 | image_tag: class: 'brk-desc__seal', loading: 'lazy', alt: alt_selo }}
+          {%- endif -%}
+        </div>
+
+        <div class="brk-desc__row">
+          <h2 class="brk-desc__heading">
+            <span class="brk-desc__eyebrow">{{ st.uv_eyebrow }}</span>
+            <span class="brk-desc__title">{{ st.uv_title }}</span>
+          </h2>
+          {%- if st.uv_text != blank -%}
+            <div class="brk-desc__text">{{ st.uv_text }}</div>
+          {%- endif -%}
+        </div>
+
+        {%- if st.note != blank -%}
+          <div class="brk-desc__note">{{ st.note }}</div>
+        {%- endif -%}
+      </article>
+    </div>
+  </div>
+{%- elsif request.design_mode -%}
+  <div class="container">
+    <p class="brk-desc__editor-hint">
+      Descrição de tecnologia oculta neste produto: preencha "Aplicar para SKUs iniciais" ou "Aplicar para títulos que começam com" para ela aparecer.
+    </p>
+  </div>
+{%- endif -%}
+
+{% stylesheet %}
+  .brk-desc {
+    --brk-desc-blue: #135ed1;
+    --brk-desc-navy: #0f2e52;
+    --brk-desc-text: #505050;
+    --brk-desc-box: #f3f4f5;
+  }
+  .brk-desc__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    color: var(--brk-desc-text);
+  }
+  .brk-desc__media {
+    position: relative;
+  }
+  .brk-desc__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+  .brk-desc__logo {
+    position: absolute;
+    top: 14%;
+    right: 6%;
+    width: 22%;
+    max-width: 150px;
+    height: auto;
+  }
+  .brk-desc__seal {
+    position: absolute;
+    right: 5%;
+    bottom: 8%;
+    width: 30%;
+    max-width: 170px;
+    height: auto;
+  }
+  .brk-desc__row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    padding: 32px 16px 24px;
+    text-align: center;
+  }
+  .brk-desc .brk-desc__heading {
+    margin: 0;
+    font-weight: 400;
+    line-height: 1.1;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .brk-desc__eyebrow {
+    display: block;
+    font-size: 19px;
+    font-weight: 400;
+    color: var(--brk-desc-navy);
+  }
+  .brk-desc__title {
+    display: block;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--brk-desc-blue);
+  }
+  .brk-desc__text,
+  .brk-desc__text p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--brk-desc-text);
+  }
+  .brk-desc__features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin: 0 16px 32px;
+    padding: 16px 8px;
+    list-style: none;
+    background: var(--brk-desc-box);
+    border-radius: 10px;
+  }
+  .brk-desc__feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    text-align: center;
+    color: var(--brk-desc-blue);
+  }
+  .brk-desc__feature-icon,
+  .brk-desc__feature-icon svg,
+  .brk-desc__feature-icon img {
+    display: block;
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+  }
+  .brk-desc__feature-text {
+    font-size: 12px;
+    line-height: 1.25;
+    text-transform: uppercase;
+  }
+  .brk-desc__feature-text strong {
+    display: block;
+    font-weight: 700;
+  }
+  .brk-desc__note {
+    margin: 8px 16px 0;
+    padding: 18px 20px;
+    background: var(--brk-desc-box);
+    border-radius: 10px;
+    text-align: center;
+  }
+  .brk-desc__note,
+  .brk-desc__note p {
+    margin: 0;
+    font-size: 12px;
+    font-style: italic;
+    line-height: 1.5;
+    color: #111;
+  }
+  .brk-desc__editor-hint {
+    margin: 16px 0;
+    padding: 12px 16px;
+    border: 1px dashed #bbb;
+    font-size: 13px;
+    color: #666;
+  }
+
+  @media (min-width: 768px) {
+    .brk-desc__img {
+      aspect-ratio: 3 / 1;
+    }
+    .brk-desc__logo {
+      top: auto;
+      bottom: 10%;
+      right: 18%;
+      width: 13%;
+    }
+    .brk-desc__seal {
+      right: 6%;
+      bottom: -10%;
+      width: 16%;
+    }
+    .brk-desc__row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+      gap: 40px;
+      align-items: start;
+      padding: 48px 32px 32px;
+      text-align: left;
+    }
+    .brk-desc__eyebrow {
+      font-size: 22px;
+    }
+    .brk-desc__title {
+      font-size: 36px;
+    }
+    .brk-desc__text,
+    .brk-desc__text p {
+      font-size: 16px;
+    }
+    .brk-desc__features {
+      max-width: 760px;
+      margin: 0 auto 48px;
+      padding: 20px 16px;
+    }
+    .brk-desc__feature-text {
+      font-size: 13px;
+    }
+    .brk-desc__note {
+      max-width: 820px;
+      margin: 8px auto 0;
+      padding: 22px 32px;
+    }
+    .brk-desc__note,
+    .brk-desc__note p {
+      font-size: 13px;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Descrição tecnologia",
+  "tag": "section",
+  "class": "brk-desc-section",
+  "enabled_on": {
+    "templates": ["product"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Onde aparece"
+    },
+    {
+      "type": "paragraph",
+      "content": "Aparece quando o produto bate com qualquer um dos campos abaixo. Separe vários valores por vírgula. Não diferencia maiúsculas."
+    },
+    {
+      "type": "text",
+      "id": "sku_prefixes",
+      "label": "Aplicar para SKUs iniciais:",
+      "info": "Ex.: FUSION, CAX — vale se algum SKU de variante começar com isso"
+    },
+    {
+      "type": "text",
+      "id": "title_prefixes",
+      "label": "Aplicar para títulos que começam com:",
+      "info": "Ex.: Camisa de Pesca Brk Fusion"
+    },
+    {
+      "type": "header",
+      "content": "Tecnologia"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_tecido",
+      "label": "Imagem do tecido",
+      "info": "Suba no Shopify Files (ex.: brk-desc-xtech-tecido.webp)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_logo",
+      "label": "Logo da tecnologia",
+      "info": "PNG/WebP branco com fundo transparente"
+    },
+    {
+      "type": "text",
+      "id": "tec_eyebrow",
+      "label": "Subtítulo",
+      "default": "Tecnologia"
+    },
+    {
+      "type": "text",
+      "id": "tec_title",
+      "label": "Título",
+      "default": "XTech Pro"
+    },
+    {
+      "type": "richtext",
+      "id": "tec_text",
+      "label": "Texto",
+      "default": "<p>Tecido XTech Pro® desenvolvido para alta durabilidade e conforto térmico em ambientes externos.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Destaques"
+    },
+    {
+      "type": "image_picker",
+      "id": "feature_1_icon",
+      "label": "Destaque 1: ícone",
+      "info": "Vazio = ícone padrão"
+    },
+    {
+      "type": "text",
+      "id": "feature_1_line1",
+      "label": "Destaque 1: linha 1",
+      "default": "Proteção"
+    },
+    {
+      "type": "text",
+      "id": "feature_1_line2",
+      "label": "Destaque 1: linha 2 (negrito)",
+      "default": "Solar UV50+"
+    },
+    {
+      "type": "image_picker",
+      "id": "feature_2_icon",
+      "label": "Destaque 2: ícone",
+      "info": "Vazio = ícone padrão"
+    },
+    {
+      "type": "text",
+      "id": "feature_2_line1",
+      "label": "Destaque 2: linha 1",
+      "default": "Toque ultra"
+    },
+    {
+      "type": "text",
+      "id": "feature_2_line2",
+      "label": "Destaque 2: linha 2 (negrito)",
+      "default": "Gelado"
+    },
+    {
+      "type": "image_picker",
+      "id": "feature_3_icon",
+      "label": "Destaque 3: ícone",
+      "info": "Vazio = ícone padrão"
+    },
+    {
+      "type": "text",
+      "id": "feature_3_line1",
+      "label": "Destaque 3: linha 1",
+      "default": "Secagem"
+    },
+    {
+      "type": "text",
+      "id": "feature_3_line2",
+      "label": "Destaque 3: linha 2 (negrito)",
+      "default": "Ultra rápida"
+    },
+    {
+      "type": "header",
+      "content": "Proteção UV"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_uv",
+      "label": "Imagem",
+      "info": "Suba no Shopify Files (ex.: brk-desc-uv50-braco.webp)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_selo",
+      "label": "Selo",
+      "info": "Selo branco com fundo transparente"
+    },
+    {
+      "type": "text",
+      "id": "uv_eyebrow",
+      "label": "Subtítulo",
+      "default": "Proteção Solar UV50+"
+    },
+    {
+      "type": "text",
+      "id": "uv_title",
+      "label": "Título",
+      "default": "Homologada"
+    },
+    {
+      "type": "richtext",
+      "id": "uv_text",
+      "label": "Texto",
+      "default": "<p>Confeccionada em tecido tecnológico de absorção instantânea de suor, bloqueia até 98% dos raios UVA e UVB, mantendo a sensação de frescor e conforto térmico mesmo sob sol intenso o dia todo.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "note",
+      "label": "Nota (caixa cinza)",
+      "default": "<p>As camisas da BRK possuem proteção UV certificada pelo Instituto SENAI de Tecnologia, em conformidade com a norma internacional <strong>AS/NZS 4399:2017</strong>, garantindo a classificação UV 50+, o mais alto nível de proteção para tecidos.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Espaçamento"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Espaço em cima",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 35
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Espaço embaixo",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 35
+    }
+  ],
+  "presets": [
+    {
+      "name": "Descrição tecnologia"
+    }
+  ]
+}
+{% endschema %}

@@ -277,6 +277,15 @@
         "reset_spacing": true
       }
     },
+    "brk_desc_tecnologia_xtech": {
+      "type": "brk-desc-tecnologia",
+      "settings": {
+        "image_tecido": "shopify://shop_images/brk-desc-xtech-tecido.webp",
+        "image_logo": "shopify://shop_images/brk-desc-xtech-logo.webp",
+        "image_uv": "shopify://shop_images/brk-desc-uv50-braco.webp",
+        "image_selo": "shopify://shop_images/brk-desc-uv50-selo.webp"
+      }
+    },
     "custom_liquid_bzNYb6": {
       "type": "custom-liquid",
       "name": "t:sections.custom_liquid.name",
@@ -396,6 +405,7 @@
     "product-set",
     "divider_E3r6ih",
     "custom_liquid_bzNYb6",
+    "brk_desc_tecnologia_xtech",
     "scrolling_text_b38KNQ",
     "divider_TKLM6L",
     "related_products",
