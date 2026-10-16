@@ -232,9 +232,9 @@
   .brk-desc__features {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
+    gap: 10px;
     margin: 0 16px 32px;
-    padding: 16px 8px;
+    padding: 22px 10px;
     list-style: none;
     background: var(--brk-desc-box);
     border-radius: 10px;
@@ -243,7 +243,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     margin: 0;
     text-align: center;
     color: var(--brk-desc-blue);
@@ -252,18 +252,20 @@
   .brk-desc__feature-icon svg,
   .brk-desc__feature-icon img {
     display: block;
-    width: 26px;
-    height: 26px;
+    width: 34px;
+    height: 34px;
     object-fit: contain;
   }
   .brk-desc__feature-text {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.25;
     text-transform: uppercase;
+    color: var(--brk-desc-blue);
   }
-  .brk-desc__feature-text strong {
+  .brk-desc .brk-desc__feature-text strong {
     display: block;
     font-weight: 700;
+    color: var(--brk-desc-blue);
   }
   .brk-desc__note {
     margin: 8px 16px 0;
@@ -327,12 +329,18 @@
       font-size: 16px;
     }
     .brk-desc__features {
-      max-width: 760px;
+      max-width: 860px;
       margin: 0 auto 48px;
-      padding: 20px 16px;
+      padding: 28px 20px;
+    }
+    .brk-desc__feature-icon,
+    .brk-desc__feature-icon svg,
+    .brk-desc__feature-icon img {
+      width: 40px;
+      height: 40px;
     }
     .brk-desc__feature-text {
-      font-size: 13px;
+      font-size: 16px;
     }
     .brk-desc__note {
       max-width: 820px;
