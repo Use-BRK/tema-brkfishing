@@ -5,11 +5,39 @@
   if section_st.reset_spacing
     assign reset_spacing = ' remove_spacing'
   endif
+
+  comment
+    Esconde a seção em produtos com algum SKU de variante começando com os prefixos (separados por vírgula)
+  endcomment
+  assign hide_by_sku = false
+  if product and section_st.hide_sku_prefixes != blank
+    assign hide_prefixes = section_st.hide_sku_prefixes | upcase | split: ','
+    for v in product.variants
+      assign v_sku = v.sku | upcase | strip
+      if v_sku == blank
+        continue
+      endif
+      for raw in hide_prefixes
+        assign pfx = raw | strip
+        if pfx == blank
+          continue
+        endif
+        assign v_start = v_sku | slice: 0, pfx.size
+        if v_start == pfx
+          assign hide_by_sku = true
+          break
+        endif
+      endfor
+      if hide_by_sku
+        break
+      endif
+    endfor
+  endif
 -%}
 {%- capture style -%}
       --section-pt: {{ section_st.padding_top }}; --section-pb: {{ section_st.padding_bottom }}; --gap: {{ section_st.space_between_text }}px;
     {%- endcapture -%}
-{%- unless section_st.custom_liquid == blank -%}
+{%- unless section_st.custom_liquid == blank or hide_by_sku -%}
   <div
     class="section{% if section_st.padding_top < 30 %} pt-min{% endif %}{% if section_st.padding_bottom < 30 %} pb-min{% endif %} sec__custom-liquid color-{{ color_scheme }} gradient{{ reset_spacing }}"
     style="{{ style | strip | strip_newlines }}"
@@ -64,6 +92,12 @@
       "id": "custom_liquid",
       "label": "t:sections.custom_liquid.label",
       "info": "t:sections.custom_liquid.info"
+    },
+    {
+      "type": "text",
+      "id": "hide_sku_prefixes",
+      "label": "Não mostrar quando os SKUs começarem com:",
+      "info": "Só na página de produto. Separe por vírgula (ex.: FUSION, CAX). Não diferencia maiúsculas."
     },
     {
       "type": "header",

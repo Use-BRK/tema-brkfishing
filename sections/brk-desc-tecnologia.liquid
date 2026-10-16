@@ -232,9 +232,9 @@
   .brk-desc__features {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 6px;
     margin: 0 16px 32px;
-    padding: 22px 10px;
+    padding: 20px 8px;
     list-style: none;
     background: var(--brk-desc-box);
     border-radius: 10px;
@@ -257,8 +257,10 @@
     object-fit: contain;
   }
   .brk-desc__feature-text {
-    font-size: 14px;
+    font-size: clamp(11px, 3.2vw, 14px);
     line-height: 1.25;
+    letter-spacing: 0;
+    white-space: nowrap;
     text-transform: uppercase;
     color: var(--brk-desc-blue);
   }
@@ -277,10 +279,11 @@
   .brk-desc__note,
   .brk-desc__note p {
     margin: 0;
-    font-size: 12px;
+    font-size: 11px;
     font-style: italic;
     line-height: 1.5;
     color: #111;
+    text-wrap: pretty;
   }
   .brk-desc__editor-hint {
     margin: 16px 0;
@@ -302,13 +305,9 @@
       max-width: 170px;
     }
     .brk-desc__seal {
-      bottom: 0;
+      bottom: 10%;
       width: 14vw;
       max-width: 190px;
-      transform: translateY(35%);
-    }
-    .brk-desc__media--uv + .brk-desc__row {
-      padding-top: 64px;
     }
     .brk-desc__row {
       display: grid;
@@ -349,7 +348,7 @@
     }
     .brk-desc__note,
     .brk-desc__note p {
-      font-size: 13px;
+      font-size: 12px;
     }
   }
 {% endstylesheet %}
