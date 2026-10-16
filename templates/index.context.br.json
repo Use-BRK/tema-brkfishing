@@ -66,9 +66,9 @@
           "type": "collection",
           "disabled": false,
           "settings": {
-            "collection": "brasil-fishing-femininas",
+            "collection": "amazon-2-0-femininas",
             "collection_title": "Femininas",
-            "view_all_collection": "brasil-fishing"
+            "view_all_collection": "master-amazon-femininas"
           }
         }
       },
@@ -105,13 +105,13 @@
         "padding_bottom": 0
       },
       "blocks": {
-        "card_4FR6H": {
+        "card_PHKQk": {
           "type": "card",
           "disabled": false,
           "settings": {
-            "image": "shopify://shop_images/Card_ADVENTURE.png",
+            "image": "shopify://shop_images/Card_MASTERX.webp",
             "image_mobile": null,
-            "collection": "camisas-adventure",
+            "collection": "camisas-master",
             "link": "",
             "label": ""
           }
@@ -149,24 +149,24 @@
             "label": ""
           }
         },
-        "card_PHKQk": {
+        "card_4FR6H": {
           "type": "card",
           "disabled": false,
           "settings": {
-            "image": "shopify://shop_images/Card_MASTERX.webp",
+            "image": "shopify://shop_images/Card_ADVENTURE.png",
             "image_mobile": null,
-            "collection": "camisas-master",
+            "collection": "camisas-adventure",
             "link": "",
             "label": ""
           }
         }
       },
       "block_order": [
-        "card_4FR6H",
+        "card_PHKQk",
         "card_JBzYi",
         "card_JnFgd",
         "card_QqzGT",
-        "card_PHKQk"
+        "card_4FR6H"
       ],
       "name": "Banner Carousel"
     },
