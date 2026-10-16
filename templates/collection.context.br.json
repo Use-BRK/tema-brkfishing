@@ -19,17 +19,17 @@
       "settings": {
         "section_width": "full_width",
         "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
-        "header-a1518a8b0674155c6118368ed5fdc7d7": null,
+        "header-6ecfe74e991a179baa774772024fa703": null,
         "direction": "right",
         "icon_between_item": "unset",
         "speed": 10,
         "space_between_text": 60,
-        "header-53c84ae747b8d2b9f688556a2eff61c9": null,
+        "header-cae89bd2d9d8659eefaf7ba22dfdf96b": null,
         "font_size": 14,
         "font_weight": "body_weight",
         "uppercase": false,
         "use_heading_font": false,
-        "header-eea4671bec333189efbb2a8966313a49": null,
+        "header-c5db1396d986601044b7208a28dcad20": null,
         "padding_top": 5,
         "padding_bottom": 5,
         "reset_spacing": true
@@ -117,7 +117,8 @@
               "brasil-fishing",
               "elements-armorx",
               "elements-fusion",
-              "elements-hybrid"
+              "elements-hybrid",
+              "halloween-2026"
             ]
           }
         }
