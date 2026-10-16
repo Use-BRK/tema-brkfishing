@@ -351,9 +351,12 @@
     "brk_desc_tecnologia_xtech": {
       "settings": {
         "sku_prefixes": "C0, FUSION, HYB, CAX, BP, CI",
-        "title_prefixes": "Camis"
+        "title_prefixes": "",
+        "feature_2_line1": "Toque ultra",
+        "feature_2_line2": "GELADO"
       },
-      "blocks": {}
+      "blocks": {},
+      "name": "Descrição"
     }
   },
   "order": [
