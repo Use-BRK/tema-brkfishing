@@ -389,6 +389,15 @@ section[class*=main-product-section] .product-detail__variant-picker:not(.produc
   padding: 0 14px;
   white-space: nowrap;
 }
+/* Valores longos em camisa (cor "Azul Escuro", infantil "10 a 11 Anos"): a largura fixa dos tamanhos quebrava o texto.
+   A classe --long vem do snippets/product-variant-options.liquid (valor com mais de 3 caracteres) */
+section[class*=main-product-section] .product-detail__variant-picker .product-form__input_color .product__item-option,
+section[class*=main-product-section] .product-detail__variant-picker .product__item-option.product__item-option--long {
+  width: auto;
+  min-width: 40px;
+  padding: 0 14px;
+  white-space: nowrap;
+}
 /* 360px: PP até G3 (8 botões) cabem numa linha */
 @media (max-width: 380px) {
   section[class*=main-product-section] .product-detail__variant-picker .product__item-option {

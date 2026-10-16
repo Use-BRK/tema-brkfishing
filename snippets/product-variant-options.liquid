@@ -109,7 +109,7 @@
       </label>
     {%- elsif isColorOption != true or settings.enable_color_swatches == false -%}
       <label
-        class="tooltip pointer product__color-swatches--js product__item-option inline-flex align-center border rounded-3 subheading_weight btn-hover lh-normal px-20 py-10 transition relative"
+        class="tooltip pointer product__color-swatches--js product__item-option{% if value.size > 3 %} product__item-option--long{% endif %} inline-flex align-center border rounded-3 subheading_weight btn-hover lh-normal px-20 py-10 transition relative"
         for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
       >
         <span class="relative z-2 uppercase-first-letter">
