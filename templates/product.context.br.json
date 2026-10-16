@@ -355,7 +355,8 @@
         "feature_2_line1": "Toque ultra",
         "feature_2_line2": "GELADO"
       },
-      "blocks": {}
+      "blocks": {},
+      "name": "Descrição"
     }
   },
   "order": [
