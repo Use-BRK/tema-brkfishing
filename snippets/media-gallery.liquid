@@ -117,7 +117,7 @@
         </div>
         {% comment %} {%- render 'swiper-navigation' -%} {% endcomment %}
         {% if desktop_layout == 'thumbnail_left' or desktop_layout == 'thumbnail_bottom' %}
-          <div class="media-thumb-swiper{% if desktop_layout == 'thumbnail_left' %} mt-10{% endif %}{% if mobile_options == 'hidden_thumbnail' %} thumbnail-slide__mobile--hidden{% endif %}">
+          <div class="media-thumb-swiper{% if desktop_layout == 'thumbnail_left' %} mt-10{% endif %}{% if mobile_options == 'hidden_thumbnail' %} thumbnail-slide__mobile--hidden{% elsif mobile_options == 'hidden_desktop' %} thumbnail-slide__desktop--hidden{% endif %}">
             <div
               class="thumbnail-slide swiper{% if desktop_layout == 'thumbnail_bottom' %} mt-10 thumb-bottom{% endif %}"
               {% if desktop_layout == 'thumbnail_bottom' %}

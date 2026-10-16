@@ -6987,7 +6987,9 @@ class VariantGroupDetail extends VariantRadiosDetail {
               ".media-thumb-swiper .swiper-wrapper"
             );
             if (!thumbHtml || !thumbHtmlFeatureProduct) return;
-            if (mobileLayout !== "show_thumbnails") {
+            if (mobileLayout === "hidden_desktop") {
+              thumbHtml.classList.add("thumbnail-slide__desktop--hidden");
+            } else if (mobileLayout !== "show_thumbnails") {
               thumbHtml
                 .querySelector(".thumbnail-slide")
                 .classList.add("thumbnail-slide__mobile--hidden");
@@ -8627,6 +8629,15 @@ class SlideWithThumbs extends HTMLElement {
         if (slide) height = Math.max(height, slideHeight(slide));
       }
       if (height > 0) swiper.wrapperEl.style.height = `${height}px`;
+      // Setas fixas no meio da foto mais baixa: com 50% elas subiam/desciam junto com a altura
+      // e o clique seguinte caía na foto, abrindo o lightbox ("zoom") no desktop.
+      let minHeight = 0;
+      swiper.slides.forEach((slide) => {
+        const h = slideHeight(slide);
+        if (h > 0 && (minHeight === 0 || h < minHeight)) minHeight = h;
+      });
+      if (minHeight > 0)
+        swiper.el.style.setProperty("--arrows-offset-top", `${minHeight / 2}px`);
     };
 
     // Na troca (antes da animação, para a altura acompanhar o slide), ao fim da transição,
@@ -8856,6 +8867,9 @@ function pauseAllMedia() {
     if (model.modelViewerUI) model.modelViewerUI.pause();
   });
 }
+// theme.js é carregado como módulo, então a função não vira global sozinha; sem isso cada
+// troca de foto da galeria disparava "window.pauseAllMedia is not a function".
+window.pauseAllMedia = pauseAllMedia;
 
 var BlsCustomer = (function () {
   return {

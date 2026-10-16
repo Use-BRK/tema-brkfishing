@@ -7,6 +7,17 @@
   assign enable_skeleton_loading = section_st.enable_skeleton_loading
   assign desktop_media_width = section_st.desktop_media_width
   assign desktop_layout = section_st.desktop_layout
+  comment
+    Miniaturas: "Esconder no desktop e no mobile" = layout sem miniaturas; "Esconder só no desktop"
+    usa as miniaturas embaixo (posição do mobile) e a galeria as esconde a partir de 768px.
+  endcomment
+  if desktop_layout == 'thumbnail_left' or desktop_layout == 'thumbnail_bottom' or desktop_layout == 'hidden_thumbnail'
+    if section_st.mobile_options == 'hidden_all'
+      assign desktop_layout = 'hidden_thumbnail'
+    elsif section_st.mobile_options == 'hidden_desktop'
+      assign desktop_layout = 'thumbnail_bottom'
+    endif
+  endif
   assign image_zoom = section_st.image_zoom
   assign user_variants_image_group = false
   assign enable_sticky_add_cart_on_desktop = section_st.enable_on_desktop
@@ -1713,6 +1724,31 @@
     },
     {
       "type": "select",
+      "id": "mobile_options",
+      "options": [
+        {
+          "value": "show_thumbnails",
+          "label": "Mostrar no desktop e no mobile"
+        },
+        {
+          "value": "hidden_thumbnail",
+          "label": "Esconder só no mobile"
+        },
+        {
+          "value": "hidden_desktop",
+          "label": "Esconder só no desktop"
+        },
+        {
+          "value": "hidden_all",
+          "label": "Esconder no desktop e no mobile"
+        }
+      ],
+      "default": "show_thumbnails",
+      "label": "Miniaturas (thumbnails)",
+      "info": "Não vale para os layouts Grid e Stack. Com Desktop layout = Hidden thumbnail, só \"Esconder só no desktop\" mostra as miniaturas (no mobile)."
+    },
+    {
+      "type": "select",
       "id": "image_zoom",
       "options": [
         {
@@ -1777,27 +1813,6 @@
       "id": "enable_on_mobile",
       "default": true,
       "label": "t:sections.main-product.settings.sticky_add_to_cart.enable_on_mobile"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.main-product.settings.mobile_options.label"
-    },
-    {
-      "type": "select",
-      "id": "mobile_options",
-      "options": [
-        {
-          "value": "show_thumbnails",
-          "label": "t:sections.main-product.settings.mobile_options.show_thumbnails"
-        },
-        {
-          "value": "hidden_thumbnail",
-          "label": "t:sections.main-product.settings.mobile_options.hidden_thumbnail"
-        }
-      ],
-      "default": "show_thumbnails",
-      "label": "t:sections.main-product.settings.mobile_options.label",
-      "info": "t:sections.main-product.settings.mobile_options.info"
     },
     {
       "type": "header",

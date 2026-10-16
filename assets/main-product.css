@@ -355,6 +355,9 @@ sticky-add-cart variant-group-sticky select {
   .delivery-return.vertical > div:last-child {
     padding-bottom: 0;
   }
+  .thumbnail-slide__desktop--hidden {
+    display: none;
+  }
 }
 @media (max-width: 767.98px) {
   .thumbnail-slide .swiper-actions {
