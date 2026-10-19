@@ -414,6 +414,7 @@
                 Cada card de destaque é um bloco (dá pra arrastar e reordenar no editor); cards seguidos formam um carrossel.
                 O card só aparece se o grupo de SKU (prefixo de letras, mesma regra da short description) usa aquele tipo:
                 FUSION → UV50+, capuz, bandana, luva | HYB → UV50+, capuz, luva | CAX → UV50+, zíper, luva
+                C0, CM, CI, BP → UV50+, zíper (C0 = SKU começando com "C0"; outros C só UV50+)
                 demais → só UV50+. Imagem vazia no editor: usa a imagem padrão do tema (só UV50+ e luva têm).
               endcomment
               if fc_keys == nil
@@ -441,6 +442,15 @@
                     assign fc_keys = 'uv,capuz,luva' | split: ','
                   when 'CAX'
                     assign fc_keys = 'uv,ziper,luva' | split: ','
+                  when 'C'
+                    assign fc_sku_start = fc_sku | slice: 0, 2
+                    if fc_sku_start == 'C0'
+                      assign fc_keys = 'uv,ziper' | split: ','
+                    else
+                      assign fc_keys = 'uv' | split: ','
+                    endif
+                  when 'CM', 'CI', 'BP'
+                    assign fc_keys = 'uv,ziper' | split: ','
                   else
                     assign fc_keys = 'uv' | split: ','
                 endcase
@@ -2164,7 +2174,7 @@
       "settings": [
         {
           "type": "paragraph",
-          "content": "Arraste os cards na lista de blocos para mudar a ordem; cards seguidos formam um carrossel. Cada tipo só aparece nas camisas do grupo de SKU dele: UV50+ → todas; Gola com zíper → CAX; Capuz → FUSION e HYB; Bandana → FUSION; Luva → FUSION, HYB e CAX. Sem imagem escolhida, UV50+ e luva usam a imagem padrão do tema. No texto, use Enter para quebrar a linha: o card se ajusta à linha mais longa."
+          "content": "Arraste os cards na lista de blocos para mudar a ordem; cards seguidos formam um carrossel. Cada tipo só aparece nas camisas do grupo de SKU dele: UV50+ → todas; Gola com zíper → CAX, C0, CM, CI e BP; Capuz → FUSION e HYB; Bandana → FUSION; Luva → FUSION, HYB e CAX. Sem imagem escolhida, UV50+ e luva usam a imagem padrão do tema. No texto, use Enter para quebrar a linha: o card se ajusta à linha mais longa."
         },
         {
           "type": "select",
@@ -2172,7 +2182,7 @@
           "label": "Tipo de card",
           "options": [
             { "value": "uv", "label": "Proteção UV50+ (todas as camisas)" },
-            { "value": "ziper", "label": "Gola com zíper (CAX)" },
+            { "value": "ziper", "label": "Gola com zíper (CAX, C0, CM, CI e BP)" },
             { "value": "capuz", "label": "Capuz (FUSION e HYB)" },
             { "value": "bandana", "label": "Bandana (FUSION)" },
             { "value": "luva", "label": "Luva (FUSION, HYB e CAX)" }
