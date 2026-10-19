@@ -24,11 +24,11 @@
           "settings": {
             "review_data": "real_data",
             "max_width": 1200,
-            "paragraph-5b472647b9ad360a4b9707b2fda2ed92": null,
+            "paragraph-f7fbfe13417b545d51a3a1cdee1ed98e": null,
             "show_shop_reviews": false,
             "empty_state": "other_products_reviews",
-            "paragraph-d166ead6dc527d8d3286e595d964a43d": null,
-            "paragraph-3e74c81a308ba95ce674ce1cbc5f3c3e": null
+            "paragraph-7b10139dd563ca7811a23eec276cd17c": null,
+            "paragraph-a4ab1c9dad5b9d8c49ce402ae060e841": null
           }
         }
       },
@@ -47,11 +47,11 @@
           "settings": {
             "review_data": "sample_data",
             "max_width": 1000,
-            "paragraph-65f14d7d5d08e66e1d17197b4d6335e2": null,
+            "paragraph-4420ea35313d7fc0e344821d83d074d8": null,
             "show_shop_reviews": true,
             "empty_state": "other_products_reviews",
-            "paragraph-80610dcb20dcea067285e60696660954": null,
-            "paragraph-fd36778203f0cc139c13c79d3aa27bd3": null
+            "paragraph-7652ca0e001430ad204f4b830d4767a9": null,
+            "paragraph-c7828743e653c055e9333c476e3ef8ab": null
           }
         }
       },
@@ -65,12 +65,12 @@
       "settings": {
         "section_width": "container",
         "color_scheme": "",
-        "header-3818a7c127bed26c6320beb75ccb11d7": null,
+        "header-af579fd4b1c1ecad8824be45eff35411": null,
         "heading": "Perguntas Frequentes",
         "description": "",
         "header_size": "medium",
         "header_alignment": "center",
-        "header-155fa4c737fcb1a1fecface19b7d4749": null,
+        "header-97d65f0d989502072a4d7ce4707bc7c6": null,
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -167,8 +167,8 @@
           "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "disabled": false,
           "settings": {
-            "paragraph-b09b4dc9a80e15ed3d582632865f7691": null,
-            "paragraph-8c87b6a6940daaca3297231bb0fe2009": null
+            "paragraph-074e16a7210228ad2875a3cc11e4f5ff": null,
+            "paragraph-b91e3a821c424cc0a647791636f3f78d": null
           }
         },
         "short_description_9BGxVm": {
@@ -179,21 +179,21 @@
           "type": "shopify://apps/brk-apps-fishing/blocks/combined-listing/019f0510-f075-72ba-9c2f-a80926df6a59",
           "disabled": false,
           "settings": {
-            "header-dbbbc30100e959c4a5663d1972a8e5fb": null,
+            "header-f063137121a7b119f2d0019ccf4c616b": null,
             "show_option_name": true,
             "show_label": true,
-            "header-c86ee66d29f2b06484b979849ac01788": null,
+            "header-23e19da99bca7c5d2c278f4ec6c66b93": null,
             "swatch_size": 86,
             "border_radius": 4,
             "border_width": 1,
             "gap": 4,
             "margin_y": 10,
-            "header-66ac2838c6bf3f7685ab6a2d2abc8248": null,
+            "header-2ccc6b42643aa612835dce0412e89732": null,
             "border_color": "#cfcfcf",
             "selected_color": "#135ed1",
             "selected_text_color": "#ffffff",
             "hover_color": "#135ed1",
-            "header-6a940ed17497f3e1563635d67299ac69": null,
+            "header-448eae5a19e291e022ca9cac666b80b8": null,
             "label_color": "#6a6a6a",
             "label_size": 12
           }
@@ -253,9 +253,9 @@
             "enable_button": true,
             "button_mode": "personalization",
             "button_label": "Quero meu nome na camisa",
-            "header-633b3503d46ce78367d9d94de985f354": null,
+            "header-d6e6c797be6d10179d3ebc30fe646f96": null,
             "whatsapp_number": "553432194697",
-            "header-798f068cbcc35672b0e124c7be50b639": null,
+            "header-935cb08d4b0833ef789d5cf688205682": null,
             "perso_variant_id": "43812419240002",
             "perso_price": "29,90",
             "mockup_frente": "https://cdn.shopify.com/s/files/1/0628/1445/3826/files/MOCKUP_FRENTE.png",
@@ -275,15 +275,15 @@
             "divider_text": "Ou",
             "button_text": "[whatsapp] Compre pelo Whatsapp",
             "text_color": "#0f6049",
-            "header-3e4b1f31aef875044230c985cbe23f9e": null,
+            "header-528ffb25a00a564ae7400d612aed5012": null,
             "whatsapp_number": "553432194697",
             "whatsapp_message": "Vim da loja online e tenho interesse nesse produto:",
             "append_product_link": true,
-            "header-2a0b2065a625988e05c64a3679905f3a": null,
+            "header-3f89521805b680236995737e5ba13c64": null,
             "enable_schedule": true,
             "hours_start": "08:00",
             "hours_end": "17:15",
-            "header-0618c919b672aa6b1723ce8ffe48b1af": null,
+            "header-50160ae9c92761699f8f82810296c3e6": null,
             "collections": []
           }
         },
@@ -291,12 +291,12 @@
           "type": "shopify://apps/brk-apps-fishing/blocks/bundle-addon/019f0510-f075-72ba-9c2f-a80926df6a59",
           "disabled": false,
           "settings": {
-            "paragraph-bb0582d438117ecb4c21e9c2cd636409": null,
-            "header-603fb4909fab846fbfd959063328b26c": null,
+            "paragraph-ef3972625a8beb9bc4063eeb022555af": null,
+            "header-bfb35438c684195d7529d0644f1c8fab": null,
             "title_size": 15,
             "border_radius": 12,
             "margin_y": 16,
-            "header-c91ce13f8ea9b7321dda81d4dd791b76": null,
+            "header-221828bc8af2a90e2624b36b0b772e5e": null,
             "border_color": "#e1e3e5",
             "accent_color": "#085b47",
             "label_bg": "#085b47",
@@ -307,10 +307,10 @@
           "type": "technical_details",
           "disabled": false,
           "settings": {
-            "paragraph-091b3603137f6d3efd2044c6bd95cf4d": null,
+            "paragraph-aae2606843f80ce5ae3b661c409fa7dd": null,
             "heading": "Detalhes técnicos",
             "prazo_padrao": "10 Dias Úteis",
-            "header-e460b7256aef75805f44756dceb653c9": null,
+            "header-36ead90e4e637dfc4a7062eba6839922": null,
             "sku_prefixes": "C, FUSION, HYB, CAX, CCPBR, CASUAL, CM, CI, BP, ADV",
             "composicao": "90% Poliéster 10% Elastano",
             "tecido": "XTech Pro",
@@ -378,6 +378,211 @@
         "frete_no_produto_shipping_calc_MJK8Br"
       ]
     },
+    "brk_prova_social": {
+      "settings": {},
+      "blocks": {
+        "video_group_U7DJD": {
+          "type": "video_group",
+          "disabled": false,
+          "settings": {
+            "sku_prefixes": "HYB",
+            "enabled": true,
+            "header-41904530e7c921a93f4e761f11ef36a1": null,
+            "video_1": "shopify://files/videos/naiaraazevedo_d834998f-27fa-4561-8c95-ed2ac1fcfe39.mp4",
+            "influencer_1": "@naiaraazevedo",
+            "product_1": "camisa-de-pesca-feminina-brk-com-luva-e-capuz-hybrid-clean-preta-com-protecao-solar-uv50",
+            "header-b7423cbe69750a2d75914285a77c6ce1": null,
+            "video_2": "shopify://files/videos/IMG_6264.MOV",
+            "influencer_2": "",
+            "product_2": "",
+            "header-08c4d94e62a0c4709c2774ac3d77b992": null,
+            "video_3": "shopify://files/videos/naiaraazevedo (1).mp4",
+            "influencer_3": "",
+            "product_3": "",
+            "header-9fbfa3d8998ed30852fefbede27786eb": null,
+            "video_4": "shopify://files/videos/caboclodomat0 (3)_179dff37-fc3a-45b2-8cd6-24d649c5839f.mp4",
+            "influencer_4": "",
+            "product_4": "",
+            "header-8e74efff8854c135ceab6e21640cbe34": null,
+            "video_5": "shopify://files/videos/mayaravic_fishing.mp4",
+            "influencer_5": "",
+            "product_5": "",
+            "header-b746a2e0fb9db9111c8804042565f0e8": null,
+            "video_6": "shopify://files/videos/20260912_110440(1).mp4",
+            "influencer_6": "",
+            "product_6": ""
+          }
+        },
+        "video_group_rpePr": {
+          "type": "video_group",
+          "disabled": false,
+          "settings": {
+            "sku_prefixes": "BA",
+            "enabled": true,
+            "header-9577b6c6a0e146489aa10fe464cba60e": null,
+            "video_1": "shopify://files/videos/batalhafishing (1).mp4",
+            "influencer_1": "",
+            "product_1": "",
+            "header-c9a22dee3e592ede121787dbff0c34b5": null,
+            "video_2": "shopify://files/videos/AQNlOqAuxrxc6Eto1WlfePh3MrIUpvLLZDu5oFJF3RGXVIjP4okGzSw3U7zGOAl7K1JExf9yH61hrynKT29-W1yfx8Q5U8W2ygNtoak.mp4",
+            "influencer_2": "",
+            "product_2": "",
+            "header-5f9dde072aae9d031ec1f7124361736a": null,
+            "video_3": "shopify://files/videos/IMG_6240.MOV",
+            "influencer_3": "",
+            "product_3": "",
+            "header-57afff3d9954c7f127580af772d22f8d": null,
+            "video_4": "shopify://files/videos/IMG_2417.MOV",
+            "influencer_4": "",
+            "product_4": "",
+            "header-d60b582fa9c68ac7b64e2c39f3724e6d": null,
+            "video_5": "shopify://files/videos/IMG_1831.MOV",
+            "influencer_5": "",
+            "product_5": "",
+            "header-ee33887f1dbf2b7ad5d74fcc1d9d6e73": null,
+            "video_6": "shopify://files/videos/IMG_6521.MOV",
+            "influencer_6": "",
+            "product_6": ""
+          }
+        },
+        "video_group_rYqMA": {
+          "type": "video_group",
+          "disabled": false,
+          "settings": {
+            "sku_prefixes": "CAX",
+            "enabled": true,
+            "header-99cb58686c3eb6ff2c6a388444f1a457": null,
+            "video_1": "shopify://files/videos/naiaraazevedo (1)_fa780e3b-cefe-4e9a-9513-6e74ec8eaed8.mp4",
+            "influencer_1": "",
+            "product_1": "",
+            "header-a9d5ba5146202ccf390e58d26e8bc5c8": null,
+            "video_2": "shopify://files/videos/1016.mp4",
+            "influencer_2": "",
+            "product_2": "",
+            "header-1da6b8d306d00aa85633a33ff9163de9": null,
+            "video_3": "shopify://files/videos/naiaraazevedo (2).mp4",
+            "influencer_3": "",
+            "product_3": "",
+            "header-c0b60f30b8777ac7af135e1de51668ac": null,
+            "video_4": "shopify://files/videos/60595361-6159-4955-96a1-dbb7f6a61b73.mp4",
+            "influencer_4": "",
+            "product_4": "",
+            "header-dfaf9a6c3e8dac7b6989779ecbbb9403": null,
+            "video_5": "shopify://files/videos/IMG_0380.MOV",
+            "influencer_5": "",
+            "product_5": "",
+            "header-644d3ef790c73b3ef31ebe1cd570f519": null,
+            "video_6": "shopify://files/videos/waltersiepierski (3).mp4",
+            "influencer_6": "",
+            "product_6": ""
+          }
+        },
+        "video_group_hzDpK": {
+          "type": "video_group",
+          "disabled": false,
+          "settings": {
+            "sku_prefixes": "FUSION",
+            "enabled": true,
+            "header-0172a7ea239a221a696e71a1e4816a1f": null,
+            "video_1": "shopify://files/videos/acamiladoagro.mp4",
+            "influencer_1": "",
+            "product_1": "",
+            "header-ba204b7b6961c5e92e95ac5610b89896": null,
+            "video_2": "shopify://files/videos/IMG_6224.MOV",
+            "influencer_2": "",
+            "product_2": "",
+            "header-441b185ede96db8377a5cad894042f1c": null,
+            "video_3": "shopify://files/videos/IMG_6401.MOV",
+            "influencer_3": "",
+            "product_3": "",
+            "header-cc1604ecb7c1fe68dddc0f3bc26af4df": null,
+            "video_4": "shopify://files/videos/mauricio.vestre.mp4",
+            "influencer_4": "",
+            "product_4": "",
+            "header-9678bbcb687b3304daec68929cd4d598": null,
+            "video_5": "shopify://files/videos/IMG_7604.MOV",
+            "influencer_5": "",
+            "product_5": "",
+            "header-d8fb9f94a7ea39db3ad04a3fc99131c0": null,
+            "video_6": "shopify://files/videos/IMG_7289 (1).MOV",
+            "influencer_6": "",
+            "product_6": ""
+          }
+        },
+        "video_group_7VLGy": {
+          "type": "video_group",
+          "disabled": false,
+          "settings": {
+            "sku_prefixes": "OC",
+            "enabled": true,
+            "header-ae59e16feed08e0fecff0f5a51c55617": null,
+            "video_1": "shopify://files/videos/IMG_8569.MOV",
+            "influencer_1": "",
+            "product_1": "",
+            "header-7920d0a14d2713dabcedcb0285cbf2d6": null,
+            "video_2": null,
+            "influencer_2": "",
+            "product_2": "",
+            "header-e7ec6957b3228e9812c4db980f0f241e": null,
+            "video_3": null,
+            "influencer_3": "",
+            "product_3": "",
+            "header-58dc5e024a865e629a4ce903d87e76f7": null,
+            "video_4": null,
+            "influencer_4": "",
+            "product_4": "",
+            "header-05badbe4b5a6b04ff7a9dfdf93f93606": null,
+            "video_5": null,
+            "influencer_5": "",
+            "product_5": "",
+            "header-939ff747dbe79e822e95b04253da6c92": null,
+            "video_6": null,
+            "influencer_6": "",
+            "product_6": ""
+          }
+        },
+        "video_group_xHpkL": {
+          "type": "video_group",
+          "disabled": false,
+          "settings": {
+            "sku_prefixes": "C0, CM, CI, BP",
+            "enabled": true,
+            "header-9b8ae9745c84893c7419f88518a649aa": null,
+            "video_1": "shopify://files/videos/naiaraazevedo.mp4",
+            "influencer_1": "",
+            "product_1": "",
+            "header-615ae548fde14a5c91de61ff177674e1": null,
+            "video_2": "shopify://files/videos/b2b9202c-7986-4415-a485-e4c0f458e8a8.mp4",
+            "influencer_2": "",
+            "product_2": "",
+            "header-fec218c5ade62d1b0b94785e4a1673b6": null,
+            "video_3": "shopify://files/videos/IMG_7645.MOV",
+            "influencer_3": "",
+            "product_3": "",
+            "header-0474b307625e60c9797471dee1f6c704": null,
+            "video_4": "shopify://files/videos/caboclodomat0 (3).mp4",
+            "influencer_4": "",
+            "product_4": "",
+            "header-1d3d6b6cc2d82e63e699a9d127bf4561": null,
+            "video_5": "shopify://files/videos/IMG_7584.MOV",
+            "influencer_5": "",
+            "product_5": "",
+            "header-24834a477399dcb0a7604bb1b112c8a4": null,
+            "video_6": "shopify://files/videos/WhatsApp Video 2026-05-13 at 11.00.52.mp4",
+            "influencer_6": "",
+            "product_6": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_group_U7DJD",
+        "video_group_rpePr",
+        "video_group_rYqMA",
+        "video_group_hzDpK",
+        "video_group_7VLGy",
+        "video_group_xHpkL"
+      ]
+    },
     "product-set": {
       "disabled": true,
       "settings": {},
@@ -398,103 +603,6 @@
         "hide_sku_prefixes": "C0, FUSION, HYB, CAX, BP, CI"
       },
       "blocks": {}
-    },
-    "brk_prova_social": {
-      "settings": {},
-      "blocks": {
-        "video_group_rpePr": {
-          "type": "video_group",
-          "disabled": false,
-          "settings": {
-            "sku_prefixes": "BA",
-            "enabled": true,
-            "video_1": "shopify://files/videos/batalhafishing (1).mp4",
-            "video_2": "shopify://files/videos/AQNlOqAuxrxc6Eto1WlfePh3MrIUpvLLZDu5oFJF3RGXVIjP4okGzSw3U7zGOAl7K1JExf9yH61hrynKT29-W1yfx8Q5U8W2ygNtoak.mp4",
-            "video_3": "shopify://files/videos/IMG_6240.MOV",
-            "video_4": "shopify://files/videos/IMG_2417.MOV",
-            "video_5": "shopify://files/videos/IMG_1831.MOV",
-            "video_6": "shopify://files/videos/IMG_6521.MOV"
-          }
-        },
-        "video_group_rYqMA": {
-          "type": "video_group",
-          "disabled": false,
-          "settings": {
-            "sku_prefixes": "CAX",
-            "enabled": true,
-            "video_1": "shopify://files/videos/naiaraazevedo (1)_fa780e3b-cefe-4e9a-9513-6e74ec8eaed8.mp4",
-            "video_2": "shopify://files/videos/1016.mp4",
-            "video_3": "shopify://files/videos/naiaraazevedo (2).mp4",
-            "video_4": "shopify://files/videos/60595361-6159-4955-96a1-dbb7f6a61b73.mp4",
-            "video_5": "shopify://files/videos/IMG_0380.MOV",
-            "video_6": "shopify://files/videos/waltersiepierski (3).mp4"
-          }
-        },
-        "video_group_hzDpK": {
-          "type": "video_group",
-          "disabled": false,
-          "settings": {
-            "sku_prefixes": "FUSION",
-            "enabled": true,
-            "video_1": "shopify://files/videos/acamiladoagro.mp4",
-            "video_2": "shopify://files/videos/IMG_6224.MOV",
-            "video_3": "shopify://files/videos/IMG_6401.MOV",
-            "video_4": "shopify://files/videos/mauricio.vestre.mp4",
-            "video_5": "shopify://files/videos/IMG_7604.MOV",
-            "video_6": "shopify://files/videos/IMG_7289 (1).MOV"
-          }
-        },
-        "video_group_7VLGy": {
-          "type": "video_group",
-          "disabled": false,
-          "settings": {
-            "sku_prefixes": "OC",
-            "enabled": true,
-            "video_1": "shopify://files/videos/IMG_8569.MOV",
-            "video_2": null,
-            "video_3": null,
-            "video_4": null,
-            "video_5": null,
-            "video_6": null
-          }
-        },
-        "video_group_U7DJD": {
-          "type": "video_group",
-          "disabled": false,
-          "settings": {
-            "sku_prefixes": "HYB",
-            "enabled": true,
-            "video_1": "shopify://files/videos/naiaraazevedo_d834998f-27fa-4561-8c95-ed2ac1fcfe39.mp4",
-            "video_2": "shopify://files/videos/IMG_6264.MOV",
-            "video_3": "shopify://files/videos/naiaraazevedo (1).mp4",
-            "video_4": "shopify://files/videos/caboclodomat0 (3)_179dff37-fc3a-45b2-8cd6-24d649c5839f.mp4",
-            "video_5": "shopify://files/videos/mayaravic_fishing.mp4",
-            "video_6": "shopify://files/videos/20260912_110440(1).mp4"
-          }
-        },
-        "video_group_xHpkL": {
-          "type": "video_group",
-          "disabled": false,
-          "settings": {
-            "sku_prefixes": "C0, CM, CI, BP",
-            "enabled": true,
-            "video_1": "shopify://files/videos/naiaraazevedo.mp4",
-            "video_2": "shopify://files/videos/b2b9202c-7986-4415-a485-e4c0f458e8a8.mp4",
-            "video_3": "shopify://files/videos/IMG_7645.MOV",
-            "video_4": "shopify://files/videos/caboclodomat0 (3).mp4",
-            "video_5": "shopify://files/videos/IMG_7584.MOV",
-            "video_6": "shopify://files/videos/WhatsApp Video 2026-05-13 at 11.00.52.mp4"
-          }
-        }
-      },
-      "block_order": [
-        "video_group_U7DJD",
-        "video_group_rpePr",
-        "video_group_rYqMA",
-        "video_group_hzDpK",
-        "video_group_7VLGy",
-        "video_group_xHpkL"
-      ]
     }
   },
   "order": [
