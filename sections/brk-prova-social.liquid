@@ -312,18 +312,22 @@
     display: flex;
     align-items: center;
     gap: 4px;
-    font-size: 14px;
+    max-width: calc(100% - 24px);
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.72);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    font-size: 13px;
     font-weight: 600;
     line-height: 1;
-    color: #fff;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+    color: var(--brk-social-navy);
     pointer-events: none;
   }
   .brk-social__verified {
-    width: 16px;
-    height: 16px;
+    width: 15px;
+    height: 15px;
     flex: none;
-    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
   }
   .brk-social__product {
     position: absolute;
