@@ -444,6 +444,20 @@
             "video_6": "shopify://files/videos/20260912_110440(1).mp4"
           }
         },
+        "video_group_rpePr": {
+          "type": "video_group",
+          "disabled": false,
+          "settings": {
+            "sku_prefixes": "BA",
+            "enabled": true,
+            "video_1": "shopify://files/videos/batalhafishing (1).mp4",
+            "video_2": "shopify://files/videos/AQNlOqAuxrxc6Eto1WlfePh3MrIUpvLLZDu5oFJF3RGXVIjP4okGzSw3U7zGOAl7K1JExf9yH61hrynKT29-W1yfx8Q5U8W2ygNtoak.mp4",
+            "video_3": "shopify://files/videos/IMG_6240.MOV",
+            "video_4": "shopify://files/videos/IMG_2417.MOV",
+            "video_5": "shopify://files/videos/IMG_1831.MOV",
+            "video_6": "shopify://files/videos/IMG_6521.MOV"
+          }
+        },
         "video_group_xHpkL": {
           "type": "video_group",
           "disabled": false,
@@ -460,6 +474,7 @@
         }
       },
       "block_order": [
+        "video_group_rpePr",
         "video_group_rYqMA",
         "video_group_hzDpK",
         "video_group_U7DJD",
