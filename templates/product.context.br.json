@@ -13,12 +13,6 @@
     "market": "br"
   },
   "sections": {
-    "brk_prova_social": {
-      "type": "brk-prova-social",
-      "blocks": {},
-      "block_order": [],
-      "settings": {}
-    },
     "1785956660a4b22876": {
       "type": "apps",
       "disabled": true,
