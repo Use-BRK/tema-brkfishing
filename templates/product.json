@@ -308,22 +308,7 @@
         "image_logo": "shopify://shop_images/brk-desc-xtech-logo.webp",
         "image_uv": "shopify://shop_images/brk-desc-uv50-braco.webp",
         "image_selo": "shopify://shop_images/brk-desc-uv50-selo.webp"
-      },
-      "blocks": {
-        "feature_1": {
-          "type": "feature",
-          "settings": { "icon": "sun", "line1": "Proteção", "line2": "Solar UV50+" }
-        },
-        "feature_2": {
-          "type": "feature",
-          "settings": { "icon": "snow", "line1": "Toque ultra", "line2": "Gelado" }
-        },
-        "feature_3": {
-          "type": "feature",
-          "settings": { "icon": "timer", "line1": "Secagem", "line2": "Ultra rápida" }
-        }
-      },
-      "block_order": ["feature_1", "feature_2", "feature_3"]
+      }
     },
     "custom_liquid_bzNYb6": {
       "type": "custom-liquid",
