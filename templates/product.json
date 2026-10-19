@@ -11,8 +11,6 @@
   "sections": {
     "brk_prova_social": {
       "type": "brk-prova-social",
-      "blocks": {},
-      "block_order": [],
       "settings": {}
     },
     "breadcrumb": {
@@ -154,12 +152,12 @@
         "buy_buttons_LcQGtR": {
           "type": "buy_buttons",
           "settings": {
+            "add_to_cart_label": "Adicionar à Sacola",
+            "show_bag_icon": true,
             "show_dynamic_checkout": false,
             "show_gift_card_recipient": true,
             "show_wishlist": false,
-            "show_compare": false,
-            "add_to_cart_label": "Adicionar à Sacola",
-            "show_bag_icon": true
+            "show_compare": false
           }
         },
         "model_size_XM7z6E": {
@@ -263,13 +261,13 @@
         "enable_skeleton_loading": false,
         "desktop_media_width": 50,
         "desktop_layout": "thumbnail_bottom",
+        "mobile_options": "hidden_thumbnail",
         "image_zoom": "open_lightbox",
         "enable_video_looping": true,
         "enable_video_autoplay": true,
         "enable_frequently_bought_together": true,
         "enable_on_desktop": true,
         "enable_on_mobile": true,
-        "mobile_options": "hidden_thumbnail",
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false

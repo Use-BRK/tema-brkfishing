@@ -24,11 +24,11 @@
           "settings": {
             "review_data": "real_data",
             "max_width": 1200,
-            "paragraph-bbac73ee234703fe34332c94bdaef23c": null,
+            "paragraph-5b472647b9ad360a4b9707b2fda2ed92": null,
             "show_shop_reviews": false,
             "empty_state": "other_products_reviews",
-            "paragraph-48250aef8590c5cffb7cfeeef05bbc0f": null,
-            "paragraph-720d021df093dfda61ec7547f5c285fa": null
+            "paragraph-d166ead6dc527d8d3286e595d964a43d": null,
+            "paragraph-3e74c81a308ba95ce674ce1cbc5f3c3e": null
           }
         }
       },
@@ -47,11 +47,11 @@
           "settings": {
             "review_data": "sample_data",
             "max_width": 1000,
-            "paragraph-eb07da546f2e36ea99e0c3d6ff1e4d22": null,
+            "paragraph-65f14d7d5d08e66e1d17197b4d6335e2": null,
             "show_shop_reviews": true,
             "empty_state": "other_products_reviews",
-            "paragraph-ff16c7ab191bd6a54343a9c57766fd5f": null,
-            "paragraph-f73e010d51cec003dbc9254563b9f704": null
+            "paragraph-80610dcb20dcea067285e60696660954": null,
+            "paragraph-fd36778203f0cc139c13c79d3aa27bd3": null
           }
         }
       },
@@ -65,12 +65,12 @@
       "settings": {
         "section_width": "container",
         "color_scheme": "",
-        "header-bffcf0e95aab1cd256ba73b27e9442e8": null,
+        "header-3818a7c127bed26c6320beb75ccb11d7": null,
         "heading": "Perguntas Frequentes",
         "description": "",
         "header_size": "medium",
         "header_alignment": "center",
-        "header-c13eb60fc5782a00f743b429b58e574d": null,
+        "header-155fa4c737fcb1a1fecface19b7d4749": null,
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -167,8 +167,8 @@
           "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "disabled": false,
           "settings": {
-            "paragraph-59a709d15be856f1c8685b453cd8da58": null,
-            "paragraph-de8452af1628f3e4199bc5914fb16881": null
+            "paragraph-b09b4dc9a80e15ed3d582632865f7691": null,
+            "paragraph-8c87b6a6940daaca3297231bb0fe2009": null
           }
         },
         "short_description_9BGxVm": {
@@ -179,31 +179,23 @@
           "type": "shopify://apps/brk-apps-fishing/blocks/combined-listing/019f0510-f075-72ba-9c2f-a80926df6a59",
           "disabled": false,
           "settings": {
-            "header-254d19bd043893fb615757c9eab0af55": null,
+            "header-dbbbc30100e959c4a5663d1972a8e5fb": null,
             "show_option_name": true,
             "show_label": true,
-            "header-0b275bf7b759bcc36d2e1cc5d4c61f63": null,
+            "header-c86ee66d29f2b06484b979849ac01788": null,
             "swatch_size": 86,
             "border_radius": 4,
             "border_width": 1,
             "gap": 4,
             "margin_y": 10,
-            "header-bae29452db7de380ccd395a20a4d460f": null,
+            "header-66ac2838c6bf3f7685ab6a2d2abc8248": null,
             "border_color": "#cfcfcf",
             "selected_color": "#135ed1",
             "selected_text_color": "#ffffff",
             "hover_color": "#135ed1",
-            "header-78a88fe3772f44487bcc973c3976c847": null,
+            "header-6a940ed17497f3e1563635d67299ac69": null,
             "label_color": "#6a6a6a",
             "label_size": 12
-          }
-        },
-        "feature_card_uv": {
-          "settings": {
-            "card": "uv",
-            "image": "shopify://shop_images/d3186897-2466-41e8-b154-51e6e28f2ad6.png",
-            "title": "PROTEÇÃO UV50+",
-            "text": "Tecnologia que bloqueia até\n98% dos raios UVA e UVB."
           }
         },
         "feature_card_ziper": {
@@ -238,6 +230,14 @@
             "text": "Suas mãos protegidas do sol\ne sem abrir mão do conforto."
           }
         },
+        "feature_card_uv": {
+          "settings": {
+            "card": "uv",
+            "image": "shopify://shop_images/d3186897-2466-41e8-b154-51e6e28f2ad6.png",
+            "title": "PROTEÇÃO UV50+",
+            "text": "Tecnologia que bloqueia até\n98% dos raios UVA e UVB."
+          }
+        },
         "product_addons_YRaprz": {
           "disabled": true,
           "settings": {
@@ -253,9 +253,9 @@
             "enable_button": true,
             "button_mode": "personalization",
             "button_label": "Quero meu nome na camisa",
-            "header-23db3920b2c17bc2fadd15b51ed426f7": null,
+            "header-633b3503d46ce78367d9d94de985f354": null,
             "whatsapp_number": "553432194697",
-            "header-e804812b6cc9af52aa2e04c8c5cbacf6": null,
+            "header-798f068cbcc35672b0e124c7be50b639": null,
             "perso_variant_id": "43812419240002",
             "perso_price": "29,90",
             "mockup_frente": "https://cdn.shopify.com/s/files/1/0628/1445/3826/files/MOCKUP_FRENTE.png",
@@ -275,15 +275,15 @@
             "divider_text": "Ou",
             "button_text": "[whatsapp] Compre pelo Whatsapp",
             "text_color": "#0f6049",
-            "header-875e296fc1abc22668fdfc1320223a51": null,
+            "header-3e4b1f31aef875044230c985cbe23f9e": null,
             "whatsapp_number": "553432194697",
             "whatsapp_message": "Vim da loja online e tenho interesse nesse produto:",
             "append_product_link": true,
-            "header-69f162ad39aa748b2911d79be0839858": null,
+            "header-2a0b2065a625988e05c64a3679905f3a": null,
             "enable_schedule": true,
             "hours_start": "08:00",
             "hours_end": "17:15",
-            "header-3f5d432bcfdc8d6e151495bbb08d8545": null,
+            "header-0618c919b672aa6b1723ce8ffe48b1af": null,
             "collections": []
           }
         },
@@ -291,12 +291,12 @@
           "type": "shopify://apps/brk-apps-fishing/blocks/bundle-addon/019f0510-f075-72ba-9c2f-a80926df6a59",
           "disabled": false,
           "settings": {
-            "paragraph-194b42df8f69865ecc57534bdd2d3def": null,
-            "header-945ba868bb8a5a6db8039b0577caaaad": null,
+            "paragraph-bb0582d438117ecb4c21e9c2cd636409": null,
+            "header-603fb4909fab846fbfd959063328b26c": null,
             "title_size": 15,
             "border_radius": 12,
             "margin_y": 16,
-            "header-d7ad2acbaa241fe333324468f8d60098": null,
+            "header-c91ce13f8ea9b7321dda81d4dd791b76": null,
             "border_color": "#e1e3e5",
             "accent_color": "#085b47",
             "label_bg": "#085b47",
@@ -307,8 +307,10 @@
           "type": "technical_details",
           "disabled": false,
           "settings": {
+            "paragraph-091b3603137f6d3efd2044c6bd95cf4d": null,
             "heading": "Detalhes técnicos",
             "prazo_padrao": "10 Dias Úteis",
+            "header-e460b7256aef75805f44756dceb653c9": null,
             "sku_prefixes": "C, FUSION, HYB, CAX, CCPBR, CASUAL, CM, CI, BP, ADV",
             "composicao": "90% Poliéster 10% Elastano",
             "tecido": "XTech Pro",
@@ -396,6 +398,28 @@
         "hide_sku_prefixes": "C0, FUSION, HYB, CAX, BP, CI"
       },
       "blocks": {}
+    },
+    "brk_prova_social": {
+      "settings": {},
+      "blocks": {
+        "video_group_xHpkL": {
+          "type": "video_group",
+          "disabled": false,
+          "settings": {
+            "sku_prefixes": "C0, CM, CI, BP",
+            "enabled": true,
+            "video_1": "shopify://files/videos/naiaraazevedo.mp4",
+            "video_2": "shopify://files/videos/b2b9202c-7986-4415-a485-e4c0f458e8a8.mp4",
+            "video_3": "shopify://files/videos/IMG_7645.MOV",
+            "video_4": "shopify://files/videos/caboclodomat0 (3).mp4",
+            "video_5": "shopify://files/videos/IMG_7584.MOV",
+            "video_6": "shopify://files/videos/WhatsApp Video 2026-05-13 at 11.00.52.mp4"
+          }
+        }
+      },
+      "block_order": [
+        "video_group_xHpkL"
+      ]
     }
   },
   "order": [
