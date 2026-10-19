@@ -402,6 +402,20 @@
     "brk_prova_social": {
       "settings": {},
       "blocks": {
+        "video_group_U7DJD": {
+          "type": "video_group",
+          "disabled": false,
+          "settings": {
+            "sku_prefixes": "HYB",
+            "enabled": true,
+            "video_1": "shopify://files/videos/naiaraazevedo_d834998f-27fa-4561-8c95-ed2ac1fcfe39.mp4",
+            "video_2": "shopify://files/videos/IMG_6264.MOV",
+            "video_3": "shopify://files/videos/naiaraazevedo (1).mp4",
+            "video_4": "shopify://files/videos/caboclodomat0 (3)_179dff37-fc3a-45b2-8cd6-24d649c5839f.mp4",
+            "video_5": "shopify://files/videos/mayaravic_fishing.mp4",
+            "video_6": null
+          }
+        },
         "video_group_xHpkL": {
           "type": "video_group",
           "disabled": false,
@@ -418,6 +432,7 @@
         }
       },
       "block_order": [
+        "video_group_U7DJD",
         "video_group_xHpkL"
       ]
     }
