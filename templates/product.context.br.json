@@ -402,6 +402,62 @@
     "brk_prova_social": {
       "settings": {},
       "blocks": {
+        "video_group_rpePr": {
+          "type": "video_group",
+          "disabled": false,
+          "settings": {
+            "sku_prefixes": "BA",
+            "enabled": true,
+            "video_1": "shopify://files/videos/batalhafishing (1).mp4",
+            "video_2": "shopify://files/videos/AQNlOqAuxrxc6Eto1WlfePh3MrIUpvLLZDu5oFJF3RGXVIjP4okGzSw3U7zGOAl7K1JExf9yH61hrynKT29-W1yfx8Q5U8W2ygNtoak.mp4",
+            "video_3": "shopify://files/videos/IMG_6240.MOV",
+            "video_4": "shopify://files/videos/IMG_2417.MOV",
+            "video_5": "shopify://files/videos/IMG_1831.MOV",
+            "video_6": "shopify://files/videos/IMG_6521.MOV"
+          }
+        },
+        "video_group_rYqMA": {
+          "type": "video_group",
+          "disabled": false,
+          "settings": {
+            "sku_prefixes": "CAX",
+            "enabled": true,
+            "video_1": "shopify://files/videos/naiaraazevedo (1)_fa780e3b-cefe-4e9a-9513-6e74ec8eaed8.mp4",
+            "video_2": "shopify://files/videos/1016.mp4",
+            "video_3": "shopify://files/videos/naiaraazevedo (2).mp4",
+            "video_4": "shopify://files/videos/60595361-6159-4955-96a1-dbb7f6a61b73.mp4",
+            "video_5": "shopify://files/videos/IMG_0380.MOV",
+            "video_6": "shopify://files/videos/waltersiepierski (3).mp4"
+          }
+        },
+        "video_group_hzDpK": {
+          "type": "video_group",
+          "disabled": false,
+          "settings": {
+            "sku_prefixes": "FUSION",
+            "enabled": true,
+            "video_1": "shopify://files/videos/acamiladoagro.mp4",
+            "video_2": "shopify://files/videos/IMG_6224.MOV",
+            "video_3": "shopify://files/videos/IMG_6401.MOV",
+            "video_4": "shopify://files/videos/mauricio.vestre.mp4",
+            "video_5": "shopify://files/videos/IMG_7604.MOV",
+            "video_6": "shopify://files/videos/IMG_7289 (1).MOV"
+          }
+        },
+        "video_group_7VLGy": {
+          "type": "video_group",
+          "disabled": false,
+          "settings": {
+            "sku_prefixes": "OC",
+            "enabled": true,
+            "video_1": "shopify://files/videos/IMG_8569.MOV",
+            "video_2": null,
+            "video_3": null,
+            "video_4": null,
+            "video_5": null,
+            "video_6": null
+          }
+        },
         "video_group_U7DJD": {
           "type": "video_group",
           "disabled": false,
@@ -413,7 +469,7 @@
             "video_3": "shopify://files/videos/naiaraazevedo (1).mp4",
             "video_4": "shopify://files/videos/caboclodomat0 (3)_179dff37-fc3a-45b2-8cd6-24d649c5839f.mp4",
             "video_5": "shopify://files/videos/mayaravic_fishing.mp4",
-            "video_6": null
+            "video_6": "shopify://files/videos/20260912_110440(1).mp4"
           }
         },
         "video_group_xHpkL": {
@@ -433,6 +489,10 @@
       },
       "block_order": [
         "video_group_U7DJD",
+        "video_group_rpePr",
+        "video_group_rYqMA",
+        "video_group_hzDpK",
+        "video_group_7VLGy",
         "video_group_xHpkL"
       ]
     }
