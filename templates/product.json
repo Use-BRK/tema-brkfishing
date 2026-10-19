@@ -9,6 +9,12 @@
  */
 {
   "sections": {
+    "brk_prova_social": {
+      "type": "brk-prova-social",
+      "blocks": {},
+      "block_order": [],
+      "settings": {}
+    },
     "breadcrumb": {
       "type": "breadcrumb",
       "custom_css": [
@@ -426,6 +432,7 @@
   "order": [
     "breadcrumb",
     "main",
+    "brk_prova_social",
     "product-set",
     "divider_E3r6ih",
     "brk_desc_tecnologia_xtech",

@@ -1,0 +1,378 @@
+{%- comment -%}
+  Prova social: carrossel de vídeos em autoplay (mudos, em loop).
+  Cada bloco é um grupo: SKUs iniciais + liga/desliga + até 6 vídeos.
+  Aparece o primeiro grupo ligado em que algum SKU de variante começa com um dos prefixos.
+{%- endcomment -%}
+{%- liquid
+  assign st = section.settings
+  assign group = nil
+
+  for b in section.blocks
+    if b.settings.enabled != true or b.settings.sku_prefixes == blank
+      continue
+    endif
+    assign sku_prefixes = b.settings.sku_prefixes | upcase | split: ','
+    for v in product.variants
+      assign v_sku = v.sku | upcase | strip
+      if v_sku == blank
+        continue
+      endif
+      for raw in sku_prefixes
+        assign pfx = raw | strip
+        if pfx == blank
+          continue
+        endif
+        assign v_start = v_sku | slice: 0, pfx.size
+        if v_start == pfx
+          assign group = b
+          break
+        endif
+      endfor
+      if group
+        break
+      endif
+    endfor
+    if group
+      break
+    endif
+  endfor
+
+  assign video_count = 0
+  if group
+    for i in (1..6)
+      assign vid_key = 'video_' | append: i
+      if group.settings[vid_key] != blank
+        assign video_count = video_count | plus: 1
+      endif
+    endfor
+  endif
+-%}
+
+{%- if video_count > 0 -%}
+  <div
+    class="brk-social section"
+    id="BrkSocial-{{ section.id }}"
+    style="--section-pt: {{ st.padding_top }}; --section-pb: {{ st.padding_bottom }};"
+  >
+    {%- if st.eyebrow != blank or st.title != blank -%}
+      <h2 class="brk-social__heading">
+        {%- if st.eyebrow != blank -%}<span class="brk-social__eyebrow">{{ st.eyebrow }}</span>{%- endif -%}
+        {%- if st.title != blank -%}<span class="brk-social__title">{{ st.title }}</span>{%- endif -%}
+      </h2>
+    {%- endif -%}
+    <div class="brk-social__track" {{ group.shopify_attributes }}>
+      {%- for i in (1..6) -%}
+        {%- liquid
+          assign vid_key = 'video_' | append: i
+          assign vid = group.settings[vid_key]
+          if vid == blank
+            continue
+          endif
+
+          comment
+            Fonte mp4 mais leve com pelo menos 480px de largura (cards têm ~300px)
+          endcomment
+          assign vid_src = nil
+          for s in vid.sources
+            if s.format != 'mp4'
+              continue
+            endif
+            if vid_src == nil
+              assign vid_src = s
+            elsif s.width >= 480 and vid_src.width < 480
+              assign vid_src = s
+            elsif s.width >= 480 and s.width < vid_src.width
+              assign vid_src = s
+            elsif vid_src.width < 480 and s.width > vid_src.width
+              assign vid_src = s
+            endif
+          endfor
+        -%}
+        {%- if vid_src -%}
+          <div class="brk-social__card">
+            <video
+              class="brk-social__video"
+              muted
+              loop
+              playsinline
+              preload="none"
+              {% if vid.preview_image %}poster="{{ vid.preview_image | image_url: width: 600 }}"{% endif %}
+              aria-label="{{ vid.alt | default: st.title | escape }}"
+            >
+              <source src="{{ vid_src.url }}" type="{{ vid_src.mime_type }}">
+            </video>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+  <script>
+    (function () {
+      var root = document.getElementById('BrkSocial-{{ section.id }}');
+      if (!root) return;
+      var track = root.querySelector('.brk-social__track');
+      var videos = root.querySelectorAll('.brk-social__video');
+
+      // Toca só os vídeos visíveis na tela; pausa os que saem
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              var p = e.target.play();
+              if (p && p.catch) p.catch(function () {});
+            } else {
+              e.target.pause();
+            }
+          });
+        }, { threshold: 0.25 });
+        videos.forEach(function (v) { io.observe(v); });
+      } else {
+        videos.forEach(function (v) { v.autoplay = true; v.play(); });
+      }
+
+      // Desktop: começa centralizado (cards cortados nas duas pontas)
+      if (window.matchMedia('(min-width: 768px)').matches) {
+        track.scrollLeft = (track.scrollWidth - track.clientWidth) / 2;
+      }
+
+      // Arrastar com o mouse
+      var startX = 0, startScroll = 0, down = false, moved = false;
+      track.addEventListener('pointerdown', function (e) {
+        if (e.pointerType !== 'mouse') return;
+        down = true; moved = false; startX = e.clientX; startScroll = track.scrollLeft;
+      });
+      window.addEventListener('pointermove', function (e) {
+        if (!down) return;
+        var dx = e.clientX - startX;
+        if (!moved && Math.abs(dx) > 4) { moved = true; track.classList.add('is-dragging'); }
+        if (moved) track.scrollLeft = startScroll - dx;
+      });
+      window.addEventListener('pointerup', function () {
+        if (!down) return;
+        down = false;
+        if (moved) {
+          var left = track.scrollLeft;
+          track.classList.remove('is-dragging');
+          track.scrollLeft = left;
+        }
+      });
+    })();
+  </script>
+{%- elsif request.design_mode -%}
+  <div class="container">
+    <p class="brk-social__editor-hint">
+      Prova social oculta neste produto: adicione um grupo de vídeos ligado, com SKUs iniciais deste produto e pelo menos um vídeo.
+    </p>
+  </div>
+{%- endif -%}
+
+{% stylesheet %}
+  .brk-social {
+    --brk-social-blue: #135ed1;
+    --brk-social-navy: #0f2e52;
+    --brk-social-gap: 12px;
+    overflow-x: clip;
+  }
+  .brk-social .brk-social__heading {
+    margin: 0 16px 20px;
+    text-align: center;
+    font-weight: 400;
+    line-height: 1.1;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .brk-social__eyebrow {
+    display: block;
+    font-size: 19px;
+    color: var(--brk-social-navy);
+  }
+  .brk-social__title {
+    display: block;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--brk-social-blue);
+  }
+  .brk-social__track {
+    display: flex;
+    gap: var(--brk-social-gap);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 16px;
+    padding: 0 16px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .brk-social__track::-webkit-scrollbar {
+    display: none;
+  }
+  .brk-social__track.is-dragging {
+    scroll-snap-type: none;
+    cursor: grabbing;
+    user-select: none;
+  }
+  .brk-social__card {
+    flex: 0 0 78%;
+    aspect-ratio: 5 / 6;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #f3f4f5;
+    scroll-snap-align: start;
+  }
+  .brk-social__video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+  }
+  .brk-social__editor-hint {
+    margin: 12px 0;
+    padding: 12px;
+    border: 1px dashed #c4c4c4;
+    font-size: 13px;
+    color: #707070;
+  }
+  @media (min-width: 768px) {
+    .brk-social {
+      --brk-social-gap: 18px;
+    }
+    .brk-social .brk-social__heading {
+      margin-bottom: 24px;
+    }
+    .brk-social__eyebrow {
+      font-size: 22px;
+    }
+    .brk-social__title {
+      font-size: 34px;
+    }
+    .brk-social__track {
+      padding: 0;
+      scroll-padding: 0;
+    }
+    .brk-social__card {
+      flex-basis: clamp(200px, 21vw, 320px);
+      scroll-snap-align: center;
+      cursor: grab;
+    }
+    /* Poucos vídeos que cabem na tela: centraliza sem rolagem */
+    .brk-social__track::before,
+    .brk-social__track::after {
+      content: '';
+      flex: 1 0 0;
+      margin-left: calc(var(--brk-social-gap) * -1);
+    }
+    .brk-social__track::after {
+      margin-left: 0;
+      margin-right: calc(var(--brk-social-gap) * -1);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Prova social",
+  "tag": "section",
+  "class": "brk-social-section",
+  "enabled_on": {
+    "templates": ["product"]
+  },
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Adicione um grupo de vídeos por linha de produto. Aparece o primeiro grupo ligado em que algum SKU de variante começa com um dos prefixos."
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Título (linha 1)",
+      "default": "Feito para quem vive a pesca"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título (linha 2, destaque)",
+      "default": "de verdade"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Espaço acima",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 35
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Espaço abaixo",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 35
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video_group",
+      "name": "Grupo de vídeos",
+      "settings": [
+        {
+          "type": "text",
+          "id": "sku_prefixes",
+          "label": "SKUs iniciais",
+          "info": "Ex.: FUSION, CAX — vale se algum SKU de variante começar com isso"
+        },
+        {
+          "type": "checkbox",
+          "id": "enabled",
+          "label": "Prova social ligada",
+          "default": true
+        },
+        {
+          "type": "video",
+          "id": "video_1",
+          "label": "Vídeo 1"
+        },
+        {
+          "type": "video",
+          "id": "video_2",
+          "label": "Vídeo 2"
+        },
+        {
+          "type": "video",
+          "id": "video_3",
+          "label": "Vídeo 3"
+        },
+        {
+          "type": "video",
+          "id": "video_4",
+          "label": "Vídeo 4"
+        },
+        {
+          "type": "video",
+          "id": "video_5",
+          "label": "Vídeo 5"
+        },
+        {
+          "type": "video",
+          "id": "video_6",
+          "label": "Vídeo 6"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Prova social",
+      "blocks": [
+        {
+          "type": "video_group"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
