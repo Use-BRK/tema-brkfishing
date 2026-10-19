@@ -198,29 +198,44 @@
             "label_size": 12
           }
         },
-        "feature_cards_brk01": {
-          "disabled": false,
+        "feature_card_uv": {
           "settings": {
-            "show_uv": true,
-            "image_uv": "shopify://shop_images/d3186897-2466-41e8-b154-51e6e28f2ad6.png",
-            "title_uv": "PROTEÇÃO UV50+",
-            "text_uv": "Tecnologia que bloqueia até\n98% dos raios UVA e UVB.",
-            "show_ziper": true,
-            "image_ziper": "shopify://shop_images/b4878c39-a4d3-4704-83b0-2bdc6f0c0db3.png",
-            "title_ziper": "GOLA COM ZÍPER",
-            "text_ziper": "Abertura da gola para maior\nventilação ou cobertura",
-            "show_capuz": true,
-            "image_capuz": "shopify://shop_images/6e6cd879-aa77-4a70-a1bf-a80c85567c9f.png",
-            "title_capuz": "CAPUZ FUNCIONAL",
-            "text_capuz": "Garante proteção solar extra\npara a cabeça e pescoço.",
-            "show_bandana": true,
-            "image_bandana": "shopify://shop_images/7911f75f-0912-4ad5-a8ae-d3ca7bcf62b6.png",
-            "title_bandana": "BANDANA RESPIRÁVEL",
-            "text_bandana": "Com microfuros que permitem\numa respiração fácil e confortável.",
-            "show_luva": true,
-            "image_luva": "shopify://shop_images/88a82c04-8d5d-4d55-96e1-8f36bab2b236.png",
-            "title_luva": "LUVA INTEGRADA",
-            "text_luva": "Suas mãos protegidas do sol\ne sem abrir mão do conforto."
+            "card": "uv",
+            "image": "shopify://shop_images/d3186897-2466-41e8-b154-51e6e28f2ad6.png",
+            "title": "PROTEÇÃO UV50+",
+            "text": "Tecnologia que bloqueia até\n98% dos raios UVA e UVB."
+          }
+        },
+        "feature_card_ziper": {
+          "settings": {
+            "card": "ziper",
+            "image": "shopify://shop_images/b4878c39-a4d3-4704-83b0-2bdc6f0c0db3.png",
+            "title": "GOLA COM ZÍPER",
+            "text": "Abertura da gola para maior\nventilação ou cobertura"
+          }
+        },
+        "feature_card_capuz": {
+          "settings": {
+            "card": "capuz",
+            "image": "shopify://shop_images/6e6cd879-aa77-4a70-a1bf-a80c85567c9f.png",
+            "title": "CAPUZ FUNCIONAL",
+            "text": "Garante proteção solar extra\npara a cabeça e pescoço."
+          }
+        },
+        "feature_card_bandana": {
+          "settings": {
+            "card": "bandana",
+            "image": "shopify://shop_images/7911f75f-0912-4ad5-a8ae-d3ca7bcf62b6.png",
+            "title": "BANDANA RESPIRÁVEL",
+            "text": "Com microfuros que permitem\numa respiração fácil e confortável."
+          }
+        },
+        "feature_card_luva": {
+          "settings": {
+            "card": "luva",
+            "image": "shopify://shop_images/88a82c04-8d5d-4d55-96e1-8f36bab2b236.png",
+            "title": "LUVA INTEGRADA",
+            "text": "Suas mãos protegidas do sol\ne sem abrir mão do conforto."
           }
         },
         "product_addons_YRaprz": {
@@ -327,7 +342,11 @@
         "price_VJ4N8m",
         "brk_apps_fishing_combined_listing_6KLCz",
         "variant_picker_tcCihG",
-        "feature_cards_brk01",
+        "feature_card_uv",
+        "feature_card_ziper",
+        "feature_card_capuz",
+        "feature_card_bandana",
+        "feature_card_luva",
         "product_addons_YRaprz",
         "stock_countdown_JNK9zi",
         "buy_buttons_LcQGtR",

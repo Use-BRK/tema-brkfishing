@@ -73,24 +73,44 @@
             "content": "🔥 Hurry Up! Sale ends in:"
           }
         },
-        "feature_cards_brk01": {
-          "type": "feature_cards",
+        "feature_card_uv": {
+          "type": "feature_card",
           "settings": {
-            "show_uv": true,
-            "show_ziper": true,
-            "show_capuz": true,
-            "show_bandana": true,
-            "show_luva": true,
-            "title_uv": "PROTEÇÃO UV50+",
-            "text_uv": "Tecnologia que bloqueia até\n98% dos raios UVA e UVB.",
-            "title_ziper": "GOLA COM ZÍPER",
-            "text_ziper": "Abertura da gola para maior\nventilação ou cobertura",
-            "title_capuz": "CAPUZ FUNCIONAL",
-            "text_capuz": "Garante proteção solar extra\npara a cabeça e pescoço.",
-            "title_bandana": "BANDANA RESPIRÁVEL",
-            "text_bandana": "Feita com microfuros que permitem\numa respiração fácil e confortável.",
-            "title_luva": "LUVA INTEGRADA",
-            "text_luva": "Suas mãos protegidas do sol\ne sem abrir mão do conforto."
+            "card": "uv",
+            "title": "PROTEÇÃO UV50+",
+            "text": "Tecnologia que bloqueia até\n98% dos raios UVA e UVB."
+          }
+        },
+        "feature_card_ziper": {
+          "type": "feature_card",
+          "settings": {
+            "card": "ziper",
+            "title": "GOLA COM ZÍPER",
+            "text": "Abertura da gola para maior\nventilação ou cobertura"
+          }
+        },
+        "feature_card_capuz": {
+          "type": "feature_card",
+          "settings": {
+            "card": "capuz",
+            "title": "CAPUZ FUNCIONAL",
+            "text": "Garante proteção solar extra\npara a cabeça e pescoço."
+          }
+        },
+        "feature_card_bandana": {
+          "type": "feature_card",
+          "settings": {
+            "card": "bandana",
+            "title": "BANDANA RESPIRÁVEL",
+            "text": "Feita com microfuros que permitem\numa respiração fácil e confortável."
+          }
+        },
+        "feature_card_luva": {
+          "type": "feature_card",
+          "settings": {
+            "card": "luva",
+            "title": "LUVA INTEGRADA",
+            "text": "Suas mãos protegidas do sol\ne sem abrir mão do conforto."
           }
         },
         "variant_picker_tcCihG": {
@@ -210,7 +230,11 @@
         "short_description_9BGxVm",
         "countdown_timer_QB4Ydn",
         "variant_picker_tcCihG",
-        "feature_cards_brk01",
+        "feature_card_uv",
+        "feature_card_ziper",
+        "feature_card_capuz",
+        "feature_card_bandana",
+        "feature_card_luva",
         "sku_prazo_HkLApw",
         "product_addons_YRaprz",
         "stock_countdown_JNK9zi",
