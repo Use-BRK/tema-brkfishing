@@ -351,11 +351,16 @@
     "brk_desc_tecnologia_xtech": {
       "settings": {
         "sku_prefixes": "C0, FUSION, HYB, CAX, BP, CI",
-        "title_prefixes": "",
-        "feature_2_line1": "Toque ultra",
-        "feature_2_line2": "GELADO"
+        "title_prefixes": ""
       },
-      "blocks": {},
+      "blocks": {
+        "feature_2": {
+          "settings": {
+            "line1": "Toque ultra",
+            "line2": "GELADO"
+          }
+        }
+      },
       "name": "Descrição"
     },
     "custom_liquid_bzNYb6": {
