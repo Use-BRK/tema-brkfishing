@@ -26,12 +26,20 @@ header {
 }
 
 
-/* sale badge fixes */
-.product__badges-sale{
+/* sale badge fixes (Lançamento e Mais vendidos no mesmo tamanho) */
+.product__badges-sale,
+.product__badges-lancamento,
+.product__badges-mais-vendidos{
   padding-block: 0.8px !important;
   padding-inline: 5px !important;
   font-size: 9.8px !important;
   line-height: 1;
+}
+/* sem ícone: compensa a altura do ícone do badge de oferta */
+.product__badges-lancamento,
+.product__badges-mais-vendidos{
+  padding-block: 4px !important;
+  padding-inline: 7px !important;
 }
 
 /* Custom Whatsapp Bottom Button */

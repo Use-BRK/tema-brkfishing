@@ -164,6 +164,39 @@
   assign new_badge_display_period = theme_st.new_badge_display_period
   assign subscription = card_product.selling_plan_groups.size
   assign show_product_badges = true
+
+  comment
+    Badges Lançamento e Mais vendidos (Configurações do tema > Badges): produto com a tag OU na coleção escolhida
+    Lançamento também aparece sozinho nos produtos criados há menos de X dias (padrão 60)
+  endcomment
+  assign badge_tags = card_product.tags | join: '|' | downcase | split: '|'
+  assign is_lancamento = false
+  if theme_st.show_lancamento
+    assign lanc_tag = theme_st.lancamento_tag | strip | downcase
+    assign lanc_days = theme_st.lancamento_days | default: 60
+    if diff_days < lanc_days
+      assign is_lancamento = true
+    elsif lanc_tag != blank and badge_tags contains lanc_tag
+      assign is_lancamento = true
+    elsif theme_st.lancamento_collection != blank
+      assign lanc_ids = card_product.collections | map: 'id'
+      if lanc_ids contains theme_st.lancamento_collection.id
+        assign is_lancamento = true
+      endif
+    endif
+  endif
+  assign is_mais_vendidos = false
+  if theme_st.show_mais_vendidos
+    assign mv_tag = theme_st.mais_vendidos_tag | strip | downcase
+    if mv_tag != blank and badge_tags contains mv_tag
+      assign is_mais_vendidos = true
+    elsif theme_st.mais_vendidos_collection != blank
+      assign mv_ids = card_product.collections | map: 'id'
+      if mv_ids contains theme_st.mais_vendidos_collection.id
+        assign is_mais_vendidos = true
+      endif
+    endif
+  endif
   if sticky == 'sticky'
     assign show_product_badges = false
   endif
@@ -173,6 +206,8 @@
   or pre_order
   or card_product.metafields.custom.custom_product_badge
   or show_new
+  or is_lancamento
+  or is_mais_vendidos
   or subscription > 0
 -%}
   {% if show_product_badges %}
@@ -279,6 +314,22 @@
             {{ 'products.product.pre_order' | t }}
           </div>
         {%- endif -%}
+      {%- endif -%}
+      {%- if is_lancamento -%}
+        <div
+          class="product__badges-lancamento product__badges-inner align-self-start px-15 inline-flex content-center subheading_weight text-center lh-normal"
+          style="--badges-color: {{ settings.lancamento_color }};--badges-bg:{{ settings.lancamento_background }};"
+        >
+          {{ settings.lancamento_label | default: 'Lançamento' }}
+        </div>
+      {%- endif -%}
+      {%- if is_mais_vendidos -%}
+        <div
+          class="product__badges-mais-vendidos product__badges-inner align-self-start px-15 inline-flex content-center subheading_weight text-center lh-normal"
+          style="--badges-color: {{ settings.mais_vendidos_color }};--badges-bg:{{ settings.mais_vendidos_background }};"
+        >
+          {{ settings.mais_vendidos_label | default: 'Mais vendidos' }}
+        </div>
       {%- endif -%}
       {% if show_new and diff_days < new_badge_display_period %}
         <div

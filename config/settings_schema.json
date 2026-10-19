@@ -734,6 +734,104 @@
       },
       {
         "type": "header",
+        "content": "Lançamento"
+      },
+      {
+        "type": "paragraph",
+        "content": "Aparece automaticamente em produtos criados há menos dias que o período abaixo. A tag ou a coleção servem para forçar o badge em outros produtos."
+      },
+      {
+        "type": "checkbox",
+        "id": "show_lancamento",
+        "label": "Mostrar badge",
+        "default": true
+      },
+      {
+        "type": "range",
+        "id": "lancamento_days",
+        "min": 7,
+        "max": 90,
+        "step": 1,
+        "unit": "d",
+        "label": "Período após a criação do produto",
+        "default": 60
+      },
+      {
+        "type": "text",
+        "id": "lancamento_label",
+        "label": "Texto",
+        "default": "Lançamento"
+      },
+      {
+        "type": "text",
+        "id": "lancamento_tag",
+        "label": "Tag do produto",
+        "default": "badge-lancamento",
+        "info": "Não diferencia maiúsculas de minúsculas"
+      },
+      {
+        "type": "collection",
+        "id": "lancamento_collection",
+        "label": "Coleção"
+      },
+      {
+        "type": "color",
+        "id": "lancamento_color",
+        "label": "t:settings_schema.badges.settings.color.label",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "lancamento_background",
+        "label": "t:settings_schema.badges.settings.background_color.label",
+        "default": "#000000"
+      },
+      {
+        "type": "header",
+        "content": "Mais vendidos"
+      },
+      {
+        "type": "paragraph",
+        "content": "Aparece em produtos com a tag abaixo ou que estão na coleção escolhida (basta um dos dois). A tag é aplicada automaticamente nos 5 produtos mais vendidos (últimos 30 dias) de cada coleção."
+      },
+      {
+        "type": "checkbox",
+        "id": "show_mais_vendidos",
+        "label": "Mostrar badge",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "mais_vendidos_label",
+        "label": "Texto",
+        "default": "Mais vendidos"
+      },
+      {
+        "type": "text",
+        "id": "mais_vendidos_tag",
+        "label": "Tag do produto",
+        "default": "badge-mais-vendidos",
+        "info": "Não diferencia maiúsculas de minúsculas"
+      },
+      {
+        "type": "collection",
+        "id": "mais_vendidos_collection",
+        "label": "Coleção"
+      },
+      {
+        "type": "color",
+        "id": "mais_vendidos_color",
+        "label": "t:settings_schema.badges.settings.color.label",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "mais_vendidos_background",
+        "label": "t:settings_schema.badges.settings.background_color.label",
+        "default": "#f3fc81"
+      },
+      {
+        "type": "header",
         "content": "t:settings_schema.badges.settings.new.label"
       },
       {
