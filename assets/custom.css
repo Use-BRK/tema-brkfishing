@@ -633,6 +633,7 @@ section[class*=main-product-section] .product-feature-card__text br {
 section[class*=main-product-section] .product-tech-details {
   margin: 20px 0;
   border-top: 1px solid #d9d9d9;
+  border-bottom: 0;
   font-size: 14px;
   line-height: 1.35;
 }
@@ -651,12 +652,10 @@ section[class*=main-product-section] .product-tech-details__header {
 section[class*=main-product-section] .product-tech-details__header::-webkit-details-marker {
   display: none;
 }
-section[class*=main-product-section] .product-tech-details__toggle::before {
-  content: "+";
-  color: #6b6b6b;
-}
-section[class*=main-product-section] .product-tech-details[open] .product-tech-details__toggle::before {
-  content: "-";
+/* o +/- vem do summary::after global (mais abaixo neste arquivo) */
+section[class*=main-product-section] .product-tech-details__header::after {
+  font-size: 1.2em;
+  line-height: 1;
 }
 section[class*=main-product-section] .product-tech-details__list {
   margin: 0;
@@ -678,10 +677,18 @@ section[class*=main-product-section] .product-tech-details__row dt {
   color: #6b6b6b;
   font-weight: 400;
 }
-section[class*=main-product-section] .product-tech-details__row dt svg {
+/* ícones com larguras diferentes: caixa fixa mantém os rótulos alinhados */
+section[class*=main-product-section] .product-tech-details__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 15px;
-  height: 15px;
   flex-shrink: 0;
+}
+section[class*=main-product-section] .product-tech-details__icon img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 section[class*=main-product-section] .product-tech-details__row dd {
   margin: 0;
