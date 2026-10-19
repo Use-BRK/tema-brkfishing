@@ -24,11 +24,11 @@
           "settings": {
             "review_data": "real_data",
             "max_width": 1200,
-            "paragraph-800545e37b4823c7e3b80155c8d84d4a": null,
+            "paragraph-bbac73ee234703fe34332c94bdaef23c": null,
             "show_shop_reviews": false,
             "empty_state": "other_products_reviews",
-            "paragraph-7a76aff4a89afa58415ccc93a4f013d4": null,
-            "paragraph-b3ea3d745f5c156e5190821ac4b4d849": null
+            "paragraph-48250aef8590c5cffb7cfeeef05bbc0f": null,
+            "paragraph-720d021df093dfda61ec7547f5c285fa": null
           }
         }
       },
@@ -47,11 +47,11 @@
           "settings": {
             "review_data": "sample_data",
             "max_width": 1000,
-            "paragraph-9f4345f1effe562a3b56c1a78b1ba0a7": null,
+            "paragraph-eb07da546f2e36ea99e0c3d6ff1e4d22": null,
             "show_shop_reviews": true,
             "empty_state": "other_products_reviews",
-            "paragraph-a6962e49d5aaf876e9341fb4e849f9b6": null,
-            "paragraph-f250f017018347e4d0a70723214bd282": null
+            "paragraph-ff16c7ab191bd6a54343a9c57766fd5f": null,
+            "paragraph-f73e010d51cec003dbc9254563b9f704": null
           }
         }
       },
@@ -65,12 +65,12 @@
       "settings": {
         "section_width": "container",
         "color_scheme": "",
-        "header-8c956d71e988e1dcca1de9ca8435b8b3": null,
+        "header-bffcf0e95aab1cd256ba73b27e9442e8": null,
         "heading": "Perguntas Frequentes",
         "description": "",
         "header_size": "medium",
         "header_alignment": "center",
-        "header-70e2eabf5741bc6108b3602428e653e7": null,
+        "header-c13eb60fc5782a00f743b429b58e574d": null,
         "padding_top": 0,
         "padding_bottom": 0,
         "reset_spacing": false
@@ -167,8 +167,8 @@
           "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "disabled": false,
           "settings": {
-            "paragraph-6366ccdaedf5a15b575f3d6f197e8f30": null,
-            "paragraph-aaa4860c4dde9d065242fa316b498bed": null
+            "paragraph-59a709d15be856f1c8685b453cd8da58": null,
+            "paragraph-de8452af1628f3e4199bc5914fb16881": null
           }
         },
         "short_description_9BGxVm": {
@@ -179,21 +179,21 @@
           "type": "shopify://apps/brk-apps-fishing/blocks/combined-listing/019f0510-f075-72ba-9c2f-a80926df6a59",
           "disabled": false,
           "settings": {
-            "header-89dc3e3e508e03df42db36cb5bab57a7": null,
+            "header-254d19bd043893fb615757c9eab0af55": null,
             "show_option_name": true,
             "show_label": true,
-            "header-b7970d45ec144c405a78dea95c5acda0": null,
+            "header-0b275bf7b759bcc36d2e1cc5d4c61f63": null,
             "swatch_size": 86,
             "border_radius": 4,
             "border_width": 1,
             "gap": 4,
             "margin_y": 10,
-            "header-e4bcf104f540e3d1281d4a9583d874ae": null,
+            "header-bae29452db7de380ccd395a20a4d460f": null,
             "border_color": "#cfcfcf",
             "selected_color": "#135ed1",
             "selected_text_color": "#ffffff",
             "hover_color": "#135ed1",
-            "header-c22d2d98bd13e7bb1166bac93898874d": null,
+            "header-78a88fe3772f44487bcc973c3976c847": null,
             "label_color": "#6a6a6a",
             "label_size": 12
           }
@@ -253,9 +253,9 @@
             "enable_button": true,
             "button_mode": "personalization",
             "button_label": "Quero meu nome na camisa",
-            "header-1c47f6266ba907b66e050ac5659ed2da": null,
+            "header-23db3920b2c17bc2fadd15b51ed426f7": null,
             "whatsapp_number": "553432194697",
-            "header-eed74c16ec2bdf7f37cc0d8b2a09c18c": null,
+            "header-e804812b6cc9af52aa2e04c8c5cbacf6": null,
             "perso_variant_id": "43812419240002",
             "perso_price": "29,90",
             "mockup_frente": "https://cdn.shopify.com/s/files/1/0628/1445/3826/files/MOCKUP_FRENTE.png",
@@ -275,15 +275,15 @@
             "divider_text": "Ou",
             "button_text": "[whatsapp] Compre pelo Whatsapp",
             "text_color": "#0f6049",
-            "header-efb0a021293db620f9c5119d4a1e7332": null,
+            "header-875e296fc1abc22668fdfc1320223a51": null,
             "whatsapp_number": "553432194697",
             "whatsapp_message": "Vim da loja online e tenho interesse nesse produto:",
             "append_product_link": true,
-            "header-e912906a0c3ac428017c564d47c7a8a2": null,
+            "header-69f162ad39aa748b2911d79be0839858": null,
             "enable_schedule": true,
             "hours_start": "08:00",
             "hours_end": "17:15",
-            "header-5a0e4a1d8b22701112839ab9ba9b9bd5": null,
+            "header-3f5d432bcfdc8d6e151495bbb08d8545": null,
             "collections": []
           }
         },
@@ -291,12 +291,12 @@
           "type": "shopify://apps/brk-apps-fishing/blocks/bundle-addon/019f0510-f075-72ba-9c2f-a80926df6a59",
           "disabled": false,
           "settings": {
-            "paragraph-212804d006b190246ceaeb44aa7ab498": null,
-            "header-df39eadeebd7185004425d353e54544e": null,
+            "paragraph-194b42df8f69865ecc57534bdd2d3def": null,
+            "header-945ba868bb8a5a6db8039b0577caaaad": null,
             "title_size": 15,
             "border_radius": 12,
             "margin_y": 16,
-            "header-2288f53a1a2bc165d127dc3d3e45e44b": null,
+            "header-d7ad2acbaa241fe333324468f8d60098": null,
             "border_color": "#e1e3e5",
             "accent_color": "#085b47",
             "label_bg": "#085b47",
@@ -342,11 +342,11 @@
         "price_VJ4N8m",
         "brk_apps_fishing_combined_listing_6KLCz",
         "variant_picker_tcCihG",
-        "feature_card_uv",
         "feature_card_ziper",
         "feature_card_capuz",
         "feature_card_bandana",
         "feature_card_luva",
+        "feature_card_uv",
         "product_addons_YRaprz",
         "stock_countdown_JNK9zi",
         "buy_buttons_LcQGtR",
