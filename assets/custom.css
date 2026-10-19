@@ -629,6 +629,76 @@ section[class*=main-product-section] .product-feature-card__text br {
   }
 }
 
+/*Detalhes técnicos (bloco technical_details) | Main Product Section*/
+section[class*=main-product-section] .product-tech-details {
+  margin: 20px 0;
+  border-top: 1px solid #d9d9d9;
+  font-size: 14px;
+  line-height: 1.35;
+}
+section[class*=main-product-section] .product-tech-details__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 16px;
+  border-bottom: 1px solid #d9d9d9;
+  color: #3a3a3a;
+  font-weight: 400;
+  cursor: pointer;
+  list-style: none;
+}
+section[class*=main-product-section] .product-tech-details__header::-webkit-details-marker {
+  display: none;
+}
+section[class*=main-product-section] .product-tech-details__toggle::before {
+  content: "+";
+  color: #6b6b6b;
+}
+section[class*=main-product-section] .product-tech-details[open] .product-tech-details__toggle::before {
+  content: "-";
+}
+section[class*=main-product-section] .product-tech-details__list {
+  margin: 0;
+}
+section[class*=main-product-section] .product-tech-details__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 16px;
+  border-bottom: 1px solid #d9d9d9;
+}
+section[class*=main-product-section] .product-tech-details__row dt {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  margin: 0;
+  color: #6b6b6b;
+  font-weight: 400;
+}
+section[class*=main-product-section] .product-tech-details__row dt svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+section[class*=main-product-section] .product-tech-details__row dd {
+  margin: 0;
+  color: #3a3a3a;
+  font-weight: 500;
+  text-align: right;
+}
+@media (max-width: 767px) {
+  section[class*=main-product-section] .product-tech-details {
+    font-size: 13px;
+  }
+  section[class*=main-product-section] .product-tech-details__header,
+  section[class*=main-product-section] .product-tech-details__row {
+    padding-inline: 12px;
+  }
+}
+
 /*Respiros título / SKU / descrição / preço | Main Product Section*/
 section[class*=main-product-section] .product-detail__title {
   margin-bottom: 0.4rem;

@@ -303,9 +303,22 @@
             "label_text_color": "#ffffff"
           }
         },
+        "technical_details_Tc9Dt": {
+          "type": "technical_details",
+          "disabled": false,
+          "settings": {
+            "heading": "Detalhes técnicos",
+            "prazo_padrao": "10 Dias Úteis",
+            "sku_prefixes": "C, FUSION, HYB, CAX, CCPBR, CASUAL, CM, CI, BP, ADV",
+            "composicao": "90% Poliéster 10% Elastano",
+            "tecido": "XTech Pro",
+            "tecnologia": "Secagem Rápida, Tecido Leve, Antiodor, Proteção Solar UV50+",
+            "modelagem": "Anatômica e Confortável"
+          }
+        },
         "sku_prazo_8wWwi": {
           "type": "sku_prazo",
-          "disabled": false,
+          "disabled": true,
           "settings": {
             "producao": "10",
             "algodao": "1",
@@ -353,6 +366,7 @@
         "custom_name_button_XTkeF",
         "whatsapp_cta_4pXDG",
         "brk_apps_fishing_bundle_addon_zJW6Q",
+        "technical_details_Tc9Dt",
         "sku_prazo_8wWwi",
         "model_size_XM7z6E",
         "pickup_avaiability_cyVydQ",
