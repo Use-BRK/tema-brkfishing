@@ -87,20 +87,74 @@
               assign vid_src = s
             endif
           endfor
+
+          comment
+            @ do influencer: campo do grupo; se vazio, usa o texto alternativo do vídeo quando começa com @
+          endcomment
+          assign inf_key = 'influencer_' | append: i
+          assign inf = group.settings[inf_key] | strip | remove: '@'
+          if inf == blank
+            assign vid_alt = vid.alt | strip
+            assign alt_first = vid_alt | slice: 0
+            if alt_first == '@'
+              assign inf = vid_alt | split: ' ' | first | remove: '@'
+            endif
+          endif
+
+          comment
+            Produto do card: o escolhido no grupo ou, se vazio, o próprio produto da página
+          endcomment
+          assign prod_key = 'product_' | append: i
+          assign card_product = group.settings[prod_key] | default: product
         -%}
         {%- if vid_src -%}
           <div class="brk-social__card">
+            {%- if inf != blank -%}
+              <span class="brk-social__influencer">
+                @{{ inf }}
+                <svg class="brk-social__verified" viewBox="0 0 24 24" aria-label="Verificado" role="img">
+                  <path fill="#1d9bf0" d="M22.5 12.5c0-1.58-.88-2.95-2.18-3.65.15-.44.23-.91.23-1.4 0-2.21-1.71-3.99-3.82-3.99-.47 0-.92.08-1.34.25C14.79 2.38 13.49 1.5 12 1.5s-2.79.88-3.39 2.21c-.42-.17-.87-.25-1.34-.25-2.11 0-3.82 1.78-3.82 3.99 0 .49.08.96.23 1.4-1.3.7-2.18 2.07-2.18 3.65 0 1.5.79 2.8 1.97 3.53-.03.24-.05.48-.05.72 0 2.21 1.71 3.99 3.82 3.99.47 0 .92-.09 1.34-.25.6 1.33 1.9 2.21 3.39 2.21s2.79-.88 3.39-2.21c.42.16.87.25 1.34.25 2.11 0 3.82-1.78 3.82-3.99 0-.24-.02-.48-.05-.72 1.17-.73 1.97-2.03 1.97-3.53z"/>
+                  <path fill="#fff" d="M10.54 16.2 6.8 12.46l1.41-1.41 2.26 2.26 4.8-5.23 1.47 1.35z"/>
+                </svg>
+              </span>
+            {%- endif -%}
             <video
               class="brk-social__video"
               muted
               loop
               playsinline
               preload="none"
-              {% if vid.preview_image %}poster="{{ vid.preview_image | image_url: width: 600 }}"{% endif %}
+              {% if vid.preview_image %}data-poster="{{ vid.preview_image | image_url: width: 600 }}"{% endif %}
               aria-label="{{ vid.alt | default: st.title | escape }}"
             >
               <source src="{{ vid_src.url }}" type="{{ vid_src.mime_type }}">
             </video>
+            {%- if card_product -%}
+              <a class="brk-social__product" href="{{ card_product.url }}" draggable="false">
+                {%- if card_product.featured_image -%}
+                  {{-
+                    card_product.featured_image
+                    | image_url: width: 120
+                    | image_tag:
+                      class: 'brk-social__product-img',
+                      loading: 'lazy',
+                      width: 48,
+                      height: 48,
+                      draggable: 'false',
+                      alt: card_product.featured_image.alt
+                  -}}
+                {%- endif -%}
+                <span class="brk-social__product-info">
+                  <span class="brk-social__product-title">{{ card_product.title }}</span>
+                  <span class="brk-social__product-price">
+                    {%- if card_product.compare_at_price > card_product.price -%}
+                      <s>{{ card_product.compare_at_price | money }}</s>
+                    {%- endif -%}
+                    {{ card_product.price | money }}
+                  </span>
+                </span>
+              </a>
+            {%- endif -%}
           </div>
         {%- endif -%}
       {%- endfor -%}
@@ -112,6 +166,23 @@
       if (!root) return;
       var track = root.querySelector('.brk-social__track');
       var videos = root.querySelectorAll('.brk-social__video');
+
+      // Posters só quando a seção chega perto da tela, para não disputar banda com a galeria
+      function loadPosters() {
+        videos.forEach(function (v) {
+          if (v.dataset.poster) { v.poster = v.dataset.poster; v.removeAttribute('data-poster'); }
+        });
+      }
+      if ('IntersectionObserver' in window) {
+        var posterIo = new IntersectionObserver(function (entries) {
+          if (!entries.some(function (e) { return e.isIntersecting; })) return;
+          posterIo.disconnect();
+          loadPosters();
+        }, { rootMargin: '400px 0px' });
+        posterIo.observe(root);
+      } else {
+        loadPosters();
+      }
 
       // Toca só os vídeos visíveis na tela; pausa os que saem
       if ('IntersectionObserver' in window) {
@@ -156,6 +227,10 @@
           track.scrollLeft = left;
         }
       });
+      // Clique no card de produto não conta se foi um arraste
+      track.addEventListener('click', function (e) {
+        if (moved) { e.preventDefault(); moved = false; }
+      }, true);
     })();
   </script>
 {%- elsif request.design_mode -%}
@@ -172,6 +247,9 @@
     --brk-social-navy: #0f2e52;
     --brk-social-gap: 12px;
     overflow-x: clip;
+    /* Pula a renderização enquanto está fora da tela; "auto" lembra a altura real depois da 1ª vez */
+    content-visibility: auto;
+    contain-intrinsic-size: auto 480px;
   }
   .brk-social .brk-social__heading {
     margin: 0 16px 20px;
@@ -211,6 +289,7 @@
     user-select: none;
   }
   .brk-social__card {
+    position: relative;
     flex: 0 0 78%;
     aspect-ratio: 5 / 6;
     border-radius: 16px;
@@ -225,6 +304,76 @@
     object-fit: cover;
     pointer-events: none;
   }
+  .brk-social__influencer {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+    pointer-events: none;
+  }
+  .brk-social__verified {
+    width: 16px;
+    height: 16px;
+    flex: none;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
+  }
+  .brk-social__product {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.72);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    color: var(--brk-social-navy);
+    text-decoration: none;
+  }
+  .brk-social__product-img {
+    width: 48px;
+    height: 48px;
+    flex: none;
+    border-radius: 8px;
+    object-fit: cover;
+    background: #fff;
+  }
+  .brk-social__product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+  .brk-social__product-title {
+    font-size: 13px;
+    line-height: 1.25;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .brk-social__product-price {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--brk-social-blue);
+  }
+  .brk-social__product-price s {
+    margin-right: 4px;
+    font-weight: 400;
+    color: #707070;
+  }
   .brk-social__editor-hint {
     margin: 12px 0;
     padding: 12px;
@@ -235,6 +384,7 @@
   @media (min-width: 768px) {
     .brk-social {
       --brk-social-gap: 18px;
+      contain-intrinsic-size: auto 500px;
     }
     .brk-social .brk-social__heading {
       margin-bottom: 24px;
@@ -274,7 +424,9 @@
   "tag": "section",
   "class": "brk-social-section",
   "enabled_on": {
-    "templates": ["product"]
+    "templates": [
+      "product"
+    ]
   },
   "settings": [
     {
@@ -332,9 +484,29 @@
           "default": true
         },
         {
+          "type": "header",
+          "content": "Vídeo 1"
+        },
+        {
           "type": "video",
           "id": "video_1",
           "label": "Vídeo 1"
+        },
+        {
+          "type": "text",
+          "id": "influencer_1",
+          "label": "@ do influencer",
+          "info": "Se vazio, usa o texto alternativo do vídeo quando ele começa com @"
+        },
+        {
+          "type": "product",
+          "id": "product_1",
+          "label": "Produto do card",
+          "info": "Se vazio, usa o produto da própria página"
+        },
+        {
+          "type": "header",
+          "content": "Vídeo 2"
         },
         {
           "type": "video",
@@ -342,9 +514,41 @@
           "label": "Vídeo 2"
         },
         {
+          "type": "text",
+          "id": "influencer_2",
+          "label": "@ do influencer",
+          "info": "Se vazio, usa o texto alternativo do vídeo quando ele começa com @"
+        },
+        {
+          "type": "product",
+          "id": "product_2",
+          "label": "Produto do card",
+          "info": "Se vazio, usa o produto da própria página"
+        },
+        {
+          "type": "header",
+          "content": "Vídeo 3"
+        },
+        {
           "type": "video",
           "id": "video_3",
           "label": "Vídeo 3"
+        },
+        {
+          "type": "text",
+          "id": "influencer_3",
+          "label": "@ do influencer",
+          "info": "Se vazio, usa o texto alternativo do vídeo quando ele começa com @"
+        },
+        {
+          "type": "product",
+          "id": "product_3",
+          "label": "Produto do card",
+          "info": "Se vazio, usa o produto da própria página"
+        },
+        {
+          "type": "header",
+          "content": "Vídeo 4"
         },
         {
           "type": "video",
@@ -352,14 +556,58 @@
           "label": "Vídeo 4"
         },
         {
+          "type": "text",
+          "id": "influencer_4",
+          "label": "@ do influencer",
+          "info": "Se vazio, usa o texto alternativo do vídeo quando ele começa com @"
+        },
+        {
+          "type": "product",
+          "id": "product_4",
+          "label": "Produto do card",
+          "info": "Se vazio, usa o produto da própria página"
+        },
+        {
+          "type": "header",
+          "content": "Vídeo 5"
+        },
+        {
           "type": "video",
           "id": "video_5",
           "label": "Vídeo 5"
         },
         {
+          "type": "text",
+          "id": "influencer_5",
+          "label": "@ do influencer",
+          "info": "Se vazio, usa o texto alternativo do vídeo quando ele começa com @"
+        },
+        {
+          "type": "product",
+          "id": "product_5",
+          "label": "Produto do card",
+          "info": "Se vazio, usa o produto da própria página"
+        },
+        {
+          "type": "header",
+          "content": "Vídeo 6"
+        },
+        {
           "type": "video",
           "id": "video_6",
           "label": "Vídeo 6"
+        },
+        {
+          "type": "text",
+          "id": "influencer_6",
+          "label": "@ do influencer",
+          "info": "Se vazio, usa o texto alternativo do vídeo quando ele começa com @"
+        },
+        {
+          "type": "product",
+          "id": "product_6",
+          "label": "Produto do card",
+          "info": "Se vazio, usa o produto da própria página"
         }
       ]
     }
