@@ -2680,7 +2680,7 @@ body .swiper-pagination {
 :is(#topbar, announcement-bar) {
   font-weight: var(--countdown-text-weight, 400);
   position: relative;
-  z-index: 10;
+  z-index: 9;
 }
 :is(#topbar, announcement-bar) .swiper-arrow:not(:hover) {
   color: rgba(var(--color-text-rgb), 0.5);
