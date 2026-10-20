@@ -37,6 +37,23 @@
         max-width: 40rem;
         margin: unset;
       }
+      #topbar .topbar__section-inner {
+        position: relative;
+      }
+      #topbar .text-slide {
+        margin: 0 auto;
+      }
+      #topbar .topbar-item:not(.text-slide) {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      #topbar slide-section,
+      #topbar .swiper-slide {
+        justify-content: center;
+        text-align: center;
+      }
     }
     @media (max-width: 1024px) {
       #topbar .swiper-slide {
