@@ -63,6 +63,24 @@
     "header": {
       "type": "header",
       "blocks": {
+        "menu_promotion_ofertas": {
+          "type": "menu_promotion",
+          "name": "Menu Ofertas",
+          "settings": {
+            "text": "Super Ofertas 🔥",
+            "item_label": "unset",
+            "promotion_menu_column": 4,
+            "mega_custom_width": 1030,
+            "center_submenu": true,
+            "full_width": true,
+            "promotion_position": "right",
+            "promotion_image_width": 27,
+            "promotion_link_1": "",
+            "promotion_link_newtab_1": true,
+            "promotion_link_2": "",
+            "promotion_link_newtab_2": true
+          }
+        },
         "menu_promotion_EeqGGC": {
           "type": "menu_promotion",
           "name": "Menu Masculino",
@@ -73,10 +91,9 @@
             "promotion_menu_column": 2,
             "mega_custom_width": 860,
             "center_submenu": true,
-            "full_width": false,
+            "full_width": true,
             "promotion_position": "right",
             "promotion_image_width": 41,
-            "promotion_image_1": "shopify://shop_images/Banner_masculino.webp",
             "promotion_link_1": "https://www.brkfishing.com.br/collections/masculino",
             "promotion_link_newtab_1": true,
             "promotion_link_2": "",
@@ -93,10 +110,9 @@
             "promotion_menu_column": 2,
             "mega_custom_width": 860,
             "center_submenu": true,
-            "full_width": false,
+            "full_width": true,
             "promotion_position": "right",
             "promotion_image_width": 42,
-            "promotion_image_1": "shopify://shop_images/banner-categoria-feminino.webp",
             "promotion_link_1": "https://www.brkfishing.com.br/collections/feminino",
             "promotion_link_newtab_1": true,
             "promotion_link_2": "",
@@ -122,11 +138,29 @@
             "promotion_link_newtab_2": true
           }
         },
+        "menu_promotion_infantil": {
+          "type": "menu_promotion",
+          "name": "Menu Infantil",
+          "settings": {
+            "text": "Infantil",
+            "item_label": "unset",
+            "promotion_menu_column": 4,
+            "mega_custom_width": 1030,
+            "center_submenu": true,
+            "full_width": true,
+            "promotion_position": "right",
+            "promotion_image_width": 27,
+            "promotion_link_1": "",
+            "promotion_link_newtab_1": true,
+            "promotion_link_2": "",
+            "promotion_link_newtab_2": true
+          }
+        },
         "menu_promotion_fKxpNj": {
           "type": "menu_promotion",
           "name": "Menu Pesca",
           "settings": {
-            "text": "Tralha de Pesca",
+            "text": "Pesca",
             "open-link-newtab": false,
             "item_label": "unset",
             "promotion_menu_column": 4,
@@ -162,9 +196,11 @@
         }
       },
       "block_order": [
+        "menu_promotion_ofertas",
         "menu_promotion_EeqGGC",
         "menu_promotion_7tMNHN",
         "menu_promotion_C6gPrq",
+        "menu_promotion_infantil",
         "menu_promotion_fKxpNj",
         "menu_promotion_aQHpr9"
       ],

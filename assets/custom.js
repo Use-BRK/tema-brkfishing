@@ -57,3 +57,20 @@ document.addEventListener("DOMContentLoaded", function () {
     openAccordion("correios");
   }, 100);
 });
+
+/* Mega menu (desktop): alinha o conteúdo do painel full-width com o início do menu */
+(function () {
+  function alignMegaMenu() {
+    if (window.innerWidth < 1025) return;
+    document.querySelectorAll(".horizontal-list").forEach(function (ul) {
+      var firstLink = ul.querySelector(":scope > li.level0 > menu-item > a");
+      var sub = ul.querySelector(":scope > li.level0 > .submenu.full-width");
+      if (!firstLink || !sub) return;
+      var offset = firstLink.getBoundingClientRect().left - sub.getBoundingClientRect().left;
+      if (offset > 0) ul.style.setProperty("--mega-menu-start", offset + "px");
+    });
+  }
+  window.addEventListener("load", alignMegaMenu);
+  window.addEventListener("resize", alignMegaMenu);
+  document.addEventListener("DOMContentLoaded", alignMegaMenu);
+})();

@@ -1569,3 +1569,49 @@ input.option-disabled + .miniatura-swatch {
 html.open-minicart #edrone--main--custom-popup--container {
   display: none !important;
 }
+
+/* Mega menu desktop (layout do Figma: painel full-width, títulos azuis, colunas alinhadas ao menu) */
+@media screen and (min-width: 1025px) {
+  .horizontal-list > .level0 > menu-item > a {
+    color: #0f2e52;
+    font-size: 1.4rem;
+  }
+  .horizontal-list > .level0:hover > menu-item > a,
+  .horizontal-list > .level0.visible > menu-item > a {
+    color: #135ed1;
+  }
+  .horizontal-list > .level0 > menu-item > a:after,
+  .horizontal-list > .level0 > menu-item .icon-down {
+    display: none;
+  }
+
+  .horizontal-list .submenu.full-width {
+    border-top: 1px solid #f2f3f3;
+  }
+  .horizontal-list .submenu.full-width > .fluid_container,
+  .horizontal-list .submenu.full-width > .container {
+    padding-inline-start: var(--mega-menu-start, 30px);
+  }
+  .horizontal-list .submenu.full-width .subchildmenu {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    grid-template-columns: none;
+    column-gap: clamp(4rem, 4.5vw, 8.8rem);
+  }
+  .horizontal-list .submenu.full-width .subchildmenu > .level-1 > menu-item > a {
+    color: #135ed1;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-bottom: 1.2rem;
+  }
+  .horizontal-list .submenu.full-width .level-2 a {
+    color: #2d4868;
+    font-size: 1.5rem;
+    padding-block: 0.4rem;
+  }
+  .horizontal-list .submenu.full-width .level-2 a:hover {
+    color: #135ed1;
+  }
+}
