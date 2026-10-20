@@ -42,6 +42,11 @@ header {
   padding-inline: 7px !important;
 }
 
+/* badges sobre a foto principal na página de produto */
+.product-media__badges{
+  z-index: 3;
+}
+
 /* Custom Whatsapp Bottom Button */
 #kokfy-whats-button{
   z-index: 10;

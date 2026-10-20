@@ -94,7 +94,12 @@
         {%- if type == 'quickview' -%}
           {%- render 'swiper-navigation', class: 'original-style' -%}
         {% endif %}
-        <div class="media-main-swiper skeleton-loading">
+        <div class="media-main-swiper skeleton-loading{% if show_badges %} relative{% endif %}">
+          {%- if show_badges -%}
+            <div class="product-media__badges pointer-none absolute top-10 left-10 top-sm-15 left-sm-15">
+              {% render 'product-badges', card_product: product, is_detail_page: true, type: 'price_badges', badges_part: 'labels' %}
+            </div>
+          {%- endif -%}
           <div class="swiper-wrapper-preview swiper">
             <div class="swiper-wrapper">
               {% assign is_shopable_video = false %}

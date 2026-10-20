@@ -187,7 +187,17 @@
             assign media = product.media
           endif
         %}
+        {%- liquid
+          assign show_media_badges = false
+          for b in section.blocks
+            if b.type == 'badges'
+              assign show_media_badges = true
+              break
+            endif
+          endfor
+        -%}
         {% render 'media-gallery',
+          show_badges: show_media_badges,
           images: media,
           section_st: section_st,
           theme_st: theme_st,
@@ -290,7 +300,8 @@
               data-sold-out-bg="{{ settings.sold_out_background }}"
               data-pre-order-bg="{{ settings.pre_order_background }}"
             >
-              {% render 'product-badges', card_product: product, is_detail_page: true, type: 'price_badges' %}
+              {% comment %} Badges ficam na foto (media-gallery); aqui só a faixa rolante {% endcomment %}
+              {% render 'product-badges', card_product: product, is_detail_page: true, type: 'price_badges', badges_part: 'scrolling' %}
             </div>
           {%- when 'review_and_sold' -%}
             {% comment %} Rate {% endcomment %}
