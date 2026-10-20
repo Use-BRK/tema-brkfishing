@@ -23,7 +23,8 @@
         "section_width": "full_width",
         "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
         "show_separator_line": false,
-        "font_size": 18
+        "font_size": 16,
+        "font_weight": "body_weight"
       },
       "blocks": {
         "store_information_pVeAk": {
@@ -38,7 +39,7 @@
         },
         "text_slider_LFaC38": {
           "settings": {
-            "text1": "<strong>FRETE GRÁTIS </strong>à partir de<strong> R$299</strong>",
+            "text1": "<strong>FRETE GRÁTIS a</strong> partir de<strong> R$299</strong>",
             "enable_copy_1": false,
             "coupon_code_1": "",
             "text2": "",
