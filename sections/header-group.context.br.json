@@ -158,13 +158,13 @@
         "menu_promotion_EeqGGC": {
           "settings": {
             "promotion_menu_column": 2,
-            "full_width": false
+            "full_width": true
           }
         },
         "menu_promotion_7tMNHN": {
           "settings": {
             "promotion_menu_column": 2,
-            "full_width": false
+            "full_width": true
           }
         }
       },
@@ -172,9 +172,11 @@
         "menu_promotion_NkqYkU",
         "menu_promotion_R3WXi",
         "menu_promotion_rNtdL",
+        "menu_promotion_ofertas",
         "menu_promotion_EeqGGC",
         "menu_promotion_7tMNHN",
         "menu_promotion_C6gPrq",
+        "menu_promotion_infantil",
         "menu_promotion_fKxpNj",
         "menu_promotion_aQHpr9"
       ]

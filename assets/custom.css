@@ -1574,7 +1574,10 @@ html.open-minicart #edrone--main--custom-popup--container {
 @media screen and (min-width: 1025px) {
   .horizontal-list > .level0 > menu-item > a {
     color: #0f2e52;
-    font-size: 1.4rem;
+  }
+  /* o <a> fica travado em 11px pelo tema; o tamanho vai no <span> do texto */
+  .horizontal-list > .level0 > menu-item > a > span:not(.menu_label) {
+    font-size: 1.3rem;
   }
   .horizontal-list > .level0:hover > menu-item > a,
   .horizontal-list > .level0.visible > menu-item > a {
