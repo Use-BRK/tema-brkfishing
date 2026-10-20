@@ -23,14 +23,14 @@
         "section_width": "full_width",
         "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
         "show_separator_line": false,
-        "font_size": 12
+        "font_size": 18
       },
       "blocks": {
         "store_information_pVeAk": {
           "type": "store_information",
           "disabled": true,
           "settings": {
-            "paragraph-16939b6092658949ad4e1f1a30ba0c84": null,
+            "paragraph-41237e5cb484f486288d9fb2684ecefe": null,
             "show_email": false,
             "show_phone": true,
             "hidden_on_mobile": true
@@ -84,19 +84,19 @@
             "text": "🌟 LANÇAMENTOS",
             "open-link-newtab": false,
             "item_label": "new",
-            "header-aeb984a6c69614d0a5e7164d262e361b": null,
+            "header-628c4e55190c9928dff3db8d49d9e4a3": null,
             "promotion_menu_column": 2,
             "mega_custom_width": 600,
             "center_submenu": false,
             "full_width": false,
-            "header-13d8f06136b825b631755b5f9669ddc5": null,
+            "header-10f0866be0ad300a8d2ab734aa8cf99a": null,
             "promotion_position": "right",
             "promotion_image_width": 27,
-            "header-6f3cd901fe695cdfa4146d72b5a3da96": null,
+            "header-10796d5145851852a727fd4b105fa7d0": null,
             "promotion_image_1": null,
             "promotion_link_1": "",
             "promotion_link_newtab_1": true,
-            "header-a24d5a30a5cb3eb50ba73ec66f52d0a2": null,
+            "header-ca2635ba556b1995c90ea04c9923f26f": null,
             "promotion_image_2": null,
             "promotion_link_2": "",
             "promotion_link_newtab_2": true
@@ -110,19 +110,19 @@
             "text": "🎁 AMAZON",
             "open-link-newtab": false,
             "item_label": "hot",
-            "header-1fc675eb824f1fda14577f226d4da575": null,
+            "header-fb01c52e9be3d72276d245d889ded0c1": null,
             "promotion_menu_column": 2,
             "mega_custom_width": 600,
             "center_submenu": false,
             "full_width": false,
-            "header-8bc24c0ef48d050a55a462f961025a4a": null,
+            "header-2b24074020848c8a812791268209dbac": null,
             "promotion_position": "right",
             "promotion_image_width": 27,
-            "header-e8a556952d637ad2691d3c61eadd02cd": null,
+            "header-521806db00241ad6051b4ad06a16fb4c": null,
             "promotion_image_1": null,
             "promotion_link_1": "",
             "promotion_link_newtab_1": true,
-            "header-43534525eb59fee48433aaff8bdbbc92": null,
+            "header-82c4f4a77b0391bfd86f2f0ac2c13fca": null,
             "promotion_image_2": null,
             "promotion_link_2": "",
             "promotion_link_newtab_2": true
@@ -136,19 +136,19 @@
             "text": "ARMORX",
             "open-link-newtab": false,
             "item_label": "hot",
-            "header-95c33dffd4ade4577f652b58a3fd81fa": null,
+            "header-c9a5f22d8deb997b67637dbf302b674b": null,
             "promotion_menu_column": 2,
             "mega_custom_width": 600,
             "center_submenu": false,
             "full_width": false,
-            "header-1b2f49bc514aa53a02119d1dd0049154": null,
+            "header-cd41201a9a2685573b2f633a6cc5e33e": null,
             "promotion_position": "right",
             "promotion_image_width": 27,
-            "header-22d8376bd25d1355a7d10d8cc7db70be": null,
+            "header-9ecd9af99bd791e6aef93206dc0cabec": null,
             "promotion_image_1": null,
             "promotion_link_1": "",
             "promotion_link_newtab_1": true,
-            "header-d38cbbf9ad3465fced7ebd4eae56a389": null,
+            "header-1b3024dd60f2b2f780bf5238f6894009": null,
             "promotion_image_2": null,
             "promotion_link_2": "",
             "promotion_link_newtab_2": true
@@ -180,7 +180,7 @@
     }
   },
   "order": [
-    "top_bar_CbXNYj",
-    "header"
+    "header",
+    "top_bar_CbXNYj"
   ]
 }
