@@ -133,6 +133,10 @@
 
   /* ---------- header / menu ---------- */
   .section-top-bar > * { background: var(--hw-red) !important; color: #fff; }
+  /* topbar: setas do rotativo (.swiper-action.gradient) puxam o azul do scheme; botão COPIAR tem azul fixo em sections/top-bar.liquid */
+  :root #topbar { --color-background: var(--hw-red); --gradient-background: var(--hw-red); }
+  :root #topbar .gradient { background: var(--hw-red) !important; }
+  :root #topbar .topbar-copy-btn { background: rgba(0, 0, 0, .3); border-color: rgba(255, 255, 255, .55); color: #fff; }
   .section-header .header, .section-header header {
     /* sem backdrop-filter: ele vira containing block e prende a gaveta do menu mobile (position: fixed) dentro do header */
     background: rgba(8, 6, 7, .96) !important;
@@ -212,6 +216,10 @@
   .ident-size-block .product__item-option { border-color: rgba(255, 255, 255, .25) !important; }
   .brk-cl .brk-cl__swatch { background: var(--hw-surface) !important; border-color: var(--hw-line) !important; }
   .brk-cl .brk-cl__label span { color: var(--hw-text) !important; }
+  /* modelo (Masculino / Feminina / Infantil) atual marcado em vermelho */
+  .brk-cl .brk-cl__item.is-selected .brk-cl__swatch { background: var(--hw-red) !important; border-color: var(--hw-red) !important; box-shadow: 0 0 12px rgba(var(--hw-red-rgb), .45); }
+  .brk-cl .brk-cl__item.is-selected .brk-cl__label span { color: #fff !important; }
+  .brk-cl .brk-cl__item:not(.is-selected) .brk-cl__swatch:hover { border-color: var(--hw-red) !important; }
 
   :root section[class*=main-product-section] .product-feature-card { background-color: var(--hw-surface-2); box-shadow: inset 0 0 0 1px var(--hw-line); }
   :root section[class*=main-product-section] .product-feature-card__media { background-color: #2a2023; }
@@ -252,6 +260,33 @@
   /* não vale na zona clara (not_light): lá o widget volta às cores originais do app */
   .jdgm-widget{{ not_light }}, .jdgm-widget{{ not_light }} .jm-text, .jdgm-widget{{ not_light }} p, .jdgm-widget{{ not_light }} span, .jdgm-widget{{ not_light }} button, .jdgm-tab{{ not_light }} { color: var(--hw-text) !important; }
   .jdgm-widget{{ not_light }} .jm-star-rating__font-icon, .jdgm-widget{{ not_light }} .jdgm-star { color: #ffb020 !important; }
+
+  /* ---------- menu mobile: barra "Menu" (azul vindo das configs do header, inline) ---------- */
+  :root .menu-mobile-title { --gradient-background: var(--hw-red) !important; --color-heading: #fff !important; background: var(--hw-red) !important; }
+
+  /* ---------- modal "Quero meu nome na camisa" (snippets/custom-name-button.liquid fixa branco/cinza/azul) ---------- */
+  :root .cnm__overlay { background: rgba(0, 0, 0, .75); }
+  :root .cnm__dialog { color: var(--hw-text); border: 1.5px solid transparent; background: linear-gradient(var(--hw-surface), var(--hw-surface)) padding-box, var(--hw-card-border) border-box; }
+  :root .cnm__title, :root .cnm__label, :root .cnm__close, :root .cnm__terms { color: #fff; }
+  :root .cnm__name { background: var(--hw-surface-2); border-color: rgba(255, 255, 255, .18); color: #fff; }
+  :root .cnm__counter, :root .cnm__illustrative { color: var(--hw-muted); }
+  :root .cnm__modes button, :root .cnm__sides button, :root .cnm__positions button { background: var(--hw-surface-2); border-color: rgba(255, 255, 255, .18); color: #fff; }
+  :root .cnm__modes button.active, :root .cnm__sides button.active { background: var(--hw-red); border-color: var(--hw-red); color: #fff; }
+  :root .cnm__positions button.active { border-color: var(--hw-red); box-shadow: 0 0 0 2px rgba(var(--hw-red-rgb), .3); }
+  :root .cnm__disclaimer { background: var(--hw-surface-2); border-color: var(--hw-line); }
+  :root .cnm__disclaimer p { color: var(--hw-muted); }
+  :root .cnm__disclaimer .cnm__disclaimer-strong strong { color: #fff; }
+  :root .cnm__hint-up { color: var(--hw-red-light); }
+  :root .cnm__msg { color: #ff6b6b; }
+  :root .cnm__terms input { accent-color: var(--hw-red); }
+  :root .cnm__sizes .product__item-option { border-color: rgba(255, 255, 255, .25) !important; color: #fff; }
+  :root .cnm__sizes input:checked + .product__item-option { background-color: var(--hw-red) !important; border-color: var(--hw-red) !important; color: #fff; }
+  :root .cnm__buy {
+    --btn-primary-bg-color: var(--hw-red);
+    --btn-primary-bg-graident-color: var(--hw-red);
+    --btn-primary-hover-bg-color: color-mix(in srgb, var(--hw-red) 80%, #000);
+    --btn-primary-hover-bg-color-graident: color-mix(in srgb, var(--hw-red) 80%, #000);
+  }
 
   /* ---------- carrinho lateral (minicart) ---------- */
   :root .brk-line { --brk-muted: var(--hw-muted); --brk-line-color: var(--hw-line); --brk-soft: var(--hw-surface-2); --brk-accent: var(--hw-red); }
