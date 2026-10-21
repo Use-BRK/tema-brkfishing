@@ -247,17 +247,6 @@
           "type": "badges",
           "settings": {}
         },
-        "product_meta_kiKPhW": {
-          "type": "product_meta",
-          "settings": {
-            "show_barcode": false,
-            "show_sku": true,
-            "show_available": false,
-            "show_tags": false,
-            "show_type": false,
-            "show_collections": false
-          }
-        },
         "price_VJ4N8m": {
           "type": "price",
           "settings": {}
@@ -279,13 +268,6 @@
             "text_master_moto": "<p>A Master BRK pra moto: gola alta com zíper e punho em ribana que segura a manga no vento. Tecido XTech Pro® e proteção UV50+.</p>"
           },
           "disabled": false
-        },
-        "countdown_timer_QB4Ydn": {
-          "type": "countdown_timer",
-          "settings": {
-            "timer_style": "default",
-            "content": "🔥 Hurry Up! Sale ends in:"
-          }
         },
         "feature_card_uv": {
           "type": "feature_card",
@@ -341,14 +323,6 @@
             "size_guide_page": "{{ product.metafields.custom.size_chart.value }}"
           }
         },
-        "sku_prazo_HkLApw": {
-          "type": "sku_prazo",
-          "settings": {
-            "producao": "9",
-            "algodao": "1",
-            "imediato": "0"
-          }
-        },
         "product_addons_YRaprz": {
           "type": "product_addons",
           "settings": {
@@ -400,13 +374,6 @@
             "image_width": 40
           },
           "disabled": false
-        },
-        "text_CzxwUn": {
-          "type": "text",
-          "settings": {
-            "heading": "",
-            "content": ""
-          }
         },
         "complementary_products_Wip9YG": {
           "type": "complementary_products",
