@@ -11,7 +11,8 @@
   "current": {
     "purchase_code": "09e4bafd-a4bc-4423-91bc-db7568d0d674",
     "favicon": "shopify://shop_images/flaticon.png",
-    "logo": "shopify://shop_images/logo-brkfishing-2026.svg",
+    "logo": "shopify://shop_images/logo_fishing_-01.svg",
+    "logo_on_transparent": "shopify://shop_images/logo_fishing_-01.svg",
     "desktop_logo_width": 156,
     "mobile_logo_width": 126,
     "page_width": 1200,

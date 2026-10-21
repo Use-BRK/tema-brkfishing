@@ -12,7 +12,8 @@
     "market": "br"
   },
   "current": {
-    "logo": "shopify://shop_images/LOGO4.png",
+    "logo": "shopify://shop_images/logo_fishing_-01.svg",
+    "logo_on_transparent": "shopify://shop_images/logo_fishing_-01.svg",
     "font_type_body": "default_font",
     "font_type_heading": "default_font",
     "heading_letter_spacing": "unset",
