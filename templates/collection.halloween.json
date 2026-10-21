@@ -20,7 +20,8 @@
         "invert_logo": true,
         "fog_strength": 55,
         "animate_fog": true,
-        "bg_image_opacity": 35
+        "bg_image_opacity": 35,
+        "logo_light": "shopify://shop_images/logo-brk-fishing-branco.png"
       }
     },
     "banner": {
