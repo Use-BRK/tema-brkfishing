@@ -561,13 +561,16 @@
           {%- when 'technical_details' -%}
             {%- liquid
               comment
-                Prazo: tag prazo_imediato → "Pronta Entrega"; senão metafield custom.prazo_producao; senão o prazo padrão do bloco.
+                Prazo de Envio: tag prazo_imediato → "Pronta entrega + Frete escolhido"; tag prazo_producao →
+                "10 dias úteis de produção + Frete escolhido"; senão metafield custom.prazo_producao; senão o prazo padrão do bloco.
                 Composição, tecido, tecnologia e modelagem: metafield do produto (custom.*); vazio e o grupo de SKU
                 (prefixo de letras, mesma regra dos cards de destaque) está na lista do bloco → valor padrão do bloco.
                 Linha sem valor não aparece; sem nenhum valor, o bloco inteiro some.
               endcomment
               if product.tags contains 'prazo_imediato'
-                assign td_prazo = 'Pronta Entrega'
+                assign td_prazo = 'Pronta entrega + Frete escolhido'
+              elsif product.tags contains 'prazo_producao'
+                assign td_prazo = '10 dias úteis de produção + Frete escolhido'
               else
                 assign td_prazo = product.metafields.custom.prazo_producao.value | default: block_st.prazo_padrao
               endif
@@ -638,7 +641,7 @@
               or td_lente != blank
               or td_cor_lente != blank
             -%}
-              <details class="product-tech-details" id="TechDetails-{{ block.id }}" {{ block.shopify_attributes }}>
+              <details class="product-tech-details" id="TechDetails-{{ block.id }}" open {{ block.shopify_attributes }}>
                 <summary class="product-tech-details__header">
                   <span>{{ block_st.heading | default: 'Detalhes técnicos' }}</span>
                 </summary>
@@ -646,8 +649,8 @@
                   {%- if td_prazo != blank -%}
                     <div class="product-tech-details__row">
                       <dt>
-                        <span class="product-tech-details__icon"><img src="{{ 'tech-details-prazo.svg' | asset_url }}" alt="" width="14" height="14" loading="lazy"></span>
-                        Prazo de Produção
+                        <span class="product-tech-details__icon"><img src="{{ 'tech-details-envio.svg' | file_url }}" alt="" width="14" height="14" loading="lazy"></span>
+                        Prazo de Envio
                       </dt>
                       <dd>{{ td_prazo }}</dd>
                     </div>
@@ -744,12 +747,6 @@
                   {%- endif -%}
                 </dl>
               </details>
-              <script>
-                // Por padrão: aberto no desktop, colapsado no mobile
-                if (window.matchMedia('(min-width: 768px)').matches) {
-                  document.getElementById('TechDetails-{{ block.id }}').open = true;
-                }
-              </script>
               {%- if td_cor_por_variante -%}
                 <script>
                   // Cor da lente por variante: acompanha a troca de variante do formulário principal
@@ -1854,6 +1851,8 @@
 {%- if prazo_block == blank and tech_block -%}
   {%- if product.tags contains 'prazo_imediato' -%}
     {%- assign prazo_final = 0 -%}
+  {%- elsif product.tags contains 'prazo_producao' -%}
+    {%- assign prazo_final = 10 -%}
   {%- else -%}
     {%- assign prazo_texto = product.metafields.custom.prazo_producao.value | default: tech_block.settings.prazo_padrao -%}
     {%- assign prazo_final = prazo_texto | strip | split: ' ' | first | plus: 0 -%}
@@ -2334,7 +2333,7 @@
       "settings": [
         {
           "type": "paragraph",
-          "content": "Cada linha usa o metafield do produto (custom.prazo_producao, composicao, tecido, tecnologia, modelagem) e, se vazio, o valor padrão abaixo. Produtos com a tag prazo_imediato mostram \"Pronta Entrega\". Óculos usam custom.oculos_lente, oculos_protecao_uv, oculos_cor_lente (produto ou variante), oculos_armacao, oculos_haste e oculos_acompanha. Linha sem valor não aparece."
+          "content": "Cada linha usa o metafield do produto (custom.prazo_producao, composicao, tecido, tecnologia, modelagem) e, se vazio, o valor padrão abaixo. Prazo de Envio: tag prazo_imediato mostra \"Pronta entrega + Frete escolhido\" e tag prazo_producao mostra \"10 dias úteis de produção + Frete escolhido\". Óculos usam custom.oculos_lente, oculos_protecao_uv, oculos_cor_lente (produto ou variante), oculos_armacao, oculos_haste e oculos_acompanha. Linha sem valor não aparece."
         },
         {
           "type": "text",
@@ -2345,8 +2344,8 @@
         {
           "type": "text",
           "id": "prazo_padrao",
-          "label": "Prazo de Produção padrão",
-          "info": "Todos os produtos sem a tag prazo_imediato e sem o metafield preenchido.",
+          "label": "Prazo de Envio padrão",
+          "info": "Produtos sem as tags prazo_imediato/prazo_producao e sem o metafield preenchido.",
           "default": "10 Dias Úteis"
         },
         {
