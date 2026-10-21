@@ -74,6 +74,26 @@
       },
       {
         "type": "header",
+        "content": "Logo em SVG"
+      },
+      {
+        "type": "paragraph",
+        "content": "Faça upload do arquivo .svg em Conteúdo › Arquivos, copie o link e cole abaixo. Quando preenchido, o SVG substitui o logo em imagem acima."
+      },
+      {
+        "type": "text",
+        "id": "logo_svg_url",
+        "label": "Link do logo SVG",
+        "placeholder": "https://cdn.shopify.com/s/files/.../logo.svg"
+      },
+      {
+        "type": "text",
+        "id": "logo_svg_transparent_url",
+        "label": "Link do logo SVG no header transparente",
+        "info": "Opcional. Usado só na home quando o header está transparente."
+      },
+      {
+        "type": "header",
         "content": "t:settings_schema.logo_favicon.settings.logo_width.label"
       },
       {

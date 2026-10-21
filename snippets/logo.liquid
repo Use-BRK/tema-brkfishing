@@ -9,6 +9,13 @@
   if isTransparent and request.page_type == 'index' and transparent != blank
     assign logo_transparent = transparent | default: logo_image
   endif
+  # Logo SVG (link de Conteúdo > Arquivos) tem prioridade sobre as imagens
+  assign logo_svg = theme_st.logo_svg_url | strip
+  assign logo_svg_transparent = theme_st.logo_svg_transparent_url | strip
+  assign show_svg_transparent = false
+  if isTransparent and request.page_type == 'index' and logo_svg_transparent != blank
+    assign show_svg_transparent = true
+  endif
 -%}
 
 {% if request.page_type == 'index' %}
@@ -20,7 +27,30 @@
   aria-label="{{ shop_name }}"
   {{ block.shopify_attributes }}
 >
-  {%- if logo_image != blank or logo_transparent != blank -%}
+  {%- if logo_svg != blank -%}
+    <span
+      class="header__normal-logo inline-flex align-center"
+      style="--header-logo-width: {{ logo_width }}px; --header-logo-width-mobile: {{ mobile_logo_width }}px;"
+    >
+      <img
+        src="{{ logo_svg }}"
+        fetchpriority="high"
+        class="header__normal-logo{% if show_svg_transparent %} hidden{% endif %}"
+        width="{{ logo_width }}"
+        style="height: auto;"
+        alt="{{ shop.name | escape }}"
+      >
+      {%- if show_svg_transparent -%}
+        <img
+          src="{{ logo_svg_transparent }}"
+          class="header__transparent-logo"
+          width="{{ logo_width }}"
+          style="height: auto;"
+          alt="{{ shop.name | escape }}"
+        >
+      {%- endif -%}
+    </span>
+  {%- elsif logo_image != blank or logo_transparent != blank -%}
     {%- assign logo_height = logo_width | divided_by: logo_image.aspect_ratio | round -%}
     <span
       class="header__normal-logo inline-flex align-center"
