@@ -1,17 +1,26 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hw_skin": {
       "type": "halloween-skin",
       "settings": {
+        "hero_link": "",
+        "hero_fade": true,
         "background_color": "#0b0809",
         "accent_color": "#e3242b",
         "button_color": "#1a6fe0",
         "invert_logo": true,
         "fog_strength": 55,
         "animate_fog": true,
-        "bg_image_opacity": 35,
-        "hero_fade": true,
-        "hero_link": ""
+        "bg_image_opacity": 35
       }
     },
     "banner": {
@@ -19,16 +28,16 @@
       "blocks": {
         "breadcrumb_MJHLQb": {
           "type": "breadcrumb",
-          "settings": {},
-          "disabled": true
+          "disabled": true,
+          "settings": {}
         },
         "heading_fntt9G": {
           "type": "heading",
+          "disabled": true,
           "settings": {
             "page_title": "",
             "header_size": "default"
-          },
-          "disabled": true
+          }
         },
         "description_FAmcR8": {
           "type": "description",
@@ -40,6 +49,7 @@
         "heading_fntt9G",
         "description_FAmcR8"
       ],
+      "disabled": true,
       "custom_css": [
         ".heading-description {display: none;}"
       ],
@@ -52,8 +62,7 @@
         "height": "contain",
         "padding_top": 0,
         "padding_bottom": 0
-      },
-      "disabled": true
+      }
     },
     "subcollection": {
       "type": "subcollection-list",
@@ -94,9 +103,7 @@
         "items_per_row_mobile": 3,
         "padding_top": 16,
         "padding_bottom": 0
-      },
-      "disabled": false,
-      "blocks": {}
+      }
     },
     "main": {
       "type": "main-collection-product",
@@ -133,7 +140,6 @@
         },
         "gender_filter_nTpWw": {
           "type": "gender_filter",
-          "disabled": false,
           "settings": {
             "label_masculino": "Masculino",
             "label_feminino": "Feminino",
@@ -199,39 +205,16 @@
     },
     "scrolling_text_exjPq": {
       "type": "scrolling-text",
-      "disabled": true,
-      "settings": {
-        "section_width": "full_width",
-        "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
-        "header-6ecfe74e991a179baa774772024fa703": null,
-        "direction": "right",
-        "icon_between_item": "unset",
-        "speed": 10,
-        "space_between_text": 60,
-        "header-cae89bd2d9d8659eefaf7ba22dfdf96b": null,
-        "font_size": 14,
-        "font_weight": "body_weight",
-        "uppercase": false,
-        "use_heading_font": false,
-        "header-c5db1396d986601044b7208a28dcad20": null,
-        "padding_top": 5,
-        "padding_bottom": 5,
-        "reset_spacing": true
-      },
       "blocks": {
         "scrolling_text_WYNUT": {
           "type": "scrolling_text",
-          "disabled": false,
           "settings": {
-            "image": null,
             "content": "<strong>FRETE FIXO R$9,90</strong>"
           }
         },
         "scrolling_text_tKg9K": {
           "type": "scrolling_text",
-          "disabled": false,
           "settings": {
-            "image": null,
             "content": "ENVIO RÁPIDO"
           }
         }
@@ -240,7 +223,23 @@
         "scrolling_text_WYNUT",
         "scrolling_text_tKg9K"
       ],
-      "name": "t:sections.scrolling_text.name"
+      "disabled": true,
+      "name": "t:sections.scrolling_text.name",
+      "settings": {
+        "section_width": "full_width",
+        "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
+        "direction": "right",
+        "icon_between_item": "unset",
+        "speed": 10,
+        "space_between_text": 60,
+        "font_size": 14,
+        "font_weight": "body_weight",
+        "uppercase": false,
+        "use_heading_font": false,
+        "padding_top": 5,
+        "padding_bottom": 5,
+        "reset_spacing": true
+      }
     }
   },
   "order": [
