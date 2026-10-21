@@ -576,7 +576,7 @@
       "blocks": {
         "slider_item_MzKCV": {
           "type": "slider_item",
-          "name": "Novos Bonés",
+          "name": "MasterX",
           "disabled": false,
           "settings": {
             "header-0c5ee060fed4a2fb8081c33cb140cb24": null,
@@ -613,7 +613,7 @@
         },
         "slider_item_idxV4": {
           "type": "slider_item",
-          "name": "Rotativo",
+          "name": "Halloween",
           "disabled": false,
           "settings": {
             "header-a2d6d97f6d888be17412273b722973fb": null,
@@ -761,8 +761,8 @@
         }
       },
       "block_order": [
-        "slider_item_MzKCV",
         "slider_item_idxV4",
+        "slider_item_MzKCV",
         "slider_item_Ebn78",
         "slider_item_TzyDJp",
         "slider_item_PiP3V"
