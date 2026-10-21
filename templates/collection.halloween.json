@@ -1,0 +1,255 @@
+{
+  "sections": {
+    "hw_skin": {
+      "type": "halloween-skin",
+      "settings": {
+        "background_color": "#0b0809",
+        "accent_color": "#e3242b",
+        "button_color": "#1a6fe0",
+        "invert_logo": true,
+        "fog_strength": 55,
+        "animate_fog": true,
+        "bg_image_opacity": 35,
+        "hero_fade": true,
+        "hero_link": "",
+        "hero_image_mobile": "shopify://shop_images/halloween-brk-2026-mobile.jpg",
+        "hero_image_desktop": "shopify://shop_images/halloween-brk-2026-desktop.jpg"
+      }
+    },
+    "banner": {
+      "type": "main-collection-heading",
+      "blocks": {
+        "breadcrumb_MJHLQb": {
+          "type": "breadcrumb",
+          "settings": {},
+          "disabled": true
+        },
+        "heading_fntt9G": {
+          "type": "heading",
+          "settings": {
+            "page_title": "",
+            "header_size": "default"
+          },
+          "disabled": true
+        },
+        "description_FAmcR8": {
+          "type": "description",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "breadcrumb_MJHLQb",
+        "heading_fntt9G",
+        "description_FAmcR8"
+      ],
+      "custom_css": [
+        ".heading-description {display: none;}"
+      ],
+      "settings": {
+        "section_width": "stretch_width",
+        "color_scheme": "scheme-3e8af4c8-b99d-456e-90a0-9e470643087b",
+        "alignment": "center",
+        "show_collection_image": true,
+        "overlay_opacity": 0,
+        "height": "contain",
+        "padding_top": 0,
+        "padding_bottom": 0
+      },
+      "disabled": true
+    },
+    "subcollection": {
+      "type": "subcollection-list",
+      "settings": {
+        "section_width": "stretch_width",
+        "color_scheme": "",
+        "layout": "cards",
+        "heading": "Confira outras coleções",
+        "description": "",
+        "header_size": "medium",
+        "header_alignment": "center",
+        "image_ratio": "adapt",
+        "custom_ratio": "",
+        "image_source": "first_product",
+        "media_horizontal_margin": 0,
+        "image_border": true,
+        "image_border_width": 4,
+        "image_border_color": "#efe9da",
+        "items_per_row": 6,
+        "column_gap": 5,
+        "center_insufficient": true,
+        "collection_information_position": "below_image",
+        "design": "default",
+        "text_alignment": "center",
+        "show_product_count": false,
+        "font_size": 14,
+        "font_weight": "heading_weight",
+        "information_spacing": 12,
+        "rounded_image": true,
+        "image_custom_width": true,
+        "image_width": 185,
+        "show_arrow": true,
+        "carousel_pagination": "show_progress_bar",
+        "infinite": false,
+        "autoplay": false,
+        "autorotate_speed": 5,
+        "reveal": false,
+        "items_per_row_mobile": 3,
+        "padding_top": 16,
+        "padding_bottom": 0
+      },
+      "disabled": false,
+      "blocks": {}
+    },
+    "main": {
+      "type": "main-collection-product",
+      "blocks": {
+        "categories_LYDr6p": {
+          "type": "categories",
+          "disabled": true,
+          "settings": {
+            "title": "Products Category",
+            "menu": ""
+          }
+        },
+        "filter_giBtHK": {
+          "type": "filter",
+          "settings": {
+            "filter_hidden_list": ""
+          }
+        },
+        "popular_product_Xwjqcf": {
+          "type": "popular_product",
+          "disabled": true,
+          "settings": {
+            "title": "Featured product",
+            "collection": "shorts",
+            "items_to_show": 3
+          }
+        },
+        "image_banner_UUJxtT": {
+          "type": "image_banner",
+          "settings": {
+            "url": "shopify://collections",
+            "open_link": true
+          }
+        },
+        "gender_filter_nTpWw": {
+          "type": "gender_filter",
+          "disabled": false,
+          "settings": {
+            "label_masculino": "Masculino",
+            "label_feminino": "Feminino",
+            "filter_collection_list": [
+              "abril-de-vantagens",
+              "copa-2026",
+              "fusion-cax-2026",
+              "hybrid-cax-2026",
+              "colecao-armorx-2026",
+              "linha-fusion-2026",
+              "camisas-hybrid",
+              "envio-imediato-brkfishing",
+              "fusionx-raptor",
+              "colecao-elements",
+              "amazon-2-0",
+              "camisas-master",
+              "brasil-fishing",
+              "elements-armorx",
+              "elements-fusion",
+              "elements-hybrid",
+              "halloween-2026"
+            ]
+          }
+        }
+      },
+      "block_order": [
+        "gender_filter_nTpWw",
+        "categories_LYDr6p",
+        "filter_giBtHK",
+        "popular_product_Xwjqcf",
+        "image_banner_UUJxtT"
+      ],
+      "custom_css": [
+        ".filter-price input {padding: 1rem 2rem 1rem 3.5rem;}"
+      ],
+      "settings": {
+        "section_width": "stretch_width",
+        "enable_filtering": false,
+        "show_filter_counts": true,
+        "enable_size_pills": false,
+        "size_filter_label": "Tamanho",
+        "default_filter": "first_open",
+        "filter_layout": "vertical",
+        "vertical_posion": "left",
+        "number_products_per_page": false,
+        "sorting": true,
+        "grid_list": false,
+        "items_to_show": 24,
+        "items_per_row": 5,
+        "column_gap": 30,
+        "show_wishlist": false,
+        "show_compare": false,
+        "show_quick_view": false,
+        "show_add_cart": true,
+        "pagination": "load_more_button",
+        "button_show_more": "Ver mais",
+        "promotion_link": "shopify://collections/best-seller",
+        "promotion_postion": 6,
+        "items_per_row_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "scrolling_text_exjPq": {
+      "type": "scrolling-text",
+      "disabled": true,
+      "settings": {
+        "section_width": "full_width",
+        "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
+        "header-6ecfe74e991a179baa774772024fa703": null,
+        "direction": "right",
+        "icon_between_item": "unset",
+        "speed": 10,
+        "space_between_text": 60,
+        "header-cae89bd2d9d8659eefaf7ba22dfdf96b": null,
+        "font_size": 14,
+        "font_weight": "body_weight",
+        "uppercase": false,
+        "use_heading_font": false,
+        "header-c5db1396d986601044b7208a28dcad20": null,
+        "padding_top": 5,
+        "padding_bottom": 5,
+        "reset_spacing": true
+      },
+      "blocks": {
+        "scrolling_text_WYNUT": {
+          "type": "scrolling_text",
+          "disabled": false,
+          "settings": {
+            "image": null,
+            "content": "<strong>FRETE FIXO R$9,90</strong>"
+          }
+        },
+        "scrolling_text_tKg9K": {
+          "type": "scrolling_text",
+          "disabled": false,
+          "settings": {
+            "image": null,
+            "content": "ENVIO RÁPIDO"
+          }
+        }
+      },
+      "block_order": [
+        "scrolling_text_WYNUT",
+        "scrolling_text_tKg9K"
+      ],
+      "name": "t:sections.scrolling_text.name"
+    }
+  },
+  "order": [
+    "hw_skin",
+    "scrolling_text_exjPq",
+    "banner",
+    "subcollection",
+    "main"
+  ]
+}

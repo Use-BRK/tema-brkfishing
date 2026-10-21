@@ -1,0 +1,332 @@
+{%- comment -%}
+  Skin dark de campanha (Halloween). Só tem efeito nos templates onde a seção for adicionada
+  (collection.halloween / product.halloween): inverte as cores do tema, coloca fundo fixo com
+  névoa vermelha e, opcionalmente, um banner no topo (imagens no Shopify Files).
+{%- endcomment -%}
+{%- liquid
+  assign st = section.settings
+  assign accent = st.accent_color | default: '#e3242b'
+  assign hero_mobile = st.hero_image_mobile | default: st.hero_image_desktop
+  assign hero_desktop = st.hero_image_desktop | default: st.hero_image_mobile
+-%}
+
+<div class="hw-bg{% if st.animate_fog %} hw-bg--animate{% endif %}" aria-hidden="true">
+  {%- if st.bg_image != blank -%}
+    {{ st.bg_image | image_url: width: 1600 | image_tag: class: 'hw-bg__img', loading: 'lazy', alt: '', sizes: '100vw', widths: '750, 1100, 1600' }}
+  {%- endif -%}
+</div>
+
+{%- if hero_mobile != blank -%}
+  <div class="hw-hero{% if st.hero_fade %} hw-hero--fade{% endif %}">
+    {%- if st.hero_link != blank -%}<a href="{{ st.hero_link }}" class="hw-hero__link">{%- endif -%}
+    <div class="hw-hero__media">
+      <picture>
+        <source
+          media="(min-width: 750px)"
+          srcset="{{ hero_desktop | image_url: width: 1500 }} 1500w, {{ hero_desktop | image_url: width: 2000 }} 2000w, {{ hero_desktop | image_url: width: 2560 }} 2560w"
+          sizes="100vw"
+          width="{{ hero_desktop.width }}"
+          height="{{ hero_desktop.height }}"
+        >
+        {{
+          hero_mobile
+          | image_url: width: 1440
+          | image_tag: alt: hero_mobile.alt, sizes: '100vw', widths: '450, 750, 1080, 1440', fetchpriority: 'high', loading: 'eager'
+        }}
+      </picture>
+    </div>
+    {%- if st.hero_link != blank -%}</a>{%- endif -%}
+  </div>
+{%- endif -%}
+
+{% style %}
+  :root {
+    --hw-bg: {{ st.background_color | default: '#0b0809' }};
+    --hw-surface: #151012;
+    --hw-surface-2: #1e1719;
+    --hw-line: rgba(255, 255, 255, .1);
+    --hw-text: #d9d2d3;
+    --hw-muted: #9d9294;
+    --hw-red: {{ accent }};
+    --hw-red-rgb: {{ accent.red }}, {{ accent.green }}, {{ accent.blue }};
+    --hw-red-light: color-mix(in srgb, var(--hw-red) 75%, #fff);
+    --hw-blue: {{ st.button_color | default: '#1a6fe0' }};
+  }
+  :root, body, .color-default, [class*="color-scheme-"] {
+    --color-background: var(--hw-bg);
+    --gradient-background: var(--hw-bg);
+    --color-primary: var(--hw-red);
+    --color-primary-rgb: var(--hw-red-rgb);
+    --color-text: var(--hw-text);
+    --color-text-rgb: 217, 210, 211;
+    --color-heading: #fff;
+    --color-heading-rgb: 255, 255, 255;
+    --color-link: var(--hw-text);
+    --color-link-hover: var(--hw-red-light);
+    --color-border: var(--hw-line);
+    --btn-primary-color: #fff;
+    --btn-primary-hover-color: #fff;
+    --btn-primary-bg-color: var(--hw-blue);
+    --btn-primary-bg-graident-color: var(--hw-blue);
+    --btn-primary-hover-bg-color: var(--hw-red);
+    --btn-primary-hover-bg-color-graident: var(--hw-red);
+    --btn-outline-color: #fff;
+    --btn-outline-border-color: rgba(255, 255, 255, .5);
+    --btn-link-color: #fff;
+    --btn-link-hover-color: var(--hw-red-light);
+    --input-color: #fff;
+    --input-bg: rgba(255, 255, 255, .06);
+    --input-placeholder-color: rgba(255, 255, 255, .5);
+    --border-color-base: var(--hw-line);
+    --light-grey-color: var(--hw-surface);
+    --grey-color: var(--hw-surface);
+  }
+  html { background: var(--hw-bg); color-scheme: dark; }
+  body { background: transparent !important; color: var(--hw-text); }
+
+  /* ---------- fundo fixo: névoa vermelha + vinheta + grão ---------- */
+  .hw-bg { position: fixed; inset: 0; z-index: -1; pointer-events: none; background: var(--hw-bg); overflow: hidden; }
+  .hw-bg__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: {{ st.bg_image_opacity | divided_by: 100.0 }}; }
+  .hw-bg::before {
+    content: ""; position: absolute; z-index: 1; inset: -15%;
+    background:
+      radial-gradient(55% 35% at 10% 6%, rgba(var(--hw-red-rgb), {{ st.fog_strength | divided_by: 100.0 }}), transparent 70%),
+      radial-gradient(50% 30% at 100% 35%, rgba(var(--hw-red-rgb), {{ st.fog_strength | times: 0.8 | divided_by: 100.0 }}), transparent 70%),
+      radial-gradient(70% 40% at 25% 100%, rgba(var(--hw-red-rgb), {{ st.fog_strength | times: 0.9 | divided_by: 100.0 }}), transparent 70%);
+    will-change: transform;
+  }
+  .hw-bg--animate::before { animation: hw-fog 20s ease-in-out infinite alternate; }
+  .hw-bg::after {
+    content: ""; position: absolute; z-index: 2; inset: 0;
+    background:
+      radial-gradient(130% 90% at 50% 45%, transparent 35%, rgba(0, 0, 0, .7) 100%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.08'/%3E%3C/svg%3E");
+  }
+  @keyframes hw-fog { from { transform: translate3d(-4%, -2%, 0) scale(1); } to { transform: translate3d(4%, 3%, 0) scale(1.1); } }
+  @media (prefers-reduced-motion: reduce) { .hw-bg--animate::before { animation: none; } }
+
+  /* conteúdo transparente pra mostrar o fundo */
+  #MainContent .section, #MainContent .shopify-section > [class*="color-scheme-"] { background: transparent; }
+
+  /* ---------- banner ---------- */
+  .hw-hero { position: relative; }
+  .hw-hero__link { display: block; }
+  .hw-hero__media { position: relative; aspect-ratio: {{ hero_mobile.aspect_ratio | default: 0.8 }}; overflow: hidden; }
+  @media (min-width: 750px) { .hw-hero__media { aspect-ratio: {{ hero_desktop.aspect_ratio | default: 2.74 }}; } }
+  .hw-hero__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .hw-hero--fade .hw-hero__media::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 18%;
+    background: linear-gradient(to bottom, transparent, var(--hw-bg)); pointer-events: none;
+  }
+
+  /* ---------- header / menu ---------- */
+  .section-header .header, .section-header header, .section-top-bar > * {
+    background: rgba(8, 6, 7, .86) !important;
+    -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+    border-color: var(--hw-line) !important;
+  }
+  {%- if st.logo_light != blank %}
+    /* versão clara do logo para fundo escuro */
+    .header__logo img { content: url({{ st.logo_light | image_url: width: 400 }}); }
+  {%- elsif st.invert_logo %}
+    /* logo escuro em fundo escuro: inverte (preto -> branco) mantendo o azul do "FISHING" */
+    .header__logo img { filter: invert(1) hue-rotate(180deg) contrast(1.3); mix-blend-mode: screen; }
+  {%- endif %}
+  .horizontal-list > .level0 > menu-item > a { color: #fff !important; }
+  .horizontal-list > .level0.visible > menu-item > a { color: var(--hw-red-light) !important; }
+
+  /* ---------- cards de produto ---------- */
+  :root .grid__item {
+    background:
+      linear-gradient(var(--hw-surface), var(--hw-surface)) padding-box,
+      linear-gradient(180deg, rgba(var(--hw-red-rgb), .55) 0%, rgba(255, 255, 255, .06) 40%, rgba(var(--hw-red-rgb), .25) 100%) border-box;
+  }
+  :root .grid__item:hover { box-shadow: 0 12px 30px -12px rgba(var(--hw-red-rgb), .55); }
+  .product-item__inner { background: transparent !important; }
+  .card-product-price .price, .price.primary-color { color: #fff !important; }
+  .installment-payment, .installment-payment p { color: var(--hw-muted) !important; }
+  .installment-payment strong { color: var(--hw-text) !important; }
+  .product__badges-lancamento { background: var(--hw-red) !important; color: #fff !important; box-shadow: 0 0 12px rgba(var(--hw-red-rgb), .6); }
+  .product__add-cart.btn { background: rgba(255, 255, 255, .1) !important; color: #fff !important; }
+
+  /* filtro flutuante (mobile) e cápsula (desktop) */
+  :root .sec__collection-main .toolbar-products.toolbar-products--floating {
+    --ft-bg: rgba(20, 14, 16, .9);
+    --ft-border: rgba(255, 255, 255, .14);
+    --ft-accent: var(--hw-red);
+  }
+  :root .sec__collection-main .toolbar-products.toolbar-products--floating,
+  :root .sec__collection-main .toolbar-products--floating .gender-filter-label { box-shadow: 0 10px 30px rgba(0, 0, 0, .6); }
+  :root .sec__collection-main .toolbar-products--floating .gender-filter-btn.active { box-shadow: 0 .4rem 1.2rem rgba(var(--hw-red-rgb), .45); }
+  :root .sec__collection-main .toolbar-products.toolbar-products--capsule {
+    --ft-border: rgba(255, 255, 255, .14);
+    --ft-accent: var(--hw-red);
+    background: #140e10;
+  }
+  :root .sec__collection-main .toolbar-products.toolbar-products--capsule .gender-filter-label { background: #140e10; }
+  :root .sec__collection-main .toolbar-products--capsule .btn-filter:hover { background: rgba(255, 255, 255, .06); }
+
+  /* ---------- página de produto ---------- */
+  .product-detail__rating-avg, .product-detail__rating-count, .installment-payment--inline { color: var(--hw-muted) !important; }
+  .swiper-pagination-custom { background: rgba(0, 0, 0, .55) !important; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+  .ident-size-block .product__item-option span { color: #fff; }
+  .ident-size-block .product__item-option { border-color: rgba(255, 255, 255, .25) !important; }
+  .brk-cl .brk-cl__swatch { background: var(--hw-surface) !important; border-color: var(--hw-line) !important; }
+  .brk-cl .brk-cl__label span { color: var(--hw-text) !important; }
+
+  :root section[class*=main-product-section] .product-feature-card { background-color: var(--hw-surface-2); box-shadow: inset 0 0 0 1px var(--hw-line); }
+  :root section[class*=main-product-section] .product-feature-card__media { background-color: #2a2023; }
+  :root section[class*=main-product-section] .product-feature-card__content,
+  :root section[class*=main-product-section] .product-feature-card__text { color: var(--hw-muted); }
+  :root section[class*=main-product-section] .product-feature-card__title { color: #fff; }
+
+  :root section[class*=main-product-section] .custom-name-button__link--outline { background: transparent; color: #fff; border-color: rgba(255, 255, 255, .35); }
+  :root section[class*=main-product-section] .custom-name-button__link--outline:hover { background: rgba(255, 255, 255, .06); }
+  :root section[class*=main-product-section] .custom-name-button__link--outline * { color: #fff; }
+  :root .whatsapp-cta { background: transparent; color: #4ade80 !important; border-color: rgba(74, 222, 128, .6); }
+  :root .whatsapp-cta:hover { background: rgba(74, 222, 128, .08); }
+  :root .whatsapp-cta__divider span { color: var(--hw-muted); background: transparent; }
+
+  :root section[class*=main-product-section] .product-tech-details,
+  :root section[class*=main-product-section] .product-tech-details__header,
+  :root section[class*=main-product-section] .product-tech-details__row { border-color: var(--hw-line); }
+  :root section[class*=main-product-section] .product-tech-details__header,
+  :root section[class*=main-product-section] .product-tech-details__row dd { color: #fff; }
+  :root section[class*=main-product-section] .product-tech-details__row dt { color: var(--hw-muted); }
+  :root section[class*=main-product-section] .product-tech-details__icon img { filter: invert(1); opacity: .75; }
+
+  /* prova social + descrição tecnologia */
+  :root .brk-social { --brk-social-navy: #fff; --brk-social-blue: var(--hw-red-light); }
+  :root .brk-social .brk-social__card { background: var(--hw-surface); }
+  :root .brk-social .brk-social__influencer,
+  :root .brk-social .brk-social__product { background: rgba(10, 7, 8, .72); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+  :root .brk-social .brk-social__product * { color: #fff; }
+  :root .brk-desc { --brk-desc-navy: #fff; --brk-desc-blue: var(--hw-red-light); --brk-desc-text: var(--hw-muted); --brk-desc-box: var(--hw-surface); }
+  :root .brk-desc__note p, :root .brk-desc__note * { color: var(--hw-text); }
+
+  /* avaliações (Judge.me) */
+  .jdgm-widget, .jdgm-widget .jm-text, .jdgm-widget p, .jdgm-widget span, .jdgm-widget button, .jdgm-tab { color: var(--hw-text) !important; }
+  .jdgm-widget .jm-star-rating__font-icon, .jdgm-widget .jdgm-star { color: #ffb020 !important; }
+
+  /* ---------- rodapé ---------- */
+  .shopify-section-group-footer-group > *, footer { background: rgba(5, 3, 4, .92) !important; }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Skin Halloween (dark)",
+  "tag": "div",
+  "class": "hw-skin-section",
+  "enabled_on": {
+    "templates": ["collection", "product"]
+  },
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Deixa a página inteira escura (header, conteúdo e rodapé) com fundo de névoa. Vale só para o template onde esta seção estiver."
+    },
+    {
+      "type": "header",
+      "content": "Banner"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image_mobile",
+      "label": "Imagem mobile",
+      "info": "Vertical (ex.: 1440 x 1800). Suba no Shopify Files."
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image_desktop",
+      "label": "Imagem desktop",
+      "info": "Horizontal (ex.: 2560 x 933)."
+    },
+    {
+      "type": "url",
+      "id": "hero_link",
+      "label": "Link do banner"
+    },
+    {
+      "type": "checkbox",
+      "id": "hero_fade",
+      "label": "Esfumaçar a base do banner no fundo",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Cores"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Fundo",
+      "default": "#0b0809"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Destaque (névoa, bordas, selos)",
+      "default": "#e3242b"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Botão principal",
+      "default": "#1a6fe0"
+    },
+    {
+      "type": "checkbox",
+      "id": "invert_logo",
+      "label": "Inverter logo para branco",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_light",
+      "label": "Logo claro (opcional)",
+      "info": "Versão branca do logo, sem fundo. Se preenchido, substitui a inversão automática."
+    },
+    {
+      "type": "header",
+      "content": "Fundo"
+    },
+    {
+      "type": "range",
+      "id": "fog_strength",
+      "label": "Intensidade da névoa",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 55
+    },
+    {
+      "type": "checkbox",
+      "id": "animate_fog",
+      "label": "Animar névoa",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Imagem de fundo (opcional)",
+      "info": "Fica fixa atrás do conteúdo, por baixo da névoa."
+    },
+    {
+      "type": "range",
+      "id": "bg_image_opacity",
+      "label": "Opacidade da imagem de fundo",
+      "min": 5,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 35
+    }
+  ],
+  "presets": [
+    {
+      "name": "Skin Halloween (dark)"
+    }
+  ]
+}
+{% endschema %}

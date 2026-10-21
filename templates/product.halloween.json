@@ -1,0 +1,935 @@
+{
+  "sections": {
+    "hw_skin": {
+      "type": "halloween-skin",
+      "settings": {
+        "background_color": "#0b0809",
+        "accent_color": "#e3242b",
+        "button_color": "#1a6fe0",
+        "invert_logo": true,
+        "fog_strength": 55,
+        "animate_fog": true,
+        "bg_image_opacity": 35,
+        "hero_fade": true,
+        "hero_link": ""
+      }
+    },
+    "brk_prova_social": {
+      "type": "brk-prova-social",
+      "settings": {},
+      "blocks": {
+        "video_group_U7DJD": {
+          "type": "video_group",
+          "disabled": false,
+          "settings": {
+            "sku_prefixes": "HYB",
+            "enabled": true,
+            "header-3da22f49913a3670cf2ed350df7a4547": null,
+            "video_1": "shopify://files/videos/naiaraazevedo_d834998f-27fa-4561-8c95-ed2ac1fcfe39.mp4",
+            "influencer_1": "@naiaraazevedo",
+            "product_1": "camisa-de-pesca-feminina-brk-com-capuz-hybrid-preto-com-cinza-fusion-com-protecao-solar-uv50",
+            "header-4615b5c797ada4de06921c9244c3285b": null,
+            "video_2": "shopify://files/videos/IMG_6264.MOV",
+            "influencer_2": "@lucassmoro",
+            "product_2": "camisa-de-pesca-brk-com-capuz-hybrid-preto-com-cinza-fusion-com-protecao-solar-uv50",
+            "header-347f4c058f712ad25f194711607522a5": null,
+            "video_3": "shopify://files/videos/naiaraazevedo (1).mp4",
+            "influencer_3": "@naiaraazevedo",
+            "product_3": "camisa-de-pesca-feminina-brk-com-capuz-hybrid-preto-com-cinza-fusion-com-protecao-solar-uv50",
+            "header-8de530c82d0e75295280bf69db9533e1": null,
+            "video_4": "shopify://files/videos/caboclodomat0 (3)_179dff37-fc3a-45b2-8cd6-24d649c5839f.mp4",
+            "influencer_4": "caboclodomat0",
+            "product_4": "camisa-de-pesca-brk-com-capuz-hybrid-verde-petroleo-degrade-com-protecao-solar-uv50",
+            "header-fee2fb13fb036fb9b93fa32157887300": null,
+            "video_5": "shopify://files/videos/mayaravic_fishing.mp4",
+            "influencer_5": "mayaravic_fishing",
+            "product_5": "camisa-fusionx-brk-feminina-tucunare-acu-laranja-com-capuz-e-protecao-uv50",
+            "header-c4140cffc8fc580d7f20a92a88623965": null,
+            "video_6": null,
+            "influencer_6": "",
+            "product_6": ""
+          }
+        },
+        "video_group_rpePr": {
+          "type": "video_group",
+          "disabled": false,
+          "settings": {
+            "sku_prefixes": "BA",
+            "enabled": true,
+            "header-083467bd8ff6dd9de7a9a826c6ee970e": null,
+            "video_1": "shopify://files/videos/batalhafishing (1).mp4",
+            "influencer_1": "",
+            "product_1": "bone-brk-fishing-catch-and-release-azul",
+            "header-d28fefa130a85a9d639a275b00511ba5": null,
+            "video_2": null,
+            "influencer_2": "",
+            "product_2": "",
+            "header-f2b8b29d1d5b7edff23e7c9ccc7d6fb7": null,
+            "video_3": "shopify://files/videos/IMG_6240.MOV",
+            "influencer_3": "@lucassmoro",
+            "product_3": "ba0171-bone-brk-fishing-realtree-branco",
+            "header-1a37e5f83171cf7b1d3efdd35eacd0a5": null,
+            "video_4": "shopify://files/videos/IMG_2417.MOV",
+            "influencer_4": "@biancamoenster",
+            "product_4": "bone-trucker-de-pesca-brk-60up-azul",
+            "header-bee3a78ad694c77111a2eb2b086647cc": null,
+            "video_5": "shopify://files/videos/IMG_1831.MOV",
+            "influencer_5": "@mixpescaesportiva",
+            "product_5": "bone-feminino-brk-fishing-camuflado-com-rosa",
+            "header-66aec41d8c9a6125be2c6f9532d48a28": null,
+            "video_6": "shopify://files/videos/IMG_6521.MOV",
+            "influencer_6": "@ataime",
+            "product_6": "ba0171-bone-brk-fishing-realtree-branco"
+          }
+        },
+        "video_group_rYqMA": {
+          "type": "video_group",
+          "disabled": false,
+          "settings": {
+            "sku_prefixes": "CAX",
+            "enabled": true,
+            "header-e4057260b6c443fdc093f7b3215e5f48": null,
+            "video_1": "shopify://files/videos/naiaraazevedo (1)_fa780e3b-cefe-4e9a-9513-6e74ec8eaed8.mp4",
+            "influencer_1": "@naiaraazevedo",
+            "product_1": "camisa-armorx-feminina-brk-fishing-azul-com-detalhes-em-amarelo-com-protecao-uv50",
+            "header-70a9fba415d239e48223bc9957bb1421": null,
+            "video_2": "shopify://files/videos/1016.mp4",
+            "influencer_2": "@tinilso_",
+            "product_2": "",
+            "header-5e35d3ea7aa39d2c9359211b3078afdf": null,
+            "video_3": "shopify://files/videos/naiaraazevedo (2).mp4",
+            "influencer_3": "@naiaraazevedo",
+            "product_3": "camisa-armorx-feminina-brk-fishing-azul-com-detalhes-em-amarelo-com-protecao-uv50",
+            "header-4b19e4bab39ef8674c1bfbef0267ecd8": null,
+            "video_4": "shopify://files/videos/60595361-6159-4955-96a1-dbb7f6a61b73.mp4",
+            "influencer_4": "waltersiepierski",
+            "product_4": "camisa-armorx-brk-fishing-degrade-verde-e-amarelo-com-protecao-uv50",
+            "header-c248b10d3a648fdff317e71bc2becca6": null,
+            "video_5": "shopify://files/videos/IMG_0380.MOV",
+            "influencer_5": "jv.borsatto",
+            "product_5": "camisa-armorx-brk-fishing-preto-grafite-com-protecao-uv50",
+            "header-202d9906b5f0df9cc52cdc8bdb4dea9f": null,
+            "video_6": "shopify://files/videos/waltersiepierski (3).mp4",
+            "influencer_6": "waltersiepierski",
+            "product_6": "camisa-armorx-brk-fishing-ondas-azul-claro-com-protecao-uv50"
+          }
+        },
+        "video_group_hzDpK": {
+          "type": "video_group",
+          "disabled": false,
+          "settings": {
+            "sku_prefixes": "FUSION",
+            "enabled": true,
+            "header-ade77a3d6a6e04c2111847257720a972": null,
+            "video_1": "shopify://files/videos/acamiladoagro.mp4",
+            "influencer_1": "acamiladoagro",
+            "product_1": "camisa-de-pesca-com-capuz-brk-cinza-e-real-tree-camuflado-com-protecao-solar-uv50",
+            "header-0f59770637325e4bbee70bd50387e694": null,
+            "video_2": "shopify://files/videos/IMG_6224.MOV",
+            "influencer_2": "@ataime",
+            "product_2": "camisa-de-pesca-brk-com-capuz-hybrid-verde-petroleo-degrade-com-protecao-solar-uv50",
+            "header-daac4cc12d4136eb55c75ec64a3f6e9d": null,
+            "video_3": "shopify://files/videos/IMG_6401.MOV",
+            "influencer_3": "",
+            "product_3": "camisa-fusionx-feminina-brk-azul-oceano-degrade-com-linhas-verticais-e-protecao-uv50",
+            "header-07cde3b8aebfa6ae585896a428cebdbf": null,
+            "video_4": "shopify://files/videos/mauricio.vestre.mp4",
+            "influencer_4": "mauricio.vestre",
+            "product_4": "camisa-fusionx-brk-cinza-mescla-com-protecao-uv50",
+            "header-853b8ee4234a3163fc08e2d72650ee90": null,
+            "video_5": "shopify://files/videos/IMG_7604.MOV",
+            "influencer_5": "babifishing",
+            "product_5": "camisa-fusionx-feminina-brk-fishing-eua-branco-com-protecao-uv50",
+            "header-9385f4c108831209839130ffe0a77a52": null,
+            "video_6": "shopify://files/videos/IMG_7289 (1).MOV",
+            "influencer_6": "",
+            "product_6": "camisa-fusionx-maori-azul-profundo-brk-com-protecao-solar-uv50"
+          }
+        },
+        "video_group_7VLGy": {
+          "type": "video_group",
+          "disabled": false,
+          "settings": {
+            "sku_prefixes": "OC",
+            "enabled": true,
+            "header-a62f8a79d272d869f1cab58a2c46c08b": null,
+            "video_1": "shopify://files/videos/IMG_8569.MOV",
+            "influencer_1": "",
+            "product_1": "oculos-de-sol-square-black-mirror",
+            "header-7e08ba403395a65a5e3f8a6de98511f9": null,
+            "video_2": "shopify://files/videos/oculos_fishing_05.mp4",
+            "influencer_2": "@furlananderson",
+            "product_2": "oculos-de-sol-skyline",
+            "header-cc0f1f1b3c2d6c7ffce8c8226892a665": null,
+            "video_3": null,
+            "influencer_3": "",
+            "product_3": "",
+            "header-2022729a7b48b33fda85e48f061d5bc6": null,
+            "video_4": null,
+            "influencer_4": "",
+            "product_4": "",
+            "header-cb89725efd9c5f203c57efd98abfa647": null,
+            "video_5": null,
+            "influencer_5": "",
+            "product_5": "",
+            "header-604ce5f0d15ed276afb8e4e83e643f33": null,
+            "video_6": null,
+            "influencer_6": "",
+            "product_6": ""
+          }
+        },
+        "video_group_xHpkL": {
+          "type": "video_group",
+          "disabled": false,
+          "settings": {
+            "sku_prefixes": "C0, CM, CI, BP",
+            "enabled": true,
+            "header-8a1a8ff8702d746f08e9f10c246aae36": null,
+            "video_1": "shopify://files/videos/naiaraazevedo.mp4",
+            "influencer_1": "@naiaraazevedo",
+            "product_1": "camisa-de-pesca-feminina-brk-amazon-casal-de-araras-com-protecao-uv50",
+            "header-44f8d25f3703c68b76a8e97fc23b8b76": null,
+            "video_2": "shopify://files/videos/b2b9202c-7986-4415-a485-e4c0f458e8a8.mp4",
+            "influencer_2": "luan.tanamao",
+            "product_2": "camisa-de-pesca-brk-azul-bandeira-do-brasil-garateia-com-protecao-uv50",
+            "header-cf744a8a437696ef08169b55f29521f9": null,
+            "video_3": "shopify://files/videos/IMG_7645.MOV",
+            "influencer_3": "allicia_avila",
+            "product_3": "camisa-feminina-brk-amazon-capivara-com-protecao-uv50-creme",
+            "header-a9d3cee88676a5f392e488c347fb3549": null,
+            "video_4": "shopify://files/videos/caboclodomat0 (3).mp4",
+            "influencer_4": "caboclodomat0",
+            "product_4": "camisa-de-pesca-brk-azul-bandeira-do-brasil-garateia-com-protecao-uv50",
+            "header-6b820cd32a660c0f0e80658892dfa464": null,
+            "video_5": "shopify://files/videos/IMG_7584.MOV",
+            "influencer_5": "allicia_avila",
+            "product_5": "camisa-feminina-brk-amazon-boto-cor-de-rosa-com-protecao-uv50-azul-petroleo",
+            "header-c20137628465a7d4525fde805a4f0e01": null,
+            "video_6": "shopify://files/videos/WhatsApp Video 2026-05-13 at 11.00.52.mp4",
+            "influencer_6": "dronepesca",
+            "product_6": "camisa-agro-brk-unissex-basic-azul-naval-com-protecao-solar-uv50"
+          }
+        }
+      },
+      "block_order": [
+        "video_group_U7DJD",
+        "video_group_rpePr",
+        "video_group_rYqMA",
+        "video_group_hzDpK",
+        "video_group_7VLGy",
+        "video_group_xHpkL"
+      ]
+    },
+    "breadcrumb": {
+      "type": "breadcrumb",
+      "custom_css": [
+        "span {-webkit-box-orient: vertical; text-overflow: ellipsis; -webkit-line-clamp: 1; overflow: hidden; display: -webkit-box;}"
+      ],
+      "settings": {
+        "breadcrumb_style": "custom",
+        "section_width": "container",
+        "color_scheme": "default",
+        "next_prev": false
+      },
+      "disabled": true,
+      "blocks": {}
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title_G6tU8U": {
+          "type": "title",
+          "settings": {
+            "show_vendor": false
+          }
+        },
+        "badges_RwfTMp": {
+          "type": "badges",
+          "settings": {}
+        },
+        "product_meta_kiKPhW": {
+          "type": "product_meta",
+          "settings": {
+            "show_barcode": false,
+            "show_sku": true,
+            "show_available": false,
+            "show_tags": false,
+            "show_type": false,
+            "show_collections": false
+          }
+        },
+        "price_VJ4N8m": {
+          "type": "price",
+          "settings": {}
+        },
+        "short_description_9BGxVm": {
+          "type": "short_description",
+          "settings": {
+            "excerpt_length": 200,
+            "text_master": "<p>A clássica da BRK: gola alta com zíper e punho em ribana que não deixa a manga subir. Tecido XTech Pro® com secagem rápida e proteção UV50+.</p>",
+            "text_fusion": "<p>A mais completa da BRK: capuz, máscara integrada com microfuros e luva com abertura pro dedão. Tecido XTech Pro® de toque gelado e proteção UV50+.</p>",
+            "text_hybrid": "<p>Capuz anatômico, luva com abertura pro dedão e modelagem ajustada, sem máscara. Tecido XTech Pro® respirável e proteção UV50+.</p>",
+            "text_armorx": "<p>Visual esportivo com gola alta com zíper e luva com abertura pro dedão, sem capuz. Tecido XTech Pro® e proteção UV50+.</p>",
+            "text_capuz": "<p>Capuz integrado que protege cabeça, orelhas e nuca do sol e do vento. Tecido XTech Pro® antiodor, com toque gelado e proteção UV50+.</p>",
+            "text_casual": "<p>Camiseta de manga curta e gola redonda pro dia a dia. Tecido XTech Pro® com tecnologia Dry e proteção UV50+ que não sai na lavagem.</p>",
+            "text_manga_curta": "<p>A camisa de pesca BRK em manga curta, com gola alta com zíper. Tecido XTech Pro® leve e proteção UV50+ pros dias de calor.</p>",
+            "text_master_infantil": "<p>Pros pequenos pescadores: gola alta com zíper, punho em ribana e estampas divertidas. Tecido XTech Pro® macio e proteção UV50+.</p>",
+            "text_brasil_patriota": "<p>Pra quem leva o Brasil no peito: estampas em verde e amarelo no tecido XTech Pro®, com proteção UV50+ e secagem rápida.</p>",
+            "text_work": "<p>Camisa de botão com dois bolsos com lapela e mangas com presilha. Tecido leve com proteção UV50+, do barco ao almoço.</p>",
+            "text_master_moto": "<p>A Master BRK pra moto: gola alta com zíper e punho em ribana que segura a manga no vento. Tecido XTech Pro® e proteção UV50+.</p>"
+          },
+          "disabled": false
+        },
+        "countdown_timer_QB4Ydn": {
+          "type": "countdown_timer",
+          "settings": {
+            "timer_style": "default",
+            "content": "🔥 Hurry Up! Sale ends in:"
+          }
+        },
+        "feature_card_uv": {
+          "type": "feature_card",
+          "settings": {
+            "card": "uv",
+            "title": "PROTEÇÃO UV50+",
+            "text": "Tecnologia que bloqueia até\n98% dos raios UVA e UVB.",
+            "image": "shopify://shop_images/d3186897-2466-41e8-b154-51e6e28f2ad6.png"
+          }
+        },
+        "feature_card_ziper": {
+          "type": "feature_card",
+          "settings": {
+            "card": "ziper",
+            "title": "GOLA COM ZÍPER",
+            "text": "Abertura da gola para maior\nventilação ou cobertura",
+            "image": "shopify://shop_images/b4878c39-a4d3-4704-83b0-2bdc6f0c0db3.png"
+          }
+        },
+        "feature_card_capuz": {
+          "type": "feature_card",
+          "settings": {
+            "card": "capuz",
+            "title": "CAPUZ FUNCIONAL",
+            "text": "Garante proteção solar extra\npara a cabeça e pescoço.",
+            "image": "shopify://shop_images/6e6cd879-aa77-4a70-a1bf-a80c85567c9f.png"
+          }
+        },
+        "feature_card_bandana": {
+          "type": "feature_card",
+          "settings": {
+            "card": "bandana",
+            "title": "BANDANA RESPIRÁVEL",
+            "text": "Com microfuros que permitem\numa respiração fácil e confortável.",
+            "image": "shopify://shop_images/7911f75f-0912-4ad5-a8ae-d3ca7bcf62b6.png"
+          }
+        },
+        "feature_card_luva": {
+          "type": "feature_card",
+          "settings": {
+            "card": "luva",
+            "title": "LUVA INTEGRADA",
+            "text": "Suas mãos protegidas do sol\ne sem abrir mão do conforto.",
+            "image": "shopify://shop_images/88a82c04-8d5d-4d55-96e1-8f36bab2b236.png"
+          }
+        },
+        "variant_picker_tcCihG": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_type": "swatches",
+            "show_size_guide": true,
+            "size_guide_label": "Guia de Tamanhos",
+            "size_guide_page": "{{ product.metafields.custom.size_chart.value }}"
+          }
+        },
+        "sku_prazo_HkLApw": {
+          "type": "sku_prazo",
+          "settings": {
+            "producao": "9",
+            "algodao": "1",
+            "imediato": "0"
+          }
+        },
+        "product_addons_YRaprz": {
+          "type": "product_addons",
+          "settings": {
+            "show_compare_color": false,
+            "show_ask_question": false,
+            "show_share": false
+          },
+          "disabled": true
+        },
+        "stock_countdown_JNK9zi": {
+          "type": "stock_countdown",
+          "settings": {
+            "message": "Restam apenas [count]",
+            "stock_items": 5
+          }
+        },
+        "buy_buttons_LcQGtR": {
+          "type": "buy_buttons",
+          "settings": {
+            "add_to_cart_label": "Adicionar à Sacola",
+            "show_bag_icon": true,
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true,
+            "show_wishlist": false,
+            "show_compare": false
+          }
+        },
+        "model_size_XM7z6E": {
+          "type": "model_size",
+          "settings": {},
+          "disabled": true
+        },
+        "pickup_avaiability_cyVydQ": {
+          "type": "pickup_avaiability",
+          "settings": {},
+          "disabled": true
+        },
+        "product_grouped_6epkNf": {
+          "type": "product_grouped",
+          "settings": {
+            "heading": "Compre Junto"
+          },
+          "disabled": false
+        },
+        "more_colors_3zmxGq": {
+          "type": "more_colors",
+          "settings": {
+            "heading": "",
+            "image_width": 40
+          },
+          "disabled": false
+        },
+        "text_CzxwUn": {
+          "type": "text",
+          "settings": {
+            "heading": "",
+            "content": ""
+          }
+        },
+        "complementary_products_Wip9YG": {
+          "type": "complementary_products",
+          "settings": {
+            "heading": "Modelos semelhantes...",
+            "product_list_limit": 10,
+            "products_per_page": 3,
+            "show_navigation": false,
+            "show_pagination": true,
+            "enable_quick_add": false
+          },
+          "disabled": true
+        },
+        "frete_no_produto_shipping_calc_MJK8Br": {
+          "type": "shopify://apps/frete-no-produto/blocks/shipping_calc/86063d43-a133-4046-bbed-b9bfb712ccba",
+          "disabled": true,
+          "settings": {
+            "shipping_calculator": true,
+            "show_localization": true,
+            "background_color_container": "rgba(0,0,0,0)",
+            "background_header": "#fafafa",
+            "background_local": "#fafafa",
+            "btnshipping": "#135ed1",
+            "color_text": "#ffffff",
+            "color_shipping": "#51a559",
+            "color_ship_name": "#000000",
+            "color_shipping_date": "#000000",
+            "padding_inner": 0,
+            "padding_external": 12,
+            "space_top": 0,
+            "height_input": 45,
+            "border_radius": 67,
+            "text_btn": "CONSULTAR",
+            "text_title": "Calcule o Frete",
+            "placeholder": "Digite seu CEP",
+            "pickup": "",
+            "dont_show_products": []
+          }
+        },
+        "product_meta_FUixq": {
+          "type": "product_meta",
+          "disabled": false,
+          "settings": {
+            "show_barcode": false,
+            "show_sku": true,
+            "show_available": false,
+            "show_tags": false,
+            "show_type": false,
+            "show_collections": false
+          }
+        },
+        "judge_me_reviews_preview_badge_7TGbg": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": false,
+          "settings": {
+            "paragraph-e3856e0b9a8a3cd275b6cf66d33833e6": null,
+            "paragraph-ef05bfa68a1378105d5938b02dbfd93f": null
+          }
+        },
+        "brk_apps_fishing_combined_listing_6KLCz": {
+          "type": "shopify://apps/brk-apps-fishing/blocks/combined-listing/019f0510-f075-72ba-9c2f-a80926df6a59",
+          "disabled": false,
+          "settings": {
+            "header-6e6d2ee465b491d2a75392fec637c1cc": null,
+            "show_option_name": true,
+            "show_label": true,
+            "header-7c28781efe0812af4fe22ef846d8103e": null,
+            "swatch_size": 86,
+            "border_radius": 4,
+            "border_width": 1,
+            "gap": 4,
+            "margin_y": 10,
+            "header-a7be446e7a311fcefeaa6d95c17829c7": null,
+            "border_color": "#cfcfcf",
+            "selected_color": "#135ed1",
+            "selected_text_color": "#ffffff",
+            "hover_color": "#135ed1",
+            "header-5693e47f11f7c42f7a247624e4b42345": null,
+            "label_color": "#6a6a6a",
+            "label_size": 12
+          }
+        },
+        "custom_name_button_XTkeF": {
+          "type": "custom_name_button",
+          "disabled": false,
+          "settings": {
+            "enable_button": true,
+            "button_mode": "personalization",
+            "button_label": "Quero meu nome na camisa",
+            "header-71ac0a740587df340466aa9a5e351ffd": null,
+            "whatsapp_number": "553432194697",
+            "header-54d75cecc89bc77b3a4abd7861a451fe": null,
+            "perso_variant_id": "43812419240002",
+            "perso_price": "29,90",
+            "mockup_frente": "https://cdn.shopify.com/s/files/1/0628/1445/3826/files/MOCKUP_FRENTE.png",
+            "mockup_costas": "https://cdn.shopify.com/s/files/1/0628/1445/3826/files/MOCKUP_COSTAS.png",
+            "collections": [
+              "roupas-masculinas",
+              "roupas-femininas-1",
+              "colecao-infantil"
+            ]
+          }
+        },
+        "whatsapp_cta_4pXDG": {
+          "type": "whatsapp_cta",
+          "disabled": false,
+          "settings": {
+            "enable_button": true,
+            "divider_text": "Ou",
+            "button_text": "[whatsapp] Compre pelo Whatsapp",
+            "text_color": "#0f6049",
+            "header-4ed3bb9fb82d016f2a7eb8e05aacfe4f": null,
+            "whatsapp_number": "553432194697",
+            "whatsapp_message": "Vim da loja online e tenho interesse nesse produto:",
+            "append_product_link": true,
+            "header-7beb23e14b7be4e3e4b699d059a68ff3": null,
+            "enable_schedule": true,
+            "hours_start": "08:00",
+            "hours_end": "17:15",
+            "header-417a837cc3e6c3a62b211a752b81cfa8": null,
+            "collections": []
+          }
+        },
+        "brk_apps_fishing_bundle_addon_zJW6Q": {
+          "type": "shopify://apps/brk-apps-fishing/blocks/bundle-addon/019f0510-f075-72ba-9c2f-a80926df6a59",
+          "disabled": false,
+          "settings": {
+            "paragraph-b215ec47a132d9fa1b052872fdf7f23f": null,
+            "header-9d5f4eab68c62c8feb87cf9bde16a7d1": null,
+            "title_size": 15,
+            "border_radius": 12,
+            "margin_y": 16,
+            "header-dca690de869732d4cc34c1e11c2490ba": null,
+            "border_color": "#e1e3e5",
+            "accent_color": "#085b47",
+            "label_bg": "#085b47",
+            "label_text_color": "#ffffff"
+          }
+        },
+        "technical_details_Tc9Dt": {
+          "type": "technical_details",
+          "disabled": false,
+          "settings": {
+            "paragraph-c0759820c1091e9eb3f351c562eac161": null,
+            "heading": "Detalhes técnicos",
+            "prazo_padrao": "10 Dias Úteis",
+            "header-7109faf674ec4ca8e41a00947badf338": null,
+            "sku_prefixes": "C, FUSION, HYB, CAX, CCPBR, CASUAL, CM, CI, BP, ADV",
+            "composicao": "90% Poliéster 10% Elastano",
+            "tecido": "XTech Pro",
+            "tecnologia": "Secagem Rápida, Tecido Leve, Antiodor, Proteção Solar UV50+",
+            "modelagem": "Anatômica e Confortável"
+          }
+        },
+        "sku_prazo_8wWwi": {
+          "type": "sku_prazo",
+          "disabled": true,
+          "settings": {
+            "producao": "10",
+            "algodao": "1",
+            "imediato": "0"
+          }
+        }
+      },
+      "block_order": [
+        "title_G6tU8U",
+        "product_meta_FUixq",
+        "badges_RwfTMp",
+        "judge_me_reviews_preview_badge_7TGbg",
+        "short_description_9BGxVm",
+        "price_VJ4N8m",
+        "brk_apps_fishing_combined_listing_6KLCz",
+        "variant_picker_tcCihG",
+        "feature_card_ziper",
+        "feature_card_capuz",
+        "feature_card_bandana",
+        "feature_card_luva",
+        "feature_card_uv",
+        "product_addons_YRaprz",
+        "stock_countdown_JNK9zi",
+        "buy_buttons_LcQGtR",
+        "custom_name_button_XTkeF",
+        "whatsapp_cta_4pXDG",
+        "brk_apps_fishing_bundle_addon_zJW6Q",
+        "technical_details_Tc9Dt",
+        "sku_prazo_8wWwi",
+        "model_size_XM7z6E",
+        "pickup_avaiability_cyVydQ",
+        "product_grouped_6epkNf",
+        "more_colors_3zmxGq",
+        "complementary_products_Wip9YG",
+        "frete_no_produto_shipping_calc_MJK8Br"
+      ],
+      "custom_css": [],
+      "settings": {
+        "section_width": "container",
+        "color_scheme": "",
+        "enable_sticky_content_on_desktop": true,
+        "enable_skeleton_loading": false,
+        "desktop_media_width": 50,
+        "desktop_layout": "thumbnail_bottom",
+        "mobile_options": "hidden_thumbnail",
+        "image_zoom": "open_lightbox",
+        "enable_video_looping": true,
+        "enable_video_autoplay": true,
+        "enable_frequently_bought_together": true,
+        "enable_on_desktop": false,
+        "enable_on_mobile": false,
+        "padding_top": 20,
+        "padding_bottom": 15,
+        "reset_spacing": false,
+        "show_media_wishlist": false
+      }
+    },
+    "product-set": {
+      "type": "product-set",
+      "settings": {
+        "section_width": "container",
+        "color_scheme": "",
+        "heading": "Combination Styles",
+        "description": "",
+        "header_size": "medium",
+        "header_alignment": "left",
+        "items_per_row": 2,
+        "column_gap": 30,
+        "show_arrow": false,
+        "carousel_pagination": "show_dots",
+        "infinite": false,
+        "autoplay": true,
+        "autorotate_speed": 5,
+        "reveal": false,
+        "items_per_row_mobile": 1,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "reset_spacing": false
+      },
+      "disabled": true,
+      "blocks": {}
+    },
+    "divider_E3r6ih": {
+      "type": "divider",
+      "settings": {
+        "section_width": "full_width",
+        "border_height": 1,
+        "border_color": "#ebebeb",
+        "reset_spacing": true
+      }
+    },
+    "brk_desc_tecnologia_xtech": {
+      "type": "brk-desc-tecnologia",
+      "settings": {
+        "image_tecido": "shopify://shop_images/brk-desc-xtech-tecido.webp",
+        "image_logo": "shopify://shop_images/brk-desc-xtech-logo.webp",
+        "image_uv": "shopify://shop_images/brk-desc-uv50-braco.webp",
+        "image_selo": "shopify://shop_images/brk-desc-uv50-selo.webp",
+        "sku_prefixes": "C0, FUSION, HYB, CAX, BP, CI",
+        "title_prefixes": "",
+        "tec_title": "XTech Pro ®",
+        "feature_2_line1": "Toque ultra",
+        "feature_2_line2": "GELADO"
+      },
+      "blocks": {},
+      "name": "Descrição"
+    },
+    "custom_liquid_bzNYb6": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom_liquid.name",
+      "settings": {
+        "section_width": "container",
+        "color_scheme": "",
+        "custom_liquid": "{{product.description}}",
+        "padding_top": 35,
+        "padding_bottom": 0,
+        "reset_spacing": false,
+        "hide_sku_prefixes": "C0, FUSION, HYB, CAX, BP, CI"
+      },
+      "blocks": {}
+    },
+    "scrolling_text_b38KNQ": {
+      "type": "scrolling-text",
+      "blocks": {
+        "scrolling_text_dEP8jr": {
+          "type": "scrolling_text",
+          "settings": {
+            "content": "Free returns within 30 days"
+          }
+        },
+        "scrolling_text_bPAypi": {
+          "type": "scrolling_text",
+          "settings": {
+            "content": "Unlimited delivery for only $175"
+          }
+        }
+      },
+      "block_order": [
+        "scrolling_text_dEP8jr",
+        "scrolling_text_bPAypi"
+      ],
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "section_width": "full_width",
+        "color_scheme": "scheme-c78bfb21-5aff-497b-be68-98f01962f564",
+        "direction": "left",
+        "icon_between_item": "star",
+        "speed": 10,
+        "space_between_text": 65,
+        "font_size": 20,
+        "font_weight": "subheading_weight",
+        "uppercase": false,
+        "use_heading_font": false,
+        "padding_top": 30,
+        "padding_bottom": 30,
+        "reset_spacing": true
+      }
+    },
+    "divider_TKLM6L": {
+      "type": "divider",
+      "settings": {
+        "section_width": "container",
+        "border_height": 1,
+        "border_color": "#ebebeb",
+        "reset_spacing": false
+      }
+    },
+    "related_products": {
+      "type": "related-products",
+      "name": "Produtos Relacionados",
+      "settings": {
+        "section_width": "container",
+        "color_scheme": "",
+        "heading": "Produtos Semelhantes",
+        "description": "Veja produtos parecidos que outras pessoas também pesquisaram.",
+        "header_size": "medium",
+        "header_alignment": "center",
+        "items_to_show": 4,
+        "items_per_row": 4,
+        "column_gap": 30,
+        "items_per_row_mobile": 1.5,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "reset_spacing": false
+      }
+    },
+    "divider_HtLXd3": {
+      "type": "divider",
+      "settings": {
+        "section_width": "container",
+        "border_height": 1,
+        "border_color": "#ebebeb",
+        "reset_spacing": false
+      }
+    },
+    "products_recently_viewed_GdCNUL": {
+      "type": "products-recently-viewed",
+      "name": "Vistos Recentemente",
+      "settings": {
+        "section_width": "container",
+        "color_scheme": "",
+        "heading": "Vistos Recentemente",
+        "description": "Confira alguns produtos da sua última visita.",
+        "header_size": "medium",
+        "header_alignment": "center",
+        "items_to_show": 8,
+        "items_per_row": 4,
+        "column_gap": 30,
+        "show_arrow": true,
+        "carousel_pagination": "show_dots_on_mobile",
+        "infinite": false,
+        "autoplay": false,
+        "autorotate_speed": 5,
+        "reveal": false,
+        "items_per_row_mobile": 1.5,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "reset_spacing": false
+      }
+    },
+    "1785956660a4b22876": {
+      "type": "apps",
+      "disabled": true,
+      "settings": {},
+      "blocks": {
+        "judge_me_reviews_review_widget_yAkyq": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": false,
+          "settings": {
+            "review_data": "real_data",
+            "max_width": 1200,
+            "paragraph-93c212c42b8d402077407f38bbdc3d0a": null,
+            "show_shop_reviews": false,
+            "empty_state": "other_products_reviews",
+            "paragraph-481fb580e26072d704792baec1b3532e": null,
+            "paragraph-6b209871db6cfd8f971953e554763241": null
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_yAkyq"
+      ]
+    },
+    "1792088625dc71acf2": {
+      "type": "apps",
+      "disabled": false,
+      "settings": {},
+      "blocks": {
+        "judge_me_reviews_review_widget_9JktP": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": false,
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1000,
+            "paragraph-6d3fadb0676201339239a9bddec84e5c": null,
+            "show_shop_reviews": true,
+            "empty_state": "other_products_reviews",
+            "paragraph-b3d8151d42f7ce328da9b1ebaef0a8b2": null,
+            "paragraph-d240c1006b7f3b1f5ec2abc897500b87": null
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_9JktP"
+      ]
+    },
+    "faq_NnNnA": {
+      "type": "faq",
+      "disabled": false,
+      "settings": {
+        "section_width": "container",
+        "color_scheme": "",
+        "header-e085203780bdd01231899020bbc58cee": null,
+        "heading": "Perguntas Frequentes",
+        "description": "",
+        "header_size": "medium",
+        "header_alignment": "center",
+        "header-492165343b0de2a41e2be63addd67a58": null,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "reset_spacing": false
+      },
+      "blocks": {
+        "faq_items_CkYbe": {
+          "type": "faq-items",
+          "disabled": false,
+          "settings": {
+            "faq_title": "Os produtos da BRK possuem proteção solar real?",
+            "faq_content": "Sim. Nossas camisas contam com a tecnologia <strong>UV50+</strong>, que bloqueia até 98% dos raios UVA e UVB. Essa proteção é aplicada diretamente nas fibras do tecido, o que garante que a eficácia não saia nas lavagens, mantendo você seguro durante toda a vida útil da peça.",
+            "show_on": "camisas"
+          }
+        },
+        "faq_items_qnq7X": {
+          "type": "faq-items",
+          "disabled": false,
+          "settings": {
+            "faq_title": "Qual é o diferencial do tecido das camisas BRK?",
+            "faq_content": "Utilizamos tecidos de alta tecnologia, que permite a rápida evaporação do suor, mantendo o corpo seco e em temperatura agradável, mesmo em atividades sob sol intenso ou práticas esportivas.",
+            "show_on": "camisas"
+          }
+        },
+        "faq_items_zydbb": {
+          "type": "faq-items",
+          "disabled": false,
+          "settings": {
+            "faq_title": "Como escolher o tamanho ideal para mim?",
+            "faq_content": "Em cada página de produto, disponibilizamos uma <strong>Tabela de Medidas</strong>. Recomendamos comparar as medidas de uma peça que você já usa com os nossos valores.",
+            "show_on": "camisas"
+          }
+        },
+        "faq_items_riHMK": {
+          "type": "faq-items",
+          "disabled": false,
+          "settings": {
+            "faq_title": "As cores das camisas desbotam com o tempo?",
+            "faq_content": "Não. Utilizamos um processo de sublimação de alta definição. Isso garante que as estampas e cores permaneçam vivas e vibrantes mesmo após diversas lavagens e exposição prolongada ao sol.",
+            "show_on": "camisas"
+          }
+        },
+        "faq_items_fYnQw": {
+          "type": "faq-items",
+          "disabled": false,
+          "settings": {
+            "faq_title": "Quais são as formas de pagamento e prazos de entrega?",
+            "faq_content": "Aceitamos as principais bandeiras de cartão de crédito (com parcelamento) e PIX. O prazo de entrega varia de acordo com a sua região e a modalidade de frete escolhida no carrinho.",
+            "show_on": "all"
+          }
+        },
+        "faq_items_YrMf9": {
+          "type": "faq-items",
+          "disabled": false,
+          "settings": {
+            "faq_title": "Posso trocar o produto se não servir?",
+            "faq_content": "Se você recebeu um produto e não ficou satisfeito ou ele simplesmente não serviu, é possível fazer a solicitação devolução para estorno <strong>em até 7 dias corridos após a entrega</strong>. Para isso, o produto deverá estar em sua embalagem original, sem indícios de uso e com todos os itens e acessórios recebidos. Para os casos de insatisfação com o produto adquirido, solicite a troca, através do nosso Portal de Trocas e Devoluções, pelo endereço <a href=\"https://brkagro.troque.app.br/\" target=\"_blank\">https://brkfishing.troque.app.br/</a>",
+            "show_on": "all"
+          }
+        }
+      },
+      "block_order": [
+        "faq_items_CkYbe",
+        "faq_items_qnq7X",
+        "faq_items_zydbb",
+        "faq_items_riHMK",
+        "faq_items_fYnQw",
+        "faq_items_YrMf9"
+      ],
+      "name": "t:sections.faq.presets.name"
+    }
+  },
+  "order": [
+    "hw_skin",
+    "breadcrumb",
+    "main",
+    "brk_prova_social",
+    "product-set",
+    "divider_E3r6ih",
+    "brk_desc_tecnologia_xtech",
+    "custom_liquid_bzNYb6",
+    "scrolling_text_b38KNQ",
+    "divider_TKLM6L",
+    "related_products",
+    "divider_HtLXd3",
+    "1785956660a4b22876",
+    "1792088625dc71acf2",
+    "products_recently_viewed_GdCNUL",
+    "faq_NnNnA"
+  ]
+}
