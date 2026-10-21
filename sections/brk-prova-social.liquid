@@ -249,7 +249,7 @@
     overflow-x: clip;
     /* Pula a renderização enquanto está fora da tela; "auto" lembra a altura real depois da 1ª vez */
     content-visibility: auto;
-    contain-intrinsic-size: auto 480px;
+    contain-intrinsic-size: auto 540px;
   }
   .brk-social .brk-social__heading {
     margin: 0 16px 20px;
@@ -291,7 +291,7 @@
   .brk-social__card {
     position: relative;
     flex: 0 0 78%;
-    aspect-ratio: 5 / 6;
+    aspect-ratio: 3 / 4;
     border-radius: 16px;
     overflow: hidden;
     background: #f3f4f5;
@@ -388,7 +388,7 @@
   @media (min-width: 768px) {
     .brk-social {
       --brk-social-gap: 18px;
-      contain-intrinsic-size: auto 500px;
+      contain-intrinsic-size: auto 560px;
     }
     .brk-social .brk-social__heading {
       margin-bottom: 24px;
@@ -399,9 +399,10 @@
     .brk-social__title {
       font-size: 34px;
     }
+    /* respiro nas pontas: sem isso o 1º/último card encosta na borda da página */
     .brk-social__track {
-      padding: 0;
-      scroll-padding: 0;
+      padding: 0 30px;
+      scroll-padding: 0 30px;
     }
     .brk-social__card {
       flex-basis: clamp(200px, 21vw, 320px);
