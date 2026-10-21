@@ -611,12 +611,32 @@
                 assign td_tecnologia = td_tecnologia | default: block_st.tecnologia
                 assign td_modelagem = td_modelagem | default: block_st.modelagem
               endif
+
+              comment
+                Óculos: metafields custom.oculos_*. Cor da lente vem da variante quando preenchida (produtos com várias cores)
+                e é trocada via JS ao mudar de variante; senão, do produto.
+              endcomment
+              assign td_lente = product.metafields.custom.oculos_lente.value
+              assign td_uv = product.metafields.custom.oculos_protecao_uv.value
+              assign td_cor_lente = product.selected_or_first_available_variant.metafields.custom.oculos_cor_lente.value | default: product.metafields.custom.oculos_cor_lente.value
+              assign td_armacao = product.metafields.custom.oculos_armacao.value
+              assign td_haste = product.metafields.custom.oculos_haste.value
+              assign td_acompanha = product.metafields.custom.oculos_acompanha.value
+              assign td_cor_por_variante = false
+              for td_variant in product.variants
+                if td_variant.metafields.custom.oculos_cor_lente != blank
+                  assign td_cor_por_variante = true
+                  break
+                endif
+              endfor
             -%}
             {%- if td_prazo != blank
               or td_composicao != blank
               or td_tecido != blank
               or td_tecnologia != blank
               or td_modelagem != blank
+              or td_lente != blank
+              or td_cor_lente != blank
             -%}
               <details class="product-tech-details" id="TechDetails-{{ block.id }}" {{ block.shopify_attributes }}>
                 <summary class="product-tech-details__header">
@@ -668,6 +688,60 @@
                       <dd>{{ td_modelagem }}</dd>
                     </div>
                   {%- endif -%}
+                  {%- if td_lente != blank -%}
+                    <div class="product-tech-details__row">
+                      <dt>
+                        <span class="product-tech-details__icon"><img src="{{ 'tech-details-lente.svg' | file_url }}" alt="" width="14" height="14" loading="lazy"></span>
+                        Lente
+                      </dt>
+                      <dd>{{ td_lente }}</dd>
+                    </div>
+                  {%- endif -%}
+                  {%- if td_uv != blank -%}
+                    <div class="product-tech-details__row">
+                      <dt>
+                        <span class="product-tech-details__icon"><img src="{{ 'tech-details-uv.svg' | file_url }}" alt="" width="14" height="14" loading="lazy"></span>
+                        Proteção UV
+                      </dt>
+                      <dd>{{ td_uv }}</dd>
+                    </div>
+                  {%- endif -%}
+                  {%- if td_cor_lente != blank -%}
+                    <div class="product-tech-details__row" data-tech-cor-lente-row>
+                      <dt>
+                        <span class="product-tech-details__icon"><img src="{{ 'tech-details-cor-lente.svg' | file_url }}" alt="" width="14" height="14" loading="lazy"></span>
+                        Cor da Lente
+                      </dt>
+                      <dd data-tech-cor-lente>{{ td_cor_lente }}</dd>
+                    </div>
+                  {%- endif -%}
+                  {%- if td_armacao != blank -%}
+                    <div class="product-tech-details__row">
+                      <dt>
+                        <span class="product-tech-details__icon"><img src="{{ 'tech-details-armacao.svg' | file_url }}" alt="" width="14" height="14" loading="lazy"></span>
+                        Armação
+                      </dt>
+                      <dd>{{ td_armacao }}</dd>
+                    </div>
+                  {%- endif -%}
+                  {%- if td_haste != blank -%}
+                    <div class="product-tech-details__row">
+                      <dt>
+                        <span class="product-tech-details__icon"><img src="{{ 'tech-details-haste.svg' | file_url }}" alt="" width="14" height="14" loading="lazy"></span>
+                        Haste
+                      </dt>
+                      <dd>{{ td_haste }}</dd>
+                    </div>
+                  {%- endif -%}
+                  {%- if td_acompanha != blank -%}
+                    <div class="product-tech-details__row">
+                      <dt>
+                        <span class="product-tech-details__icon"><img src="{{ 'tech-details-acompanha.svg' | file_url }}" alt="" width="14" height="14" loading="lazy"></span>
+                        Acompanha
+                      </dt>
+                      <dd>{{ td_acompanha }}</dd>
+                    </div>
+                  {%- endif -%}
                 </dl>
               </details>
               <script>
@@ -676,6 +750,29 @@
                   document.getElementById('TechDetails-{{ block.id }}').open = true;
                 }
               </script>
+              {%- if td_cor_por_variante -%}
+                <script>
+                  // Cor da lente por variante: acompanha a troca de variante do formulário principal
+                  (() => {
+                    const cores = {
+                      {%- for td_variant in product.variants -%}
+                        "{{ td_variant.id }}": {{ td_variant.metafields.custom.oculos_cor_lente.value | default: product.metafields.custom.oculos_cor_lente.value | json }}{% unless forloop.last %},{% endunless %}
+                      {%- endfor -%}
+                    };
+                    const details = document.getElementById('TechDetails-{{ block.id }}');
+                    const row = details?.querySelector('[data-tech-cor-lente-row]');
+                    const value = row?.querySelector('[data-tech-cor-lente]');
+                    if (!row || !value) return;
+                    document.addEventListener('change', (event) => {
+                      const input = event.target;
+                      if (input.name !== 'id' || !input.closest('#{{ product_form_id }}')) return;
+                      const cor = cores[input.value];
+                      row.hidden = !cor;
+                      if (cor) value.textContent = cor;
+                    });
+                  })();
+                </script>
+              {%- endif -%}
             {%- endif -%}
           {%- when 'sku_prazo' -%}
             {% if product.tags contains 'prazo_producao'
@@ -2231,7 +2328,7 @@
       "settings": [
         {
           "type": "paragraph",
-          "content": "Cada linha usa o metafield do produto (custom.prazo_producao, composicao, tecido, tecnologia, modelagem) e, se vazio, o valor padrão abaixo. Produtos com a tag prazo_imediato mostram \"Pronta Entrega\". Linha sem valor não aparece."
+          "content": "Cada linha usa o metafield do produto (custom.prazo_producao, composicao, tecido, tecnologia, modelagem) e, se vazio, o valor padrão abaixo. Produtos com a tag prazo_imediato mostram \"Pronta Entrega\". Óculos usam custom.oculos_lente, oculos_protecao_uv, oculos_cor_lente (produto ou variante), oculos_armacao, oculos_haste e oculos_acompanha. Linha sem valor não aparece."
         },
         {
           "type": "text",
