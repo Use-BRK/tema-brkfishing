@@ -528,9 +528,9 @@
             "influencer_1": "",
             "product_1": "oculos-de-sol-square-black-mirror",
             "header-7e08ba403395a65a5e3f8a6de98511f9": null,
-            "video_2": null,
-            "influencer_2": "",
-            "product_2": "",
+            "video_2": "shopify://files/videos/oculos_fishing_05.mp4",
+            "influencer_2": "@furlananderson",
+            "product_2": "oculos-de-sol-skyline",
             "header-cc0f1f1b3c2d6c7ffce8c8226892a665": null,
             "video_3": null,
             "influencer_3": "",
@@ -600,9 +600,9 @@
       "settings": {
         "sku_prefixes": "C0, FUSION, HYB, CAX, BP, CI",
         "title_prefixes": "",
+        "tec_title": "XTech Pro ®",
         "feature_2_line1": "Toque ultra",
-        "feature_2_line2": "GELADO",
-        "tec_title": "XTech Pro ®"
+        "feature_2_line2": "GELADO"
       },
       "blocks": {},
       "name": "Descrição"
