@@ -206,7 +206,7 @@
           position_index: default_position,
           desktop_layout: desktop_layout
         %}
-        {%- unless template.suffix == 'raptorx' -%}
+        {%- unless template.suffix == 'raptorx' or section_st.show_media_wishlist == false -%}
           {% if wishlist == empty %}
             {% assign action_when_click_added_wishlist = 'remove' %}
           {% endif %}
@@ -1949,6 +1949,12 @@
       "type": "header",
       "content": "t:sections.main-product.settings.media.header",
       "info": "t:sections.main-product.settings.media.paragraph"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_media_wishlist",
+      "default": true,
+      "label": "Mostrar botão de wishlist sobre a imagem"
     },
     {
       "type": "range",

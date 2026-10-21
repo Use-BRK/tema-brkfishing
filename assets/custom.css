@@ -1597,9 +1597,17 @@ html.open-minicart #edrone--main--custom-popup--container {
   .horizontal-list > .level0.visible > menu-item > a {
     color: #135ed1;
   }
-  .horizontal-list > .level0 > menu-item > a:after,
-  .horizontal-list > .level0 > menu-item .icon-down {
+  .horizontal-list > .level0 > menu-item > a:after {
     display: none;
+  }
+  /* setinha indicando que o item tem dropdown no hover */
+  .horizontal-list > .level0 > menu-item .icon-down {
+    display: block;
+    transition: transform var(--animation-default, 0.3s ease);
+  }
+  .horizontal-list > .level0:hover > menu-item .icon-down,
+  .horizontal-list > .level0.visible > menu-item .icon-down {
+    transform: rotate(180deg);
   }
 
   .horizontal-list .submenu.full-width {

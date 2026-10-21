@@ -70,6 +70,46 @@
   .select-collection-tab {
     border-bottom: 2px solid var(--color-heading);
   }
+  {%- if tab_header_style == 'horizontal' and horizontal_tab_style == 'fill' -%}
+    {%- assign tab_scope = '#shopify-section-' | append: section.id -%}
+    /* Botões das abas sempre na mesma linha; se não couber, rola na horizontal em vez de quebrar */
+    {{ tab_scope }} :has(> .collection-tab__ta) {
+      max-width: 100%;
+    }
+    {{ tab_scope }} .collection-tab__ta {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      min-width: 0;
+      scrollbar-width: none;
+    }
+    {{ tab_scope }} .collection-tab__ta::-webkit-scrollbar {
+      display: none;
+    }
+    {{ tab_scope }} .collection-tab__tab-item {
+      flex: 0 0 auto;
+    }
+    @media (max-width: 767px) {
+      {{ tab_scope }} .collection-tab__ta {
+        gap: 8px;
+      }
+      {{ tab_scope }} .collection-tab__tab-item {
+        font-size: 1.6rem;
+        padding: 8px 14px;
+      }
+    }
+    {%- if section_st.tab_button_custom_size -%}
+      {{ tab_scope }} .collection-tab__tab-item {
+        font-size: {{ section_st.tab_button_font_size }}px;
+        padding: {{ section_st.tab_button_padding_y }}px {{ section_st.tab_button_padding_x }}px;
+      }
+      @media (max-width: 767px) {
+        {{ tab_scope }} .collection-tab__tab-item {
+          font-size: {{ section_st.tab_button_font_size_mobile }}px;
+          padding: {{ section_st.tab_button_padding_y | times: 0.8 | round }}px {{ section_st.tab_button_padding_x | times: 0.7 | round }}px;
+        }
+      }
+    {%- endif -%}
+  {%- endif -%}
 {%- endstyle -%}
 <div
   class="section{% if section_st.padding_top < 30 %} pt-min{% endif %}{% if section_st.padding_bottom < 30 %} pb-min{% endif %} sec__collection-tab {% if show_load_more_button == true %}sec__products-loadmore {% endif %}color-{{ color_scheme }} gradient{{ reset_spacing }}{% if reveal %} overflow-hidden{% endif %}"
@@ -766,6 +806,59 @@
         }
       ],
       "default": "fill"
+    },
+    {
+      "type": "checkbox",
+      "id": "tab_button_custom_size",
+      "default": false,
+      "label": "Personalizar tamanho dos botões",
+      "info": "Desligado: tamanho padrão do tema (no mobile os botões já reduzem para caber em uma linha).",
+      "visible_if": "{{ section.settings.tab_header_style == 'horizontal' and section.settings.horizontal_tab_style == 'fill' }}"
+    },
+    {
+      "type": "range",
+      "id": "tab_button_font_size",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Fonte dos botões (desktop)",
+      "default": 20,
+      "visible_if": "{{ section.settings.tab_header_style == 'horizontal' and section.settings.horizontal_tab_style == 'fill' and section.settings.tab_button_custom_size }}"
+    },
+    {
+      "type": "range",
+      "id": "tab_button_font_size_mobile",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Fonte dos botões (mobile)",
+      "default": 15,
+      "visible_if": "{{ section.settings.tab_header_style == 'horizontal' and section.settings.horizontal_tab_style == 'fill' and section.settings.tab_button_custom_size }}"
+    },
+    {
+      "type": "range",
+      "id": "tab_button_padding_y",
+      "min": 4,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Espaçamento interno vertical",
+      "default": 10,
+      "visible_if": "{{ section.settings.tab_header_style == 'horizontal' and section.settings.horizontal_tab_style == 'fill' and section.settings.tab_button_custom_size }}"
+    },
+    {
+      "type": "range",
+      "id": "tab_button_padding_x",
+      "min": 8,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Espaçamento interno horizontal",
+      "info": "No mobile o espaçamento é reduzido automaticamente.",
+      "default": 20,
+      "visible_if": "{{ section.settings.tab_header_style == 'horizontal' and section.settings.horizontal_tab_style == 'fill' and section.settings.tab_button_custom_size }}"
     },
     {
       "type": "select",
