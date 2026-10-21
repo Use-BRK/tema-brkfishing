@@ -12,5 +12,13 @@
     "market": "br"
   },
   "parent": "collection.halloween.json",
-  "sections": {}
+  "sections": {
+    "main": {
+      "settings": {
+        "padding_top": 52,
+        "padding_bottom": 20
+      },
+      "blocks": {}
+    }
+  }
 }
