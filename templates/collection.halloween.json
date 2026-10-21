@@ -11,9 +11,7 @@
         "animate_fog": true,
         "bg_image_opacity": 35,
         "hero_fade": true,
-        "hero_link": "",
-        "hero_image_mobile": "shopify://shop_images/halloween-brk-2026-mobile.jpg",
-        "hero_image_desktop": "shopify://shop_images/halloween-brk-2026-desktop.jpg"
+        "hero_link": ""
       }
     },
     "banner": {
