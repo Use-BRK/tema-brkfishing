@@ -283,6 +283,7 @@
             </span>
           {%- endfor -%}
         </div>
+        {%- render 'cnm-cart-link', item: item -%}
       </div>
       {% if theme_st.enable_catalog_mode == false %}
         <mini-cart-remove-button
