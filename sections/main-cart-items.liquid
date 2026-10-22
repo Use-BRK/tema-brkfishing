@@ -380,6 +380,7 @@
                                   <span>{{ item.selling_plan_allocation.selling_plan.name }}</span>
                                 {%- endif -%}
                               </div>
+                              {%- render 'cnm-cart-link', item: item -%}
                             </div>
                             <cart-remove-button
                               class="brk-line__remove"

@@ -5,7 +5,13 @@
  * - Zoom/pan no preview.
  * - "Comprar Personalizada": add em 2 passos (camisa -> PE1198 nested com PNG + properties).
  * Sem dependências externas. Mockups e config vêm de data-attributes do <custom-name-modal>.
+ * Modo carrinho (data-cart-mode, snippets/cart-custom-name-modal.liquid): anexa o PE1198 a uma
+ * camisa que já está no minicart. Na página do produto o arquivo é incluído 2x (botão do produto + snippet
+ * global): o guard abaixo faz só a 1ª inclusão rodar.
  */
+(function () {
+if (window.__brkCnmLoaded) return;
+window.__brkCnmLoaded = true;
 // Conectores de nomes compostos (ficam em minúsculo e grudam na palavra seguinte na quebra)
 const NAME_CONNECTORS = new Set(["da", "de", "do", "das", "dos", "e", "di", "du", "del", "la", "le", "van", "von"]);
 
@@ -38,15 +44,21 @@ class CustomNameModal extends HTMLElement {
     this.acceptInput = this.querySelector(".cnm__accept");
     this.buyBtn = this.querySelector(".cnm__buy");
 
-    this.preloadImages();
+    // data-lazy (modal do minicart, presente em todas as páginas): mockups e fonte só ao abrir
+    this.lazy = this.hasAttribute("data-lazy");
+    if (!this.lazy) this.preloadImages();
     this.bindEvents();
+
+    // Modo carrinho: o modal fica fora do <cart-notification>; sem isso, o clique
+    // dentro dele conta como "fora do drawer" e fecha o minicart por trás.
+    if (this.hasAttribute("data-cart-mode")) this.addEventListener("click", (e) => e.stopPropagation());
 
     // defaults
     this.setSide("frente");
     const activeMode = this.querySelector("[data-mode].active") || this.querySelector("[data-mode]");
     if (activeMode) this.setMode(activeMode.dataset.mode, activeMode);
     this.syncBuyEnabled();
-    this.ensureFontThenDraw();
+    if (!this.lazy) this.ensureFontThenDraw();
   }
 
   maxLen() { return this.state.mode === "company" ? 30 : 20; }
@@ -276,9 +288,40 @@ class CustomNameModal extends HTMLElement {
     // de qualquer ancestral com transform/contain (era o que jogava o topo sob o header).
     if (this.parentElement !== document.body) document.body.appendChild(this);
     this.syncSizeFromProduct(); // abre já no tamanho escolhido na página (sem descasar)
+    if (this.lazy && !this._lazyLoaded) {
+      this._lazyLoaded = true;
+      if (!document.querySelector('link[href*="family=Oswald"]')) {
+        const font = document.createElement("link");
+        font.rel = "stylesheet";
+        font.href = "https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap";
+        document.head.appendChild(font);
+      }
+      this.preloadImages();
+    }
     this.hidden = false;
     document.documentElement.style.overflow = "hidden";
     this.ensureFontThenDraw();
+  }
+
+  /* Modo carrinho: abre para uma linha do minicart (dados do link .cnm-cart-open-js). */
+  openForLine(line) {
+    this._line = line;
+    const info = this.querySelector(".cnm__cart-product");
+    if (info) info.textContent = [line.title, line.variantTitle].filter(Boolean).join(" — ");
+    const split = this.querySelector(".cnm__cart-split");
+    if (split) split.hidden = !(line.quantity > 1);
+    // cada camisa começa do zero (Nome, Frente, campo vazio)
+    if (this.nameInput) this.nameInput.value = "";
+    this.state.name = "";
+    const nameMode = this.querySelector('[data-mode="name"]');
+    if (nameMode) this.setMode("name", nameMode);
+    this.setSide("frente");
+    if (this.counter) this.counter.textContent = `0/${this.maxLen()}`;
+    if (this.acceptInput) this.acceptInput.checked = false;
+    const msg = this.querySelector(".cnm__msg");
+    if (msg) msg.hidden = true;
+    this.syncBuyEnabled();
+    this.open();
   }
 
   // Dados das variantes (id + options) embutidos no snippet.
@@ -376,6 +419,7 @@ class CustomNameModal extends HTMLElement {
     if (!name) { this.flash("Digite o nome (até 20 caracteres)."); this.nameInput && this.nameInput.focus(); return; }
     if (!this.state.posKey) { this.flash("Escolha a posição."); return; }
     if (this.acceptInput && !this.acceptInput.checked) { this.flash("Você precisa aceitar os termos de personalização."); return; }
+    if (this.hasAttribute("data-cart-mode")) return this.buyForCartLine(name);
     const shirtId = this.getShirtVariantId();
     if (!shirtId) { this.flash("Selecione as opções do produto."); return; }
     if (!this.cfg.variantId) { this.flash("Produto de personalização não configurado."); return; }
@@ -414,6 +458,8 @@ class CustomNameModal extends HTMLElement {
       fd.append("items[1][properties][Local]", this.state.side === "frente" ? "Frente" : "Costas");
       fd.append("items[1][properties][Posição]", this.state.posLabel || "");
       if (blob) fd.append("items[1][properties][Arte]", blob, "personalizacao.png");
+      // origem da personalização (oculta no checkout, vai pro pedido): produto | minicart
+      fd.append("items[1][properties][_origem]", "produto");
       // Glozin 2.5.0: pede as sections do minicart para atualizar sem reload
       if (cn && typeof cn.getSectionsToRender === "function") {
         fd.append("sections", cn.getSectionsToRender().map((s) => s.id).join(","));
@@ -468,6 +514,170 @@ class CustomNameModal extends HTMLElement {
     }
   }
 
+  /* Modo carrinho: tira 1 unidade da camisa do carrinho e a devolve como linha
+     própria com o PE1198 aninhado (vale para 1 ou N unidades).
+     - A camisa nova leva a property oculta _brk_perso (valor único): sem ela o
+       Shopify soma na linha igual que já existe e o nome ficaria preso a todas as
+       unidades. O app da Intelipost regrava as properties das linhas a cada mudança
+       no carrinho (_Preço com desconto), o que troca as keys e funde linhas iguais;
+       a property única mantém a personalizada separada.
+     - Ordem: baixa 1 unidade da linha original (localizada no /cart.js na hora: a
+       key do minicart pode ter mudado) e só depois adiciona a personalizada. Ao
+       contrário, o Intelipost (que relê o carrinho após cada add e regrava as linhas
+       com a quantidade que leu) devolvia a unidade retirada. Se o add falhar, a
+       unidade volta; no fim confere a quantidade e corrige se foi revertida. */
+  async buyForCartLine(name) {
+    const line = this._line;
+    const buyBtn = this.querySelector(".cnm__buy");
+    if (!line || !line.variantId) { this.flash("Não foi possível identificar a camisa no carrinho."); return; }
+    if (!this.cfg.variantId) { this.flash("Produto de personalização não configurado."); return; }
+
+    if (buyBtn) { buyBtn.disabled = true; buyBtn.dataset.loading = "true"; }
+    const postJson = (path, data) =>
+      fetch(this.root + path, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(data) });
+    const getCart = () => fetch(this.root + "cart.js", { cache: "no-store", headers: { Accept: "application/json" } }).then((r) => r.json());
+    // linha "simples" da camisa: mesma variante, sem pai/filho (= ainda sem PE1198), fora de bundle/brinde
+    const findSource = (cart) => {
+      const items = (cart && cart.items) || [];
+      const parentKeys = new Set(items.filter((i) => i.parent_relationship).map((i) => i.parent_relationship.parent_key));
+      const ok = items.filter((i) => {
+        const p = i.properties || {};
+        return String(i.variant_id) === String(line.variantId) && !i.parent_relationship && !parentKeys.has(i.key) &&
+          !p._brk_bundle && p._brk_gift_progress !== "true";
+      });
+      return ok.find((i) => i.key === line.key) || ok[0] || null;
+    };
+    const wait = (ms) => new Promise((res) => setTimeout(res, ms));
+    let ok = false;
+    try {
+      const src0 = findSource(await getCart());
+      if (!src0) throw new Error("Essa camisa não está mais disponível para personalizar no carrinho.");
+      const expected = src0.quantity - 1;
+
+      // 1) baixa 1 unidade da linha original
+      const rc = await postJson("cart/change.js", { id: src0.key, quantity: expected });
+      if (!rc.ok) throw new Error("O carrinho mudou. Tente novamente.");
+      const restore = async () => {
+        try {
+          const src = findSource(await getCart());
+          if (src) await postJson("cart/change.js", { id: src.key, quantity: src.quantity + 1 });
+          else await postJson("cart/add.js", { items: [{ id: Number(line.variantId), quantity: 1 }] });
+        } catch (e) {}
+      };
+
+      // 2) adiciona a camisa personalizada (linha própria) + PE1198
+      const tag = String(Date.now());
+      const blob = await this.exportPng();
+      const fd = new FormData();
+      fd.append("items[0][id]", String(line.variantId));
+      fd.append("items[0][quantity]", "1");
+      fd.append("items[0][properties][_brk_perso]", tag);
+      fd.append("items[1][id]", String(this.cfg.variantId));
+      fd.append("items[1][quantity]", "1");
+      fd.append("items[1][parent_id]", String(line.variantId));
+      if (line.sku) fd.append("items[1][properties][Produto]", line.sku);
+      fd.append("items[1][properties][Tipo]", this.state.modeLabel);
+      fd.append("items[1][properties][Nome]", name);
+      fd.append("items[1][properties][Local]", this.state.side === "frente" ? "Frente" : "Costas");
+      fd.append("items[1][properties][Posição]", this.state.posLabel || "");
+      if (blob) fd.append("items[1][properties][Arte]", blob, "personalizacao.png");
+      fd.append("items[1][properties][_origem]", "minicart");
+      let r;
+      try {
+        r = await fetch(this.root + "cart/add.js", { method: "POST", headers: { Accept: "application/json" }, body: fd });
+      } catch (e) {
+        await restore();
+        throw e;
+      }
+      const d = await r.json().catch(() => ({}));
+      if (!r.ok) {
+        await restore();
+        throw new Error((d && d.description) || "Erro ao adicionar a personalização");
+      }
+
+      // 3) confere: o Intelipost pode regravar a linha original com a quantidade antiga
+      if (expected > 0) {
+        for (let attempt = 0; attempt < 2; attempt++) {
+          await wait(1200);
+          const src = findSource(await getCart());
+          if (!src || src.quantity <= expected) break;
+          await postJson("cart/change.js", { id: src.key, quantity: expected });
+        }
+      }
+
+      this._line = null;
+      ok = true;
+      this.close();
+    } catch (e) {
+      this.flash((e && e.message) || "Não foi possível adicionar a personalização.");
+    } finally {
+      if (buyBtn) delete buyBtn.dataset.loading;
+      this.syncBuyEnabled();
+      // atualiza o minicart (e a página /cart) mesmo em erro (a linha pode ter mudado)
+      await this.refreshMinicart();
+      await this.refreshCartPage(ok);
+    }
+  }
+
+  /* Minicart do Glozin 2.5/2.6 (sem refreshMinicartSection): mesma rotina do buy() da
+     página do produto — troca o HTML da section minicart-form, atualiza contadores/total
+     e re-vincula os listeners do drawer. */
+  async refreshMinicart() {
+    const cn = document.querySelector("cart-notification");
+    if (cn && typeof cn.refreshMinicartSection === "function") {
+      try { await cn.refreshMinicartSection(); } catch (e) {}
+      return;
+    }
+    try {
+      const sres = await fetch(this.root + "?sections=minicart-form", { cache: "no-store" });
+      const sectionHTML = (await sres.json())["minicart-form"];
+      const mcEl = document.getElementById("minicart-form");
+      if (mcEl && sectionHTML) {
+        const parsed = new DOMParser().parseFromString(sectionHTML, "text/html");
+        const inner = parsed.querySelector("#minicart-form");
+        mcEl.innerHTML = inner ? inner.innerHTML : sectionHTML;
+      }
+      const cart = await (await fetch(this.root + "cart.js", { cache: "no-store" })).json();
+      document.querySelectorAll(".cart-count").forEach((el) => {
+        el.innerHTML = el.classList.contains("cart-count-drawer")
+          ? `(${cart.item_count})`
+          : (cart.item_count > 100 ? "~" : cart.item_count);
+      });
+      const htp = document.querySelector("header-total-price");
+      if (htp && typeof htp.updateTotal === "function") htp.updateTotal(cart);
+      if (cn && typeof cn.cartAction === "function") cn.cartAction();
+    } catch (e) {}
+  }
+
+  /* Página /cart (sections/main-cart-items): re-renderiza os itens como o próprio
+     tema faz (assets/cart.js, CartItems.splitBrkAddon). Fora do /cart não faz nada. */
+  async refreshCartPage(ok) {
+    const items = document.querySelector("cart-items");
+    const main = document.getElementById("main-cart-items");
+    if (!items || !main || typeof items.getSectionsToRender !== "function") return;
+    try {
+      const sectionId = items.getSectionsToRender()[0].section;
+      const [html, cart] = await Promise.all([
+        fetch(`${window.location.pathname}?section_id=${sectionId}`, { cache: "no-store" }).then((r) => r.text()),
+        fetch(this.root + "cart.json", { cache: "no-store" }).then((r) => r.json()),
+      ]);
+      // tema sem CartUtils (Glozin 2.5): recarrega, como o próprio cart.js faz; em erro não
+      // recarrega para o cliente ver a mensagem no modal
+      if (typeof CartUtils === "undefined") { if (ok) window.location.reload(); return; }
+      CartUtils.updateCartCount(cart.item_count);
+      CartUtils.updateHeaderTotalPrice(cart);
+      CartUtils.updateFreeShippingBar(cart.items_subtotal_price);
+      CartUtils.updateCartUI({
+        parsedState: { ...cart, sections: { [sectionId]: html } },
+        sectionsToRender: items.getSectionsToRender(),
+        cartInstance: items,
+        totalsSelector: ".cart-info .totals",
+      });
+    } catch (e) {
+      if (ok) window.location.reload();
+    }
+  }
+
   flash(msg) {
     const el = this.querySelector(".cnm__msg");
     if (el) { el.textContent = msg; el.hidden = false; }
@@ -485,3 +695,21 @@ document.addEventListener("click", (e) => {
   const modal = sel && document.querySelector(sel);
   if (modal && typeof modal.open === "function") modal.open();
 });
+
+// Abertura pelo minicart: link .cnm-cart-open-js (snippets/cart-item.liquid) → #cnm-cart
+document.addEventListener("click", (e) => {
+  const trigger = e.target.closest(".cnm-cart-open-js");
+  if (!trigger) return;
+  e.preventDefault();
+  const modal = document.getElementById("cnm-cart");
+  if (!modal || typeof modal.openForLine !== "function") return;
+  modal.openForLine({
+    key: trigger.dataset.lineKey,
+    variantId: trigger.dataset.variantId,
+    quantity: Number(trigger.dataset.quantity) || 1,
+    sku: trigger.dataset.sku || "",
+    title: trigger.dataset.title || "",
+    variantTitle: trigger.dataset.variantTitle || "",
+  });
+});
+})();
