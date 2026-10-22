@@ -20,7 +20,9 @@
         "invert_logo": true,
         "fog_strength": 55,
         "animate_fog": true,
-        "bg_image_opacity": 35
+        "bg_image_opacity": 35,
+        "logo_light": "shopify://shop_images/logo-brk-fishing-branco.png",
+        "light_below_related": true
       }
     },
     "brk_prova_social": {
@@ -502,7 +504,7 @@
       ],
       "custom_css": [],
       "settings": {
-        "section_width": "container",
+        "section_width": "fluid_container",
         "color_scheme": "",
         "enable_sticky_content_on_desktop": true,
         "enable_skeleton_loading": false,
@@ -560,12 +562,12 @@
       "settings": {
         "sku_prefixes": "C0, FUSION, HYB, CAX, BP, CI",
         "title_prefixes": "",
-        "image_tecido": "shopify://shop_images/brk-desc-xtech-tecido.webp",
+        "image_tecido": "shopify://shop_images/brk-desc-xtech-tecido-halloween.webp",
         "image_logo": "shopify://shop_images/brk-desc-xtech-logo.webp",
         "tec_title": "XTech Pro ®",
         "feature_2_line1": "Toque ultra",
         "feature_2_line2": "GELADO",
-        "image_uv": "shopify://shop_images/brk-desc-uv50-braco.webp",
+        "image_uv": "shopify://shop_images/brk-desc-uv50-braco-halloween.webp",
         "image_selo": "shopify://shop_images/brk-desc-uv50-selo.webp"
       }
     },

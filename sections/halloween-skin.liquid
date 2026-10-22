@@ -8,6 +8,15 @@
   assign accent = st.accent_color | default: '#e3242b'
   assign hero_mobile = st.hero_image_mobile | default: st.hero_image_desktop
   assign hero_desktop = st.hero_image_desktop | default: st.hero_image_mobile
+  # zona clara: seções depois de "Produtos semelhantes" + rodapé voltam ao visual normal do tema
+  assign light_zone = '[id$="__related_products"] ~ .shopify-section, .shopify-section-group-footer-group'
+  assign not_light = ''
+  if st.light_below_related
+    assign not_light = ':not([id$="__related_products"] ~ .shopify-section *, .shopify-section-group-footer-group *)'
+  endif
+  for scheme in settings.color_schemes limit: 1
+    assign base = scheme.settings
+  endfor
 -%}
 
 <div class="hw-bg{% if st.animate_fog %} hw-bg--animate{% endif %}" aria-hidden="true">
@@ -51,8 +60,11 @@
     --hw-red-rgb: {{ accent.red }}, {{ accent.green }}, {{ accent.blue }};
     --hw-red-light: color-mix(in srgb, var(--hw-red) 75%, #fff);
     --hw-blue: {{ st.button_color | default: '#1a6fe0' }};
+    --hw-price: #fff;
+    /* contorno em degradê vermelho dos cards (usado nos cards de produto e nos quadros da descrição) */
+    --hw-card-border: linear-gradient(180deg, rgba(var(--hw-red-rgb), .55) 0%, rgba(255, 255, 255, .06) 40%, rgba(var(--hw-red-rgb), .25) 100%);
   }
-  :root, body, .color-default, [class*="color-scheme-"] {
+  :root, body, .color-default{{ not_light }}, [class*="color-scheme-"]{{ not_light }} {
     --color-background: var(--hw-bg);
     --gradient-background: var(--hw-bg);
     --color-primary: var(--hw-red);
@@ -120,9 +132,14 @@
   }
 
   /* ---------- header / menu ---------- */
-  .section-header .header, .section-header header, .section-top-bar > * {
-    background: rgba(8, 6, 7, .86) !important;
-    -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  .section-top-bar > * { background: var(--hw-red) !important; color: #fff; }
+  /* topbar: setas do rotativo (.swiper-action.gradient) puxam o azul do scheme; botão COPIAR tem azul fixo em sections/top-bar.liquid */
+  :root #topbar { --color-background: var(--hw-red); --gradient-background: var(--hw-red); }
+  :root #topbar .gradient { background: var(--hw-red) !important; }
+  :root #topbar .topbar-copy-btn { background: rgba(0, 0, 0, .3); border-color: rgba(255, 255, 255, .55); color: #fff; }
+  .section-header .header, .section-header header {
+    /* sem backdrop-filter: ele vira containing block e prende a gaveta do menu mobile (position: fixed) dentro do header */
+    background: rgba(8, 6, 7, .96) !important;
     border-color: var(--hw-line) !important;
   }
   {%- if st.logo_light != blank %}
@@ -132,22 +149,31 @@
     /* logo escuro em fundo escuro: inverte (preto -> branco) mantendo o azul do "FISHING" */
     .header__logo img { filter: invert(1) hue-rotate(180deg) contrast(1.3); mix-blend-mode: screen; }
   {%- endif %}
-  .horizontal-list > .level0 > menu-item > a { color: #fff !important; }
-  .horizontal-list > .level0.visible > menu-item > a { color: var(--hw-red-light) !important; }
+  /* menu desktop: textos brancos, destaques (hover/aberto, títulos do mega menu) em vermelho */
+  @media screen and (min-width: 1025px) {
+    :root .horizontal-list > .level0 > menu-item > a { color: #fff; }
+    :root .horizontal-list > .level0:hover > menu-item > a,
+    :root .horizontal-list > .level0.visible > menu-item > a { color: var(--hw-red); }
+    :root .horizontal-list .submenu.full-width { border-top-color: var(--hw-line); }
+    :root .horizontal-list .submenu.full-width .subchildmenu > .level-1 > menu-item > a { color: var(--hw-red); }
+    :root .horizontal-list .submenu.full-width .level-2 a { color: #fff; }
+    :root .horizontal-list .submenu.full-width .level-2 a:hover { color: var(--hw-red); }
+  }
 
   /* ---------- cards de produto ---------- */
   :root .grid__item {
     background:
       linear-gradient(var(--hw-surface), var(--hw-surface)) padding-box,
-      linear-gradient(180deg, rgba(var(--hw-red-rgb), .55) 0%, rgba(255, 255, 255, .06) 40%, rgba(var(--hw-red-rgb), .25) 100%) border-box;
+      var(--hw-card-border) border-box;
   }
   :root .grid__item:hover { box-shadow: 0 12px 30px -12px rgba(var(--hw-red-rgb), .55); }
   .product-item__inner { background: transparent !important; }
-  .card-product-price .price, .price.primary-color { color: #fff !important; }
+  .card-product-price .price, .price.primary-color { color: var(--hw-price) !important; }
+  .grid__item .card-product-price .price { color: var(--hw-red) !important; }
   .installment-payment, .installment-payment p { color: var(--hw-muted) !important; }
   .installment-payment strong { color: var(--hw-text) !important; }
   .product__badges-lancamento { background: var(--hw-red) !important; color: #fff !important; box-shadow: 0 0 12px rgba(var(--hw-red-rgb), .6); }
-  .product__add-cart.btn { background: rgba(255, 255, 255, .1) !important; color: #fff !important; }
+  .product__add-cart.btn { background: var(--hw-red) !important; color: #fff !important; }
 
   /* filtro flutuante (mobile) e cápsula (desktop) */
   :root .sec__collection-main .toolbar-products.toolbar-products--floating {
@@ -165,14 +191,35 @@
   }
   :root .sec__collection-main .toolbar-products.toolbar-products--capsule .gender-filter-label { background: #140e10; }
   :root .sec__collection-main .toolbar-products--capsule .btn-filter:hover { background: rgba(255, 255, 255, .06); }
+  /* desktop: brilho do gênero ativo era azul fixo; "Ordenar por:" era preto (sumia e "Em destaque" parecia deslocado) */
+  :root .sec__collection-main .toolbar-products.toolbar-products--capsule .gender-filter-btn.active { box-shadow: 0 .4rem 1.2rem rgba(var(--hw-red-rgb), .45); }
+  :root .sec__collection-main .toolbar-products.toolbar-products--capsule .gender-filter-btn:hover:not(.active),
+  :root .sec__collection-main .toolbar-products.toolbar-products--capsule .toolbar-sorter .select-selected:hover { background: rgba(255, 255, 255, .06); }
+  :root .sec__collection-main .toolbar-products.toolbar-products--capsule .sort-label-text { color: rgba(255, 255, 255, .6); }
+  :root .sec__collection-main .toolbar-products.toolbar-products--capsule .sort-icon-mobile { background: rgba(255, 255, 255, .08); }
 
   /* ---------- página de produto ---------- */
   .product-detail__rating-avg, .product-detail__rating-count, .installment-payment--inline { color: var(--hw-muted) !important; }
   .swiper-pagination-custom { background: rgba(0, 0, 0, .55) !important; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+  .product-detail__rating-star { color: #fff !important; }
+  /* botão Adicionar à sacola em vermelho (custom.css fixa #135ed1 nele; os outros botões primários seguem a cor do botão principal) */
+  :root section[class*=main-product-section] .product-detail__buy-buttons .product_submit_button {
+    --btn-primary-bg-color: var(--hw-red);
+    --btn-primary-bg-graident-color: var(--hw-red);
+    --btn-primary-hover-bg-color: color-mix(in srgb, var(--hw-red) 80%, #000);
+    --btn-primary-hover-bg-color-graident: color-mix(in srgb, var(--hw-red) 80%, #000);
+    background-color: var(--hw-red);
+  }
+  :root section[class*=main-product-section] .product-detail__buy-buttons .product_submit_button:hover { background-color: color-mix(in srgb, var(--hw-red) 80%, #000); }
   .ident-size-block .product__item-option span { color: #fff; }
+  .ident-size-block input:checked + .product__item-option { background-color: var(--hw-red) !important; border-color: var(--hw-red) !important; }
   .ident-size-block .product__item-option { border-color: rgba(255, 255, 255, .25) !important; }
   .brk-cl .brk-cl__swatch { background: var(--hw-surface) !important; border-color: var(--hw-line) !important; }
   .brk-cl .brk-cl__label span { color: var(--hw-text) !important; }
+  /* modelo (Masculino / Feminina / Infantil) atual marcado em vermelho */
+  .brk-cl .brk-cl__item.is-selected .brk-cl__swatch { background: var(--hw-red) !important; border-color: var(--hw-red) !important; box-shadow: 0 0 12px rgba(var(--hw-red-rgb), .45); }
+  .brk-cl .brk-cl__item.is-selected .brk-cl__label span { color: #fff !important; }
+  .brk-cl .brk-cl__item:not(.is-selected) .brk-cl__swatch:hover { border-color: var(--hw-red) !important; }
 
   :root section[class*=main-product-section] .product-feature-card { background-color: var(--hw-surface-2); box-shadow: inset 0 0 0 1px var(--hw-line); }
   :root section[class*=main-product-section] .product-feature-card__media { background-color: #2a2023; }
@@ -192,8 +239,8 @@
   :root section[class*=main-product-section] .product-tech-details__row { border-color: var(--hw-line); }
   :root section[class*=main-product-section] .product-tech-details__header,
   :root section[class*=main-product-section] .product-tech-details__row dd { color: #fff; }
-  :root section[class*=main-product-section] .product-tech-details__row dt { color: var(--hw-muted); }
-  :root section[class*=main-product-section] .product-tech-details__icon img { filter: invert(1); opacity: .75; }
+  :root section[class*=main-product-section] .product-tech-details__row dt { color: #fff; }
+  :root section[class*=main-product-section] .product-tech-details__icon img { filter: brightness(0) invert(1); }
 
   /* prova social + descrição tecnologia */
   :root .brk-social { --brk-social-navy: #fff; --brk-social-blue: var(--hw-red-light); }
@@ -201,15 +248,123 @@
   :root .brk-social .brk-social__influencer,
   :root .brk-social .brk-social__product { background: rgba(10, 7, 8, .72); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
   :root .brk-social .brk-social__product * { color: #fff; }
-  :root .brk-desc { --brk-desc-navy: #fff; --brk-desc-blue: var(--hw-red-light); --brk-desc-text: var(--hw-muted); --brk-desc-box: var(--hw-surface); }
+  :root .brk-desc { --brk-desc-navy: #fff; --brk-desc-blue: var(--hw-red-light); --brk-desc-text: #fff; --brk-desc-box: var(--hw-surface); }
   :root .brk-desc__note p, :root .brk-desc__note * { color: var(--hw-text); }
+  :root .brk-desc .brk-desc__features,
+  :root .brk-desc .brk-desc__note {
+    border: 1.5px solid transparent;
+    background: linear-gradient(var(--hw-surface), var(--hw-surface)) padding-box, var(--hw-card-border) border-box;
+  }
 
   /* avaliações (Judge.me) */
-  .jdgm-widget, .jdgm-widget .jm-text, .jdgm-widget p, .jdgm-widget span, .jdgm-widget button, .jdgm-tab { color: var(--hw-text) !important; }
-  .jdgm-widget .jm-star-rating__font-icon, .jdgm-widget .jdgm-star { color: #ffb020 !important; }
+  /* não vale na zona clara (not_light): lá o widget volta às cores originais do app */
+  .jdgm-widget{{ not_light }}, .jdgm-widget{{ not_light }} .jm-text, .jdgm-widget{{ not_light }} p, .jdgm-widget{{ not_light }} span, .jdgm-widget{{ not_light }} button, .jdgm-tab{{ not_light }} { color: var(--hw-text) !important; }
+  .jdgm-widget{{ not_light }} .jm-star-rating__font-icon, .jdgm-widget{{ not_light }} .jdgm-star { color: #ffb020 !important; }
+
+  /* ---------- menu mobile: barra "Menu" (azul vindo das configs do header, inline) ---------- */
+  :root .menu-mobile-title { --gradient-background: var(--hw-red) !important; --color-heading: #fff !important; background: var(--hw-red) !important; }
+
+  /* ---------- modal "Quero meu nome na camisa" (snippets/custom-name-button.liquid fixa branco/cinza/azul) ---------- */
+  :root .cnm__overlay { background: rgba(0, 0, 0, .75); }
+  :root .cnm__dialog { color: var(--hw-text); border: 1.5px solid transparent; background: linear-gradient(var(--hw-surface), var(--hw-surface)) padding-box, var(--hw-card-border) border-box; }
+  :root .cnm__title, :root .cnm__label, :root .cnm__close, :root .cnm__terms { color: #fff; }
+  :root .cnm__name { background: var(--hw-surface-2); border-color: rgba(255, 255, 255, .18); color: #fff; }
+  :root .cnm__counter, :root .cnm__illustrative { color: var(--hw-muted); }
+  :root .cnm__modes button, :root .cnm__sides button, :root .cnm__positions button { background: var(--hw-surface-2); border-color: rgba(255, 255, 255, .18); color: #fff; }
+  :root .cnm__modes button.active, :root .cnm__sides button.active { background: var(--hw-red); border-color: var(--hw-red); color: #fff; }
+  :root .cnm__positions button.active { border-color: var(--hw-red); box-shadow: 0 0 0 2px rgba(var(--hw-red-rgb), .3); }
+  :root .cnm__disclaimer { background: var(--hw-surface-2); border-color: var(--hw-line); }
+  :root .cnm__disclaimer p { color: var(--hw-muted); }
+  :root .cnm__disclaimer .cnm__disclaimer-strong strong { color: #fff; }
+  :root .cnm__hint-up { color: var(--hw-red-light); }
+  :root .cnm__msg { color: #ff6b6b; }
+  :root .cnm__terms input { accent-color: var(--hw-red); }
+  :root .cnm__sizes .product__item-option { border-color: rgba(255, 255, 255, .25) !important; color: #fff; }
+  :root .cnm__sizes input:checked + .product__item-option { background-color: var(--hw-red) !important; border-color: var(--hw-red) !important; color: #fff; }
+  :root .cnm__buy {
+    --btn-primary-bg-color: var(--hw-red);
+    --btn-primary-bg-graident-color: var(--hw-red);
+    --btn-primary-hover-bg-color: color-mix(in srgb, var(--hw-red) 80%, #000);
+    --btn-primary-hover-bg-color-graident: color-mix(in srgb, var(--hw-red) 80%, #000);
+  }
+
+  /* ---------- carrinho lateral (minicart) ---------- */
+  :root .brk-line { --brk-muted: var(--hw-muted); --brk-line-color: var(--hw-line); --brk-soft: var(--hw-surface-2); --brk-accent: var(--hw-red); }
+  :root .brk-qty { background: var(--hw-surface-2) !important; border-color: rgba(255, 255, 255, .18) !important; }
+  :root .brk-line__remove .cart-remove:hover { color: var(--hw-red); background: rgba(var(--hw-red-rgb), .12); }
+  :root .brk-line__discounts li { color: var(--hw-red); }
+  :root .brk-line__total.is-sale { color: #fff; }
+  :root .mini_cart_addon_btn svg path { fill: #fff; }
+  :root cart-notification .minicart-heading .cart-count-drawer { color: var(--hw-muted); }
+  :root cart-notification .drawer-bottom.cart__ctas { background: var(--hw-surface) !important; border-top-color: var(--hw-line) !important; }
+  :root .cart_bar_w { background-color: rgba(255, 255, 255, .15); }
+  /* ao bater o frete grátis / brinde o tema troca a barra pra verde (#14854e); aqui mantém o vermelho */
+  :root .cart_shipping_free .primary-color,
+  :root .cart_gift_unlocked .primary-color { --color-primary: var(--hw-red); --color-primary-rgb: var(--hw-red-rgb); }
+  :root .cart-coupon.bg-white, :root .bls__discount_code { background: var(--hw-surface-2) !important; color: #fff; border-color: var(--hw-line); }
+  :root .btn-cancel.btn-outline { background: transparent !important; color: #fff !important; border-color: rgba(255, 255, 255, .35) !important; }
+  :root cart-notification .btn-checkout {
+    --btn-primary-bg-color: var(--hw-red);
+    --btn-primary-bg-graident-color: var(--hw-red);
+    --btn-primary-hover-bg-color: color-mix(in srgb, var(--hw-red) 80%, #000);
+    --btn-primary-hover-bg-color-graident: color-mix(in srgb, var(--hw-red) 80%, #000);
+  }
 
   /* ---------- rodapé ---------- */
-  .shopify-section-group-footer-group > *, footer { background: rgba(5, 3, 4, .92) !important; }
+  {%- unless st.light_below_related %}
+    .shopify-section-group-footer-group > *, footer { background: rgba(5, 3, 4, .92) !important; }
+  {%- endunless %}
+
+  {%- if st.light_below_related %}
+    /* ---------- zona clara (abaixo de Produtos semelhantes) ---------- */
+    {{ light_zone }} {
+      --hw-surface: #fff;
+      --hw-surface-2: #f3f4f5;
+      --hw-line: {{ base.border_color }};
+      --hw-text: {{ base.text_color }};
+      --hw-muted: #707070;
+      --hw-price: {{ base.primary_color }};
+      --color-background: {{ base.background }};
+      --gradient-background: {{ base.background }};
+      --color-primary: {{ base.primary_color }};
+      --color-primary-rgb: {{ base.primary_color.red }}, {{ base.primary_color.green }}, {{ base.primary_color.blue }};
+      --color-text: {{ base.text_color }};
+      --color-text-rgb: {{ base.text_color.red }}, {{ base.text_color.green }}, {{ base.text_color.blue }};
+      --color-heading: {{ base.heading_color }};
+      --color-heading-rgb: {{ base.heading_color.red }}, {{ base.heading_color.green }}, {{ base.heading_color.blue }};
+      --color-link: {{ base.text_color }};
+      --color-link-hover: {{ base.primary_color }};
+      --color-border: {{ base.border_color }};
+      --btn-primary-color: {{ base.btn_primary_color }};
+      --btn-primary-hover-color: {{ base.btn_primary_hover_color }};
+      --btn-primary-bg-color: {{ base.btn_primary_background }};
+      --btn-primary-bg-graident-color: {{ base.btn_primary_background }};
+      --btn-primary-hover-bg-color: {{ base.btn_primary_hover_background }};
+      --btn-primary-hover-bg-color-graident: {{ base.btn_primary_hover_background }};
+      --btn-outline-color: {{ base.btn_outline_color }};
+      --btn-outline-border-color: {{ base.btn_outline_border_color }};
+      --btn-link-color: {{ base.button_link_color }};
+      --btn-link-hover-color: {{ base.button_link_hover_color }};
+      --input-color: {{ base.text_color }};
+      --input-bg: {{ base.background }};
+      --input-placeholder-color: rgba({{ base.heading_color.red }}, {{ base.heading_color.green }}, {{ base.heading_color.blue }}, .55);
+      --border-color-base: #e5e5e5;
+      --light-grey-color: #f5f5f5;
+      --grey-color: #f5f5f5;
+      color: var(--color-text);
+      background-color: var(--color-background);
+    }
+    /* #MainContent na frente pra vencer o "#MainContent .section { transparent }" (o FAQ tem .section no próprio wrapper) */
+    #MainContent [id$="__related_products"] ~ .shopify-section { background-color: var(--color-background); }
+    #MainContent [id$="__related_products"] ~ .shopify-section .section { background: transparent; }
+    /* a margem entre seções (.section margin-bottom) vazava pra fora do wrapper e mostrava o fundo escuro fixo;
+       flow-root segura a margem dentro do wrapper, que tem fundo claro */
+    #MainContent [id$="__related_products"] ~ .shopify-section,
+    .shopify-section-group-footer-group { display: flow-root; }
+    #MainContent [id$="__related_products"] ~ .shopify-section .card-product-price .price { color: var(--hw-price) !important; }
+    #MainContent [id$="__related_products"] ~ .shopify-section .product__add-cart.btn { background: #fff !important; color: #111 !important; }
+    #MainContent [id$="__related_products"] ~ .shopify-section .product__badges-lancamento { box-shadow: none; }
+  {%- endif %}
 {% endstyle %}
 
 {% schema %}
@@ -285,6 +440,13 @@
       "id": "logo_light",
       "label": "Logo claro (opcional)",
       "info": "Versão branca do logo, sem fundo. Se preenchido, substitui a inversão automática."
+    },
+    {
+      "type": "checkbox",
+      "id": "light_below_related",
+      "label": "Visual normal abaixo de \"Produtos semelhantes\"",
+      "info": "Página de produto: o escuro vai até a seção Produtos semelhantes; avaliações, vistos recentemente, FAQ e rodapé voltam às cores normais do tema.",
+      "default": false
     },
     {
       "type": "header",
