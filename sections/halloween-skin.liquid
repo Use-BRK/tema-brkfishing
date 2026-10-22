@@ -256,6 +256,13 @@
     background: linear-gradient(var(--hw-surface), var(--hw-surface)) padding-box, var(--hw-card-border) border-box;
   }
 
+  /* descrição do produto via Liquid personalizado (bandanas etc.): o HTML da descrição vem com cor inline
+     pensada pra fundo branco (#000, #555, #666, borda #ccc) e sumia no fundo escuro */
+  :root .sec__custom-liquid{{ not_light }} .sec__inner,
+  :root .sec__custom-liquid{{ not_light }} .sec__inner :is(p, span, li, div, br) { color: var(--hw-text) !important; }
+  :root .sec__custom-liquid{{ not_light }} .sec__inner :is(h1, h2, h3, h4, h5, h6, strong, b) { color: #fff !important; }
+  :root .sec__custom-liquid{{ not_light }} .sec__inner [style*="border"] { border-color: var(--hw-line) !important; }
+
   /* avaliações (Judge.me) */
   /* não vale na zona clara (not_light): lá o widget volta às cores originais do app */
   .jdgm-widget{{ not_light }}, .jdgm-widget{{ not_light }} .jm-text, .jdgm-widget{{ not_light }} p, .jdgm-widget{{ not_light }} span, .jdgm-widget{{ not_light }} button, .jdgm-tab{{ not_light }} { color: var(--hw-text) !important; }
