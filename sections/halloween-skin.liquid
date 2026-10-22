@@ -258,10 +258,46 @@
 
   /* descrição do produto via Liquid personalizado (bandanas etc.): o HTML da descrição vem com cor inline
      pensada pra fundo branco (#000, #555, #666, borda #ccc) e sumia no fundo escuro */
+  /* (o modelo novo .brk-desc-wrapper tem regras próprias logo abaixo) */
   :root .sec__custom-liquid{{ not_light }} .sec__inner,
-  :root .sec__custom-liquid{{ not_light }} .sec__inner :is(p, span, li, div, br) { color: var(--hw-text) !important; }
-  :root .sec__custom-liquid{{ not_light }} .sec__inner :is(h1, h2, h3, h4, h5, h6, strong, b) { color: #fff !important; }
-  :root .sec__custom-liquid{{ not_light }} .sec__inner [style*="border"] { border-color: var(--hw-line) !important; }
+  :root .sec__custom-liquid{{ not_light }} .sec__inner :is(p, span, li, div, br):not(.brk-desc-wrapper, .brk-desc-wrapper *) { color: var(--hw-text) !important; }
+  :root .sec__custom-liquid{{ not_light }} .sec__inner :is(h1, h2, h3, h4, h5, h6, strong, b):not(.brk-desc-wrapper *) { color: #fff !important; }
+  :root .sec__custom-liquid{{ not_light }} .sec__inner [style*="border"]:not(.brk-desc-wrapper *) { border-color: var(--hw-line) !important; }
+
+  /* descrição modelo novo (BRK MODO B: .brk-desc-wrapper com <style> próprio de cards brancos e azul #0284c7),
+     usada nas bandanas Halloween: cards escuros com contorno vermelho, azul vira vermelho */
+  {%- capture bd %}:root .sec__custom-liquid{{ not_light }} .brk-desc-wrapper{% endcapture %}
+  {{ bd }} { color: var(--hw-text); }
+  {{ bd }} :is(.brk-desc-main-title, .brk-badge-title, .brk-desc-title, .brk-desc-specs-title, .brk-spec-value, .brk-care-text strong, .brk-sg-heading, .brk-trust-title, .brk-sg-tip strong, .brk-sg-table td strong) { color: #fff; }
+  {{ bd }} :is(.brk-desc-paragraph, .brk-variations-notice, .brk-desc-care-box, .brk-sg-tip, .brk-sg-table td) { color: var(--hw-text); }
+  {{ bd }} :is(.brk-badge-sub, .brk-spec-label, .brk-trust-desc) { color: var(--hw-muted); }
+  {{ bd }} .brk-svg-icon, {{ bd }} .brk-svg-icon * { fill: var(--hw-red-light); }
+
+  {{ bd }} :is(.brk-desc-header, .brk-desc-specs-title) { border-bottom-color: var(--hw-line); }
+  {{ bd }} .brk-spec-item { border-bottom-color: var(--hw-line); }
+  {{ bd }} :is(.brk-desc-origin-badge, .brk-desc-tag, .brk-badge-icon, .brk-sg-trigger) {
+    background: rgba(var(--hw-red-rgb), .12); border-color: rgba(var(--hw-red-rgb), .35); color: var(--hw-red-light);
+  }
+  /* cards: mesmo contorno em degradê vermelho dos quadros da descrição de tecnologia */
+  {{ bd }} :is(.brk-badge-item, .brk-desc-block.brk-desc-block-text-only, .brk-desc-specs-box, .brk-size-guide, .brk-trust-item) {
+    border: 1.5px solid transparent; box-shadow: none;
+    background: linear-gradient(var(--hw-surface), var(--hw-surface)) padding-box, var(--hw-card-border) border-box;
+  }
+  {{ bd }} :is(.brk-desc-care-box, .brk-variations-notice, .brk-sg-tip) {
+    background: var(--hw-surface-2); border-color: var(--hw-line); border-left-color: var(--hw-red);
+  }
+  {{ bd }} .brk-desc-copyright-box { background: rgba(var(--hw-red-rgb), .08); border-color: rgba(var(--hw-red-rgb), .25); border-left-color: var(--hw-red); }
+  {{ bd }} .brk-copyright-text, {{ bd }} .brk-copyright-text strong { color: var(--hw-text); }
+  {{ bd }} .brk-desc-media img { background: var(--hw-surface); border-color: var(--hw-line); box-shadow: 0 6px 20px rgba(0, 0, 0, .5); }
+
+  /* tabela de medidas (accordion) */
+  {{ bd }} .brk-sg-summary { background: var(--hw-surface-2); color: #fff; }
+  {{ bd }} .brk-size-guide[open] .brk-sg-summary { background: rgba(var(--hw-red-rgb), .1); border-bottom-color: var(--hw-line); }
+  {{ bd }} .brk-sg-card-header { background: var(--hw-red); }
+  {{ bd }} .brk-sg-table th, {{ bd }} .brk-sg-th-row th { background: var(--hw-surface-2) !important; color: #fff !important; border-bottom-color: var(--hw-line); }
+  {{ bd }} .brk-sg-table td { background: transparent; border-bottom-color: var(--hw-line); }
+  {{ bd }} .brk-sg-table tr:nth-child(even) td { background: rgba(255, 255, 255, .03); }
+  {{ bd }} .brk-sg-table tr:hover td { background: rgba(var(--hw-red-rgb), .1); }
 
   /* avaliações (Judge.me) */
   /* não vale na zona clara (not_light): lá o widget volta às cores originais do app */
