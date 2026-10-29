@@ -383,21 +383,6 @@
     },
     "content_for_index": [],
     "blocks": {
-      "17730292167556765394": {
-        "type": "shopify://apps/pagbrasil-app-companion/blocks/app_embedded_extra_info/356201f0-7b27-4511-ac69-c1627db6da45",
-        "disabled": false,
-        "settings": {}
-      },
-      "15184704725445319147": {
-        "type": "shopify://apps/pagbrasil-app-companion/blocks/app_embedded_pagshield/356201f0-7b27-4511-ac69-c1627db6da45",
-        "disabled": false,
-        "settings": {}
-      },
-      "4893908813801555860": {
-        "type": "shopify://apps/pagbrasil-app-companion/blocks/app_embedded_pagstream/356201f0-7b27-4511-ac69-c1627db6da45",
-        "disabled": false,
-        "settings": {}
-      },
       "2567389343055140935": {
         "type": "shopify://apps/microsoft-clarity/blocks/clarity_js/31c3d126-8116-4b4a-8ba1-baeda7c4aeea",
         "disabled": false,
@@ -426,6 +411,21 @@
       "14060646107696862457": {
         "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
         "disabled": false,
+        "settings": {}
+      },
+      "4893908813801555860": {
+        "type": "shopify://apps/pagbrasil-app-companion/blocks/app_embedded_pagstream/356201f0-7b27-4511-ac69-c1627db6da45",
+        "disabled": true,
+        "settings": {}
+      },
+      "15184704725445319147": {
+        "type": "shopify://apps/pagbrasil-app-companion/blocks/app_embedded_pagshield/356201f0-7b27-4511-ac69-c1627db6da45",
+        "disabled": true,
+        "settings": {}
+      },
+      "17730292167556765394": {
+        "type": "shopify://apps/pagbrasil-app-companion/blocks/app_embedded_extra_info/356201f0-7b27-4511-ac69-c1627db6da45",
+        "disabled": true,
         "settings": {}
       }
     },
