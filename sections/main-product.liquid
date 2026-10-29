@@ -574,6 +574,9 @@
               else
                 assign td_prazo = product.metafields.custom.prazo_producao.value | default: block_st.prazo_padrao
               endif
+              assign td_dias = td_prazo | split: ' ' | first | plus: 0
+              assign td_prazo_main = td_prazo | split: ' + ' | first
+              assign td_prazo_suf = td_prazo | remove_first: td_prazo_main | strip
 
               assign td_prefix = ''
               assign td_letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -651,8 +654,13 @@
                       <dt>
                         <span class="product-tech-details__icon"><img src="{{ 'tech-details-envio.svg' | file_url }}" alt="" width="14" height="14" loading="lazy"></span>
                         Prazo de Envio
+                        {%- unless product.tags contains 'prazo_imediato' -%}{% render 'brk-prazo-help', dias: td_dias, uid: block.id, button_only: true, class: 'brk-prazo-q--mobile' %}{%- endunless %}
                       </dt>
-                      <dd>{{ td_prazo }}</dd>
+                      <dd>
+                        {%- unless product.tags contains 'prazo_imediato' -%}{% render 'brk-prazo-help', dias: td_dias, uid: block.id, class: 'brk-prazo-q--desktop' %}{%- endunless -%}
+                        {{- td_prazo_main -}}
+                        {%- if td_prazo_suf != blank %} <span class="product-tech-details__sufixo">{{ td_prazo_suf }}</span>{% endif -%}
+                      </dd>
                     </div>
                   {%- endif -%}
                   {%- if td_composicao != blank -%}

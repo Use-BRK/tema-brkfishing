@@ -703,6 +703,21 @@ section[class*=main-product-section] .product-tech-details__icon img {
   max-width: 100%;
   height: auto;
 }
+/* "?" do prazo (snippet brk-prazo-help): desktop antes do texto do prazo, mobile ao lado do rótulo */
+section[class*=main-product-section] .product-tech-details__row dt .brk-prazo-q {
+  margin: 0 0 0 -2px;
+}
+section[class*=main-product-section] .product-tech-details__row .brk-prazo-q--mobile {
+  display: none;
+}
+@media (max-width: 767px) {
+  section[class*=main-product-section] .product-tech-details__row .brk-prazo-q--mobile {
+    display: inline-flex;
+  }
+  section[class*=main-product-section] .product-tech-details__row .brk-prazo-q--desktop {
+    display: none;
+  }
+}
 section[class*=main-product-section] .product-tech-details__row dd {
   margin: 0;
   color: #3a3a3a;
@@ -716,6 +731,13 @@ section[class*=main-product-section] .product-tech-details__row dd {
   section[class*=main-product-section] .product-tech-details__header,
   section[class*=main-product-section] .product-tech-details__row {
     padding-inline: 12px;
+  }
+  /* prazo: "+ Frete escolhido" na 2a linha pra não quebrar o texto com o "?" */
+  section[class*=main-product-section] .product-tech-details__row:has(.brk-prazo-q) {
+    gap: 10px;
+  }
+  section[class*=main-product-section] .product-tech-details__sufixo {
+    display: block;
   }
 }
 
