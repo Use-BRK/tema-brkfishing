@@ -1669,3 +1669,13 @@ html.open-minicart #edrone--main--custom-popup--container {
     color: #135ed1;
   }
 }
+
+/* Imagens do bucket S3 antigo (use-brk-images-s3), que foi excluído: estão nas
+   descrições de produto e nas páginas de tabela de medidas e quebram (404).
+   Oculta a imagem e o bloco que só a contém, até as descrições serem limpas. */
+img[src*="use-brk-images-s3"] {
+  display: none !important;
+}
+:where(div, p, figure, a):has(> img[src*="use-brk-images-s3"]:only-child) {
+  display: none !important;
+}

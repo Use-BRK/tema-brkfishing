@@ -32,6 +32,14 @@
       <meta name="description" content="{{ page_description | escape }}">
     {% endif %}
     {% render 'meta-tags' %}
+    <script>
+      // Bloqueia o "script customizado" do edrone (externals/custom/<app_id>/*.js), feito
+      // para outro tema: lê #news-name sem checar e dá erro em todo clique. O edrone só
+      // carrega esse script (e o CSS custom, vazio) quando a config dele preenche
+      // window._edrone_custom; aqui a variável fica sempre vazia. O setter vazio evita
+      // TypeError na atribuição do edrone, então o resto (popups, tracking) segue normal.
+      Object.defineProperty(window, '_edrone_custom', { configurable: false, get: function () {}, set: function () {} });
+    </script>
     {{ content_for_header }}
     {{ 'critical.css' | asset_url | stylesheet_tag }}
     {{ 'custom.css' | asset_url | stylesheet_tag }}
