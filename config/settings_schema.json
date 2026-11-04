@@ -1559,6 +1559,19 @@
       },
       {
         "type": "checkbox",
+        "id": "show_coupon_checkout_note",
+        "label": "Mostrar aviso de cupom no lugar do campo",
+        "info": "Aparece no minicart quando o código de desconto (opção acima) está desativado.",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "coupon_checkout_note",
+        "label": "Texto do aviso de cupom",
+        "default": "Para usar cupons avance para o checkout."
+      },
+      {
+        "type": "checkbox",
         "id": "enable_gift_wrap",
         "label": "t:settings_schema.cart.settings.cart_addons.enable_gift_wrap.label",
         "default": true

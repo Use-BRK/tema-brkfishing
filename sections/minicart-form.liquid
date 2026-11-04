@@ -249,6 +249,11 @@
         {%- render 'cart-addons' -%}
       {% endif %}
       <div class="drawer-bottom cart__ctas px-30 pt-20 pb-30 grey-bg border-top">
+        {%- unless settings.enable_discount_code -%}
+          {%- if settings.show_coupon_checkout_note and settings.coupon_checkout_note != blank -%}
+            <p class="minicart-coupon-note fs-small dark-grey text-center mt-0 mb-10">{{ settings.coupon_checkout_note | escape }}</p>
+          {%- endif -%}
+        {%- endunless -%}
         {% if hidden_price == false %}
           <div class="cart-summary {% if enable_rtl %}text-left{% else %}text-right{% endif %}" data-cart-summary>
             <div data-discounts>
