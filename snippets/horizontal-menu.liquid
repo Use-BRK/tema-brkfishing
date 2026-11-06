@@ -184,15 +184,30 @@
                         >
                       
        
+                          {%- liquid
+                            # BRK: banner 1 aparece embaixo do sublink que aponta para o mesmo link do banner
+                            assign inline_banner = false
+                            if block_st.promotion_image_1 != blank and block_st.promotion_link_1 != blank
+                              for child_link in link.links
+                                if child_link.url == block_st.promotion_link_1
+                                  assign inline_banner = true
+                                endif
+                              endfor
+                            endif
+                          -%}
                           {% if link.links.size > 0 %}
                             <div
                               class="menu-list"
                               style="--row-gap: 40px; --col-desktop:{{ block_st.promotion_menu_column }};"
                             >
-                              {%- render 'submenu-list' , link: link , only_for_domain: only_for_glozin -%}
+                              {%- if inline_banner -%}
+                                {%- render 'submenu-list' , link: link , only_for_domain: only_for_glozin, inline_banner_image: block_st.promotion_image_1, inline_banner_url: block_st.promotion_link_1 -%}
+                              {%- else -%}
+                                {%- render 'submenu-list' , link: link , only_for_domain: only_for_glozin -%}
+                              {%- endif -%}
                             </div>
                           {% endif %}
-                          {%- if block_st.promotion_image_1 != blank or block_st.promotion_image_2 != blank -%}
+                          {%- if inline_banner == false and block_st.promotion_image_1 != blank or block_st.promotion_image_2 != blank -%}
                             <div class="col-mega {% if only_for_glozin == true %} hidden block-1025 {% endif %}">
                               <div  
                                 class="grid grid-cols gap-20 px-30 px-1025-0 {{ settings.hover_effect }}"
@@ -751,15 +766,30 @@
                         >
                       
        
+                          {%- liquid
+                            # BRK: banner 1 aparece embaixo do sublink que aponta para o mesmo link do banner
+                            assign inline_banner = false
+                            if block_st.promotion_image_1 != blank and block_st.promotion_link_1 != blank
+                              for child_link in link.links
+                                if child_link.url == block_st.promotion_link_1
+                                  assign inline_banner = true
+                                endif
+                              endfor
+                            endif
+                          -%}
                           {% if link.links.size > 0 %}
                             <div
                               class="menu-list"
                               style="--row-gap: 40px; --col-desktop:{{ block_st.promotion_menu_column }};"
                             >
-                              {%- render 'submenu-list' , link: link , only_for_domain: only_for_glozin -%}
+                              {%- if inline_banner -%}
+                                {%- render 'submenu-list' , link: link , only_for_domain: only_for_glozin, inline_banner_image: block_st.promotion_image_1, inline_banner_url: block_st.promotion_link_1 -%}
+                              {%- else -%}
+                                {%- render 'submenu-list' , link: link , only_for_domain: only_for_glozin -%}
+                              {%- endif -%}
                             </div>
                           {% endif %}
-                          {%- if block_st.promotion_image_1 != blank or block_st.promotion_image_2 != blank -%}
+                          {%- if inline_banner == false and block_st.promotion_image_1 != blank or block_st.promotion_image_2 != blank -%}
                             <div class="col-mega {% if only_for_glozin == true %} hidden block-1025 {% endif %}">
                               <div  
                                 class="grid grid-cols gap-20 px-30 px-1025-0 {{ settings.hover_effect }}"

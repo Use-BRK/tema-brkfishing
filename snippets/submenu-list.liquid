@@ -156,6 +156,46 @@
             </open-children-toggle>
           {%- endif -%}
         </menu-item>
+        {%- if inline_banner_image != blank and child_link.url == inline_banner_url -%}
+          {%- comment -%} BRK: banner do mega menu embaixo do sublink, com borda animada girando {%- endcomment -%}
+          <style>
+            @property --mib-angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+            .menu-inline-banner {
+              display: block; position: relative; max-width: 250px; margin: 10px 0 15px; padding: 3px;
+              border-radius: calc(var(--rounded-radius, 10px) + 3px);
+              transition: transform .3s ease;
+            }
+            .menu-inline-banner:hover {
+              transform: scale(1.02);
+              background: conic-gradient(from var(--mib-angle), transparent 0 55%, #135ed1 75%, #7fb0ff 82%, #135ed1 88%, transparent 100%);
+              animation: mib-spin 2s linear infinite;
+            }
+            .menu-inline-banner img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: var(--rounded-radius, 10px); }
+            @keyframes mib-spin { to { --mib-angle: 360deg; } }
+            @media (min-width: 1025px) {
+              .menu-link:has(> .menu-inline-banner) { display: flex; flex-direction: column; }
+              .subchildmenu:has(.menu-inline-banner) { column-gap: 100px !important; }
+              .menu-inline-banner { flex: 1 1 0; min-height: 0; max-width: 180px; width: fit-content; margin-bottom: 0; align-self: flex-start; aspect-ratio: var(--mib-ar); }
+            }
+            @media (prefers-reduced-motion: reduce) { .menu-inline-banner:hover { animation: none; background: #135ed1; } }
+          </style>
+          <a
+            href="{{ inline_banner_url }}"
+            class="menu-inline-banner"
+            style="--mib-ar: {{ inline_banner_image.aspect_ratio }};"
+            aria-label="{{ inline_banner_image.alt | default: child_link.title | escape }}"
+          >
+            {{
+              inline_banner_image
+              | image_url: width: 500
+              | image_tag:
+                loading: 'lazy',
+                widths: '250, 375, 500',
+                sizes: '(min-width: 1025px) 250px, 100vw',
+                alt: inline_banner_image.alt
+            }}
+          </a>
+        {%- endif -%}
         {% if child_link.links.size > 0 %}
           <ul class="sub-children-menu{% if menu_type == 'dropdown' %} invisible-1025{% endif %} gradient transition absolute{% if menu_type != 'dropdown' %} static-1025{% endif %} list-unstyled">
             <li class="hidden-1025 grey-bg px-30 border-bottom flex gap-15 align-center justify-between{% if theme_st.menu_font == 'heading_font' %} heading-style{% endif %}">
