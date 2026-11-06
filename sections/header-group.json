@@ -81,6 +81,25 @@
             "promotion_link_newtab_2": true
           }
         },
+        "menu_promotion_blackfishing": {
+          "type": "menu_promotion",
+          "name": "Menu Black Fishing",
+          "settings": {
+            "text": "⏱️Black Fishing",
+            "open-link-newtab": false,
+            "item_label": "unset",
+            "promotion_menu_column": 2,
+            "mega_custom_width": 860,
+            "center_submenu": true,
+            "full_width": true,
+            "promotion_position": "right",
+            "promotion_image_width": 41,
+            "promotion_link_1": "",
+            "promotion_link_newtab_1": true,
+            "promotion_link_2": "",
+            "promotion_link_newtab_2": true
+          }
+        },
         "menu_promotion_EeqGGC": {
           "type": "menu_promotion",
           "name": "Menu Masculino",
@@ -197,6 +216,7 @@
       },
       "block_order": [
         "menu_promotion_ofertas",
+        "menu_promotion_blackfishing",
         "menu_promotion_EeqGGC",
         "menu_promotion_7tMNHN",
         "menu_promotion_C6gPrq",
