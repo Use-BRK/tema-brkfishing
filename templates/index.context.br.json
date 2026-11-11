@@ -110,9 +110,56 @@
         "padding_bottom": 0
       },
       "blocks": {
-        "card_PHKQk": {
+        "card_4ajXT": {
+          "type": "card",
+          "name": "Mais vendidas (masculinas)",
+          "disabled": false,
+          "settings": {
+            "image": "shopify://shop_images/01_f3828eab-a25b-4295-9c99-ed9b958035c4.png",
+            "image_mobile": null,
+            "collection": "",
+            "link": "shopify://collections/mais-vendidas-masculinas",
+            "label": ""
+          }
+        },
+        "card_LDmTz": {
+          "type": "card",
+          "name": "Mais vendidas (femininas)",
+          "disabled": false,
+          "settings": {
+            "image": "shopify://shop_images/02_dea0f2d6-5a2d-4923-837f-5f3eae6a7e27.png",
+            "image_mobile": null,
+            "collection": "",
+            "link": "shopify://collections/mais-vendidas-femininas",
+            "label": ""
+          }
+        },
+        "card_Fid93": {
+          "type": "card",
+          "name": "Face Funny",
+          "disabled": false,
+          "settings": {
+            "image": "shopify://shop_images/03_60d977dc-42cb-425a-8240-f8ada2c4611c.png",
+            "image_mobile": null,
+            "collection": "",
+            "link": "shopify://collections/funny-face",
+            "label": ""
+          }
+        },
+        "card_3kwU6": {
           "type": "card",
           "disabled": false,
+          "settings": {
+            "image": "shopify://shop_images/04_a0617118-b882-4b81-b797-08167838e323.png",
+            "image_mobile": null,
+            "collection": "",
+            "link": "shopify://collections/super-ofertas-🔥",
+            "label": ""
+          }
+        },
+        "card_PHKQk": {
+          "type": "card",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Card_MASTERX.webp",
             "image_mobile": null,
@@ -123,7 +170,7 @@
         },
         "card_JBzYi": {
           "type": "card",
-          "disabled": false,
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Card_HYBRID.webp",
             "image_mobile": null,
@@ -134,7 +181,7 @@
         },
         "card_JnFgd": {
           "type": "card",
-          "disabled": false,
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Card_FUSIONX.webp",
             "image_mobile": null,
@@ -145,7 +192,7 @@
         },
         "card_QqzGT": {
           "type": "card",
-          "disabled": false,
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Card_ARMORX.webp",
             "image_mobile": null,
@@ -156,7 +203,7 @@
         },
         "card_4FR6H": {
           "type": "card",
-          "disabled": false,
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Card_ADVENTURE.png",
             "image_mobile": null,
@@ -167,6 +214,10 @@
         }
       },
       "block_order": [
+        "card_4ajXT",
+        "card_LDmTz",
+        "card_Fid93",
+        "card_3kwU6",
         "card_PHKQk",
         "card_JBzYi",
         "card_JnFgd",
