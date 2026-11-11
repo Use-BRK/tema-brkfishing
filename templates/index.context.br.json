@@ -708,14 +708,14 @@
         "slider_item_tMEw9": {
           "type": "slider_item",
           "disabled": true,
-          "name": "Face Funny",
+          "name": "Bonés",
           "settings": {
             "header-d17509cd589e86c5668184ee7c5b402b": null,
-            "image": "shopify://shop_images/BANNER_DESKTOP_FACE_FUNNY.png",
-            "image_mobile": "shopify://shop_images/BANNER_MOBILE_FACE_FUNNY.png",
+            "image": "shopify://shop_images/DeskBones.png",
+            "image_mobile": "shopify://shop_images/MobileBones.png",
             "local_video": null,
             "overlay_opacity": 0,
-            "link_banner": "shopify://collections/bandanas-face-funny",
+            "link_banner": "shopify://collections/bones-de-pesca-vestuario-e-acessorios",
             "header-7969a6482f877b8c21ab4aaa165a56f4": null,
             "slider_effect": "effect_fadeinup",
             "subheading": "",
