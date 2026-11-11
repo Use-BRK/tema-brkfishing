@@ -148,6 +148,7 @@
         },
         "card_3kwU6": {
           "type": "card",
+          "name": "Tralhas",
           "disabled": false,
           "settings": {
             "image": "shopify://shop_images/04_a0617118-b882-4b81-b797-08167838e323.png",
