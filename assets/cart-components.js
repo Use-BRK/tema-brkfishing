@@ -1,4 +1,25 @@
 "use-strict";
+// BRK Bundles: linha de add-on (`_brk_bundle`) cujo produto que a puxou
+// (`_brk_bundle_trigger`) saiu do carrinho. Os updateQuantity do minicart e da
+// página do carrinho removem essa linha logo depois, em vez de deixá-la sem o
+// desconto do bundle. Linhas antigas sem `_brk_bundle_trigger` ficam.
+window.brkOrphanBundleLine = function (cart) {
+  const items = (cart && cart.items) || [];
+  const productIds = new Set(
+    items
+      .filter((item) => !(item.properties || {})._brk_bundle)
+      .map((item) => String(item.product_id))
+  );
+  const index = items.findIndex((item) => {
+    const props = item.properties || {};
+    return (
+      props._brk_bundle &&
+      props._brk_bundle_trigger &&
+      !productIds.has(String(props._brk_bundle_trigger))
+    );
+  });
+  return index < 0 ? null : { line: index + 1, key: items[index].key };
+};
 function debounce(fn, wait) {
   let t;
   return (...args) => {
@@ -559,6 +580,9 @@ class CartNotification extends HTMLElement {
           }
         }
         this.cartAction();
+        // BRK Bundles: add-on órfão sai junto (ver brkOrphanBundleLine).
+        const brkOrphan = window.brkOrphanBundleLine?.(parsedState);
+        if (brkOrphan) this.updateQuantity(brkOrphan.key, 0);
       })
       .catch((e) => {
         throw e;

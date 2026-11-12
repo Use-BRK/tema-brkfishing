@@ -337,6 +337,9 @@ class CartItems extends HTMLElement {
 
         this.updateLiveRegions(line, key, parsedState.item_count);
         this.disableLoading();
+        // BRK Bundles: add-on órfão sai junto (ver brkOrphanBundleLine).
+        const brkOrphan = window.brkOrphanBundleLine?.(parsedState);
+        if (brkOrphan) this.updateQuantity(brkOrphan.line, brkOrphan.key, 0);
       })
       .catch((e) => {
         console.error(e);
