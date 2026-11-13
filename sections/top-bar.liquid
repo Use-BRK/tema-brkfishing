@@ -510,7 +510,7 @@
                   data-spacing="0"
                   style="--color-dark: transparent;--swiper-navigation-color: currentColor; --col-gap: 0;--swiper-navigation-sides-offset: 1rem;"
                 >
-                  <div class="swiper-action gradient show-arrow static absolute-lg align-center left-0 inset-y-0 z-3 flex gap-20 pe-1025-25 pe-0">
+                  <div class="swiper-action gradient show-arrow static absolute-lg align-center left-0 inset-y-0 z-3 flex gap-20 pe-1025-25 pe-0"{% if block_st.arrow_bg != blank %} style="background: {{ block_st.arrow_bg }};"{% endif %}>
                     <div
                       class="swiper-arrow swiper-button-prev original-style visible absolute left-10 static-lg-impo transform-md-none transition"
                       style="--swiper-navigation-sides-offset: 1rem;--swiper-width: 0.5rem;"
@@ -1156,6 +1156,12 @@
           "label": "t:sections.top-bar.blocks.text_slider.settings.change_every.label",
           "unit": "s",
           "default": 3
+        },
+        {
+          "type": "color",
+          "id": "arrow_bg",
+          "label": "Fundo das setas",
+          "info": "Vazio = fundo do esquema de cores da topbar."
         },
         {
           "type": "checkbox",

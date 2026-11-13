@@ -115,6 +115,12 @@
             "text": "⏱️Black Fishing",
             "open-link-newtab": false,
             "item_label": "unset",
+            "mobile_dark": true,
+            "mobile_dark_bg": "#000000",
+            "mobile_dark_text": "#ffffff",
+            "mobile_dark_accent": "#ffffff",
+            "mobile_banner": false,
+            "mobile_banner_glow": "#135ed1",
             "header-52f6e3323b18014034e604b64140cad3": null,
             "promotion_menu_column": 5,
             "mega_custom_width": 1030,
@@ -244,7 +250,8 @@
             "enable_copy_1": false,
             "coupon_code_1": "",
             "text2": "<strong>&nbsp;FRETE FIXO R$9,90 — TODO BRASIL&nbsp;</strong>",
-            "text3": ""
+            "text3": "",
+            "arrow_bg": "#000000"
           }
         },
         "text_dBJV7": {

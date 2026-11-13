@@ -568,6 +568,64 @@
   </nav>
 
   {% comment %} Mobile Menu {% endcomment %}
+  {%- comment -%} BRK: destaque escuro + banner clicável no menu mobile (settings no bloco menu_promotion) {%- endcomment -%}
+  <style>
+    @media (max-width: 1024.98px) {
+      .navigation.mobile .level0 > menu-item > open-children-toggle {
+        padding-right: 16px;
+      }
+      .navigation.mobile .level0.brk-mob-dark > menu-item {
+        background: var(--brk-dark-bg, #000);
+        border-radius: 10px;
+        border-bottom: 0;
+        margin: 8px 0 4px;
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+      .navigation.mobile .level0.brk-mob-dark > menu-item > a,
+      .navigation.mobile .level0.brk-mob-dark > menu-item > a span {
+        color: var(--brk-dark-text, #fff);
+        font-weight: 700;
+      }
+      .navigation.mobile .level0.brk-mob-dark > menu-item open-children-toggle,
+      .navigation.mobile .level0.brk-mob-dark > menu-item svg {
+        color: var(--brk-dark-accent, #fff);
+      }
+    }
+    @property --brk-angle { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+    .brk-mob-banner {
+      display: block;
+      position: relative;
+      margin: 6px 0 14px;
+      padding: 3px;
+      border-radius: 13px;
+      background: conic-gradient(from var(--brk-angle), transparent 0 55%, var(--brk-glow, #135ed1) 75%, #fff 82%, var(--brk-glow, #135ed1) 88%, transparent 100%);
+      animation: brk-spin 2.5s linear infinite;
+      transition: transform .15s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .brk-mob-banner:active { transform: scale(.97); }
+    .brk-mob-banner__inner {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+    .brk-mob-banner__inner img { display: block; width: 100%; height: auto; }
+    .brk-mob-banner__shine {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,.35) 50%, transparent 65%);
+      transform: translateX(-100%);
+      animation: brk-shine 3s ease-in-out infinite;
+      pointer-events: none;
+    }
+    @keyframes brk-spin { to { --brk-angle: 360deg; } }
+    @keyframes brk-shine { 0%, 55% { transform: translateX(-100%); } 85%, 100% { transform: translateX(100%); } }
+    @media (prefers-reduced-motion: reduce) {
+      .brk-mob-banner, .brk-mob-banner__shine { animation: none; }
+    }
+  </style>
   <nav
     class="flex flex-column mobile block-1025 navigation horizontal fixed inset-0 {{ section_st.dropdowns_animation }}"
     data-action-mobile="{{ section_st.redirect_to_link }}"
@@ -707,12 +765,38 @@
               {%- endif -%}
               </menu-item>
             {%- endcapture -%}
+            {%- liquid
+              # BRK: destaque escuro + banner clicável no menu mobile (configurado no bloco do menu)
+              assign mob_dark = false
+              if last_block.type == 'menu_promotion' and block_st.mobile_dark
+                assign mob_dark = true
+              endif
+              assign mob_banner = false
+              assign mob_img = block_st.mobile_banner_image | default: block_st.promotion_image_1
+              assign mob_url = block_st.mobile_banner_link | default: block_st.promotion_link_1 | default: link.url
+              if last_block.type == 'menu_promotion' and block_st.mobile_banner and mob_img != blank
+                assign mob_banner = true
+              endif
+            -%}
             <li
               {{ block.shopify_attributes }}
-              class="level0{% if link.links.size or has_content %} menu-parent menu-parent__horizontal mega-menu{% else %} single{% endif %}"
-              {{ block.shopify_attributes }}
+              class="level0{% if link.links.size or has_content %} menu-parent menu-parent__horizontal mega-menu{% else %} single{% endif %}{% if mob_dark %} brk-mob-dark{% endif %}"
+              {% if mob_dark or mob_banner %}style="--brk-dark-bg: {{ block_st.mobile_dark_bg }}; --brk-dark-text: {{ block_st.mobile_dark_text }}; --brk-dark-accent: {{ block_st.mobile_dark_accent }}; --brk-glow: {{ block_st.mobile_banner_glow }};"{% endif %}
             >
               {{ menu_level_0 }}
+              {%- if mob_banner -%}
+                <a
+                  class="brk-mob-banner hidden-1025"
+                  href="{{ mob_url }}"
+                  {% if block_st.promotion_link_newtab_1 %}target="_blank"{% endif %}
+                  aria-label="{{ mob_img.alt | default: link.title | escape }}"
+                >
+                  <span class="brk-mob-banner__inner">
+                    {{ mob_img | image_url: width: 900 | image_tag: loading: 'lazy', widths: '450, 675, 900', sizes: '100vw', alt: mob_img.alt }}
+                    <span class="brk-mob-banner__shine" aria-hidden="true"></span>
+                  </span>
+                </a>
+              {%- endif -%}
               {%- if link.links.size > 0 or has_content -%}
                 <div
                   class="custom-scrollbar submenu submenu-horizontal invisible-1025 absolute{% if section_st.logo_position == 'left' %} left-0{% endif %} gradient p-0 py-1025-40{% if full_width %} full-width inset-x-0{% else %} mega-menu-custom-width{% if block_st.center_submenu %} inset-x-0 mx-auto{% endif %}{% endif %} overflow-x-hidden"
