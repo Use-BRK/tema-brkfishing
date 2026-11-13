@@ -62,7 +62,7 @@
           "type": "collection",
           "disabled": false,
           "settings": {
-            "collection": "elements-fusion",
+            "collection": "elements-armorx",
             "collection_title": "ArmorX",
             "view_all_collection": "elements-armorx"
           }
@@ -71,7 +71,7 @@
           "type": "collection",
           "disabled": false,
           "settings": {
-            "collection": "elements-fusion",
+            "collection": "elements-hybrid",
             "collection_title": "Hybrid",
             "view_all_collection": "elements-hybrid"
           }
