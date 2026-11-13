@@ -64,7 +64,8 @@
           "settings": {
             "collection": "elements-fusion",
             "collection_title": "ArmorX",
-            "view_all_collection": "elements-armorx"
+            "view_all_collection": "elements-armorx",
+            "collection_subtitle": "GOLA C/ ZÍPER | LUVA"
           }
         },
         "collection_YGRFn": {
@@ -73,7 +74,8 @@
           "settings": {
             "collection": "elements-fusion",
             "collection_title": "Hybrid",
-            "view_all_collection": "elements-fusion"
+            "view_all_collection": "elements-fusion",
+            "collection_subtitle": "CAPUZ | LUVA"
           }
         },
         "collection_kKBfp": {
@@ -82,7 +84,8 @@
           "settings": {
             "collection": "camisas-com-capuz-uv50-camufladas",
             "collection_title": "FusionX",
-            "view_all_collection": "camisas-para-pesca-camufladas"
+            "view_all_collection": "camisas-para-pesca-camufladas",
+            "collection_subtitle": "CAPUZ | BANDANA | LUVA"
           }
         }
       },
