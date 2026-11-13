@@ -67,43 +67,6 @@
     transform: translateY(0);
     pointer-events: auto;
   }
-  #shopify-section-{{ section.id }} .collection-tab__tab-title { display: block; }
-  #shopify-section-{{ section.id }} .collection-tab__subtitle {
-    display: grid;
-    grid-template-rows: 0fr;
-    opacity: 0;
-    transform: translateY(-4px);
-    font-family: var(--body-font, inherit);
-    font-size: {{ section_st.tab_subtitle_size | default: 11 }}px;
-    line-height: 1.2;
-    letter-spacing: .06em;
-    text-transform: uppercase;
-    font-weight: 500;
-    color: {{ section_st.tab_subtitle_color | default: 'currentColor' }};
-    transition:
-      grid-template-rows .45s cubic-bezier(.22, 1, .36, 1),
-      opacity .3s ease,
-      transform .45s cubic-bezier(.22, 1, .36, 1);
-  }
-  #shopify-section-{{ section.id }} .collection-tab__subtitle-inner {
-    display: block;
-    overflow: hidden;
-    min-height: 0;
-  }
-  #shopify-section-{{ section.id }} .collection-tab__tab-item.active .collection-tab__subtitle {
-    grid-template-rows: 1fr;
-    opacity: .85;
-    transform: none;
-    transition-delay: 0s, .12s, 0s;
-  }
-  #shopify-section-{{ section.id }} .collection-tab__tab-item.active .collection-tab__subtitle-inner { padding-top: 3px; }
-  #shopify-section-{{ section.id }} .collection-tab__subtitle-inner { transition: padding-top .45s cubic-bezier(.22, 1, .36, 1); }
-  @media (max-width: 767px) {
-    #shopify-section-{{ section.id }} .collection-tab__subtitle { font-size: {{ section_st.tab_subtitle_size_mobile | default: 9 }}px; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    #shopify-section-{{ section.id }} .collection-tab__subtitle, #shopify-section-{{ section.id }} .collection-tab__subtitle-inner { transition: none; }
-  }
   .select-collection-tab {
     border-bottom: 2px solid var(--color-heading);
   }
@@ -278,20 +241,11 @@
                     data-style="{{ horizontal_tab_style }}"
                     style="--height: 2px;"
                   >
-                    {%- liquid
-                      # BRK: diferenciais embaixo do nome — campo do bloco ou metafield custom.subtitle da coleção
-                      assign tab_subtitle = block_st.collection_subtitle | default: collection.metafields.custom.subtitle.value
-                    -%}
-                    <span class="collection-tab__tab-title">
-                      {%- if collection_title != blank -%}
-                        {{ collection_title }}
-                      {%- else -%}
-                        {{- 'onboarding.collection_title' | t -}}
-                      {%- endif -%}
-                    </span>
-                    {%- if tab_subtitle != blank -%}
-                      <span class="collection-tab__subtitle"><span class="collection-tab__subtitle-inner">{{ tab_subtitle }}</span></span>
-                    {%- endif -%}
+                    {% if collection_title != blank %}
+                      {{ collection_title }}
+                    {% else %}
+                      {{- 'onboarding.collection_title' | t -}}
+                    {% endif %}
                   </div>
                 {%- else %}
                   <li
@@ -907,36 +861,6 @@
       "visible_if": "{{ section.settings.tab_header_style == 'horizontal' and section.settings.horizontal_tab_style == 'fill' and section.settings.tab_button_custom_size }}"
     },
     {
-      "type": "header",
-      "content": "Subtítulo das abas (diferenciais)"
-    },
-    {
-      "type": "range",
-      "id": "tab_subtitle_size",
-      "min": 8,
-      "max": 24,
-      "step": 1,
-      "unit": "px",
-      "label": "Tamanho do subtítulo",
-      "default": 11
-    },
-    {
-      "type": "range",
-      "id": "tab_subtitle_size_mobile",
-      "min": 9,
-      "max": 20,
-      "step": 1,
-      "unit": "px",
-      "label": "Tamanho do subtítulo no mobile",
-      "default": 9
-    },
-    {
-      "type": "color",
-      "id": "tab_subtitle_color",
-      "label": "Cor do subtítulo",
-      "info": "Vazio = cor do texto da seção."
-    },
-    {
       "type": "select",
       "id": "tab_header_postion",
       "label": "t:sections.collection-tab.settings.collection.tab_header_postion.label",
@@ -1157,12 +1081,6 @@
           "id": "view_all_collection",
           "label": "Coleção de destino do botão \"Ver tudo\"",
           "info": "Opcional. Se vazio, o botão leva para a coleção desta aba."
-        },
-        {
-          "type": "text",
-          "id": "collection_subtitle",
-          "label": "Diferenciais (embaixo do nome da aba)",
-          "info": "Ex.: CAPUZ | BANDANA | LUVA. Vazio = usa o metafield custom.subtitle da coleção."
         }
       ]
     }
