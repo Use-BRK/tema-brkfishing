@@ -1,0 +1,873 @@
+{%- liquid
+  assign s = section.settings
+  assign sid = section.id
+  # Camisas = blocos "Camisa" (botões de troca). Pontos = blocos "Ponto", ligados a uma camisa pelo número.
+  assign shirt_count = 0
+  assign first_shirt = nil
+  for block in section.blocks
+    if block.type == 'shirt' and block.settings.image != blank
+      assign shirt_count = shirt_count | plus: 1
+      if first_shirt == nil
+        assign first_shirt = block
+      endif
+    endif
+  endfor
+  assign img_d = first_shirt.settings.image
+  assign img_m = first_shirt.settings.image
+  assign total = 0
+  for block in section.blocks
+    if block.type == 'hotspot'
+      assign total = total | plus: 1
+    endif
+  endfor
+-%}
+{%- capture css_vars -%}
+--hs-bg1: {{ s.bg_top }}; --hs-bg2: {{ s.bg_bottom }};
+--hs-text: {{ s.text_color }}; --hs-accent: {{ s.accent_color }};
+--hs-dot: {{ s.dot_color }}; --hs-dot-icon: {{ s.dot_icon_color }}; --hs-line: {{ s.line_color }};
+--hs-dot-size: {{ s.dot_size }}px; --hs-dot-size-m: {{ s.dot_size_mobile }}px;
+--hs-card-bg: {{ s.card_bg }}; --hs-card-text: {{ s.card_text }};
+--hs-h: {{ s.stage_height }}vh; --hs-h-m: {{ s.stage_height_mobile }}vh;
+--hs-scale: {{ s.image_scale | divided_by: 100.0 }}; --hs-scale-m: {{ s.image_scale_mobile | divided_by: 100.0 }};
+--hs-speed: {{ s.zoom_speed }}ms;
+--hs-ov-d: {% if s.top_fade %}{{ s.top_overlap }}{% else %}0{% endif %}px; --hs-ov-m: {% if s.top_fade %}{{ s.top_overlap_mobile }}{% else %}0{% endif %}px;
+--hs-pt: {{ s.padding_top }}px; --hs-pb: {{ s.padding_bottom }}px;
+--hs-pt-m: {{ s.padding_top_mobile }}px; --hs-pb-m: {{ s.padding_bottom_mobile }}px;
+{%- if img_d != blank -%}--hs-ar: {{ img_d.aspect_ratio }};{%- endif -%}
+{%- if img_m != blank -%}--hs-ar-m: {{ img_m.aspect_ratio }};{%- endif -%}
+{%- endcapture -%}
+{%- style -%}
+  #shopify-section-{{ sid }} .brk-hs { --ease-out: cubic-bezier(.16,1,.3,1); --ease-io: cubic-bezier(.76,0,.24,1); --ease-soft: cubic-bezier(.45,0,.2,1); --hs-ov: var(--hs-ov-d); position: relative; z-index: 2; overflow: hidden; color: var(--hs-text); padding-top: calc(var(--hs-pt) + var(--hs-ov)); padding-bottom: var(--hs-pb); {% if s.top_fade %}margin-top: calc(var(--hs-ov) * -1);{% endif %} }
+  #shopify-section-{{ sid }} .brk-hs__backdrop { position: absolute; inset: 0; z-index: 0; pointer-events: none; background: linear-gradient(180deg, var(--hs-bg1) 0%, var(--hs-bg2) 100%);{% if s.top_fade %} -webkit-mask-image: linear-gradient(180deg, transparent 0, rgba(0,0,0,.08) calc(var(--hs-ov) * .4), rgba(0,0,0,.45) calc(var(--hs-ov) * .75), #000 var(--hs-ov)); mask-image: linear-gradient(180deg, transparent 0, rgba(0,0,0,.08) calc(var(--hs-ov) * .4), rgba(0,0,0,.45) calc(var(--hs-ov) * .75), #000 var(--hs-ov));{% endif %} }
+
+  /* Imagem de fundo */
+  #shopify-section-{{ sid }} .brk-hs__tint { position: absolute; inset: 0; z-index: 0; pointer-events: none; background-color: {{ s.tint_color }}; opacity: {{ s.tint_opacity | divided_by: 100.0 }}; transition: background-color 1.4s ease;
+    {%- case s.tint_style -%}
+      {%- when 'radial' -%}-webkit-mask-image: radial-gradient(ellipse 60% 70% at 50% 48%, #000 0%, rgba(0,0,0,.55) 45%, transparent 85%); mask-image: radial-gradient(ellipse 60% 70% at 50% 48%, #000 0%, rgba(0,0,0,.55) 45%, transparent 85%);
+      {%- when 'top' -%}-webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 100%); mask-image: linear-gradient(180deg, #000 0%, transparent 100%);
+    {%- endcase -%}
+  }
+  #shopify-section-{{ sid }} .brk-hs__bg { mix-blend-mode: {{ s.bg_blend }}; }
+  #shopify-section-{{ sid }} .brk-hs__bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: {{ s.bg_opacity | divided_by: 100.0 }}; transition: opacity .8s ease, transform 1.4s var(--ease-out); }
+  #shopify-section-{{ sid }} .brk-hs__bg img { width: 100%; height: 100%; object-fit: {{ s.bg_fit }}; object-position: {{ s.bg_position }}; }
+  #shopify-section-{{ sid }} .brk-hs__bg--m { display: none; }
+  #shopify-section-{{ sid }} .brk-hs.is-zoomed .brk-hs__bg { transform: scale(1.04); }
+
+  /* Cabeçalho */
+  #shopify-section-{{ sid }} .brk-hs__head { position: absolute; z-index: 4; top: calc(var(--hs-pt) + var(--hs-ov) + 40px); left: 0; right: 0; pointer-events: none; transition: opacity .5s ease, transform .5s var(--ease-out); }
+  #shopify-section-{{ sid }} .brk-hs__head-inner { max-width: {{ s.head_width }}px; }
+  @media screen and (min-width: 1025px) {
+    #shopify-section-{{ sid }} .brk-hs__head { left: {{ s.head_x }}%; right: auto; top: calc(var(--hs-pt) + var(--hs-ov) + {{ s.head_y }}px); }
+    #shopify-section-{{ sid }} .brk-hs__head > div { max-width: none; width: auto; margin: 0; padding: 0; }
+    #shopify-section-{{ sid }} .brk-hs__switch { justify-content: flex-start; }
+  }
+  #shopify-section-{{ sid }} .brk-hs__eyebrow { display: block; margin-bottom: 10px; font-size: 12px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--hs-accent); }
+  #shopify-section-{{ sid }} .brk-hs__logo { margin: 0 0 14px; line-height: 0; }
+  #shopify-section-{{ sid }} .brk-hs__logo img { display: block; width: {{ s.logo_width_mobile }}px; max-width: 100%; height: auto; }
+  @media screen and (min-width: 1025px) {
+    #shopify-section-{{ sid }} .brk-hs__logo { margin: {{ s.logo_gap_top }}px 0 {{ s.logo_gap }}px; }
+    #shopify-section-{{ sid }} .brk-hs__eyebrow { font-size: {{ s.eyebrow_size }}px; margin-bottom: 6px; }
+    #shopify-section-{{ sid }} .brk-hs__logo img { width: {{ s.logo_width }}px; max-width: 40vw; margin-left: calc({{ s.logo_shift }} * {{ s.logo_width }}px / 100); }
+  }
+  #shopify-section-{{ sid }} .brk-hs__title { margin: 0 0 12px; font-family: var(--heading-font); font-size: {{ s.heading_size_mobile }}px; font-weight: 700; font-style: {{ s.heading_style }}; text-transform: uppercase; line-height: 1.12; color: inherit; }
+  @media screen and (min-width: 1025px) { #shopify-section-{{ sid }} .brk-hs__title { font-size: {{ s.heading_size }}px; } }
+  #shopify-section-{{ sid }} .brk-hs__sub { font-size: {{ s.subheading_size }}px; line-height: 1.55; opacity: .8; margin: 0; }
+  #shopify-section-{{ sid }} .brk-hs__btn { pointer-events: auto; display: inline-flex; align-items: center; justify-content: center; margin-top: 20px; min-height: 46px; padding: 0 28px; border-radius: {{ s.button_radius }}px; background: var(--hs-accent); color: {{ s.button_text_color }}; font-weight: 700; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; transition: transform .3s var(--ease-out), opacity .3s ease; }
+  #shopify-section-{{ sid }} .brk-hs__btn:hover { transform: translateY(-2px); }
+  #shopify-section-{{ sid }} .brk-hs.is-zoomed .brk-hs__head { opacity: {% if s.keep_logo_zoom %}1{% else %}0{% endif %}; transform: {% if s.keep_logo_zoom %}none{% else %}translateY(-12px){% endif %}; }
+
+  /* Palco */
+  #shopify-section-{{ sid }} .brk-hs__body { position: relative; z-index: 1; }
+  #shopify-section-{{ sid }} .brk-hs__stage { position: relative; height: var(--hs-h); }
+  #shopify-section-{{ sid }} .brk-hs__view { position: absolute; inset: 0; container-type: size; display: flex; align-items: center; justify-content: center; }
+  #shopify-section-{{ sid }} .brk-hs.is-zoomed .brk-hs__view { overflow: hidden; -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 8%, #000 90%, transparent 100%); mask-image: linear-gradient(180deg, transparent 0, #000 8%, #000 90%, transparent 100%); }
+  #shopify-section-{{ sid }} .brk-hs__float { flex: none; }
+  #shopify-section-{{ sid }} .brk-hs--float .brk-hs__float { animation: brkHsFloat 6s ease-in-out infinite; }
+  #shopify-section-{{ sid }} .brk-hs.is-zoomed .brk-hs__float { animation-play-state: paused; }
+  @keyframes brkHsFloat { 0%, 100% { translate: 0 0; } 50% { translate: 0 -8px; } }
+  #shopify-section-{{ sid }} .brk-hs__canvas { position: relative; width: calc(min(100cqw, 100cqh * var(--hs-ar, 1)) * var(--hs-scale, .86)); aspect-ratio: var(--hs-ar, 1); transform-origin: 0 0; transition: transform var(--hs-speed) var(--ease-io); backface-visibility: hidden; }
+  #shopify-section-{{ sid }} .brk-hs__canvas.is-moving { will-change: transform; }
+  #shopify-section-{{ sid }} .brk-hs__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+  #shopify-section-{{ sid }} .brk-hs__shadow { position: absolute; left: 12%; right: 12%; bottom: -3%; height: 7%; border-radius: 50%; background: radial-gradient(closest-side, rgba(0,0,0,.55), transparent); pointer-events: none; transition: opacity .6s ease; }
+  #shopify-section-{{ sid }} .brk-hs.is-zoomed .brk-hs__shadow { opacity: 0; }
+  #shopify-section-{{ sid }} .brk-hs__img--m { display: none; }
+  /* Troca das camisas */
+  #shopify-section-{{ sid }} .brk-hs__shirt { opacity: 0; transform: translateX(5%) scale(.97); filter: blur(6px); transition: opacity .9s ease, transform 1.2s var(--ease-out), filter .9s ease; }
+  #shopify-section-{{ sid }} .brk-hs__shirt.is-active { opacity: 1; transform: none; filter: none; }
+  #shopify-section-{{ sid }} .brk-hs__shirt.is-leaving { opacity: 0; transform: translateX(-5%) scale(.97); filter: blur(6px); transition: opacity .7s ease, transform 1s var(--ease-io), filter .7s ease; }
+  /* Pontos/linhas só da camisa ativa */
+  #shopify-section-{{ sid }} [data-shirt-group]:not(.is-on) { opacity: 0 !important; pointer-events: none !important; visibility: hidden; transition: opacity .35s ease, visibility 0s linear .35s; }
+  #shopify-section-{{ sid }} [data-shirt-group].is-on { visibility: visible; }
+
+  /* Botões de troca de camisa */
+  #shopify-section-{{ sid }} .brk-hs__switch { position: relative; z-index: 4; display: flex; justify-content: center; gap: 10px; flex-wrap: nowrap; margin: 4px 0 14px; pointer-events: auto; transition: opacity .4s ease; }
+  #shopify-section-{{ sid }} .brk-hs__switch-btn { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; padding: 10px 22px; border: 0; border-radius: 999px; background: {{ s.switch_bg }}; color: {{ s.switch_text }}; font-size: {{ s.switch_size }}px; line-height: 1.2; cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,.18); transition: background-color .45s ease, color .45s ease, transform .3s var(--ease-out); -webkit-tap-highlight-color: transparent; }
+  #shopify-section-{{ sid }} .brk-hs__switch-btn.is-active { background: {{ s.switch_active_bg }}; color: {{ s.switch_active_text }}; }
+  #shopify-section-{{ sid }} .brk-hs__switch-btn:active { transform: scale(.96); }
+  #shopify-section-{{ sid }} .brk-hs--anim:not(.is-in) .brk-hs__switch { opacity: 0; transform: translateY(14px); }
+  #shopify-section-{{ sid }} .brk-hs--anim .brk-hs__switch { transition: opacity .8s ease 1s, transform 1s var(--ease-out) 1s; }
+  #shopify-section-{{ sid }} .brk-hs--anim.is-settled .brk-hs__switch { transition: opacity .4s ease; }
+
+  #shopify-section-{{ sid }} .brk-hs__placeholder { position: absolute; inset: 0; background: rgba(127,127,127,.15); }
+
+  /* Linhas ponto → produto */
+  #shopify-section-{{ sid }} .brk-hs__lines { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: 1; transition: opacity .4s ease; }
+  #shopify-section-{{ sid }} .brk-hs__lines line { stroke: var(--hs-line); stroke-width: 1.2; stroke-opacity: .85; vector-effect: non-scaling-stroke; }
+  #shopify-section-{{ sid }} .brk-hs__lines--m { display: none; }
+  #shopify-section-{{ sid }} .brk-hs__anchor { position: absolute; z-index: 1; left: var(--ax); top: var(--ay); width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%; background: var(--hs-line); box-shadow: 0 0 0 4px color-mix(in srgb, var(--hs-line) 30%, transparent); pointer-events: none; transition: opacity .4s ease, scale .5s var(--ease-out); }
+
+  /* Pontos */
+  #shopify-section-{{ sid }} .brk-hs__dot { position: absolute; left: var(--x); top: var(--y); z-index: 2; display: flex; align-items: center; gap: 10px; padding: 0; border: 0; background: none; cursor: pointer; transform: translate(calc(var(--hs-dot-size) / -2), -50%); transition: opacity .5s ease, scale .7s var(--ease-out); -webkit-tap-highlight-color: transparent; }
+  #shopify-section-{{ sid }} .brk-hs__dot--left { flex-direction: row-reverse; transform: translate(calc(-100% + var(--hs-dot-size) / 2), -50%); }
+  #shopify-section-{{ sid }} .brk-hs__dot-circle { position: relative; flex: none; width: var(--hs-dot-size); height: var(--hs-dot-size); border-radius: 50%; background: var(--hs-dot); color: var(--hs-dot-icon); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,.3); transition: transform .35s var(--ease-out); }
+  #shopify-section-{{ sid }} .brk-hs__dot:hover .brk-hs__dot-circle { transform: scale(1.12) rotate(90deg); }
+  #shopify-section-{{ sid }} .brk-hs__dot-circle svg { width: 40%; height: 40%; }
+  #shopify-section-{{ sid }} .brk-hs--pulse .brk-hs__dot-circle::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px solid var(--hs-dot); animation: brkHsPulse 2.4s ease-out infinite; pointer-events: none; }
+  @keyframes brkHsPulse { 0% { transform: scale(1); opacity: .8; } 100% { transform: scale(2.1); opacity: 0; } }
+  #shopify-section-{{ sid }} .brk-hs__dot-label { padding: 7px 12px; border-radius: 999px; background: var(--hs-dot); color: var(--hs-dot-icon); font: 700 11px/1 var(--body-font); letter-spacing: .14em; text-transform: uppercase; white-space: nowrap; box-shadow: 0 4px 16px rgba(0,0,0,.25); transition: transform .35s var(--ease-out); }
+  #shopify-section-{{ sid }} .brk-hs__dot--right:hover .brk-hs__dot-label { transform: translateX(3px); }
+  #shopify-section-{{ sid }} .brk-hs__dot--left:hover .brk-hs__dot-label { transform: translateX(-3px); }
+  #shopify-section-{{ sid }} .brk-hs.is-zoomed .brk-hs__dot,
+  #shopify-section-{{ sid }} .brk-hs.is-zoomed .brk-hs__lines,
+  #shopify-section-{{ sid }} .brk-hs.is-zoomed .brk-hs__anchor { opacity: 0; pointer-events: none; transition-delay: 0s !important; }
+
+  /* Linha que sai da parte ampliada até o card */
+  #shopify-section-{{ sid }} .brk-hs__ray { position: absolute; z-index: 3; left: 0; top: 0; width: 0; height: 0; background: var(--hs-line); pointer-events: none; opacity: 0; transform: scale(0, 1); transform-origin: 0 50%; transition: transform .8s var(--ease-soft), opacity .3s ease; }
+  #shopify-section-{{ sid }} .brk-hs__ray.is-v { transform: scale(1, 0); transform-origin: 50% 0; }
+  #shopify-section-{{ sid }} .brk-hs__ray.is-on { opacity: 1; transform: scale(1, 1); }
+  #shopify-section-{{ sid }} .brk-hs__ray-dot { position: absolute; z-index: 4; left: 0; top: 0; width: 14px; height: 14px; margin: -7px 0 0 -7px; border-radius: 50%; background: var(--hs-line); pointer-events: none; opacity: 0; transform: scale(0); transition: transform .5s var(--ease-out), opacity .3s ease; animation: brkHsRing 2.2s ease-out infinite; }
+  #shopify-section-{{ sid }} .brk-hs__ray-dot.is-on { opacity: 1; transform: scale(1); }
+  @keyframes brkHsRing { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--hs-line) 50%, transparent); } 100% { box-shadow: 0 0 0 14px transparent; } }
+
+  /* Card */
+  #shopify-section-{{ sid }} .brk-hs__card { position: absolute; z-index: 5; right: 6%; top: calc(var(--hs-h) / 2); width: {{ s.card_width }}px; max-width: calc(100% - 32px); background: var(--hs-card-bg); color: var(--hs-card-text); border-radius: 18px; padding: 34px 34px 28px; box-shadow: 0 20px 50px rgba(0,0,0,.3); opacity: 0; visibility: hidden; transform: translate(32px, -50%) scale(.98); transition: opacity .55s ease, transform .8s var(--ease-out), visibility .55s; }
+  #shopify-section-{{ sid }} .brk-hs__card.is-on { opacity: 1; visibility: visible; transform: translate(0, -50%) scale(1); }
+  #shopify-section-{{ sid }} .brk-hs__card.is-on .brk-hs__panel:not([hidden]) > * { animation: brkHsIn .7s var(--ease-out) both; }
+  #shopify-section-{{ sid }} .brk-hs__card.is-on .brk-hs__panel:not([hidden]) > *:nth-child(2) { animation-delay: .07s; }
+  #shopify-section-{{ sid }} .brk-hs__card.is-on .brk-hs__panel:not([hidden]) > *:nth-child(3) { animation-delay: .14s; }
+  #shopify-section-{{ sid }} .brk-hs__card.is-on .brk-hs__panel:not([hidden]) > *:nth-child(n+4) { animation-delay: .21s; }
+  @keyframes brkHsIn { from { opacity: 0; transform: translateY(12px); filter: blur(4px); } to { opacity: 1; transform: none; filter: blur(0); } }
+  #shopify-section-{{ sid }} .brk-hs__card-count { display: block; font-size: 11px; font-weight: 700; letter-spacing: .2em; color: color-mix(in srgb, var(--hs-card-text) 55%, transparent); margin-bottom: 8px; }
+  #shopify-section-{{ sid }} .brk-hs__card-title { margin: 0 0 10px; font-family: var(--heading-font); font-size: 40px; font-weight: 700; font-style: {{ s.heading_style }}; text-transform: uppercase; line-height: .95; color: inherit; }
+  #shopify-section-{{ sid }} .brk-hs__card-text { font-size: 16px; line-height: 1.6; opacity: .85; }
+  #shopify-section-{{ sid }} .brk-hs__card-text p { margin: 0 0 8px; }
+  #shopify-section-{{ sid }} .brk-hs__card-product { display: flex; gap: 12px; align-items: center; margin-top: 14px; padding-top: 14px; border-top: 1px solid color-mix(in srgb, var(--hs-card-text) 12%, transparent); color: inherit; text-decoration: none; }
+  #shopify-section-{{ sid }} .brk-hs__card-product img { width: 56px; height: 56px; object-fit: cover; border-radius: 8px; flex: none; }
+  #shopify-section-{{ sid }} .brk-hs__card-pname { display: block; font-size: 13px; font-weight: 600; line-height: 1.25; }
+  #shopify-section-{{ sid }} .brk-hs__card-price { display: block; font-size: 14px; font-weight: 700; margin-top: 3px; }
+  #shopify-section-{{ sid }} .brk-hs__card-link { display: inline-block; margin-top: 14px; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: inherit; text-decoration: underline; text-underline-offset: 4px; }
+  #shopify-section-{{ sid }} .brk-hs__card-nav { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 20px; }
+  #shopify-section-{{ sid }} .brk-hs__card-back { display: inline-flex; align-items: center; gap: 8px; padding: 0; border: 0; background: none; color: inherit; font: 700 12px/1 var(--body-font); letter-spacing: .1em; text-transform: uppercase; cursor: pointer; opacity: .7; transition: opacity .2s ease; }
+  #shopify-section-{{ sid }} .brk-hs__card-back:hover { opacity: 1; }
+  #shopify-section-{{ sid }} .brk-hs__card-arrows { display: flex; gap: 8px; }
+  #shopify-section-{{ sid }} .brk-hs__arrow { width: 40px; height: 40px; border-radius: 50%; border: 1px solid color-mix(in srgb, var(--hs-card-text) 22%, transparent); background: none; color: inherit; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background-color .25s ease, transform .3s var(--ease-out); }
+  #shopify-section-{{ sid }} .brk-hs__arrow:hover { background: color-mix(in srgb, var(--hs-card-text) 8%, transparent); }
+  #shopify-section-{{ sid }} [data-hs-prev]:hover { transform: translateX(-2px); }
+  #shopify-section-{{ sid }} [data-hs-next]:hover { transform: translateX(2px); }
+  #shopify-section-{{ sid }} .brk-hs__arrow svg { width: 14px; height: 14px; }
+  #shopify-section-{{ sid }} .brk-hs__panel[hidden] { display: none; }
+
+  #shopify-section-{{ sid }} .brk-hs__hint { position: relative; z-index: 3; margin: 14px 16px 0; text-align: center; font-size: {{ s.hint_size }}px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; opacity: .65; transition: opacity .4s ease; }
+  #shopify-section-{{ sid }} .brk-hs.is-zoomed .brk-hs__hint { opacity: 0; }
+
+  /* Botão no estilo dos pontos */
+  #shopify-section-{{ sid }} .brk-hs__cta-wrap { position: relative; z-index: 3; display: flex; justify-content: center; margin: 18px 16px 0; transition: opacity .4s ease; }
+  #shopify-section-{{ sid }} .brk-hs__cta { display: inline-flex; align-items: center; gap: 12px; padding: 6px 22px 6px 6px; border-radius: 999px; background: var(--hs-dot); color: var(--hs-dot-icon); text-decoration: none; font: 700 13px/1 var(--body-font); letter-spacing: .14em; text-transform: uppercase; box-shadow: 0 6px 24px rgba(0,0,0,.3); transition: transform .45s var(--ease-out), box-shadow .45s var(--ease-out); }
+  #shopify-section-{{ sid }} .brk-hs__cta:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,.4); }
+  #shopify-section-{{ sid }} .brk-hs__cta-icon { position: relative; flex: none; width: 38px; height: 38px; border-radius: 50%; background: var(--hs-dot-icon); color: var(--hs-dot); display: flex; align-items: center; justify-content: center; transition: transform .45s var(--ease-out); }
+  #shopify-section-{{ sid }} .brk-hs__cta-icon svg { width: 16px; height: 16px; }
+  #shopify-section-{{ sid }} .brk-hs__cta:hover .brk-hs__cta-icon { transform: rotate(-45deg); }
+  #shopify-section-{{ sid }} .brk-hs--anim:not(.is-in) .brk-hs__cta-wrap { opacity: 0; transform: translateY(14px); }
+  #shopify-section-{{ sid }} .brk-hs--anim .brk-hs__cta-wrap { transition: opacity .8s ease 1.4s, transform 1s var(--ease-out) 1.4s; }
+
+  /* Entrada ao rolar até a seção */
+  #shopify-section-{{ sid }} .brk-hs--anim:not(.is-in) .brk-hs__float { opacity: 0; transform: translateY(50px) scale(.96); }
+  #shopify-section-{{ sid }} .brk-hs--anim .brk-hs__float { transition: opacity 1.1s ease, transform 1.3s var(--ease-out); }
+  #shopify-section-{{ sid }} .brk-hs--anim:not(.is-in) .brk-hs__head-inner > * { opacity: 0; transform: translateY(18px); }
+  #shopify-section-{{ sid }} .brk-hs--anim .brk-hs__head-inner > * { transition: opacity .8s ease, transform .9s var(--ease-out); }
+  #shopify-section-{{ sid }} .brk-hs--anim .brk-hs__head-inner > *:nth-child(2) { transition-delay: .08s; }
+  #shopify-section-{{ sid }} .brk-hs--anim .brk-hs__head-inner > *:nth-child(3) { transition-delay: .16s; }
+  #shopify-section-{{ sid }} .brk-hs--anim .brk-hs__head-inner > *:nth-child(4) { transition-delay: .24s; }
+  #shopify-section-{{ sid }} .brk-hs--anim:not(.is-in) .brk-hs__dot { opacity: 0; scale: .6; }
+  #shopify-section-{{ sid }} .brk-hs--anim:not(.is-in) .brk-hs__lines,
+  #shopify-section-{{ sid }} .brk-hs--anim:not(.is-in) .brk-hs__anchor { opacity: 0; scale: .4; }
+  #shopify-section-{{ sid }} .brk-hs--anim .brk-hs__dot,
+  #shopify-section-{{ sid }} .brk-hs--anim .brk-hs__anchor,
+  #shopify-section-{{ sid }} .brk-hs--anim .brk-hs__lines { transition-delay: .7s; }
+  #shopify-section-{{ sid }} .brk-hs--anim.is-settled .brk-hs__dot,
+  #shopify-section-{{ sid }} .brk-hs--anim.is-settled .brk-hs__anchor { transition-delay: 0s; }
+  #shopify-section-{{ sid }} .brk-hs--anim.is-settled .brk-hs__lines { transition-delay: 0s; }
+  #shopify-section-{{ sid }} .brk-hs--anim:not(.is-in) .brk-hs__hint { opacity: 0; }
+  #shopify-section-{{ sid }} .brk-hs--anim .brk-hs__hint { transition: opacity .8s ease 1.2s; }
+  #shopify-section-{{ sid }} .brk-hs--anim.is-settled .brk-hs__hint { transition-delay: 0s; }
+
+  @media screen and (max-width: 1024.98px) {
+    #shopify-section-{{ sid }} .brk-hs { --hs-ov: var(--hs-ov-m); padding-top: calc(var(--hs-pt-m) + var(--hs-ov-m)); padding-bottom: var(--hs-pb-m); }
+    #shopify-section-{{ sid }} .brk-hs__head { position: relative; top: auto; margin-bottom: 4px; }
+    #shopify-section-{{ sid }} .brk-hs__head-inner { max-width: none; text-align: {{ s.text_align_mobile }}; }
+    {%- if s.text_align_mobile == 'center' -%}#shopify-section-{{ sid }} .brk-hs__logo img { margin: 0 auto; }{%- endif -%}
+    #shopify-section-{{ sid }} .brk-hs__logo { margin: {{ s.logo_gap_top_mobile }}px 0 {{ s.logo_gap_mobile }}px; }
+    #shopify-section-{{ sid }} .brk-hs__eyebrow { font-size: {{ s.eyebrow_size_mobile }}px; margin-bottom: 6px; }
+    #shopify-section-{{ sid }} .brk-hs__sub { font-size: {{ s.subheading_size_mobile }}px; }
+    #shopify-section-{{ sid }} .brk-hs.is-zoomed .brk-hs__head { opacity: 1; transform: none; }
+    {%- if s.bg_image_mobile != blank -%}
+    #shopify-section-{{ sid }} .brk-hs__bg--d { display: none; }
+    #shopify-section-{{ sid }} .brk-hs__bg--m { display: block; }
+    {%- endif -%}
+    #shopify-section-{{ sid }} .brk-hs__stage { height: var(--hs-h-m); transition: height var(--hs-speed) var(--ease-io); }
+    #shopify-section-{{ sid }} .brk-hs.is-zoomed .brk-hs__stage { height: {{ s.stage_height_zoom_mobile }}vh; }
+    #shopify-section-{{ sid }} .brk-hs__canvas { width: calc(min(100cqw, 100cqh * var(--hs-ar-m, 1)) * var(--hs-scale-m, .9)); aspect-ratio: var(--hs-ar-m, 1); }
+    {%- if s.image_mobile != blank -%}
+    #shopify-section-{{ sid }} .brk-hs__img--d { display: none; }
+    #shopify-section-{{ sid }} .brk-hs__img--m { display: block; }
+    {%- endif -%}
+    #shopify-section-{{ sid }} .brk-hs__lines--d { display: none; }
+    #shopify-section-{{ sid }} .brk-hs__lines--m { display: block; }
+    #shopify-section-{{ sid }} .brk-hs__anchor { left: var(--axm); top: var(--aym); width: 8px; height: 8px; margin: -4px 0 0 -4px; }
+    /* No mobile o nome fica embaixo do ponto, pra não sair da tela */
+    #shopify-section-{{ sid }} .brk-hs__dot,
+    #shopify-section-{{ sid }} .brk-hs__dot--left { left: var(--xm); top: var(--ym); flex-direction: column; gap: 5px; transform: translate(-50%, calc(var(--hs-dot-size-m) / -2)); }
+    #shopify-section-{{ sid }} .brk-hs__dot--mtop,
+    #shopify-section-{{ sid }} .brk-hs__dot--mtop.brk-hs__dot--left { flex-direction: column-reverse; transform: translate(-50%, calc(-100% + var(--hs-dot-size-m) / 2)); }
+    #shopify-section-{{ sid }} .brk-hs__dot-circle { width: var(--hs-dot-size-m); height: var(--hs-dot-size-m); }
+    #shopify-section-{{ sid }} .brk-hs__dot-label { padding: 5px 9px; font-size: 10px; letter-spacing: .1em; }
+    #shopify-section-{{ sid }} .brk-hs__dot:hover .brk-hs__dot-label { transform: none; }
+    {%- unless s.labels_mobile -%}
+    #shopify-section-{{ sid }} .brk-hs__dot-label { display: none; }
+    {%- endunless -%}
+    /* Card abaixo da imagem */
+    #shopify-section-{{ sid }} .brk-hs__card { position: relative; left: auto; right: auto; top: auto; width: auto; max-width: none; margin: 16px 16px 0; padding: 20px 18px 16px; display: none; transform: translateY(20px) scale(.98); }
+    #shopify-section-{{ sid }} .brk-hs.is-zoomed .brk-hs__card { display: block; }
+    #shopify-section-{{ sid }} .brk-hs__card.is-on { transform: translateY(0) scale(1); }
+    #shopify-section-{{ sid }} .brk-hs__card { padding: 22px 20px 18px; border-radius: 16px; }
+    #shopify-section-{{ sid }} .brk-hs__card-title { font-size: 28px; }
+    #shopify-section-{{ sid }} .brk-hs__card-text { font-size: 14px; }
+    #shopify-section-{{ sid }} .brk-hs__card-nav { margin-top: 14px; }
+    #shopify-section-{{ sid }} .brk-hs.is-zoomed .brk-hs__hint { display: none; }
+    #shopify-section-{{ sid }} .brk-hs__hint { font-size: {{ s.hint_size_mobile }}px; letter-spacing: .08em; }
+    #shopify-section-{{ sid }} .brk-hs__cta { font-size: 12px; letter-spacing: .1em; padding-right: 18px; gap: 10px; }
+    #shopify-section-{{ sid }} .brk-hs__cta-icon { width: 34px; height: 34px; }
+    #shopify-section-{{ sid }} .brk-hs__switch { gap: 7px; margin: 2px 0 10px; }
+    #shopify-section-{{ sid }} .brk-hs__switch-btn { font-size: {{ s.switch_size_mobile }}px; padding: 11px 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #shopify-section-{{ sid }} .brk-hs *, #shopify-section-{{ sid }} .brk-hs *::before, #shopify-section-{{ sid }} .brk-hs *::after { transition-duration: 1ms !important; animation: none !important; }
+  }
+{%- endstyle -%}
+
+<div class="brk-hs{% if s.pulse %} brk-hs--pulse{% endif %}{% if s.animations %} brk-hs--anim{% endif %}{% if s.float %} brk-hs--float{% endif %}" style="{{ css_vars | strip | strip_newlines }}" data-brk-hs data-zoom-x="{{ s.zoom_focus_x }}">
+  <div class="brk-hs__backdrop" aria-hidden="true">
+  {%- if s.bg_image != blank -%}
+    <div class="brk-hs__bg brk-hs__bg--d" aria-hidden="true">{{ s.bg_image | image_url: width: 2400 | image_tag: widths: '800, 1200, 1600, 2000, 2400', sizes: '100vw', loading: 'lazy', alt: '' }}</div>
+  {%- endif -%}
+  {%- if s.bg_image_mobile != blank -%}
+    <div class="brk-hs__bg brk-hs__bg--m" aria-hidden="true">{{ s.bg_image_mobile | image_url: width: 1200 | image_tag: widths: '600, 900, 1200', sizes: '100vw', loading: 'lazy', alt: '' }}</div>
+  {%- endif -%}
+  {%- if s.tint_enable -%}<div class="brk-hs__tint" data-hs-tint aria-hidden="true"></div>{%- endif -%}
+  </div>
+  {%- capture switch_html -%}
+  {%- if shirt_count > 1 -%}
+    <div class="brk-hs__switch" role="tablist" aria-label="{{ s.switch_label | escape }}">
+      {%- assign n = 0 -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'shirt' and block.settings.image != blank -%}
+          {%- assign n = n | plus: 1 -%}
+          {%- assign shirt_link = block.settings.link | default: s.cta_link -%}
+          {%- assign shirt_cta = block.settings.cta_label | default: s.cta_label -%}
+          <button type="button" role="tab" class="brk-hs__switch-btn heading-style{% if n == 1 %} is-active{% endif %}" aria-selected="{% if n == 1 %}true{% else %}false{% endif %}" data-hs-switch="{{ n }}" data-link="{{ shirt_link }}" data-cta="{{ shirt_cta | escape }}" {{ block.shopify_attributes }}>{{ block.settings.title }}</button>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+  {%- endcapture -%}
+  {%- if s.eyebrow != blank or s.logo != blank or s.heading != blank or s.subheading != blank or s.button_label != blank or switch_html != blank -%}
+    <div class="brk-hs__head">
+      <div class="{{ s.section_width }}">
+        <div class="brk-hs__head-inner">
+          {%- if s.eyebrow != blank -%}<span class="brk-hs__eyebrow">{{ s.eyebrow }}</span>{%- endif -%}
+          {%- if s.logo != blank -%}
+            <h2 class="brk-hs__logo">{{ s.logo | image_url: width: 1200 | image_tag: widths: '300, 600, 900, 1200', sizes: '(min-width: 1025px) 500px, 80vw', alt: s.logo.alt, loading: 'lazy' }}</h2>
+          {%- elsif s.heading != blank -%}
+            <h2 class="brk-hs__title">{{ s.heading }}</h2>
+          {%- endif -%}
+          {{ switch_html }}
+          {%- if s.subheading != blank -%}<p class="brk-hs__sub">{{ s.subheading }}</p>{%- endif -%}
+          {%- if s.button_label != blank -%}<a class="brk-hs__btn" href="{{ s.button_link | default: '#' }}">{{ s.button_label }}</a>{%- endif -%}
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+
+  <div class="brk-hs__body">
+    <div class="brk-hs__stage" data-hs-stage>
+      <div class="brk-hs__view">
+        <div class="brk-hs__float">
+          <div class="brk-hs__canvas" data-hs-canvas>
+            <span class="brk-hs__shadow" aria-hidden="true"></span>
+            {%- if shirt_count > 0 -%}
+              {%- assign n = 0 -%}
+              {%- for block in section.blocks -%}
+                {%- if block.type == 'shirt' and block.settings.image != blank -%}
+                  {%- assign n = n | plus: 1 -%}
+                  {%- assign simg = block.settings.image -%}
+                  {%- capture cls -%}brk-hs__img brk-hs__shirt{% if n == 1 %} is-active{% endif %}{%- endcapture -%}
+                  {%- capture ld -%}{% if n == 1 %}eager{% else %}lazy{% endif %}{%- endcapture -%}
+                  {{ simg | image_url: width: 2000 | image_tag: class: cls, widths: '600, 900, 1200, 1600, 2000', sizes: '(min-width: 1025px) 60vw, 120vw', loading: ld, alt: block.settings.title, data-hs-shirt: n, data-ar: simg.aspect_ratio }}
+                {%- endif -%}
+              {%- endfor -%}
+            {%- else -%}
+              <div class="brk-hs__placeholder">{{ 'lifestyle-1' | placeholder_svg_tag }}</div>
+            {%- endif -%}
+
+            {%- capture lines_d -%}{%- endcapture -%}
+            {%- capture lines_m -%}{%- endcapture -%}
+            {%- assign hs_i = -1 -%}
+            {%- for block in section.blocks -%}
+              {%- if block.type != 'hotspot' -%}{%- continue -%}{%- endif -%}
+              {%- assign hs_i = hs_i | plus: 1 -%}
+              {%- liquid
+                assign b = block.settings
+                assign shirt_n = b.shirt | plus: 0
+                assign xm = b.pos_x_mobile
+                assign ym = b.pos_y_mobile
+                assign axm = b.anchor_x_mobile
+                assign aym = b.anchor_y_mobile
+                if b.same_position_mobile
+                  assign xm = b.pos_x
+                  assign ym = b.pos_y
+                  assign axm = b.anchor_x
+                  assign aym = b.anchor_y
+                endif
+                assign label_top_m = false
+                if aym > ym
+                  assign label_top_m = true
+                endif
+                assign side = 'right'
+                if b.pos_x < b.anchor_x
+                  assign side = 'left'
+                endif
+              -%}
+              {%- capture lines_d -%}{{ lines_d }}<line data-shirt-group="{{ shirt_n }}" x1="{{ b.pos_x }}" y1="{{ b.pos_y }}" x2="{{ b.anchor_x }}" y2="{{ b.anchor_y }}"/>{%- endcapture -%}
+              {%- capture lines_m -%}{{ lines_m }}<line data-shirt-group="{{ shirt_n }}" x1="{{ xm }}" y1="{{ ym }}" x2="{{ axm }}" y2="{{ aym }}"/>{%- endcapture -%}
+              <span class="brk-hs__anchor" data-shirt-group="{{ shirt_n }}" style="--i: {{ hs_i }}; --ax: {{ b.anchor_x }}%; --ay: {{ b.anchor_y }}%; --axm: {{ axm }}%; --aym: {{ aym }}%;" aria-hidden="true"></span>
+              <button
+                type="button"
+                class="brk-hs__dot brk-hs__dot--{{ side }}{% if label_top_m %} brk-hs__dot--mtop{% endif %}"
+                data-shirt-group="{{ shirt_n }}"
+                style="--i: {{ hs_i }}; --x: {{ b.pos_x }}%; --y: {{ b.pos_y }}%; --xm: {{ xm }}%; --ym: {{ ym }}%;"
+                data-hs-dot="{{ hs_i }}"
+              data-title="{{ b.title | escape }}"
+                data-ax="{{ b.anchor_x }}" data-ay="{{ b.anchor_y }}" data-axm="{{ axm }}" data-aym="{{ aym }}"
+                data-zoom="{{ b.zoom }}" data-zoom-m="{{ b.zoom_mobile }}"
+                aria-label="{{ b.title | escape }}"
+                {{ block.shopify_attributes }}
+              >
+                <span class="brk-hs__dot-circle"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1v14M1 8h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+                {%- if s.show_labels and b.title != blank -%}<span class="brk-hs__dot-label">{{ b.title }}</span>{%- endif -%}
+              </button>
+            {%- endfor -%}
+            <svg class="brk-hs__lines brk-hs__lines--d" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">{{ lines_d }}</svg>
+            <svg class="brk-hs__lines brk-hs__lines--m" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">{{ lines_m }}</svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="brk-hs__ray" data-hs-ray aria-hidden="true"></div>
+    <div class="brk-hs__ray-dot" data-hs-ray-dot aria-hidden="true"></div>
+
+    <div class="brk-hs__card" role="region" aria-live="polite" data-hs-card>
+      {%- for block in section.blocks -%}
+        {%- if block.type != 'hotspot' -%}{%- continue -%}{%- endif -%}
+        {%- assign b = block.settings -%}
+        <div class="brk-hs__panel" data-hs-panel hidden>
+          <span class="brk-hs__card-count" data-hs-count></span>
+          {%- if b.title != blank -%}<h3 class="brk-hs__card-title">{{ b.title }}</h3>{%- endif -%}
+          {%- if b.text != blank -%}<div class="brk-hs__card-text">{{ b.text }}</div>{%- endif -%}
+          {%- if b.product != blank -%}
+            {%- assign p = b.product -%}
+            <a class="brk-hs__card-product" href="{{ p.url }}">
+              {%- if p.featured_image -%}<img src="{{ p.featured_image | image_url: width: 120 }}" width="56" height="56" alt="{{ p.title | escape }}" loading="lazy">{%- endif -%}
+              <span><span class="brk-hs__card-pname">{{ p.title }}</span><span class="brk-hs__card-price">{{ p.price | money_with_currency }}</span></span>
+            </a>
+          {%- endif -%}
+          {%- assign link = b.link | default: b.product.url -%}
+          {%- if link != blank and b.link_label != blank -%}<a class="brk-hs__card-link" href="{{ link }}">{{ b.link_label }}</a>{%- endif -%}
+        </div>
+      {%- endfor -%}
+      <div class="brk-hs__card-nav">
+        <button type="button" class="brk-hs__card-back" data-hs-close>
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          {{ s.back_label }}
+        </button>
+        {%- if total > 1 -%}
+          <div class="brk-hs__card-arrows">
+            <button type="button" class="brk-hs__arrow" data-hs-prev aria-label="Detalhe anterior"><svg viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button type="button" class="brk-hs__arrow" data-hs-next aria-label="Próximo detalhe"><svg viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+
+  {%- if s.hint != blank and total > 0 -%}<p class="brk-hs__hint">{{ s.hint }}</p>{%- endif -%}
+  {%- assign cta_label0 = first_shirt.settings.cta_label | default: s.cta_label -%}
+  {%- assign cta_link0 = first_shirt.settings.link | default: s.cta_link -%}
+  {%- if cta_label0 != blank -%}
+    <div class="brk-hs__cta-wrap">
+      <a class="brk-hs__cta" data-hs-cta href="{{ cta_link0 | default: '#' }}"{% if s.cta_new_tab %} target="_blank" rel="noopener"{% endif %}>
+        <span class="brk-hs__cta-icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span data-hs-cta-label>{{ cta_label0 }}</span>
+      </a>
+    </div>
+  {%- endif -%}
+</div>
+
+<script>
+  (function () {
+    var root = document.querySelector('#shopify-section-{{ sid }} [data-brk-hs]');
+    if (!root || root.dataset.ready) return;
+    root.dataset.ready = '1';
+
+    /* ---------- Tracking (Microsoft Clarity + Shopify analytics) ---------- */
+    function track(name, tags) {
+      try {
+        if (typeof window.clarity === 'function') {
+          window.clarity('event', name);
+          if (tags) Object.keys(tags).forEach(function (k) { if (tags[k]) window.clarity('set', k, String(tags[k])); });
+        }
+        if (window.Shopify && Shopify.analytics && typeof Shopify.analytics.publish === 'function') {
+          Shopify.analytics.publish('brkfishing:' + name, tags || {});
+        }
+      } catch (err) { /* nunca quebra a seção por causa do tracking */ }
+    }
+
+    var stage = root.querySelector('[data-hs-stage]');
+    var canvas = root.querySelector('[data-hs-canvas]');
+    var card = root.querySelector('[data-hs-card]');
+    var ray = root.querySelector('[data-hs-ray]');
+    var rayDot = root.querySelector('[data-hs-ray-dot]');
+    var dots = Array.prototype.slice.call(root.querySelectorAll('[data-hs-dot]'));
+    var panels = Array.prototype.slice.call(root.querySelectorAll('[data-hs-panel]'));
+    var groups = Array.prototype.slice.call(root.querySelectorAll('[data-shirt-group]'));
+    var shirts = Array.prototype.slice.call(root.querySelectorAll('[data-hs-shirt]'));
+    var switches = Array.prototype.slice.call(root.querySelectorAll('[data-hs-switch]'));
+    var cta = root.querySelector('[data-hs-cta]');
+    var ctaLabel = root.querySelector('[data-hs-cta-label]');
+    var mqDesk = window.matchMedia('(min-width: 1025px)');
+    var focusX = parseFloat(root.dataset.zoomX || '50') / 100;
+    var speed = {{ s.zoom_speed | default: 900 }};
+    var zoomHM = {{ s.stage_height_zoom_mobile | default: 42 }};
+    var current = -1, timers = [], shirtNo = 1, switching = false;
+
+    function shirtName() {
+      var a = shirts[shirtNo - 1];
+      return a ? a.getAttribute('alt') : '';
+    }
+    function groupOf(el) { return parseInt(el.getAttribute('data-shirt-group'), 10) || 1; }
+    function activeDots() { return dots.filter(function (d) { return groupOf(d) === shirtNo; }); }
+
+    /* Mostra só os pontos/linhas da camisa ativa e numera o card (01 / 03) dentro da camisa */
+    function showGroup() {
+      groups.forEach(function (g) { g.classList.toggle('is-on', groupOf(g) === shirtNo); });
+      var act = activeDots();
+      act.forEach(function (d, k) {
+        var p = panels[dots.indexOf(d)];
+        var c = p && p.querySelector('[data-hs-count]');
+        if (c) c.textContent = ('0' + (k + 1)).slice(-2) + ' / ' + ('0' + act.length).slice(-2);
+      });
+      var arrows = root.querySelector('.brk-hs__card-arrows');
+      if (arrows) arrows.style.display = act.length > 1 ? '' : 'none';
+    }
+
+    /* Entrada suave quando a seção aparece na tela */
+    function reveal() {
+      root.classList.add('is-in');
+      setTimeout(function () { root.classList.add('is-settled'); }, 2200);
+    }
+    if (!root.classList.contains('brk-hs--anim') || !('IntersectionObserver' in window) || window.Shopify && Shopify.designMode) {
+      reveal();
+    } else {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) { reveal(); io.disconnect(); } });
+      }, { threshold: 0.2 });
+      io.observe(root);
+    }
+
+    function clearTimers() { timers.forEach(clearTimeout); timers = []; }
+    function later(fn, ms) { timers.push(setTimeout(fn, ms)); }
+
+    canvas.addEventListener('transitionend', function (e) { if (e.propertyName === 'transform') canvas.classList.remove('is-moving'); });
+
+    function hideRay() {
+      ray.classList.remove('is-on');
+      rayDot.classList.remove('is-on');
+    }
+    function zoomTo(i, scroll) {
+      var d = dots[i];
+      if (!d) return;
+      clearTimers();
+      var desk = mqDesk.matches;
+      var ax = parseFloat(desk ? d.dataset.ax : d.dataset.axm) / 100;
+      var ay = parseFloat(desk ? d.dataset.ay : d.dataset.aym) / 100;
+      var z = parseFloat(desk ? d.dataset.zoom : d.dataset.zoomM) / 100 || 2;
+      if (!canvas.style.width) canvas.style.width = canvas.offsetWidth + 'px';
+      var cw = canvas.offsetWidth, ch = canvas.offsetHeight;
+      var sw = stage.clientWidth, sh = desk ? stage.clientHeight : window.innerHeight * zoomHM / 100;
+      var left0 = (sw - cw) / 2, top0 = (sh - ch) / 2;
+      var tx = desk ? sw * focusX : sw / 2;
+      var ty = desk ? sh / 2 : sh * 0.6;
+      var dx = tx - left0 - ax * cw * z;
+      var dy = ty - top0 - ay * ch * z;
+      var wasOpen = current > -1;
+
+      root.classList.add('is-zoomed');
+      card.classList.remove('is-on');
+      hideRay();
+      canvas.classList.add('is-moving');
+      requestAnimationFrame(function () {
+        canvas.style.transform = 'translate3d(' + dx.toFixed(1) + 'px,' + dy.toFixed(1) + 'px,0) scale(' + z + ')';
+      });
+      current = i;
+
+      later(function () { panels.forEach(function (p, idx) { p.hidden = idx !== i; }); }, wasOpen ? 300 : 0);
+      var wait = speed * 0.8;
+      later(function () {
+        /* posiciona a linha no tamanho final e anima só a escala (roda na GPU, sem travar) */
+        ray.style.transition = 'none';
+        ray.classList.toggle('is-v', !desk);
+        ray.style.left = tx + 'px';
+        ray.style.top = (desk ? ty - 1 : ty) + 'px';
+        if (desk) {
+          var cardLeft = sw - sw * 0.06 - card.offsetWidth;
+          ray.style.width = Math.max(0, cardLeft - tx) + 'px';
+          ray.style.height = '2px';
+        } else {
+          ray.style.left = (tx - 1) + 'px';
+          ray.style.width = '2px';
+          ray.style.height = Math.max(0, sh - ty + 16) + 'px';
+        }
+        rayDot.style.left = tx + 'px';
+        rayDot.style.top = ty + 'px';
+        void ray.offsetWidth;
+        ray.style.transition = '';
+        rayDot.classList.add('is-on');
+        ray.classList.add('is-on');
+      }, wait);
+      later(function () {
+        card.classList.add('is-on');
+        if (!desk && scroll !== false) {
+          var r = card.getBoundingClientRect();
+          var target = window.scrollY + r.bottom - window.innerHeight + 16;
+          if (target > window.scrollY) window.scrollTo({ top: target, behavior: 'smooth' });
+        }
+      }, wait + 520);
+    }
+    function reset() {
+      clearTimers();
+      card.classList.remove('is-on');
+      hideRay();
+      later(function () {
+        canvas.classList.add('is-moving');
+        canvas.style.transform = '';
+      }, 120);
+      later(function () { root.classList.remove('is-zoomed'); }, 320);
+      later(function () { if (current < 0) canvas.style.width = ''; }, 320 + speed + 50);
+      current = -1;
+    }
+    function step(dir) {
+      if (current < 0) return;
+      var act = activeDots(), k = act.indexOf(dots[current]);
+      if (k < 0 || act.length < 2) return;
+      zoomTo(dots.indexOf(act[(k + dir + act.length) % act.length]));
+    }
+
+    /* ---------- Troca de camisa pelos botões ---------- */
+    function setRatio(img) {
+      var ar = img && parseFloat(img.getAttribute('data-ar'));
+      if (ar) { root.style.setProperty('--hs-ar', ar); root.style.setProperty('--hs-ar-m', ar); }
+    }
+    function selectShirt(n) {
+      if (n === shirtNo || switching || !shirts[n - 1]) return;
+      switching = true;
+      var wasZoomed = current > -1;
+      if (wasZoomed) reset();
+      var delay = wasZoomed ? 320 + speed : 0;
+      switches.forEach(function (b) {
+        var on = parseInt(b.dataset.hsSwitch, 10) === n;
+        b.classList.toggle('is-active', on);
+        b.setAttribute('aria-selected', on ? 'true' : 'false');
+        if (on && cta) {
+          if (b.dataset.link) cta.setAttribute('href', b.dataset.link);
+          if (ctaLabel && b.dataset.cta) ctaLabel.textContent = b.dataset.cta;
+        }
+      });
+      setTimeout(function () {
+        var out = shirts[shirtNo - 1], inn = shirts[n - 1];
+        groups.forEach(function (g) { g.classList.remove('is-on'); });
+        var go = function () {
+          out.classList.remove('is-active');
+          out.classList.add('is-leaving');
+          setTimeout(function () { out.classList.remove('is-leaving'); }, 1100);
+          canvas.style.width = '';
+          setRatio(inn);
+          inn.classList.add('is-active');
+          shirtNo = n;
+          setTimeout(function () { showGroup(); switching = false; }, 650);
+        };
+        if (inn.complete && inn.naturalWidth) go(); else { inn.loading = 'eager'; inn.addEventListener('load', go, { once: true }); }
+      }, delay);
+      track('hotspot_shirt_switch', { hotspot_camisa: shirts[n - 1].getAttribute('alt') });
+    }
+    switches.forEach(function (b) {
+      b.addEventListener('click', function (e) { e.stopPropagation(); selectShirt(parseInt(b.dataset.hsSwitch, 10)); });
+    });
+    /* pré-carrega as outras camisas depois que a primeira aparece */
+    setTimeout(function () { shirts.forEach(function (im) { im.loading = 'eager'; }); }, 1500);
+    setRatio(shirts[0]);
+    showGroup();
+
+    dots.forEach(function (d, i) {
+      d.addEventListener('click', function (e) {
+        e.preventDefault(); e.stopPropagation(); zoomTo(i);
+        track('hotspot_click', { hotspot_detalhe: d.dataset.title, hotspot_camisa: shirtName() });
+      });
+    });
+    var viewed = false;
+    if ('IntersectionObserver' in window) {
+      var vio = new IntersectionObserver(function (en) {
+        if (en[0].isIntersecting && !viewed) { viewed = true; vio.disconnect(); track('hotspot_view', { hotspot_camisa: shirtName() }); }
+      }, { threshold: 0.5 });
+      vio.observe(stage);
+    }
+    if (cta) cta.addEventListener('click', function () { track('hotspot_cta_click', { hotspot_camisa: shirtName() }); });
+    card.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('.brk-hs__card-product, .brk-hs__card-link');
+      if (a) track('hotspot_product_click', { hotspot_detalhe: current > -1 ? dots[current].dataset.title : '', hotspot_camisa: shirtName() });
+    });
+    stage.addEventListener('click', function () { if (current > -1) reset(); });
+    root.querySelector('[data-hs-close]').addEventListener('click', function (e) { e.stopPropagation(); track('hotspot_close'); reset(); });
+    var prev = root.querySelector('[data-hs-prev]'), next = root.querySelector('[data-hs-next]');
+    if (prev) prev.addEventListener('click', function (e) { e.stopPropagation(); step(-1); track('hotspot_nav', { hotspot_detalhe: dots[current] && dots[current].dataset.title }); });
+    if (next) next.addEventListener('click', function (e) { e.stopPropagation(); step(1); track('hotspot_nav', { hotspot_detalhe: dots[current] && dots[current].dataset.title }); });
+    document.addEventListener('keydown', function (e) {
+      if (current < 0) return;
+      if (e.key === 'Escape') reset();
+      if (e.key === 'ArrowRight') step(1);
+      if (e.key === 'ArrowLeft') step(-1);
+    });
+    var rt;
+    window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(function () { if (current > -1) zoomTo(current, false); }, 150); });
+
+    /* Editor: selecionar um ponto troca para a camisa dele e dá zoom; selecionar uma camisa troca a camisa */
+    document.addEventListener('shopify:block:select', function (e) {
+      var i = dots.indexOf(e.target);
+      if (i > -1) {
+        var g = groupOf(dots[i]);
+        if (g !== shirtNo) { switching = false; selectShirt(g); setTimeout(function () { zoomTo(i, false); }, 900); }
+        else zoomTo(i, false);
+        return;
+      }
+      var sb = switches.indexOf(e.target);
+      if (sb > -1) { switching = false; selectShirt(parseInt(switches[sb].dataset.hsSwitch, 10)); }
+    });
+    document.addEventListener('shopify:block:deselect', function (e) { if (dots.indexOf(e.target) > -1) reset(); });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Imagem com Hotspots",
+  "tag": "section",
+  "class": "section-brk-hotspot",
+  "max_blocks": 24,
+  "settings": [
+    { "type": "paragraph", "content": "Adicione um bloco \"Camisa\" para cada modelo (vira um botão de troca) e blocos \"Ponto\" para os detalhes. Em cada ponto, escolha a qual camisa ele pertence." },
+    { "type": "header", "content": "Área da imagem" },
+    { "type": "range", "id": "stage_height", "min": 50, "max": 110, "step": 5, "unit": "vh", "label": "Altura da área da imagem (desktop)", "default": 80 },
+    { "type": "range", "id": "stage_height_mobile", "min": 40, "max": 100, "step": 5, "unit": "vh", "label": "Altura da área da imagem (mobile)", "default": 60 },
+    { "type": "range", "id": "stage_height_zoom_mobile", "min": 25, "max": 80, "step": 1, "unit": "vh", "label": "Altura da área da imagem durante o zoom (mobile)", "default": 42, "info": "Menor = menos espaço vazio acima do detalhe." },
+    { "type": "range", "id": "image_scale", "min": 50, "max": 100, "step": 2, "unit": "%", "label": "Tamanho do produto dentro da área (desktop)", "default": 84 },
+    { "type": "range", "id": "image_scale_mobile", "min": 50, "max": 100, "step": 2, "unit": "%", "label": "Tamanho do produto dentro da área (mobile)", "default": 82 },
+
+    { "type": "header", "content": "Animações" },
+    { "type": "checkbox", "id": "animations", "label": "Animar a entrada ao rolar até a seção", "default": true },
+    { "type": "checkbox", "id": "float", "label": "Produto flutuando suavemente", "default": true },
+    { "type": "checkbox", "id": "pulse", "label": "Pulso nos pontos", "default": true },
+    { "type": "range", "id": "zoom_speed", "min": 400, "max": 2000, "step": 100, "unit": "ms", "label": "Velocidade do zoom", "default": 1100 },
+    { "type": "range", "id": "zoom_focus_x", "min": 20, "max": 60, "step": 1, "unit": "%", "label": "Posição horizontal da área ampliada (desktop)", "default": 50, "info": "A linha sai desse ponto e vai até o card, à direita." },
+    { "type": "range", "id": "card_width", "min": 300, "max": 600, "step": 10, "unit": "px", "label": "Largura do card de detalhe (desktop)", "default": 460 },
+    { "type": "checkbox", "id": "keep_logo_zoom", "label": "Manter título e textos visíveis durante o zoom (desktop)", "default": true },
+
+    { "type": "header", "content": "Textos" },
+    { "type": "select", "id": "section_width", "label": "t:sections.all.section_width.label",
+      "options": [
+        { "value": "container", "label": "t:sections.all.section_width.container.label" },
+        { "value": "fluid_container", "label": "t:sections.all.section_width.fluid_container.label" }
+      ],
+      "default": "container"
+    },
+    { "type": "range", "id": "head_x", "min": 0, "max": 40, "step": 1, "unit": "%", "label": "Posição horizontal do texto (desktop)", "default": 4, "info": "Distância da borda esquerda da tela." },
+    { "type": "range", "id": "head_y", "min": 0, "max": 400, "step": 10, "unit": "px", "label": "Posição vertical do texto (desktop)", "default": 40 },
+    { "type": "range", "id": "head_width", "min": 240, "max": 600, "step": 10, "unit": "px", "label": "Largura máxima do texto (desktop)", "default": 380 },
+    { "type": "text", "id": "eyebrow", "label": "Texto acima do título", "default": "Coleção Elements" },
+    { "type": "range", "id": "eyebrow_size", "min": 10, "max": 28, "step": 1, "unit": "px", "label": "Tamanho do texto acima do título (desktop)", "default": 14 },
+    { "type": "range", "id": "eyebrow_size_mobile", "min": 10, "max": 24, "step": 1, "unit": "px", "label": "Tamanho do texto acima do título (mobile)", "default": 12 },
+    { "type": "text", "id": "heading", "label": "Título", "default": "Escolha a sua camisa", "info": "Se escolher uma logo abaixo, ela substitui o título." },
+    { "type": "range", "id": "heading_size", "min": 20, "max": 80, "step": 1, "unit": "px", "label": "Tamanho do título (desktop)", "default": 46 },
+    { "type": "range", "id": "heading_size_mobile", "min": 18, "max": 50, "step": 1, "unit": "px", "label": "Tamanho do título (mobile)", "default": 24 },
+    { "type": "image_picker", "id": "logo", "label": "Logo no lugar do título" },
+    { "type": "range", "id": "logo_width", "min": 120, "max": 900, "step": 10, "unit": "px", "label": "Largura da logo (desktop)", "default": 420 },
+    { "type": "range", "id": "logo_gap_top", "min": -60, "max": 30, "step": 1, "unit": "px", "label": "Espaço acima da logo (desktop)", "default": 0 },
+    { "type": "range", "id": "logo_gap", "min": -40, "max": 30, "step": 1, "unit": "px", "label": "Espaço abaixo da logo (desktop)", "default": 0 },
+    { "type": "range", "id": "logo_shift", "min": -10, "max": 10, "step": 0.5, "unit": "%", "label": "Ajuste horizontal da logo (desktop)", "default": 0 },
+    { "type": "range", "id": "logo_width_mobile", "min": 100, "max": 420, "step": 10, "unit": "px", "label": "Largura da logo (mobile)", "default": 280 },
+    { "type": "range", "id": "logo_gap_top_mobile", "min": -40, "max": 30, "step": 1, "unit": "px", "label": "Espaço acima da logo (mobile)", "default": 0 },
+    { "type": "range", "id": "logo_gap_mobile", "min": -40, "max": 30, "step": 1, "unit": "px", "label": "Espaço abaixo da logo (mobile)", "default": 0 },
+    { "type": "textarea", "id": "subheading", "label": "Subtítulo", "default": "Toque nas camisas e nos pontos para conhecer cada detalhe." },
+    { "type": "range", "id": "subheading_size", "min": 11, "max": 24, "step": 1, "unit": "px", "label": "Tamanho do subtítulo (desktop)", "default": 15 },
+    { "type": "range", "id": "subheading_size_mobile", "min": 10, "max": 20, "step": 1, "unit": "px", "label": "Tamanho do subtítulo (mobile)", "default": 13 },
+    { "type": "text", "id": "button_label", "label": "Texto do botão do cabeçalho" },
+    { "type": "url", "id": "button_link", "label": "Link do botão do cabeçalho" },
+    { "type": "range", "id": "switch_size", "min": 12, "max": 24, "step": 1, "unit": "px", "label": "Tamanho do texto dos botões das camisas (desktop)", "default": 18 },
+    { "type": "color", "id": "switch_bg", "label": "Botões das camisas: fundo", "default": "#ffffff" },
+    { "type": "color", "id": "switch_text", "label": "Botões das camisas: texto", "default": "#111111" },
+    { "type": "color", "id": "switch_active_bg", "label": "Botão da camisa selecionada: fundo", "default": "#135ed1" },
+    { "type": "color", "id": "switch_active_text", "label": "Botão da camisa selecionada: texto", "default": "#ffffff" },
+    { "type": "range", "id": "switch_size_mobile", "min": 11, "max": 20, "step": 1, "unit": "px", "label": "Tamanho do texto dos botões das camisas (mobile)", "default": 15 },
+    { "type": "text", "id": "switch_label", "label": "Nome do grupo de botões (acessibilidade)", "default": "Escolha o modelo" },
+    { "type": "text", "id": "hint", "label": "Dica embaixo da imagem", "default": "Toque nos pontos para ver os detalhes" },
+    { "type": "range", "id": "hint_size", "min": 9, "max": 18, "step": 1, "unit": "px", "label": "Tamanho da dica (desktop)", "default": 12 },
+    { "type": "range", "id": "hint_size_mobile", "min": 8, "max": 16, "step": 1, "unit": "px", "label": "Tamanho da dica (mobile)", "default": 10 },
+    { "type": "text", "id": "cta_label", "label": "Botão abaixo da dica (padrão)", "default": "Ver coleção", "info": "Cada camisa pode ter o seu texto e link. Vazio esconde o botão." },
+    { "type": "url", "id": "cta_link", "label": "Link do botão abaixo da dica (padrão)" },
+    { "type": "checkbox", "id": "cta_new_tab", "label": "Abrir o link em nova aba", "default": false },
+    { "type": "text", "id": "back_label", "label": "Texto do botão de voltar (card)", "default": "Voltar" },
+    { "type": "select", "id": "heading_style", "label": "Estilo dos títulos",
+      "options": [ { "value": "italic", "label": "Itálico" }, { "value": "normal", "label": "Normal" } ],
+      "default": "normal"
+    },
+    { "type": "select", "id": "text_align_mobile", "label": "Alinhamento do texto (mobile)",
+      "options": [ { "value": "left", "label": "Esquerda" }, { "value": "center", "label": "Centro" } ],
+      "default": "center"
+    },
+
+    { "type": "header", "content": "Pontos" },
+    { "type": "checkbox", "id": "show_labels", "label": "Mostrar nome ao lado do ponto", "default": true },
+    { "type": "checkbox", "id": "labels_mobile", "label": "Mostrar nome também no mobile", "default": true },
+    { "type": "range", "id": "dot_size", "min": 20, "max": 60, "step": 2, "unit": "px", "label": "Tamanho do ponto (desktop)", "default": 36 },
+    { "type": "range", "id": "dot_size_mobile", "min": 18, "max": 50, "step": 2, "unit": "px", "label": "Tamanho do ponto (mobile)", "default": 28 },
+
+    { "type": "header", "content": "Cores" },
+    { "type": "color", "id": "bg_top", "label": "Fundo (topo)", "default": "#0d1b2a" },
+    { "type": "color", "id": "bg_bottom", "label": "Fundo (base)", "default": "#05080d" },
+    { "type": "checkbox", "id": "tint_enable", "label": "Brilho de cor atrás da camisa", "default": true },
+    { "type": "color", "id": "tint_color", "label": "Cor do brilho", "default": "#135ed1" },
+    { "type": "range", "id": "tint_opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "label": "Intensidade do brilho", "default": 45 },
+    { "type": "select", "id": "tint_style", "label": "Formato do brilho",
+      "options": [ { "value": "radial", "label": "Brilho atrás da camisa" }, { "value": "top", "label": "Degradê de cima" }, { "value": "flat", "label": "Chapado" } ],
+      "default": "radial"
+    },
+    { "type": "image_picker", "id": "bg_image", "label": "Textura de fundo (desktop)", "info": "Opcional. PNG por cima do fundo." },
+    { "type": "image_picker", "id": "bg_image_mobile", "label": "Textura de fundo (mobile)", "info": "Opcional. Se ficar vazio, usa a do desktop." },
+    { "type": "select", "id": "bg_fit", "label": "Encaixe da textura",
+      "options": [ { "value": "cover", "label": "Preencher a seção (corta as sobras)" }, { "value": "contain", "label": "Mostrar inteira" } ],
+      "default": "cover"
+    },
+    { "type": "select", "id": "bg_position", "label": "Posição da textura",
+      "options": [
+        { "value": "center center", "label": "Centro" },
+        { "value": "center top", "label": "Topo" },
+        { "value": "center bottom", "label": "Base" },
+        { "value": "left center", "label": "Esquerda" },
+        { "value": "right center", "label": "Direita" }
+      ],
+      "default": "center center"
+    },
+    { "type": "select", "id": "bg_blend", "label": "Mistura da textura com o fundo",
+      "options": [
+        { "value": "normal", "label": "Normal" },
+        { "value": "overlay", "label": "Sobrepor (overlay)" },
+        { "value": "soft-light", "label": "Luz suave" },
+        { "value": "multiply", "label": "Multiplicar (escurece)" },
+        { "value": "screen", "label": "Tela (clareia)" },
+        { "value": "luminosity", "label": "Luminosidade" }
+      ],
+      "default": "overlay"
+    },
+    { "type": "range", "id": "bg_opacity", "min": 0, "max": 100, "step": 5, "unit": "%", "label": "Opacidade da textura", "default": 100 },
+    { "type": "color", "id": "text_color", "label": "Texto", "default": "#ffffff" },
+    { "type": "color", "id": "accent_color", "label": "Destaque (texto acima do título e botão do cabeçalho)", "default": "#7fb0ff" },
+    { "type": "color", "id": "button_text_color", "label": "Texto do botão do cabeçalho", "default": "#0d0d0d" },
+    { "type": "range", "id": "button_radius", "min": 0, "max": 30, "step": 1, "unit": "px", "label": "Arredondamento do botão do cabeçalho", "default": 6 },
+    { "type": "color", "id": "dot_color", "label": "Ponto", "default": "#ffffff" },
+    { "type": "color", "id": "dot_icon_color", "label": "Ícone/nome do ponto", "default": "#111111" },
+    { "type": "color", "id": "line_color", "label": "Linhas", "default": "#ffffff" },
+    { "type": "color", "id": "card_bg", "label": "Fundo do card", "default": "#ffffff" },
+    { "type": "color", "id": "card_text", "label": "Texto do card", "default": "#111111" },
+
+    { "type": "header", "content": "Transição com o banner de cima" },
+    { "type": "checkbox", "id": "top_fade", "label": "Degradê no topo, subindo sobre o banner", "default": true },
+    { "type": "range", "id": "top_overlap", "min": 0, "max": 400, "step": 10, "unit": "px", "label": "Altura do degradê sobre o banner (desktop)", "default": 110 },
+    { "type": "range", "id": "top_overlap_mobile", "min": 0, "max": 300, "step": 10, "unit": "px", "label": "Altura do degradê sobre o banner (mobile)", "default": 40 },
+    { "type": "header", "content": "Espaçamento" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 160, "step": 4, "unit": "px", "label": "Espaço em cima (desktop)", "default": 24 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 200, "step": 4, "unit": "px", "label": "Espaço embaixo (desktop)", "default": 60 },
+    { "type": "range", "id": "padding_top_mobile", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Espaço em cima (mobile)", "default": 32 },
+    { "type": "range", "id": "padding_bottom_mobile", "min": 0, "max": 160, "step": 4, "unit": "px", "label": "Espaço embaixo (mobile)", "default": 40 }
+  ],
+  "blocks": [
+    {
+      "type": "shirt",
+      "name": "Camisa",
+      "limit": 5,
+      "settings": [
+        { "type": "paragraph", "content": "A ordem dos blocos \"Camisa\" define o número: a 1ª é a Camisa 1, a 2ª é a Camisa 2..." },
+        { "type": "text", "id": "title", "label": "Nome no botão", "default": "Modelo" },
+        { "type": "image_picker", "id": "image", "label": "Mockup da camisa", "info": "PNG sem fundo. Os pontos usam a posição em % desta imagem." },
+        { "type": "url", "id": "link", "label": "Link do botão abaixo da dica", "info": "Ex.: a coleção deste modelo. Vazio = link padrão da seção." },
+        { "type": "text", "id": "cta_label", "label": "Texto do botão abaixo da dica", "info": "Vazio = texto padrão da seção." }
+      ]
+    },
+    {
+      "type": "hotspot",
+      "name": "Ponto",
+      "settings": [
+        { "type": "select", "id": "shirt", "label": "Camisa", "options": [
+          { "value": "1", "label": "Camisa 1" }, { "value": "2", "label": "Camisa 2" }, { "value": "3", "label": "Camisa 3" }, { "value": "4", "label": "Camisa 4" }, { "value": "5", "label": "Camisa 5" }
+        ], "default": "1" },
+        { "type": "text", "id": "title", "label": "Nome", "default": "Detalhe" },
+        { "type": "richtext", "id": "text", "label": "Texto", "default": "<p>Descreva aqui este detalhe da peça.</p>" },
+        { "type": "product", "id": "product", "label": "Produto (opcional)", "info": "Mostra foto, nome e preço no card." },
+        { "type": "text", "id": "link_label", "label": "Texto do link" },
+        { "type": "url", "id": "link", "label": "Link", "info": "Se ficar vazio e houver produto, usa o link do produto." },
+        { "type": "header", "content": "Zoom" },
+        { "type": "range", "id": "zoom", "min": 120, "max": 500, "step": 10, "unit": "%", "label": "Zoom (desktop)", "default": 200 },
+        { "type": "range", "id": "zoom_mobile", "min": 120, "max": 500, "step": 10, "unit": "%", "label": "Zoom (mobile)", "default": 240 },
+        { "type": "header", "content": "Desktop" },
+        { "type": "paragraph", "content": "Parte do produto = onde a linha chega e onde o zoom foca. Ponto = onde fica o botão, ao lado da peça." },
+        { "type": "range", "id": "anchor_x", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "Parte do produto: horizontal", "default": 50 },
+        { "type": "range", "id": "anchor_y", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "Parte do produto: vertical", "default": 50 },
+        { "type": "range", "id": "pos_x", "min": -20, "max": 120, "step": 2, "unit": "%", "label": "Ponto: horizontal", "default": 84 },
+        { "type": "range", "id": "pos_y", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "Ponto: vertical", "default": 50 },
+        { "type": "header", "content": "Mobile" },
+        { "type": "checkbox", "id": "same_position_mobile", "label": "Usar as mesmas posições do desktop", "default": true },
+        { "type": "range", "id": "anchor_x_mobile", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "Parte do produto: horizontal", "default": 50 },
+        { "type": "range", "id": "anchor_y_mobile", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "Parte do produto: vertical", "default": 50 },
+        { "type": "range", "id": "pos_x_mobile", "min": -20, "max": 120, "step": 2, "unit": "%", "label": "Ponto: horizontal", "default": 84 },
+        { "type": "range", "id": "pos_y_mobile", "min": 0, "max": 100, "step": 1, "unit": "%", "label": "Ponto: vertical", "default": 50 }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Imagem com Hotspots",
+      "blocks": [
+        { "type": "shirt", "settings": { "title": "Modelo 1" } },
+        { "type": "hotspot", "settings": { "shirt": "1", "title": "Detalhe 1", "anchor_x": 40, "anchor_y": 20, "pos_x": 10, "pos_y": 15 } },
+        { "type": "hotspot", "settings": { "shirt": "1", "title": "Detalhe 2", "anchor_x": 80, "anchor_y": 80, "pos_x": 104, "pos_y": 70 } }
+      ]
+    }
+  ]
+}
+{% endschema %}

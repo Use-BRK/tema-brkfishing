@@ -13,6 +13,236 @@
     "market": "br"
   },
   "sections": {
+    "brk_hotspot_elements": {
+      "type": "brk-hotspot-image",
+      "name": "Hotspots Elements",
+      "disabled": false,
+      "settings": {
+        "eyebrow": "",
+        "heading": "Conheça as linhas BRK",
+        "subheading": "Toque nos pontos para conhecer cada detalhe.",
+        "hint": "",
+        "cta_label": "Ver coleção",
+        "cta_link": "shopify://collections/colecao-elements",
+        "back_label": "Voltar",
+        "switch_label": "Escolha o modelo",
+        "bg_top": "#0d1b2a",
+        "bg_bottom": "#05080d",
+        "text_color": "#ffffff",
+        "accent_color": "#7fb0ff",
+        "tint_enable": true,
+        "tint_color": "#135ed1",
+        "tint_opacity": 45,
+        "tint_style": "radial",
+        "dot_color": "#ffffff",
+        "dot_icon_color": "#111111",
+        "line_color": "#ffffff",
+        "card_bg": "#ffffff",
+        "card_text": "#111111",
+        "top_fade": false,
+        "heading_style": "normal",
+        "top_overlap": 110,
+        "top_overlap_mobile": 40,
+        "heading_size_mobile": 26,
+        "switch_bg": "#ffffff",
+        "switch_text": "#111111",
+        "switch_active_bg": "#135ed1",
+        "switch_active_text": "#ffffff",
+        "switch_size_mobile": 15,
+        "stage_height_mobile": 60,
+        "image_scale_mobile": 82,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 40
+      },
+      "blocks": {
+        "shirt_armorx": {
+          "type": "shirt",
+          "settings": {
+            "title": "ArmorX",
+            "image": "shopify://shop_images/brk-linhas-armorx-v2.png",
+            "link": "shopify://collections/elements-armorx",
+            "cta_label": "Ver linha ArmorX"
+          }
+        },
+        "shirt_hybrid": {
+          "type": "shirt",
+          "settings": {
+            "title": "Hybrid",
+            "image": "shopify://shop_images/brk-linhas-hybrid-v2.png",
+            "link": "shopify://collections/elements-hybrid",
+            "cta_label": "Ver linha Hybrid"
+          }
+        },
+        "shirt_fusionx": {
+          "type": "shirt",
+          "settings": {
+            "title": "FusionX",
+            "image": "shopify://shop_images/brk-linhas-fusionx-v2.png",
+            "link": "shopify://collections/elements-fusion",
+            "cta_label": "Ver linha FusionX"
+          }
+        },
+        "hs_armorx_gola": {
+          "type": "hotspot",
+          "settings": {
+            "shirt": "1",
+            "title": "Gola com zíper",
+            "text": "<p>Gola alta com zíper: abra para ventilar quando esquenta e feche para cobrir o pescoço quando o sol aperta.</p>",
+            "link_label": "",
+            "link": "",
+            "zoom": 200,
+            "zoom_mobile": 240,
+            "anchor_x": 56,
+            "anchor_y": 14,
+            "pos_x": 100,
+            "pos_y": 8,
+            "same_position_mobile": false,
+            "anchor_x_mobile": 56,
+            "anchor_y_mobile": 14,
+            "pos_x_mobile": 84,
+            "pos_y_mobile": 4
+          }
+        },
+        "hs_armorx_luva": {
+          "type": "hotspot",
+          "settings": {
+            "shirt": "1",
+            "title": "Luva",
+            "text": "<p>Luva integrada no punho que protege o dorso da mão do sol, sem tirar a liberdade de movimento.</p>",
+            "link_label": "",
+            "link": "",
+            "zoom": 200,
+            "zoom_mobile": 240,
+            "anchor_x": 91,
+            "anchor_y": 88,
+            "pos_x": 110,
+            "pos_y": 76,
+            "same_position_mobile": false,
+            "anchor_x_mobile": 91,
+            "anchor_y_mobile": 88,
+            "pos_x_mobile": 76,
+            "pos_y_mobile": 70
+          }
+        },
+        "hs_hybrid_capuz": {
+          "type": "hotspot",
+          "settings": {
+            "shirt": "2",
+            "title": "Capuz",
+            "text": "<p>Capuz que protege cabeça e pescoço do sol e ajuda no conforto térmico nos dias mais quentes.</p>",
+            "link_label": "",
+            "link": "",
+            "zoom": 200,
+            "zoom_mobile": 240,
+            "anchor_x": 40,
+            "anchor_y": 10,
+            "pos_x": 4,
+            "pos_y": 6,
+            "same_position_mobile": false,
+            "anchor_x_mobile": 40,
+            "anchor_y_mobile": 10,
+            "pos_x_mobile": 16,
+            "pos_y_mobile": 4
+          }
+        },
+        "hs_hybrid_luva": {
+          "type": "hotspot",
+          "settings": {
+            "shirt": "2",
+            "title": "Luva",
+            "text": "<p>Luva integrada no punho que protege o dorso da mão do sol, sem tirar a liberdade de movimento.</p>",
+            "link_label": "",
+            "link": "",
+            "zoom": 200,
+            "zoom_mobile": 240,
+            "anchor_x": 91,
+            "anchor_y": 86,
+            "pos_x": 110,
+            "pos_y": 74,
+            "same_position_mobile": false,
+            "anchor_x_mobile": 91,
+            "anchor_y_mobile": 86,
+            "pos_x_mobile": 76,
+            "pos_y_mobile": 68
+          }
+        },
+        "hs_fusionx_capuz": {
+          "type": "hotspot",
+          "settings": {
+            "shirt": "3",
+            "title": "Capuz",
+            "text": "<p>Capuz que protege cabeça e pescoço do sol e ajuda no conforto térmico nos dias mais quentes.</p>",
+            "link_label": "",
+            "link": "",
+            "zoom": 200,
+            "zoom_mobile": 240,
+            "anchor_x": 36,
+            "anchor_y": 8,
+            "pos_x": 4,
+            "pos_y": 4,
+            "same_position_mobile": false,
+            "anchor_x_mobile": 36,
+            "anchor_y_mobile": 8,
+            "pos_x_mobile": 16,
+            "pos_y_mobile": 4
+          }
+        },
+        "hs_fusionx_bandana": {
+          "type": "hotspot",
+          "settings": {
+            "shirt": "3",
+            "title": "Bandana",
+            "text": "<p>Bandana integrada com microfuros: respiração fácil, estica sem apertar o rosto e também tem proteção UV50+.</p>",
+            "link_label": "",
+            "link": "",
+            "zoom": 200,
+            "zoom_mobile": 240,
+            "anchor_x": 52,
+            "anchor_y": 22,
+            "pos_x": 100,
+            "pos_y": 16,
+            "same_position_mobile": false,
+            "anchor_x_mobile": 52,
+            "anchor_y_mobile": 22,
+            "pos_x_mobile": 84,
+            "pos_y_mobile": 14
+          }
+        },
+        "hs_fusionx_luva": {
+          "type": "hotspot",
+          "settings": {
+            "shirt": "3",
+            "title": "Luva",
+            "text": "<p>Luva integrada no punho que protege o dorso da mão do sol, sem tirar a liberdade de movimento.</p>",
+            "link_label": "",
+            "link": "",
+            "zoom": 200,
+            "zoom_mobile": 240,
+            "anchor_x": 91,
+            "anchor_y": 86,
+            "pos_x": 110,
+            "pos_y": 74,
+            "same_position_mobile": false,
+            "anchor_x_mobile": 91,
+            "anchor_y_mobile": 86,
+            "pos_x_mobile": 76,
+            "pos_y_mobile": 68
+          }
+        }
+      },
+      "block_order": [
+        "shirt_armorx",
+        "shirt_hybrid",
+        "shirt_fusionx",
+        "hs_armorx_gola",
+        "hs_armorx_luva",
+        "hs_hybrid_capuz",
+        "hs_hybrid_luva",
+        "hs_fusionx_capuz",
+        "hs_fusionx_bandana",
+        "hs_fusionx_luva"
+      ]
+    },
     "collection_tab_LtRtt": {
       "type": "collection-tab",
       "disabled": false,
@@ -1082,6 +1312,7 @@
   },
   "order": [
     "slideshow_8KKtNU",
+    "brk_hotspot_elements",
     "collection_tab_LtRtt",
     "collection_tab_gQA4W",
     "banner_carousel_DY8ed",
