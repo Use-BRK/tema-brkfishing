@@ -13,110 +13,6 @@
     "market": "br"
   },
   "sections": {
-    "top_bar_CbXNYj": {
-      "disabled": false,
-      "custom_css": [
-        "#topbar {padding-inline: 4rem;}",
-        "@media (max-width: 600px) {#topbar {padding-inline: 0; }}",
-        "#topbar .topbar-cd-text,#topbar .topbar-shipping {text-transform: uppercase;}",
-        "@media (max-width: 1024px) {#topbar .topbar__section-inner:has(> .topbar-cd-text:not([hidden])) {padding-inline: 15px; }}"
-      ],
-      "settings": {
-        "section_width": "full_width",
-        "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
-        "show_separator_line": false,
-        "font_size": 16,
-        "font_weight": "body_weight"
-      },
-      "blocks": {
-        "store_information_pVeAk": {
-          "type": "store_information",
-          "disabled": true,
-          "settings": {
-            "paragraph-bd5d8ba43e240ccef7b8924de436ffa2": null,
-            "show_email": false,
-            "show_phone": true,
-            "hidden_on_mobile": true
-          }
-        },
-        "countdown_text_XF7cFC": {
-          "type": "countdown_text",
-          "disabled": false,
-          "settings": {
-            "paragraph-18a211546d5d4e8cd1772f02bc17d679": null,
-            "layout": "stacked",
-            "highlight": "R$30",
-            "line_1": "OFF nas",
-            "line_2": "camisas da Black",
-            "header-84a25a1163a1b95408c7f99ca0247b07": null,
-            "paragraph-5240acd299e5ea8df970e9d7e5941e26": null,
-            "badge_top": "+ Frete",
-            "badge_bottom": "Grátis",
-            "badge_style": "outline",
-            "highlight_size": 30,
-            "lines_size": 20,
-            "highlight_size_mobile": 19,
-            "lines_size_mobile": 11,
-            "line_1_weight": "700",
-            "line_2_weight": "400",
-            "gap_desktop": 110,
-            "hidden_on_mobile": false
-          }
-        },
-        "shipping_countdown_F86tnm": {
-          "type": "shipping_countdown",
-          "name": "Timer",
-          "disabled": false,
-          "settings": {
-            "paragraph-f4024f2c51c7bca1c46fa6b133ccebd0": null,
-            "timer_font_size": 36,
-            "label_font_size": 12,
-            "timer_font_size_mobile": 20,
-            "label_font_size_mobile": 9,
-            "number_weight": "600",
-            "digit_spacing": 24,
-            "separator_spacing": 60,
-            "separator_size": 70,
-            "start_date": "",
-            "start_time": "",
-            "end_date": "2026-11-11",
-            "end_time": "23:59",
-            "expired_message": "",
-            "switch_to_slider": true,
-            "header-0a1c86116bef0634ea16e04081583431": null,
-            "custom_colors": true,
-            "bg_color": "#000000",
-            "text_color": "#ffffff",
-            "timer_color": "#ffffff",
-            "hidden_on_mobile": false
-          }
-        },
-        "text_slider_LFaC38": {
-          "settings": {
-            "text1": "<strong>R$ 30 OFF</strong> NAS CAMISAS DA<strong> BLACK</strong>",
-            "enable_copy_1": false,
-            "coupon_code_1": "",
-            "text2": "<strong>FRETE FIXO</strong> - <strong>R$9,90</strong>",
-            "text3": ""
-          }
-        },
-        "text_dBJV7": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "<a href=\"/pages/politica-de-frete\" title=\"Política de Frete\"><strong>Rastrear Pedido</strong></a>",
-            "hidden_on_mobile": true
-          }
-        }
-      },
-      "block_order": [
-        "store_information_pVeAk",
-        "countdown_text_XF7cFC",
-        "shipping_countdown_F86tnm",
-        "text_slider_LFaC38",
-        "text_dBJV7"
-      ]
-    },
     "header": {
       "disabled": false,
       "settings": {
@@ -141,19 +37,19 @@
             "text": "🌟 LANÇAMENTOS",
             "open-link-newtab": false,
             "item_label": "new",
-            "header-63b8bd2b33dbc9227ef850d7ea8d12cc": null,
+            "header-f07be118bd0eac6f8c2914fc32a9aba8": null,
             "promotion_menu_column": 2,
             "mega_custom_width": 600,
             "center_submenu": false,
             "full_width": false,
-            "header-6ae9caf587a2a7d7b50d49cb4421faf4": null,
+            "header-e70ea63c3b34566627e9c69ab556f190": null,
             "promotion_position": "right",
             "promotion_image_width": 27,
-            "header-efd605ad7be458c8a75ba19d04f43b50": null,
+            "header-df2ba53192b1f3e0e8e688c9cafb9a96": null,
             "promotion_image_1": null,
             "promotion_link_1": "",
             "promotion_link_newtab_1": true,
-            "header-aa1873eccb6e0ab21dc257298ad1d210": null,
+            "header-02d5c252bd821f3544fb725414ef37c7": null,
             "promotion_image_2": null,
             "promotion_link_2": "",
             "promotion_link_newtab_2": true
@@ -167,19 +63,19 @@
             "text": "🎁 AMAZON",
             "open-link-newtab": false,
             "item_label": "hot",
-            "header-9674da042da519aee3a775252d0d864f": null,
+            "header-2e0eddaede5bd89be8fea386f31ec0c6": null,
             "promotion_menu_column": 2,
             "mega_custom_width": 600,
             "center_submenu": false,
             "full_width": false,
-            "header-83393b309657bb4aecb611136920890d": null,
+            "header-7a97056d9c7855b65fa468247705735c": null,
             "promotion_position": "right",
             "promotion_image_width": 27,
-            "header-ed5676584edf91594d6df147523ddfa4": null,
+            "header-4d5845a7b82ba0c078c3be6ec7fe0f75": null,
             "promotion_image_1": null,
             "promotion_link_1": "",
             "promotion_link_newtab_1": true,
-            "header-37adb6680469943204186f89ccc954d4": null,
+            "header-66536ca031585b7fe75c9c553ac61a7b": null,
             "promotion_image_2": null,
             "promotion_link_2": "",
             "promotion_link_newtab_2": true
@@ -193,19 +89,19 @@
             "text": "ARMORX",
             "open-link-newtab": false,
             "item_label": "hot",
-            "header-136c49ddf1b34f166a34ecd20d2cbc16": null,
+            "header-7f02e31f8a9a275ff650a8fdb997eca3": null,
             "promotion_menu_column": 2,
             "mega_custom_width": 600,
             "center_submenu": false,
             "full_width": false,
-            "header-763785b577ee36d0446bf0efa7ba2a10": null,
+            "header-f21a041d74d8d5cc6f2774c3808c2221": null,
             "promotion_position": "right",
             "promotion_image_width": 27,
-            "header-769d8ee0f6c03d539c4ccf14cf22aa64": null,
+            "header-13512b7117d52521cbeb9284af9e59f0": null,
             "promotion_image_1": null,
             "promotion_link_1": "",
             "promotion_link_newtab_1": true,
-            "header-62973f8e96e7fb619357a9a418d80905": null,
+            "header-2f760651c8f636f85dd3cba438062c25": null,
             "promotion_image_2": null,
             "promotion_link_2": "",
             "promotion_link_newtab_2": true
@@ -219,19 +115,19 @@
             "text": "⏱️Black Fishing",
             "open-link-newtab": false,
             "item_label": "unset",
-            "header-bdec508d94ecba27f42a4e8aa76b9fe5": null,
+            "header-52f6e3323b18014034e604b64140cad3": null,
             "promotion_menu_column": 5,
             "mega_custom_width": 1030,
             "center_submenu": true,
             "full_width": true,
-            "header-f8da9a9f8c0dceec5d5d3b972708b04c": null,
+            "header-afc44363982a00ca7646b7c730090da1": null,
             "promotion_position": "right",
             "promotion_image_width": 45,
-            "header-e17820e7ff69145487c102e4308363a3": null,
+            "header-f4908cb2c66bead04a0543c5f6d80777": null,
             "promotion_image_1": "shopify://shop_images/black-fishing-menu.jpg",
             "promotion_link_1": "shopify://collections/esquenta-black",
             "promotion_link_newtab_1": false,
-            "header-d3b4d2b80bdf1c2730577a14bd8c58e7": null,
+            "header-9d4cfcc3ddc9d57900fe11a01eb40317": null,
             "promotion_image_2": null,
             "promotion_link_2": "",
             "promotion_link_newtab_2": true
@@ -262,6 +158,110 @@
         "menu_promotion_infantil",
         "menu_promotion_fKxpNj",
         "menu_promotion_aQHpr9"
+      ]
+    },
+    "top_bar_CbXNYj": {
+      "disabled": false,
+      "custom_css": [
+        "#topbar {padding-inline: 4rem;}",
+        "@media (max-width: 600px) {#topbar {padding-inline: 0; }}",
+        "#topbar .topbar-cd-text,#topbar .topbar-shipping {text-transform: uppercase;}",
+        "@media (max-width: 1024px) {#topbar .topbar__section-inner:has(> .topbar-cd-text:not([hidden])) {padding-inline: 15px; }}"
+      ],
+      "settings": {
+        "section_width": "full_width",
+        "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
+        "show_separator_line": false,
+        "font_size": 16,
+        "font_weight": "body_weight"
+      },
+      "blocks": {
+        "store_information_pVeAk": {
+          "type": "store_information",
+          "disabled": true,
+          "settings": {
+            "paragraph-c61c6da5c83c29445276a841d7ea0681": null,
+            "show_email": false,
+            "show_phone": true,
+            "hidden_on_mobile": true
+          }
+        },
+        "countdown_text_XF7cFC": {
+          "type": "countdown_text",
+          "disabled": false,
+          "settings": {
+            "paragraph-45d8948758d624b6264cc45e81474ffc": null,
+            "layout": "stacked",
+            "highlight": "R$30",
+            "line_1": "OFF nas",
+            "line_2": "camisas da Black",
+            "header-b453554c94fdac5d7d7b60fb4da4648b": null,
+            "paragraph-23bf16bc48d33beed345896b4260b0c9": null,
+            "badge_top": "+ Frete",
+            "badge_bottom": "Grátis",
+            "badge_style": "outline",
+            "highlight_size": 30,
+            "lines_size": 20,
+            "highlight_size_mobile": 19,
+            "lines_size_mobile": 11,
+            "line_1_weight": "700",
+            "line_2_weight": "400",
+            "gap_desktop": 110,
+            "hidden_on_mobile": false
+          }
+        },
+        "shipping_countdown_F86tnm": {
+          "type": "shipping_countdown",
+          "name": "Timer",
+          "disabled": false,
+          "settings": {
+            "paragraph-002fa6a56aa0527073b84fbbe8d21be8": null,
+            "timer_font_size": 36,
+            "label_font_size": 12,
+            "timer_font_size_mobile": 20,
+            "label_font_size_mobile": 9,
+            "number_weight": "600",
+            "digit_spacing": 24,
+            "separator_spacing": 60,
+            "separator_size": 70,
+            "start_date": "",
+            "start_time": "",
+            "end_date": "2026-11-11",
+            "end_time": "23:59",
+            "expired_message": "",
+            "switch_to_slider": true,
+            "header-6ec9a54af16e07a390f79a80a27c1500": null,
+            "custom_colors": true,
+            "bg_color": "#000000",
+            "text_color": "#ffffff",
+            "timer_color": "#ffffff",
+            "hidden_on_mobile": false
+          }
+        },
+        "text_slider_LFaC38": {
+          "settings": {
+            "text1": "<strong>R$ 30 OFF</strong> NAS CAMISAS DA<strong> BLACK</strong>",
+            "enable_copy_1": false,
+            "coupon_code_1": "",
+            "text2": "<strong>&nbsp;FRETE FIXO R$9,90 — TODO BRASIL&nbsp;</strong>",
+            "text3": ""
+          }
+        },
+        "text_dBJV7": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<a href=\"/pages/politica-de-frete\" title=\"Política de Frete\"><strong>Rastrear Pedido</strong></a>",
+            "hidden_on_mobile": true
+          }
+        }
+      },
+      "block_order": [
+        "store_information_pVeAk",
+        "countdown_text_XF7cFC",
+        "shipping_countdown_F86tnm",
+        "text_slider_LFaC38",
+        "text_dBJV7"
       ]
     }
   },
