@@ -24,7 +24,7 @@
     "show_secondary_image": false,
     "product_hover_effect": "hover_zoom",
     "show_action_on_mobile": false,
-    "show_on_minicart_cart_page": true,
+    "show_on_minicart_cart_page": false,
     "free_shipping_unavailable_text": "Falta {{ amount }} para ganhar <strong>FRETE GRÁTIS!</strong>",
     "free_shipping_available_text": "Você ganhou <strong>FRETE GRÁTIS,</strong> prossiga para o checkout",
     "product_recommendations_heading": "",
