@@ -13,6 +13,8 @@
 {%- comment -%} antes do theme.js e com asset_url: a URL versionada garante que a CDN entregue a versão atual {%- endcomment -%}
 <script src="{{ 'cart-components.js' | asset_url }}" defer="defer" type="module"></script>
 <script src="{{ 'theme.js' | asset_url }}"  defer="defer" type="module"></script>
+{%- comment -%} BRK Upsell (minicart e carrinho): global porque a seção chega por HTML re-renderizado {%- endcomment -%}
+<script src="{{ 'brk-upsell.js' | asset_url }}" defer="defer"></script>
 {%- case t -%}
   {%- when 'collection' -%}
     <script src="{{ 'collection.js' | asset_url }}" defer="defer"></script>
