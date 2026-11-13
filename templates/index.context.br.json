@@ -80,9 +80,9 @@
           "type": "collection",
           "disabled": false,
           "settings": {
-            "collection": "camisas-com-capuz-uv50-camufladas",
+            "collection": "elements-fusion",
             "collection_title": "FusionX",
-            "view_all_collection": "camisas-para-pesca-camufladas"
+            "view_all_collection": "elements-fusion"
           }
         }
       },
