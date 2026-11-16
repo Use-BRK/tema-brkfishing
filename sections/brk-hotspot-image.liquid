@@ -59,7 +59,13 @@
   @media screen and (min-width: 1025px) {
     #shopify-section-{{ sid }} .brk-hs__head { left: {{ s.head_x }}%; right: auto; top: calc(var(--hs-pt) + var(--hs-ov) + {{ s.head_y }}px); }
     #shopify-section-{{ sid }} .brk-hs__head > div { max-width: none; width: auto; margin: 0; padding: 0; }
-    #shopify-section-{{ sid }} .brk-hs__switch { justify-content: flex-start; }
+    #shopify-section-{{ sid }} .brk-hs__switch { justify-content: center; }
+    /* Trapézio invertido: título (mais largo) > botões > subtítulo (mais estreito), tudo centralizado no mesmo eixo */
+    #shopify-section-{{ sid }} .brk-hs__head-inner { width: max-content; max-width: 90vw; text-align: center; display: flex; flex-direction: column; align-items: center; }
+    #shopify-section-{{ sid }} .brk-hs__title { white-space: nowrap; }
+    #shopify-section-{{ sid }} .brk-hs__switch-btn { padding: 9px 18px; }
+    #shopify-section-{{ sid }} .brk-hs__switch { gap: 8px; }
+    #shopify-section-{{ sid }} .brk-hs__logo img { margin-left: auto; margin-right: auto; }
   }
   #shopify-section-{{ sid }} .brk-hs__eyebrow { display: block; margin-bottom: 10px; font-size: 12px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--hs-accent); }
   #shopify-section-{{ sid }} .brk-hs__logo { margin: 0 0 14px; line-height: 0; }
@@ -102,12 +108,15 @@
   /* Botões de troca de camisa */
   #shopify-section-{{ sid }} .brk-hs__switch { position: relative; z-index: 4; display: flex; justify-content: center; gap: 10px; flex-wrap: nowrap; margin: 4px 0 14px; pointer-events: auto; transition: opacity .4s ease; }
   #shopify-section-{{ sid }} .brk-hs__switch-btn { flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; padding: 10px 22px; border: 0; border-radius: 999px; background: {{ s.switch_bg }}; color: {{ s.switch_text }}; font-size: {{ s.switch_size }}px; line-height: 1.2; cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,.18); transition: background-color .45s ease, color .45s ease, transform .3s var(--ease-out); -webkit-tap-highlight-color: transparent; }
+  #shopify-section-{{ sid }} .brk-hs__sub + .brk-hs__switch { margin-top: 16px; }
   #shopify-section-{{ sid }} .brk-hs__switch-btn.is-active { background: {{ s.switch_active_bg }}; color: {{ s.switch_active_text }}; }
   #shopify-section-{{ sid }} .brk-hs__switch-btn:active { transform: scale(.96); }
   #shopify-section-{{ sid }} .brk-hs--anim:not(.is-in) .brk-hs__switch { opacity: 0; transform: translateY(14px); }
   #shopify-section-{{ sid }} .brk-hs--anim .brk-hs__switch { transition: opacity .8s ease 1s, transform 1s var(--ease-out) 1s; }
   #shopify-section-{{ sid }} .brk-hs--anim.is-settled .brk-hs__switch { transition: opacity .4s ease; }
 
+  #whatsapp-button-contact { transition: opacity .35s ease, transform .45s var(--ease-out, ease), visibility 0s linear 0s; }
+  html.brk-hs-card-open #whatsapp-button-contact { opacity: 0; visibility: hidden; transform: translateY(16px) scale(.85); pointer-events: none; transition: opacity .3s ease, transform .4s ease, visibility 0s linear .4s; }
   #shopify-section-{{ sid }} .brk-hs__placeholder { position: absolute; inset: 0; background: rgba(127,127,127,.15); }
 
   /* Linhas ponto → produto */
@@ -290,8 +299,8 @@
           {%- elsif s.heading != blank -%}
             <h2 class="brk-hs__title">{{ s.heading }}</h2>
           {%- endif -%}
-          {{ switch_html }}
           {%- if s.subheading != blank -%}<p class="brk-hs__sub">{{ s.subheading }}</p>{%- endif -%}
+          {{ switch_html }}
           {%- if s.button_label != blank -%}<a class="brk-hs__btn" href="{{ s.button_link | default: '#' }}">{{ s.button_label }}</a>{%- endif -%}
         </div>
       </div>
@@ -522,6 +531,8 @@
       var wasOpen = current > -1;
 
       root.classList.add('is-zoomed');
+      /* no mobile o card fica embaixo e as setas caem atrás do botão do WhatsApp */
+      document.documentElement.classList.toggle('brk-hs-card-open', !desk);
       card.classList.remove('is-on');
       hideRay();
       canvas.classList.add('is-moving');
@@ -572,6 +583,7 @@
         canvas.style.transform = '';
       }, 120);
       later(function () { root.classList.remove('is-zoomed'); }, 320);
+      document.documentElement.classList.remove('brk-hs-card-open');
       later(function () { if (current < 0) canvas.style.width = ''; }, 320 + speed + 50);
       current = -1;
     }
@@ -639,6 +651,11 @@
         if (en[0].isIntersecting && !viewed) { viewed = true; vio.disconnect(); track('hotspot_view', { hotspot_camisa: shirtName() }); }
       }, { threshold: 0.5 });
       vio.observe(stage);
+      /* WhatsApp volta quando a seção sai da tela, mesmo com o card aberto */
+      new IntersectionObserver(function (en) {
+        var on = en[0].isIntersecting && current > -1 && !mqDesk.matches;
+        document.documentElement.classList.toggle('brk-hs-card-open', on);
+      }).observe(root);
     }
     if (cta) cta.addEventListener('click', function () { track('hotspot_cta_click', { hotspot_camisa: shirtName() }); });
     card.addEventListener('click', function (e) {

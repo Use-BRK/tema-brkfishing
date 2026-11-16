@@ -95,7 +95,7 @@
     },
     "brk_hotspot_elements": {
       "type": "brk-hotspot-image",
-      "disabled": true,
+      "disabled": false,
       "settings": {
         "paragraph-ca6371947dde291e461994773d9aa02e": null,
         "header-b44b6a0f963e1836c7b8ad4d2d79c078": null,
@@ -121,8 +121,8 @@
         "eyebrow_size": 14,
         "eyebrow_size_mobile": 12,
         "heading": "Conheça as linhas BRK",
-        "heading_size": 46,
-        "heading_size_mobile": 26,
+        "heading_size": 40,
+        "heading_size_mobile": 24,
         "logo": null,
         "logo_width": 420,
         "logo_gap_top": 0,
@@ -132,7 +132,7 @@
         "logo_gap_top_mobile": 0,
         "logo_gap_mobile": 0,
         "subheading": "Toque nos pontos para conhecer cada detalhe.",
-        "subheading_size": 15,
+        "subheading_size": 16,
         "subheading_size_mobile": 13,
         "button_label": "",
         "button_link": "",
@@ -196,7 +196,7 @@
           "settings": {
             "paragraph-3ba26e95f006800a4791bcceb814ecd6": null,
             "title": "ArmorX",
-            "image": "shopify://shop_images/brk-linhas-armorx-v2.png",
+            "image": "shopify://shop_images/brk-linhas-armorx-v3.png",
             "link": "shopify://collections/elements-armorx",
             "cta_label": "Ver linha ArmorX"
           }
@@ -207,7 +207,7 @@
           "settings": {
             "paragraph-b477abd3d701fdb23eb02c62b0c49e86": null,
             "title": "Hybrid",
-            "image": "shopify://shop_images/brk-linhas-hybrid-v2.png",
+            "image": "shopify://shop_images/brk-linhas-hybrid-v3.png",
             "link": "shopify://collections/elements-hybrid",
             "cta_label": "Ver linha Hybrid"
           }
@@ -218,7 +218,7 @@
           "settings": {
             "paragraph-1b9c0f340365b3102df2af5803d6bb24": null,
             "title": "FusionX",
-            "image": "shopify://shop_images/brk-linhas-fusionx-v2.png",
+            "image": "shopify://shop_images/brk-linhas-fusionx-v3.png",
             "link": "shopify://collections/elements-fusion",
             "cta_label": "Ver linha FusionX"
           }
