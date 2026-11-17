@@ -31,7 +31,25 @@
           "settings": {
             "label_masculino": "Masculino",
             "label_feminino": "Feminino",
-            "filter_collection_list": []
+            "filter_collection_list": [
+              "abril-de-vantagens",
+              "copa-2026",
+              "fusion-cax-2026",
+              "hybrid-cax-2026",
+              "colecao-armorx-2026",
+              "linha-fusion-2026",
+              "camisas-hybrid",
+              "envio-imediato-brkfishing",
+              "fusionx-raptor",
+              "colecao-elements",
+              "amazon-2-0",
+              "brasil-fishing",
+              "elements-armorx",
+              "elements-fusion",
+              "elements-hybrid",
+              "halloween-2026",
+              "camisas-para-pesca-camufladas"
+            ]
           }
         }
       },
