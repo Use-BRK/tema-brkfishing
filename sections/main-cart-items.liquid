@@ -412,7 +412,7 @@
                             {%- for discount in item.line_level_discount_allocations -%}
                               {%- assign brk_needle = '|' | append: discount.discount_application.title | append: '|' -%}
                               {%- if brk_hide_titles contains brk_needle -%}{%- continue -%}{%- endif -%}
-                              <li class="discounts__discount">{{ discount.discount_application.title }} (-{{ discount.amount | money }})</li>
+                              <li class="discounts__discount">{{ discount.discount_application.title }} (-{{ discount.amount | money }}{% if item.quantity > 1 %} nas {{ item.quantity }} peças{% endif %})</li>
                             {%- endfor -%}
                           </ul>
                           <div class="brk-line__bottom">
