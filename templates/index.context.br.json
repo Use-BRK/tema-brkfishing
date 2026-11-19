@@ -1412,10 +1412,106 @@
           }
         }
       }
+    },
+    "brk_collection_cards": {
+      "type": "brk-collection-cards",
+      "blocks": {
+        "card_camisas_master": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "camisas-master",
+            "title": "Camisas Master",
+            "photo_product": "camisa-agro-feminina-brk-brasil-com-protecao-solar-uv50",
+            "photo_index": 1
+          }
+        },
+        "card_camisas_armorx": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "fusion-filtradas-por-mais-recente-copy",
+            "title": "Camisas ArmorX",
+            "photo_product": "camisa-armorx-brk-mata-fechada-com-luva-e-protecao-uv50",
+            "photo_index": 1
+          }
+        },
+        "card_camisas_hybrid": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "camisas-hybrid",
+            "title": "Camisas Hybrid",
+            "photo_product": "camisa-de-pesca-feminina-brk-com-luva-e-capuz-hybrid-mapa-brasil-com-protecao-solar-uv50",
+            "photo_index": 1
+          }
+        },
+        "card_camisas_fusionx": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "fusion-filtradas-por-mais-recente",
+            "title": "Camisas FusionX",
+            "photo_product": "camisa-fusionx-brasil-azul-com-protecao-uv50",
+            "photo_index": 1
+          }
+        },
+        "card_bones": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "bones-de-pesca-vestuario-e-acessorios",
+            "title": "Bonés",
+            "photo_product": "bone-brk-fishing-lures-hooked-laranja",
+            "photo_index": 2
+          }
+        },
+        "card_oculos": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "oculos-de-sol",
+            "title": "Óculos",
+            "photo_product": "oculos-de-sol-polarizado-aviador-black",
+            "photo_index": 2
+          }
+        }
+      },
+      "block_order": [
+        "card_camisas_master",
+        "card_camisas_armorx",
+        "card_camisas_hybrid",
+        "card_camisas_fusionx",
+        "card_bones",
+        "card_oculos"
+      ],
+      "settings": {
+        "bg_color": "#101113",
+        "text_color": "#ffffff",
+        "accent_color": "#111214",
+        "cream_color": "#f6cb27",
+        "eyebrow": "Black November",
+        "title": "2ª peça com <em>[percent] OFF</em>",
+        "cta": "Ver coleção",
+        "note": "Válido apenas para peças da mesma categoria.",
+        "default_tag": "",
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "full_width": true,
+        "radius": 0,
+        "gap": 4,
+        "mobile_card_width": 80,
+        "height_mobile": 52,
+        "anchor": "black",
+        "head_style": "simple",
+        "subtitle": "Escolha a categoria e monte o seu par.",
+        "chips": "",
+        "layout": "carousel",
+        "height_desktop": 64,
+        "height_mobile_grid": 34,
+        "padding_top": 48,
+        "padding_bottom": 48,
+        "fill_bg": "#111214"
+      }
     }
   },
   "order": [
     "slideshow_8KKtNU",
+    "brk_collection_cards",
     "collection_tab_LtRtt",
     "brk_hotspot_elements",
     "collection_tab_gQA4W",

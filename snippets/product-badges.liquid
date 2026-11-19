@@ -163,6 +163,17 @@
   assign diff_days = diff_seconds | divided_by: 3600 | divided_by: 24
   assign new_badge_display_period = theme_st.new_badge_display_period
   assign subscription = card_product.selling_plan_groups.size
+  # Selo da promo 2ª peça: Configurações do tema > Promo 2ª peça
+  assign show_promo2_badge = false
+  if settings.promo2_enable and settings.promo2_badge_enable and type == 'product_item'
+    capture promo2_cat
+      render 'brk-promo2-cat', product: card_product
+    endcapture
+    assign promo2_cat = promo2_cat | strip
+    if promo2_cat != blank
+      assign show_promo2_badge = true
+    endif
+  endif
   assign show_product_badges = true
 
   comment
@@ -208,6 +219,7 @@
   or show_new
   or is_lancamento
   or is_mais_vendidos
+  or show_promo2_badge
   or subscription > 0
 -%}
   {% if show_product_badges %}
@@ -276,6 +288,15 @@
       data-show-preorder="{{ show_pre_order }}"
       data-sale-badge-type="{{ sale_badge_type }}"
     >
+      {%- if show_promo2_badge -%}
+        {%- assign promo2_pct = settings.promo2_percent | default: 40 | append: '%' -%}
+        <div
+          class="product__badges-custom product__badges-promo2 product__badges-inner align-self-start px-15 inline-flex content-center subheading_weight text-center lh-normal"
+          style="--badges-color: {{ settings.promo2_text_color }};--badges-bg: {{ settings.promo2_color }};"
+        >
+          {{ settings.promo2_badge_text | replace: '[percent]', promo2_pct | escape }}
+        </div>
+      {%- endif -%}
       {%- if is_mais_vendidos -%}
         <div
           class="product__badges-mais-vendidos product__badges-inner align-self-start px-15 inline-flex content-center subheading_weight text-center lh-normal"

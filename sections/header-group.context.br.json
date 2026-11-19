@@ -197,23 +197,29 @@
           "disabled": false,
           "settings": {
             "paragraph-45d8948758d624b6264cc45e81474ffc": null,
-            "layout": "stacked",
-            "highlight": "R$30",
-            "line_1": "OFF nas",
-            "line_2": "camisas da Black",
+            "layout": "badge_stacked",
+            "highlight": "40% OFF",
+            "line_1": "2ª peça com",
+            "line_2": "",
             "header-b453554c94fdac5d7d7b60fb4da4648b": null,
             "paragraph-23bf16bc48d33beed345896b4260b0c9": null,
-            "badge_top": "+ Frete",
-            "badge_bottom": "Grátis",
+            "badge_top": "Black",
+            "badge_bottom": "November",
             "badge_style": "outline",
             "highlight_size": 30,
-            "lines_size": 20,
-            "highlight_size_mobile": 19,
+            "lines_size": 18,
+            "highlight_size_mobile": 17,
             "lines_size_mobile": 11,
             "line_1_weight": "700",
             "line_2_weight": "400",
             "gap_desktop": 110,
-            "hidden_on_mobile": false
+            "hidden_on_mobile": false,
+            "badge_hidden_on_mobile": false,
+            "highlight_color": "#f6cb27",
+            "extra_tag": "",
+            "extra_tag_date": "",
+            "extra_tag_bg": "#f6cb27",
+            "extra_tag_text_color": "#111214"
           }
         },
         "shipping_countdown_F86tnm": {
@@ -224,7 +230,7 @@
             "paragraph-002fa6a56aa0527073b84fbbe8d21be8": null,
             "timer_font_size": 36,
             "label_font_size": 12,
-            "timer_font_size_mobile": 20,
+            "timer_font_size_mobile": 17,
             "label_font_size_mobile": 9,
             "number_weight": "600",
             "digit_spacing": 24,
@@ -232,21 +238,22 @@
             "separator_size": 70,
             "start_date": "",
             "start_time": "",
-            "end_date": "2026-11-11",
+            "end_date": "2026-11-27",
             "end_time": "23:59",
             "expired_message": "",
             "switch_to_slider": true,
             "header-6ec9a54af16e07a390f79a80a27c1500": null,
             "custom_colors": true,
-            "bg_color": "#000000",
+            "bg_color": "#111214",
             "text_color": "#ffffff",
             "timer_color": "#ffffff",
-            "hidden_on_mobile": false
+            "hidden_on_mobile": false,
+            "mobile_style": "boxed"
           }
         },
         "text_slider_LFaC38": {
           "settings": {
-            "text1": "<strong>R$ 30 OFF</strong> NAS CAMISAS DA<strong> BLACK</strong>",
+            "text1": "<strong>BLACK: 2ª PEÇA COM 40% OFF</strong>",
             "enable_copy_1": false,
             "coupon_code_1": "",
             "text2": "<strong>&nbsp;FRETE FIXO R$9,90 — TODO BRASIL&nbsp;</strong>",
@@ -273,7 +280,7 @@
     }
   },
   "order": [
-    "header",
-    "top_bar_CbXNYj"
+    "top_bar_CbXNYj",
+    "header"
   ]
 }

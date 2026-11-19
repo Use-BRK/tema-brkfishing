@@ -612,7 +612,65 @@
           "button_link_hover_color": "#ebebeb"
         }
       }
-    }
+    },
+    "promo2_enable": true,
+    "promo2_percent": 40,
+    "promo2_exclude": [],
+    "promo2_exclude_types": "Kit",
+    "promo2_cat1_singular": "camisa",
+    "promo2_cat1_collections": [
+      "camisas-master",
+      "fusion-filtradas-por-mais-recente-copy",
+      "camisas-hybrid",
+      "fusion-filtradas-por-mais-recente",
+      "camisa-com-ziper-masculino",
+      "camisa-com-ziper-feminino",
+      "armorx-masculino",
+      "armorx-femininas",
+      "colecao-armorx-2026",
+      "camisa-hybrid-masculino",
+      "camisa-hybrid-feminino",
+      "camisa-fusionx-masculino",
+      "camisa-fusionx-feminino"
+    ],
+    "promo2_cat1_link": "",
+    "promo2_cat2_singular": "boné",
+    "promo2_cat2_collections": [
+      "bones-de-pesca-vestuario-e-acessorios"
+    ],
+    "promo2_cat2_link": "",
+    "promo2_cat3_singular": "óculos",
+    "promo2_cat3_collections": [
+      "oculos-de-sol"
+    ],
+    "promo2_cat3_link": "",
+    "promo2_cat4_singular": "",
+    "promo2_cat4_collections": [],
+    "promo2_cat4_link": "",
+    "promo2_cat5_singular": "",
+    "promo2_cat5_collections": [],
+    "promo2_cat5_link": "",
+    "promo2_cat6_singular": "",
+    "promo2_cat6_collections": [],
+    "promo2_cat6_link": "",
+    "promo2_cat7_singular": "",
+    "promo2_cat7_collections": [],
+    "promo2_cat7_link": "",
+    "promo2_cat8_singular": "",
+    "promo2_cat8_collections": [],
+    "promo2_cat8_link": "",
+    "promo2_cat9_singular": "",
+    "promo2_cat9_collections": [],
+    "promo2_cat9_link": "",
+    "promo2_cat10_singular": "",
+    "promo2_cat10_collections": [],
+    "promo2_cat10_link": "",
+    "promo2_badge_enable": false,
+    "promo2_pdp_line": "Você economiza <strong>[economia]</strong>",
+    "promo2_pdp_note": "Válido apenas para peças da mesma categoria.",
+    "promo2_pdp_style": "dark",
+    "promo2_pdp_tag": "BLACK NOVEMBER",
+    "promo2_pdp_title": "Escolha 2 produtos e ganhe <strong>[percent] OFF no 2º</strong>!"
   },
   "presets": {
     "Default": {}

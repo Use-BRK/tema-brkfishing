@@ -45,6 +45,7 @@
     {{ 'custom.css' | asset_url | stylesheet_tag }}
     {{ 'brk-cart.css' | asset_url | stylesheet_tag }}
     {{ 'brk-upsell.css' | asset_url | stylesheet_tag }}
+    {%- if settings.promo2_enable -%}{{ 'brk-promo2.css' | asset_url | stylesheet_tag }}<script src="{{ 'brk-promo2.js' | asset_url }}" defer></script>{%- endif -%}
     {% if settings.scroll_animation != 'none' %}
       {{ 'animation.css' | asset_url | stylesheet_tag }}
     {%- endif %}
