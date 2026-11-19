@@ -175,6 +175,8 @@
         "@media (max-width: 1024px) {#topbar .topbar__section-inner:has(> .topbar-cd-text:not([hidden])) {padding-inline: 15px; }}"
       ],
       "settings": {
+        "link": "shopify://pages/black-week",
+        "link_label": "Ver promoção",
         "section_width": "full_width",
         "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
         "show_separator_line": false,
