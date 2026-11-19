@@ -1442,8 +1442,8 @@
         "card_oculos"
       ],
       "settings": {
-        "bg_color": "#101113",
-        "text_color": "#ffffff",
+        "bg_color": "#ffffff",
+        "text_color": "#111214",
         "accent_color": "#111214",
         "cream_color": "#f6cb27",
         "eyebrow": "Black November",
