@@ -34,6 +34,7 @@
     "scroll_animation": "none",
     "store_email": "sacbrk@usebrk.com.br",
     "enable_whatsapp_button": true,
+    "promo2_enable": false,
     "color_schemes": {
       "default": {
         "settings": {}
