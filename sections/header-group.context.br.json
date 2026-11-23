@@ -13,6 +13,120 @@
     "market": "br"
   },
   "sections": {
+    "top_bar_CbXNYj": {
+      "disabled": false,
+      "custom_css": [
+        "#topbar {padding-inline: 4rem;}",
+        "@media (max-width: 600px) {#topbar {padding-inline: 0; }}",
+        "#topbar .topbar-cd-text,#topbar .topbar-shipping {text-transform: uppercase;}",
+        "@media (max-width: 1024px) {#topbar .topbar__section-inner:has(> .topbar-cd-text:not([hidden])) {padding-inline: 15px; }}"
+      ],
+      "settings": {
+        "section_width": "full_width",
+        "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
+        "show_separator_line": false,
+        "link": "shopify://pages/black-week",
+        "link_label": "Ver promoção",
+        "font_size": 16,
+        "font_weight": "body_weight"
+      },
+      "blocks": {
+        "store_information_pVeAk": {
+          "type": "store_information",
+          "disabled": true,
+          "settings": {
+            "paragraph-614ba14140b5214682334d6563903ed0": null,
+            "show_email": false,
+            "show_phone": true,
+            "hidden_on_mobile": true
+          }
+        },
+        "countdown_text_XF7cFC": {
+          "type": "countdown_text",
+          "disabled": true,
+          "settings": {
+            "badge_hidden_on_mobile": false,
+            "paragraph-1bf55df9186bc26b47722f0c659d9b53": null,
+            "layout": "badge_stacked",
+            "highlight_color": "#f6cb27",
+            "extra_tag": "",
+            "extra_tag_date": "",
+            "extra_tag_bg": "#f6cb27",
+            "extra_tag_text_color": "#111214",
+            "highlight": "40% OFF",
+            "line_1": "2ª peça com",
+            "line_2": "",
+            "header-6efcd68c5f9545c32ec345114553717d": null,
+            "paragraph-5c75661112b2c2184ea98fb1bba83ee4": null,
+            "badge_top": "Black",
+            "badge_bottom": "November",
+            "badge_style": "outline",
+            "highlight_size": 30,
+            "lines_size": 18,
+            "highlight_size_mobile": 17,
+            "lines_size_mobile": 11,
+            "line_1_weight": "700",
+            "line_2_weight": "400",
+            "gap_desktop": 110,
+            "hidden_on_mobile": false
+          }
+        },
+        "shipping_countdown_F86tnm": {
+          "type": "shipping_countdown",
+          "disabled": true,
+          "name": "Timer",
+          "settings": {
+            "mobile_style": "boxed",
+            "paragraph-af4d08688cec90ae479e98574829e87c": null,
+            "timer_font_size": 36,
+            "label_font_size": 12,
+            "timer_font_size_mobile": 17,
+            "label_font_size_mobile": 9,
+            "number_weight": "600",
+            "digit_spacing": 24,
+            "separator_spacing": 60,
+            "separator_size": 70,
+            "start_date": "",
+            "start_time": "",
+            "end_date": "2026-11-27",
+            "end_time": "23:59",
+            "expired_message": "",
+            "switch_to_slider": true,
+            "header-ff0ad57aa27431f14599bd2b614c82ae": null,
+            "custom_colors": true,
+            "bg_color": "#111214",
+            "text_color": "#ffffff",
+            "timer_color": "#ffffff",
+            "hidden_on_mobile": false
+          }
+        },
+        "text_slider_LFaC38": {
+          "settings": {
+            "text1": "<strong>BLACK: 2ª PEÇA COM 40% OFF</strong>",
+            "enable_copy_1": false,
+            "coupon_code_1": "",
+            "text2": "<strong>&nbsp;FRETE FIXO R$9,90 — TODO BRASIL&nbsp;</strong>",
+            "text3": "",
+            "arrow_bg": "#000000"
+          }
+        },
+        "text_dBJV7": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<a href=\"/pages/politica-de-frete\" title=\"Política de Frete\"><strong>Rastrear Pedido</strong></a>",
+            "hidden_on_mobile": true
+          }
+        }
+      },
+      "block_order": [
+        "store_information_pVeAk",
+        "countdown_text_XF7cFC",
+        "shipping_countdown_F86tnm",
+        "text_slider_LFaC38",
+        "text_dBJV7"
+      ]
+    },
     "header": {
       "disabled": false,
       "settings": {
@@ -37,19 +151,28 @@
             "text": "🌟 LANÇAMENTOS",
             "open-link-newtab": false,
             "item_label": "new",
-            "header-f07be118bd0eac6f8c2914fc32a9aba8": null,
+            "header-9f7b975b8b114f6d0b36a800be049a68": null,
+            "mobile_dark": false,
+            "mobile_dark_bg": "#000000",
+            "mobile_dark_text": "#ffffff",
+            "mobile_dark_accent": "#ffffff",
+            "mobile_banner": false,
+            "mobile_banner_image": null,
+            "mobile_banner_link": "",
+            "mobile_banner_glow": "#135ed1",
+            "header-9fea02028a4fea40a5c12016c52f7207": null,
             "promotion_menu_column": 2,
             "mega_custom_width": 600,
             "center_submenu": false,
             "full_width": false,
-            "header-e70ea63c3b34566627e9c69ab556f190": null,
+            "header-823c0c21889c5d5783d559d774ed1f6e": null,
             "promotion_position": "right",
             "promotion_image_width": 27,
-            "header-df2ba53192b1f3e0e8e688c9cafb9a96": null,
+            "header-fbda87b6b160b677bb673a41c4e22d18": null,
             "promotion_image_1": null,
             "promotion_link_1": "",
             "promotion_link_newtab_1": true,
-            "header-02d5c252bd821f3544fb725414ef37c7": null,
+            "header-19e51b6c7134e99a5705dd13a64b0849": null,
             "promotion_image_2": null,
             "promotion_link_2": "",
             "promotion_link_newtab_2": true
@@ -63,19 +186,28 @@
             "text": "🎁 AMAZON",
             "open-link-newtab": false,
             "item_label": "hot",
-            "header-2e0eddaede5bd89be8fea386f31ec0c6": null,
+            "header-50a45d6c2c6557f396d866ad6240c7fc": null,
+            "mobile_dark": false,
+            "mobile_dark_bg": "#000000",
+            "mobile_dark_text": "#ffffff",
+            "mobile_dark_accent": "#ffffff",
+            "mobile_banner": false,
+            "mobile_banner_image": null,
+            "mobile_banner_link": "",
+            "mobile_banner_glow": "#135ed1",
+            "header-13b3a1ac023eff229823e4ab7c14382d": null,
             "promotion_menu_column": 2,
             "mega_custom_width": 600,
             "center_submenu": false,
             "full_width": false,
-            "header-7a97056d9c7855b65fa468247705735c": null,
+            "header-8a0de634d3e4452e9d263b9bbef021b4": null,
             "promotion_position": "right",
             "promotion_image_width": 27,
-            "header-4d5845a7b82ba0c078c3be6ec7fe0f75": null,
+            "header-64816d3e17ba0222d1b9796da10d5c7b": null,
             "promotion_image_1": null,
             "promotion_link_1": "",
             "promotion_link_newtab_1": true,
-            "header-66536ca031585b7fe75c9c553ac61a7b": null,
+            "header-9b6f97820f4124c74fea5e0d4b79d5aa": null,
             "promotion_image_2": null,
             "promotion_link_2": "",
             "promotion_link_newtab_2": true
@@ -89,19 +221,28 @@
             "text": "ARMORX",
             "open-link-newtab": false,
             "item_label": "hot",
-            "header-7f02e31f8a9a275ff650a8fdb997eca3": null,
+            "header-50dacbe7d1df47e58da1082d6f99db79": null,
+            "mobile_dark": false,
+            "mobile_dark_bg": "#000000",
+            "mobile_dark_text": "#ffffff",
+            "mobile_dark_accent": "#ffffff",
+            "mobile_banner": false,
+            "mobile_banner_image": null,
+            "mobile_banner_link": "",
+            "mobile_banner_glow": "#135ed1",
+            "header-7d658c6d6c6cc9b1c4f62325728ded21": null,
             "promotion_menu_column": 2,
             "mega_custom_width": 600,
             "center_submenu": false,
             "full_width": false,
-            "header-f21a041d74d8d5cc6f2774c3808c2221": null,
+            "header-51d46f80960c33661b56484a412bcb26": null,
             "promotion_position": "right",
             "promotion_image_width": 27,
-            "header-13512b7117d52521cbeb9284af9e59f0": null,
+            "header-e8c4993b8d80372b7c934623a8f5dcba": null,
             "promotion_image_1": null,
             "promotion_link_1": "",
             "promotion_link_newtab_1": true,
-            "header-2f760651c8f636f85dd3cba438062c25": null,
+            "header-0551b1824ea165cafab70c5257a13937": null,
             "promotion_image_2": null,
             "promotion_link_2": "",
             "promotion_link_newtab_2": true
@@ -115,25 +256,28 @@
             "text": "⏱️Black Fishing",
             "open-link-newtab": false,
             "item_label": "unset",
+            "header-a56548b834445c2b97bffcdc6ccce17a": null,
             "mobile_dark": true,
             "mobile_dark_bg": "#000000",
             "mobile_dark_text": "#ffffff",
             "mobile_dark_accent": "#ffffff",
             "mobile_banner": false,
+            "mobile_banner_image": null,
+            "mobile_banner_link": "",
             "mobile_banner_glow": "#135ed1",
-            "header-52f6e3323b18014034e604b64140cad3": null,
+            "header-c70fb01ec9dc3498b688fd007fd48f52": null,
             "promotion_menu_column": 5,
             "mega_custom_width": 1030,
             "center_submenu": true,
             "full_width": true,
-            "header-afc44363982a00ca7646b7c730090da1": null,
+            "header-b0b00d3534fee4b8089bbd33a4c7086f": null,
             "promotion_position": "right",
             "promotion_image_width": 45,
-            "header-f4908cb2c66bead04a0543c5f6d80777": null,
+            "header-457980cc53faeceedeeaf843a2c8afcb": null,
             "promotion_image_1": "shopify://shop_images/Escolha_2_produtos_e_ganhe_40_OFF_no_2.gif",
             "promotion_link_1": "shopify://pages/black-week",
             "promotion_link_newtab_1": false,
-            "header-9d4cfcc3ddc9d57900fe11a01eb40317": null,
+            "header-5df0521f02c1e5216feac6045da846e6": null,
             "promotion_image_2": null,
             "promotion_link_2": "",
             "promotion_link_newtab_2": true
@@ -164,120 +308,6 @@
         "menu_promotion_infantil",
         "menu_promotion_fKxpNj",
         "menu_promotion_aQHpr9"
-      ]
-    },
-    "top_bar_CbXNYj": {
-      "disabled": false,
-      "custom_css": [
-        "#topbar {padding-inline: 4rem;}",
-        "@media (max-width: 600px) {#topbar {padding-inline: 0; }}",
-        "#topbar .topbar-cd-text,#topbar .topbar-shipping {text-transform: uppercase;}",
-        "@media (max-width: 1024px) {#topbar .topbar__section-inner:has(> .topbar-cd-text:not([hidden])) {padding-inline: 15px; }}"
-      ],
-      "settings": {
-        "link": "shopify://pages/black-week",
-        "link_label": "Ver promoção",
-        "section_width": "full_width",
-        "color_scheme": "scheme-4faf0e4d-27f4-4d02-bc51-617383bab1a9",
-        "show_separator_line": false,
-        "font_size": 16,
-        "font_weight": "body_weight"
-      },
-      "blocks": {
-        "store_information_pVeAk": {
-          "type": "store_information",
-          "disabled": true,
-          "settings": {
-            "paragraph-c61c6da5c83c29445276a841d7ea0681": null,
-            "show_email": false,
-            "show_phone": true,
-            "hidden_on_mobile": true
-          }
-        },
-        "countdown_text_XF7cFC": {
-          "type": "countdown_text",
-          "disabled": false,
-          "settings": {
-            "paragraph-45d8948758d624b6264cc45e81474ffc": null,
-            "layout": "badge_stacked",
-            "highlight": "40% OFF",
-            "line_1": "2ª peça com",
-            "line_2": "",
-            "header-b453554c94fdac5d7d7b60fb4da4648b": null,
-            "paragraph-23bf16bc48d33beed345896b4260b0c9": null,
-            "badge_top": "Black",
-            "badge_bottom": "November",
-            "badge_style": "outline",
-            "highlight_size": 30,
-            "lines_size": 18,
-            "highlight_size_mobile": 17,
-            "lines_size_mobile": 11,
-            "line_1_weight": "700",
-            "line_2_weight": "400",
-            "gap_desktop": 110,
-            "hidden_on_mobile": false,
-            "badge_hidden_on_mobile": false,
-            "highlight_color": "#f6cb27",
-            "extra_tag": "",
-            "extra_tag_date": "",
-            "extra_tag_bg": "#f6cb27",
-            "extra_tag_text_color": "#111214"
-          }
-        },
-        "shipping_countdown_F86tnm": {
-          "type": "shipping_countdown",
-          "name": "Timer",
-          "disabled": false,
-          "settings": {
-            "paragraph-002fa6a56aa0527073b84fbbe8d21be8": null,
-            "timer_font_size": 36,
-            "label_font_size": 12,
-            "timer_font_size_mobile": 17,
-            "label_font_size_mobile": 9,
-            "number_weight": "600",
-            "digit_spacing": 24,
-            "separator_spacing": 60,
-            "separator_size": 70,
-            "start_date": "",
-            "start_time": "",
-            "end_date": "2026-11-27",
-            "end_time": "23:59",
-            "expired_message": "",
-            "switch_to_slider": true,
-            "header-6ec9a54af16e07a390f79a80a27c1500": null,
-            "custom_colors": true,
-            "bg_color": "#111214",
-            "text_color": "#ffffff",
-            "timer_color": "#ffffff",
-            "hidden_on_mobile": false,
-            "mobile_style": "boxed"
-          }
-        },
-        "text_slider_LFaC38": {
-          "settings": {
-            "text1": "<strong>BLACK: 2ª PEÇA COM 40% OFF</strong>",
-            "enable_copy_1": false,
-            "coupon_code_1": "",
-            "text2": "<strong>&nbsp;FRETE FIXO R$9,90 — TODO BRASIL&nbsp;</strong>",
-            "text3": "",
-            "arrow_bg": "#000000"
-          }
-        },
-        "text_dBJV7": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "<a href=\"/pages/politica-de-frete\" title=\"Política de Frete\"><strong>Rastrear Pedido</strong></a>",
-            "hidden_on_mobile": true
-          }
-        }
-      },
-      "block_order": [
-        "store_information_pVeAk",
-        "countdown_text_XF7cFC",
-        "shipping_countdown_F86tnm",
-        "text_slider_LFaC38",
-        "text_dBJV7"
       ]
     }
   },
