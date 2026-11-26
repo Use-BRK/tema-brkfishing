@@ -341,7 +341,7 @@
           "settings": {
             "paragraph-b6b311304b15d3e636d9a995891e8272": null,
             "title": "ArmorX",
-            "image": "shopify://shop_images/brk-linhas-armorx-v4.png",
+            "image": "shopify://shop_images/brk-linhas-armorx-v6.png",
             "link": "shopify://collections/elements-armorx",
             "cta_label": "Ver linha ArmorX"
           }
@@ -352,7 +352,7 @@
           "settings": {
             "paragraph-6afb976a59ff6eed6a5455a44f1245f7": null,
             "title": "Hybrid",
-            "image": "shopify://shop_images/brk-linhas-hybrid-v4.png",
+            "image": "shopify://shop_images/brk-linhas-hybrid-v6.png",
             "link": "shopify://collections/elements-hybrid",
             "cta_label": "Ver linha Hybrid"
           }
@@ -363,7 +363,7 @@
           "settings": {
             "paragraph-afc5acc620170b24f1aab4baff0844c8": null,
             "title": "FusionX",
-            "image": "shopify://shop_images/brk-linhas-fusionx-v4.png",
+            "image": "shopify://shop_images/brk-linhas-fusionx-v6.png",
             "link": "shopify://collections/elements-fusion",
             "cta_label": "Ver linha FusionX"
           }
@@ -383,16 +383,16 @@
             "zoom_mobile": 240,
             "header-72916022418c0dafe084846e941d967a": null,
             "paragraph-6e24f782cd68a7ff827ea42931ab240d": null,
-            "anchor_x": 55,
-            "anchor_y": 8,
+            "anchor_x": 59,
+            "anchor_y": 27,
             "pos_x": 100,
-            "pos_y": 8,
+            "pos_y": 20,
             "header-5ea28269ea66bef1c651a6fd8b0944cf": null,
             "same_position_mobile": false,
-            "anchor_x_mobile": 55,
-            "anchor_y_mobile": 8,
+            "anchor_x_mobile": 59,
+            "anchor_y_mobile": 27,
             "pos_x_mobile": 84,
-            "pos_y_mobile": 4
+            "pos_y_mobile": 18
           }
         },
         "hs_armorx_luva": {
@@ -410,14 +410,14 @@
             "zoom_mobile": 240,
             "header-4a6c6e2b9324c6bdc6b779bff3fd68aa": null,
             "paragraph-dac345e062a28eb4b136bf30b2f91ea8": null,
-            "anchor_x": 92,
-            "anchor_y": 89,
-            "pos_x": 110,
-            "pos_y": 76,
+            "anchor_x": 80,
+            "anchor_y": 91,
+            "pos_x": 100,
+            "pos_y": 78,
             "header-f26246066d3b5ab48833df5637b327e0": null,
             "same_position_mobile": false,
-            "anchor_x_mobile": 92,
-            "anchor_y_mobile": 89,
+            "anchor_x_mobile": 80,
+            "anchor_y_mobile": 91,
             "pos_x_mobile": 76,
             "pos_y_mobile": 70
           }
@@ -437,14 +437,14 @@
             "zoom_mobile": 240,
             "header-8012cf4d75a2c5c844c36b94ed9d063c": null,
             "paragraph-8a465b17dddc9704866f3ad3661e96af": null,
-            "anchor_x": 37,
-            "anchor_y": 10,
-            "pos_x": 4,
-            "pos_y": 6,
+            "anchor_x": 50,
+            "anchor_y": 5,
+            "pos_x": 100,
+            "pos_y": 4,
             "header-caab25ec43994ccc2e088553f264e1e7": null,
             "same_position_mobile": false,
-            "anchor_x_mobile": 37,
-            "anchor_y_mobile": 10,
+            "anchor_x_mobile": 50,
+            "anchor_y_mobile": 5,
             "pos_x_mobile": 16,
             "pos_y_mobile": 4
           }
@@ -464,14 +464,14 @@
             "zoom_mobile": 240,
             "header-1ec48ec8be5bcb13bc27351cf19daf35": null,
             "paragraph-a0dcf4991ba2bc8b1379003dda5c07a4": null,
-            "anchor_x": 91,
-            "anchor_y": 90,
+            "anchor_x": 85,
+            "anchor_y": 91,
             "pos_x": 110,
             "pos_y": 74,
             "header-6ca193ea8379b7cc68dd2b38e1f2ecd9": null,
             "same_position_mobile": false,
-            "anchor_x_mobile": 91,
-            "anchor_y_mobile": 90,
+            "anchor_x_mobile": 85,
+            "anchor_y_mobile": 91,
             "pos_x_mobile": 76,
             "pos_y_mobile": 68
           }
@@ -491,14 +491,14 @@
             "zoom_mobile": 240,
             "header-48b4bf1262676f5ecded3b02399aeb18": null,
             "paragraph-0de835bdc506166e82a02f698a6fae3f": null,
-            "anchor_x": 36,
-            "anchor_y": 9,
-            "pos_x": 4,
-            "pos_y": 4,
+            "anchor_x": 49,
+            "anchor_y": 8,
+            "pos_x": 100,
+            "pos_y": 3,
             "header-db1ed8633fa5bc3afd3ff9db0930baf2": null,
             "same_position_mobile": false,
-            "anchor_x_mobile": 36,
-            "anchor_y_mobile": 9,
+            "anchor_x_mobile": 49,
+            "anchor_y_mobile": 8,
             "pos_x_mobile": 16,
             "pos_y_mobile": 4
           }
@@ -518,14 +518,14 @@
             "zoom_mobile": 240,
             "header-c374a997cb3a58e3ed0a8be3af8ce53b": null,
             "paragraph-1b18c8ff5846c882ffa5d796e3e5dacd": null,
-            "anchor_x": 52,
-            "anchor_y": 21,
+            "anchor_x": 55,
+            "anchor_y": 24,
             "pos_x": 100,
             "pos_y": 16,
             "header-cc6ecc2522bd6e538c0d8ed0ea6be52f": null,
             "same_position_mobile": false,
-            "anchor_x_mobile": 52,
-            "anchor_y_mobile": 21,
+            "anchor_x_mobile": 55,
+            "anchor_y_mobile": 24,
             "pos_x_mobile": 84,
             "pos_y_mobile": 14
           }
@@ -545,14 +545,14 @@
             "zoom_mobile": 240,
             "header-74b0bfeb1fe4f529a0965b000bed0137": null,
             "paragraph-a2af61a212506c29f36dd460c99282c1": null,
-            "anchor_x": 91,
-            "anchor_y": 90,
+            "anchor_x": 92,
+            "anchor_y": 91,
             "pos_x": 110,
             "pos_y": 74,
             "header-9505b1fa0f6172ee78c983acbfc1c88f": null,
             "same_position_mobile": false,
-            "anchor_x_mobile": 91,
-            "anchor_y_mobile": 90,
+            "anchor_x_mobile": 92,
+            "anchor_y_mobile": 91,
             "pos_x_mobile": 76,
             "pos_y_mobile": 68
           }

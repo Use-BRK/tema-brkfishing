@@ -98,9 +98,9 @@
   #shopify-section-{{ sid }} .brk-hs.is-zoomed .brk-hs__shadow { opacity: 0; }
   #shopify-section-{{ sid }} .brk-hs__img--m { display: none; }
   /* Troca das camisas */
-  #shopify-section-{{ sid }} .brk-hs__shirt { opacity: 0; transform: translateX(5%) scale(.97); filter: blur(6px); transition: opacity .9s ease, transform 1.2s var(--ease-out), filter .9s ease; }
-  #shopify-section-{{ sid }} .brk-hs__shirt.is-active { opacity: 1; transform: none; filter: none; }
-  #shopify-section-{{ sid }} .brk-hs__shirt.is-leaving { opacity: 0; transform: translateX(-5%) scale(.97); filter: blur(6px); transition: opacity .7s ease, transform 1s var(--ease-io), filter .7s ease; }
+  #shopify-section-{{ sid }} .brk-hs__shirt { opacity: 0; transform: translateX(calc(var(--hs-dir, 1) * 6%)) scale(.96); transition: opacity .75s ease .08s, transform 1s var(--ease-out); will-change: transform, opacity; }
+  #shopify-section-{{ sid }} .brk-hs__shirt.is-active { opacity: 1; transform: none; }
+  #shopify-section-{{ sid }} .brk-hs__shirt.is-leaving { opacity: 0; transform: translateX(calc(var(--hs-dir, 1) * -6%)) scale(.96); transition: opacity .45s ease, transform .8s var(--ease-soft); }
   /* Pontos/linhas só da camisa ativa */
   #shopify-section-{{ sid }} [data-shirt-group]:not(.is-on) { opacity: 0 !important; pointer-events: none !important; visibility: hidden; transition: opacity .35s ease, visibility 0s linear .35s; }
   #shopify-section-{{ sid }} [data-shirt-group].is-on { visibility: visible; }
@@ -618,10 +618,25 @@
         var out = shirts[shirtNo - 1], inn = shirts[n - 1];
         groups.forEach(function (g) { g.classList.remove('is-on'); });
         var go = function () {
+          inn.style.transition = 'none';
+          root.style.setProperty('--hs-dir', n > shirtNo ? 1 : -1);
+          /* trava o tamanho da camisa que sai: o quadro muda de proporção na troca e o
+             object-fit encolheria a imagem de uma vez (ex.: Hybrid/FusionX -> ArmorX) */
+          var ow = out.offsetWidth, oh = out.offsetHeight;
+          out.style.cssText += ';inset:auto;left:50%;top:50%;width:' + ow + 'px;height:' + oh + 'px;margin:' + (-oh / 2) + 'px 0 0 ' + (-ow / 2) + 'px;';
           out.classList.remove('is-active');
           out.classList.add('is-leaving');
-          setTimeout(function () { out.classList.remove('is-leaving'); }, 1100);
+          setTimeout(function () {
+            out.classList.remove('is-leaving');
+            ['inset', 'left', 'top', 'width', 'height', 'margin'].forEach(function (p) { out.style.removeProperty(p); });
+          }, 1100);
           canvas.style.width = '';
+          ['inset', 'left', 'top', 'width', 'height', 'margin'].forEach(function (p) { inn.style.removeProperty(p); });
+          inn.classList.remove('is-leaving');
+          /* posiciona a camisa que entra do lado certo (avançar = vem da direita, voltar = vem da esquerda) sem animar esse reposicionamento */
+          inn.style.transition = 'none';
+          void inn.offsetWidth;
+          inn.style.transition = '';
           setRatio(inn);
           inn.classList.add('is-active');
           shirtNo = n;
